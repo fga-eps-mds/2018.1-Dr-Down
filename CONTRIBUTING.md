@@ -52,10 +52,3 @@ __Exemplo:__
 
     Signed-off-by: Mariana Mendes <mare.s.mendes@gmail.com> (Assinatura de parceria)
     Signed-off-by: João Pedro Sconetto <sconetto.joao@gmail.com>
-
-
-
-
-
-
-
