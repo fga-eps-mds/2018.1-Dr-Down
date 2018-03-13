@@ -1,5 +1,4 @@
 # Termo de Abertura de projeto
-***
 
 ## Sumário
 
@@ -15,24 +14,18 @@
 11. [Stakeholders](#stakeholders)
 12. [Referência](#referencias)
 
-***
 <a name="introducao"></a>
 ## 1. Introdução
-***
 
 Este documento tem como objetivo apresentar uma visão inicial do projeto [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down). Neste documento também será descrito as principais informações do projeto, como sua restrições, riscos iniciais, cronograma e marcos, custos e stakeholders do projeto.
 
-***
 <a name="descricao"></a>
 ## 2. Descrição do projeto
-***
 
 O [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down) é um sistema direcionado para o cuidado às pessoas com Síndrome de Down, atualmente coordenado pelo Hospital Regional da Asa Norte, localizado em Brasília - DF chamado Cris Down. Cris Down é um centro de tratamento especializado para pessoas com Síndrome de Down. De acordo com [Angelica Resende](#referencia-angelica) em seu trabalho de conclusão de curso na Universidade de Brasília, observou-se que o aplicativo tem potencial para o mercado e tem grande significado, tendo em vista a possibilidade de melhorar os atendimentos, a atenção e os cuidados com as pessoas que possuem Síndrome de Down.
 
-***
 <a name="justificativa"></a>
 ## 3. Justificativa
-***
 
 A Síndrome de Down ou SD é uma condição de vida que advem da presença de 47 cromossomos nas células em vez de 46. O indivíduo com a síndrome de Down possui cromossomos normais. Porém, no par 21, há um cromossomo extra [(Angelica Resende)](#referencia-angelica).
 
@@ -42,24 +35,18 @@ No Cris Down a demanda vem crescendo, porém a quantidade de profissionais ainda
 
 Diante disso, o aplicativo web busca atender as necessidades dos stakeholders do Cris Down. Visando facilitar o trabalho dos profissionais, no que diz respeito às atividades administrativas (contato com pacientes, marcação de consultas e atividades, registro de novos pacientes, localização dos registros e históricos) e a classificação da fila de espera [(Angelica Resende)](#referencia-angelica).
 
-***
 <a name="objetivo"></a>
 ## 4. Objetivo do projeto
-***
 
 O objetivo deste aplicativo ultrapassa as funcionalidades de um prontuário eletrônico, pois trata-se de viabilizar a aplicação da linha do cuidado a pessoas com Síndrome de Down. Linha do cuidado são fluxos assistenciais à saúde que conduz os processos de trabalho (cuidados) de forma eficiente e eficaz, distribuindo os serviços ofertados. [(Angelica Resende)](#referencia-angelica).
 
-***
 <a name="produto"></a>
 ## 5. Produto do projeto
-***
 
 A solução proposta contribuirá e facilitará o acompanhamento dos pacientes do Cris Down, por meio de histórico simplificado dos atendimentos e procedimentos anteriores que permitirá aos profissionais de saúde o acesso rápido e ficaz a informações básicas do paciente, bem como inserir novos dados que sejam relevantes ao histórico do mesmo, também adequará a fila de espera de pacientes que aguardam atendimento nas diversas especialidades através de critérios para identificação dos riscos ambulatoriais, que será tratada pela equipe do cliente.
 
-***
 <a name="restricoes"></a>
 ## 6. Restrições
-***
 
 A proposta desse projeto envolve a utilização de certos recursos:
 
@@ -67,10 +54,8 @@ A proposta desse projeto envolve a utilização de certos recursos:
 
 * O usuário deve dispor de um navegador
 
-***
 <a name="riscos"></a>
 ## 7. Riscos Iniciais
-***
 
 Os principais riscos do desenvolvimento do Dr. Down e suas medidas preventivas são:
 
@@ -106,10 +91,8 @@ A análise SWOT é uma ferramenta que auxilia na formação estratégica identif
 |Conciliar a disciplina com a faculdade e trabalho|Equipamento velho|
 |Alguns integrantes com pouco conhecimento na tecnologia|Desistencia de membros da equipe|
 
-***
 <a name="cronograma"></a>
 ## 8. Cronograma e marcos
-***
 
 O projeto tem como base dois principais marcos, que representam entregas do produto, são eles: Release 01 e Release 02.
 
@@ -121,10 +104,8 @@ O cronograma do projeto é baseado nas datas pré-determinadas nas matérias de 
 |Release 01|...|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.|
 |Release 02|...|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.|
 
-***
 <a name="custos"></a>
 ## 9. Custo Estimado
-***
 
 Foram postos na base do cálculo todos os insumos dos processos necessários para a realização do projeto, portanto, gastos com pessoal, aquisições e ferramentas foram contabilizados.
 
@@ -224,16 +205,14 @@ Esse é o custo para o projeto do software, na qual teremos um gerentes de proje
 
 |Tipo de recurso|Custo|
 |---------------|-----|
-|Recustos humanos|R$ 113.526,00|
+|Recursos humanos|R$ 113.526,00|
 |Equipamentos e serviços|R$ 29.867,69|
 |Ferramentas|R$ 0,00|
 |Total|R$ 143.393,69|
 
 
-***
 <a name="stakeholders"></a>
 ## 10. Stakeholders
-***
 
 ### 10.1 Equipe
 
@@ -256,10 +235,8 @@ Esse é o custo para o projeto do software, na qual teremos um gerentes de proje
 |----|-----|-----|
 |...|Coach|...|
 
-***
 <a name="referencias"></a>
 ## Referências
-***
 
 <a name="referencia-angelica"></a>
 Angelica A. N. Resende. Análise da viabilidade técnica para desenvolvimento de aplicativo para o centro de referência em síndrome de down (Cris Down). Trabalho de conclusão de curso, UnB, Brasília, 2017.
