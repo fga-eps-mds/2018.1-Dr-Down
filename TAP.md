@@ -115,23 +115,23 @@ Foram postos na base do cálculo todos os insumos dos processos necessários par
 |Item a ser adquirido|Finalidade|Valor (R$)|Quantidade|Total (R$)|Fornecedor|
 |--------------------|----------|----------|----------|----------|----------|
 |Notebook HP|Desenvolvimento e planejamento|Média R$ 2.199,00|10|R$ 21.990,99|HP|
-|Energia|Desenvolvimento e planejamento|0,482 R$/KWh|1404 kw/h|R$ 676,7|CEB|
-|Internet|Desenvolvimento e planejamento|R$ 120,00|10|R$ 7.200,00|NET|
+|Energia|Desenvolvimento e planejamento|0,482 R$/KWh|624 kw/h|R$ 300,77|CEB|
+|Internet|Desenvolvimento e planejamento|R$ 120,00|10 x 4 meses|R$ 4.800,00|NET|
 
 Observações:
 
 * De acordo com o site: http://www.aneel.gov.br/ranking-das-tarifas o KW/h equivale há R$ 0,482 no DF pela CEB na data de 12/03/2018.
 
-* **Energia**: Adotemos um meio termo e assumamos que um computador opera a 130 watts e que ele permanece ligado 6 horas por dia ao longo de um mês, vamos calcular a operação ao longo de 6 meses. Sendo assim, temos a seguinte equação:
+* **Energia**: Adotemos um meio termo e assumamos que um computador opera a 130 watts e que ele permanece ligado 6 horas por dia ao longo de um mês útil, consideraremo 1 mês útil como 20 dias, vamos calcular a operação ao longo de 4 meses. Sendo assim, temos a seguinte equação:
 
 ```
-Consumo = (130 watts x 6 horas x 30 dias)/1.000 x 10 computadores = 234 kw/h mensais x 6 = 1404 kw/h
+Consumo = (130 watts x 4 horas x 20 dias)/1.000 x 10 computadores = 156 kw/h mensais x 4 = 624 kw/h
 ```
 
-* **Internet**: Adotando um meio termo em relação aos preços da internet NET, equivale ao preço mensal de R$ 120,00, com isso temos:
+* **Internet**: Adotando um meio termo em relação aos preços da internet, equivale ao preço mensal de R$ 120,00, com isso temos:
 
 ```
-Cosumo = (120 reais x 6 meses x 10 pessoas) = R$ 7.200,00
+Cosumo = (120 reais x 4 meses x 10 pessoas) = R$ 4.800,00
 ```
 
 * Foi considerado o mesmo modelo e fornecedor para todos os computadores
@@ -140,24 +140,22 @@ Cosumo = (120 reais x 6 meses x 10 pessoas) = R$ 7.200,00
 
 O custo dos recursos humanos para o software pode ser estimado baseando-se na quantidade de horas trabalhadas por semana pelo custo médio do valor/hora da equipe que irá trabalhar no produto. De acordo com o relatório de Gestão no Exercício de 2016, divulgado pelo Decanato de Planejamento e Orçamento da UnB, o custo anual de um aluno de engenharias da FGA é de R$ 26.040,00 em um ano. Sendo o custo do aluno por hora equivalente ao resultado dos cálculos abaixo:
 
-```
-Custo de um aluno da FGA por hora em um semestre = (Custo de um aluno da FGA por ano/2 semestres)/((Carga horária da engenharia de software/5 anos) / 2 semestres)
-```
 
-O custo de um aluno da FGA em um semestre é de R$ 26.040,00/2, que equivale a R$ 12.020,00.
+O custo de um aluno da FGA em um semestre é de R$ (26.040,00/12) x 4 meses, que equivale a R$ 8.680,00.
+
 
 De acordo com o guia do calouro, um crédito equivale a 15 horas-aula, logo por uma regra de três simples podemos chegar a conclusão de que 240 crédito para a conclusão do curso de engenharia de software da UnB-FGA estipulados pelo Matricula Web, equivale a 3600 horas-aula em 5 anos.
 
-Como o software precisa ta pronto em 6 meses, vamos ter 360 horas aulas para trabalhar.
+Como o software precisa ta pronto em 4 meses, vamos ter 360 horas aulas para trabalhar.
 
 ```
 5 anos = 3600 horas aulas
 1 ano = 3600/5 = 720 horas aulas
-1 semestre = 720/2 = 360 horas aulas
+1 mês = 720/12 = 60 horas aulas x 4 meses = 240 horas aulas no semestre.
 ```
 
 ```
-Custo de um aluno da FGA por hora = 12020/360 = R$ 33,39 por hora de trabalho
+Custo de um aluno da FGA por hora = 8.680/240 = R$ 36,17 por hora de trabalho
 ```
 
 Com a experiência que a equipe tem em concepção, elaboração, construção e transição de um software podemos estimar que 20 horas semanais é o suficiente para a construção completa do produto, podendo haver variações devido a dificuldades em requisitos do software e de sua documentação.
@@ -165,30 +163,30 @@ Com a experiência que a equipe tem em concepção, elaboração, construção e
 Média de trabalho por semana: 20 horas (4 horas por dia da semana). Logo:
 
 ```
-Custo por aluno de engenharia de software: R$ 33,39
-Custo por semana: Média de trabalho x Custo = 20 x 33.39 = R$ 667,80
+Custo por aluno de engenharia de software: R$ 36,17
+Custo por semana: Média de trabalho x Custo = 20 x 36.17 = R$ 723,40
 ```
 
 Já que o projeto tem duração de 1 semestre e cada semestre tem duração de dezessete semanas, de acordo com o semestre estipulado pelo guia do calouro, o custo total levando em consideração apenas a hora aluno é:
 
 ```
-projeto = 17 semanas x 667,80 = 11,352.60
+projeto = 17 semanas x 723,40 = 12,297.80
 ```
 
 ```
-R$ 11.352,60 por integrante da engenharia de software
-R$ 113.526,00 custo do time (10 integrante)
+R$ 12.297,80 por integrante da engenharia de software
+R$ 122.978,00 custo do time (10 integrante)
 ```
 
-Esse é o custo para o projeto do software, na qual teremos um gerentes de projeto e um desenvolvedor:
+Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projeto e 6 desenvolvedores:
 
 ||Gerentes de projeto|Desenvolvedores|Total|
 |---|-------------------|---------------|-----|
 |**Quantidade de membros**|4|6|10|
-|**Custo por hora de trabalho**|R$ 133,56|R$ 200,34|R$ 333,90|
+|**Custo por hora de trabalho**|R$ 144,68|R$ 217,02|R$ 361,70|
 |**Horas trabalhadas na semana**|80|120|200|
-|**Custo total na semana**|R$ 2.671,2|R$ 4.006,80|R$ 6.678,00|
-|**Custo total no projeto**|R$ 45.410,40|R$ 68.115,60|R$ 113.526,00|
+|**Custo total na semana**|R$ 2.893,60|R$ 4.340,40|R$ 7.234,00|
+|**Custo total no projeto**|R$ 49.191,20|R$ 73.786,80|R$ 122.978,00|
 
 **Observação**: Como tanto os desenvolvedores como o gerentes são estudantes, o preço dos dois não irá variar, porém o preço por hora de trabalho de um desenvolvedor e de um gerente é completamente diferente no mercado de trabalho.
 
@@ -206,10 +204,10 @@ Esse é o custo para o projeto do software, na qual teremos um gerentes de proje
 
 |Tipo de recurso|Custo|
 |---------------|-----|
-|Recursos humanos|R$ 113.526,00|
-|Equipamentos e serviços|R$ 29.867,69|
+|Recursos humanos|R$ 122.978,00|
+|Equipamentos e serviços|R$ 27.091,76|
 |Ferramentas|R$ 0,00|
-|Total|R$ 143.393,69|
+|Total|R$ 150.069,76|
 
 
 <a name="stakeholders"></a>
