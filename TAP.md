@@ -86,6 +86,7 @@ A análise SWOT é uma ferramenta que auxilia na formação estratégica identif
 |Equipe motivada|Extensão do software por terceiros - Software livre|
 |Equipe grande|O software ser financiado|
 |Tecnologia conhecida e estável|O produto ser utilizado em outros estabelecimentos voltados a síndrome de down|
+
 |Fraqueza|Ameaças|
 |--------|-------|
 |Conciliar a disciplina com a faculdade e trabalho|Equipamento velho|
