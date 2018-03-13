@@ -29,4 +29,4 @@
 * Versão usada (Software):
 * Nome e versão do navegador:
 * Nome e versão do Sistema Operacional (desktop ou mobile):
-* Link para o seu projeto (Fork):
+* Link para o seu projeto (Caso de fork deste projeto):
