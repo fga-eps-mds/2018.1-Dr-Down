@@ -17,33 +17,33 @@
 <a name="introducao"></a>
 ## 1. Introdução
 
-Este documento tem como objetivo apresentar uma visão inicial do projeto [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down). Neste documento também será descrito as principais informações do projeto, como sua restrições, riscos iniciais, cronograma e marcos, custos e stakeholders do projeto.
+Este documento tem como objetivo apresentar uma visão inicial do projeto [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down). Neste documento também serão descritas as principais informações do projeto, como: restrições, riscos iniciais, cronograma e marcos, custos e stakeholders do projeto.
 
 <a name="descricao"></a>
 ## 2. Descrição do projeto
 
-O [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down) é um sistema direcionado para o cuidado às pessoas com Síndrome de Down, atualmente coordenado pelo Hospital Regional da Asa Norte, localizado em Brasília - DF chamado Cris Down. Cris Down é um centro de tratamento especializado para pessoas com Síndrome de Down. De acordo com [Angelica Resende](#referencia-angelica) em seu trabalho de conclusão de curso na Universidade de Brasília, observou-se que o aplicativo tem potencial para o mercado e tem grande significado, tendo em vista a possibilidade de melhorar os atendimentos, a atenção e os cuidados com as pessoas que possuem Síndrome de Down.
+O [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down) é um sistema direcionado a auxiliar o cuidado de pessoas com Síndrome de Down realizado atualmente pelo Hospital Regional da Asa Norte, localizado em Brasília - DF, em um centro de tratamento especializado chamado Cris Down. De acordo com [Angelica Resende](#referencia-angelica) em seu trabalho de conclusão de curso na Universidade de Brasília (UnB), observou-se que o aplicativo tem potencial para o mercado e possui grande significado, tendo em vista a possibilidade de melhorar os atendimentos, a atenção e os cuidados com as pessoas que possuem Síndrome de Down.
 
 <a name="justificativa"></a>
 ## 3. Justificativa
 
-A Síndrome de Down ou SD é uma condição de vida que advem da presença de 47 cromossomos nas células em vez de 46. O indivíduo com a síndrome de Down possui cromossomos normais. Porém, no par 21, há um cromossomo extra [(Angelica Resende)](#referencia-angelica).
+A Síndrome de Down ou SD é uma condição de vida que advém da presença de 47 cromossomos nas células ao invés de 46. O indivíduo com a Síndrome de Down possui cromossomos normais. Porém, no par 21, há um cromossomo extra [(Angelica Resende)](#referencia-angelica).
 
-Sabe-se que acreditar na capacidade, oferecer estimulação, amor, educação e respeito são essenciais para que a pessoa com síndrome de down possa ter condições de se inserir na sociedade. Atualmente o conhecimento e as informações estão bem mais acessíveis, permitindo com que as pessoas possam buscar informações e procurar ajuda.
+Sabe-se que acreditar na capacidade, oferecer estimulação, amor, educação e respeito são essenciais para que a pessoa com Síndrome de Down possa ter condições de se inserir na sociedade. Atualmente o conhecimento sobre a Síndrome estão bem mais acessíveis, permitindo às pessoas buscar informações e procurar ajuda mais facilmente.
 
-No Cris Down a demanda vem crescendo, porém a quantidade de profissionais ainda é limitada para atender a todos que aguardam na fila de espera. É nítida a necessidade do Cris Down de padronizar os critérios para a classificação de riscos ambulatoriais, de modo a maximizar o atendimento e tratar com urgência os casos considerados mais graves [(Angelica Resende)](#referencia-angelica).
+No Cris Down a demanda vem crescendo, porém a quantidade de profissionais ainda é limitada para atender à todos que aguardam na fila de espera. É nítida a necessidade do Cris Down de padronizar os critérios para a classificação de riscos ambulatoriais, de modo a maximizar e priorizar o atendimento, tratando com urgência os casos considerados mais graves [(Angelica Resende)](#referencia-angelica).
 
-Diante disso, o aplicativo web busca atender as necessidades dos stakeholders do Cris Down. Visando facilitar o trabalho dos profissionais, no que diz respeito às atividades administrativas (contato com pacientes, marcação de consultas e atividades, registro de novos pacientes, localização dos registros e históricos) e a classificação da fila de espera [(Angelica Resende)](#referencia-angelica).
+Diante disso, o aplicativo web busca atender às necessidades dos stakeholders do Cris Down. Visando facilitar o trabalho dos profissionais, no que diz respeito às atividades administrativas (contato com pacientes, marcação de consultas e atividades, registro de novos pacientes, localização dos registros e históricos) e à classificação da fila de espera [(Angelica Resende)](#referencia-angelica).
 
 <a name="objetivo"></a>
 ## 4. Objetivo do projeto
 
-O objetivo deste aplicativo ultrapassa as funcionalidades de um prontuário eletrônico, pois trata-se de viabilizar a aplicação da linha do cuidado a pessoas com Síndrome de Down. Linha do cuidado são fluxos assistenciais à saúde que conduz os processos de trabalho (cuidados) de forma eficiente e eficaz, distribuindo os serviços ofertados. [(Angelica Resende)](#referencia-angelica).
+O objetivo deste aplicativo ultrapassa as funcionalidades de um prontuário eletrônico, pois trata-se de viabilizar a aplicação da linha do cuidado à pessoas com Síndrome de Down. Linha do cuidado são fluxos assistenciais à saúde que conduzem os processos de trabalho (cuidados) de forma eficiente e eficaz, distribuindo os serviços ofertados. [(Angelica Resende)](#referencia-angelica).
 
 <a name="produto"></a>
 ## 5. Produto do projeto
 
-A solução proposta contribuirá e facilitará o acompanhamento dos pacientes do Cris Down, por meio de histórico simplificado dos atendimentos e procedimentos anteriores que permitirá aos profissionais de saúde o acesso rápido e ficaz a informações básicas do paciente, bem como inserir novos dados que sejam relevantes ao histórico do mesmo, também adequará a fila de espera de pacientes que aguardam atendimento nas diversas especialidades através de critérios para identificação dos riscos ambulatoriais, que será tratada pela equipe do cliente.
+A solução proposta contribuirá e facilitará o acompanhamento dos pacientes do Cris Down, por meio de histórico simplificado dos atendimentos e procedimentos anteriores (que permitirá aos profissionais de saúde o acesso rápido e eficaz à informações básicas do paciente), bem como inserir novos dados que sejam relevantes ao histórico do mesmo. Também adequará a fila de espera de pacientes que aguardam atendimento nas diversas especialidades através de critérios para identificação dos riscos ambulatoriais, que será tratada pela equipe do cliente.
 
 <a name="restricoes"></a>
 ## 6. Restrições
@@ -64,11 +64,12 @@ Os principais riscos do desenvolvimento do Dr. Down e suas medidas preventivas s
 |Riscos|Impacto|Medidas preventivas|
 |------|-------|-------------------|
 |Equipe de desenvolvimento não se adaptar a tecnologia escolhida.|Não haverá a entrega do produto|Realização de treinamentos para compartilhar conhecimento|
-|Membros da equipe trancar ou desistir da disciplina|Sobrecarga ao membros restantes do projeto|Redistribuir as tarefas aos membros restantes de modo que não sobrecarregue nenhum dos membros.|
-|Falta de comunicação e espaço de trabalho para reuniões|Dificuldade no gerenciamento do projeto|Manter a equipe unida, exigindo feedbacks constantes para minimizar ao máxima a falta de comunicação, marcar encontros nos finais de semanas para que todos os membros possam comparecer, e fazer o acompanhamento constante dos membros.|
-|Mudança no escopo devido a falha no planejamento ou pedido do cliente|Projeto pode não ser concluido a tempo.|Ajustar e priorizar os documentos e funcionalidades que agregue valor ao cliente|
-|Perda de equipamentos|Projeto pode não ser concluido a tempo|Adquirir dinheiro para consertar o equipamento o mais rápido possível e parear o máximo possível para não perder produtividade|
-|Falta de tempo para a realização do projeto|Perda de produtividade|Trabalhar nos tempos livres de estagio para colocar o projeto em dia.|
+|Membros da equipe abandonar a disciplina|Sobrecarga dos membros restantes do projeto|Redistribuir as tarefas aos membros restantes de modo que não sobrecarregue nenhum deles.|
+|Falta de comunicação|Dificuldade no gerenciamento do projeto|Manter a equipe unida, buscando feedbacks constantes para minimizar ao máxima a falta de comunicação e fazendo o acompanhamento constante dos membros.|
+|Falta de espaço de trabalho para reuniões|Dificuldade no gerenciamento do projeto|Marcar encontros nos finais de semanas para que todos os membros possam comparecer.|
+|Mudança no escopo devido à falha no planejamento ou pedido do cliente|Projeto pode não ser concluido a tempo|Ajustar e priorizar os documentos e funcionalidades que agreguem valor ao cliente|
+|Perda ou defeito de equipamentos|Projeto pode não ser concluido a tempo|Adquirir dinheiro para comprar/consertar o equipamento o mais rápido possível e parear o máximo possível para não perder produtividade|
+|Falta de tempo para a realização do projeto|Perda de produtividade|Trabalhar nos tempos livres para colocar o projeto em dia e organizar o horário se certificando que haverá tempo reservado ao projeto.|
 
 ### 7.2 Riscos positivos
 
@@ -85,12 +86,12 @@ A análise SWOT é uma ferramenta que auxilia na formação estratégica identif
 |-----|------------|
 |Equipe motivada|Extensão do software por terceiros - Software livre|
 |Equipe grande|O software ser financiado|
-|Tecnologia conhecida e estável|O produto ser utilizado em outros estabelecimentos voltados a síndrome de down|
+|Tecnologia conhecida e estável|O produto ser utilizado em outros estabelecimentos voltados à Síndrome de Down|
 
 |Fraqueza|Ameaças|
 |--------|-------|
-|Conciliar a disciplina com a faculdade e trabalho|Equipamento velho|
-|Alguns integrantes com pouco conhecimento na tecnologia|Desistencia de membros da equipe|
+|Conciliar a disciplina com a faculdade e, quando for o caso, trabalho|Equipamento velho|
+|Integrantes com pouco conhecimento na tecnologia|Desistência de membros da equipe|
 
 <a name="cronograma"></a>
 ## 8. Cronograma e marcos
@@ -138,27 +139,27 @@ Cosumo = (120 reais x 4 meses x 10 pessoas) = R$ 4.800,00
 
 ### 9.2 Pessoal
 
-O custo dos recursos humanos para o software pode ser estimado baseando-se na quantidade de horas trabalhadas por semana pelo custo médio do valor/hora da equipe que irá trabalhar no produto. De acordo com o relatório de Gestão no Exercício de 2016, divulgado pelo Decanato de Planejamento e Orçamento da UnB, o custo anual de um aluno de engenharias da FGA é de R$ 26.040,00 em um ano. Sendo o custo do aluno por hora equivalente ao resultado dos cálculos abaixo:
+O custo dos recursos humanos para o software pode ser estimado baseando-se na quantidade de horas trabalhadas por semana e o custo médio do valor/hora da equipe que irá trabalhar no produto. De acordo com o relatório de Gestão no Exercício de 2016, divulgado pelo Decanato de Planejamento e Orçamento da UnB, o custo anual de um aluno de engenharias da FGA é de R$ 26.040,00 em um ano. Sendo o custo do aluno por hora equivalente ao resultado dos cálculos abaixo:
 
 
 O custo de um aluno da FGA em um semestre é de R$ (26.040,00/12) x 4 meses, que equivale a R$ 8.680,00.
 
 
-De acordo com o guia do calouro, um crédito equivale a 15 horas-aula, logo por uma regra de três simples podemos chegar a conclusão de que 240 crédito para a conclusão do curso de engenharia de software da UnB-FGA estipulados pelo Matricula Web, equivale a 3600 horas-aula em 5 anos.
+De acordo com o guia do calouro, um crédito equivale a 15 horas-aula, logo por uma regra de três simples podemos chegar a conclusão de que 240 créditos para a conclusão do curso de Engenharia de Software da UnB-FGA estipulados pelo Matricula Web, equivale a 3600 horas-aula em 5 anos.
 
-Como o software precisa ta pronto em 4 meses, vamos ter 360 horas aulas para trabalhar.
+Como o software precisa estar pronto em 4 meses, vamos ter 360 horas-aula para trabalhar.
 
 ```
-5 anos = 3600 horas aulas
-1 ano = 3600/5 = 720 horas aulas
-1 mês = 720/12 = 60 horas aulas x 4 meses = 240 horas aulas no semestre.
+5 anos = 3600 horas-aula
+1 ano = 3600/5 = 720 horas-aula
+1 mês = 720/12 = 60 horas-aula x 4 meses = 240 horas-aula no semestre
 ```
 
 ```
 Custo de um aluno da FGA por hora = 8.680/240 = R$ 36,17 por hora de trabalho
 ```
 
-Com a experiência que a equipe tem em concepção, elaboração, construção e transição de um software podemos estimar que 20 horas semanais é o suficiente para a construção completa do produto, podendo haver variações devido a dificuldades em requisitos do software e de sua documentação.
+Com a experiência que a equipe tem em concepção, elaboração, construção e transição de um software, podemos estimar que 20 horas semanais será o suficiente para a construção completa do produto, podendo haver variações devido a dificuldades em requisitos do software e de sua documentação.
 
 Média de trabalho por semana: 20 horas (4 horas por dia da semana). Logo:
 
@@ -167,7 +168,7 @@ Custo por aluno de engenharia de software: R$ 36,17
 Custo por semana: Média de trabalho x Custo = 20 x 36.17 = R$ 723,40
 ```
 
-Já que o projeto tem duração de 1 semestre e cada semestre tem duração de dezessete semanas, de acordo com o semestre estipulado pelo guia do calouro, o custo total levando em consideração apenas a hora aluno é:
+Já que o projeto tem duração de 1 semestre e cada semestre tem duração de 17 semanas, de acordo com o semestre estipulado pelo guia do calouro, o custo total levando em consideração apenas a hora-aluno é:
 
 ```
 projeto = 17 semanas x 723,40 = 12,297.80
@@ -188,7 +189,7 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 |**Custo total na semana**|R$ 2.893,60|R$ 4.340,40|R$ 7.234,00|
 |**Custo total no projeto**|R$ 49.191,20|R$ 73.786,80|R$ 122.978,00|
 
-**Observação**: Como tanto os desenvolvedores como o gerentes são estudantes, o preço dos dois não irá variar, porém o preço por hora de trabalho de um desenvolvedor e de um gerente é completamente diferente no mercado de trabalho.
+**Observação**: Como tanto os desenvolvedores como o gerentes são estudantes, o preço dos dois não irá variar. Porém o preço por hora de trabalho de um desenvolvedor e de um gerente é completamente diferente no mercado de trabalho.
 
 ### 9.3 Ferramentas
 
@@ -217,16 +218,16 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 
 |Nome|Papel|Email|
 |----|-----|-----|
+|[Diego França](#)|Gerente de projeto|diegobmf@gmail.com|
+|[João Sconetto](#)|Gerente de projeto|sconetto.joao@gmail.com|
+|[Mariana Mendes](#)|Gerente de projeto|mare.s.mendes@gmail.com|
 |[Victor Arnaud](https://github.com/VictorArnaud)|Gerente de projeto|victorhad@gmail.com|
-|[Mariana Mendes](#)|Gerente de projeto||
-|[João Sconetto](#)|Gerente de projeto||
-|[Diego França](#)|Gerente de projeto||
-|[Gabriela Medeiros](#)|Desenvolvedor||
-|[Daniel Maike](#)|Desenvolvedor||
-|[Bernardo](#)|Desenvolvedor||
-|[Geovana Ramos](#)|Desenvolvedor||
-|[Guilherme Guy](#)|Desenvolvedor||
-|[Joberth Rogers](#)|Desenvolvedor||
+|[Daniel Maike](#)|Desenvolvedor|danmke@hotmail.com|
+|[Elias Bernardo Magalhães](#)|Desenvolvedor|ebmm01@gmail.com|
+|[Gabriela Medeiros](#)|Desenvolvedor|gabriela.medeiros2010@hotmail.com.br|
+|[Geovana Ramos](#)|Desenvolvedor|geovannna.1998@gmail.com|
+|[Guilherme Guy](#)|Desenvolvedor|guilhermeguy349@gmail.com|
+|[Joberth Rogers](#)|Desenvolvedor|joberth.rogers18@gmail.com|
 
 ### 10.2 Stakeholders
 
