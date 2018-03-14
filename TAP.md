@@ -78,21 +78,6 @@ Os principais riscos do desenvolvimento do Dr. Down e suas medidas preventivas s
 |Design agradavel|Satisfação dos usuários|
 |Terceiros colaborarem com o projeto|Maior visibilidade da plataforma e mais funcionalidades|
 
-### 7.3 Análise SWOT
-
-A análise SWOT é uma ferramenta que auxilia na formação estratégica identificando possíveis riscos, oportunidades e os pontos fortes e fracos do projeto e da equipe.
-
-|Força|Oportunidade|
-|-----|------------|
-|Equipe motivada|Extensão do software por terceiros - Software livre|
-|Equipe grande|O software ser financiado|
-|Tecnologia conhecida e estável|O produto ser utilizado em outros estabelecimentos voltados à Síndrome de Down|
-
-|Fraqueza|Ameaças|
-|--------|-------|
-|Conciliar a disciplina com a faculdade e, quando for o caso, trabalho|Equipamento velho|
-|Integrantes com pouco conhecimento na tecnologia|Desistência de membros da equipe|
-
 <a name="cronograma"></a>
 ## 8. Cronograma e marcos
 
@@ -103,8 +88,8 @@ O cronograma do projeto é baseado nas datas pré-determinadas nas matérias de 
 |Marco|Data|Atividade|
 |-----|----|---------|
 |Início do projeto|05/03/2018|Começo do projeto|
-|Release 01|...|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.|
-|Release 02|...|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.|
+|Release 01|10/04/2018|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.|
+|Release 02|22/05/2018|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.|
 
 <a name="custos"></a>
 ## 9. Custo Estimado
@@ -159,24 +144,22 @@ Como o software precisa estar pronto em 4 meses, vamos ter 360 horas-aula para t
 Custo de um aluno da FGA por hora = 8.680/240 = R$ 36,17 por hora de trabalho
 ```
 
-Com a experiência que a equipe tem em concepção, elaboração, construção e transição de um software, podemos estimar que 20 horas semanais será o suficiente para a construção completa do produto, podendo haver variações devido a dificuldades em requisitos do software e de sua documentação.
-
-Média de trabalho por semana: 20 horas (4 horas por dia da semana). Logo:
+A média de trabalho por semana estipulada para a disciplina será de 10 horas. Logo:
 
 ```
 Custo por aluno de engenharia de software: R$ 36,17
-Custo por semana: Média de trabalho x Custo = 20 x 36.17 = R$ 723,40
+Custo por semana: Média de trabalho x Custo = 10 x 36.17 = R$ 361,70
 ```
 
 Já que o projeto tem duração de 1 semestre e cada semestre tem duração de 17 semanas, de acordo com o semestre estipulado pelo guia do calouro, o custo total levando em consideração apenas a hora-aluno é:
 
 ```
-projeto = 17 semanas x 723,40 = 12,297.80
+projeto = 17 semanas x 361,70 = 6.148,90
 ```
 
 ```
-R$ 12.297,80 por integrante da engenharia de software
-R$ 122.978,00 custo do time (10 integrante)
+R$ 6.148,90 por integrante da engenharia de software
+R$ 61.489,00 custo do time (10 integrante)
 ```
 
 Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projeto e 6 desenvolvedores:
@@ -185,9 +168,9 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 |---|-------------------|---------------|-----|
 |**Quantidade de membros**|4|6|10|
 |**Custo por hora de trabalho**|R$ 144,68|R$ 217,02|R$ 361,70|
-|**Horas trabalhadas na semana**|80|120|200|
-|**Custo total na semana**|R$ 2.893,60|R$ 4.340,40|R$ 7.234,00|
-|**Custo total no projeto**|R$ 49.191,20|R$ 73.786,80|R$ 122.978,00|
+|**Horas trabalhadas na semana**|40|60|100|
+|**Custo total na semana**|R$ 1.446,80|R$ 2.170,20|R$ 3.617,00|
+|**Custo total no projeto**|R$ 24.595,60|R$ 36.893,40|R$ 61.489,00|
 
 **Observação**: Como tanto os desenvolvedores como o gerentes são estudantes, o preço dos dois não irá variar. Porém o preço por hora de trabalho de um desenvolvedor e de um gerente é completamente diferente no mercado de trabalho.
 
@@ -218,16 +201,16 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 
 |Nome|Papel|Email|
 |----|-----|-----|
-|[Diego França](#)|Gerente de projeto|diegobmf@gmail.com|
-|[João Sconetto](#)|Gerente de projeto|sconetto.joao@gmail.com|
-|[Mariana Mendes](#)|Gerente de projeto|mare.s.mendes@gmail.com|
+|[Diego França](https://github.com/diego-bf)|Gerente de projeto|diegobmf@gmail.com|
+|[João Sconetto](https://github.com/sconetto)|Gerente de projeto|sconetto.joao@gmail.com|
+|[Mariana Mendes](https://github.com/marimendes)|Gerente de projeto|mare.s.mendes@gmail.com|
 |[Victor Arnaud](https://github.com/VictorArnaud)|Gerente de projeto|victorhad@gmail.com|
-|[Daniel Maike](#)|Desenvolvedor|danmke@hotmail.com|
-|[Elias Bernardo Magalhães](#)|Desenvolvedor|ebmm01@gmail.com|
-|[Gabriela Medeiros](#)|Desenvolvedor|gabriela.medeiros2010@hotmail.com.br|
-|[Geovana Ramos](#)|Desenvolvedor|geovannna.1998@gmail.com|
-|[Guilherme Guy](#)|Desenvolvedor|guilhermeguy349@gmail.com|
-|[Joberth Rogers](#)|Desenvolvedor|joberth.rogers18@gmail.com|
+|[Daniel Maike](https://github.com/danmke)|Desenvolvedor|danmke@hotmail.com|
+|[Elias Magalhães](https://github.com/ebmm01)|Desenvolvedor|ebmm01@gmail.com|
+|[Gabriela Medeiros](https://github.com/gabiMSilva)|Desenvolvedor|gabriela.medeiros2010@hotmail.com.br|
+|[Geovana Ramos](https://github.com/GeovanaRamos)|Desenvolvedor|geovannna.1998@gmail.com|
+|[Guilherme Guy](https://github.com/guilherme1guy)|Desenvolvedor|guilhermeguy349@gmail.com|
+|[Joberth Rogers](https://github.com/joberthrogers18)|Desenvolvedor|joberth.rogers18@gmail.com|
 
 ### 10.2 Stakeholders
 
