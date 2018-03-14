@@ -77,7 +77,7 @@ O Dr. Down possui o intuito de facilitar e agilizar a interação entre profissi
 |**é uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera nas consultas de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, além de informações sobre a Síndrome de Down|
 |**diferente**|de outras ferramentas que apresentam somente uma ou duas dessas funções, o Dr. Down reúne todas essas funcionalidades em uma só aplicação|
 
-# 3:  Descrições da Parte Interessada e do Usuário (finalizado)
+# 3:  Descrições da Parte Interessada e do Usuário 
 
 ### 3.1 Resumo da Parte Interessada
 
