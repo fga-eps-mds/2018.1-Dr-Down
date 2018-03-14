@@ -29,7 +29,7 @@ O [Dr. Down](https://github.com/fga-gpp-mds/2018.1-Dr-Down) é um sistema direci
 
 A Síndrome de Down ou SD é uma condição de vida que advém da presença de 47 cromossomos nas células ao invés de 46. O indivíduo com a Síndrome de Down possui cromossomos normais. Porém, no par 21, há um cromossomo extra [(Angelica Resende)](#referencia-angelica).
 
-Sabe-se que acreditar na capacidade, oferecer estimulação, amor, educação e respeito são essenciais para que a pessoa com Síndrome de Down possa ter condições de se inserir na sociedade. Atualmente o conhecimento sobre a Síndrome estão bem mais acessíveis, permitindo às pessoas buscar informações e procurar ajuda mais facilmente.
+Sabe-se que acreditar na capacidade, oferecer estimulação, amor, educação e respeito são essenciais para que a pessoa com Síndrome de Down possa ter condições de se inserir na sociedade.
 
 No Cris Down a demanda vem crescendo, porém a quantidade de profissionais ainda é limitada para atender à todos que aguardam na fila de espera. É nítida a necessidade do Cris Down de padronizar os critérios para a classificação de riscos ambulatoriais, de modo a maximizar e priorizar o atendimento, tratando com urgência os casos considerados mais graves [(Angelica Resende)](#referencia-angelica).
 
@@ -64,18 +64,17 @@ Os principais riscos do desenvolvimento do Dr. Down e suas medidas preventivas s
 |Riscos|Impacto|Medidas preventivas|
 |------|-------|-------------------|
 |Equipe de desenvolvimento não se adaptar a tecnologia escolhida.|Não haverá a entrega do produto|Realização de treinamentos para compartilhar conhecimento|
-|Membros da equipe abandonar a disciplina|Sobrecarga dos membros restantes do projeto|Redistribuir as tarefas aos membros restantes de modo que não sobrecarregue nenhum deles.|
+|Membros da equipe abandonar a disciplina|Sobrecarga dos membros restantes do projeto|Planejar e gerir a equipe de acordo com a perda, afim de não gerar sobrecarga.|
 |Falta de comunicação|Dificuldade no gerenciamento do projeto|Manter a equipe unida, buscando feedbacks constantes para minimizar ao máxima a falta de comunicação e fazendo o acompanhamento constante dos membros.|
-|Falta de espaço de trabalho para reuniões|Dificuldade no gerenciamento do projeto|Marcar encontros nos finais de semanas para que todos os membros possam comparecer.|
+|Falta de infraestrutura de trabalho|Dificuldade no gerenciamento do projeto|Buscar reunir a equipe num ambiente que tenha condições mínimas de trabalho.|
 |Mudança no escopo devido à falha no planejamento ou pedido do cliente|Projeto pode não ser concluido a tempo|Ajustar e priorizar os documentos e funcionalidades que agreguem valor ao cliente|
-|Perda ou defeito de equipamentos|Projeto pode não ser concluido a tempo|Adquirir dinheiro para comprar/consertar o equipamento o mais rápido possível e parear o máximo possível para não perder produtividade|
-|Falta de tempo para a realização do projeto|Perda de produtividade|Trabalhar nos tempos livres para colocar o projeto em dia e organizar o horário se certificando que haverá tempo reservado ao projeto.|
+|Perda ou defeito de equipamentos|Atraso na entrega do projeto|Manutenir os equipamentos periodicamente a fim de evitar maiores problemas|
 
 ### 7.2 Riscos positivos
 
 |Riscos|Impacto|
 |------|-------|
-|Design agradavel|Satisfação dos usuários|
+|Design agradável|Satisfação dos usuários|
 |Terceiros colaborarem com o projeto|Maior visibilidade da plataforma e mais funcionalidades|
 
 <a name="cronograma"></a>
@@ -100,7 +99,7 @@ Foram postos na base do cálculo todos os insumos dos processos necessários par
 
 |Item a ser adquirido|Finalidade|Valor (R$)|Quantidade|Total (R$)|Fornecedor|
 |--------------------|----------|----------|----------|----------|----------|
-|Notebook HP|Desenvolvimento e planejamento|Média R$ 2.199,00|10|R$ 21.990,99|HP|
+|Notebook|Desenvolvimento e planejamento|Média R$ 2.199,00|10|R$ 21.990,99|Vários fornecedores|
 |Energia|Desenvolvimento e planejamento|0,482 R$/KWh|624 kw/h|R$ 300,77|CEB|
 |Internet|Desenvolvimento e planejamento|R$ 120,00|10 x 4 meses|R$ 4.800,00|NET|
 
@@ -137,29 +136,29 @@ Como o software precisa estar pronto em 4 meses, vamos ter 360 horas-aula para t
 ```
 5 anos = 3600 horas-aula
 1 ano = 3600/5 = 720 horas-aula
-1 mês = 720/12 = 60 horas-aula x 4 meses = 240 horas-aula no semestre
+1 mês = 720/8 = 90 horas-aula por mês x 4 meses = 360 horas-aula no semestre
 ```
 
 ```
-Custo de um aluno da FGA por hora = 8.680/240 = R$ 36,17 por hora de trabalho
+Custo de um aluno da FGA por hora = 8.680/360 = R$ 24,11 por hora de trabalho
 ```
 
 A média de trabalho por semana estipulada para a disciplina será de 10 horas. Logo:
 
 ```
-Custo por aluno de engenharia de software: R$ 36,17
-Custo por semana: Média de trabalho x Custo = 10 x 36.17 = R$ 361,70
+Custo por aluno de engenharia de software: R$ 24,11
+Custo por semana: Média de trabalho x Custo = 10 x 24.11 = R$ 241,10
 ```
 
 Já que o projeto tem duração de 1 semestre e cada semestre tem duração de 17 semanas, de acordo com o semestre estipulado pelo guia do calouro, o custo total levando em consideração apenas a hora-aluno é:
 
 ```
-projeto = 17 semanas x 361,70 = 6.148,90
+projeto = 17 semanas x 241,10 = 4.098,70
 ```
 
 ```
-R$ 6.148,90 por integrante da engenharia de software
-R$ 61.489,00 custo do time (10 integrante)
+R$ 4.098.70 por integrante da engenharia de software
+R$ 40.987,00 custo do time (10 integrante)
 ```
 
 Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projeto e 6 desenvolvedores:
@@ -167,10 +166,10 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 ||Gerentes de projeto|Desenvolvedores|Total|
 |---|-------------------|---------------|-----|
 |**Quantidade de membros**|4|6|10|
-|**Custo por hora de trabalho**|R$ 144,68|R$ 217,02|R$ 361,70|
+|**Custo por hora de trabalho**|R$ 96.44|R$ 144.66|R$ 241.10|
 |**Horas trabalhadas na semana**|40|60|100|
-|**Custo total na semana**|R$ 1.446,80|R$ 2.170,20|R$ 3.617,00|
-|**Custo total no projeto**|R$ 24.595,60|R$ 36.893,40|R$ 61.489,00|
+|**Custo total na semana**|R$ 964,40|R$ 1.446,60|R$ 2.411,00|
+|**Custo total no projeto**|R$ 16.394,80|R$ 24.592,20|R$ 40.987,00|
 
 **Observação**: Como tanto os desenvolvedores como o gerentes são estudantes, o preço dos dois não irá variar. Porém o preço por hora de trabalho de um desenvolvedor e de um gerente é completamente diferente no mercado de trabalho.
 
@@ -188,10 +187,10 @@ Esse é o custo para o projeto do software, na qual teremos 4 gerentes de projet
 
 |Tipo de recurso|Custo|
 |---------------|-----|
-|Recursos humanos|R$ 122.978,00|
+|Recursos humanos|R$ 40.987,00|
 |Equipamentos e serviços|R$ 27.091,76|
 |Ferramentas|R$ 0,00|
-|Total|R$ 150.069,76|
+|Total|R$ 68.078,76|
 
 
 <a name="stakeholders"></a>
