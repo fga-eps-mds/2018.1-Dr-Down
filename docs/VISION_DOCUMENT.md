@@ -25,6 +25,8 @@
 | 10/03/2018 | 0.1 | Abertura do documento | Guilherme Guy |
 | 11/03/2018 | 0.2 | Tópicos 1 e 2 | Guilherme Guy e Joberth Rogers |
 | 14/03/2018 | 0.3 | Tópicos 3 e 4 | Daniel Maike e Geovana Ramos |
+| 14/03/2018 | 0.4 | Tópicos 5,6,7,8 e 9 | Elias Bernardo e Gabriela Medeiros |
+
 
 ## 1: Introdução
  
@@ -77,7 +79,7 @@ O Dr. Down possui o intuito de facilitar e agilizar a interação entre profissi
 |**é uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera nas consultas de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, além de informações sobre a Síndrome de Down|
 |**diferente**|de outras ferramentas que apresentam somente uma ou duas dessas funções, o Dr. Down reúne todas essas funcionalidades em uma só aplicação|
 
-# 3:  Descrições da Parte Interessada e do Usuário 
+## 3:  Descrições da Parte Interessada e do Usuário 
 
 ### 3.1 Resumo da Parte Interessada
 
@@ -223,3 +225,68 @@ O sistema Dr. Down funciona em múltiplas camadas com a finalidade de melhor ate
 
 A distribuição do software se dará sob a licença do MIT. Tal licença é aberta quanto a permissão para edição, visualização e utilização do software.
 
+### 5:	Recursos do Produto
+
+#### 5.1 Acesso.
+
+A autenticação do usuário deverá ocorrer por login.
+
+#### 5.2 Nível de acesso
+
+As informações dependem do tipo de usuário. Os pacientes e familiares terão apenas informações básicas do prontuário. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. O médico, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações no sistema sobre o paciente.
+
+#### 5.3 Cadastro
+
+O cadastramento ocorrerá no próprio aplicativo. Quando o perfil for de um  funcionário do hospital ou médico do Cris Down, dependerá do administrador para verificar as informações dos profissionais da rede.
+
+#### 5.4 Espaço
+
+Dentro da aplicação o espaço deve fornecer salas de fóruns com dúvidas dos usuários e chats privados para comunicação entre médicos e pacientes/familiares.
+
+#### 5.5 Informações
+
+No quesito informações, o aplicativo fornecerá um  FAQ com as perguntas mais frequentes feitas pelos usuários, agenda com as futuras consultas, além dos locais de atendimento para a comunidade do Cris Down.
+
+#### 5.6 Localização
+
+Além de conter a localização do Cris Down, o aplicativo fornecerá a localização com os principais eventos perto da localização do usuário.
+
+#### 5.7 Fila de Espera
+
+Haverá um questionário antes de cada triagem para definir a posição do paciente de acordo com o risco ambulatório de seu prontuário: Risco familiar, psicossocial ou risco de  saúde; O que irá definir a classificação do paciente dentro da fila. Além do citado acima irá conter o tempo estimado na fila e um contador de onde a pessoa está na mesma.
+
+#### 5.8 Relatórios gerenciais
+
+O software irá gerar relatórios a respeito do aplicativo e da lista de espera dos atendimentos.
+
+#### 5.9 Marcação de consulta
+
+Para incluir o paciente na fila de espera, o paciente ou familiar deve responder um questionário com seu risco ambulatório e definir a urgência da consulta.
+
+## 6: Restrições
+### 6.1 Restrições de sistema
+
+O sistema se comunica com um banco de dados externo, sendo que nenhuma informação deve estar vinculada a qualquer outros aparelhos ou computadores.
+O sistema não deve revelar quaisquer informações a terceiros exceto funcionários e médicos do Cris Down, além de manter confidencialidade médico e paciente.
+
+### 6.2 Restrições externas
+
+Dentre as restrições externas as que mais irão influenciar são a inexperiência com a linguagem, perda ou dano de equipamento, conflito entre a equipe de desenvolvimento.
+
+### 6.3 Restrições de design
+
+O sistema não pode  ter uma interface muito complexa, pelo motivo de estar lidando com os paciente no seu  conjunto, de forma que seja uma plataforma chamativa e onde todos os ícone esteja de fácil acesso.
+
+## 7:	Faixas de Qualidade
+
+Para maior eficiência, a aplicação será web, pois o gerenciamento de pacientes pelos funcionários do hospital seria dificultado caso tivesse que ser feito em aparelhos mobile. Porém, para atender os pacientes e familiares com qualidade, o Dr. Down deve se adaptar a tela de smartphones e tablets.
+
+## 8:	Precedência e Prioridade
+O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários de saúde e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
+
+## 9:	Outros Requisitos do Produto
+### 9.1	Requisitos do Sistema									
+O usuário deverá ter acesso a um navegador de internet para poder utilizar o Dr. Down.
+
+### 9.2	Requisitos de Desempenho
+O sistema deverá funcionar com fluidez independente da demanda. Se todos os funcionários estiverem usando o Dr.Down ao mesmo tempo, ele deverá responder sem travamentos e processar todos os comandos.
