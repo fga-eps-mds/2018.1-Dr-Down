@@ -39,14 +39,14 @@ O planejamento da sprint foi feito com o pouco de informações que tínhamos. I
 	
 ## Planejadas:
 
-    S01 - Estudar a respeito de GitFlow
+* [S01](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/19) - Estudar a respeito de GitFlow
 
-    S02 - Estudar Python/Django
+* [S02](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/20) - Estudar Python/Django
  
-    S03 - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
+* [S03](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/21) - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
 
-    S04 - Estudar a metodologia SCRUM
+* [S04](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/22) - Estudar a metodologia SCRUM
 
-    S05 - Treinamento de Python/Django
+* [S05](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/14) - Treinamento de Python/Django
 
-    S06 - Treinamento de Git e Git Flow
+* [S06](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/6) - Treinamento de Git e Git Flow
