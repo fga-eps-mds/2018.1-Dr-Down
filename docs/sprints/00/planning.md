@@ -28,11 +28,15 @@ __Papéis__:
 
 * Product Onwer: João Pedro Sconetto
 
+* Devops: João Pedro Sconetto
+
+* Arquitetura: Victor Arnaud 
+
 
 <a name="planejamento"></a>
 ## 2. Planejamento da Sprint
 
-O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias a treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo.
+O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo.
 
 <a name="historias"></a>
 ## 3. Histórias da Sprint:
@@ -40,13 +44,11 @@ O planejamento da sprint foi feito com o pouco de informações que tínhamos. I
 ## Planejadas:
 
 * [S01](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/19) - Estudar a respeito de GitFlow
-
-* [S02](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/20) - Estudar Python/Django
  
-* [S03](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/21) - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
+* [S02](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/21) - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
 
-* [S04](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/22) - Estudar a metodologia SCRUM
+* [S03](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/22) - Estudar a metodologia SCRUM
 
-* [S05](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/14) - Treinamento de Python/Django
+* [S04](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/14) - Treinamento de Python/Django
 
-* [S06](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/6) - Treinamento de Git e Git Flow
+* [S05](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/6) - Treinamento de Git e Git Flow
