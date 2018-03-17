@@ -1,0 +1,28 @@
+version: '2'
+services:
+  drdown-dev:
+    # Uses an image that's built from the Dockerfile in the dockers directory
+    build: .
+    # Command to run postgresql and migrations
+    command: bash -c "chmod +x dev.sh && ./dev.sh && python manage.py runserver 0.0.0.0:8000"
+    # Share files
+    volumes:
+      - .:/home/developer/software
+    # Ports
+    ports:
+      - "8000:8000"
+    # Name the image and insert a version
+    image: drdown_dev:1.0
+    # Specify a custom container name.
+    container_name: drdown_dev
+    # Set the secret_key to enviroment
+    environment:
+      - MODE_ENVIROMENT=development
+    # Container dependencies
+    depends_on:
+      - db
+
+  # Postgresql database
+  db:
+    image: postgres
+    container_name: drdown_db
