@@ -18,7 +18,7 @@ __Data de Término__: 17/03/2018
 
 __Duração__: 7 dias
 
-__Pontos Planejados__:  pontos 
+__Pontos Planejados__: 36 pontos 
 
 __Membros presentes__: Todos
 
@@ -64,6 +64,6 @@ Foi planejado também histórias como Documento de Visão e de Arquitetura, entr
 
 * [TS12](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/3) - Elaborar Templates de Issues e Pull Requests. <!-- 3 -->
 
-* [TS13](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/9) - Elaborar Termo de Abertura do Projeto.
+* [TS13](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/9) - Elaborar Termo de Abertura do Projeto. <!-- 5 -->
 
 
