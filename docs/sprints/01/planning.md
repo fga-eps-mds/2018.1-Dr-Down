@@ -1,4 +1,4 @@
-# Planejamento Sprint 0
+# Planejamento Sprint 01
 
 ## Sumário
 
