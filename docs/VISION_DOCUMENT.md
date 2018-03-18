@@ -62,11 +62,11 @@
 
 |Data | Versão | Descrição | Autores |
 |  ---  |  ---  |  ---  |  ---  |
-| 10/03/2018 | 0.1 | Abertura do documento | Guilherme Guy |
-| 11/03/2018 | 0.2 | Tópicos 1 e 2 | Guilherme Guy e Joberth Rogers |
-| 14/03/2018 | 0.3 | Tópicos 3 e 4 | Daniel Maike e Geovana Ramos |
-| 14/03/2018 | 0.4 | Tópicos 5,6,7,8 e 9 | Elias Bernardo e Gabriela Medeiros |
-
+| 10/03/2018 | 0.0.1 | Abertura do documento | Guilherme Guy |
+| 11/03/2018 | 0.1.0 | Tópicos 1 e 2 | Guilherme Guy e Joberth Rogers |
+| 14/03/2018 | 0.2.0 | Tópicos 3 e 4 | Daniel Maike e Geovana Ramos |
+| 14/03/2018 | 0.3.0 | Tópicos 5,6,7,8 e 9 | Elias Bernardo e Gabriela Medeiros |
+| 18/03/2018 | 0.3.1 | Correção de informações Histórico de Revisão | Guilherme Guy |
 
 ## 1: Introdução
 
