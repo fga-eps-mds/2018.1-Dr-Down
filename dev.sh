@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # Esperando o Postgres inicializar
 postgres_ready() {
 python3 << END
@@ -24,8 +23,11 @@ find . -path "*/migrations/*.pyc"  -delete
 find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 
 echo "Deletando diretorio de arquivos estáticos"
-find . -path "tbl/staticfiles/*"  -delete
+find . -path "drdown/staticfiles/*"  -delete
 
 echo "Criando migrações e tabelas do banco de dados"
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+echo "Run developer server"
+python3 manage.py runserver 0.0.0.0:8000
