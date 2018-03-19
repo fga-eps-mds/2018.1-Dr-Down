@@ -74,12 +74,12 @@
 
 ### 1.1	Propósito
 
-O propósito deste documento é definir e especificar, de maneira ampla, as características pertinentes à aplicação solicitada pelo Centro de Referência em Síndrome de Down, mais conhecido como Cris Down. Este documento possui como pontos principais definir o escopo, os recursos e todo o público alvo que serão englobados pelo sistema, além das razões que levam às necessidades do mesmo. Visa explicar detalhes sobre a aplicação a ser desenvolvida, suas características, funcionalidades, como os usuários se relacionam nesse meio e possíveis restrições no desenvolvimento.
+O propósito deste documento é definir e especificar, de maneira ampla, as características pertinentes à aplicação solicitada pelo Centro de Referência em Síndrome de Down, mais conhecido como Cris Down. Este documento possui como objetivo definir o escopo, os recursos e o público alvo, que serão englobados pelo sistema, além das razões que levam às necessidades do mesmo. Visa explicar detalhes sobre a aplicação a ser desenvolvida: suas características, funcionalidades, como os usuários se relacionam nesse meio e possíveis restrições no desenvolvimento.
 
 ### 1.2	Escopo
 
-No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. Apesar do excelente trabalho realizado pelos profissionais do local, a demanda por atendimento especializado cresce rotineiramente, resultando na sobrecarga de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte do médico, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do centro já citado.
-O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, orientações sobre a Síndrome de Down, localização do Cris Down, classificação de risco, informações, chat e sugestões de jogos voltados para os pacientes.
+No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte do médico, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
+O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco, chat e sugestões de jogos voltados para os pacientes.
 
 ### 1.3	Definições, acrônimos e abreviações
 
@@ -108,26 +108,26 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 
 ### 2.1 Oportunidade de Negócios
 
-O Dr. Down possui o intuito de facilitar e agilizar a interação entre profissionais de saúde e pacientes do hospital. Dessa forma, haverá a economia de recursos, tempo e trabalho, tornando os atendimentos no hospital mais eficazes.
+O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúde e pacientes do Cris Down. Dessa forma, haverá a economia de recursos, tempo e trabalho, tornando os atendimentos no Centro mais eficientes.
 
 ### 2.2 Instrução do Problema
 
-
-|**O problema é que**|há um constante aumento da demanda dos serviços oferecidos pelo Cris Down e não há recursos para um atendimento eficaz aos pacientes|
+|  |  |
 |---|---|
-|**O que afeta**|o gerenciamento dos pacientes na fila de espera, pois os métodos de avaliação de prioridade de pacientes deixam de ser eficazes|
-|**Isso causa**| a sobrecarga dos funcionários resultando na má comunicação entre as partes interessadas, atendimento demorado e de baixa qualidade |
-|**E uma possível solução é**|a criação de uma aplicação eletrônica que visa auxiliar na “Linha de cuidado” do paciente, possibilitando seu cadastro no sistema e também seu acompanhamento por seus responsáveis ou equipes de saúde|
+|**O problema é que**|há um constante aumento na demanda pelos serviços oferecidos pelo Cris Down e não há recursos para um atendimento eficaz aos pacientes|
+|**O que afeta**|o gerenciamento dos pacientes na fila de espera, pois os métodos de avaliação de prioridade de pacientes, por serem totalmente manuais, acabam por diminuir a eficiência na gestão da fila|
+|**Isso causa**| a sobrecarga dos funcionários resultando em uma pior comunicação entre as partes interessadas, e na demora para o paciente ser atendido|
+|**E uma possível solução é**|a criação de uma aplicação eletrônica que visa auxiliar na “Linha de cuidado” do paciente, possibilitando o cadastro dele no sistema, assim como o acompanhamento deste por seus familiares/responsáveis e pela equipe de saúde|
 
 ### 2.3 Instrução de Posição do Produto
 
 
-
-|**Para** |médicos, comunidade do Hospital, familiares e pacientes|
+|  |  |
 |--------|--------|
-|**Que**| necessitam de uma plataforma que disponibiliza o status do paciente com seu prontuário e sua posição na fila de espera das consultas|
+|**Para** |médicos, comunidade do Hospital, familiares e pacientes|
+|**Que**| necessitam de uma plataforma que disponibilize diversas informações sobre o paciente, como seu histórico, prontuário e posição na fila de espera por consultas|
 |**O**| Dr. Down|
-|**É uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera nas consultas de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, além de informações sobre a Síndrome de Down|
+|**É uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, e para a divulgação de informações sobre a Síndrome de Down|
 |**Diferente**|de outras ferramentas que apresentam somente uma ou duas dessas funções, o Dr. Down reúne todas essas funcionalidades em uma só aplicação|
 
 ## 3:  Descrições da Parte Interessada e do Usuário
@@ -138,20 +138,20 @@ O Dr. Down possui o intuito de facilitar e agilizar a interação entre profissi
 |------|------------|-----------------|
 | Equipe de Desenvolvimento | Estudantes da Universidade de Brasília da disciplina Métodos de Desenvolvimento de Software | Participar de forma ativa, implementando o software descrito neste documento. |
 |Equipe de Gestão de Projeto | Estudantes da Universidade de Brasília da disciplina de Engenharia de Produto de Software | Gerenciar a equipe de desenvolvimento, apontando caminhos, soluções e possíveis riscos |
-| Clientes | Comunidade Médica, Pacientes e familiares do Centro de Referência em Síndrome de Down - Cris Down | Requisitar as informações para verificar status das consultas dos pacientes |
+| Clientes | Comunidade Médica, Pacientes e familiares do Centro de Referência em Síndrome de Down - Cris Down | Manipular as informações disponibilizadas no sistema para aprimorar o atendimento dos pacientes com SD |
 
 ### 3.2  Resumo do Usuário
 
 | Nome | Descrição | Parte Interessada |
 |------|-----------|-------------------|
 | Médicos do Cris Down | Equipe médica que trabalha no Cris Down | Usuário |
-| Profissionais de Saúde | Profissionais de saúde diversos que são associados ao Cris Down | Usuário |
+| Profissional de Saúde | Profissional de saúde, de qualquer especialidade que não seja a médica, que é membro da equipe da saúde do Cris Down | Usuário |
 | Familiares |Familiares ou responsáveis do(s) paciente(s) com SD | Usuário |
 | Paciente com Síndrome de Down | Paciente com síndrome de Down atendido pelo Cris Down | Usuário |
 
 ### 3.3 Ambiente do Usuário
 
-O acesso aos serviços da aplicação poderá ser feito por navegadores de internet, como o Mozilla Firefox, Google Chrome, Opera, Apple Safari e outros.
+O acesso aos serviços da aplicação poderá ser feito por navegadores de internet, como o Mozilla Firefox, Google Chrome, Apple Safari.
 
 ### 3.4 Perfis das Partes Interessadas
 
@@ -201,7 +201,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Descrição** | Médico que trabalha no Cris Down atendendo casos de SD. |
 | **Tipo** | Usuário Avançado |
 | **Responsabilidade** | Conhecer a aplicação e todas as suas funcionalidades, além de utilizá-la para facilitar seu trabalho. |
-| **Critérios de sucesso** | Possuir acesso à dispositivos capazes de acessar os serviços que a aplicação fornece e que estejam em bom estado de funcionamento. |
+| **Critérios de sucesso** | Ser capaz de utilizar o sistema para melhorar o atendimento de seus pacientes e aprimorar o gerenciamento do Cris Down. |
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
@@ -213,7 +213,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Descrição** |Profissionais de saúde relacionados ao Cris Down que possibilitam atendimento ao paciente em localizações mais próximas a sua residência. |
 | **Tipo** | Usuário Avançado |
 | **Responsabilidade** | Conhecer a aplicação e utilizá-la para auxiliar no tratamento de pacientes com SD. |
-| **Critérios de sucesso** | Possuir acesso à dispositivos capazes de acessar os serviços que a aplicação fornece e que estejam em bom estado de funcionamento. |
+| **Critérios de sucesso** | Utilizar o sistema para colaborar no tratamento dos pacientes com SD do Cris Down |
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
@@ -225,7 +225,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Descrição** | Familiares do paciente com SD. |
 | **Tipo** | Usuário Informal |
 | **Responsabilidade** | Conhecer a aplicação e usá-la para auxiliar no acompanhamento de seu familiar com SD. Marcar consultas para seu familiar com SD. |
-| **Critérios de sucesso** | Possuir acesso à dispositivos capazes de acessar os serviços que a aplicação fornece e que estejam em bom estado de funcionamento. |
+| **Critérios de sucesso** | Ganhar facilidade em se comunicar com Cris Down e acompanhar o prontuário de seu familiar portador de SD. |
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
@@ -237,7 +237,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Descrição** | Paciente com SD|
 | **Tipo** | Usuário Informal |
 | **Responsabilidade** | Conhecer a aplicação e usá-la para auxiliar em seu tratamento. |
-| **Critérios de sucesso** | Possuir acesso à dispositivos capazes de acessar os serviços que a aplicação fornece e que estejam em bom estado de funcionamento. |
+| **Critérios de sucesso** | Passar menos tempo em fila de espera e ter uma forma mais fácil de gerir seu calendário de consulta. |
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
@@ -344,4 +344,3 @@ O usuário deverá ter acesso a um navegador de internet para poder utilizar o D
 ### 9.2	Requisitos de Desempenho
 
 O sistema deverá funcionar com fluidez independente da demanda. Se todos os funcionários estiverem usando o Dr.Down ao mesmo tempo, ele deverá responder sem travamentos e processar todos os comandos.
-
