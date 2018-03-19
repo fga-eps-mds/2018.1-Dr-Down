@@ -31,6 +31,8 @@ rm:
 	# Remove containers
 	sudo docker-compose -f ${file} rm
 
+# DJANGO -------------------------------------------------------
+
 container := "drdown-dev"
 bash:
 	# Get in the bash of container
@@ -39,8 +41,6 @@ bash:
 run:
 	# Run a command inside docker
 	sudo docker exec ${container} ${command}
-
-# DJANGO -------------------------------------------------------
 
 app: manage.py
 	# Create a new app
@@ -59,6 +59,13 @@ migrate: manage.py
 sql: manage.py
 	# Show SQL commands
 	sudo docker exec ${container} python3 manage.py sqlmigrate ${app_label} ${migration_name}
+
+# TESTS --------------------------------------------------------
+local := "**/tests/"
+
+test: manage.py
+	# Run all tests
+	sudo docker exec ${container} python3 manage.py test ${local}
 
 # TRANSLATION --------------------------------------------------
 files := "**/*.py"
