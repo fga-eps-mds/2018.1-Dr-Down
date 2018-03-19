@@ -177,7 +177,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Responsabilidade** | Estabelecer metas e prazos, informar os melhores caminhos e possíveis riscos na aplicação além de gerenciar a equipe de desenvolvimento. |
 | **Critério de sucesso** | Manter o foco sobre a equipe impondo metas e tentar estabelecer uma relação profissional dentro da equipe de desenvolvimento, de forma que o software seja entregue no prazo, sem riscos e com qualidade. |
 | **Envolvimento** | Alto |
-| Comentários ou problemas | Dificuldade em aprender a gerenciar enquanto se coloca em prática. |
+| **Comentários ou problemas** | Dificuldade em aprender a gerenciar enquanto se coloca em prática. |
 
 #### 3.4.3 - Usuários do Aplicativo
 
