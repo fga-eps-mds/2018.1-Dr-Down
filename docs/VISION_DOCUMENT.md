@@ -69,6 +69,7 @@
 | 18/03/2018 | 0.3.1 | Correção de informações Histórico de Revisão | Guilherme Guy |
 | 18/03/2018 | 0.3.2 | Revisão geral | Joberth Rogers, Elias Bernardo, Guilherme Guy |
 | 18/03/2018 | 1.0.0 | Termino do documento | Joberth Rogers, Elias Bernardo, Guilherme Guy |
+| 19/03/2018 | 1.0.1 | Revisões gerais | Joberth Rogers, Daniel Maike, Guilherme Guy |
 
 ## 1: Introdução
 
@@ -259,16 +260,16 @@ Atualmente não há nenhum aplicativo que integre pacientes de SD, familiares e 
 
 ### 4.1	Perspectiva do Produto
 
- O sistema Dr. Down funciona em múltiplas camadas com a finalidade de atender as necessidades de seus usuários.  A função do sistema pode ser resumida em auxiliar a equipe do Cris Down no cadastro e gerenciamento de pacientes, o que inclui: marcação de consultas, fila de espera, além da divulgação de informações importantes. Para possibilitar a execução dos propósitos do sistema, ele deverá possuir acesso aos dados da Secretaria de Estado de Saúde (SES) através de um número de identificação, o que possibilitará levantar dados de determinados pacientes.
+ O sistema Dr. Down funciona em múltiplas camadas com a finalidade de atender as necessidades de seus usuários.  A função do sistema pode ser resumida em auxiliar a equipe do Cris Down no cadastro e gerenciamento de pacientes, o que inclui: marcação de consultas, fila de espera, além da divulgação de informações importantes. Para possibilitar a execução dos propósitos do sistema, ele deverá possuir acesso aos dados do paciente que é identificado pelo número de identificação da Secretaria de Estado de Saúde (SES), o que possibilitará levantar dados dos pacientes, para auxiliar na consulta e no acompanhamento.
 
 ### 4.2	Resumo das Capacidades
 
 |Benefícios para o Cliente |Recursos de |
 |------------------|-----------------|
-| Consulta rápida do histórico do paciente |Pesquisa do banco de dados do Cris Down. |
+| Consulta rápida do histórico do paciente |Pesquisa no banco de dados do Cris Down. |
 | Comunicação entre pacientes, familiares e médicos |Fórum para dúvidas e mensagens diretas. |
 | Verificação do paciente na fila de espera | Funcionalidade mostrando o tempo que falta até a sua consulta. |
-| Jogos para o desenvolvimento dos pacientes | Ligação da página com links para jogos interativos |
+| Jogos pedagógicos e educacionais para auxiliar o desenvolvimento dos pacientes | Ligação da página com links para jogos interativos |
 
 ### 4.3	Licenciamento e Instalação
 
@@ -282,15 +283,15 @@ A autenticação do usuário deverá ocorrer por login.
 
 ### 5.2 Nível de acesso
 
-As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. O médico, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações no sistema sobre o paciente.
+As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. O médico, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações no sistema sobre o paciente.
 
 ### 5.3 Cadastro
 
-O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de um  funcionário do hospital ou médico do Cris Down, dependerá de um administrador verificar as informações dos profissionais da rede.
+O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de um  funcionário do hospital ou médico do Cris Dow. Dependerá de um administrador do sistema verificar as informações dos profissionais da rede.
 
 ### 5.4 Espaço
 
-Dentro da aplicação o espaço deve fornecer salas de fóruns com dúvidas dos usuários e chats privados para comunicação entre médicos e pacientes/familiares.
+Dentro da aplicação o espaço deve fornecer salas de fóruns para o esclarecimento dúvidas dos usuários e chats privados para comunicação entre médicos e pacientes/familiares.
 
 ### 5.5 Informações
 
@@ -298,19 +299,19 @@ No quesito informações, o aplicativo fornecerá um FAQ com as perguntas mais f
 
 ### 5.6 Localização
 
-Além de conter a localização do Cris Down, o aplicativo fornecerá a localização com os principais eventos perto da localização do usuário.
+Além de conter a localização do Cris Down, o aplicativo fornecerá a localização com os principais eventos organizados ou recomendados pelo mesmo.
 
 ### 5.7 Fila de Espera
 
-Haverá um questionário antes de cada triagem para definir a posição do paciente de acordo com o risco ambulatório de seu prontuário: Risco familiar, psicossocial ou risco de  saúde. Conterá ainda o tempo estimado na fila e um contador de posição na mesma.
+Haverá um questionário durante cada triagem para definir a posição do paciente de acordo com o risco ambulatorial definido a partir de seu prontuário. Conterá ainda o tempo estimado na fila e um contador de posição na mesma.
 
 ### 5.8 Relatórios gerenciais
 
-O software irá gerar relatórios a respeito do aplicativo e da lista de espera dos atendimentos.
+O software irá gerar relatórios a respeito do uso do aplicativo e da lista de espera dos atendimentos.
 
 ### 5.9 Marcação de consulta
 
-Para incluir o paciente na fila de espera, o paciente ou familiar deve responder um questionário com seu risco ambulatório e definir a urgência da consulta.
+O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.
 
 ## 6: Restrições
 
@@ -321,11 +322,11 @@ O sistema não deve revelar quaisquer informações a terceiros exceto funcioná
 
 ### 6.2 Restrições externas
 
-Dentre as restrições externas as que mais irão influenciar são a inexperiência com a linguagem, perda ou dano de equipamento, conflito entre a equipe de desenvolvimento.
+Dentre as restrições externas as que mais irão influenciar são a inexperiência com a linguagem, perda ou dano de equipamento, e conflitos entre a equipe de desenvolvimento.
 
 ### 6.3 Restrições de design
 
-O sistema não pode ter uma interface muito complexa por estar lidando com pacientes portadores de SD. Dessa forma será uma plataforma chamativa, onde todos os ícone sejam de fácil acesso.
+O sistema deve ter uma interface que seja de fácil uso por pessoas com e sem SD. Dessa forma, deverá ser uma plataforma chamativa, em que todos os ícone sejam de fácil acesso.
 
 ## 7:	Faixas de Qualidade
 
@@ -333,7 +334,7 @@ Para maior eficiência a aplicação será web, pois o gerenciamento de paciente
 
 ## 8:	Precedência e Prioridade
 
-O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários de saúde e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
+O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
 
 ## 9:	Outros Requisitos do Produto
 
@@ -343,4 +344,4 @@ O usuário deverá ter acesso a um navegador de internet para poder utilizar o D
 
 ### 9.2	Requisitos de Desempenho
 
-O sistema deverá funcionar com fluidez independente da demanda. Se todos os funcionários estiverem usando o Dr.Down ao mesmo tempo, ele deverá responder sem travamentos e processar todos os comandos.
+O sistema deverá funcionar com fluidez para a demanda necessária. Se todos os funcionários estiverem usando o Dr.Down ao mesmo tempo, ele deverá responder sem travamentos e processar todos os comandos.
