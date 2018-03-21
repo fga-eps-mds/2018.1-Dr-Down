@@ -14,7 +14,8 @@ class User(models.Model):
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES,
                               default=None)
-    telephone = models.DecimalField(max_digits=12, decimal_places=0, default=None)
+    telephone = models.DecimalField(max_digits=12,
+                                    decimal_places=0, default=None)
 
     def __str__(self):
         return self.email
