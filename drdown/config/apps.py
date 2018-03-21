@@ -10,7 +10,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'create_user',
+    'user',
 ]
 
 LOCAL_APPS = []
