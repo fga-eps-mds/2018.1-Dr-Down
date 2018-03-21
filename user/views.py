@@ -5,7 +5,7 @@ from .forms import UserForm
 
 def list_users(request):
     users = User.objects.all()
-    return render(request, 'users.html', {'users': users})
+    return render(request, 'user/users.html', {'users': users})
 
 
 def create_user(request):
@@ -15,4 +15,4 @@ def create_user(request):
         form.save()
         return redirect('list_users')
 
-    return render(request, 'users-form.html', {'form': form})
+    return render(request, 'user/users-form.html', {'form': form})
