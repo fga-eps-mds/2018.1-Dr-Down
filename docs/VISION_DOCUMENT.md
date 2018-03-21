@@ -70,6 +70,8 @@
 | 18/03/2018 | 0.3.2 | Revisão geral | Joberth Rogers, Elias Bernardo, Guilherme Guy |
 | 18/03/2018 | 1.0.0 | Termino do documento | Joberth Rogers, Elias Bernardo, Guilherme Guy |
 | 19/03/2018 | 1.0.1 | Revisões gerais | Joberth Rogers, Daniel Maike, Guilherme Guy |
+| 21/03/2018 | 1.0.2 | Revisão | Daniel Maike, Guilherme Guy |
+
 
 ## 1: Introdução
 
@@ -344,4 +346,4 @@ O usuário deverá ter acesso a um navegador de internet para poder utilizar o D
 
 ### 9.2	Requisitos de Desempenho
 
-O sistema deverá funcionar com fluidez para a demanda necessária. Se todos os funcionários estiverem usando o Dr.Down ao mesmo tempo, ele deverá responder sem travamentos e processar todos os comandos.
+O sistema será dimensionado para suprir a necessidade de acesso do Cris Down.
