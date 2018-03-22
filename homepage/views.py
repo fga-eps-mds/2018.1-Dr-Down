@@ -4,4 +4,8 @@ from django.shortcuts import render
 
 
 def index(request):
+    """
+        Renders static homepage view
+    """
+
     return render(request, 'homepage/index.html')
