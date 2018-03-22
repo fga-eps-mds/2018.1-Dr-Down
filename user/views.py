@@ -16,3 +16,18 @@ def create_user(request):
         return redirect('list_users')
 
     return render(request, 'user/users-form.html', {'form': form})
+
+
+def update_user(request, id):
+    user = User.objects.get(id=id)
+    form = UserForm(request.POST or None, instance=user)
+
+    if form.is_valid():
+        form.save()
+        return redirect('list_users')
+
+    return render(
+     request,
+     'user/users-form.html',
+     {'form': form, 'user': user}
+     )
