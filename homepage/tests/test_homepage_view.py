@@ -28,5 +28,5 @@ class HomepageTestCase(TestCase):
             Checks if the '/' url is returning the homepage view
         """
 
-        view = resolve('/')
-        self.assertEquals(view.func, index)
+        response = self.client.get(reverse('index'))
+        self.assertTemplateUsed(response, 'homepage/index.html')
