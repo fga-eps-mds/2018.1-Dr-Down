@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic import UpdateView
 from .models import User
 from .forms import UserForm
 
@@ -18,16 +19,8 @@ def create_user(request):
     return render(request, 'user/users-form.html', {'form': form})
 
 
-def update_user(request, id):
-    user = User.objects.get(id=id)
-    form = UserForm(request.POST or None, instance=user)
-
-    if form.is_valid():
-        form.save()
-        return redirect('list_users')
-
-    return render(
-     request,
-     'user/users-form.html',
-     {'form': form, 'user': user}
-     )
+class UpdateUserView(UpdateView):
+    model = User
+    template_name = 'user/users-form.html'
+    form_class = UserForm
+    success_url = '/'
