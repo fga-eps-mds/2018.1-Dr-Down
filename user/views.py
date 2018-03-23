@@ -18,10 +18,14 @@ class CreateUserView(CreateView):
 
 
 class UpdateUserView(UpdateView):
+    """
+    Class to update a user from database
+    """
+
     model = User
     template_name = 'user/users-form.html'
     form_class = UserForm
-    success_url = '/'
+    success_url = reverse_lazy('list_users')
 
 
 class UserDeleteView(DeleteView):
