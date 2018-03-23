@@ -7,19 +7,18 @@ from user.models import User
 
 class UserViewTestCase(TestCase):
     def create_user(self, name="Joao", last_name="Silva",
-                        email="user@example.com", password="12345678",
-                        birthday="1997-01-01", gender="M",
-                        telephone=12345678):
+                    email="user@example.com", password="12345678",
+                    birthday="1997-01-01", gender="M",
+                    telephone=12345678):
         return User.objects.create(name=name, last_name=last_name,
-                            email=email, password=password,
-                            birthday=birthday, gender=gender,
-                            telephone=telephone)
+                                   email=email, password=password,
+                                   birthday=birthday, gender=gender,
+                                   telephone=telephone)
 
     def test_list_view(self):
         list_url = reverse("list_users")
         response = self.client.get(list_url)
         self.assertEqual(response.status_code, 200)
-
 
     def test_was_created_user(self):
         """
