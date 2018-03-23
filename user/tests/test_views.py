@@ -44,3 +44,52 @@ class UserViewTestCase(TestCase):
         # test the response to find if a user was created
         # it checks for the presence of a username on the response page
         self.assertContains(response, dummy_user.name)
+
+
+    def test_user_name_was_updated(self):
+        """
+            test if the user updated was successful after an update procedure using the update user form
+        """
+
+        c = Client()
+
+        # create user in db
+        user = self.create_user()
+
+        initial_name = user.name
+
+        # assert presence of user on user list
+        self.assertContains(c.get('/users/'), user.name)
+
+        # lets change all data
+        data = {
+            'birthday': "1998-01-01",
+            'email': "notuser@notmail.notcom",
+            'gender': "F",
+            'last_name': "NotLastName",
+            'name': "NotName",
+            'password': "supersecurepassword1203i",
+            'telephone': 12345678
+        }
+
+        # POST the changes
+        response = c.post('/users/edit/' + str(user.id), data=data)
+
+        self.assertEqual(response.status_code, 302)
+
+        user.refresh_from_db()
+
+        # some tests need a str() conversion before the assertion
+
+        self.assertEquals(user.name, data['name'])
+        self.assertEqual(user.last_name, data['last_name'])
+
+        self.assertEqual(str(user.birthday), data['birthday'])
+        self.assertEqual(user.gender, data['gender'])
+        self.assertEqual(user.telephone, str(data['telephone']))
+
+        self.assertEqual(user.email, data['email'])
+        self.assertEqual(user.password, data['password'])
+
+        self.assertContains(c.get('/users/'), data['name'])
+        self.assertNotContains(c.get('/users/'), initial_name)
