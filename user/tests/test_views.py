@@ -45,10 +45,10 @@ class UserViewTestCase(TestCase):
         # it checks for the presence of a username on the response page
         self.assertContains(response, dummy_user.name)
 
-
     def test_user_was_updated(self):
         """
-            test if the user updated was successful after an update procedure using the update user form
+            test if the user updated was successful after
+            an update procedure using the update user form
         """
 
         c = Client()
