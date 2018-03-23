@@ -12,7 +12,10 @@
   <ul>
 
       {% for user in users %}
-          <li><a href="{% url 'update_user' user.id %}">{{ user.name }}</a></li>
+          <li>{{ user.name }}
+              <a href="{% url 'update_user' user.id %}">Update</a>
+              <a href="{% url 'delete_user' user.id %}">Delete</a>
+          </li>
       {% endfor %}
 
   </ul>
