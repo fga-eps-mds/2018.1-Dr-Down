@@ -46,7 +46,7 @@ class UserViewTestCase(TestCase):
         self.assertContains(response, dummy_user.name)
 
 
-    def test_user_name_was_updated(self):
+    def test_user_was_updated(self):
         """
             test if the user updated was successful after an update procedure using the update user form
         """
