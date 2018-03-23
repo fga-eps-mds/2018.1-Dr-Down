@@ -31,7 +31,7 @@ class UserViewTestCase(TestCase):
         # users. This test will nedd to be changed when the view/html
         # is updated
         c = Client()
-        response = c.get('')
+        response = c.get('/users/')
 
         # check if the user that will be created is NOT present on user list
         self.assertNotContains(response, "Test")
@@ -40,7 +40,7 @@ class UserViewTestCase(TestCase):
         dummy_user = self.create_user(name="Test")
 
         # reload or user page
-        response = c.get('')
+        response = c.get('/users/')
 
         # test the response to find if a user was created
         # it checks for the presence of a username on the response page
