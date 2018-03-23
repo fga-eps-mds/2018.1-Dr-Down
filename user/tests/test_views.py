@@ -1,49 +1,60 @@
 from django.test import TestCase, Client
 from django.shortcuts import reverse
-
 from user.models import User
-# Create your tests here.
 
 
 class UserViewTestCase(TestCase):
-    def create_user(self, name="Joao", last_name="Silva",
-                    email="user@example.com", password="12345678",
-                    birthday="1997-01-01", gender="M",
-                    telephone=12345678):
-        return User.objects.create(name=name, last_name=last_name,
-                                   email=email, password=password,
-                                   birthday=birthday, gender=gender,
-                                   telephone=telephone)
+
+    def test_create_users(self):
+
+            self.client = Client()
+            user = User.objects.create(name='joao', last_name='per1',
+                                       email='person1@gmail.com',
+                                       password='test',
+                                       birthday='2016-05-05',
+                                       gender='M',
+                                       telephone='1234567')
+
+            self.assertEquals(User.objects.count(), 1)
+
+            user2 = User.objects.create(name='aluno', last_name='per2',
+                                        email='person2@gmail.com',
+                                        password='test2',
+                                        birthday='2012-02-02',
+                                        gender='M',
+                                        telephone='1234567')
+
+            self.assertEquals(User.objects.count(), 2)
 
     def test_list_view(self):
+        """
+
+        This test is valid when the view list user part is work
+        """
+
         list_url = reverse("list_users")
         response = self.client.get(list_url)
         self.assertEqual(response.status_code, 200)
 
-    def test_was_created_user(self):
+    def test_create_user_with_invalid_email(self):
         """
-            was_created_user() tests if a user that was created appears
-            on the correct view
+        Test that verify if email correspond with erro if no add
         """
-        # create a test Client and ask it to get our user page
-        # note: at this moment our user page shows a list of created
-        # users. This test will nedd to be changed when the view/html
-        # is updated
-        c = Client()
-        response = c.get('/users/')
 
-        # check if the user that will be created is NOT present on user list
-        self.assertNotContains(response, "Test")
+        data = {
+            'name': 'person',
+            'last_name': 'test',
+            'email': 'alsda@dskal.com',
+            'password': 'test2',
+            'birthday': '2012-02-02',
+            'gender': 'M',
+            'telephone': '1234567'
 
-        # create a dummy user on our DB
-        dummy_user = self.create_user(name="Test")
+        }
 
-        # reload or user page
-        response = c.get('/users/')
-
-        # test the response to find if a user was created
-        # it checks for the presence of a username on the response page
-        self.assertContains(response, dummy_user.name)
+        response = self.client.post(reverse('create_user'), data)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(User.objects.count(), 1)
 
     def test_user_was_updated(self):
         """
