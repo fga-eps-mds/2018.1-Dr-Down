@@ -28,6 +28,9 @@ class UpdateUserView(UpdateView):
 
 
 class UserDeleteView(DeleteView):
+    """
+    Class to delete a user from database
+    """
     model = User
     success_url = reverse_lazy('list_users')
     template_name = 'user/user_confirm_delete.html'
