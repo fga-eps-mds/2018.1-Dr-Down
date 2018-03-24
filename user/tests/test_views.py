@@ -5,6 +5,16 @@ from user.models import User
 
 class UserViewTestCase(TestCase):
 
+    def create_user(self, name="Joao", last_name="Silva",
+                    email="user@example.com", password="12345678",
+                    birthday="1997-01-01", gender="M",
+                    telephone='12345678'):
+
+        return User.objects.create(name=name, last_name=last_name,
+                                   email=email, password=password,
+                                   birthday=birthday, gender=gender,
+                                   telephone=telephone)
+
     def test_create_users(self):
 
             self.client = Client()
