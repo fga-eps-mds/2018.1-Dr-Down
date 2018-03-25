@@ -14,6 +14,7 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
+    'homepage',
     'user',
 ]
 
