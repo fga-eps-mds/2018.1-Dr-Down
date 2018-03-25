@@ -1,64 +1,7 @@
 # Documento de Visão
-
-
-Índice
-=================
-
-   * [Documento de Visão](#documento-de-visão)
-      * [Histórico de Revisão](#histórico-de-revisão)
-      * [1: Introdução](#1-introdução)
-         * [1.1	Propósito](#11propósito)
-         * [1.2	Escopo](#12escopo)
-         * [1.3	Definições, acrônimos e abreviações](#13definições-acrônimos-e-abreviações)
-         * [1.4 Referências](#14-referências)
-         * [1.5 Visão Geral](#15-visão-geral)
-      * [2: Posicionamento](#2-posicionamento)
-         * [2.1 Oportunidade de Negócios](#21-oportunidade-de-negócios)
-         * [2.2 Instrução do Problema](#22-instrução-do-problema)
-         * [2.3 Instrução de Posição do Produto](#23-instrução-de-posição-do-produto)
-      * [3:  Descrições da Parte Interessada e do Usuário](#3--descrições-da-parte-interessada-e-do-usuário)
-         * [3.1 Resumo da Parte Interessada](#31-resumo-da-parte-interessada)
-         * [3.2  Resumo do Usuário](#32--resumo-do-usuário)
-         * [3.3 Ambiente do Usuário](#33-ambiente-do-usuário)
-         * [3.4 Perfis das Partes Interessadas](#34-perfis-das-partes-interessadas)
-            * [3.4.1 - Equipe de desenvolvimento](#341---equipe-de-desenvolvimento)
-            * [3.4.2 - Equipe de gestão de projeto](#342---equipe-de-gestão-de-projeto)
-            * [3.4.3 - Usuários do Aplicativo](#343---usuários-do-aplicativo)
-         * [3.5 Perfil dos Usuários](#35-perfil-dos-usuários)
-            * [3.5.1 - Médicos do Cris Down](#351---médicos-do-cris-down)
-            * [3.5.2 - Profissionais de Saúde](#352---profissionais-de-saúde)
-            * [3.5.3 - Familiares](#353---familiares)
-            * [3.5.4 - Paciente](#354---paciente)
-         * [3.6 Principais Necessidades da Parte Interessada ou do Usuário](#36-principais-necessidades-da-parte-interessada-ou-do-usuário)
-         * [3.7	Alternativas e Concorrência](#37alternativas-e-concorrência)
-      * [4:	Visão Geral do Produto](#4visão-geral-do-produto)
-         * [4.1	Perspectiva do Produto](#41perspectiva-do-produto)
-         * [4.2	Resumo das Capacidades](#42resumo-das-capacidades)
-         * [4.3	Licenciamento e Instalação](#43licenciamento-e-instalação)
-      * [5:	Recursos do Produto](#5recursos-do-produto)
-         * [5.1 Acesso.](#51-acesso)
-         * [5.2 Nível de acesso](#52-nível-de-acesso)
-         * [5.3 Cadastro](#53-cadastro)
-         * [5.4 Espaço](#54-espaço)
-         * [5.5 Informações](#55-informações)
-         * [5.6 Localização](#56-localização)
-         * [5.7 Fila de Espera](#57-fila-de-espera)
-         * [5.8 Relatórios gerenciais](#58-relatórios-gerenciais)
-         * [5.9 Marcação de consulta](#59-marcação-de-consulta)
-      * [6: Restrições](#6-restrições)
-         * [6.1 Restrições de sistema](#61-restrições-de-sistema)
-         * [6.2 Restrições externas](#62-restrições-externas)
-         * [6.3 Restrições de design](#63-restrições-de-design)
-      * [7:	Faixas de Qualidade](#7faixas-de-qualidade)
-      * [8:	Precedência e Prioridade](#8precedência-e-prioridade)
-      * [9:	Outros Requisitos do Produto](#9outros-requisitos-do-produto)
-         * [9.1	Requisitos do Sistema](#91requisitos-do-sistema)
-         * [9.2	Requisitos de Desempenho](#92requisitos-de-desempenho)
-
-
-
-
+***
 ## Histórico de Revisão
+***
 
 |Data | Versão | Descrição | Autores |
 |  ---  |  ---  |  ---  |  ---  |
@@ -72,8 +15,9 @@
 | 19/03/2018 | 1.0.1 | Revisões gerais | Joberth Rogers, Daniel Maike, Guilherme Guy |
 | 21/03/2018 | 1.0.2 | Revisão | Daniel Maike, Guilherme Guy |
 
-
+***
 ## 1: Introdução
+***
 
 ### 1.1	Propósito
 
@@ -107,7 +51,9 @@ RESENDE, Angelica Aguiar. ANÁLISE DA VIABILIDADE TÉCNICA PARA DESENVOLVIMENTO 
 
 Este documento está organizado de maneira a se compreender primeiramente as funções e objetivos do projeto, seguidos pelos perfis de usuário e equipe de desenvolvimento. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
 
+***
 ## 2: Posicionamento
+***
 
 ### 2.1 Oportunidade de Negócios
 
@@ -133,7 +79,9 @@ O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúd
 |**É uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, e para a divulgação de informações sobre a Síndrome de Down|
 |**Diferente**|de outras ferramentas que apresentam somente uma ou duas dessas funções, o Dr. Down reúne todas essas funcionalidades em uma só aplicação|
 
+***
 ## 3:  Descrições da Parte Interessada e do Usuário
+***
 
 ### 3.1 Resumo da Parte Interessada
 
@@ -257,8 +205,9 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 Atualmente não há nenhum aplicativo que integre pacientes de SD, familiares e profissionais - o que é proposto neste projeto.  Há um aplicativo específico para o acompanhamento à saúde das crianças com Síndrome de Down (DownEx) e outros aplicativos que atendem pessoas com deficiência intelectual, que poderiam ser utilizados por pessoas com Síndrome de Down. Contudo, como tais aplicativos têm foco pedagógico e educacional, não são considerados concorrentes.
 
-
+***
 ## 4:	Visão Geral do Produto
+***
 
 ### 4.1	Perspectiva do Produto
 
@@ -277,7 +226,9 @@ Atualmente não há nenhum aplicativo que integre pacientes de SD, familiares e 
 
 A distribuição do software se dará sob a licença do MIT. Tal licença é aberta quanto a permissão para edição, visualização e utilização do software.
 
+***
 ## 5:	Recursos do Produto
+***
 
 ### 5.1 Acesso.
 
@@ -315,7 +266,9 @@ O software irá gerar relatórios a respeito do uso do aplicativo e da lista de 
 
 O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.
 
+***
 ## 6: Restrições
+***
 
 ### 6.1 Restrições de sistema
 
@@ -330,15 +283,21 @@ Dentre as restrições externas as que mais irão influenciar são a inexperiên
 
 O sistema deve ter uma interface que seja de fácil uso por pessoas com e sem SD. Dessa forma, deverá ser uma plataforma chamativa, em que todos os ícone sejam de fácil acesso.
 
+***
 ## 7:	Faixas de Qualidade
+***
 
 Para maior eficiência a aplicação será web, pois o gerenciamento de pacientes pelos funcionários do hospital seria dificultado no caso de uma aplicação exclusiva para aparelhos mobile. Porém, para atender os pacientes e familiares com qualidade, o Dr. Down deve se adaptar a tela de smartphones e tablets.
 
+***
 ## 8:	Precedência e Prioridade
+***
 
 O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
 
+***
 ## 9:	Outros Requisitos do Produto
+***
 
 ### 9.1	Requisitos do Sistema
 

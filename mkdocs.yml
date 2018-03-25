@@ -1,0 +1,16 @@
+site_name: drdown
+site_description: 'Sistema direcionado a auxiliar o cuidado de pessoas com Síndrome de Down'
+repo_url: https://github.com/fga-gpp-mds/2018.1-Dr-Down
+theme: readthedocs
+
+pages:
+  - Home: index.md
+  - Termo de abertura: TAP.md
+  - Documento de visão: VISION_DOCUMENT.md
+  - Código de conduta: CODE_OF_CONDUCT.md
+  - Sprint 0:
+    - Planejamento: sprints/00/planning.md
+    - Resultado: sprints/00/results.md
+  - Sprint 1:
+    - Planejamento: sprints/01/planning.md
+    - Resultado: sprints/01/results.md

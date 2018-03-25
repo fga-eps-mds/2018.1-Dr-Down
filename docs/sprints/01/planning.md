@@ -1,12 +1,5 @@
 # Planejamento Sprint 01
 
-## Sumário
-
-1. [Resumo da Sprint](#resumo)
-2. [Planejamento das Histórias](#planejamento)
-3. [Histórias da Sprint](#historias)
-
-<a name="resumo"></a>
 ## 1. Resumo da Sprint
 
 
@@ -32,16 +25,11 @@ __Papéis__:
 
 * Arquitetura: Victor Arnaud 
 
-
-
-<a name="planejamento"></a>
 ## 2. Planejamento da Sprint
 
 O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo. 
 Foi planejado também histórias como Documento de Visão e de Arquitetura, entretanto durante a sprint houve uma mudança no escopo, prejudicando um pouco o andamento da sprint 01.
 
-
-<a name="historias"></a>
 ## 3. Histórias da Sprint:
 	
 ## Planejadas:
