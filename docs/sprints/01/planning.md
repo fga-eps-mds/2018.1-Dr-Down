@@ -1,13 +1,6 @@
 # Planejamento Sprint 01
 
-## Sumário
-
-1. [Resumo da Sprint](#resumo)
-2. [Planejamento das Histórias](#planejamento)
-3. [Histórias da Sprint](#historias)
-
-<a name="resumo"></a>
-## 1. Resumo da Sprint
+## 1. Resumo da Sprint:
 
 
 __Número da sprint__: 01
@@ -33,15 +26,12 @@ __Papéis__:
 * Arquitetura: Victor Arnaud 
 
 
-
-<a name="planejamento"></a>
-## 2. Planejamento da Sprint
+## 2. Planejamento da Sprint:
 
 O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo. 
 Foi planejado também histórias como Documento de Visão e de Arquitetura, entretanto durante a sprint houve uma mudança no escopo, prejudicando um pouco o andamento da sprint 01.
 
 
-<a name="historias"></a>
 ## 3. Histórias da Sprint:
 	
 ## Planejadas:
@@ -51,8 +41,6 @@ Foi planejado também histórias como Documento de Visão e de Arquitetura, entr
 * [TS06](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/11) - Elaboração do Documento de Visão
 
 * [S07](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/20) - Estudar Python/Django (Focado em Classy Class-Based Views.)
- 
-* [TS08](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/12) - Elaborar Documento de Arquitetura
 
 * [S10](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/23) - Criar estrutura inicial do projeto Django.
 
@@ -66,4 +54,13 @@ Foi planejado também histórias como Documento de Visão e de Arquitetura, entr
 
 * [TS13](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/9) - Elaborar Termo de Abertura do Projeto. <!-- 5 -->
 
+## 4. Duplas de Pareamento:
+
+Os primeiros pareamentos foram definidos tendo como base a afinidade dos integrantes, para que eles possam se sentir mais confortáveis ao parearem pela primeira vez.
+
+* Gabriela e Elias
+
+* Geovana e Daniel
+
+* Joberth e Guilherme 
 
