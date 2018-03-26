@@ -107,6 +107,8 @@ See detailed `cookiecutter-django Docker documentation`_.
 
 * Instale o docker e o docker-compose em seu computador para usar com o sudo (administrador) - padrão
 
+* Para rodar o serviço de documentação: ```mkdocs serve```
+
 * Execute o comando ```make up``` para gerar a imagem do projeto e o container do ambiente de desenvolvimento,
 ao finalizar você pode acessar a aplicação utilizando a seguinde URL: ```0.0.0.0:8000```
 
