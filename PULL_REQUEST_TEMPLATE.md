@@ -1,1 +1,0 @@
-# Padrão de Abertura de _Pull Requests_
