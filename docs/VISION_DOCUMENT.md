@@ -319,7 +319,7 @@ O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a 
 
 ### 5.10 Linha de Cuidado
 
-O software listará diversos procedimentos e orientações que são recomendados à pessoas com Sídrome de Down de acordo com sua idade. Caso não haja confirmação de que o paciente tenha seguido o que foi listado até a data sugerida no aplicativo, o software notificará o paciente e/ou parente responsável, para que uma ação seja tomada para resolver a pendência.
+O software listará diversos procedimentos e orientações que são recomendados à pessoas com Síndrome de Down de acordo com sua idade. Caso não haja confirmação de que o paciente tenha seguido o que foi listado até a data sugerida no aplicativo, o software notificará o paciente e/ou parente responsável, para que uma ação seja tomada para resolver a pendência.
 
 ## 6: Restrições
 
