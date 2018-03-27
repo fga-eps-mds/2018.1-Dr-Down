@@ -48,7 +48,7 @@ Os primeiros pareamentos foram definidos tendo como base a afinidade dos integra
 
 ## 4. Planejamento da Sprint
 
-O planejamento da sprint foi feito com dificuldades, devido à incerteza sobre o quanto podíamos confiar nas informações que possuimos sobre o projeto.
+O planejamento da sprint foi feito com dificuldades, devido à incerteza sobre o quanto podíamos confiar nas informações que possuíamos sobre o projeto.
 
 Por isso, foi decidido que na semana o Time de Desenvolvimento se dedicará a treinamentos. Deste modo, histórias de usuários simples foram colocadas no Backlog da Sprint para treinar o time de desenvolvimento no pareamento, uso da linguagem e do framework que serão usados no projeto e na criação de testes unitários.
 
