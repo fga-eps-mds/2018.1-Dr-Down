@@ -36,9 +36,6 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - mostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir
   - garantir que o Time de Desenvolvimento entenda os ítens do Backlog do Produto no nível necessário
 
-- Responsável atual:
-  - Mariana Mendes
-
 ### Arquiteto de Software
 
 - Atribuição:
@@ -46,17 +43,14 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - determinar qual a arquitetura de software deverá ser utilizada nas diversas partes do projeto, levando em conta as especificidades deste e os requisitos exigidos
   - certificar-se de que a arquitetura definida está clara e sendo obedecida pelos demais membros do Time Scrum
 
-- Responsável atual:
-  - Victor Arnaud
-
 ### DevOps
 
 - Atribuição:
 
-  - automatizar ao máximo e monitorar os processos envolvidos na construção e implementação do software produzido pelo projeto Dr. Down
-
-- Responsável atual:
-  - João Sconetto
+  - garantir a integração continua
+  - garantir o deploy continuo
+  - facilitar o processo de desenvolvimento
+  - organizar os diversos pipeline do produto de software 
 
 ### Scrum Master
 
@@ -69,9 +63,8 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - servir ao Time de Desenvolvimento, auxiliando de diversas formas, tais como:
     - remover impedimentos ao progresso do Time de Desenvolvimento
     - instrui-lo em auto-organização e a serem multifuncionais
-
-- Responsável atual: 
-  - Diego França
+  - documentar cada Sprint
+  - determinar e analisar as métricas e indicadores utilizados para acompanhar o progresso de toda a equipe
 
 ### Time de Desenvolvimento
 
@@ -79,14 +72,6 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
 
   - entregar os ítens contidos no Backlog da Sprint ao final de cada Sprint
   - determinar como farão para entregar os ítens do Backlog da Sprint (auto-organização)
-
-- Responsáveis atuais:
-  - Daniel Maike
-  - Elias Bernardo
-  - Gabriela Medeiros
-  - Geovana Ramos
-  - Guilherme Guy
-  - Joberth Rodrigues
 
 ----
 
@@ -124,7 +109,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
     - O que foi feito pelo membro no dia anterior para ajudar o Time de Desenvolvimento na Sprint?
     - O que será feito pelo membro no dia atual para ajudar o Time de Desenvolvimento na Sprint?
-    - Houve algum empedimento para o membro que impossibilitou ele ajudar o Time de Desenvolvimento na Sprint? (gerenciamento de riscos)
+    - Houve algum empedimento para o membro que impossibilitou ele ajudar o restante da equipe na Sprint? (gerenciamento de riscos)
 
 - time box:
 
@@ -145,7 +130,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
     - o que foi feito e o que ficou como débito (Product Owner)
     - atualização do Backlog do Produto (Product Owner)
-    - problemas relacionados ao Backlog da Sprint e se/como foram resolvidos (Time de Desenvolvimento)
+    - problemas relacionados ao Backlog da Sprint e se/como foram resolvidos (toda a equipe)
 
 - time box:
 
@@ -156,8 +141,8 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
   - estiver terminado
   - estiver coberto, no mínimo, por **teste unitário e/ou de integração**
     - exceto em caso de documentação ou outros tipos de histórias que não puderem ser testadas
-  - tiver sido feito o **pull request** para a branch develop ou master e este ser **aceito**
-  - for aceito pelo Product Owner
+  - tiver sido feito o **pull request** para a branch develop ou master e este ser **aceito** pelos revisores
+  - a funcionalidade entregue ser aceita pelo Product Owner, de acordo com os critérios de aceitação especificados na história
 
 ### Retrospectiva da Sprint
 
