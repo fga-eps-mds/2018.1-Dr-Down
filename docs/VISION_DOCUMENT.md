@@ -72,6 +72,7 @@
 | 19/03/2018 | 1.0.1 | Revisões gerais | Joberth Rogers, Daniel Maike, Guilherme Guy |
 | 21/03/2018 | 1.0.2 | Revisão | Daniel Maike, Guilherme Guy |
 | 26/03/2018 | 1.1.0 | Adição de recurso do produto ao tópico 5 | Daniel Maike, Guilherme Guy, Joberth Rogers |
+| 27/03/2018 | 1.1.1 | Revisão do tópico 5 | Daniel Maike, Guilherme Guy, Joberth Rogers |
 
 
 ## 1: Introdução
@@ -318,7 +319,7 @@ O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a 
 
 ### 5.10 Linha de Cuidado
 
-O software possuirá uma lista de procedimentos que o paciente portador de SD deve cumprir de acordo com sua idade. Caso os procedimentos estejam atrasados o software notificará o paciente e/ou parente responsável, para que seja feita a conclusão do procedimento.
+O software listará diversos procedimentos e orientações que são recomendados à pessoas com Sídrome de Down de acordo com sua idade. Caso não haja confirmação de que o paciente tenha seguido o que foi listado até a data sugerida no aplicativo, o software notificará o paciente e/ou parente responsável, para que uma ação seja tomada para resolver a pendência.
 
 ## 6: Restrições
 
