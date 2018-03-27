@@ -71,6 +71,7 @@
 | 18/03/2018 | 1.0.0 | Termino do documento | Joberth Rogers, Elias Bernardo, Guilherme Guy |
 | 19/03/2018 | 1.0.1 | Revisões gerais | Joberth Rogers, Daniel Maike, Guilherme Guy |
 | 21/03/2018 | 1.0.2 | Revisão | Daniel Maike, Guilherme Guy |
+| 26/03/2018 | 1.1.0 | Adição de recurso do produto ao tópico 5 | Daniel Maike, Guilherme Guy, Joberth Rogers |
 
 
 ## 1: Introdução
@@ -314,6 +315,10 @@ O software irá gerar relatórios a respeito do uso do aplicativo e da lista de 
 ### 5.9 Marcação de consulta
 
 O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.
+
+### 5.10 Linha de Cuidado
+
+Então o software possuirá uma lista de procedimentos o paciente portador de SD deve cumprir, de acordo com sua idade. Caso os procedimentos estejam atrasados o software notificará o paciente e/ou parente responsável pelo paciente.
 
 ## 6: Restrições
 
