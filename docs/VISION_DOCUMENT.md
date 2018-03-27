@@ -318,7 +318,7 @@ O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a 
 
 ### 5.10 Linha de Cuidado
 
-Então o software possuirá uma lista de procedimentos o paciente portador de SD deve cumprir, de acordo com sua idade. Caso os procedimentos estejam atrasados o software notificará o paciente e/ou parente responsável pelo paciente.
+O software possuirá uma lista de procedimentos que o paciente portador de SD deve cumprir de acordo com sua idade. Caso os procedimentos estejam atrasados o software notificará o paciente e/ou parente responsável, para que seja feita a conclusão do procedimento.
 
 ## 6: Restrições
 
