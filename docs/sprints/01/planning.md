@@ -15,24 +15,36 @@ __Pontos Planejados__: 36 pontos
 
 __Membros presentes__: Todos
 
-__Papéis__:
+## 2. Papéis:
 
-* Scrum Master: Diego França
+- Scrum Master:
+	- Diego França
 
-* Product Onwer: Mariana de Souza Mendes
+- Product Owner:
+	- Mariana Mendes
 
-* Devops: João Pedro Sconetto
+- DevOps:
+ 	- João Pedro Sconetto
 
-* Arquitetura: Victor Arnaud 
+- Arquiteto:
+	Victor Arnaud
+
+- Time de Desenvolvimento:
+	- Daniel Maike
+	- Elias Bernardo
+	- Gabriela Medeiros
+	- Geovana Ramos
+	- Guilherme Guy
+	- Joberth Rodrigues
 
 
-## 2. Planejamento da Sprint:
+## 3. Planejamento da Sprint:
 
 O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo. 
 Foi planejado também histórias como Documento de Visão e de Arquitetura, entretanto durante a sprint houve uma mudança no escopo, prejudicando um pouco o andamento da sprint 01.
 
 
-## 3. Histórias da Sprint:
+## 4. Backlog da Sprint:
 	
 ## Planejadas:
 
