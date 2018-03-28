@@ -2,7 +2,7 @@
 
 ## Sumário
 
-## 1. Resumo da Sprint:
+## 1. Resumo da Sprint
 
 __Pontos concluídos__: 18 pontos
 
@@ -30,23 +30,25 @@ __Pontos concluídos__: 18 pontos
 
 Como observado acima, nessa Sprint não foi possível entregar todas as histórias que estavam no Backlog da Sprint. Todas as que ficaram pendentes estão relacionadas à codificação, e esta dificuldade era esperada, pois foi a primeira vez que o Time de Desenvolvimento teve que programar, usando um framework que nenhum dos membros do time dominava e ainda tiveram que criar testes unitários. Porém, o fato de apenas uma das histórias envolvendo programação ter sido entregue é preocupante, e por isso diversas medidas serão adotadas na Sprint 3 para que isto não ocorra novamente.
 
-## 2. Retrospectiva:
+## 2. Retrospectiva
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
 | Compartilhamento de conhecimento por meio do pareamento | Dificuldade com os testes | Mais atenção no uso do git |
 | Pareamento dando certo | Falta de proatividade e auto-gerenciamento | Melhorar o auto-gerenciamento |
 | Contato com o cliente | Falta de organização de MDS | Melhorar a comunicação |
-| - | Falta de experência | Melhorar o planejamento da sprint |
+| - | Falta de experência de EPS e MDS | Melhorar o planejamento das futuras sprints |
 
 
-## 3. Quadro de Conhecimento:
+## 3. Quadro de Conhecimento
 
-![Captura de tela de 2018-03-25 22-04-39.png](https://uploaddeimagens.com.br/images/001/345/533/original/Captura_de_tela_de_2018-03-25_22-04-39.png?1522026351)
+![Quadro de Conhecimento da Sprint 2](https://uploaddeimagens.com.br/images/001/345/533/original/Captura_de_tela_de_2018-03-25_22-04-39.png?1522026351)
 
-## 4. Risco Burndown:
+Comparado à Sprint 1, houve mudança em um dos conhecimentos para o Time de Desenvolvimento. Todos eles relataram estarem melhor com relação à Docker. Isto é algo positivo e, para que isto aconteça para outros conhecimentos, é importante estudarmos o que foi feito de positivo nesta sprint para o aprendizado da equipe.
 
-![Captura de tela de 2018-03-25 22-33-57.png](https://uploaddeimagens.com.br/images/001/345/587/original/Captura_de_tela_de_2018-03-25_22-33-57.png?1522028120)
+## 4. Risk Burndown
+
+![Risk Burndown da Sprint 2](https://uploaddeimagens.com.br/images/001/345/587/original/Captura_de_tela_de_2018-03-25_22-33-57.png?1522028120)
 
 Percebe-se que houve um aumento do risco da Sprint passada para esta. Isto se deve ao fato de que houve um aumento do risco de dívida técnica por histórias do Backlog da Sprint não serem entregues. Mesmo as medidas tomadas para mitigar esse risco, como dojôs e distribuição de histórias consideradas fáceis pela equipe de gerência não foram suficientes para evitar que este risco se concretizasse na Sprint 2. Por isso, novas medidas serão tomadas para mitigar este risco na próxima sprint.
 
@@ -54,18 +56,28 @@ O restante dos riscos foram avaliados como tendo as mesmas probabilidades da Spr
 
 ## 5. Burndown Chart:
 
-![Captura de tela de 2018-03-25 20-46-37.png](https://uploaddeimagens.com.br/images/001/345/516/original/Captura_de_tela_de_2018-03-25_20-46-37.png?1522025923)
+![Burndown Chart da Sprint 2](https://uploaddeimagens.com.br/images/001/345/516/original/Captura_de_tela_de_2018-03-25_20-46-37.png?1522025923)
 
 O gráfico acima reflete o fato de que nem todas as histórias previstas para esta Sprint foram entregues. Mas, como ponto positivo, nem todas as histórias foram entregues no fim da Sprint 2, evitando que o gráfico tenha sido um "precipício".
 
-## 6. Velocity:
+## 6. Velocity
 
-![Captura de tela de 2018-03-25 22-00-39.png](https://uploaddeimagens.com.br/images/001/345/521/original/Captura_de_tela_de_2018-03-25_22-00-39.png?1522026063)
+![Velocity da Sprint 3](https://uploaddeimagens.com.br/images/001/348/752/full/velocityS3.png?1522205157)
 
-Como consequência das 3 histórias que não foram entregues nesta Sprint, não foi entregue cerca de 50% dos pontos previstos para esta Sprint. O resultado disso foi uma entrega que ficou bem aquém do planejado. Além disso, a quantidade de pontos entregues acabou sendo muito menor do que a da Sprint 1, o que por sua vez baixou a velocity média da nossa equipe.
+Como consequência das 3 histórias que não foram entregues nesta Sprint, foi entregue pouco mais de 50% dos pontos previstos para esta Sprint. O resultado disso foi uma entrega que ficou aquém do planejado. Além disso, a quantidade de pontos entregues acabou sendo menor do que a da Sprint 1, o que por sua vez baixou a velocity média da nossa equipe.
 
-## 7. Gráfico de Commits:
+## 7. Gráfico de Commits
 
 ![Captura de tela de 2018-03-27 13-35-25.png](https://uploaddeimagens.com.br/images/001/347/774/original/Captura_de_tela_de_2018-03-27_13-35-25.png?1522168544)
 
+O gráfico de commits acima mostra apenas os commits que acabaram na branch develop através das histórias aceitas. Isto deve ser mencionado porque houve uma quantidade maior de commits do que o mostrado acima, mas como 3 histórias não foram aceitas, eles não apareceram neste gráfico.
+
 ## 8. Análise do Scrum Master
+
+Esta Sprint deverá ser analisada com cuidado por todos nós para que o os ocorridos nela não sejam repetidos em outras, especialmente a questão de não entregar as histórias. Neste sentido, a Retrospectiva da Sprint foi muito proveitosa, pois tivemos a oportunidade de ver vários erros que foram cometidos por todos os membros da equipe. Os erros que mais se destacaram foram:
+- comunicação deficiente entre o Time de Desenvolvimento e a equipe de gerência
+- dificuldade com os testes
+- dificuldade no uso do framework
+- planejamento da sprint
+
+Nas próximas sprints, deveremos tomar mais cuidado com estes e outros erros que aconteceram na Sprint 2, para que o processo e a produtividade possam melhorar e nos permitam não ter mais problemas como os que ocorreram nesta sprint.

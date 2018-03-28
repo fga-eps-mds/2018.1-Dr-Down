@@ -56,7 +56,7 @@ Já os membros da equipe responsáveis pela gestão do projeto continuarão trab
 
 ## 5. Mudanças
 
-Inicialmente, o Time de Desenvolvimento usaria essa semana para terminar as documentações pelas quais eles estão responsáveis (documentos de visão, arquitetura e especificação suplementar). Mas, devido à incerteza mencionada no Planejamento da Sprint sobre as informações do projeto, o Scrum Master em conjunto com a Product Owner decidiram suspender a confecção das documentações e adiantar o início da programação do aplicativo para a Sprint 2.
+Inicialmente, o Time de Desenvolvimento usaria essa semana para terminar as documentações pelas quais eles estão responsáveis (Documento de Arquitetura e  de Especificação Suplementar). Mas, devido à incerteza mencionada no Planejamento da Sprint sobre as informações do projeto e nos resultados da Sprint 1, o Scrum Master em conjunto com a Product Owner decidiram suspender a confecção das documentações e adiantar o início da programação do aplicativo para a Sprint 2.
 
 ## 6. Backlog da Sprint
 
