@@ -1,32 +1,12 @@
-# ÍNDICE
-
-- [Introdução](#introducao)
-- [Papéis na Equipe](#papeis-da-equipe)
-  - [Product Owner](#product-owner)
-  - [Arquiteto de Software](#arquiteto-de-software)
-  - [DevOps](#devops)
-  - [Scrum Master](#scrum-master)
-  - [Time de Desenvolvimento](#time-de-desenvolvimento)
-- [Ritos do Scrum](#ritos-do-scrum)
-  - [Sprint](#sprint)
-  - [Planejamento da Sprint](#planejamento-da-sprint)
-  - [Daily Meeting](#daily-meeting)
-  - [Review da Sprint](#review-da-sprint)
-  - [Retrospectiva da Sprint](#retrospectiva-da-sprint)
-
-----
-
-## Introdução
+# Introdução
 
 Este documento tem como objetivo deixar transparente o processo Ágil utilizado pelo Time Scrum do projeto Dr. Down, descrevendo informações como papéis existentes e ritos do Scrum adotados.
 
-----
-
-## Papéis na Equipe
+# Papéis na Equipe
 
 Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto Dr. Down, suas atribuições e as pessoas que os estão exercendo.
 
-### Product Owner
+## Product Owner
 
 - Atribuições:
 
@@ -36,14 +16,14 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - mostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir
   - garantir que o Time de Desenvolvimento entenda os ítens do Backlog do Produto no nível necessário
 
-### Arquiteto de Software
+## Arquiteto de Software
 
 - Atribuição:
 
   - determinar qual a arquitetura de software deverá ser utilizada nas diversas partes do projeto, levando em conta as especificidades deste e os requisitos exigidos
   - certificar-se de que a arquitetura definida está clara e sendo obedecida pelos demais membros do Time Scrum
 
-### DevOps
+## DevOps
 
 - Atribuição:
 
@@ -52,7 +32,7 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - facilitar o processo de desenvolvimento
   - organizar os diversos pipeline do produto de software 
 
-### Scrum Master
+## Scrum Master
 
 - Atribuições:
 
@@ -66,20 +46,18 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - documentar cada Sprint
   - determinar e analisar as métricas e indicadores utilizados para acompanhar o progresso de toda a equipe
 
-### Time de Desenvolvimento
+## Time de Desenvolvimento
 
 - Atribuições:
 
   - entregar os ítens contidos no Backlog da Sprint ao final de cada Sprint
   - determinar como farão para entregar os ítens do Backlog da Sprint (auto-organização)
 
-----
-
-## Ritos do Scrum
+# Ritos do Scrum
 
 Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down. Para cada rito está descrito seus objetivos, o tempo máximo de realização deles (entre colchetes [ ] ) e os dias e horários em que ocorrerão.
 
-### Sprint
+## Sprint
 
 - objetivo:
 
@@ -88,7 +66,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 - time box:
   - sábado à sexta [1 semana]
 
-### Planejamento da Sprint
+## Planejamento da Sprint
 
 - Reunião realizada com o Time Scrum no início de cada Sprint que tem como objetivo:
 
@@ -96,12 +74,19 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
     - isso deve ser negociado entre o Product Owner e o Time de Desenvolvimento, respeitando a capacidade projetada e a performance passada deste
 
-  - determinar como o Time de Desenvolvimento irá se organizar para que haja a entrega prevista para a Sprint
+  - estimar o esforço necessário para entregar as histórias do backlog, através da pontuação delas usando o _planning poker_:
+    - antes do início da pontuação de cada história, o Product Owner deve explicá-la e tirar as dúvidas da equipe, para que todos possam ter uma melhor base para a pontuação
+    - cada participante vota, dando os pontos que acham que aquela história vale, tendo como base quantas horas eles imaginam que serão necessárias para completá-la. O voto de todas as pessoas só é revelado quando todos tiverem decidido quantos pontos darão para a história
+      - a pontuação dada para cada história deve estar dentro da sequência de Fibonacci, sendo a menor pontuação válida 1
+      - este passo é repetido até que haja consenso de todos os presentes sobre quantos pontos a história em questão vale
+    - a equipe passa a pontuar a próxima história, até que todas estejam pontuadas
+
+  - determinar como a equipe irá se organizar para que haja a entrega prevista para a Sprint
 
 - time box:
   - sábado: 11:00 [2h]
 
-### Daily Meeting
+## Daily Meeting
 
 - Reunião diária do Time Scrum que tem como objetivo:
 
@@ -122,7 +107,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
     - segunda, quarta e sexta, começando às 8:00
 
-### Review da Sprint
+## Review da Sprint
 
 - objetivo:
 
@@ -144,7 +129,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
   - tiver sido feito o **pull request** para a branch develop ou master e este ser **aceito** pelos revisores
   - a funcionalidade entregue ser aceita pelo Product Owner, de acordo com os critérios de aceitação especificados na história
 
-### Retrospectiva da Sprint
+## Retrospectiva da Sprint
 
 - objetivo:
 
