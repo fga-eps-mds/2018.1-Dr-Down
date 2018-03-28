@@ -3,7 +3,7 @@ language: python
 python:
   - "3.6"
 env:
-  DOCKER_COMPOSE_VERSION: 1.8.0
+  DOCKER_COMPOSE_VERSION: 1.20.1
 services:
   - docker
 before_install:
@@ -14,5 +14,4 @@ before_script:
   - docker-compose -f local.yml pull
   - docker-compose -f local.yml up --build -d
 script:
-  - docker-compose -f local.yml run --rm django python manage.py migrate
   - docker-compose -f local.yml run --rm django py.test
