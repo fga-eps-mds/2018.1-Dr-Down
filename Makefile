@@ -105,6 +105,6 @@ staticfiles: manage.py
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py collectstatic
 
 # DOCUMENTATION
-docs: mkdocs.yml
+doc: mkdocs.yml
 	# Deploy all documentation
 	mkdocs gh-deploy
