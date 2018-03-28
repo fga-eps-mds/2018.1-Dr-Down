@@ -2,6 +2,7 @@
 
 | Data | Versão | Descrição | Autor |
 |:----:|:------:|:---------:|:-----:|
+
 |22/03/2018|0.0.1|Primeira Versão da EAP|Mariana De Souza Mendes|
 |27/03/2018|0.1|Segunda Versão da EAP|Mariana de Souza Mendes e João Pedro Sconetto|
 
@@ -13,3 +14,4 @@
 ## v.0.1
 
 ![EAP0.2.png](https://uploaddeimagens.com.br/images/001/348/702/original/EAP0.2.png?1522201469)
+

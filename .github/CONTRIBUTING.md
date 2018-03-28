@@ -50,5 +50,4 @@ __Exemplo:__
 
     Adds projects pull request file
 
-    Signed-off-by: Mariana Mendes <mare.s.mendes@gmail.com> (Assinatura de parceria)
-    Signed-off-by: João Pedro Sconetto <sconetto.joao@gmail.com>
+    Co-authored-by: Mariana Mendes <mare.s.mendes@gmail.com> (Assinatura de parceria)
