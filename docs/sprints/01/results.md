@@ -62,6 +62,12 @@ Conforme a figura acima mostra, no primeiro Risk Burndown o maior risco atual pa
 
 O risco de o Time de Desenvolvimento também foi alto, e isto se deve ao que foi demonstrado pelo Quadro de Conhecimento e também por eles ainda não terem começado a programar, para que assim demonstrem qual o nívem real de adaptação deles às tecnologias utilizadas.
 
-## 7. Análise do Scrum Master
+## 7. Gráfico de Commits
+
+![7. Gráfico de Commits da Sprint 1](https://uploaddeimagens.com.br/images/001/348/784/full/commitsS1.png?1522207232)
+
+Conforme o gráfico acima mostra, os commits durante a Sprint 1 fnão ficaram restritos a apenas alguns dias da semana, enquanto outros não tiveram atividade. Isto é positivo, pois demonstra que a equipe esteve sempre trabalhando, o que diminui os riscos relacionados deixarem pra fazer tudo de uma vez, especialmente se for próximo ao fim da sprint.
+
+## 8. Análise do Scrum Master
 
 A Sprint 1 foi muito atrapalhada pela falta de informações mais certas sobre o projeto, pois só pudemos colocar o Time de Desenvolvimento para criar o Documento de Visão, quando a ideia inicial era também colocar eles para fazerem o de Arquitetura e de Especificação Suplementar. Isso já trouxe um atraso para o que estava planejado para as primeiras sprints, e deverá ser resolvido o quanto antes.
