@@ -52,7 +52,7 @@
     <a class="current" href=".">Home</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#inicializando-projeto-para-desenvolvimento">Inicializando projeto para desenvolvimento</a></li>
+    <li class="toctree-l2"><a href="#bem-vindo-ao-dr-down">Bem vindo ao Dr. Down</a></li>
     
 
     </ul>
@@ -138,90 +138,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="inicializando-projeto-para-desenvolvimento">Inicializando projeto para desenvolvimento</h2>
-<ul>
-<li>
-<p>De um <code>git clone &lt;url-do-repositorio&gt;</code></p>
-</li>
-<li>
-<p>Instale o docker e o docker-compose em seu computador para usar com o sudo (administrador) - padrão</p>
-</li>
-<li>
-<p>Para rodar o serviço de documentação: <code>mkdocs serve</code> e para colocar no github.io <code>make doc</code></p>
-</li>
-<li>
-<p>Execute o comando <code>make up</code> para gerar a imagem do projeto e o container do ambiente de desenvolvimento,
-ao finalizar você pode acessar a aplicação utilizando a seguinde URL: <code>0.0.0.0:8000</code></p>
-</li>
-<li>
-<p>Assim que o ambiente tiver gerado crie um superusuário com os seguintes comandos:</p>
-</li>
-</ul>
-<p><code>make bash - Para entrar dentro do container
-  python3 manage.py createsuperuser</code></p>
-<ul>
-<li>
-<p>Com isso você pode modificar os arquivos localmente em sua máquina que ele serão automaticamente modificados dentro do container, possibilitando assim ter um ambiente de desenvolvimento sem a necessidade de muita configuração do mesmo.</p>
-</li>
-<li>
-<p><strong>Observação</strong>: Os comandos (make up, start, logs, stop, rm, ps) são comandos para manipulação de containers e tem como parâmetro opcional o <strong>file</strong> que pode passar o compose que deseja utilizar, por padrão é utilizado o <strong>docker-compose-dev.yml</strong> para gerar o ambiente de desenvolvimento. O de deploy é o arquivo <strong>docker-compose-prod.yml</strong> e o de teste é o arquivo <strong>docker-compose-test.yml</strong>.</p>
-</li>
-<li>
-<p><strong>Observação</strong>: Os comandos relacionados ao django tem como parâmetro opcional o <strong>container</strong> de execução do mesmo e alguns comandos tem parâmetros obrigatórios como é o caso o <strong>test</strong> e <strong>app</strong>.</p>
-</li>
-<li>
-<p><strong>Observação</strong>: Se o comando passado como parâmetro tiver espaço, utilize aspas duplas sobre ele, caso contrario não.</p>
-</li>
-<li>
-<p><strong>Comandos de desenvolvimento</strong>:</p>
-</li>
-<li>
-<p><code>make logs</code>: Gera a log do servidor.</p>
-</li>
-<li>
-<p><code>make start</code>: Inicializa os containers.</p>
-</li>
-<li>
-<p><code>make stop</code>: Para a execução dos containers.</p>
-</li>
-<li>
-<p><code>make ps</code>: Usado para ver quais containers estão em execução no momento.</p>
-</li>
-<li>
-<p><code>make rm</code>: Remove os containers.</p>
-</li>
-<li>
-<p><code>make app name=&lt;nome-do-app&gt;</code>: Cria uma aplicação django, com o parâmetro <strong>name</strong> que é obrigatório.</p>
-</li>
-<li>
-<p><code>make bash</code>: Entra no terminal de comandos do container do ambiente de desenvolvimento.</p>
-</li>
-<li>
-<p><code>make run container=&lt;container-de-execução&gt; command=&lt;comando-django&gt;</code>: Executa um comando dentro do
-    container especificado, o parâmetro container é opcional, por padrão é o container de desenvolvimento,
-    já o parâmetro <strong>command</strong> é obrigatório.</p>
-</li>
-<li>
-<p><code>make test</code>: Comando para rodar os testes automatizados do projeto, os testes por padrão deve estar em uma
-    pasta chamada <strong>tests</strong> dentro de cada aplicação criada, tem como parâmetros opcionais o <strong>container</strong> e o <strong>local</strong>
-    onde estão os testes.</p>
-</li>
-<li>
-<p><code>make migrations</code>: Gera todas as migrações da aplicação.</p>
-</li>
-<li>
-<p><code>make migrate</code>: Executa as migrações no banco de dados.</p>
-</li>
-<li>
-<p><code>make messages</code>: Cria os arquivos de tradução dentro das aplicações django que tiverem a pasta <strong>locale</strong> criadas.</p>
-</li>
-<li>
-<p><code>make compilemessages</code>: Gera as traduções especificadas no arquivo dentro da pasta <strong>locale</strong> de cada aplicação.</p>
-</li>
-<li>
-<p><code>make staticfiles</code>: Gera uma pasta que irá englobar todos os arquivos estáticos da aplicação.</p>
-</li>
-</ul>
+                <h2 id="bem-vindo-ao-dr-down">Bem vindo ao Dr. Down</h2>
               
             </div>
           </div>
@@ -273,5 +190,5 @@ ao finalizar você pode acessar a aplicação utilizando a seguinde URL: <code>0
 
 <!--
 MkDocs version : 0.17.3
-Build Date UTC : 2018-03-28 01:43:53
+Build Date UTC : 2018-03-28 02:00:02
 -->
