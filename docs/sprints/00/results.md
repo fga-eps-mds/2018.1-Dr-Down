@@ -43,7 +43,7 @@ Percebe-se no gráfico acima, todas histórias foram entregues no fim da Sprint.
 
 ## 5. Velocity
 
-![Captura de tela de 2018-03-26 13-56-46.png](https://uploaddeimagens.com.br/images/001/346/263/original/Captura_de_tela_de_2018-03-26_13-56-46.png?1522084326)
+![Velocity da Sprint 0](https://uploaddeimagens.com.br/images/001/348/696/full/velocityS0.png?1522201308)
 
 Como esta foi a Sprint 0, o velocity desta Sprint não pôde ser comparado com outros para determinar como está o desempenho da equipe, mas servirá como ponto de partida para os outros que virão futuramente.
 
