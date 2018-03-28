@@ -321,10 +321,11 @@ form .row:first-child .floating-label-form-group {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #2C3E50;
   color: #fff;
+  bottom: 10;
 }
 
 .copyright {
