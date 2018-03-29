@@ -22,3 +22,8 @@ body {
 .content {
   flex: 1;
 }
+
+.content-margin {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
