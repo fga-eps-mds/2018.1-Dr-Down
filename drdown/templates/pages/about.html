@@ -1,17 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block script %}
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+jQuery(document).ready(function($) { 
+    $(".scroll").click(function(event){        
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
+   });
+});
+</script>
+{% endblock script %}
+
+
 {% block css %}
 	{{ block.super }}
   <link href="{% static 'css/about.css' %}" rel="stylesheet">
-	}
 {% endblock css %}
 
 {% block title %} Down's Syndrome infos {% endblock title %}
 
 {% block content %}
 
-<section class="mb-0">
+<section class="mb-0 sumary">
+  <div class="container border-blue" id="sumary">
+    <h2 class="text-center text-uppercase">Sumary</h2>
+    <hr class="star-dark mb-5">
+    <div class="row">
+      <div class="col-lg-4 ml-auto sum">
+      	<li><a class="lead scroll" href="#text-about-sd", alt="">About Down's syndrome</a></li>
+      	<li><a class="lead scroll" href="#faq", alt="">Frequently Asked Questions (FAQ)</a></li>
+      	<li><a class="lead scroll" href="#question-1", alt="">What can be done to prevent Down's Syndrome?</a></li>
+      </div>
+      <div class="col-lg-4 mr-auto sum">
+      	<li><a class="lead scroll" href="#question-2", alt="">Is Down Syndrome a Disease? Can I catch it during my life?</a></li>
+      	<li><a class="lead scroll" href="#question-3", alt="">How can I identify Down Syndrome?</a></li>
+      	<li><a class="lead scroll" href="#question-4", alt="">How far does the autonomy of a child with Down syndrome develop?</a></li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mb-0" id="text-about-sd">
   	<div class="container">
 	    <h2 class="text-center text-uppercase">About Down's Syndrome</h2>
 	    <hr class="star-dark mb-5">
@@ -45,7 +76,7 @@
   	</div>
 </section>
 
-<section class="bg-primary text-white text-center">
+<section class="bg-primary text-white text-center" id="faq">
   	<div class="container">
 	   <!-- <img class="img-fluid mb-5 d-block mx-auto img-short" src="{% static 'images/img-question.png' %}" alt=""> -->
     	<h1 class="text-uppercase mb-0 text-overwide">FAQ</h1>
