@@ -18,24 +18,16 @@
     <!-- Latest compiled and minified Bootstrap 4 beta CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-
     <!-- Your stuff: Third-party CSS libraries go here -->
 
-    <!-- This file stores project-specific CSS -->
-
     <!-- Bootstrap core CSS -->
-    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Plugin CSS -->
-    <link href="{% static 'homepage/vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css">
-
     <!-- Custom styles for this template -->
-    <!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
     <link href="{% static 'homepage/css/freelancer.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
@@ -169,24 +161,19 @@
 
 
       <!-- place project specific Javascript in this file -->
-
       <script src="{% static 'js/project.js' %}"></script>
-      <script src="../static/homepage/vendor/jquery/jquery.min.js"></script>
-      <script src="../static/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="{% static 'homepage/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
       <!-- Plugin JavaScript -->
-      <script src="../static/homepage/vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="../static/homepage/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-      <!-- Contact Form JavaScript -->
-      <script src="../static/homepage/js/jqBootstrapValidation.js"></script>
-      <script src="../static/homepage/js/contact_me.js"></script>
+      <script src="{% static 'homepage/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
       <!-- Custom scripts for this template -->
-      <script src="../static/homepage/js/freelancer.min.js"></script>
+      <script src="{% static 'homepage/js/freelancer.min.js' %}"></script>
 
 
     {% endblock javascript %}
+
   </body>
 </html>
 
