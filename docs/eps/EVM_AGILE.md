@@ -33,7 +33,7 @@ O __EVM__ (_Earned Value Management_ ou Gerenciamento de Valor agregado) se trat
 | PDT | Pontos relacionados a dívidas técnicas deixadas pelas sprints anteriores. |
 | PC | Quantos pontos foram efetivamente completados na sprint. |
 | PV | O valor planejado é obtido através da multiplicação do PPC pelo orçamento do projeto. |
-| AC | É conseguido através da multiplicação do PPC pelo orçamento também, visto que no projeto ágil o valor real é sempre igual ao planejado. |
+| AC | É, também, obtido através da multiplicação do PPC pelo orçamento, visto que no projeto ágil o valor real é sempre igual ao planejado. |
 | EV | É resultado da multiplicação da PC pelo orçamento do projeto, divido pelo PRP. |
 | TEV | É o somatório do TEV até aquela sprint. |
 | CV | É a subtração do TEV pelo AC. |
