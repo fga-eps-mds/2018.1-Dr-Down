@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}Dr. Down{% endblock title %}</title>
+    <title>{% block title %}{% trans "Dr. Down" %}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="EPS/MDS">
@@ -123,9 +123,9 @@
           <div class="col-lg-8 mx-auto text-center">
             <h4 class="text-uppercase mb-4">CRIS DOWN</h4>
             <p class="lead">
-              Centro de Referência Interdisciplinar em Síndrome de Down
-              <br>Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte
-              <br>Phone: 3325-4219
+              {% trans "Centro de Referência Interdisciplinar em Síndrome de Down" %}
+              <br>{% trans "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte" %}
+              <br>{% trans "Phone: 3325-4219" %}
             </p>
           </div>
         </div>
@@ -134,7 +134,7 @@
 
     <div class="copyright py-4 text-center text-white">
       <div class="container">
-        <small>Copyright &copy; Dr. Down 2018</small>
+        <small>{% trans "Copyright &copy; Dr. Down 2018" %}</small>
       </div>
     </div>
 

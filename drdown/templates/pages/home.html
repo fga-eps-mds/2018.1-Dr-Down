@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block css %}
 
   <link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -19,11 +19,11 @@
 	<header class="masthead bg-primary text-white text-center">
 	  <div class="container">
 	    <img class="img-fluid mb-5 d-block mx-auto" src="../../static/homepage/img/prognosis-logo.png" alt="">
-	    <h1 class="text-uppercase mb-0">Dr. Down</h1>
+	    <h1 class="text-uppercase mb-0">{% trans "Dr. Down" %}</h1>
 	    <hr class="star-light">
 	    <h2 class="font-weight-light mb-0">
-	      <p>CRIS DOWN</p>
-	      <p>Medical Appointment - Queue - Foruns - Information</p>
+        <p>{% trans "CRIS DOWN" %}</p>
+	      <p>{% trans "Medical Appointment - Queue - Foruns - Information" %}</p>
 	    </h2>
 	  </div>
 	</header>
@@ -35,11 +35,11 @@
 	    <hr class="star-dark mb-5">
 	    <div class="row">
 	      <div class="col-lg-4 ml-auto">
-	        <p class="lead"> Dr. Down is a management tool for CRIS DOWN (Centro de Referência em Síndrome de Down) that makes possible to schedule medical appointments, to comunicate with the doctor and visualize general information.</p>
+	        <p class="lead">{% trans "Dr. Down is a management tool for CRIS DOWN (Centro de Referência em Síndrome de Down) that makes possible to schedule medical appointments, to comunicate with the doctor and visualize general information." %}</p>
 	      </div>
 	      <div class="col-lg-4 mr-auto">
-	        <p class="lead">CRIS DOWN was opened at Asa Norte, Brasília - DF, in April 2013. It is a place especialized in caring and accompaniment of patients with Down's syndrome, also known as trisomy 21.</p>
-	      </div>
+	        <p class="lead">{% trans "CRIS DOWN was opened at Asa Norte, Brasília - DF, in April 2013. It is a place especialized in caring and accompaniment of patients with Down's syndrome, also known as trisomy 21." %}</p>
+        </div>
 	    </div>
 	  </div>
 	</section>
