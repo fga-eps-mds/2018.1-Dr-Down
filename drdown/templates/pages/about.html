@@ -1,1 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+	{{ block.super }}
+  <link href="{% static 'css/about.css' %}" rel="stylesheet">
+	}
+{% endblock css %}
+
+{% block title %} Down's Syndrome infos {% endblock title %}
+
+{% block content %}
+<section class="content-about">
+	<div class="text-about">
+		<div class="col-lg-8 mx-auto">
+			<h1 class="text-center text-secondary" >Informações Síndrome de Down</h1>
+			<hr class="star-dark mb-5 text-center">	
+			<p>A Síndrome de Down é uma condição genética causada por uma mutação caracterizada pela presença de um cromossomo extra em todas ou grande parte das células de uma pessoa. </p>
+			<p>A pessoa portadora de síndrome de Down é capaz de viver de forma saudável e de se integrar à sociedade. O acompanhamento de profissionais da saúde é de suma importância para auxiliar essa pessoa a alcançar todo seu potencial e viver com qualidade.</p>
+			<p>A mutação genética que causa a síndrome é a trissomia 21. Um ser humano, normalmente, possui 46 cromossomos em suas células, entretanto, por motivos desconhecidos pela ciência, se faz presente uma mutação nas células reprodutivas em que o par de número 21 dos cromossomos apresenta um cromossomo a mais, assim a pessoa passa a possuir 47 cromossomos em suas células.</p>
+			<p>Alguns riscos de saúde surgem de forma relacionada a presença da síndrome. Um deles é o aumento do risco de problemas cardíacos, principalmente durante os primeiros anos de vida, o que faz com que vários portadores de Síndrome de Down passem pela necessidade de realizar cirurgias em seus primeiros anos.</p>
+			<p>Os portadores de Síndrome de Down possuem diversas características que são geradas por sua mutação genética, entretanto existe um ponto em comum à todos eles: um déficit intelectual, mas isso não impede o portador da Síndrome de Down de ter sucesso em sua vida profissional, acadêmica e pessoal.</p>
+			<p>A falta de informação sobre a síndrome e sobre as pessoas a ela condicionadas, é a principal causa da segregação a que essas pessoas muitas vezes são submetidas. Por isso, é essencial a compreensão e o entendimento da sociedade e, principalmente, dos familiares sobre  os cuidados e deveres daqueles que os cercam. </p>			
+		</div>	
+	</div>
+</section>
+{% endblock content %}
