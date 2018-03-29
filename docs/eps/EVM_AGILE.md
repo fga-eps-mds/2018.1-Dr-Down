@@ -7,7 +7,7 @@
 
 ## EVM Agile
 
-O __EVM__ (_Earned Value Management_ ou Gerenciamento de Valor agregado) se trata de uma técnica da gestão tradicional de projetos que é usada para medir a saúde de um projeto, essa técnica foi adaptada para projetos agéis afim de auxiliar a equipe de gestão a verificar métricas e avaliar entregas em projetos que seguem esta metodologia, e que enfretam alguns problemas como:
+O __EVM__ (_Earned Value Management_ ou Gerenciamento de Valor agregado) se trata de uma técnica da gestão tradicional de projetos que é usada para medir a saúde de um projeto. Essa técnica foi adaptada para projetos agéis a fim de auxiliar a equipe de gestão a verificar métricas e avaliar entregas em projetos que seguem esta metodologia, e que enfretam alguns problemas como:
 - Escopo aberto;
 - Falta de visibilidade em entregas e custos;
 - e etc.
