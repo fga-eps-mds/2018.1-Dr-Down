@@ -1,3 +1,26 @@
-p {
-  text-indent: 2em;
+.lead{
+	text-indent: 1em;
+	margin-top: 0em;
+	padding-top: 0em;
+}
+
+.img-short{
+	max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+.text-overwide{
+	font-size: 9em;
+}
+
+.size-title-question{
+	font-size: 2em;
+}
+
+.border-blue{
+	border-color: #2C3E50;
+	border-radius: 1em;
+	border-style: solid;
 }
