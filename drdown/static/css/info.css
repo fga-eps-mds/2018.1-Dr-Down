@@ -5,6 +5,10 @@
 	color: #2C3E50
 }*/
 
+.link{
+	text-decoration: underline;
+}
+
 a.hover-yellow:hover {
 	color: #C9AA0F;
 }
