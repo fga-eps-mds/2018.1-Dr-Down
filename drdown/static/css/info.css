@@ -1,12 +1,16 @@
-.lead{
+/*.lead{
 	text-indent: 1em;
 	margin-top: 0em;
 	padding-top: 0em;
 	color: #2C3E50
+}*/
+
+a.hover-yellow:hover {
+	color: #C9AA0F;
 }
 
-a:hover {
-	color: #C9AA0F;
+.text-blue-1{
+	color: #2C3E50;
 }
 
 .img-short{
@@ -16,11 +20,11 @@ a:hover {
     height: auto;
 }
 
-.text-overwide{
+.text-size-9{
 	font-size: 9em;
 }
 
-.size-title-question{
+.text-size-2{
 	font-size: 2em;
 }
 
