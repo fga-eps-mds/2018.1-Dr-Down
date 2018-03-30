@@ -210,42 +210,50 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 
 ### RELACIONAMENTOS:
 
-#### 1 - APPOINTMENTS tem USERS (Doctor)
+#### 1 - APPOINTMENTS tem USERS (Doctor):
 
 Um médico pode ter uma ou várias consultas, porém uma consulta pertence a um único médico.
+
 Cardinalidade: 1 X N
 
-#### 2 - APPOINTMENTS tem USERS (pacientes)
+#### 2 - APPOINTMENTS tem USERS (pacientes):
 
 Um paciente pode ter uma ou várias consultas, porém uma consulta pertence a um único paciente.
+
 Cardinalidade: 1 X N
 
 #### 3 - MEDICAL RECORDS tem USERS (pacientes):
 
 Um prontuário pertence a um único paciente, porém uma paciente pode conter um ou vários prontuários.
+
 Cardinalidade: 1 X N
 
 #### 4 - USER (médico) tem USERS (pacientes):
 
 Um médicos pode ter um ou vários pacientes, porém  um paciente pode ter um ou vários médicos.
+
 Cardinalidade: N X M
 
-#### 5 - POST pertence a USER
+#### 5 - POST pertence a USER:
 
 Um usuário pode ter um ou vários Posts, porém um post pertence a um único usuário.
+
 Cardinalidade:  1 X N
 
-#### 6 - POST tem TOPICS
+#### 6 - POST tem TOPICS:
 
 Um post pode conter um único tópico, porém um tópico pode conter vários posts.
+
 Cardinalidade: 1 X N
 
-#### 7 - CLINIC possui ADDRESS
+#### 7 - CLINIC possui ADDRESS:
 
 Um endereço pode pertecer a apenas uma clinica,porém uma clinica pode ter apenas um endereço.
+
 Cardinalidade: 1 X 1
 
-### 8 - EVENTS possui ADDRESS
+### 8 - EVENTS possui ADDRESS:
 
 Um evento pode ter apenas um endereço, porém um endereço pode ter apenas um evento.
+
 Cardinalidade: 1 X 1
