@@ -19,3 +19,18 @@ django-role-permissions==2.1.0  # https://github.com/vintasoftware/django-role-p
 # Django REST Framework
 djangorestframework==3.7.7  # https://github.com/encode/django-rest-framework
 coreapi==2.3.3  # https://github.com/core-api/python-client
+
+# Mkdocs
+# ------------------------------------------------------------------------------
+click==6.7
+Jinja2==2.10
+livereload==2.5.1
+Markdown==2.6.11
+MarkupSafe==1.0
+mkdocs==0.17.3
+mkdocs-rtd-dropdown==0.0.11
+Pygments==2.2.0
+pymdown-extensions==4.9.1
+PyYAML==3.12
+six==1.11.0
+tornado==4.5.3

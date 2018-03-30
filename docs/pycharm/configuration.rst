@@ -1,64 +1,64 @@
-Docker Remote Debugging
+Docker Debug Remoto
 =======================
 
-To connect to python remote interpreter inside docker, you have to make sure first, that Pycharm is aware of your docker.
+Para conectar um interpretador remoto de python dentro da docker, você deve primeiro garantir que o seu *Pycharm* está ciente da sua docker.
 
-Go to *Settings > Build, Execution, Deployment > Docker*. If you are on linux, you can use docker directly using its socket  `unix:///var/run/docker.sock`, if you are on Windows or Mac, make sure that you have docker-machine installed, then you can simply *Import credentials from Docker Machine*.
+Vá em *Settings > Build, Execution, Deployment > Docker*. Se você está em um ambiente linux você pode usar o docker diretamente usando o *socket* `unix:///var/run/docker.sock`, se você está em um Windows ou Mac, certifique-se de ter o *docker-machine instalado, e então você pode simplesmente importar suas credencias (*Import credentials from Docker Machine*). 
 
 .. image:: images/1.png
 
-Configure Remote Python Interpreter
------------------------------------
+Configurar Interpretador Remoto Python
+--------------------------------------
 
-This repository comes with already prepared "Run/Debug Configurations" for docker.
+Esse repositório já vem preparado para com "Configurações de Executar/Debugar" para *docker*.
 
 .. image:: images/2.png
 
-But as you can see, at the beggining there is something wrong with them. They have red X on django icon, and they cannot be used, without configuring remote python interpteter. To do that, you have to go to *Settings > Build, Execution, Deployment* first.
+Mas como vocẽ pode ver, no começo há algo de errado com as configurações. Elas them um X vermelho no ícone do django, e elas não podem ser usadas sem a configuração do interpretador remoto python. Para isso você deve ir em *Settings > Build, Execution, Deployment* primeiro.
 
 
-Next, you have to add new remote python interpreter, based on already tested deployment settings. Go to *Settings > Project > Project Interpreter*. Click on the cog icon, and click *Add Remote*.
+Agora, você deve adicionar um novo interpretador remoto python, com base nas configurações de implantação já testadass. Vá para *Settings > Project > Project Interpreter*. Clique na engrenagem e então em *Add Remote*.
 
 .. image:: images/3.png
 
-Switch to *Docker Compose* and select `local.yml` file from directory of your project, next set *Service name* to `django`
+Troque para *Docker Compose* e selecione o arquivo `local.yml` do diretório do seu projeto, em seguida configure o *Service name* para `django`
 
 .. image:: images/4.png
 
-Having that, click *OK*. Close *Settings* panel, and wait few seconds...
+Feito isso, clique *OK*. Feche o painel de configuração e espere alguns segundos...
 
 .. image:: images/7.png
 
-After few seconds, all *Run/Debug Configurations* should be ready to use.
+Depois de alguns segundos, todas as *Run/Debug Configurations* devem estar pronta para uso.
 
 .. image:: images/8.png
 
-**Things you can do with provided configuration**:
+**Coisas que você pode fazer com a configuração fornecida**:
 
-* run and debug python code
+* executar e debugar código python
 .. image:: images/f1.png
-* run and debug tests
+* executar e debugar testes
 .. image:: images/f2.png
 .. image:: images/f3.png
-* run and debug migrations or different django management commands
+* executar e debugar migrações ou comandos do *django management*
 .. image:: images/f4.png
-* and many others..
+* e vários outros..
 
 Known issues
 ------------
 
-* Pycharm hangs on "Connecting to Debugger"
+* Pycharm trava em "Connecting to Debugger"
 
 .. image:: images/issue1.png
 
-This might be fault of your firewall. Take a look on this ticket - https://youtrack.jetbrains.com/issue/PY-18913
+Isso pode ser algum problema com o seu firewall. Dê uma olhada neste ticket - https://youtrack.jetbrains.com/issue/PY-18913
 
-* Modified files in `.idea` directory
+* Arquivos modificados no diretório `.idea` 
 
-Most of the files from `.idea/` were added to `.gitignore` with a few exceptions, which were made, to provide "ready to go" configuration. After adding remote interpreter some of these files are altered by PyCharm:
+A maioria dos arquivos do diretório `.idea` foram adicionados ao `.gitignore` com algumas exceções, o qual foram feitos, para fornecer uma configuração *"ready to go"*. Depois de adicionar o interpretador remoto alguns desses arquivos serão alterados pelo PyCharm: 
 
 .. image:: images/issue2.png
 
-In theory you can remove them from repository, but then, other people will lose a ability to initialize a project from provided configurations as you did. To get rid of this annoying state, you can run command::
+Em teoria você pode removê-los do repositório, mas então, outras pessoas perderão a capacidade de inicializar um projeto a partir das configurações como você fez. Para se livrar deste estado incoveniente, você pode rodar o comando::
 
     $ git update-index --assume-unchanged drdown.iml

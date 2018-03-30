@@ -103,3 +103,8 @@ compilemessages:
 staticfiles: manage.py
 	# Collect all static files
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py collectstatic
+
+# DOCUMENTATION
+doc: mkdocs.yml
+	# Deploy all documentation
+	mkdocs gh-deploy
