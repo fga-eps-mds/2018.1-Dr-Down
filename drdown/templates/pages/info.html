@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block script %}
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -19,7 +20,7 @@ jQuery(document).ready(function($) {
   <link href="{% static 'css/info.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block title %} Down's Syndrome infos {% endblock title %}
+{% block title %}{% trans "Down's Syndrome infos" %}{% endblock title %}
 
 {% block content %}
 
@@ -29,14 +30,14 @@ jQuery(document).ready(function($) {
     <hr class="star-dark mb-5">
     <div class="row">
       <div class="col-lg-4 ml-auto">
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#text-about-sd", alt="">About Down's syndrome</a></li>
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#faq", alt="">Frequently Asked Questions (FAQ)</a></li>
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-1", alt="">What can be done to prevent Down's Syndrome?</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#text-about-sd", alt="">{% trans "About Down's syndrome" %}</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#faq", alt="">{% trans "Frequently Asked Questions (FAQ)" %}</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-1", alt="">{% trans "What can be done to prevent Down's Syndrome?" %}</a></li>
       </div>
       <div class="col-lg-4 mr-auto sum">
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-2", alt="">Is Down Syndrome a Disease? Can I catch it during my life?</a></li>
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-3", alt="">How can I identify Down Syndrome?</a></li>
-      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-4", alt="">How far does the autonomy of a child with Down syndrome develop?</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-2", alt="">{% trans "Is Down Syndrome a Disease? Can I catch it during my life?" %}</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-3", alt="">{% trans "How can I identify Down Syndrome?" %}</a></li>
+      	<li><a class="lead scroll hover-yellow text-blue-1" href="#question-4", alt="">{% trans "How far does the autonomy of a child with Down syndrome develop?" %}</a></li>
       </div>
     </div>
   </div>
@@ -44,32 +45,32 @@ jQuery(document).ready(function($) {
 
 <section class="mb-0" id="text-about-sd">
   	<div class="container">
-	    <h2 class="text-center text-uppercase text-blue-1">About Down's Syndrome</h2>
+	    <h2 class="text-center text-uppercase text-blue-1">{% trans "About Down's Syndrome" %}</h2>
 	    <hr class="star-dark mb-5">
 	    <div class="row">
 	      	<div class="col-lg-4 ml-auto">
 		        <p class="lead"> 
-		        	Down syndrome is a genetic condition caused by a mutation. Its characterized by the presence of an extra chromosome in all or most of a person's cells.
+		        	{% trans "Down syndrome is a genetic condition caused by a mutation. Its characterized by the presence of an extra chromosome in all or most of a person's cells." %}
 	        	<p/>
 	        	<p class="lead">
-		        	A person with Down syndrome is able to live healthily and integrate with society. But the accompaniment of health professionals is of paramount importance to help this person reach his full potential and live with quality.
+		        	{% trans "A person with Down syndrome is able to live healthily and integrate with society. But the accompaniment of health professionals is of paramount importance to help this person reach his full potential and live with quality." %}
 		        <p/>
 		        <p class="lead">
-		        	A person with Down syndrome is able to live healthily and integrate with society. But the accompaniment of health professionals is of paramount importance to help this person reach his full potential and live with quality.
+		        	{% trans "A person with Down syndrome is able to live healthily and integrate with society. But the accompaniment of health professionals is of paramount importance to help this person reach his full potential and live with quality." %}
 		        <p/>
 		        <p class="lead">
-		        	Some health risks arise in a way related to the presence of the syndrome. One of them is the increased risk of heart problems, especially during the first years of life, which causes several people with Down Syndrome to undergo the need to perform surgeries while they are still young.
+		        	{% trans "Some health risks arise in a way related to the presence of the syndrome. One of them is the increased risk of heart problems, especially during the first years of life, which causes several people with Down Syndrome to undergo the need to perform surgeries while they are still young." %}
 		        <p/>
 	      	</div>
 	    	<div class="col-lg-4 mr-auto">
         		<p class="lead">
-					People with Down Syndrome have several characteristics that are generated by their genetic mutation, but there is a common point in all of them: an intellectual deficit. But this does not prevent the person with Down Syndrome from succeeding in his professional, academic and personal life.
+					{% trans "People with Down Syndrome have several characteristics that are generated by their genetic mutation, but there is a common point in all of them: an intellectual deficit. But this does not prevent the person with Down Syndrome from succeeding in his professional, academic and personal life." %}
 				<p/>
 				<p class="lead">
-					A person with Down Syndrome is a capable human being who can work in many areas, ranging from the performing arts, or a career in the field of education to political positions.
+					{% trans "A person with Down Syndrome is a capable human being who can work in many areas, ranging from the performing arts, or a career in the field of education to political positions." %}
 				<p/>
 				<p class="lead">
-					The lack of information about the syndrome and the people affected by it is the main cause of the segregation to which these people can be subjected. Therefore, it is essential to have comprehension and understatement from society and, above all, family members about the care and duties needed by those around them.
+					{% trans "The lack of information about the syndrome and the people affected by it is the main cause of the segregation to which these people can be subjected. Therefore, it is essential to have comprehension and understatement from society and, above all, family members about the care and duties needed by those around them." %}
 				<p/>
       		</div>
 	    </div>
@@ -82,18 +83,18 @@ jQuery(document).ready(function($) {
     	<h1 class="text-uppercase mb-0 text-size-9">FAQ</h1>
     	<hr class="star-light">
     	<h2 class="font-weight-light mb-0"> 
-    		<p class="lead text-white text-center">Frequently Asked Questions</p>
+    		<p class="lead text-white text-center">{% trans "Frequently Asked Questions" %}</p>
     	</h2>
   	</div>
 </section>
 
 <section class="mb-0 border-blue margin-1 " id="question-1">
   	<div class="container ">
-    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">What can be done to prevent Down's Syndrome?</h2>
+    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">{% trans "What can be done to prevent Down's Syndrome?" %}</h2>
     	<hr class="star-dark mb-5">
     	<div class="row">
 	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead"> Even though the chance of Down's syndrome increases according to the age range of the child's parents, Down's syndrome is not caused by the parents, it's no one's fault and there's nothing you can do to avoid it. This syndrome affects people of all races, levels of study, social classes and others.</p>
+		        <p class="lead"> {% trans "Even though the chance of Down's syndrome increases according to the age range of the child's parents, Down's syndrome is not caused by the parents, it's no one's fault and there's nothing you can do to avoid it. This syndrome affects people of all races, levels of study, social classes and others." %}</p>
 	      	</div>
     	</div>
   	</div>
@@ -101,11 +102,11 @@ jQuery(document).ready(function($) {
 
 <section class="mb-0 border-blue margin-1" id="question-2">
   	<div class="container ">
-    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">Is Down Syndrome a Disease? Can I catch it during my life?</h2>
+    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">{% trans "Is Down Syndrome a Disease? Can I catch it during my life?" %}</h2>
     	<hr class="star-dark mb-5">
     	<div class="row">
 	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead"> Down Syndrome is not a disease, just a condition that affects the life of an individual since birth and requires greater attention and care from the parents.</p>
+		        <p class="lead">{% trans "Down Syndrome is not a disease, just a condition that affects the life of an individual since birth and requires greater attention and care from the parents." %}</p>
 	      	</div>
     	</div>
   	</div>
@@ -113,12 +114,12 @@ jQuery(document).ready(function($) {
 
 <section class="mb-0 border-blue margin-1" id="question-3">
   	<div class="container ">
-    	<h2 class="text-center text-uppercase text-size-2 text-secondary text-blue-1">How can I identify Down Syndrome?
+    	<h2 class="text-center text-uppercase text-size-2 text-secondary text-blue-1">{% trans "How can I identify Down Syndrome?" %}
 </h2>
     	<hr class="star-dark mb-5">
     	<div class="row">
 	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead"> Down Syndrome can be detected during pregnancy. You should see a doctor for the diagnosis.</p>
+		        <p class="lead">{% trans "Down Syndrome can be detected during pregnancy. You should see a doctor for the diagnosis." %}</p>
 	      	</div>
     	</div>
   	</div>
@@ -126,11 +127,11 @@ jQuery(document).ready(function($) {
 
 <section class="mb-0 border-blue margin-1" id="question-4">
   	<div class="container ">
-    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">How far does the autonomy of a child with Down syndrome develop?</h2>
+    	<h2 class="text-center text-uppercase text-size-2 text-blue-1">{% trans "How far does the autonomy of a child with Down syndrome develop?" %}</h2>
     	<hr class="star-dark mb-5">
     	<div class="row">
 	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead"> There is no fixed limit that represents a developmental apex of a child with Down Syndrome. It is common for medical monitoring and the help of family members or caregivers to facilitate a child's development.</p>
+		        <p class="lead">{% trans "There is no fixed limit that represents a developmental apex of a child with Down Syndrome. It is common for medical monitoring and the help of family members or caregivers to facilitate a child's development." %}</p>
 	      	</div>
     	</div>
   	</div>
@@ -138,7 +139,7 @@ jQuery(document).ready(function($) {
 
 <section class="mb-0 border-blue margin-1" id="further-reading">
     <div class="container ">
-      <h2 class="text-center text-uppercase text-size-2 text-secondary text-blue-1">Further reading</h2>
+      <h2 class="text-center text-uppercase text-size-2 text-secondary text-blue-1">{% trans "Further reading" %}</h2>
       <hr class="star-dark mb-5">
       <div class="row">
           <div class="col-lg-8 mx-auto text-center">
