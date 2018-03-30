@@ -11,3 +11,19 @@
   background-color: #f2dede;
   border-color: #eed3d7;
 }
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+
+.content-margin {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
