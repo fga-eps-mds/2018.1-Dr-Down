@@ -25,3 +25,15 @@
 	border-style: solid;
 }
 
+#sumary{
+	padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.margin-1{
+	margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.marginl-1{
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}

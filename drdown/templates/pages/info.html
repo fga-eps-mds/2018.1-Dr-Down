@@ -11,20 +11,20 @@ jQuery(document).ready(function($) {
    });
 });
 </script>
-{% endblock script %}
+{% endblock %}
 
 
 {% block css %}
 	{{ block.super }}
-  <link href="{% static 'css/about.css' %}" rel="stylesheet">
-{% endblock css %}
+  <link href="{% static 'css/info.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block title %} Down's Syndrome infos {% endblock title %}
 
 {% block content %}
 
-<section class="mb-0 sumary">
-  <div class="container border-blue" id="sumary">
+<section class="mb-0 sumary border-blue marginl-1">
+  <div class="container " id="sumary">
     <h2 class="text-center text-uppercase">Sumary</h2>
     <hr class="star-dark mb-5">
     <div class="row">
@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
   	</div>
 </section>
 
-<section class="mb-0 border-blue" id="question-1">
+<section class="mb-0 border-blue margin-1" id="question-1">
   	<div class="container ">
     	<h2 class="text-center text-uppercase size-title-question">What can be done to prevent Down's Syndrome?</h2>
     	<hr class="star-dark mb-5">
@@ -99,7 +99,7 @@ jQuery(document).ready(function($) {
   	</div>
 </section>
 
-<section class="mb-0 border-blue" id="question-2">
+<section class="mb-0 border-blue margin-1" id="question-2">
   	<div class="container ">
     	<h2 class="text-center text-uppercase size-title-question">Is Down Syndrome a Disease? Can I catch it during my life?</h2>
     	<hr class="star-dark mb-5">
@@ -111,7 +111,7 @@ jQuery(document).ready(function($) {
   	</div>
 </section>
 
-<section class="mb-0 border-blue" id="question-3">
+<section class="mb-0 border-blue margin-1" id="question-3">
   	<div class="container ">
     	<h2 class="text-center text-uppercase size-title-question">How can I identify Down Syndrome?
 </h2>
@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
   	</div>
 </section>
 
-<section class="mb-0 border-blue" id="question-4">
+<section class="mb-0 border-blue margin-1" id="question-4">
   	<div class="container ">
     	<h2 class="text-center text-uppercase size-title-question">How far does the autonomy of a child with Down syndrome develop?</h2>
     	<hr class="star-dark mb-5">
@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
     	</div>
   	</div>
 </section>
-{% endblock content %}
+{% endblock %}
 
 
 

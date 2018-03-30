@@ -16,14 +16,14 @@ class HomepageTestCase(TestCase):
             Checks if 'About SD' view is loaded successfully
         """
 
-        url = reverse('about')
+        url = reverse('info')
         response = self.client.get(url)
         self.assertEquals(response.status_code, 200)
 
     def test_home_url_resolves_index_view(self):
         """
-            Checks if the '/about' url is returning the 'About SD' view
+            Checks if the '/info' url is returning the 'About SD' view
         """
 
-        response = self.client.get(reverse('about'))
-        self.assertTemplateUsed(response, 'pages/about.html')
+        response = self.client.get(reverse('info'))
+        self.assertTemplateUsed(response, 'pages/info.html')
