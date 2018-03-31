@@ -15,6 +15,7 @@
 | 28/03/2018 | 0.6.1 | Revisão geral | Daniel Maike e Joberth Rogers |
 | 28/03/2018 | 1.0.0 | Entrega da primeira versão estável | Daniel Maike, Elias Bernardo, Joberth Rogers, Guilherme Guy, Gabriela Medeiros e Geovana Ramos |
 | 29/03/2018 | 1.0.1 | Revisões gerais | Daniel Maike, Guilherme Guy e Joberth Rogers |
+| 29/03/2018 | 1.1.0 | Adição do tópico 2.4 | Geovana Ramos |
 
 ## 1: Introdução
 
@@ -64,6 +65,11 @@ Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do us
 ### 2.3 Template
 
 Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
+
+### 2.4 Diagrama arquitetural
+
+![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/353/523/original/MICROSERVI%C3%87OS.png?1522527293)
+
 
 ## 3:  Requisitos e Restrições Arquiteturais
 
