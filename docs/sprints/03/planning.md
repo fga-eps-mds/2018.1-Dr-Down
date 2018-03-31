@@ -81,3 +81,7 @@ Inicialmente, nesta semana o Time de Desenvolvimento também refatoraria o CRUD 
 - [TS32](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/54) - Refatorar a EAP
 
 - [TS33](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/18) - Tornar transparente o Scrum utilizado pelo time
+
+- [TS34](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/58) - Documentar a sprint 3
+
+- [TS35](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/38) - Elaborar o EVM

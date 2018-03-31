@@ -30,6 +30,8 @@ __Pontos concluídos__: 40 pontos
 
   - [TS33](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/18) - Tornar transparente o Scrum utilizado pelo time
 
+  - [TS34](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/58) - Documentar a sprint 3
+
   - [TS35](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/38) - Elaborar o EVM
 
 Como pode ser visto acima, todas as histórias desta sprint foram entregues, ao contrário do que aconteceu na anterior. Cabe ressaltar também que houve uma história a mais incluída nesta sprint (TS35), pois percebeu-se a necessidade de elaborar o EVM ainda durante a Sprint 3.
