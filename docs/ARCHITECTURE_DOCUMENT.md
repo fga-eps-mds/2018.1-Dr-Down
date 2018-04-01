@@ -1,4 +1,4 @@
-# Documento de Arquitetura
+﻿# Documento de Arquitetura
 
 ## Histórico de Revisão
 
@@ -68,7 +68,7 @@ Agrega toda a parte visual que estará visível para os usuários. Inclui os có
 
 ### 2.4 Diagrama arquitetural
 
-![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/353/523/original/MICROSERVI%C3%87OS.png?1522527293)
+![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/354/150/original/MICROSERVI%C3%87OS-COR.png?1522592161)
 
 
 ## 3:  Requisitos e Restrições Arquiteturais
