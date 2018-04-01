@@ -29,5 +29,3 @@ pages:
     - Planejamento: sprints/03/planning.md
     - Resultado: sprints/03/results.md
 
-markdown_extensions:
-  - pymdownx.superfences
