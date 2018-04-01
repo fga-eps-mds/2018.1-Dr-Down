@@ -5,15 +5,27 @@ theme: readthedocs
 
 pages:
   - Home: index.md
-  - Termo de abertura: TAP.md
-  - Documento de visão: VISION_DOCUMENT.md
+  - Termo de abertura: eps/TAP.md
+  - Documento de visão: mds/VISION_DOCUMENT.md
+  - Documento de arquitetura: mds/ARCHITECTURE_DOCUMENT.md
+  - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
+  - EAP: eps/EAP.md
+  - ROADMAP: eps/ROADMAP.md
+  - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
+  - Definição de Pronto: eps/DONE_DEFINITION.md
+  - EVM: eps/EVM_AGILE.md
   - Código de conduta: CODE_OF_CONDUCT.md
+  - Ferramentas: eps/PROJECT_TOOLS.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
   - Sprint 1:
     - Planejamento: sprints/01/planning.md
     - Resultado: sprints/01/results.md
+  - Sprint 2:
+    - Planejamento: sprints/02/planning.md
+    - Resultado: sprints/02/results.md
+  - Sprint 3:
+    - Planejamento: sprints/03/planning.md
+    - Resultado: sprints/03/results.md
 
-markdown_extensions:
-  - pymdownx.superfences
