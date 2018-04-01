@@ -8,7 +8,7 @@ pages:
   - Termo de abertura: eps/TAP.md
   - Documento de visão: mds/VISION_DOCUMENT.md
   - Documento de arquitetura: mds/ARCHITECTURE_DOCUMENT.md
-  - Especificação de caso de uso: mds/ADDITIONAL_SPECIFICATION.md
+  - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
   - EAP: eps/EAP.md
   - ROADMAP: eps/ROADMAP.md
   - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
