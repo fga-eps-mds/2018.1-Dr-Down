@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/eps/TAP/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,63 @@
     
     <url>
      <loc>/mds/VISION_DOCUMENT/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/mds/ARCHITECTURE_DOCUMENT/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/mds/ADDITIONAL_SPECIFICATION/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/EAP/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/ROADMAP/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/SCRUM_METHODOLOGY_DRDOWN/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/DONE_DEFINITION/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/EVM_AGILE/</loc>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +84,15 @@
     
     <url>
      <loc>/CODE_OF_CONDUCT/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/eps/PROJECT_TOOLS/</loc>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -37,13 +101,13 @@
         
     <url>
      <loc>/sprints/00/planning/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/sprints/00/results/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -53,13 +117,13 @@
         
     <url>
      <loc>/sprints/01/planning/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/sprints/01/results/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -69,13 +133,29 @@
         
     <url>
      <loc>/sprints/02/planning/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/sprints/02/results/</loc>
-     <lastmod>2018-03-31</lastmod>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/sprints/03/planning/</loc>
+     <lastmod>2018-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/sprints/03/results/</loc>
+     <lastmod>2018-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -376,6 +376,511 @@
             "title": "9.2 Requisitos de Desempenho"
         }, 
         {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/", 
+            "text": "Documento de Arquitetura\n\n\nHist\u00f3rico de Revis\u00e3o\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutores\n\n\n\n\n\n\n\n\n\n\n24/03/2018\n\n\n0.0.1\n\n\nAbertura do documento\n\n\nGeovana Ramos\n\n\n\n\n\n\n26/03/2018\n\n\n0.1.0\n\n\nT\u00f3picos 1 e 2\n\n\nGuilherme Guy e Gabriela Medeiros\n\n\n\n\n\n\n26/03/2018\n\n\n0.2.0\n\n\nT\u00f3picos 3 e 4\n\n\nDaniel Maike e Joberth Rogers\n\n\n\n\n\n\n26/03/2018\n\n\n0.3.0\n\n\nT\u00f3picos 5 e 6\n\n\nElias Bernardo e Geovana Ramos\n\n\n\n\n\n\n27/03/2018\n\n\n0.3.1\n\n\nCorre\u00e7\u00e3o de informa\u00e7\u00f5es hist\u00f3rico de revis\u00e3o\n\n\nDaniel Maike, Gabriela Medeiros e Joberth Rogers\n\n\n\n\n\n\n27/03/2018\n\n\n0.4.0\n\n\nDiagrama de classes\n\n\nElias Bernardo, Geovana Ramos e Guilherme Guy\n\n\n\n\n\n\n28/03/2018\n\n\n0.5.0\n\n\nAltera\u00e7\u00e3o no t\u00f3pico 3\n\n\nDaniel Maike e Geovana Ramos\n\n\n\n\n\n\n28/03/2018\n\n\n0.6.0\n\n\nModelo Entidade Relacionamento\n\n\nDaniel Maike e Joberth Rogers\n\n\n\n\n\n\n28/03/2018\n\n\n0.6.1\n\n\nRevis\u00e3o geral\n\n\nDaniel Maike e Joberth Rogers\n\n\n\n\n\n\n28/03/2018\n\n\n1.0.0\n\n\nEntrega da primeira vers\u00e3o est\u00e1vel\n\n\nDaniel Maike, Elias Bernardo, Joberth Rogers, Guilherme Guy, Gabriela Medeiros e Geovana Ramos\n\n\n\n\n\n\n29/03/2018\n\n\n1.0.1\n\n\nRevis\u00f5es gerais\n\n\nDaniel Maike, Guilherme Guy e Joberth Rogers\n\n\n\n\n\n\n29/03/2018\n\n\n1.1.0\n\n\nAdi\u00e7\u00e3o do t\u00f3pico 2.4\n\n\nGeovana Ramos\n\n\n\n\n\n\n\n\n1: Introdu\u00e7\u00e3o\n\n\n1.1 Finalidade\n\n\nEste documento tem como finalidade apresentar uma vis\u00e3o geral da arquitetura que ser\u00e1 usada no desenvolvimento do projeto Dr. Down e permitir um maior entendimento do sistema e de como ele ir\u00e1 se comportar. Com o maior detalhamento da arquitetura, espera-se deixar expl\u00edcitas as decis\u00f5es arquiteturais feitas pela equipe de desenvolvimento em conjunto com os gestores do projeto para o desenvolvimento do software.\n\n\n1.2 Escopo\n\n\nDr. Down ser\u00e1 uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar a administra\u00e7\u00e3o do fluxo de pacientes do CRIS DOWN, al\u00e9m de possibilitar a comunica\u00e7\u00e3o entre m\u00e9dicos, pacientes e familiares. O documento apresentar\u00e1 toda a parte arquitetural para a confec\u00e7\u00e3o do software Dr. Down, a fim de tornar claras as caracter\u00edsticas arquiteturais do projeto.\n\n\n1.3 Defini\u00e7\u00f5es, acr\u00f4nimos e abrevia\u00e7\u00f5es\n\n\n\n\n\n\n\n\nAbrevia\u00e7\u00e3o\n\n\nDefini\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nSD\n\n\nS\u00edndrome de Down\n\n\n\n\n\n\nCRIS DOWN\n\n\nCentro de Refer\u00eancia em S\u00edndrome de Down\n\n\n\n\n\n\nMDS\n\n\nM\u00e9todos de Desenvolvimento de Software\n\n\n\n\n\n\nEPS\n\n\nEngenharia de Produto de Software\n\n\n\n\n\n\nUnB\n\n\nUniversidade de Bras\u00edlia\n\n\n\n\n\n\nSES\n\n\nSecretar\u00eda de Estado de Sa\u00fade\n\n\n\n\n\n\nCBV\n\n\nClass-Based Views\n\n\n\n\n\n\n\n\n1.4 Refer\u00eancias\n\n\nARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Dispon\u00edvel em: \nhttp://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm\n. Acesso em: 24 Mar. 2018.\n\n\nPADR\u00d5ES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Dispesclareceron\u00edvel em: \nhttps://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django\n. Acesso em: 26 Mar. 2018.\n\n\nTHE MODEL-VIEW-CONTROLLER DESIGN PATTERN. THE DJANGO BOOK. Dispon\u00edvel em: \nhttps://djangobook.com/model-view-controller-design-pattern/\n. Acesso em: 26 Mar. 2018.\n\n\nCLASS-BASED VIEWS. DJANGO PROJECT. Dispon\u00edvel em: \nhttps://docs.djangoproject.com/en/2.0/topics/class-based-views/\n. Acesso em: 28 Mar. 2018.\n\n\n2: Representa\u00e7\u00e3o Arquitetural\n\n\nO Dr.Down ser\u00e1 uma aplica\u00e7\u00e3o web desenvolvida a partir do framework Django, o qual \u00e9 escrito em Python. O padr\u00e3o arquitetural utilizado pelo Django \u00e9 a MVT (Model, View e Template), que \u00e9 derivada da do padr\u00e3o arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, \u00e9 tratada pelo pr\u00f3prio framework. Portanto a View do MVT desempenha um papel pr\u00f3ximo, mas n\u00e3o igual ao controller.\n\n\n2.1 Model\n\n\n\u00c9 uma representa\u00e7\u00e3o do banco de dados. Al\u00e9m disso, tamb\u00e9m inclui caracter\u00edsticas, rela\u00e7\u00f5es e outros comportamentos que os dados podem assumir.\nO Django inclui varias ferramentas para automatizar tanto quanto poss\u00edvel o processo e a manipula\u00e7\u00e3o do banco de dados, de forma que o desenvolvedor n\u00e3o precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplica\u00e7\u00e3o de forma mais r\u00e1pida.\n\n\n2.2 View\n\n\nEstabelece uma ponte entre a Models e o Templates. Recebe as requisi\u00e7\u00f5es do usu\u00e1rio a partir do template, acessa o banco de dados e ent\u00e3o retorna a informa\u00e7\u00e3o solicitada pelo usu\u00e1rio, por meio de HTML, XML e/ou os erros encontrados.\n\n\n2.3 Template\n\n\nAgrega toda a parte visual que estar\u00e1 vis\u00edvel para os usu\u00e1rios. Inclui os c\u00f3digos HTML, CSS, javascript, entre outras linguagens que s\u00e3o utilizadas na apresenta\u00e7\u00e3o da View ao usu\u00e1rio.\n\n\n2.4 Diagrama arquitetural\n\n\n\n\n3:  Requisitos e Restri\u00e7\u00f5es Arquiteturais\n\n\nLinguagem: Python 3.6.4\n\n\nFramework: Django  2.0.3\n\n\nPlataforma: Web - Navegadores Google Chrome, Safari e Firefox\n\n\nSeguran\u00e7a: O sistema ter\u00e1 informa\u00e7\u00f5es pessoais dos pacientes que s\u00f3 poder\u00e3o ser vistas pelo mesmo ou pelo(s) seu(s) respectivo(s) m\u00e9dico(s). Outros dados pessoais s\u00f3 poder\u00e3o ser vistos pelo pr\u00f3prio usu\u00e1rio.\n\n\nInternacionaliza\u00e7\u00e3o (i18n): A aplica\u00e7\u00e3o ter\u00e1 suporte aos idiomas: Ingl\u00eas e Portugu\u00eas do Brasil (sendo esta a linguagem padr\u00e3o).\n\n\n4:   Vis\u00e3o L\u00f3gica\n\n\n4.1 Vis\u00e3o Geral: Pacotes e Camadas\n\n\nO framework Django organiza os projetos em apps, que s\u00e3o pastas que cont\u00e9m uma funcionalidade independente do restante da aplica\u00e7\u00e3o. Al\u00e9m disso, existem arquivos de configura\u00e7\u00e3o e arquivos est\u00e1ticos globais. A figura a seguir mostra a organiza\u00e7\u00e3o de pastas de um app.\n\n\n\n\n5:   Vis\u00e3o de Implementa\u00e7\u00e3o\n\n\n5.1  Class-Based Views\n\n\nProporcionam um m\u00e9todo alternativo para implementar views como objetos ao inv\u00e9s de fun\u00e7\u00f5es. As Class-Based Views (CBV) s\u00e3o classes que implementam m\u00e9todos e atributos que s\u00e3o comumente utilizados na programa\u00e7\u00e3o das views. Dessa maneira, o programador pode utilizar m\u00e9todos j\u00e1 implementados ou sobrescrev\u00ea-los e implement\u00e1-los da sua maneira. Para atender os mais variados casos de uso das views, as CBV oferecem diversos temas para implementa\u00e7\u00e3o.\n\n\nPodemos ent\u00e3o agregar as fun\u00e7\u00f5es b\u00e1sicas das views dentro de classes como m\u00e9todos. E o recurso das Class Based Views est\u00e1 em algumas classes que j\u00e1 est\u00e3o \u201cpr\u00e9-prontas\u201d e que outras classes podem herdar. A partir da\u00ed as altera\u00e7\u00f5es que precisam ser feitas s\u00e3o m\u00ednimas!\n\n\n5.2 Diagrama de Classes\n\n\n\n\n5.3 Modelo Entidade Relacionamento (MER)\n\n\nUSER:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nName\n\n\nCharField[100]\n\n\nObrigat\u00f3rio\n\n\nNome completo do usu\u00e1rio\n\n\n\n\n\n\nEmail\n\n\nCharField[50]\n\n\nObrigat\u00f3rio, \u00fanico\n\n\nEmail ser\u00e1 usado como username do usu\u00e1rio\n\n\n\n\n\n\nTelephone\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nTelefone do usu\u00e1rio\n\n\n\n\n\n\nPhoto\n\n\nImage\n\n\nOpcional\n\n\nFoto do usu\u00e1rio\n\n\n\n\n\n\nIs_active\n\n\nBoolean\n\n\nObrigat\u00f3rio\n\n\nVerifica se o usu\u00e1rio est\u00e1 ativo no sistema\n\n\n\n\n\n\nIs_superuser\n\n\nBoolean\n\n\nObrigat\u00f3rio\n\n\nVerifica se o usu\u00e1rio \u00e9 um super administrador\n\n\n\n\n\n\nLast_login\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\n\u00daltimo momento que o usu\u00e1rio logou\n\n\n\n\n\n\nCreated_at\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\nData de cria\u00e7\u00e3o da conta\n\n\n\n\n\n\nUpdated_at\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\nData de modifica\u00e7\u00e3o das informa\u00e7\u00f5es da conta\n\n\n\n\n\n\nPassword\n\n\nCharField[50]\n\n\nObrigat\u00f3rio\n\n\nSenha do usu\u00e1rio\n\n\n\n\n\n\nIs_staff\n\n\nBoolean\n\n\nObrigat\u00f3rio\n\n\nVerifica se o usu\u00e1rio \u00e9 um funcion\u00e1rio\n\n\n\n\n\n\n\n\nEMPLOYEE:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nCPF\n\n\nIntergerField\n\n\nObrigat\u00f3rio, \u00fanico, validado\n\n\nCPF do funcion\u00e1rio\n\n\n\n\n\n\nDepartament\n\n\nCharField[30]\n\n\nObrigat\u00f3rio\n\n\nDepartamento do funcion\u00e1rio\n\n\n\n\n\n\n\n\nPARENT:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nCPF\n\n\nIntergerField\n\n\nObrigat\u00f3rio, \u00fanico, validado\n\n\nCPF do parente\n\n\n\n\n\n\n\n\nPATIENT:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nUrgency\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nGrau de urg\u00eancia para atendimento do paciente\n\n\n\n\n\n\nSES\n\n\nIntergerField\n\n\nObrigat\u00f3rio, \u00fanico, validado\n\n\nN\u00famero SES do paciente\n\n\n\n\n\n\n\n\nDOCTOR:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nCRM\n\n\nIntergerField\n\n\nObrigat\u00f3rio, \u00fanico, validado\n\n\nN\u00famero CRM do m\u00e9dicos\n\n\n\n\n\n\nSpecialty\n\n\nCharField[20]\n\n\nObrigat\u00f3rio\n\n\nEspecialidade\n\n\n\n\n\n\nCPF\n\n\nIntergerField\n\n\nObrigat\u00f3rio, \u00fanico, validado\n\n\nCPF do m\u00e9dicos\n\n\n\n\n\n\n\n\nADDRESS:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nCity\n\n\nCharField[40]\n\n\nObrigat\u00f3rio\n\n\nCidade\n\n\n\n\n\n\nCEP\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nCEP\n\n\n\n\n\n\nNumber\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nNumero da moradia\n\n\n\n\n\n\nUF\n\n\nCharField[2]\n\n\nObrigat\u00f3rio\n\n\nUnidade da Federa\u00e7\u00e3o\n\n\n\n\n\n\nneighborhood\n\n\nCharField[30]\n\n\nOpcional\n\n\nBairro\n\n\n\n\n\n\n\n\nPOST:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nCharField[100]\n\n\nObrigat\u00f3rio\n\n\nT\u00edtulo do post\n\n\n\n\n\n\nDescription\n\n\nTextField\n\n\nObrigat\u00f3rio\n\n\nDescri\u00e7\u00e3o do post\n\n\n\n\n\n\nAuthor\n\n\nUser\n\n\nObrigat\u00f3rio\n\n\nNome do autor do post\n\n\n\n\n\n\nCreated_at\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\nData de cria\u00e7\u00e3o do post\n\n\n\n\n\n\nUpdated_at\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\nData de modifica\u00e7\u00e3o do post\n\n\n\n\n\n\nUpdated_by\n\n\nUser\n\n\nObrigat\u00f3rio\n\n\nUsu\u00e1rio que modificou o post\n\n\n\n\n\n\nSlug\n\n\nSlugField\n\n\nObrigat\u00f3rio\n\n\nUsado para inserir URLs nomeadas\n\n\n\n\n\n\n\n\nMEDICAL QUESTIONARY:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nPsychosocial_risk\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nRisco psicossocial\n\n\n\n\n\n\nHealth_risk\n\n\nIntergerField\n\n\nObrigat\u00f3rio\n\n\nRisco de vida\n\n\n\n\n\n\nFamily_risk\n\n\nIntergerField\n\n\nObrigatorio\n\n\nRisco familiar\n\n\n\n\n\n\nTotal_risk\n\n\nIntergerField\n\n\nOpcional\n\n\nRisco total\n\n\n\n\n\n\n\n\nQUEUE:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nSpeciality\n\n\nCharField[50]\n\n\nObrigat\u00f3rio\n\n\nEspecialidade\n\n\n\n\n\n\nTime_left\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\nTempo faltando\n\n\n\n\n\n\nPosition\n\n\nIntergerField\n\n\nAutom\u00e1tico\n\n\nPosi\u00e7\u00e3o\n\n\n\n\n\n\n\n\nEVENTS:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nName\n\n\nCharField[100]\n\n\nObrigat\u00f3rio\n\n\nNome do evento\n\n\n\n\n\n\nDate\n\n\nDateField\n\n\nObrigat\u00f3rio\n\n\nData do evento\n\n\n\n\n\n\nAddress\n\n\nAddress\n\n\nObrigat\u00f3rio\n\n\nEndere\u00e7o do evento\n\n\n\n\n\n\nDescription\n\n\nTextField\n\n\nObrigat\u00f3rio\n\n\nDescri\u00e7\u00e3o do evento\n\n\n\n\n\n\n\n\nAPPOINTMENTS:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nName\n\n\nCharField[100]\n\n\nObrigat\u00f3rio\n\n\nNome do compromisso\n\n\n\n\n\n\nDate\n\n\nDateField\n\n\nObrigat\u00f3rio\n\n\nData do compromisso\n\n\n\n\n\n\nDescription\n\n\nTextField\n\n\nOpcional\n\n\nDescri\u00e7\u00e3o do compromisso\n\n\n\n\n\n\n\n\nTOPIC:\n\n\n\n\n\n\n\n\nAtributo\n\n\nTipo\n\n\nCaracter\u00edstica\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nCharField[100]\n\n\nObrigat\u00f3rio\n\n\nT\u00edtulo do t\u00f3pico\n\n\n\n\n\n\nSubject\n\n\nTextField\n\n\nObrigat\u00f3rio\n\n\nAssunto do t\u00f3pico\n\n\n\n\n\n\nLast_update\n\n\nDateField\n\n\nAutom\u00e1tico\n\n\n\u00daltimo data atualizada\n\n\n\n\n\n\nSlug\n\n\nSlugField\n\n\nObrigatorio\n\n\nUsado para inserir URLs renomeadas\n\n\n\n\n\n\n\n\nRELACIONAMENTOS:\n\n\n1 - APPOINTMENTS tem USERS (Doctor):\n\n\nUm m\u00e9dico pode ter uma ou v\u00e1rias consultas e uma consulta pertence a um \u00fanico m\u00e9dico.\n\n\nCardinalidade: 1 X N\n\n\n2 - APPOINTMENTS tem USERS (pacientes):\n\n\nUm paciente pode ter uma ou v\u00e1rias consultas e uma consulta pertence a um \u00fanico paciente.\n\n\nCardinalidade: 1 X N\n\n\n3 - MEDICAL RECORDS tem USERS (pacientes):\n\n\nUm prontu\u00e1rio pertence a um \u00fanico paciente, mas uma paciente pode conter um ou v\u00e1rios prontu\u00e1rios.\n\n\nCardinalidade: 1 X N\n\n\n4 - USER (m\u00e9dico) tem USERS (pacientes):\n\n\nUm m\u00e9dicos pode ter um ou v\u00e1rios pacientes, e  um paciente pode ter um ou v\u00e1rios m\u00e9dicos.\n\n\nCardinalidade: N X M\n\n\n5 - POST pertence a USER:\n\n\nUm usu\u00e1rio pode ter um ou v\u00e1rios Posts, e um post pertence a um \u00fanico usu\u00e1rio.\n\n\nCardinalidade:  1 X N\n\n\n6 - POST tem TOPICS:\n\n\nUm post pode conter um \u00fanico t\u00f3pico, e um t\u00f3pico pode conter v\u00e1rios posts.\n\n\nCardinalidade: 1 X N\n\n\n7 - CLINIC possui ADDRESS:\n\n\nUm endere\u00e7o pode pertecer a apenas uma clinica, e uma clinica pode ter apenas um endere\u00e7o.\n\n\nCardinalidade: 1 X 1\n\n\n8 - EVENTS possui ADDRESS:\n\n\nUm evento pode ter apenas um endere\u00e7o, e um endere\u00e7o pode ter apenas um evento.\n\n\nCardinalidade: 1 X 1", 
+            "title": "Documento de arquitetura"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#documento-de-arquitetura", 
+            "text": "", 
+            "title": "Documento de Arquitetura"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#historico-de-revisao", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autores      24/03/2018  0.0.1  Abertura do documento  Geovana Ramos    26/03/2018  0.1.0  T\u00f3picos 1 e 2  Guilherme Guy e Gabriela Medeiros    26/03/2018  0.2.0  T\u00f3picos 3 e 4  Daniel Maike e Joberth Rogers    26/03/2018  0.3.0  T\u00f3picos 5 e 6  Elias Bernardo e Geovana Ramos    27/03/2018  0.3.1  Corre\u00e7\u00e3o de informa\u00e7\u00f5es hist\u00f3rico de revis\u00e3o  Daniel Maike, Gabriela Medeiros e Joberth Rogers    27/03/2018  0.4.0  Diagrama de classes  Elias Bernardo, Geovana Ramos e Guilherme Guy    28/03/2018  0.5.0  Altera\u00e7\u00e3o no t\u00f3pico 3  Daniel Maike e Geovana Ramos    28/03/2018  0.6.0  Modelo Entidade Relacionamento  Daniel Maike e Joberth Rogers    28/03/2018  0.6.1  Revis\u00e3o geral  Daniel Maike e Joberth Rogers    28/03/2018  1.0.0  Entrega da primeira vers\u00e3o est\u00e1vel  Daniel Maike, Elias Bernardo, Joberth Rogers, Guilherme Guy, Gabriela Medeiros e Geovana Ramos    29/03/2018  1.0.1  Revis\u00f5es gerais  Daniel Maike, Guilherme Guy e Joberth Rogers    29/03/2018  1.1.0  Adi\u00e7\u00e3o do t\u00f3pico 2.4  Geovana Ramos", 
+            "title": "Hist\u00f3rico de Revis\u00e3o"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#1-introducao", 
+            "text": "", 
+            "title": "1: Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#11-finalidade", 
+            "text": "Este documento tem como finalidade apresentar uma vis\u00e3o geral da arquitetura que ser\u00e1 usada no desenvolvimento do projeto Dr. Down e permitir um maior entendimento do sistema e de como ele ir\u00e1 se comportar. Com o maior detalhamento da arquitetura, espera-se deixar expl\u00edcitas as decis\u00f5es arquiteturais feitas pela equipe de desenvolvimento em conjunto com os gestores do projeto para o desenvolvimento do software.", 
+            "title": "1.1 Finalidade"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#12-escopo", 
+            "text": "Dr. Down ser\u00e1 uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar a administra\u00e7\u00e3o do fluxo de pacientes do CRIS DOWN, al\u00e9m de possibilitar a comunica\u00e7\u00e3o entre m\u00e9dicos, pacientes e familiares. O documento apresentar\u00e1 toda a parte arquitetural para a confec\u00e7\u00e3o do software Dr. Down, a fim de tornar claras as caracter\u00edsticas arquiteturais do projeto.", 
+            "title": "1.2 Escopo"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#13-definicoes-acronimos-e-abreviacoes", 
+            "text": "Abrevia\u00e7\u00e3o  Defini\u00e7\u00e3o      SD  S\u00edndrome de Down    CRIS DOWN  Centro de Refer\u00eancia em S\u00edndrome de Down    MDS  M\u00e9todos de Desenvolvimento de Software    EPS  Engenharia de Produto de Software    UnB  Universidade de Bras\u00edlia    SES  Secretar\u00eda de Estado de Sa\u00fade    CBV  Class-Based Views", 
+            "title": "1.3 Defini\u00e7\u00f5es, acr\u00f4nimos e abrevia\u00e7\u00f5es"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#14-referencias", 
+            "text": "ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Dispon\u00edvel em:  http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm . Acesso em: 24 Mar. 2018.  PADR\u00d5ES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Dispesclareceron\u00edvel em:  https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django . Acesso em: 26 Mar. 2018.  THE MODEL-VIEW-CONTROLLER DESIGN PATTERN. THE DJANGO BOOK. Dispon\u00edvel em:  https://djangobook.com/model-view-controller-design-pattern/ . Acesso em: 26 Mar. 2018.  CLASS-BASED VIEWS. DJANGO PROJECT. Dispon\u00edvel em:  https://docs.djangoproject.com/en/2.0/topics/class-based-views/ . Acesso em: 28 Mar. 2018.", 
+            "title": "1.4 Refer\u00eancias"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#2-representacao-arquitetural", 
+            "text": "O Dr.Down ser\u00e1 uma aplica\u00e7\u00e3o web desenvolvida a partir do framework Django, o qual \u00e9 escrito em Python. O padr\u00e3o arquitetural utilizado pelo Django \u00e9 a MVT (Model, View e Template), que \u00e9 derivada da do padr\u00e3o arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, \u00e9 tratada pelo pr\u00f3prio framework. Portanto a View do MVT desempenha um papel pr\u00f3ximo, mas n\u00e3o igual ao controller.", 
+            "title": "2: Representa\u00e7\u00e3o Arquitetural"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#21-model", 
+            "text": "\u00c9 uma representa\u00e7\u00e3o do banco de dados. Al\u00e9m disso, tamb\u00e9m inclui caracter\u00edsticas, rela\u00e7\u00f5es e outros comportamentos que os dados podem assumir.\nO Django inclui varias ferramentas para automatizar tanto quanto poss\u00edvel o processo e a manipula\u00e7\u00e3o do banco de dados, de forma que o desenvolvedor n\u00e3o precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplica\u00e7\u00e3o de forma mais r\u00e1pida.", 
+            "title": "2.1 Model"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#22-view", 
+            "text": "Estabelece uma ponte entre a Models e o Templates. Recebe as requisi\u00e7\u00f5es do usu\u00e1rio a partir do template, acessa o banco de dados e ent\u00e3o retorna a informa\u00e7\u00e3o solicitada pelo usu\u00e1rio, por meio de HTML, XML e/ou os erros encontrados.", 
+            "title": "2.2 View"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#23-template", 
+            "text": "Agrega toda a parte visual que estar\u00e1 vis\u00edvel para os usu\u00e1rios. Inclui os c\u00f3digos HTML, CSS, javascript, entre outras linguagens que s\u00e3o utilizadas na apresenta\u00e7\u00e3o da View ao usu\u00e1rio.", 
+            "title": "2.3 Template"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#24-diagrama-arquitetural", 
+            "text": "", 
+            "title": "2.4 Diagrama arquitetural"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#3-requisitos-e-restricoes-arquiteturais", 
+            "text": "Linguagem: Python 3.6.4  Framework: Django  2.0.3  Plataforma: Web - Navegadores Google Chrome, Safari e Firefox  Seguran\u00e7a: O sistema ter\u00e1 informa\u00e7\u00f5es pessoais dos pacientes que s\u00f3 poder\u00e3o ser vistas pelo mesmo ou pelo(s) seu(s) respectivo(s) m\u00e9dico(s). Outros dados pessoais s\u00f3 poder\u00e3o ser vistos pelo pr\u00f3prio usu\u00e1rio.  Internacionaliza\u00e7\u00e3o (i18n): A aplica\u00e7\u00e3o ter\u00e1 suporte aos idiomas: Ingl\u00eas e Portugu\u00eas do Brasil (sendo esta a linguagem padr\u00e3o).", 
+            "title": "3:  Requisitos e Restri\u00e7\u00f5es Arquiteturais"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#4-visao-logica", 
+            "text": "", 
+            "title": "4:   Vis\u00e3o L\u00f3gica"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#41-visao-geral-pacotes-e-camadas", 
+            "text": "O framework Django organiza os projetos em apps, que s\u00e3o pastas que cont\u00e9m uma funcionalidade independente do restante da aplica\u00e7\u00e3o. Al\u00e9m disso, existem arquivos de configura\u00e7\u00e3o e arquivos est\u00e1ticos globais. A figura a seguir mostra a organiza\u00e7\u00e3o de pastas de um app.", 
+            "title": "4.1 Vis\u00e3o Geral: Pacotes e Camadas"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#5-visao-de-implementacao", 
+            "text": "", 
+            "title": "5:   Vis\u00e3o de Implementa\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#51-class-based-views", 
+            "text": "Proporcionam um m\u00e9todo alternativo para implementar views como objetos ao inv\u00e9s de fun\u00e7\u00f5es. As Class-Based Views (CBV) s\u00e3o classes que implementam m\u00e9todos e atributos que s\u00e3o comumente utilizados na programa\u00e7\u00e3o das views. Dessa maneira, o programador pode utilizar m\u00e9todos j\u00e1 implementados ou sobrescrev\u00ea-los e implement\u00e1-los da sua maneira. Para atender os mais variados casos de uso das views, as CBV oferecem diversos temas para implementa\u00e7\u00e3o.  Podemos ent\u00e3o agregar as fun\u00e7\u00f5es b\u00e1sicas das views dentro de classes como m\u00e9todos. E o recurso das Class Based Views est\u00e1 em algumas classes que j\u00e1 est\u00e3o \u201cpr\u00e9-prontas\u201d e que outras classes podem herdar. A partir da\u00ed as altera\u00e7\u00f5es que precisam ser feitas s\u00e3o m\u00ednimas!", 
+            "title": "5.1  Class-Based Views"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#52-diagrama-de-classes", 
+            "text": "", 
+            "title": "5.2 Diagrama de Classes"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#53-modelo-entidade-relacionamento-mer", 
+            "text": "", 
+            "title": "5.3 Modelo Entidade Relacionamento (MER)"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#user", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Name  CharField[100]  Obrigat\u00f3rio  Nome completo do usu\u00e1rio    Email  CharField[50]  Obrigat\u00f3rio, \u00fanico  Email ser\u00e1 usado como username do usu\u00e1rio    Telephone  IntergerField  Obrigat\u00f3rio  Telefone do usu\u00e1rio    Photo  Image  Opcional  Foto do usu\u00e1rio    Is_active  Boolean  Obrigat\u00f3rio  Verifica se o usu\u00e1rio est\u00e1 ativo no sistema    Is_superuser  Boolean  Obrigat\u00f3rio  Verifica se o usu\u00e1rio \u00e9 um super administrador    Last_login  DateField  Autom\u00e1tico  \u00daltimo momento que o usu\u00e1rio logou    Created_at  DateField  Autom\u00e1tico  Data de cria\u00e7\u00e3o da conta    Updated_at  DateField  Autom\u00e1tico  Data de modifica\u00e7\u00e3o das informa\u00e7\u00f5es da conta    Password  CharField[50]  Obrigat\u00f3rio  Senha do usu\u00e1rio    Is_staff  Boolean  Obrigat\u00f3rio  Verifica se o usu\u00e1rio \u00e9 um funcion\u00e1rio", 
+            "title": "USER:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#employee", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      CPF  IntergerField  Obrigat\u00f3rio, \u00fanico, validado  CPF do funcion\u00e1rio    Departament  CharField[30]  Obrigat\u00f3rio  Departamento do funcion\u00e1rio", 
+            "title": "EMPLOYEE:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#parent", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      CPF  IntergerField  Obrigat\u00f3rio, \u00fanico, validado  CPF do parente", 
+            "title": "PARENT:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#patient", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Urgency  IntergerField  Obrigat\u00f3rio  Grau de urg\u00eancia para atendimento do paciente    SES  IntergerField  Obrigat\u00f3rio, \u00fanico, validado  N\u00famero SES do paciente", 
+            "title": "PATIENT:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#doctor", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      CRM  IntergerField  Obrigat\u00f3rio, \u00fanico, validado  N\u00famero CRM do m\u00e9dicos    Specialty  CharField[20]  Obrigat\u00f3rio  Especialidade    CPF  IntergerField  Obrigat\u00f3rio, \u00fanico, validado  CPF do m\u00e9dicos", 
+            "title": "DOCTOR:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#address", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      City  CharField[40]  Obrigat\u00f3rio  Cidade    CEP  IntergerField  Obrigat\u00f3rio  CEP    Number  IntergerField  Obrigat\u00f3rio  Numero da moradia    UF  CharField[2]  Obrigat\u00f3rio  Unidade da Federa\u00e7\u00e3o    neighborhood  CharField[30]  Opcional  Bairro", 
+            "title": "ADDRESS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#post", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Title  CharField[100]  Obrigat\u00f3rio  T\u00edtulo do post    Description  TextField  Obrigat\u00f3rio  Descri\u00e7\u00e3o do post    Author  User  Obrigat\u00f3rio  Nome do autor do post    Created_at  DateField  Autom\u00e1tico  Data de cria\u00e7\u00e3o do post    Updated_at  DateField  Autom\u00e1tico  Data de modifica\u00e7\u00e3o do post    Updated_by  User  Obrigat\u00f3rio  Usu\u00e1rio que modificou o post    Slug  SlugField  Obrigat\u00f3rio  Usado para inserir URLs nomeadas", 
+            "title": "POST:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#medical-questionary", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Psychosocial_risk  IntergerField  Obrigat\u00f3rio  Risco psicossocial    Health_risk  IntergerField  Obrigat\u00f3rio  Risco de vida    Family_risk  IntergerField  Obrigatorio  Risco familiar    Total_risk  IntergerField  Opcional  Risco total", 
+            "title": "MEDICAL QUESTIONARY:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#queue", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Speciality  CharField[50]  Obrigat\u00f3rio  Especialidade    Time_left  DateField  Autom\u00e1tico  Tempo faltando    Position  IntergerField  Autom\u00e1tico  Posi\u00e7\u00e3o", 
+            "title": "QUEUE:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#events", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Name  CharField[100]  Obrigat\u00f3rio  Nome do evento    Date  DateField  Obrigat\u00f3rio  Data do evento    Address  Address  Obrigat\u00f3rio  Endere\u00e7o do evento    Description  TextField  Obrigat\u00f3rio  Descri\u00e7\u00e3o do evento", 
+            "title": "EVENTS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#appointments", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Name  CharField[100]  Obrigat\u00f3rio  Nome do compromisso    Date  DateField  Obrigat\u00f3rio  Data do compromisso    Description  TextField  Opcional  Descri\u00e7\u00e3o do compromisso", 
+            "title": "APPOINTMENTS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#topic", 
+            "text": "Atributo  Tipo  Caracter\u00edstica  Descri\u00e7\u00e3o      Title  CharField[100]  Obrigat\u00f3rio  T\u00edtulo do t\u00f3pico    Subject  TextField  Obrigat\u00f3rio  Assunto do t\u00f3pico    Last_update  DateField  Autom\u00e1tico  \u00daltimo data atualizada    Slug  SlugField  Obrigatorio  Usado para inserir URLs renomeadas", 
+            "title": "TOPIC:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#relacionamentos", 
+            "text": "", 
+            "title": "RELACIONAMENTOS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#1-appointments-tem-users-doctor", 
+            "text": "Um m\u00e9dico pode ter uma ou v\u00e1rias consultas e uma consulta pertence a um \u00fanico m\u00e9dico.  Cardinalidade: 1 X N", 
+            "title": "1 - APPOINTMENTS tem USERS (Doctor):"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#2-appointments-tem-users-pacientes", 
+            "text": "Um paciente pode ter uma ou v\u00e1rias consultas e uma consulta pertence a um \u00fanico paciente.  Cardinalidade: 1 X N", 
+            "title": "2 - APPOINTMENTS tem USERS (pacientes):"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#3-medical-records-tem-users-pacientes", 
+            "text": "Um prontu\u00e1rio pertence a um \u00fanico paciente, mas uma paciente pode conter um ou v\u00e1rios prontu\u00e1rios.  Cardinalidade: 1 X N", 
+            "title": "3 - MEDICAL RECORDS tem USERS (pacientes):"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#4-user-medico-tem-users-pacientes", 
+            "text": "Um m\u00e9dicos pode ter um ou v\u00e1rios pacientes, e  um paciente pode ter um ou v\u00e1rios m\u00e9dicos.  Cardinalidade: N X M", 
+            "title": "4 - USER (m\u00e9dico) tem USERS (pacientes):"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#5-post-pertence-a-user", 
+            "text": "Um usu\u00e1rio pode ter um ou v\u00e1rios Posts, e um post pertence a um \u00fanico usu\u00e1rio.  Cardinalidade:  1 X N", 
+            "title": "5 - POST pertence a USER:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#6-post-tem-topics", 
+            "text": "Um post pode conter um \u00fanico t\u00f3pico, e um t\u00f3pico pode conter v\u00e1rios posts.  Cardinalidade: 1 X N", 
+            "title": "6 - POST tem TOPICS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#7-clinic-possui-address", 
+            "text": "Um endere\u00e7o pode pertecer a apenas uma clinica, e uma clinica pode ter apenas um endere\u00e7o.  Cardinalidade: 1 X 1", 
+            "title": "7 - CLINIC possui ADDRESS:"
+        }, 
+        {
+            "location": "/mds/ARCHITECTURE_DOCUMENT/#8-events-possui-address", 
+            "text": "Um evento pode ter apenas um endere\u00e7o, e um endere\u00e7o pode ter apenas um evento.  Cardinalidade: 1 X 1", 
+            "title": "8 - EVENTS possui ADDRESS:"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/", 
+            "text": "Especifica\u00e7\u00e3o suplementar\n\n\nHist\u00f3rico de Revis\u00e3o\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutores\n\n\n\n\n\n\n\n\n\n\n28/03/2018\n\n\n0.0.1\n\n\nAbertura do documento\n\n\nGeovana Ramos\n\n\n\n\n\n\n28/03/2018\n\n\n0.1.0\n\n\nAdi\u00e7\u00e3o dos t\u00f3picos de 1 a 9\n\n\nGeovana Ramos e Guilherme Guy\n\n\n\n\n\n\n29/03/2018\n\n\n0.1.1\n\n\nRevis\u00e3o dos t\u00f3picos 2 e 3\n\n\nGabriela Medeiros\n\n\n\n\n\n\n29/03/2018\n\n\n0.1.2\n\n\nRevis\u00e3o do t\u00f3pico 5\n\n\nGuilherme Guy e Geovana Ramos\n\n\n\n\n\n\n29/03/2018\n\n\n0.2.0\n\n\nAdi\u00e7\u00e3o do t\u00f3pico 9\n\n\nGabriela Medeiros\n\n\n\n\n\n\n30/03/2018\n\n\n0.2.1\n\n\nRevis\u00e3o ortogr\u00e1fica e do diagrama NFR\n\n\nGabriela Medeiros e Geovana Ramos\n\n\n\n\n\n\n\n\n1. Introdu\u00e7\u00e3o\n\n\n1.1 Finalidade\n\n\nEste documento tem como objetivo abordar aspectos t\u00e9cnicos, legais e demais requisitos sobre a aplica\u00e7\u00e3o Dr. Down, que n\u00e3o foram abordados nos demais documentos: Documento de Vis\u00e3o e Documento de Arquitetura.\n\n\n1.2 Escopo\n\n\nOs requisitos aqui elucidados fazem parte do processo de desenvolvimento da aplica\u00e7\u00e3o web Dr.Down, que auxiliar\u00e1 pacientes e funcion\u00e1rios do CRIS DOWN, centro que trata pacientes com S\u00edndrome de Down.\n\n\nPrimeiramente est\u00e3o definidos os requisitos n\u00e3o funcionais e em seguida estes requisitos est\u00e3o dispostos em um diagrama NFR.  O NFR Framework \u00e9 uma abordagem orientada a processos, onde os requisitos n\u00e3o-funcionais s\u00e3o explicitamente representados como metas a serem obtidas e como ser\u00e3o obtidas.\n\n\n1.3 Defini\u00e7\u00f5es, Acr\u00f4nimos e Abrevia\u00e7\u00f5es\n\n\n\n\n\n\n\n\nAbrevia\u00e7\u00e3o\n\n\nDefini\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nSD\n\n\nS\u00edndrome de Down\n\n\n\n\n\n\nCRIS DOWN\n\n\nCentro de Refer\u00eancia em S\u00edndrome de Down\n\n\n\n\n\n\nNFR\n\n\nNon-Functional Requirement\n\n\n\n\n\n\n\n\n1.4 Refer\u00eancias\n\n\nRESENDE, Angelica Aguiar. AN\u00c1LISE DA VIABILIDADE T\u00c9CNICA PARA DESENVOLVIMENTO DE APLICATIVO PARA O CENTRO DE REFER\u00caNCIA EM S\u00cdNDROME DE DOWN (CRIS DOWN). 2017. 90 f. Trabalho de conclus\u00e3o de curso (Gradua\u00e7\u00e3o em Engenharia de Produ\u00e7\u00e3o)- UNIVERSIDADE DE BRAS\u00cdLIA, Faculdade de Tecnologia Departamento de Engenharia de Produ\u00e7\u00e3o, 2017.\n\n\nISO 27002: BOAS PR\u00c1TICAS PARA GEST\u00c3O DE SEGURAN\u00c7A DA INFORMA\u00c7\u00c3O . Dispon\u00edvel em: \n https://ostec.blog/padronizacao-seguranca/iso-27002-boas-praticas-gsi \n. Acesso em: 30/03/2018\n\n\n10 HEUR\u00cdSTICAS DE NIELSEN. UMA F\u00d3RMULA PARA EVITAR ERROS B\u00c1SICOS DE USABILIDADE . Dispon\u00edvel em: \n http://blog.caelum.com.br/10-heuristicas-de-nielsen-uma-formula-pra-evitar-erros-basicos-de-usabilidade/ \n. Acesso em: 30/03/2018\n\n\n2. Usabilidade\n\n\nUm ponto essencial para a usabilidade do sistema proposto \u00e9 que o mesmo ofere\u00e7a um design e uma intera\u00e7\u00e3o acess\u00edvel aos portadores da SD.\nConsiderando a defici\u00eancia intelectual a que as pessoas com S\u00edndrome de Down s\u00e3o acometidas, o sistema dever\u00e1 presar por simplicidade e acesso intuitivo, tendo em vista sua import\u00e2ncia para o ajustamento e uma utiliza\u00e7\u00e3o adequada pelos usu\u00e1rios da aplica\u00e7\u00e3o. Para alcan\u00e7ar tal meta, a aplica\u00e7\u00e3o deve conter um design limpo, de f\u00e1cil vizualiza\u00e7\u00e3o e entendimento, com acesso r\u00e1pido e intuitivo a informa\u00e7\u00f5es e funcionalidades importantes, sempre utilizando-se uma linguagem de f\u00e1cil entendimento e compreens\u00e3o.\n\n\nInicialmente, os funcion\u00e1rios que atendem no CRIS DOWN passar\u00e3o por uma fase de adapta\u00e7\u00e3o ao sistema, que pode incluir um treinamento inicial para instru\u00ed-los sobre o funcionamento das marca\u00e7\u00f5es de consulta e gerenciamento de pacientes. Devido ao requisito de facilidade de uso do sistema, este treinamento n\u00e3o ir\u00e1 durar mais que 2 horas, que s\u00e3o suficientes para inserir o Dr. Down como nova ferramenta de trabalho.\n\n\n2.1 Metas de usabilidade\n\n\n\n\nEficaz: O sistema deve fazer o que eu espero que fa\u00e7a, alcance seu objetivo.\n\n\nEficiente: Velocidade de uso.\n\n\nSeguran\u00e7a: Prote\u00e7\u00e3o ao usu\u00e1rio contra condi\u00e7\u00f5es perigosas (f\u00edsicas) e situa\u00e7\u00f5es indesej\u00e1veis (medo).\n\n\nUtilidade: Oferece o tipo certo de funcionalidade.\n\n\nAprendizado: F\u00e1cil de aprender.\n\n\nMemoriza\u00e7\u00e3o: F\u00e1cil de lembrar como se usa.\n\n\nPreven\u00e7\u00f5es de erros: Evitar inser\u00e7\u00e3o de dados err\u00f4neos ou inadequados.\n\n\nDiagn\u00f3stico de erro f\u00e1cil para o usu\u00e1rio: Mensagens de erro claras e de f\u00e1cil entendimento para o usu\u00e1rio.\n\n\nVisibilidade de estado do sistema: Deixar claro ao usu\u00e1rio o que est\u00e1 acontecendo em tempo real.\n\n\n\n\n3. Confiabilidade\n\n\nO sistema dever\u00e1 ter alto n\u00edvel de disponibilidade considerando a necessidade de acesso cont\u00ednuo e frequente \u00e0 aplica\u00e7\u00e3o. Tal requisito gerar\u00e1 um contexto em que falhas e bugs do sistema tenham a possibilidade de serem corrigidas rapidamente, pois esses erros podem gerar atrasos nos atendimentos e problemas administrativos no CRIS DOWN. Por isso, o sistema deve estar dispon\u00edvel em pelo menos 90% das 24 horas di\u00e1rias.\n\n\n4. Portabilidade\n\n\nO sistema dever\u00e1 funcionar nos navegadores de internet Google Chrome, Mozilla Firefox e Apple Safari e em dispositivos capazes de acessar a internet, que suportem os navegadores descritos e, tamb\u00e9m, que estejam equipados com sistema Windows, Linux, Mac, Android e iOS, ou seja,se adaptando visualmente \u00e0 esses sistemas.\n\n\n5. Desempenho\n\n\nO sistema dever\u00e1 processar as requisi\u00e7\u00f5es de acesso do usu\u00e1rio de maneira eficiente e flu\u00edda, contribuindo para a qualidade dos atendimentos do CRIS DOWN. O n\u00famero m\u00ednimo de acessos suportados simultaneamente deve ser de 2 mil usu\u00e1rios.\n\n\n6. Interoperabilidade\n\n\nO sistema possuir\u00e1 conex\u00e3o com banco de dados para armazenar informa\u00e7\u00f5es de usu\u00e1rios cadastrados e tamb\u00e9m dever\u00e1 salvar suas informa\u00e7\u00f5es remotamente, fora do dispositivo do usu\u00e1rio.\n\n\n7. Seguran\u00e7a\n\n\nAs informa\u00e7\u00f5es de um usu\u00e1rio somente ser\u00e3o acessadas por ele mesmo ou outros usu\u00e1rios que possuam permiss\u00e3o pra isso. O sistema atender\u00e1 as pol\u00edticas de privacidade do usu\u00e1rio, que garantem a prote\u00e7\u00e3o dos seus dados e a visualiza\u00e7\u00e3o restrita,  e buscar\u00e1 incluir boas pr\u00e1ticas de seguran\u00e7a de informa\u00e7\u00f5es como seguran\u00e7a das opera\u00e7\u00f5es e comunica\u00e7\u00f5es, controle de acesso e conformidade com a legisla\u00e7\u00e3o.\n\n\n8. Restri\u00e7\u00f5es de Design\n\n\n8.1 Interface\n\n\n\n\nMinimalista\n\n\nIntuitivo\n\n\nInforma\u00e7\u00f5es objetivas\n\n\nLinks de informa\u00e7\u00f5es vis\u00edveis\n\n\n\n\n8.2 Arquitetura\n\n\n\n\nModel-View-Template\n\n\n\n\n8.3 Padr\u00e3o de c\u00f3digo\n\n\n\n\nClass Based Views\n\n\nPEP 8\n\n\nDoc strings\n\n\n\n\n8.4 Ferramentas\n\n\n8.4.1 Desenvolvimento\n\n\n\n\nMakeFile\n\n\nTravis\n\n\nCodeClimate\n\n\nCookieCutter\n\n\nDocker\n\n\nGitHub\n\n\n\n\n8.4.2 Gerenciamento\n\n\n\n\nZenHub\n\n\nSlack\n\n\nGoogle Drive\n\n\n\n\n9. Interfaces do Usu\u00e1rio\n\n\nAs seguintes telas ser\u00e3o disponibilizadas no sistema:\n- Tela inicial\n- Login\n- Cadastro\n- Informa\u00e7\u00f5es do usu\u00e1rio\n- Fila de espera\n- Agenda de consultas\n- Informa\u00e7\u00f5es sobre SD\n- Linha de cuidado\n- F\u00f3rum\n- Mapas dos locais de atendimento\n- Eventos\n- Prontu\u00e1rio\n- Question\u00e1rio de risco m\u00e9dico\n\n\n10. Diagrama NFR\n\n\nO diagrama NFR ilustra os requisitos n\u00e3o funcionais e suas rela\u00e7\u00f5es.", 
+            "title": "Especifica\u00e7\u00e3o de caso de uso"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#especificacao-suplementar", 
+            "text": "", 
+            "title": "Especifica\u00e7\u00e3o suplementar"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#historico-de-revisao", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autores      28/03/2018  0.0.1  Abertura do documento  Geovana Ramos    28/03/2018  0.1.0  Adi\u00e7\u00e3o dos t\u00f3picos de 1 a 9  Geovana Ramos e Guilherme Guy    29/03/2018  0.1.1  Revis\u00e3o dos t\u00f3picos 2 e 3  Gabriela Medeiros    29/03/2018  0.1.2  Revis\u00e3o do t\u00f3pico 5  Guilherme Guy e Geovana Ramos    29/03/2018  0.2.0  Adi\u00e7\u00e3o do t\u00f3pico 9  Gabriela Medeiros    30/03/2018  0.2.1  Revis\u00e3o ortogr\u00e1fica e do diagrama NFR  Gabriela Medeiros e Geovana Ramos", 
+            "title": "Hist\u00f3rico de Revis\u00e3o"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#1-introducao", 
+            "text": "", 
+            "title": "1. Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#11-finalidade", 
+            "text": "Este documento tem como objetivo abordar aspectos t\u00e9cnicos, legais e demais requisitos sobre a aplica\u00e7\u00e3o Dr. Down, que n\u00e3o foram abordados nos demais documentos: Documento de Vis\u00e3o e Documento de Arquitetura.", 
+            "title": "1.1 Finalidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#12-escopo", 
+            "text": "Os requisitos aqui elucidados fazem parte do processo de desenvolvimento da aplica\u00e7\u00e3o web Dr.Down, que auxiliar\u00e1 pacientes e funcion\u00e1rios do CRIS DOWN, centro que trata pacientes com S\u00edndrome de Down.  Primeiramente est\u00e3o definidos os requisitos n\u00e3o funcionais e em seguida estes requisitos est\u00e3o dispostos em um diagrama NFR.  O NFR Framework \u00e9 uma abordagem orientada a processos, onde os requisitos n\u00e3o-funcionais s\u00e3o explicitamente representados como metas a serem obtidas e como ser\u00e3o obtidas.", 
+            "title": "1.2 Escopo"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#13-definicoes-acronimos-e-abreviacoes", 
+            "text": "Abrevia\u00e7\u00e3o  Defini\u00e7\u00e3o      SD  S\u00edndrome de Down    CRIS DOWN  Centro de Refer\u00eancia em S\u00edndrome de Down    NFR  Non-Functional Requirement", 
+            "title": "1.3 Defini\u00e7\u00f5es, Acr\u00f4nimos e Abrevia\u00e7\u00f5es"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#14-referencias", 
+            "text": "RESENDE, Angelica Aguiar. AN\u00c1LISE DA VIABILIDADE T\u00c9CNICA PARA DESENVOLVIMENTO DE APLICATIVO PARA O CENTRO DE REFER\u00caNCIA EM S\u00cdNDROME DE DOWN (CRIS DOWN). 2017. 90 f. Trabalho de conclus\u00e3o de curso (Gradua\u00e7\u00e3o em Engenharia de Produ\u00e7\u00e3o)- UNIVERSIDADE DE BRAS\u00cdLIA, Faculdade de Tecnologia Departamento de Engenharia de Produ\u00e7\u00e3o, 2017.  ISO 27002: BOAS PR\u00c1TICAS PARA GEST\u00c3O DE SEGURAN\u00c7A DA INFORMA\u00c7\u00c3O . Dispon\u00edvel em:   https://ostec.blog/padronizacao-seguranca/iso-27002-boas-praticas-gsi  . Acesso em: 30/03/2018  10 HEUR\u00cdSTICAS DE NIELSEN. UMA F\u00d3RMULA PARA EVITAR ERROS B\u00c1SICOS DE USABILIDADE . Dispon\u00edvel em:   http://blog.caelum.com.br/10-heuristicas-de-nielsen-uma-formula-pra-evitar-erros-basicos-de-usabilidade/  . Acesso em: 30/03/2018", 
+            "title": "1.4 Refer\u00eancias"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#2-usabilidade", 
+            "text": "Um ponto essencial para a usabilidade do sistema proposto \u00e9 que o mesmo ofere\u00e7a um design e uma intera\u00e7\u00e3o acess\u00edvel aos portadores da SD.\nConsiderando a defici\u00eancia intelectual a que as pessoas com S\u00edndrome de Down s\u00e3o acometidas, o sistema dever\u00e1 presar por simplicidade e acesso intuitivo, tendo em vista sua import\u00e2ncia para o ajustamento e uma utiliza\u00e7\u00e3o adequada pelos usu\u00e1rios da aplica\u00e7\u00e3o. Para alcan\u00e7ar tal meta, a aplica\u00e7\u00e3o deve conter um design limpo, de f\u00e1cil vizualiza\u00e7\u00e3o e entendimento, com acesso r\u00e1pido e intuitivo a informa\u00e7\u00f5es e funcionalidades importantes, sempre utilizando-se uma linguagem de f\u00e1cil entendimento e compreens\u00e3o.  Inicialmente, os funcion\u00e1rios que atendem no CRIS DOWN passar\u00e3o por uma fase de adapta\u00e7\u00e3o ao sistema, que pode incluir um treinamento inicial para instru\u00ed-los sobre o funcionamento das marca\u00e7\u00f5es de consulta e gerenciamento de pacientes. Devido ao requisito de facilidade de uso do sistema, este treinamento n\u00e3o ir\u00e1 durar mais que 2 horas, que s\u00e3o suficientes para inserir o Dr. Down como nova ferramenta de trabalho.", 
+            "title": "2. Usabilidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#21-metas-de-usabilidade", 
+            "text": "Eficaz: O sistema deve fazer o que eu espero que fa\u00e7a, alcance seu objetivo.  Eficiente: Velocidade de uso.  Seguran\u00e7a: Prote\u00e7\u00e3o ao usu\u00e1rio contra condi\u00e7\u00f5es perigosas (f\u00edsicas) e situa\u00e7\u00f5es indesej\u00e1veis (medo).  Utilidade: Oferece o tipo certo de funcionalidade.  Aprendizado: F\u00e1cil de aprender.  Memoriza\u00e7\u00e3o: F\u00e1cil de lembrar como se usa.  Preven\u00e7\u00f5es de erros: Evitar inser\u00e7\u00e3o de dados err\u00f4neos ou inadequados.  Diagn\u00f3stico de erro f\u00e1cil para o usu\u00e1rio: Mensagens de erro claras e de f\u00e1cil entendimento para o usu\u00e1rio.  Visibilidade de estado do sistema: Deixar claro ao usu\u00e1rio o que est\u00e1 acontecendo em tempo real.", 
+            "title": "2.1 Metas de usabilidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#3-confiabilidade", 
+            "text": "O sistema dever\u00e1 ter alto n\u00edvel de disponibilidade considerando a necessidade de acesso cont\u00ednuo e frequente \u00e0 aplica\u00e7\u00e3o. Tal requisito gerar\u00e1 um contexto em que falhas e bugs do sistema tenham a possibilidade de serem corrigidas rapidamente, pois esses erros podem gerar atrasos nos atendimentos e problemas administrativos no CRIS DOWN. Por isso, o sistema deve estar dispon\u00edvel em pelo menos 90% das 24 horas di\u00e1rias.", 
+            "title": "3. Confiabilidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#4-portabilidade", 
+            "text": "O sistema dever\u00e1 funcionar nos navegadores de internet Google Chrome, Mozilla Firefox e Apple Safari e em dispositivos capazes de acessar a internet, que suportem os navegadores descritos e, tamb\u00e9m, que estejam equipados com sistema Windows, Linux, Mac, Android e iOS, ou seja,se adaptando visualmente \u00e0 esses sistemas.", 
+            "title": "4. Portabilidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#5-desempenho", 
+            "text": "O sistema dever\u00e1 processar as requisi\u00e7\u00f5es de acesso do usu\u00e1rio de maneira eficiente e flu\u00edda, contribuindo para a qualidade dos atendimentos do CRIS DOWN. O n\u00famero m\u00ednimo de acessos suportados simultaneamente deve ser de 2 mil usu\u00e1rios.", 
+            "title": "5. Desempenho"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#6-interoperabilidade", 
+            "text": "O sistema possuir\u00e1 conex\u00e3o com banco de dados para armazenar informa\u00e7\u00f5es de usu\u00e1rios cadastrados e tamb\u00e9m dever\u00e1 salvar suas informa\u00e7\u00f5es remotamente, fora do dispositivo do usu\u00e1rio.", 
+            "title": "6. Interoperabilidade"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#7-seguranca", 
+            "text": "As informa\u00e7\u00f5es de um usu\u00e1rio somente ser\u00e3o acessadas por ele mesmo ou outros usu\u00e1rios que possuam permiss\u00e3o pra isso. O sistema atender\u00e1 as pol\u00edticas de privacidade do usu\u00e1rio, que garantem a prote\u00e7\u00e3o dos seus dados e a visualiza\u00e7\u00e3o restrita,  e buscar\u00e1 incluir boas pr\u00e1ticas de seguran\u00e7a de informa\u00e7\u00f5es como seguran\u00e7a das opera\u00e7\u00f5es e comunica\u00e7\u00f5es, controle de acesso e conformidade com a legisla\u00e7\u00e3o.", 
+            "title": "7. Seguran\u00e7a"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#8-restricoes-de-design", 
+            "text": "", 
+            "title": "8. Restri\u00e7\u00f5es de Design"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#81-interface", 
+            "text": "Minimalista  Intuitivo  Informa\u00e7\u00f5es objetivas  Links de informa\u00e7\u00f5es vis\u00edveis", 
+            "title": "8.1 Interface"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#82-arquitetura", 
+            "text": "Model-View-Template", 
+            "title": "8.2 Arquitetura"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#83-padrao-de-codigo", 
+            "text": "Class Based Views  PEP 8  Doc strings", 
+            "title": "8.3 Padr\u00e3o de c\u00f3digo"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#84-ferramentas", 
+            "text": "", 
+            "title": "8.4 Ferramentas"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#841-desenvolvimento", 
+            "text": "MakeFile  Travis  CodeClimate  CookieCutter  Docker  GitHub", 
+            "title": "8.4.1 Desenvolvimento"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#842-gerenciamento", 
+            "text": "ZenHub  Slack  Google Drive", 
+            "title": "8.4.2 Gerenciamento"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#9-interfaces-do-usuario", 
+            "text": "As seguintes telas ser\u00e3o disponibilizadas no sistema:\n- Tela inicial\n- Login\n- Cadastro\n- Informa\u00e7\u00f5es do usu\u00e1rio\n- Fila de espera\n- Agenda de consultas\n- Informa\u00e7\u00f5es sobre SD\n- Linha de cuidado\n- F\u00f3rum\n- Mapas dos locais de atendimento\n- Eventos\n- Prontu\u00e1rio\n- Question\u00e1rio de risco m\u00e9dico", 
+            "title": "9. Interfaces do Usu\u00e1rio"
+        }, 
+        {
+            "location": "/mds/ADDITIONAL_SPECIFICATION/#10-diagrama-nfr", 
+            "text": "O diagrama NFR ilustra os requisitos n\u00e3o funcionais e suas rela\u00e7\u00f5es.", 
+            "title": "10. Diagrama NFR"
+        }, 
+        {
+            "location": "/eps/EAP/", 
+            "text": "Estrutura Anal\u00edtica do Projeto (EAP)\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutor\n\n\n\n\n\n\n\n\n\n\n22/03/2018\n\n\n0.0.1\n\n\nPrimeira Vers\u00e3o da EAP\n\n\nMariana De Souza Mendes\n\n\n\n\n\n\n27/03/2018\n\n\n0.1\n\n\nSegunda Vers\u00e3o da EAP\n\n\nMariana de Souza Mendes e Jo\u00e3o Pedro Sconetto\n\n\n\n\n\n\n\n\nv0.0.1\n\n\n\n\nv.0.1", 
+            "title": "EAP"
+        }, 
+        {
+            "location": "/eps/EAP/#estrutura-analitica-do-projeto-eap", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autor      22/03/2018  0.0.1  Primeira Vers\u00e3o da EAP  Mariana De Souza Mendes    27/03/2018  0.1  Segunda Vers\u00e3o da EAP  Mariana de Souza Mendes e Jo\u00e3o Pedro Sconetto", 
+            "title": "Estrutura Anal\u00edtica do Projeto (EAP)"
+        }, 
+        {
+            "location": "/eps/EAP/#v001", 
+            "text": "", 
+            "title": "v0.0.1"
+        }, 
+        {
+            "location": "/eps/EAP/#v01", 
+            "text": "", 
+            "title": "v.0.1"
+        }, 
+        {
+            "location": "/eps/ROADMAP/", 
+            "text": "Estrutura Anal\u00edtica do Projeto (EAP)\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutor\n\n\n\n\n\n\n\n\n\n\n27/03/2018\n\n\n0.0.1\n\n\nPrimeira Vers\u00e3o da Roadmap\n\n\nMariana De Souza Mendes\n\n\n\n\n\n\n28/03/2018\n\n\n0.0.2\n\n\nSegunda Vers\u00e3o do Roadmap\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\n\n\nv0.0.2\n\n\n\n\nClique aqui para ampliar a imagem", 
+            "title": "ROADMAP"
+        }, 
+        {
+            "location": "/eps/ROADMAP/#estrutura-analitica-do-projeto-eap", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autor      27/03/2018  0.0.1  Primeira Vers\u00e3o da Roadmap  Mariana De Souza Mendes    28/03/2018  0.0.2  Segunda Vers\u00e3o do Roadmap  Jo\u00e3o Pedro Sconetto", 
+            "title": "Estrutura Anal\u00edtica do Projeto (EAP)"
+        }, 
+        {
+            "location": "/eps/ROADMAP/#v002", 
+            "text": "Clique aqui para ampliar a imagem", 
+            "title": "v0.0.2"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/", 
+            "text": "Introdu\u00e7\u00e3o\n\n\nEste documento tem como objetivo deixar transparente o processo \u00c1gil utilizado pelo Time Scrum do projeto Dr. Down, descrevendo informa\u00e7\u00f5es como pap\u00e9is existentes e ritos do Scrum adotados.\n\n\nPap\u00e9is na Equipe\n\n\nEsta sess\u00e3o lista todos os pap\u00e9is existentes dentro do Time Scrum do projeto Dr. Down, suas atribui\u00e7\u00f5es e as pessoas que os est\u00e3o exercendo.\n\n\nProduct Owner\n\n\n\n\n\n\nAtribui\u00e7\u00f5es:\n\n\n\n\n\n\ndefinir claramente os \u00edtens do Backlog do Produto\n\n\n\n\npriorizar os \u00edtens do Backlog do Produto\n\n\notimizar o valor do trabalho do Time de Desenvolvimento\n\n\nmostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir\n\n\ngarantir que o Time de Desenvolvimento entenda os \u00edtens do Backlog do Produto no n\u00edvel necess\u00e1rio\n\n\n\n\nArquiteto de Software\n\n\n\n\n\n\nAtribui\u00e7\u00e3o:\n\n\n\n\n\n\ndeterminar qual a arquitetura de software dever\u00e1 ser utilizada nas diversas partes do projeto, levando em conta as especificidades deste e os requisitos exigidos\n\n\n\n\ncertificar-se de que a arquitetura definida est\u00e1 clara e sendo obedecida pelos demais membros do Time Scrum\n\n\n\n\nDevOps\n\n\n\n\n\n\nAtribui\u00e7\u00e3o:\n\n\n\n\n\n\ngarantir a integra\u00e7\u00e3o continua\n\n\n\n\ngarantir o deploy continuo\n\n\nfacilitar o processo de desenvolvimento\n\n\norganizar os diversos pipeline do produto de software \n\n\n\n\nScrum Master\n\n\n\n\n\n\nAtribui\u00e7\u00f5es:\n\n\n\n\n\n\najudar todos do Time Scrum a entenderem a teoria, pr\u00e1tica, regras e valores do Scrum\n\n\n\n\nservir ao Product Owner, auxiliando de diversas formas, tais como:\n\n\ngerir de maneira eficiente o Backlog do produto\n\n\nfazer todos do Time Scrum entenderem ao m\u00e1ximo os \u00edtens do Backlog do Produto\n\n\n\n\n\n\nservir ao Time de Desenvolvimento, auxiliando de diversas formas, tais como:\n\n\nremover impedimentos ao progresso do Time de Desenvolvimento\n\n\ninstrui-lo em auto-organiza\u00e7\u00e3o e a serem multifuncionais\n\n\n\n\n\n\ndocumentar cada Sprint\n\n\ndeterminar e analisar as m\u00e9tricas e indicadores utilizados para acompanhar o progresso de toda a equipe\n\n\n\n\nTime de Desenvolvimento\n\n\n\n\n\n\nAtribui\u00e7\u00f5es:\n\n\n\n\n\n\nentregar os \u00edtens contidos no Backlog da Sprint ao final de cada Sprint\n\n\n\n\ndeterminar como far\u00e3o para entregar os \u00edtens do Backlog da Sprint (auto-organiza\u00e7\u00e3o)\n\n\n\n\nRitos do Scrum\n\n\nAbaixo ritos do Scrum que ser\u00e3o realizados pelo Time Scrum do projeto Dr. Down. Para cada rito est\u00e1 descrito seus objetivos, o tempo m\u00e1ximo de realiza\u00e7\u00e3o deles (entre colchetes [ ] ) e os dias e hor\u00e1rios em que ocorrer\u00e3o.\n\n\nSprint\n\n\n\n\n\n\nobjetivo:\n\n\n\n\n\n\natingir o objetivo para a Sprint definido no Planejamento da Sprint, assim como entregar todos os \u00edtens do Backlog da Sprint\n\n\n\n\n\n\ntime box:\n\n\n\n\ns\u00e1bado \u00e0 sexta [1 semana]\n\n\n\n\nPlanejamento da Sprint\n\n\n\n\n\n\nReuni\u00e3o realizada com o Time Scrum no in\u00edcio de cada Sprint que tem como objetivo:\n\n\n\n\n\n\ndeterminar o que poder\u00e1 ser entregue na Sprint que se inicia (cria\u00e7\u00e3o do Backlog da Sprint)\n\n\n\n\nisso deve ser negociado entre o Product Owner e o Time de Desenvolvimento, respeitando a capacidade projetada e a performance passada deste\n\n\n\n\n\n\n\n\nestimar o esfor\u00e7o necess\u00e1rio para entregar as hist\u00f3rias do backlog, atrav\u00e9s da pontua\u00e7\u00e3o delas usando o \nplanning poker\n:\n\n\n\n\nantes do in\u00edcio da pontua\u00e7\u00e3o de cada hist\u00f3ria, o Product Owner deve explic\u00e1-la e tirar as d\u00favidas da equipe, para que todos possam ter uma melhor base para a pontua\u00e7\u00e3o\n\n\ncada participante vota, dando os pontos que acham que aquela hist\u00f3ria vale, tendo como base quantas horas eles imaginam que ser\u00e3o necess\u00e1rias para complet\u00e1-la. O voto de todas as pessoas s\u00f3 \u00e9 revelado quando todos tiverem decidido quantos pontos dar\u00e3o para a hist\u00f3ria\n\n\na pontua\u00e7\u00e3o dada para cada hist\u00f3ria deve estar dentro da sequ\u00eancia de Fibonacci, sendo a menor pontua\u00e7\u00e3o v\u00e1lida 1\n\n\neste passo \u00e9 repetido at\u00e9 que haja consenso de todos os presentes sobre quantos pontos a hist\u00f3ria em quest\u00e3o vale\n\n\na equipe passa a pontuar a pr\u00f3xima hist\u00f3ria, at\u00e9 que todas estejam pontuadas\n\n\n\n\n\n\n\n\ndeterminar como a equipe ir\u00e1 se organizar para que haja a entrega prevista para a Sprint\n\n\n\n\n\n\ntime box:\n\n\n\n\ns\u00e1bado: 11:00 [2h]\n\n\n\n\nDaily Meeting\n\n\n\n\n\n\nReuni\u00e3o di\u00e1ria do Time Scrum que tem como objetivo:\n\n\n\n\n\n\ncada membro responder as 3 perguntas abaixo, sobre sua participa\u00e7\u00e3o no andamento da Sprint:\n\n\n\n\nO que foi feito pelo membro no dia anterior para ajudar o Time de Desenvolvimento na Sprint?\n\n\nO que ser\u00e1 feito pelo membro no dia atual para ajudar o Time de Desenvolvimento na Sprint?\n\n\nHouve algum empedimento para o membro que impossibilitou ele ajudar o restante da equipe na Sprint? (gerenciamento de riscos)\n\n\n\n\n\n\n\n\ntime box:\n\n\n\n\n\n\nDailys presenciais:\n\n\n\n\nter\u00e7a e quinta, 9:45 [15 min]\n\n\ns\u00e1bado: depois do Planejamento da Sprint [15 min]\n\n\n\n\n\n\n\n\nDailys online:\n\n\n\n\nsegunda, quarta e sexta, come\u00e7ando \u00e0s 8:00\n\n\n\n\n\n\n\n\nReview da Sprint\n\n\n\n\n\n\nobjetivo:\n\n\n\n\n\n\nrevisar como foi a Sprint, com foco no Backlog do Produto e no da Sprint\n\n\n\n\no que foi feito e o que ficou como d\u00e9bito (Product Owner)\n\n\natualiza\u00e7\u00e3o do Backlog do Produto (Product Owner)\n\n\nproblemas relacionados ao Backlog da Sprint e se/como foram resolvidos (toda a equipe)\n\n\n\n\n\n\n\n\ntime box:\n\n\n\n\n\n\ns\u00e1bado, in\u00edcio da reuni\u00e3o [1h]\n\n\n\n\n\n\nIMPORTANTE\n: um item do Backlog da Sprint \ns\u00f3 ser\u00e1 aceito como feito\n se:\n\n\n\n\n\n\nestiver terminado\n\n\n\n\nestiver coberto, no m\u00ednimo, por \nteste unit\u00e1rio e/ou de integra\u00e7\u00e3o\n\n\nexceto em caso de documenta\u00e7\u00e3o ou outros tipos de hist\u00f3rias que n\u00e3o puderem ser testadas\n\n\n\n\n\n\ntiver sido feito o \npull request\n para a branch develop ou master e este ser \naceito\n pelos revisores\n\n\na funcionalidade entregue ser aceita pelo Product Owner, de acordo com os crit\u00e9rios de aceita\u00e7\u00e3o especificados na hist\u00f3ria\n\n\n\n\nRetrospectiva da Sprint\n\n\n\n\n\n\nobjetivo:\n\n\n\n\n\n\nlevantar como foi a Sprint, do ponto de vista das pessoas, relacionamentos, processos e ferramentas (pontos positivos e negativos)\n\n\n\n\nidentificar potenciais melhorias\n\n\n\n\nidentificar melhorias para colocar em pr\u00e1tica na pr\u00f3xima Sprint\n\n\n\n\n\n\ntime box:\n\n\n\n\n\n\ns\u00e1bado, logo ap\u00f3s o review [1h]", 
+            "title": "Metodologia"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#introducao", 
+            "text": "Este documento tem como objetivo deixar transparente o processo \u00c1gil utilizado pelo Time Scrum do projeto Dr. Down, descrevendo informa\u00e7\u00f5es como pap\u00e9is existentes e ritos do Scrum adotados.", 
+            "title": "Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#papeis-na-equipe", 
+            "text": "Esta sess\u00e3o lista todos os pap\u00e9is existentes dentro do Time Scrum do projeto Dr. Down, suas atribui\u00e7\u00f5es e as pessoas que os est\u00e3o exercendo.", 
+            "title": "Pap\u00e9is na Equipe"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#product-owner", 
+            "text": "Atribui\u00e7\u00f5es:    definir claramente os \u00edtens do Backlog do Produto   priorizar os \u00edtens do Backlog do Produto  otimizar o valor do trabalho do Time de Desenvolvimento  mostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir  garantir que o Time de Desenvolvimento entenda os \u00edtens do Backlog do Produto no n\u00edvel necess\u00e1rio", 
+            "title": "Product Owner"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#arquiteto-de-software", 
+            "text": "Atribui\u00e7\u00e3o:    determinar qual a arquitetura de software dever\u00e1 ser utilizada nas diversas partes do projeto, levando em conta as especificidades deste e os requisitos exigidos   certificar-se de que a arquitetura definida est\u00e1 clara e sendo obedecida pelos demais membros do Time Scrum", 
+            "title": "Arquiteto de Software"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#devops", 
+            "text": "Atribui\u00e7\u00e3o:    garantir a integra\u00e7\u00e3o continua   garantir o deploy continuo  facilitar o processo de desenvolvimento  organizar os diversos pipeline do produto de software", 
+            "title": "DevOps"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#scrum-master", 
+            "text": "Atribui\u00e7\u00f5es:    ajudar todos do Time Scrum a entenderem a teoria, pr\u00e1tica, regras e valores do Scrum   servir ao Product Owner, auxiliando de diversas formas, tais como:  gerir de maneira eficiente o Backlog do produto  fazer todos do Time Scrum entenderem ao m\u00e1ximo os \u00edtens do Backlog do Produto    servir ao Time de Desenvolvimento, auxiliando de diversas formas, tais como:  remover impedimentos ao progresso do Time de Desenvolvimento  instrui-lo em auto-organiza\u00e7\u00e3o e a serem multifuncionais    documentar cada Sprint  determinar e analisar as m\u00e9tricas e indicadores utilizados para acompanhar o progresso de toda a equipe", 
+            "title": "Scrum Master"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#time-de-desenvolvimento", 
+            "text": "Atribui\u00e7\u00f5es:    entregar os \u00edtens contidos no Backlog da Sprint ao final de cada Sprint   determinar como far\u00e3o para entregar os \u00edtens do Backlog da Sprint (auto-organiza\u00e7\u00e3o)", 
+            "title": "Time de Desenvolvimento"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#ritos-do-scrum", 
+            "text": "Abaixo ritos do Scrum que ser\u00e3o realizados pelo Time Scrum do projeto Dr. Down. Para cada rito est\u00e1 descrito seus objetivos, o tempo m\u00e1ximo de realiza\u00e7\u00e3o deles (entre colchetes [ ] ) e os dias e hor\u00e1rios em que ocorrer\u00e3o.", 
+            "title": "Ritos do Scrum"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#sprint", 
+            "text": "objetivo:    atingir o objetivo para a Sprint definido no Planejamento da Sprint, assim como entregar todos os \u00edtens do Backlog da Sprint    time box:   s\u00e1bado \u00e0 sexta [1 semana]", 
+            "title": "Sprint"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#planejamento-da-sprint", 
+            "text": "Reuni\u00e3o realizada com o Time Scrum no in\u00edcio de cada Sprint que tem como objetivo:    determinar o que poder\u00e1 ser entregue na Sprint que se inicia (cria\u00e7\u00e3o do Backlog da Sprint)   isso deve ser negociado entre o Product Owner e o Time de Desenvolvimento, respeitando a capacidade projetada e a performance passada deste     estimar o esfor\u00e7o necess\u00e1rio para entregar as hist\u00f3rias do backlog, atrav\u00e9s da pontua\u00e7\u00e3o delas usando o  planning poker :   antes do in\u00edcio da pontua\u00e7\u00e3o de cada hist\u00f3ria, o Product Owner deve explic\u00e1-la e tirar as d\u00favidas da equipe, para que todos possam ter uma melhor base para a pontua\u00e7\u00e3o  cada participante vota, dando os pontos que acham que aquela hist\u00f3ria vale, tendo como base quantas horas eles imaginam que ser\u00e3o necess\u00e1rias para complet\u00e1-la. O voto de todas as pessoas s\u00f3 \u00e9 revelado quando todos tiverem decidido quantos pontos dar\u00e3o para a hist\u00f3ria  a pontua\u00e7\u00e3o dada para cada hist\u00f3ria deve estar dentro da sequ\u00eancia de Fibonacci, sendo a menor pontua\u00e7\u00e3o v\u00e1lida 1  este passo \u00e9 repetido at\u00e9 que haja consenso de todos os presentes sobre quantos pontos a hist\u00f3ria em quest\u00e3o vale  a equipe passa a pontuar a pr\u00f3xima hist\u00f3ria, at\u00e9 que todas estejam pontuadas     determinar como a equipe ir\u00e1 se organizar para que haja a entrega prevista para a Sprint    time box:   s\u00e1bado: 11:00 [2h]", 
+            "title": "Planejamento da Sprint"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#daily-meeting", 
+            "text": "Reuni\u00e3o di\u00e1ria do Time Scrum que tem como objetivo:    cada membro responder as 3 perguntas abaixo, sobre sua participa\u00e7\u00e3o no andamento da Sprint:   O que foi feito pelo membro no dia anterior para ajudar o Time de Desenvolvimento na Sprint?  O que ser\u00e1 feito pelo membro no dia atual para ajudar o Time de Desenvolvimento na Sprint?  Houve algum empedimento para o membro que impossibilitou ele ajudar o restante da equipe na Sprint? (gerenciamento de riscos)     time box:    Dailys presenciais:   ter\u00e7a e quinta, 9:45 [15 min]  s\u00e1bado: depois do Planejamento da Sprint [15 min]     Dailys online:   segunda, quarta e sexta, come\u00e7ando \u00e0s 8:00", 
+            "title": "Daily Meeting"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#review-da-sprint", 
+            "text": "objetivo:    revisar como foi a Sprint, com foco no Backlog do Produto e no da Sprint   o que foi feito e o que ficou como d\u00e9bito (Product Owner)  atualiza\u00e7\u00e3o do Backlog do Produto (Product Owner)  problemas relacionados ao Backlog da Sprint e se/como foram resolvidos (toda a equipe)     time box:    s\u00e1bado, in\u00edcio da reuni\u00e3o [1h]    IMPORTANTE : um item do Backlog da Sprint  s\u00f3 ser\u00e1 aceito como feito  se:    estiver terminado   estiver coberto, no m\u00ednimo, por  teste unit\u00e1rio e/ou de integra\u00e7\u00e3o  exceto em caso de documenta\u00e7\u00e3o ou outros tipos de hist\u00f3rias que n\u00e3o puderem ser testadas    tiver sido feito o  pull request  para a branch develop ou master e este ser  aceito  pelos revisores  a funcionalidade entregue ser aceita pelo Product Owner, de acordo com os crit\u00e9rios de aceita\u00e7\u00e3o especificados na hist\u00f3ria", 
+            "title": "Review da Sprint"
+        }, 
+        {
+            "location": "/eps/SCRUM_METHODOLOGY_DRDOWN/#retrospectiva-da-sprint", 
+            "text": "objetivo:    levantar como foi a Sprint, do ponto de vista das pessoas, relacionamentos, processos e ferramentas (pontos positivos e negativos)   identificar potenciais melhorias   identificar melhorias para colocar em pr\u00e1tica na pr\u00f3xima Sprint    time box:    s\u00e1bado, logo ap\u00f3s o review [1h]", 
+            "title": "Retrospectiva da Sprint"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/", 
+            "text": "Hist\u00f3rico de Revis\u00f5es\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutores\n\n\n\n\n\n\n\n\n\n\n27/03/2018\n\n\n0.0.1\n\n\nCria\u00e7\u00e3o do documento\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\n\n\n\n\nIntrodu\u00e7\u00e3o\n\n\nEste documento visa esclarecer entre os envolvidos no projeto \nDr. Down\n d\u00favidas que possam surgir sobre quando uma tarefa ser\u00e1 considerada pronta, quais s\u00e3o os crit\u00e9rios levados em considera\u00e7\u00e3o e quais destes devem ser cumpridos para ser aceita como \npronto\n no vi\u00e9s do projeto.\n\n\nHist\u00f3ria\n\n\nUma \nhist\u00f3ria\n ser\u00e1 considerada pronta quando a codifica\u00e7\u00e3o e/ou altera\u00e7\u00e3o necess\u00e1ria estiver completa, testada com cobertura de c\u00f3digo (implementando o testes unit\u00e1rios, funcionais e de integra\u00e7\u00e3o) visando manter a mesma igual ou acima de 90%, a documenta\u00e7\u00e3o do projeto (caso se necess\u00e1rio modifica\u00e7\u00e3o) atualizada e deve ser previamente aprovada pelo \nPO\n (\nProduct Owner\n).\n\n\nFeature\n\n\nUma \nfeature\n ser\u00e1 considerada pronta quando todas as hist\u00f3rias derivadas da mesma estarem entregues, prontas e testadas de acordo com os crit\u00e9rios supracitados.\n\n\nSprint\n\n\nUma \nsprint\n poder\u00e1 ser finalizada/pronta antes do t\u00e9rmino de sua \ntime box\n, desde que todas as hist\u00f3rias que foram planejadas para serem entregues durante a sprint estiverem finalizadas, prontas e testadas de acordo com os crit\u00e9rios supracitados, sendo importante frisar de que a entrega dever\u00e1 ser feita via \nPull Request\n no reposit\u00f3rio oficial do projeto e o mesmo dever\u00e1 ser discutido, testado e aprovado por ao menos 2 membros de EPS (prefer\u00eancia para a aprova\u00e7\u00e3o do \nScrum Master\n e do \nProduct Owner\n).\n\n\nArtefato\n\n\nUm artefato ser\u00e1 considerado pronto quando ele estiver entregue, pronto e revisado por ao menos 2 membros de EPS com o parecer favor\u00e1vel acerca do conte\u00fado do mesmo.", 
+            "title": "Defini\u00e7\u00e3o de Pronto"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#historico-de-revisoes", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autores      27/03/2018  0.0.1  Cria\u00e7\u00e3o do documento  Jo\u00e3o Pedro Sconetto", 
+            "title": "Hist\u00f3rico de Revis\u00f5es"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#introducao", 
+            "text": "Este documento visa esclarecer entre os envolvidos no projeto  Dr. Down  d\u00favidas que possam surgir sobre quando uma tarefa ser\u00e1 considerada pronta, quais s\u00e3o os crit\u00e9rios levados em considera\u00e7\u00e3o e quais destes devem ser cumpridos para ser aceita como  pronto  no vi\u00e9s do projeto.", 
+            "title": "Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#historia", 
+            "text": "Uma  hist\u00f3ria  ser\u00e1 considerada pronta quando a codifica\u00e7\u00e3o e/ou altera\u00e7\u00e3o necess\u00e1ria estiver completa, testada com cobertura de c\u00f3digo (implementando o testes unit\u00e1rios, funcionais e de integra\u00e7\u00e3o) visando manter a mesma igual ou acima de 90%, a documenta\u00e7\u00e3o do projeto (caso se necess\u00e1rio modifica\u00e7\u00e3o) atualizada e deve ser previamente aprovada pelo  PO  ( Product Owner ).", 
+            "title": "Hist\u00f3ria"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#feature", 
+            "text": "Uma  feature  ser\u00e1 considerada pronta quando todas as hist\u00f3rias derivadas da mesma estarem entregues, prontas e testadas de acordo com os crit\u00e9rios supracitados.", 
+            "title": "Feature"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#sprint", 
+            "text": "Uma  sprint  poder\u00e1 ser finalizada/pronta antes do t\u00e9rmino de sua  time box , desde que todas as hist\u00f3rias que foram planejadas para serem entregues durante a sprint estiverem finalizadas, prontas e testadas de acordo com os crit\u00e9rios supracitados, sendo importante frisar de que a entrega dever\u00e1 ser feita via  Pull Request  no reposit\u00f3rio oficial do projeto e o mesmo dever\u00e1 ser discutido, testado e aprovado por ao menos 2 membros de EPS (prefer\u00eancia para a aprova\u00e7\u00e3o do  Scrum Master  e do  Product Owner ).", 
+            "title": "Sprint"
+        }, 
+        {
+            "location": "/eps/DONE_DEFINITION/#artefato", 
+            "text": "Um artefato ser\u00e1 considerado pronto quando ele estiver entregue, pronto e revisado por ao menos 2 membros de EPS com o parecer favor\u00e1vel acerca do conte\u00fado do mesmo.", 
+            "title": "Artefato"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/", 
+            "text": "EVM Agile - Dr. Down\n\n\nHist\u00f3rico de Revis\u00f5es\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutores\n\n\n\n\n\n\n\n\n\n\n28/03/2018\n\n\n0.0.1\n\n\nCria\u00e7\u00e3o do documento\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\n\n\nEVM Agile\n\n\nO \nEVM\n (\nEarned Value Management\n ou Gerenciamento de Valor agregado) se trata de uma t\u00e9cnica da gest\u00e3o tradicional de projetos que \u00e9 usada para medir a sa\u00fade de um projeto. Essa t\u00e9cnica foi adaptada para projetos ag\u00e9is a fim de auxiliar a equipe de gest\u00e3o a verificar m\u00e9tricas e avaliar entregas em projetos que seguem esta metodologia, e que enfretam alguns problemas como:\n- Escopo aberto;\n- Falta de visibilidade em entregas e custos;\n- e etc.\n\n\nDados Fixos\n\n\n\n\n\n\n\n\nIdentificador\n\n\nDescri\u00e7\u00e3o\n\n\nValor\n\n\n\n\n\n\n\n\n\n\nBAC\n\n\nOr\u00e7amento dispon\u00edvel para a primeira \nrelease\n\n\nR$ 34.039,38\n\n\n\n\n\n\nL\n\n\nTamanho da sprint em dias\n\n\n7\n\n\n\n\n\n\nPS\n\n\nTotal de sprints planejadas\n\n\n6\n\n\n\n\n\n\nSD\n\n\nData de in\u00edcio\n\n\n05/03/2018\n\n\n\n\n\n\nPRP\n\n\nPontos planejados para a primeira \nrelease\n\n\n172\n\n\n\n\n\n\n\n\nLegenda:\n\n\n\n\n\n\n\n\nIdentificador\n\n\nDescri\u00e7\u00e3o\n\n\n\n\n\n\n\n\n\n\nPRP\n\n\nO PRP foi modificado para ser a soma de todos os pontos reavaliados das hist\u00f3rias.\n\n\n\n\n\n\nRPC\n\n\nDe forma an\u00e1loga, o RPC \u00e9 avaliado como o somat\u00f3rio dos pontos conclu\u00eddos at\u00e9 a sprint atual.\n\n\n\n\n\n\nPPC\n\n\nEsse valor \u00e9 o somat\u00f3rio da raz\u00e3o entre a dura\u00e7\u00e3o da sprint atual sobre o n\u00famero de sprints da \nrelease\n at\u00e9 a sprint atual.\n\n\n\n\n\n\nAPC\n\n\nEsse valor \u00e9 obtido pela raz\u00e3o entre o RPC da sprint e o PRP.\n\n\n\n\n\n\nPP\n\n\nPontos que foram planejados para cada sprint.\n\n\n\n\n\n\nPA\n\n\nFuncionalidades novas que foram adicionadas ao projeto/sprint.\n\n\n\n\n\n\nPDT\n\n\nPontos relacionados a d\u00edvidas t\u00e9cnicas deixadas pelas sprints anteriores.\n\n\n\n\n\n\nPC\n\n\nQuantos pontos foram efetivamente completados na sprint.\n\n\n\n\n\n\nPV\n\n\nO valor planejado \u00e9 obtido atrav\u00e9s da multiplica\u00e7\u00e3o do PPC pelo or\u00e7amento do projeto.\n\n\n\n\n\n\nAC\n\n\n\u00c9, tamb\u00e9m, obtido atrav\u00e9s da multiplica\u00e7\u00e3o do PPC pelo or\u00e7amento, visto que no projeto \u00e1gil o valor real \u00e9 sempre igual ao planejado.\n\n\n\n\n\n\nEV\n\n\n\u00c9 resultado da multiplica\u00e7\u00e3o da PC pelo or\u00e7amento do projeto, divido pelo PRP.\n\n\n\n\n\n\nTEV\n\n\n\u00c9 o somat\u00f3rio do TEV at\u00e9 aquela sprint.\n\n\n\n\n\n\nCV\n\n\n\u00c9 a subtra\u00e7\u00e3o do TEV pelo AC.\n\n\n\n\n\n\nSV\n\n\n\u00c9 a subtra\u00e7\u00e3o do TEV pelo PV.\n\n\n\n\n\n\nCPI\n\n\n\u00c9 a divis\u00e3o de TEV por AC.\n\n\n\n\n\n\nSPI\n\n\n\u00c9 a divis\u00e3o de TEV por PV.\n\n\n\n\n\n\n\n\nPlanilha EVM\n\n\nLink para a planilha EVM no \nGoogle Docs\n.\n\n\nRefer\u00eancias\n\n\nHiFlex Consultoria. Gerenciamento de valor agregado (EVM)  em projetos ag\u00e9is. Vitor Massari. Acesso em: \nhttp://www.hiflex.com.br/v1/gerenciamento-de-valor-agregado-evm-em-projetos-ageis/\n\ncodetiburon. Earned Value Management (EVM) for Agile Software Projects. Olga Yatskevich. Acesso em: \nhttps://codetiburon.com/earned-value-management-evm-agile-software-projects/", 
+            "title": "EVM"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#evm-agile-dr-down", 
+            "text": "", 
+            "title": "EVM Agile - Dr. Down"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#historico-de-revisoes", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autores      28/03/2018  0.0.1  Cria\u00e7\u00e3o do documento  Jo\u00e3o Pedro Sconetto", 
+            "title": "Hist\u00f3rico de Revis\u00f5es"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#evm-agile", 
+            "text": "O  EVM  ( Earned Value Management  ou Gerenciamento de Valor agregado) se trata de uma t\u00e9cnica da gest\u00e3o tradicional de projetos que \u00e9 usada para medir a sa\u00fade de um projeto. Essa t\u00e9cnica foi adaptada para projetos ag\u00e9is a fim de auxiliar a equipe de gest\u00e3o a verificar m\u00e9tricas e avaliar entregas em projetos que seguem esta metodologia, e que enfretam alguns problemas como:\n- Escopo aberto;\n- Falta de visibilidade em entregas e custos;\n- e etc.", 
+            "title": "EVM Agile"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#dados-fixos", 
+            "text": "Identificador  Descri\u00e7\u00e3o  Valor      BAC  Or\u00e7amento dispon\u00edvel para a primeira  release  R$ 34.039,38    L  Tamanho da sprint em dias  7    PS  Total de sprints planejadas  6    SD  Data de in\u00edcio  05/03/2018    PRP  Pontos planejados para a primeira  release  172", 
+            "title": "Dados Fixos"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#legenda", 
+            "text": "Identificador  Descri\u00e7\u00e3o      PRP  O PRP foi modificado para ser a soma de todos os pontos reavaliados das hist\u00f3rias.    RPC  De forma an\u00e1loga, o RPC \u00e9 avaliado como o somat\u00f3rio dos pontos conclu\u00eddos at\u00e9 a sprint atual.    PPC  Esse valor \u00e9 o somat\u00f3rio da raz\u00e3o entre a dura\u00e7\u00e3o da sprint atual sobre o n\u00famero de sprints da  release  at\u00e9 a sprint atual.    APC  Esse valor \u00e9 obtido pela raz\u00e3o entre o RPC da sprint e o PRP.    PP  Pontos que foram planejados para cada sprint.    PA  Funcionalidades novas que foram adicionadas ao projeto/sprint.    PDT  Pontos relacionados a d\u00edvidas t\u00e9cnicas deixadas pelas sprints anteriores.    PC  Quantos pontos foram efetivamente completados na sprint.    PV  O valor planejado \u00e9 obtido atrav\u00e9s da multiplica\u00e7\u00e3o do PPC pelo or\u00e7amento do projeto.    AC  \u00c9, tamb\u00e9m, obtido atrav\u00e9s da multiplica\u00e7\u00e3o do PPC pelo or\u00e7amento, visto que no projeto \u00e1gil o valor real \u00e9 sempre igual ao planejado.    EV  \u00c9 resultado da multiplica\u00e7\u00e3o da PC pelo or\u00e7amento do projeto, divido pelo PRP.    TEV  \u00c9 o somat\u00f3rio do TEV at\u00e9 aquela sprint.    CV  \u00c9 a subtra\u00e7\u00e3o do TEV pelo AC.    SV  \u00c9 a subtra\u00e7\u00e3o do TEV pelo PV.    CPI  \u00c9 a divis\u00e3o de TEV por AC.    SPI  \u00c9 a divis\u00e3o de TEV por PV.", 
+            "title": "Legenda:"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#planilha-evm", 
+            "text": "Link para a planilha EVM no  Google Docs .", 
+            "title": "Planilha EVM"
+        }, 
+        {
+            "location": "/eps/EVM_AGILE/#referencias", 
+            "text": "HiFlex Consultoria. Gerenciamento de valor agregado (EVM)  em projetos ag\u00e9is. Vitor Massari. Acesso em:  http://www.hiflex.com.br/v1/gerenciamento-de-valor-agregado-evm-em-projetos-ageis/ \ncodetiburon. Earned Value Management (EVM) for Agile Software Projects. Olga Yatskevich. Acesso em:  https://codetiburon.com/earned-value-management-evm-agile-software-projects/", 
+            "title": "Refer\u00eancias"
+        }, 
+        {
             "location": "/CODE_OF_CONDUCT/", 
             "text": "C\u00f3digo de Conduta do Conv\u00eanio de Contribui\u00e7\u00e3o\n\n\nNosso Compromisso\n\n\nNo interesse de promover um ambiente aberto e acolhedor, n\u00f3s, como colaboradores e mantenedores, prometemos fazer parte de nosso projeto e de nossa comunidade uma experi\u00eancia livre de ass\u00e9dio para todos, independentemente da idade, tamanho corporal, defici\u00eancia, etnia, identidade e express\u00e3o de g\u00eanero, n\u00edvel de experi\u00eancia, nacionalidade, apar\u00eancia pessoal, ra\u00e7a, religi\u00e3o ou identidade e orienta\u00e7\u00e3o sexual.\n\n\nNossos Padr\u00f5es\n\n\nExemplos de comportamentos que contribuem para criar um ambiente positivo incluem:\n\n\n\n\nUso linguagem acolhedora e inclusiva.\n\n\nSer respeitoso com diferentes pontos de vista e experi\u00eancias.\n\n\nAceitar cr\u00edticas construtivas.\n\n\nConcentrar no que \u00e9 melhor para a comunidade.\n\n\nMostrar empatia para com outros membros da comunidade.\n\n\n\n\nExemplos de comportamentos inaceit\u00e1veis dos contribuidores incluem:\n\n\n\n\nO uso de linguagem ou imagens sexualizadas e avan\u00e7os ou ass\u00e9dios sexuais indesej\u00e1veis.\n\n\nComent\u00e1rios depreciativos, insultos/derrogat\u00f3rios e ataques pessoais ou pol\u00edticos.\n\n\nAss\u00e9dio p\u00fablico ou em privado.\n\n\nPublicar a informa\u00e7\u00e3o privada dos outros, como um endere\u00e7o f\u00edsico ou eletr\u00f4nico, sem permiss\u00e3o expl\u00edcita.\n\n\nOutra conduta que razoavelmente pode ser considerada inapropriada em um ambiente profissional.\n\n\n\n\nNossas Responsabilidades\n\n\nOs respons\u00e1veis \u200b\u200bpelo projeto s\u00e3o respons\u00e1veis \u200b\u200bpor esclarecer os padr\u00f5es de comportamento aceit\u00e1vel e devem tomar medidas corretivas apropriadas e justas em resposta a qualquer inst\u00e2ncia de comportamento inaceit\u00e1vel.\n\n\nOs mantenedores do projeto t\u00eam o direito e a responsabilidade de remover, editar ou rejeitar coment\u00e1rios, compromissos, c\u00f3digos, edi\u00e7\u00f5es de wiki, problemas e outras contribui\u00e7\u00f5es que n\u00e3o estejam alinhados com este C\u00f3digo de Conduta ou proibir temporariamente ou permanentemente qualquer contribuinte para outros comportamentos que eles consideram inapropriado, amea\u00e7ador, ofensivo ou prejudicial.\n\n\nEscopo\n\n\nEste C\u00f3digo de Conduta aplica-se tanto nos espa\u00e7os do projeto quanto nos espa\u00e7os p\u00fablicos quando um indiv\u00edduo representa o projeto ou sua comunidade. Exemplos de representar um projeto ou comunidade incluem o uso de um endere\u00e7o de e-mail oficial do projeto, postagem atrav\u00e9s de uma conta oficial em m\u00eddias sociais, ou atuando como representante designado em um evento online ou offline. A representa\u00e7\u00e3o de um projeto pode ser melhor definida e esclarecida pelos respons\u00e1veis \u200b\u200bpelo projeto.\n\n\nExecu\u00e7\u00e3o\n\n\nInst\u00e2ncias de comportamento abusivo, de ass\u00e9dio ou de outra forma inaceit\u00e1vel podem ser comunicadas ao contactar a equipe do projeto em equipe.drdown@gmail.com.\nA equipe do projeto ir\u00e1 rever e investigar todas as queixas, e responder\u00e1 da forma que julgar apropriada \u00e0s circunst\u00e2ncias.\nA equipe do projeto \u00e9 obrigada a manter a confidencialidade em rela\u00e7\u00e3o ao rep\u00f3rter de um incidente. Mais detalhes sobre pol\u00edticas de execu\u00e7\u00e3o espec\u00edficas podem ser publicados separadamente.\n\n\nOs mantenedores do projeto que n\u00e3o seguem ou aplicam o C\u00f3digo de Conduta de boa f\u00e9 podem enfrentar repercuss\u00f5es tempor\u00e1rias ou permanentes, conforme determinado por outros membros da lideran\u00e7a do projeto.\n\n\nAtribui\u00e7\u00e3o\n\n\nEste C\u00f3digo de Conduta \u00e9 adaptado da Conven\u00e7\u00e3o do Contribuinte, vers\u00e3o 1.4, dispon\u00edvel em http://contributor-covenant.org/version/1/4", 
             "title": "C\u00f3digo de conduta"
@@ -414,6 +919,26 @@
             "location": "/CODE_OF_CONDUCT/#atribuicao", 
             "text": "Este C\u00f3digo de Conduta \u00e9 adaptado da Conven\u00e7\u00e3o do Contribuinte, vers\u00e3o 1.4, dispon\u00edvel em http://contributor-covenant.org/version/1/4", 
             "title": "Atribui\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/PROJECT_TOOLS/", 
+            "text": "Hist\u00f3rico de Revis\u00f5es\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutores\n\n\n\n\n\n\n\n\n\n\n27/03/2018\n\n\n0.0.1\n\n\nCria\u00e7\u00e3o do documento\n\n\nMariana de Souza Mendes\n\n\n\n\n\n\n\n\nIntrodu\u00e7\u00e3o\n\n\nEste documento visa esclarecer entre os envolvidos no projeto \nDr. Down\n as ferramentas que ser\u00e3o utilizadas ao longo desse projeto.\n\n\nFerramentas\n\n\n\n\n\n\nSlack\n: Toda comunica\u00e7\u00e3\u00f3 \u00e9 feita por meio do slack e temos a integra\u00e7\u00e3o com outras ferramentas. Exemplo: o GitHub, ZenHub, Code Climate, Travis. Outro fator importante para a decis\u00e3o do uso do Slack foi que o grupo s\u00f3 consegue se ruinir para a realiza\u00e7\u00e3o das Dailys alguns dias da semana e no Slack estamos fazendo o uso do \"Daily Bot\". \n\n\n\n\n\n\nZenHub\n: ZenHub \u00e9 uma ferramenta que auxilia no rastreio das issues do github e tamb\u00e9m criar gr\u00e1ficos como o \"Velocity\" e o \"BurnDown\".\n\n\n\n\n\n\nGoogle Drive\n: O Drive \u00e9 uma ferramenta de compartilhamento, \u00e9 nele que compartilhamos alguns documentos e imagens importantes para o nosso projeto.\n\n\n\n\n\n\nGitHub\n: O GitHub foi de suma import\u00e2ncia na transpar\u00eancia interna e externa junto ao cliente, coachs, a orientadora do projeto, e a comunidade de software livre. Foi feito um uso extensivo das issues e suas labels para que a comunica\u00e7\u00e3o entre os membros da equipe fosse a mais clara poss\u00edvel. Templates de issues e PRs foram criados para facilitar ainda mais essa comunica\u00e7\u00e3o.\n\n\n\n\n\n\nTravis\n: O Travis \u00e9 uma ferramenta de teste. Ela possibilita saber se o nossa aplica\u00e7\u00e3o est\u00e1 dentro do esperado ou n\u00e3o.\n\n\n\n\n\n\nCode Climate\n: O Code Climate permite que as organiza\u00e7\u00f5es assumam o controle de sua qualidade de c\u00f3digo, incorporando cobertura de teste totalmente configur\u00e1vel e dados de manuten\u00e7\u00e3o em todo o fluxo de trabalho de desenvolvimento.\n\n\n\n\n\n\nDocker\n: Docker \u00e9 um ferramenta que impulsiona o movimento de cont\u00eaineres e o \u00fanico provedor de plataforma de cont\u00eainer a lidar com todos os aplicativos da nuvem h\u00edbrida.", 
+            "title": "Ferramentas"
+        }, 
+        {
+            "location": "/eps/PROJECT_TOOLS/#historico-de-revisoes", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autores      27/03/2018  0.0.1  Cria\u00e7\u00e3o do documento  Mariana de Souza Mendes", 
+            "title": "Hist\u00f3rico de Revis\u00f5es"
+        }, 
+        {
+            "location": "/eps/PROJECT_TOOLS/#introducao", 
+            "text": "Este documento visa esclarecer entre os envolvidos no projeto  Dr. Down  as ferramentas que ser\u00e3o utilizadas ao longo desse projeto.", 
+            "title": "Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/PROJECT_TOOLS/#ferramentas", 
+            "text": "Slack : Toda comunica\u00e7\u00e3\u00f3 \u00e9 feita por meio do slack e temos a integra\u00e7\u00e3o com outras ferramentas. Exemplo: o GitHub, ZenHub, Code Climate, Travis. Outro fator importante para a decis\u00e3o do uso do Slack foi que o grupo s\u00f3 consegue se ruinir para a realiza\u00e7\u00e3o das Dailys alguns dias da semana e no Slack estamos fazendo o uso do \"Daily Bot\".     ZenHub : ZenHub \u00e9 uma ferramenta que auxilia no rastreio das issues do github e tamb\u00e9m criar gr\u00e1ficos como o \"Velocity\" e o \"BurnDown\".    Google Drive : O Drive \u00e9 uma ferramenta de compartilhamento, \u00e9 nele que compartilhamos alguns documentos e imagens importantes para o nosso projeto.    GitHub : O GitHub foi de suma import\u00e2ncia na transpar\u00eancia interna e externa junto ao cliente, coachs, a orientadora do projeto, e a comunidade de software livre. Foi feito um uso extensivo das issues e suas labels para que a comunica\u00e7\u00e3o entre os membros da equipe fosse a mais clara poss\u00edvel. Templates de issues e PRs foram criados para facilitar ainda mais essa comunica\u00e7\u00e3o.    Travis : O Travis \u00e9 uma ferramenta de teste. Ela possibilita saber se o nossa aplica\u00e7\u00e3o est\u00e1 dentro do esperado ou n\u00e3o.    Code Climate : O Code Climate permite que as organiza\u00e7\u00f5es assumam o controle de sua qualidade de c\u00f3digo, incorporando cobertura de teste totalmente configur\u00e1vel e dados de manuten\u00e7\u00e3o em todo o fluxo de trabalho de desenvolvimento.    Docker : Docker \u00e9 um ferramenta que impulsiona o movimento de cont\u00eaineres e o \u00fanico provedor de plataforma de cont\u00eainer a lidar com todos os aplicativos da nuvem h\u00edbrida.", 
+            "title": "Ferramentas"
         }, 
         {
             "location": "/sprints/00/planning/", 
@@ -699,6 +1224,116 @@
             "location": "/sprints/02/results/#8-analise-do-scrum-master", 
             "text": "Esta Sprint dever\u00e1 ser analisada com cuidado por todos n\u00f3s para que o os ocorridos nela n\u00e3o sejam repetidos em outras, especialmente a quest\u00e3o de n\u00e3o entregar as hist\u00f3rias. Neste sentido, a Retrospectiva da Sprint foi muito proveitosa, pois tivemos a oportunidade de ver v\u00e1rios erros que foram cometidos por todos os membros da equipe. Os erros que mais se destacaram foram:\n- comunica\u00e7\u00e3o deficiente entre o Time de Desenvolvimento e a equipe de ger\u00eancia\n- dificuldade com os testes\n- dificuldade no uso do framework\n- planejamento da sprint  Nas pr\u00f3ximas sprints, deveremos tomar mais cuidado com estes e outros erros que aconteceram na Sprint 2, para que o processo e a produtividade possam melhorar e nos permitam n\u00e3o ter mais problemas como os que ocorreram nesta sprint.", 
             "title": "8. An\u00e1lise do Scrum Master"
+        }, 
+        {
+            "location": "/sprints/03/planning/", 
+            "text": "Planejamento da Sprint 3\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint:\n 3\n\n\nData de in\u00edcio:\n 24/03/2018\n\n\nData de T\u00e9rmino:\n 30/03/2018\n\n\nDura\u00e7\u00e3o\n: 6 dias\n\n\nPontos Planejados:\n 35 pontos\n\n\nMembros presentes:\n Todos\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Sconetto\n\n\n\n\n\n\nArquiteto:\n\n\n\n\n\n\nVictor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Pareamento\n\n\nOs pareamentos para essa sprint tiveram 2 crit\u00e9rios. O primeiro foi n\u00e3o repetir duplas que foram formadas nas semanas anteriores. O segundo foi fazer o compartilhamento dos conhecimentos adiquiridos na sprint passada, pareando pessoas que mexeram com front end (Geovana e Gabriela) com pessoas que s\u00f3 mexeram com back end at\u00e9 ent\u00e3o.\n\n\n\n\n\n\nGeovana e Elias\n\n\n\n\n\n\nGabriela e Guilherme\n\n\n\n\n\n\nJoberth e Daniel\n\n\n\n\n\n\n4. Planejamento da Sprint\n\n\nComo conseguimos informa\u00e7\u00f5es confi\u00e1veis sobre o projeto, em especial sobre seu escopo e as features que ele ter\u00e1, determinamos que esta sprint servir\u00e1 para fechar todos os documentos designados para o Time de Desenvolvimento. Al\u00e9m disso, eles dever\u00e3o colocar dados sobre a S\u00edndrome de Down na aplica\u00e7\u00e3o, com o intuito de informar o p\u00fablico.\n\n\nA equipe respons\u00e1vel pela ger\u00eancia nesse projeto ir\u00e1 elaborar o RoadMap do projeto, continuar a configura\u00e7\u00e3o do ambiente de desenvolvimento e melhor documentos que foram feitos anteriormente durante a Sprint 3.\n\n\n5. Mudan\u00e7as\n\n\nInicialmente, nesta semana o Time de Desenvolvimento tamb\u00e9m refatoraria o CRUD de usu\u00e1rio, agora tendo como base as novas informa\u00e7\u00f5es do projeto. Mas como as hist\u00f3rias relacionadas \u00e0 esse CRUD n\u00e3o foram aceitas, essa hist\u00f3ria passou de refatora\u00e7\u00e3o para cria\u00e7\u00e3o, e por isso optamos por deix\u00e1-la para a pr\u00f3xima sprint, pois julgamos que o tempo dispon\u00edvel nesta para programar n\u00e3o ser\u00e1 suficiente.\n\n\n6. Backlog da Sprint\n\n\nMDS\n\n\n\n\n\n\nUS27\n - Eu, como usu\u00e1rio, gostaria de ter acesso as informa\u00e7\u00f5es sobre s\u00edndrome de down a fim de me manter informado.\n\n\n\n\n\n\nTS24\n - Elabora\u00e7\u00e3o do Documento de Arquitetura\n\n\n\n\n\n\nTS25\n - Refatorar o Documento de Vis\u00e3o\n\n\n\n\n\n\nTS26\n - Elabora\u00e7\u00e3o da Especifica\u00e7\u00e3o Suplementar\n\n\n\n\n\n\nTS28\n - Refatorar homepage\n\n\n\n\n\n\nEPS\n\n\n\n\n\n\nTS29\n - Refatorar a documenta\u00e7\u00e3o da sprint 00 e 01\n\n\n\n\n\n\nTS30\n - Elaborar RoadMap\n\n\n\n\n\n\nTS31\n - Configurar o Code Climate\n\n\n\n\n\n\nTS32\n - Refatorar a EAP\n\n\n\n\n\n\nTS33\n - Tornar transparente o Scrum utilizado pelo time\n\n\n\n\n\n\nTS34\n - Elaborar o EVM", 
+            "title": "Planejamento"
+        }, 
+        {
+            "location": "/sprints/03/planning/#planejamento-da-sprint-3", 
+            "text": "", 
+            "title": "Planejamento da Sprint 3"
+        }, 
+        {
+            "location": "/sprints/03/planning/#1-resumo-da-sprint", 
+            "text": "N\u00famero da sprint:  3  Data de in\u00edcio:  24/03/2018  Data de T\u00e9rmino:  30/03/2018  Dura\u00e7\u00e3o : 6 dias  Pontos Planejados:  35 pontos  Membros presentes:  Todos", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/03/planning/#2-papeis", 
+            "text": "Scrum Master:   Diego Fran\u00e7a    Product Owner:    Mariana Mendes    DevOps:    Jo\u00e3o Sconetto    Arquiteto:    Victor Arnaud    Time de Desenvolvimento:   Daniel Maike  Elias Bernardo  Gabriela Medeiros  Geovana Ramos  Guilherme Guy  Joberth Rodrigues", 
+            "title": "2. Pap\u00e9is"
+        }, 
+        {
+            "location": "/sprints/03/planning/#3-pareamento", 
+            "text": "Os pareamentos para essa sprint tiveram 2 crit\u00e9rios. O primeiro foi n\u00e3o repetir duplas que foram formadas nas semanas anteriores. O segundo foi fazer o compartilhamento dos conhecimentos adiquiridos na sprint passada, pareando pessoas que mexeram com front end (Geovana e Gabriela) com pessoas que s\u00f3 mexeram com back end at\u00e9 ent\u00e3o.    Geovana e Elias    Gabriela e Guilherme    Joberth e Daniel", 
+            "title": "3. Pareamento"
+        }, 
+        {
+            "location": "/sprints/03/planning/#4-planejamento-da-sprint", 
+            "text": "Como conseguimos informa\u00e7\u00f5es confi\u00e1veis sobre o projeto, em especial sobre seu escopo e as features que ele ter\u00e1, determinamos que esta sprint servir\u00e1 para fechar todos os documentos designados para o Time de Desenvolvimento. Al\u00e9m disso, eles dever\u00e3o colocar dados sobre a S\u00edndrome de Down na aplica\u00e7\u00e3o, com o intuito de informar o p\u00fablico.  A equipe respons\u00e1vel pela ger\u00eancia nesse projeto ir\u00e1 elaborar o RoadMap do projeto, continuar a configura\u00e7\u00e3o do ambiente de desenvolvimento e melhor documentos que foram feitos anteriormente durante a Sprint 3.", 
+            "title": "4. Planejamento da Sprint"
+        }, 
+        {
+            "location": "/sprints/03/planning/#5-mudancas", 
+            "text": "Inicialmente, nesta semana o Time de Desenvolvimento tamb\u00e9m refatoraria o CRUD de usu\u00e1rio, agora tendo como base as novas informa\u00e7\u00f5es do projeto. Mas como as hist\u00f3rias relacionadas \u00e0 esse CRUD n\u00e3o foram aceitas, essa hist\u00f3ria passou de refatora\u00e7\u00e3o para cria\u00e7\u00e3o, e por isso optamos por deix\u00e1-la para a pr\u00f3xima sprint, pois julgamos que o tempo dispon\u00edvel nesta para programar n\u00e3o ser\u00e1 suficiente.", 
+            "title": "5. Mudan\u00e7as"
+        }, 
+        {
+            "location": "/sprints/03/planning/#6-backlog-da-sprint", 
+            "text": "", 
+            "title": "6. Backlog da Sprint"
+        }, 
+        {
+            "location": "/sprints/03/planning/#mds", 
+            "text": "US27  - Eu, como usu\u00e1rio, gostaria de ter acesso as informa\u00e7\u00f5es sobre s\u00edndrome de down a fim de me manter informado.    TS24  - Elabora\u00e7\u00e3o do Documento de Arquitetura    TS25  - Refatorar o Documento de Vis\u00e3o    TS26  - Elabora\u00e7\u00e3o da Especifica\u00e7\u00e3o Suplementar    TS28  - Refatorar homepage", 
+            "title": "MDS"
+        }, 
+        {
+            "location": "/sprints/03/planning/#eps", 
+            "text": "TS29  - Refatorar a documenta\u00e7\u00e3o da sprint 00 e 01    TS30  - Elaborar RoadMap    TS31  - Configurar o Code Climate    TS32  - Refatorar a EAP    TS33  - Tornar transparente o Scrum utilizado pelo time    TS34  - Elaborar o EVM", 
+            "title": "EPS"
+        }, 
+        {
+            "location": "/sprints/03/results/", 
+            "text": "Fechamento da sprint\n\n\nSum\u00e1rio\n\n\n1. Resumo da Sprint\n\n\nPontos Planejados:\n 35 pontos\n\n\nPontos conclu\u00eddos\n: 40 pontos\n\n\n\n\n\n\nHist\u00f3rias entregues\n\n\n\n\n\n\nUS27\n - Eu, como usu\u00e1rio, gostaria de ter acesso as informa\u00e7\u00f5es sobre s\u00edndrome de down a fim de me manter informado.\n\n\n\n\n\n\nTS24\n - Elabora\u00e7\u00e3o do Documento de Arquitetura\n\n\n\n\n\n\nTS25\n - Refatorar o Documento de Vis\u00e3o\n\n\n\n\n\n\nTS26\n - Elabora\u00e7\u00e3o da Especifica\u00e7\u00e3o Suplementar\n\n\n\n\n\n\nTS28\n - Refatorar homepage\n\n\n\n\n\n\nTS29\n - Refatorar a documenta\u00e7\u00e3o da sprint 00 e 01\n\n\n\n\n\n\nTS30\n - Elaborar RoadMap\n\n\n\n\n\n\nTS31\n - Configurar o Code Climate\n\n\n\n\n\n\nTS32\n - Refatorar a EAP\n\n\n\n\n\n\nTS33\n - Tornar transparente o Scrum utilizado pelo time\n\n\n\n\n\n\nTS34\n - Elaborar o EVM\n\n\n\n\n\n\nComo pode ser visto acima, todas as hist\u00f3rias desta sprint foram entregues, ao contr\u00e1rio do que aconteceu na anterior. Cabe ressaltar tamb\u00e9m que houve uma hist\u00f3ria a mais inclu\u00edda nesta sprint (TS35), pois percebeu-se a necessidade de elaborar o EVM ainda durante a Sprint 3.\n\n\nPor fim, outro dado relacionado \u00e0s entregas da Sprint 3 \u00e9 que houve um total de 4 hist\u00f3rias, totalizando 10 pontos, que foram d\u00edvidas t\u00e9cnicas de sprints passadas e que foram entregues nessa.\n\n\n2. Retrospectiva\n\n\n\n\n\n\n\n\nPontos Positivos\n\n\nPontos Negativos\n\n\nSugest\u00e3o de Melhoria\n\n\n\n\n\n\n\n\n\n\nRespostas r\u00e1pidas e diretas por alguns membros do EPS\n\n\nMuito retrabalho\n\n\nEstressar menos\n\n\n\n\n\n\nCompartilhamento de conhecimento atrav\u00e9s do pareamento\n\n\nCliente est\u00e1 demorando muito para responder\n\n\nProcurar dar respostas mais centradas\n\n\n\n\n\n\nTodos as hist\u00f3rias da sprint foram entregues\n\n\nDesentendimentos dentro de EPS\n\n\nRevis\u00f5es mais objetivas\n\n\n\n\n\n\nHouve mais comunica\u00e7\u00e3o entre EPS e MDS\n\n\n-\n\n\n-\n\n\n\n\n\n\n\n\n3. Quadro de Conhecimento\n\n\n\n\nO Quadro de Conhecimento da Sprint 3 mostra que houve melhora do conhecimento de diversos membros sobre as tecnologias do CSS, HTML e Docker.\n\n\n4. Risk Burndown\n\n\n\n\nNesta Sprint, 2 riscos tiveram suas probabilidades reduzidas: a de membros da equipe sa\u00edrem e tamb\u00e9m a de mudan\u00e7a de escopo por falta de informa\u00e7\u00f5es. Al\u00e9m disso, mais um risco foi inclu\u00eddo, mas este possui uma probabilidade baixa (10%).\n\n\nA raz\u00e3o para a redu\u00e7\u00e3o do risco relacionado ao escopo foi que, al\u00e9m de ter sido resolvida a quest\u00e3o de saber quais as funcionalidades ter\u00e3o que ser entregues neste projeto, tamb\u00e9m come\u00e7amos a ter contato com os clientes.\n\n\n5. Burndown Chart\n\n\n\n\nAo analisar este gr\u00e1fico, chama a aten\u00e7\u00e3o que ele teve ainda mais o formato de escada, mostrando que a equipe conseguiu manter e melhorar as entregas distribu\u00eddas ao longo da Sprint 3, quando comparado \u00e0s sprints anteriores.\n\n\n6. Velocity\n\n\n\n\nAnalisando a velocity da equipe at\u00e9 a Sprint 3, podemos ver que ela aumentou, atingindo a maior velocity at\u00e9 agora. Al\u00e9m disso, pela primeira vez tivemos o n\u00famero de pontos entregues maior do que o n\u00famero de pontos planejados.\n\n\n7. Gr\u00e1fico de Commits\n\n\n\n\nComparado \u00e0s sprints anteriores, esta teve uma frequ\u00eancia maior de commits, o que era esperado j\u00e1 que a quantidade de pontos entregues foi a maior at\u00e9 agora. Mas os commits continuaram distribu\u00eddos ao longo dos dias da semana, ficando concentrador principalmente no fim da semana, sendo que a quinta foi colocado como o \ndead line\n para os \npull requests\n, e a sexta foi usada para arrumar feedback e arruma\u00e7\u00e3o destes PRs.\n\n\n8. EVM\n\n\n\n\nAnalisando o gr\u00e1fico do EVM, pode-se ver que apesar da queda que houve na sprint anterior devido \u00e0s 3 hist\u00f3rias que n\u00e3o foram entregues, nesta a equipe conseguiu aproximar o percentual APC do PPC, j\u00e1 conseguindo compensar em alguma medida o atraso recente.\n\n\n9. An\u00e1lise do Scrum Master\n\n\nEssa foi uma Sprint muito positiva em v\u00e1rios aspectos para a equipe como um todo.\n\n\nTodos os pontos previstos foram entregues, mesmo tendo sido mais do que na sprint anterior. E al\u00e9m disso, foi respeitado o limite dado de todos os \npull requests\n iniciais de entrega de hist\u00f3rias serem feitos no m\u00e1ximo at\u00e9 quinta-feira, possibilitando que as entregas tenham sido melhor revisadas e tenham tido uma melhor qualidade.\n\n\nOutro aspecto positivo a se destacar foi que cresceu a quantidade de comunica\u00e7\u00e3o entre MDS e EPS, o que auxiliou na melhora da qualidade das hist\u00f3rias entregues, pois problemas e d\u00favidas foram melhor sanados. Cabe agora, para as pr\u00f3ximas sprints, melhorar esta comunica\u00e7\u00e3o, como a retrospectiva deixou claro ser necess\u00e1rio.", 
+            "title": "Resultado"
+        }, 
+        {
+            "location": "/sprints/03/results/#fechamento-da-sprint", 
+            "text": "", 
+            "title": "Fechamento da sprint"
+        }, 
+        {
+            "location": "/sprints/03/results/#sumario", 
+            "text": "", 
+            "title": "Sum\u00e1rio"
+        }, 
+        {
+            "location": "/sprints/03/results/#1-resumo-da-sprint", 
+            "text": "Pontos Planejados:  35 pontos  Pontos conclu\u00eddos : 40 pontos    Hist\u00f3rias entregues    US27  - Eu, como usu\u00e1rio, gostaria de ter acesso as informa\u00e7\u00f5es sobre s\u00edndrome de down a fim de me manter informado.    TS24  - Elabora\u00e7\u00e3o do Documento de Arquitetura    TS25  - Refatorar o Documento de Vis\u00e3o    TS26  - Elabora\u00e7\u00e3o da Especifica\u00e7\u00e3o Suplementar    TS28  - Refatorar homepage    TS29  - Refatorar a documenta\u00e7\u00e3o da sprint 00 e 01    TS30  - Elaborar RoadMap    TS31  - Configurar o Code Climate    TS32  - Refatorar a EAP    TS33  - Tornar transparente o Scrum utilizado pelo time    TS34  - Elaborar o EVM    Como pode ser visto acima, todas as hist\u00f3rias desta sprint foram entregues, ao contr\u00e1rio do que aconteceu na anterior. Cabe ressaltar tamb\u00e9m que houve uma hist\u00f3ria a mais inclu\u00edda nesta sprint (TS35), pois percebeu-se a necessidade de elaborar o EVM ainda durante a Sprint 3.  Por fim, outro dado relacionado \u00e0s entregas da Sprint 3 \u00e9 que houve um total de 4 hist\u00f3rias, totalizando 10 pontos, que foram d\u00edvidas t\u00e9cnicas de sprints passadas e que foram entregues nessa.", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/03/results/#2-retrospectiva", 
+            "text": "Pontos Positivos  Pontos Negativos  Sugest\u00e3o de Melhoria      Respostas r\u00e1pidas e diretas por alguns membros do EPS  Muito retrabalho  Estressar menos    Compartilhamento de conhecimento atrav\u00e9s do pareamento  Cliente est\u00e1 demorando muito para responder  Procurar dar respostas mais centradas    Todos as hist\u00f3rias da sprint foram entregues  Desentendimentos dentro de EPS  Revis\u00f5es mais objetivas    Houve mais comunica\u00e7\u00e3o entre EPS e MDS  -  -", 
+            "title": "2. Retrospectiva"
+        }, 
+        {
+            "location": "/sprints/03/results/#3-quadro-de-conhecimento", 
+            "text": "O Quadro de Conhecimento da Sprint 3 mostra que houve melhora do conhecimento de diversos membros sobre as tecnologias do CSS, HTML e Docker.", 
+            "title": "3. Quadro de Conhecimento"
+        }, 
+        {
+            "location": "/sprints/03/results/#4-risk-burndown", 
+            "text": "Nesta Sprint, 2 riscos tiveram suas probabilidades reduzidas: a de membros da equipe sa\u00edrem e tamb\u00e9m a de mudan\u00e7a de escopo por falta de informa\u00e7\u00f5es. Al\u00e9m disso, mais um risco foi inclu\u00eddo, mas este possui uma probabilidade baixa (10%).  A raz\u00e3o para a redu\u00e7\u00e3o do risco relacionado ao escopo foi que, al\u00e9m de ter sido resolvida a quest\u00e3o de saber quais as funcionalidades ter\u00e3o que ser entregues neste projeto, tamb\u00e9m come\u00e7amos a ter contato com os clientes.", 
+            "title": "4. Risk Burndown"
+        }, 
+        {
+            "location": "/sprints/03/results/#5-burndown-chart", 
+            "text": "Ao analisar este gr\u00e1fico, chama a aten\u00e7\u00e3o que ele teve ainda mais o formato de escada, mostrando que a equipe conseguiu manter e melhorar as entregas distribu\u00eddas ao longo da Sprint 3, quando comparado \u00e0s sprints anteriores.", 
+            "title": "5. Burndown Chart"
+        }, 
+        {
+            "location": "/sprints/03/results/#6-velocity", 
+            "text": "Analisando a velocity da equipe at\u00e9 a Sprint 3, podemos ver que ela aumentou, atingindo a maior velocity at\u00e9 agora. Al\u00e9m disso, pela primeira vez tivemos o n\u00famero de pontos entregues maior do que o n\u00famero de pontos planejados.", 
+            "title": "6. Velocity"
+        }, 
+        {
+            "location": "/sprints/03/results/#7-grafico-de-commits", 
+            "text": "Comparado \u00e0s sprints anteriores, esta teve uma frequ\u00eancia maior de commits, o que era esperado j\u00e1 que a quantidade de pontos entregues foi a maior at\u00e9 agora. Mas os commits continuaram distribu\u00eddos ao longo dos dias da semana, ficando concentrador principalmente no fim da semana, sendo que a quinta foi colocado como o  dead line  para os  pull requests , e a sexta foi usada para arrumar feedback e arruma\u00e7\u00e3o destes PRs.", 
+            "title": "7. Gr\u00e1fico de Commits"
+        }, 
+        {
+            "location": "/sprints/03/results/#8-evm", 
+            "text": "Analisando o gr\u00e1fico do EVM, pode-se ver que apesar da queda que houve na sprint anterior devido \u00e0s 3 hist\u00f3rias que n\u00e3o foram entregues, nesta a equipe conseguiu aproximar o percentual APC do PPC, j\u00e1 conseguindo compensar em alguma medida o atraso recente.", 
+            "title": "8. EVM"
+        }, 
+        {
+            "location": "/sprints/03/results/#9-analise-do-scrum-master", 
+            "text": "Essa foi uma Sprint muito positiva em v\u00e1rios aspectos para a equipe como um todo.  Todos os pontos previstos foram entregues, mesmo tendo sido mais do que na sprint anterior. E al\u00e9m disso, foi respeitado o limite dado de todos os  pull requests  iniciais de entrega de hist\u00f3rias serem feitos no m\u00e1ximo at\u00e9 quinta-feira, possibilitando que as entregas tenham sido melhor revisadas e tenham tido uma melhor qualidade.  Outro aspecto positivo a se destacar foi que cresceu a quantidade de comunica\u00e7\u00e3o entre MDS e EPS, o que auxiliou na melhora da qualidade das hist\u00f3rias entregues, pois problemas e d\u00favidas foram melhor sanados. Cabe agora, para as pr\u00f3ximas sprints, melhorar esta comunica\u00e7\u00e3o, como a retrospectiva deixou claro ser necess\u00e1rio.", 
+            "title": "9. An\u00e1lise do Scrum Master"
         }
     ]
 }

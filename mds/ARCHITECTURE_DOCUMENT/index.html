@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Documento de arquitetura - drdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Documento de arquitetura";
+    var mkdocs_page_input_path = "mds/ARCHITECTURE_DOCUMENT.md";
+    var mkdocs_page_url = "/mds/ARCHITECTURE_DOCUMENT/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> drdown</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/TAP/">Termo de abertura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VISION_DOCUMENT/">Documento de visão</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Documento de arquitetura</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#documento-de-arquitetura">Documento de Arquitetura</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#historico-de-revisao">Histórico de Revisão</a></li>
+        
+            <li><a class="toctree-l3" href="#1-introducao">1: Introdução</a></li>
+        
+            <li><a class="toctree-l3" href="#2-representacao-arquitetural">2: Representação Arquitetural</a></li>
+        
+            <li><a class="toctree-l3" href="#3-requisitos-e-restricoes-arquiteturais">3:  Requisitos e Restrições Arquiteturais</a></li>
+        
+            <li><a class="toctree-l3" href="#4-visao-logica">4:   Visão Lógica</a></li>
+        
+            <li><a class="toctree-l3" href="#5-visao-de-implementacao">5:   Visão de Implementação</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ADDITIONAL_SPECIFICATION/">Especificação de caso de uso</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/EAP/">EAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/ROADMAP/">ROADMAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/SCRUM_METHODOLOGY_DRDOWN/">Metodologia</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/DONE_DEFINITION/">Definição de Pronto</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/EVM_AGILE/">EVM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../CODE_OF_CONDUCT/">Código de conduta</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/PROJECT_TOOLS/">Ferramentas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 0</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">drdown</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Documento de arquitetura</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/edit/master/docs/mds/ARCHITECTURE_DOCUMENT.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="documento-de-arquitetura">Documento de Arquitetura</h1>
+<h2 id="historico-de-revisao">Histórico de Revisão</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24/03/2018</td>
+<td>0.0.1</td>
+<td>Abertura do documento</td>
+<td>Geovana Ramos</td>
+</tr>
+<tr>
+<td>26/03/2018</td>
+<td>0.1.0</td>
+<td>Tópicos 1 e 2</td>
+<td>Guilherme Guy e Gabriela Medeiros</td>
+</tr>
+<tr>
+<td>26/03/2018</td>
+<td>0.2.0</td>
+<td>Tópicos 3 e 4</td>
+<td>Daniel Maike e Joberth Rogers</td>
+</tr>
+<tr>
+<td>26/03/2018</td>
+<td>0.3.0</td>
+<td>Tópicos 5 e 6</td>
+<td>Elias Bernardo e Geovana Ramos</td>
+</tr>
+<tr>
+<td>27/03/2018</td>
+<td>0.3.1</td>
+<td>Correção de informações histórico de revisão</td>
+<td>Daniel Maike, Gabriela Medeiros e Joberth Rogers</td>
+</tr>
+<tr>
+<td>27/03/2018</td>
+<td>0.4.0</td>
+<td>Diagrama de classes</td>
+<td>Elias Bernardo, Geovana Ramos e Guilherme Guy</td>
+</tr>
+<tr>
+<td>28/03/2018</td>
+<td>0.5.0</td>
+<td>Alteração no tópico 3</td>
+<td>Daniel Maike e Geovana Ramos</td>
+</tr>
+<tr>
+<td>28/03/2018</td>
+<td>0.6.0</td>
+<td>Modelo Entidade Relacionamento</td>
+<td>Daniel Maike e Joberth Rogers</td>
+</tr>
+<tr>
+<td>28/03/2018</td>
+<td>0.6.1</td>
+<td>Revisão geral</td>
+<td>Daniel Maike e Joberth Rogers</td>
+</tr>
+<tr>
+<td>28/03/2018</td>
+<td>1.0.0</td>
+<td>Entrega da primeira versão estável</td>
+<td>Daniel Maike, Elias Bernardo, Joberth Rogers, Guilherme Guy, Gabriela Medeiros e Geovana Ramos</td>
+</tr>
+<tr>
+<td>29/03/2018</td>
+<td>1.0.1</td>
+<td>Revisões gerais</td>
+<td>Daniel Maike, Guilherme Guy e Joberth Rogers</td>
+</tr>
+<tr>
+<td>29/03/2018</td>
+<td>1.1.0</td>
+<td>Adição do tópico 2.4</td>
+<td>Geovana Ramos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-introducao">1: Introdução</h2>
+<h3 id="11-finalidade">1.1 Finalidade</h3>
+<p>Este documento tem como finalidade apresentar uma visão geral da arquitetura que será usada no desenvolvimento do projeto Dr. Down e permitir um maior entendimento do sistema e de como ele irá se comportar. Com o maior detalhamento da arquitetura, espera-se deixar explícitas as decisões arquiteturais feitas pela equipe de desenvolvimento em conjunto com os gestores do projeto para o desenvolvimento do software.</p>
+<h3 id="12-escopo">1.2 Escopo</h3>
+<p>Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar a administração do fluxo de pacientes do CRIS DOWN, além de possibilitar a comunicação entre médicos, pacientes e familiares. O documento apresentará toda a parte arquitetural para a confecção do software Dr. Down, a fim de tornar claras as características arquiteturais do projeto.</p>
+<h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, acrônimos e abreviações</h3>
+<table>
+<thead>
+<tr>
+<th>Abreviação</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SD</td>
+<td>Síndrome de Down</td>
+</tr>
+<tr>
+<td>CRIS DOWN</td>
+<td>Centro de Referência em Síndrome de Down</td>
+</tr>
+<tr>
+<td>MDS</td>
+<td>Métodos de Desenvolvimento de Software</td>
+</tr>
+<tr>
+<td>EPS</td>
+<td>Engenharia de Produto de Software</td>
+</tr>
+<tr>
+<td>UnB</td>
+<td>Universidade de Brasília</td>
+</tr>
+<tr>
+<td>SES</td>
+<td>Secretaría de Estado de Saúde</td>
+</tr>
+<tr>
+<td>CBV</td>
+<td>Class-Based Views</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-referencias">1.4 Referências</h3>
+<p>ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <a href="http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm">http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm</a>. Acesso em: 24 Mar. 2018.</p>
+<p>PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Dispesclareceronível em: <a href="https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django">https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django</a>. Acesso em: 26 Mar. 2018.</p>
+<p>THE MODEL-VIEW-CONTROLLER DESIGN PATTERN. THE DJANGO BOOK. Disponível em: <a href="https://djangobook.com/model-view-controller-design-pattern/">https://djangobook.com/model-view-controller-design-pattern/</a>. Acesso em: 26 Mar. 2018.</p>
+<p>CLASS-BASED VIEWS. DJANGO PROJECT. Disponível em: <a href="https://docs.djangoproject.com/en/2.0/topics/class-based-views/">https://docs.djangoproject.com/en/2.0/topics/class-based-views/</a>. Acesso em: 28 Mar. 2018.</p>
+<h2 id="2-representacao-arquitetural">2: Representação Arquitetural</h2>
+<p>O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelo Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.</p>
+<h3 id="21-model">2.1 Model</h3>
+<p>É uma representação do banco de dados. Além disso, também inclui características, relações e outros comportamentos que os dados podem assumir.
+O Django inclui varias ferramentas para automatizar tanto quanto possível o processo e a manipulação do banco de dados, de forma que o desenvolvedor não precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplicação de forma mais rápida.</p>
+<h3 id="22-view">2.2 View</h3>
+<p>Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do usuário a partir do template, acessa o banco de dados e então retorna a informação solicitada pelo usuário, por meio de HTML, XML e/ou os erros encontrados.</p>
+<h3 id="23-template">2.3 Template</h3>
+<p>Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.</p>
+<h3 id="24-diagrama-arquitetural">2.4 Diagrama arquitetural</h3>
+<p><img alt="Diagrama arquitetural" src="http://uploaddeimagens.com.br/images/001/354/177/full/MICROSERVI%C3%87OS-SETA.png?1522593562" /></p>
+<h2 id="3-requisitos-e-restricoes-arquiteturais">3:  Requisitos e Restrições Arquiteturais</h2>
+<p>Linguagem: Python 3.6.4</p>
+<p>Framework: Django  2.0.3</p>
+<p>Plataforma: Web - Navegadores Google Chrome, Safari e Firefox</p>
+<p>Segurança: O sistema terá informações pessoais dos pacientes que só poderão ser vistas pelo mesmo ou pelo(s) seu(s) respectivo(s) médico(s). Outros dados pessoais só poderão ser vistos pelo próprio usuário.</p>
+<p>Internacionalização (i18n): A aplicação terá suporte aos idiomas: Inglês e Português do Brasil (sendo esta a linguagem padrão).</p>
+<h2 id="4-visao-logica">4:   Visão Lógica</h2>
+<h3 id="41-visao-geral-pacotes-e-camadas">4.1 Visão Geral: Pacotes e Camadas</h3>
+<p>O framework Django organiza os projetos em apps, que são pastas que contém uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.</p>
+<p><img alt="Diagrama de Pacotes" src="http://uploaddeimagens.com.br/images/001/350/330/full/DP.png?1522284479" /></p>
+<h2 id="5-visao-de-implementacao">5:   Visão de Implementação</h2>
+<h3 id="51-class-based-views">5.1  Class-Based Views</h3>
+<p>Proporcionam um método alternativo para implementar views como objetos ao invés de funções. As Class-Based Views (CBV) são classes que implementam métodos e atributos que são comumente utilizados na programação das views. Dessa maneira, o programador pode utilizar métodos já implementados ou sobrescrevê-los e implementá-los da sua maneira. Para atender os mais variados casos de uso das views, as CBV oferecem diversos temas para implementação.</p>
+<p>Podemos então agregar as funções básicas das views dentro de classes como métodos. E o recurso das Class Based Views está em algumas classes que já estão “pré-prontas” e que outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!</p>
+<h3 id="52-diagrama-de-classes">5.2 Diagrama de Classes</h3>
+<p><img alt="Diagrama de Classes" src="http://uploaddeimagens.com.br/images/001/352/613/original/DC2.jpeg?1522444895" /></p>
+<h3 id="53-modelo-entidade-relacionamento-mer">5.3 Modelo Entidade Relacionamento (MER)</h3>
+<h3 id="user">USER:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CharField[100]</td>
+<td>Obrigatório</td>
+<td>Nome completo do usuário</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>CharField[50]</td>
+<td>Obrigatório, único</td>
+<td>Email será usado como username do usuário</td>
+</tr>
+<tr>
+<td>Telephone</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>Telefone do usuário</td>
+</tr>
+<tr>
+<td>Photo</td>
+<td>Image</td>
+<td>Opcional</td>
+<td>Foto do usuário</td>
+</tr>
+<tr>
+<td>Is_active</td>
+<td>Boolean</td>
+<td>Obrigatório</td>
+<td>Verifica se o usuário está ativo no sistema</td>
+</tr>
+<tr>
+<td>Is_superuser</td>
+<td>Boolean</td>
+<td>Obrigatório</td>
+<td>Verifica se o usuário é um super administrador</td>
+</tr>
+<tr>
+<td>Last_login</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Último momento que o usuário logou</td>
+</tr>
+<tr>
+<td>Created_at</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Data de criação da conta</td>
+</tr>
+<tr>
+<td>Updated_at</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Data de modificação das informações da conta</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>CharField[50]</td>
+<td>Obrigatório</td>
+<td>Senha do usuário</td>
+</tr>
+<tr>
+<td>Is_staff</td>
+<td>Boolean</td>
+<td>Obrigatório</td>
+<td>Verifica se o usuário é um funcionário</td>
+</tr>
+</tbody>
+</table>
+<h3 id="employee">EMPLOYEE:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPF</td>
+<td>IntergerField</td>
+<td>Obrigatório, único, validado</td>
+<td>CPF do funcionário</td>
+</tr>
+<tr>
+<td>Departament</td>
+<td>CharField[30]</td>
+<td>Obrigatório</td>
+<td>Departamento do funcionário</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parent">PARENT:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPF</td>
+<td>IntergerField</td>
+<td>Obrigatório, único, validado</td>
+<td>CPF do parente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patient">PATIENT:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Urgency</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>Grau de urgência para atendimento do paciente</td>
+</tr>
+<tr>
+<td>SES</td>
+<td>IntergerField</td>
+<td>Obrigatório, único, validado</td>
+<td>Número SES do paciente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doctor">DOCTOR:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM</td>
+<td>IntergerField</td>
+<td>Obrigatório, único, validado</td>
+<td>Número CRM do médicos</td>
+</tr>
+<tr>
+<td>Specialty</td>
+<td>CharField[20]</td>
+<td>Obrigatório</td>
+<td>Especialidade</td>
+</tr>
+<tr>
+<td>CPF</td>
+<td>IntergerField</td>
+<td>Obrigatório, único, validado</td>
+<td>CPF do médicos</td>
+</tr>
+</tbody>
+</table>
+<h3 id="address">ADDRESS:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>City</td>
+<td>CharField[40]</td>
+<td>Obrigatório</td>
+<td>Cidade</td>
+</tr>
+<tr>
+<td>CEP</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>CEP</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>Numero da moradia</td>
+</tr>
+<tr>
+<td>UF</td>
+<td>CharField[2]</td>
+<td>Obrigatório</td>
+<td>Unidade da Federação</td>
+</tr>
+<tr>
+<td>neighborhood</td>
+<td>CharField[30]</td>
+<td>Opcional</td>
+<td>Bairro</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post">POST:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>CharField[100]</td>
+<td>Obrigatório</td>
+<td>Título do post</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>TextField</td>
+<td>Obrigatório</td>
+<td>Descrição do post</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>User</td>
+<td>Obrigatório</td>
+<td>Nome do autor do post</td>
+</tr>
+<tr>
+<td>Created_at</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Data de criação do post</td>
+</tr>
+<tr>
+<td>Updated_at</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Data de modificação do post</td>
+</tr>
+<tr>
+<td>Updated_by</td>
+<td>User</td>
+<td>Obrigatório</td>
+<td>Usuário que modificou o post</td>
+</tr>
+<tr>
+<td>Slug</td>
+<td>SlugField</td>
+<td>Obrigatório</td>
+<td>Usado para inserir URLs nomeadas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="medical-questionary">MEDICAL QUESTIONARY:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Psychosocial_risk</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>Risco psicossocial</td>
+</tr>
+<tr>
+<td>Health_risk</td>
+<td>IntergerField</td>
+<td>Obrigatório</td>
+<td>Risco de vida</td>
+</tr>
+<tr>
+<td>Family_risk</td>
+<td>IntergerField</td>
+<td>Obrigatorio</td>
+<td>Risco familiar</td>
+</tr>
+<tr>
+<td>Total_risk</td>
+<td>IntergerField</td>
+<td>Opcional</td>
+<td>Risco total</td>
+</tr>
+</tbody>
+</table>
+<h3 id="queue">QUEUE:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speciality</td>
+<td>CharField[50]</td>
+<td>Obrigatório</td>
+<td>Especialidade</td>
+</tr>
+<tr>
+<td>Time_left</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Tempo faltando</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>IntergerField</td>
+<td>Automático</td>
+<td>Posição</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">EVENTS:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CharField[100]</td>
+<td>Obrigatório</td>
+<td>Nome do evento</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>DateField</td>
+<td>Obrigatório</td>
+<td>Data do evento</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>Address</td>
+<td>Obrigatório</td>
+<td>Endereço do evento</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>TextField</td>
+<td>Obrigatório</td>
+<td>Descrição do evento</td>
+</tr>
+</tbody>
+</table>
+<h3 id="appointments">APPOINTMENTS:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CharField[100]</td>
+<td>Obrigatório</td>
+<td>Nome do compromisso</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>DateField</td>
+<td>Obrigatório</td>
+<td>Data do compromisso</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>TextField</td>
+<td>Opcional</td>
+<td>Descrição do compromisso</td>
+</tr>
+</tbody>
+</table>
+<h3 id="topic">TOPIC:</h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>CharField[100]</td>
+<td>Obrigatório</td>
+<td>Título do tópico</td>
+</tr>
+<tr>
+<td>Subject</td>
+<td>TextField</td>
+<td>Obrigatório</td>
+<td>Assunto do tópico</td>
+</tr>
+<tr>
+<td>Last_update</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Último data atualizada</td>
+</tr>
+<tr>
+<td>Slug</td>
+<td>SlugField</td>
+<td>Obrigatorio</td>
+<td>Usado para inserir URLs renomeadas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relacionamentos">RELACIONAMENTOS:</h3>
+<h4 id="1-appointments-tem-users-doctor">1 - APPOINTMENTS tem USERS (Doctor):</h4>
+<p>Um médico pode ter uma ou várias consultas e uma consulta pertence a um único médico.</p>
+<p>Cardinalidade: 1 X N</p>
+<h4 id="2-appointments-tem-users-pacientes">2 - APPOINTMENTS tem USERS (pacientes):</h4>
+<p>Um paciente pode ter uma ou várias consultas e uma consulta pertence a um único paciente.</p>
+<p>Cardinalidade: 1 X N</p>
+<h4 id="3-medical-records-tem-users-pacientes">3 - MEDICAL RECORDS tem USERS (pacientes):</h4>
+<p>Um prontuário pertence a um único paciente, mas uma paciente pode conter um ou vários prontuários.</p>
+<p>Cardinalidade: 1 X N</p>
+<h4 id="4-user-medico-tem-users-pacientes">4 - USER (médico) tem USERS (pacientes):</h4>
+<p>Um médicos pode ter um ou vários pacientes, e  um paciente pode ter um ou vários médicos.</p>
+<p>Cardinalidade: N X M</p>
+<h4 id="5-post-pertence-a-user">5 - POST pertence a USER:</h4>
+<p>Um usuário pode ter um ou vários Posts, e um post pertence a um único usuário.</p>
+<p>Cardinalidade:  1 X N</p>
+<h4 id="6-post-tem-topics">6 - POST tem TOPICS:</h4>
+<p>Um post pode conter um único tópico, e um tópico pode conter vários posts.</p>
+<p>Cardinalidade: 1 X N</p>
+<h4 id="7-clinic-possui-address">7 - CLINIC possui ADDRESS:</h4>
+<p>Um endereço pode pertecer a apenas uma clinica, e uma clinica pode ter apenas um endereço.</p>
+<p>Cardinalidade: 1 X 1</p>
+<h3 id="8-events-possui-address">8 - EVENTS possui ADDRESS:</h3>
+<p>Um evento pode ter apenas um endereço, e um endereço pode ter apenas um evento.</p>
+<p>Cardinalidade: 1 X 1</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ADDITIONAL_SPECIFICATION/" class="btn btn-neutral float-right" title="Especificação de caso de uso">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../VISION_DOCUMENT/" class="btn btn-neutral" title="Documento de visão"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../VISION_DOCUMENT/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ADDITIONAL_SPECIFICATION/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

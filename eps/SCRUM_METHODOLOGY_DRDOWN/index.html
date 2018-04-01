@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Metodologia - drdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Metodologia";
+    var mkdocs_page_input_path = "eps/SCRUM_METHODOLOGY_DRDOWN.md";
+    var mkdocs_page_url = "/eps/SCRUM_METHODOLOGY_DRDOWN/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> drdown</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../TAP/">Termo de abertura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/VISION_DOCUMENT/">Documento de visão</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ARCHITECTURE_DOCUMENT/">Documento de arquitetura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ADDITIONAL_SPECIFICATION/">Especificação de caso de uso</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EAP/">EAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ROADMAP/">ROADMAP</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Metodologia</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#introducao">Introdução</a></li>
+    
+
+    <li class="toctree-l2"><a href="#papeis-na-equipe">Papéis na Equipe</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#product-owner">Product Owner</a></li>
+        
+            <li><a class="toctree-l3" href="#arquiteto-de-software">Arquiteto de Software</a></li>
+        
+            <li><a class="toctree-l3" href="#devops">DevOps</a></li>
+        
+            <li><a class="toctree-l3" href="#scrum-master">Scrum Master</a></li>
+        
+            <li><a class="toctree-l3" href="#time-de-desenvolvimento">Time de Desenvolvimento</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#ritos-do-scrum">Ritos do Scrum</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#sprint">Sprint</a></li>
+        
+            <li><a class="toctree-l3" href="#planejamento-da-sprint">Planejamento da Sprint</a></li>
+        
+            <li><a class="toctree-l3" href="#daily-meeting">Daily Meeting</a></li>
+        
+            <li><a class="toctree-l3" href="#review-da-sprint">Review da Sprint</a></li>
+        
+            <li><a class="toctree-l3" href="#retrospectiva-da-sprint">Retrospectiva da Sprint</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../DONE_DEFINITION/">Definição de Pronto</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EVM_AGILE/">EVM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../CODE_OF_CONDUCT/">Código de conduta</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PROJECT_TOOLS/">Ferramentas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 0</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">drdown</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Metodologia</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/edit/master/docs/eps/SCRUM_METHODOLOGY_DRDOWN.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="introducao">Introdução</h1>
+<p>Este documento tem como objetivo deixar transparente o processo Ágil utilizado pelo Time Scrum do projeto Dr. Down, descrevendo informações como papéis existentes e ritos do Scrum adotados.</p>
+<h1 id="papeis-na-equipe">Papéis na Equipe</h1>
+<p>Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto Dr. Down, suas atribuições e as pessoas que os estão exercendo.</p>
+<h2 id="product-owner">Product Owner</h2>
+<ul>
+<li>
+<p>Atribuições:</p>
+</li>
+<li>
+<p>definir claramente os ítens do Backlog do Produto</p>
+</li>
+<li>priorizar os ítens do Backlog do Produto</li>
+<li>otimizar o valor do trabalho do Time de Desenvolvimento</li>
+<li>mostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir</li>
+<li>garantir que o Time de Desenvolvimento entenda os ítens do Backlog do Produto no nível necessário</li>
+</ul>
+<h2 id="arquiteto-de-software">Arquiteto de Software</h2>
+<ul>
+<li>
+<p>Atribuição:</p>
+</li>
+<li>
+<p>determinar qual a arquitetura de software deverá ser utilizada nas diversas partes do projeto, levando em conta as especificidades deste e os requisitos exigidos</p>
+</li>
+<li>certificar-se de que a arquitetura definida está clara e sendo obedecida pelos demais membros do Time Scrum</li>
+</ul>
+<h2 id="devops">DevOps</h2>
+<ul>
+<li>
+<p>Atribuição:</p>
+</li>
+<li>
+<p>garantir a integração continua</p>
+</li>
+<li>garantir o deploy continuo</li>
+<li>facilitar o processo de desenvolvimento</li>
+<li>organizar os diversos pipeline do produto de software </li>
+</ul>
+<h2 id="scrum-master">Scrum Master</h2>
+<ul>
+<li>
+<p>Atribuições:</p>
+</li>
+<li>
+<p>ajudar todos do Time Scrum a entenderem a teoria, prática, regras e valores do Scrum</p>
+</li>
+<li>servir ao Product Owner, auxiliando de diversas formas, tais como:<ul>
+<li>gerir de maneira eficiente o Backlog do produto</li>
+<li>fazer todos do Time Scrum entenderem ao máximo os ítens do Backlog do Produto</li>
+</ul>
+</li>
+<li>servir ao Time de Desenvolvimento, auxiliando de diversas formas, tais como:<ul>
+<li>remover impedimentos ao progresso do Time de Desenvolvimento</li>
+<li>instrui-lo em auto-organização e a serem multifuncionais</li>
+</ul>
+</li>
+<li>documentar cada Sprint</li>
+<li>determinar e analisar as métricas e indicadores utilizados para acompanhar o progresso de toda a equipe</li>
+</ul>
+<h2 id="time-de-desenvolvimento">Time de Desenvolvimento</h2>
+<ul>
+<li>
+<p>Atribuições:</p>
+</li>
+<li>
+<p>entregar os ítens contidos no Backlog da Sprint ao final de cada Sprint</p>
+</li>
+<li>determinar como farão para entregar os ítens do Backlog da Sprint (auto-organização)</li>
+</ul>
+<h1 id="ritos-do-scrum">Ritos do Scrum</h1>
+<p>Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down. Para cada rito está descrito seus objetivos, o tempo máximo de realização deles (entre colchetes [ ] ) e os dias e horários em que ocorrerão.</p>
+<h2 id="sprint">Sprint</h2>
+<ul>
+<li>
+<p>objetivo:</p>
+</li>
+<li>
+<p>atingir o objetivo para a Sprint definido no Planejamento da Sprint, assim como entregar todos os ítens do Backlog da Sprint</p>
+</li>
+<li>
+<p>time box:</p>
+</li>
+<li>sábado à sexta [1 semana]</li>
+</ul>
+<h2 id="planejamento-da-sprint">Planejamento da Sprint</h2>
+<ul>
+<li>
+<p>Reunião realizada com o Time Scrum no início de cada Sprint que tem como objetivo:</p>
+</li>
+<li>
+<p>determinar o que poderá ser entregue na Sprint que se inicia (criação do Backlog da Sprint)</p>
+<ul>
+<li>isso deve ser negociado entre o Product Owner e o Time de Desenvolvimento, respeitando a capacidade projetada e a performance passada deste</li>
+</ul>
+</li>
+<li>
+<p>estimar o esforço necessário para entregar as histórias do backlog, através da pontuação delas usando o <em>planning poker</em>:</p>
+<ul>
+<li>antes do início da pontuação de cada história, o Product Owner deve explicá-la e tirar as dúvidas da equipe, para que todos possam ter uma melhor base para a pontuação</li>
+<li>cada participante vota, dando os pontos que acham que aquela história vale, tendo como base quantas horas eles imaginam que serão necessárias para completá-la. O voto de todas as pessoas só é revelado quando todos tiverem decidido quantos pontos darão para a história</li>
+<li>a pontuação dada para cada história deve estar dentro da sequência de Fibonacci, sendo a menor pontuação válida 1</li>
+<li>este passo é repetido até que haja consenso de todos os presentes sobre quantos pontos a história em questão vale</li>
+<li>a equipe passa a pontuar a próxima história, até que todas estejam pontuadas</li>
+</ul>
+</li>
+<li>
+<p>determinar como a equipe irá se organizar para que haja a entrega prevista para a Sprint</p>
+</li>
+<li>
+<p>time box:</p>
+</li>
+<li>sábado: 11:00 [2h]</li>
+</ul>
+<h2 id="daily-meeting">Daily Meeting</h2>
+<ul>
+<li>
+<p>Reunião diária do Time Scrum que tem como objetivo:</p>
+</li>
+<li>
+<p>cada membro responder as 3 perguntas abaixo, sobre sua participação no andamento da Sprint:</p>
+<ul>
+<li>O que foi feito pelo membro no dia anterior para ajudar o Time de Desenvolvimento na Sprint?</li>
+<li>O que será feito pelo membro no dia atual para ajudar o Time de Desenvolvimento na Sprint?</li>
+<li>Houve algum empedimento para o membro que impossibilitou ele ajudar o restante da equipe na Sprint? (gerenciamento de riscos)</li>
+</ul>
+</li>
+<li>
+<p>time box:</p>
+</li>
+<li>
+<p>Dailys presenciais:</p>
+<ul>
+<li>terça e quinta, 9:45 [15 min]</li>
+<li>sábado: depois do Planejamento da Sprint [15 min]</li>
+</ul>
+</li>
+<li>
+<p>Dailys online:</p>
+<ul>
+<li>segunda, quarta e sexta, começando às 8:00</li>
+</ul>
+</li>
+</ul>
+<h2 id="review-da-sprint">Review da Sprint</h2>
+<ul>
+<li>
+<p>objetivo:</p>
+</li>
+<li>
+<p>revisar como foi a Sprint, com foco no Backlog do Produto e no da Sprint</p>
+<ul>
+<li>o que foi feito e o que ficou como débito (Product Owner)</li>
+<li>atualização do Backlog do Produto (Product Owner)</li>
+<li>problemas relacionados ao Backlog da Sprint e se/como foram resolvidos (toda a equipe)</li>
+</ul>
+</li>
+<li>
+<p>time box:</p>
+</li>
+<li>
+<p>sábado, início da reunião [1h]</p>
+</li>
+<li>
+<p><strong>IMPORTANTE</strong>: um item do Backlog da Sprint <strong>só será aceito como feito</strong> se:</p>
+</li>
+<li>
+<p>estiver terminado</p>
+</li>
+<li>estiver coberto, no mínimo, por <strong>teste unitário e/ou de integração</strong><ul>
+<li>exceto em caso de documentação ou outros tipos de histórias que não puderem ser testadas</li>
+</ul>
+</li>
+<li>tiver sido feito o <strong>pull request</strong> para a branch develop ou master e este ser <strong>aceito</strong> pelos revisores</li>
+<li>a funcionalidade entregue ser aceita pelo Product Owner, de acordo com os critérios de aceitação especificados na história</li>
+</ul>
+<h2 id="retrospectiva-da-sprint">Retrospectiva da Sprint</h2>
+<ul>
+<li>
+<p>objetivo:</p>
+</li>
+<li>
+<p>levantar como foi a Sprint, do ponto de vista das pessoas, relacionamentos, processos e ferramentas (pontos positivos e negativos)</p>
+</li>
+<li>identificar potenciais melhorias</li>
+<li>
+<p>identificar melhorias para colocar em prática na próxima Sprint</p>
+</li>
+<li>
+<p>time box:</p>
+</li>
+<li>
+<p>sábado, logo após o review [1h]</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../DONE_DEFINITION/" class="btn btn-neutral float-right" title="Definição de Pronto">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ROADMAP/" class="btn btn-neutral" title="ROADMAP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ROADMAP/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../DONE_DEFINITION/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
