@@ -68,7 +68,7 @@ Agrega toda a parte visual que estará visível para os usuários. Inclui os có
 
 ### 2.4 Diagrama arquitetural
 
-![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/354/150/original/MICROSERVI%C3%87OS-COR.png?1522592161)
+![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/354/177/full/MICROSERVI%C3%87OS-SETA.png?1522593562)
 
 
 ## 3:  Requisitos e Restrições Arquiteturais
