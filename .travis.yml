@@ -20,6 +20,6 @@ before_script:
 script:
   - docker-compose -f local.yml run --rm django py.test
   - docker-compose -f local.yml run --rm django coverage run -m py.test
-  - docker-compose -f local.yml run --rm django coverage report
+  - docker-compose -f local.yml run --rm django coverage xml
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py
