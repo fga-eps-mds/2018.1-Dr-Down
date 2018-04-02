@@ -9,6 +9,7 @@ psycopg2==2.7.4 --no-binary psycopg2  # https://github.com/psycopg/psycopg2
 # ------------------------------------------------------------------------------
 pytest==3.5.0  # https://github.com/pytest-dev/pytest
 pytest-sugar==0.9.1  # https://github.com/Frozenball/pytest-sugar
+pytest-cov==2.5.1 # https://github.com/pytest-dev/pytest-cov/
 
 # Code quality
 # ------------------------------------------------------------------------------
