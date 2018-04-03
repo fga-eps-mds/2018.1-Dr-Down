@@ -61,7 +61,7 @@ O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o
 É uma representação do banco de dados. Além disso, também inclui características, relações e outros comportamentos que os dados podem assumir.
 O Django inclui varias ferramentas para automatizar tanto quanto possível o processo e a manipulação do banco de dados, de forma que o desenvolvedor não precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplicação de forma mais rápida.
 
-#3## 2.2.2 View
+#### 2.2.2 View
 
 Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do usuário a partir do template, acessa o banco de dados e então retorna a informação solicitada pelo usuário, por meio de HTML, XML e/ou os erros encontrados.
 
@@ -69,7 +69,7 @@ Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do us
 
 Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
 
-### 2.3 Banco de dados POSTGRESQL
+### 2.3 Banco de dados PostgreSQL
 
 PostgreSQL é um poderoso sistema de banco de dados objeto-relacional de código aberto. Ele é executado em todos os principais sistemas operacionais, tem 15 anos de desenvolvimento ativo e uma arquitetura comprovada que lhe garantiu uma forte reputação de confiabilidade, integridade de dados e correção.
 
@@ -95,7 +95,7 @@ O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista 
 
 Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão de utiliza-lo ou não no projeto ainda está sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas, caso não precise esse microserviço será descartado.
 
-### 2.7 Comunicação atual
+### 2.6 Comunicação atual
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
