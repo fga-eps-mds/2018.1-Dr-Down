@@ -83,6 +83,8 @@ O Redis é um servidor TCP, e seu funcionamento baseado em um modelo cliente-ser
 
 O Redis é uma boa opção para cenários que você precisa de alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período, dessa forma pode ser utilizado para gerenciar sessões de usuário.
 
+O redis é usado na aplicação para fazer o cacheamento (_cache_) django, com isso alguma _query_ que a aplicação faria diretamente ao banco o redis se comunicada e armazena o cache já com o resultado desta forma aumentando o desempenho e mantendo a aplicação _mint_ (com performance sempre igual desde o primeiro), mesmo com grandes quantidades de dados. O redis comunica o container do django com o postgre e serve resultados de volta para o django
+
 ### 2.5 Celery
 
 O celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como django, flash e etc.
@@ -103,7 +105,7 @@ Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão d
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do django, no caso o **gunicorn** que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework django, ele irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework django que irá ter um arquivo chamado urls.py que diz ao nginx qual código deverá ser executado de acordo com o path e código HTTP recebido, através de proxy reverso será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o nginx e o django através do gunicorn.
 
-4 - Dentro do **django** a requisição recebida pelo **web server** é mapeado para uma view especifica através das urls, a view pede dados a modelo, a model pega os dados do banco de dados **postgresql** e retorna a view, a view seleciona o template e fornece os dados, com isso o template é preenchido e devolvido a view, a view devolve o template como resposta ao web server.
+4 - Dentro do **django** a requisição recebida pelo **web server** é mapeado para uma view especifica através das urls, a view pede dados a modelo, a model faz uma requisição ao redis que pega os dados do banco de dados **postgresql** e retorna a view, a view seleciona o template e fornece os dados, com isso o template é preenchido e devolvido a view, a view devolve o template como resposta ao web server.
 
 5 - O web server (nginx) retorna a resposta para o web client (navegador)
 
