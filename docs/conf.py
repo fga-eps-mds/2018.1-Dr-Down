@@ -63,7 +63,7 @@ release = '0.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'pycharm']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 # default_role = None
@@ -170,7 +170,7 @@ htmlhelp_basename = 'drdowndoc'
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
