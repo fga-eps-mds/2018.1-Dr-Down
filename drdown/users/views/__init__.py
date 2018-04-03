@@ -1,0 +1,1 @@
+from .views import UserDetailView, UserRedirectView, UserUpdateView, UserListView
