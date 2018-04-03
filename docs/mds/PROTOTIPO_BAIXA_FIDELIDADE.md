@@ -15,7 +15,7 @@ A homepage é a página inicial da aplicação, onde será destacado o acesso à
 
 ![Perfil](http://uploaddeimagens.com.br/images/001/355/439/original/my_profile.png?1522691778)
 
-A página de perfil do usuário é onde conterá as informações básicas do mesmo. Dados como nome, telefone e e-mail estarão acessíveis através dessa tela.
+A página de perfil do usuário irá conter as informações básicas do mesmo. Dados como nome, telefone e e-mail estarão acessíveis através dessa tela.
 
 ## Fila de espera
 
@@ -55,4 +55,10 @@ O questionário é a pagina onde o usuário marcará a consulta respondendo às 
 
 ![Evento](http://uploaddeimagens.com.br/images/001/355/428/original/New_Mockup_1.png?1522691714)
 
-A página de eventos tem como objetivo informar ao usuários as principais atividades que o CRIS Down proporciona em sua agenda. A página informará o endereço correspondente àquele evento e a sua descrição.
+A página de eventos tem como objetivo informar ao usuários as principais atividades que o CRIS Down tem agendadas. A página informará o endereço do evento e a sua descrição.
+
+# Linha de Cuidado
+
+![Checklist](http://uploaddeimagens.com.br/images/001/356/717/original/New_Mockup_8.png?1522765446)
+
+A lista de cuidado é responsável por listar os afazeres do paciente de acordo com a sua idade e recomendações médicas.
