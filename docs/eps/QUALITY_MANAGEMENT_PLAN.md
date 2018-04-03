@@ -1,4 +1,4 @@
-#Plano de gerênciamento de qualidade 
+# Plano de gerênciamento de qualidade 
 
 | Data | Versão | Descrição | Autor |
 |:----:|:------:|:---------:|:-----:|
@@ -38,6 +38,8 @@ O monitoramento da qualidade do projeto, além de garantir a entrega com qualida
 * [ZenHub](https://www.zenhub.com/): ZenHub é uma ferramenta que auxilia no rastreio das issues do github e também criar gráficos como o "Velocity" e o "BurnDown".
 
 * [Pytest](https://docs.pytest.org/en/latest/): O pytest é uma ferramenta de teste Python completa e madura que ajuda você a escrever programas melhores.
+
+* [Travis](https://travis-ci.org/): O Travis é uma ferramenta de teste. Ela possibilita saber se o nossa aplicação está dentro do esperado ou não. 
 
 
 
