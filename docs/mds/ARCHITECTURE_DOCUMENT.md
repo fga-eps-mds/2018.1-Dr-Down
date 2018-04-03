@@ -17,6 +17,7 @@
 | 29/03/2018 | 1.0.1 | Revisões gerais | Daniel Maike, Guilherme Guy e Joberth Rogers |
 | 29/03/2018 | 1.1.0 | Adição do tópico 2.4 | Geovana Ramos |
 | 01/04/2018 | 1.2.0 | Melhorando o tópico de representação arquitetural e microserviços | Victor Arnaud |
+| 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
 
 ## 1: Introdução
 
@@ -48,7 +49,7 @@ A arquitetura utilizada no projeto será o arquitetura de microserviços, em que
 
 ### 2.1 NGINX:
 
-O NGINX é um serviodr web que pode atuar como um servidor proxy reverso para HTTP, HTTPS, SMTP, POP3 e IMAP, bem como um balanceador de carga. O NGINX é um serviodor web rápido e com inúmeras possibilidades de configuração para melhor performace.
+O NGINX é um servidor web que pode atuar como um proxy reverso para HTTP, HTTPS, SMTP, POP3 e IMAP, bem como um balanceador de carga. O NGINX é um servidor web rápido e com inúmeras possibilidades de configuração para melhor performace.
 
 No projeto ele é utilizado como um redirecionador de portas utilizando-se de proxy reverso para que ambos os arquivos estáticos e o servidor de produção do django possam compartilhar da mesma porta 80 servindo os arquivos estáticos separados da aplicação.
 
@@ -73,11 +74,11 @@ Agrega toda a parte visual que estará visível para os usuários. Inclui os có
 
 PostgreSQL é um poderoso sistema de banco de dados objeto-relacional de código aberto. Ele é executado em todos os principais sistemas operacionais, tem 15 anos de desenvolvimento ativo e uma arquitetura comprovada que lhe garantiu uma forte reputação de confiabilidade, integridade de dados e correção.
 
-Para o projeto será utilizado o Postgresql como o banco de dados da aplicação Dr. Down, pela simplicidade e segurança do mesmo.
+Para o projeto será utilizado o PostgreSQL como o banco de dados de desenvolvimento e produção da aplicação Dr. Down, pela simplicidade e segurança do mesmo.
 
 ### 2.4 Redis
 
-Redis é um banco de dados não relacional, também conhecido commo NOSQL que armazena dados no formato "chave-valor" em memória e é extremamente rápido.
+Redis é um banco de dados não relacional, também conhecido como NOSQL que armazena dados no formato "chave-valor" em memória e é extremamente rápido.
 
 O Redis é um servidor TCP, e seu funcionamento baseado em um modelo cliente-servidor, dessa forma, quando uma requisição é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente, e este fica aguardando uma resposta do servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de volta ao cliente.
 
@@ -93,7 +94,7 @@ No caso do Django, sempre que um cliente faz uma requisição web (request), o s
 
 Dependendo da tarefa que você executa no servidor a resposta pode demorar muito e isso leva à problemas de **TimeOut**, a experiência do usuário fica comprometida. Existem diversas tarefas no projeto que podem demorar para ser executadas, como relatórios pesados, enviar diferentes emails para uma lista de usuários, e por ai vai...
 
-O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery, geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis. O Message Broker distribui essas tarefas ente os workers, que vão executar as tarefas que você quer que sejam assíncronas, e o resultado dessas tarefas pode ser escrito em um Result Score (Memóri cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo Client novamente.
+O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery, geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis. O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que você quer que sejam assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memóri cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
 Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão de utiliza-lo ou não no projeto ainda está sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas, caso não precise esse microserviço será descartado.
 
@@ -105,7 +106,7 @@ Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão d
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do django, no caso o **gunicorn** que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework django, ele irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework django que irá ter um arquivo chamado urls.py que diz ao nginx qual código deverá ser executado de acordo com o path e código HTTP recebido, através de proxy reverso será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o nginx e o django através do gunicorn.
 
-4 - Dentro do **django** a requisição recebida pelo **web server** é mapeado para uma view especifica através das urls, a view pede dados a modelo, a model faz uma requisição ao redis que pega os dados do banco de dados **postgresql** e retorna a view, a view seleciona o template e fornece os dados, com isso o template é preenchido e devolvido a view, a view devolve o template como resposta ao web server.
+4 - Dentro do **django** a requisição recebida pelo **web server** é mapeado para uma view especifica através das urls, a view pede dados a modelo, a model faz uma requisição ao **redis** que pega os dados do banco de dados **postgresql** e retorna a view, a view seleciona o template e fornece os dados, com isso o template é preenchido e devolvido a view, a view devolve o template como resposta ao web server.
 
 5 - O web server (nginx) retorna a resposta para o web client (navegador)
 
@@ -322,6 +323,6 @@ CLASS-BASED VIEWS. DJANGO PROJECT. Disponível em: <https://docs.djangoproject.c
 
 TAREFAS ASSINCRONAS COM DJANGO E CELERY. Disponível em: <https://fernandofreitasalves.com/tarefas-assincronas-com-django-e-celery/>. Acesso em: 03 Abril. 2018.
 
-REDIS O QUE Ë E PARA QUE SERVE. Disponível em: <https://pt.linkedin.com/pulse/redis-o-que-%C3%A9-e-para-serve-romulo-cianci>. Acesso em: 03 Abril. 2018.
+REDIS O QUE É E PARA QUE SERVE. Disponível em: <https://pt.linkedin.com/pulse/redis-o-que-%C3%A9-e-para-serve-romulo-cianci>. Acesso em: 03 Abril. 2018.
 
 POSTGRESQL. Disponível em: <https://www.postgresql.org/about/>. Acesso em: 03 abril. 2018
