@@ -5,6 +5,10 @@ python:
 env:
   global:
     - CC_TEST_REPORTER_ID=bf64f4cd10722061b8cad12ca638ebfa7d3c1494df117613b2acd357bfd7aeb0
+notifications:
+  slack:
+    rooms:
+      - epsmds:XuAMBzep3dPckHegAe6quxOm#github
 services:
   - docker
 before_install:
