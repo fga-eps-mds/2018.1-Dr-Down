@@ -1,6 +1,4 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from drdown.utils.validators import validate_cpf
@@ -9,7 +7,6 @@ from .model_user import User
 
 class Employee(models.Model):
 
-    is_confirmed = models.BooleanField()
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     cpf = models.CharField(
