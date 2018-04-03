@@ -21,9 +21,11 @@ Para a análise das métricas foram estabelecidos alguns critérios a serem segu
 |Métrica|Bom|Regular|Crítico|
 |:-----:|---|-------|-------|
 | Complexidade ciclomática | 0 a 20 | 21 a 60 | acima de 60 |
-| Duplicação de código | 0% a 1.5% | 1,.6% a 2.9% | acima 3 %|
+| Duplicação de código | 0% a 1.5% | 1.6% a 2.9% | acima de 3%|
 | Quebras no padrão de código/PEP 8 | 0 a 5 | 6 a 10 | acima de 11 |
 | Cobertura de código	| acima de 95% | acima de 80% | abaixo de 75% |
+
+* [PEP 8](https://www.python.org/dev/peps/pep-0008/): Folha de estilo do python.
 
 ### Monitoramento
 
