@@ -13,7 +13,7 @@ class Employee(models.Model):
         help_text=_("Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
-        max_length=15
+        max_length=14
     )
 
     departament = models.CharField(
