@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}User: {{ object.username }}{% endblock %}
 
@@ -19,7 +20,8 @@
 
     <div class="container" >
       {% if user.employee %}
-        {% include 'users/employee_detail.html' %}
+        <p><strong> CPF: </strong> {{ employee_cpf }} </p>
+        <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
       {% endif %}
     </div>
 
