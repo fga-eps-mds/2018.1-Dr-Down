@@ -33,17 +33,15 @@ O prontuário terá informações básicas sobre o paciente e seu histórico de 
 
 ![Categorias](http://uploaddeimagens.com.br/images/001/356/025/original/Capturar.PNG?1522714613)
 
-Essa tela será responsável por listar todas as categorias de tópicos, que poderão ser criados pelo usuário.
+A página de categoria é a interface que concentra o conjunto de posts abrangidos por uma determinada especialidade. Facilitando a navegação de um usuário e a localização de duvidas mais rapidas.
 
-## Tópicos
+## Posts
 
-![Tópicos](http://uploaddeimagens.com.br/images/001/355/434/original/New_Mockup_5.png?1522691758)
-
-Os tópicos são sub categorias que contêm todos os posts relacionados a uma categoria especifica.
+![Posts](https://uploaddeimagens.com.br/images/001/357/502/original/Postfinal.PNG?1522798294)
 
 ![Posts](http://uploaddeimagens.com.br/images/001/356/022/original/New_Mockup_8.png?1522714596)
 
-Posts são descrições de dúvidas do fórum, onde um usuário pode postar ou comentar posts de outros usuários ou abrir uma discussão através do mesmo. Posts estão dentro de tópicos, e cada tópico está dentro de uma categoria.
+Posts são descrições de dúvidas do fórum, onde um usuário pode postar, comentar nos posts de outros usuários e abrir discussões através do mesmo. Posts estão dentro de Categorias.
 
 ## Questionário
 
@@ -57,8 +55,8 @@ O questionário é a pagina onde o usuário marcará a consulta respondendo às 
 
 A página de eventos tem como objetivo informar ao usuários as principais atividades que o CRIS Down tem agendadas. A página informará o endereço do evento e a sua descrição.
 
-# Linha de Cuidado
+# Linha de Cuidados
 
 ![Checklist](http://uploaddeimagens.com.br/images/001/356/717/original/New_Mockup_8.png?1522765446)
 
-A lista de cuidado é responsável por listar os afazeres do paciente de acordo com a sua idade e recomendações médicas.
+A lista de cuidados é responsável por listar os afazeres do paciente de acordo com a sua idade e recomendações médicas.
