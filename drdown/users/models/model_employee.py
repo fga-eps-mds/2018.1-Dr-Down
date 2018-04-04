@@ -23,4 +23,16 @@ class Employee(models.Model):
     )
 
     def __str__(self):
-        return self.user.get_username()
+        return self.user.get_username() + " - " + self.departament
+
+    def save(self, *args, **kwargs):
+
+        # we wan't to add the required permissions to the user, before saving
+        self.user.is_staff = True
+        self.user.save()
+
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Employee')
+        verbose_name_plural = _('Employees')
