@@ -27,13 +27,14 @@ class TestValidator(TestCase):
             "666.666.666-66",
             "777.777.777-77",
             "888.888.888-88",
-            "999.999.999-99"
+            "999.999.999-99",
+            ""
         ]
 
         for i in range(0, wrong_test_values.__len__()):
             with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
                 validate_cpf(wrong_test_values[i])
-          
+
         # test if cfp is rigth
         try:
             validate_cpf(value="974.220.200-16")
