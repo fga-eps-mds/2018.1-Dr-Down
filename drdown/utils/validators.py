@@ -79,3 +79,19 @@ def validate_cpf(value):
             _('%(value)s is a invalid CPF, the verification digit is wrong'),
             params={'value': value}
         )
+
+
+def validate_ses(value):
+    """
+        validate a SES pass just numbers, and if have 7 or 9 numbers
+    """
+
+    # regex to check if have just numbers and 7 or 9 numbers
+    regex_code = r"^\d{7}(?:\d{2})?$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong SES format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
