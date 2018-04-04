@@ -15,8 +15,7 @@ class Employee(models.Model):
         validators=[validate_cpf],
         max_length=14
     )
-    # fonoaudiologia, terapia ocupacional, cardiologia, neurologia, pediatria,  psicólogos e fisioterapia
-    
+
     # this is separated from the list because of Django standars
     # if we leave like this we can access the choices from outside
     # example: employee.SPEECH_THERAPHY
