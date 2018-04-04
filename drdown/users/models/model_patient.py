@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from drdown.utils.validators import validate_ses
 
 from .model_user import User
 
@@ -7,10 +8,11 @@ from .model_user import User
 class Patient(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    SES = models.CharField(
+    ses = models.CharField(
         help_text=_("Please, enter the valid SES"),
         unique=True,
         max_length=9,
+        validators=[validate_ses],
     )
     PRIORITIES = (
         (5, _('Not urgent')),
@@ -19,7 +21,7 @@ class Patient(models.Model):
         (2, _('Very urgent')),
         (1, _('Emerging')),
       )
-    Priority = models.IntegerField(
+    priority = models.IntegerField(
         default=5, choices=PRIORITIES,
         help_text=_("Please, insert the degree of priority of the patient"),
         )
