@@ -36,42 +36,35 @@ def validate_cpf(value):
     cpf_numbers_string = re.sub(r'[.]?[-]?', '', value)
 
     # and convert to a format more easy to work with
-    cpf_numbers = []
+    cpf_numbers = list(map(lambda x: int(x), cpf_numbers_string))
 
-    for i in range(0, cpf_numbers_string.__len__()):
-        cpf_numbers.append(int(cpf_numbers_string[i]))
-
-    cpf_calculated = cpf_numbers[0:9]
+    # the first 9 are alreadly calculated
+    cpf_calculated = cpf_numbers[:9]
 
     # now we do the math
     # we need to multiply the first 9 numbers by 10 to 2 (from the first to the last)
     # and we sum them
-    cpf_sum = 0
-    for i in range(0, cpf_calculated.__len__()):
-        cpf_sum += cpf_numbers[i] * (10-i)
+    cpf_first_sum = cpf_second_sum = 0
+    for i in range(0, 9):
+        cpf_first_sum += cpf_numbers[i] * (10-i)
+        cpf_second_sum += cpf_numbers[i] * (11-i)
 
     # we divide the sum by 11 and get the mod
-    mod = cpf_sum % 11
-
     # and apply the rules
-    if mod < 2:
+    if (cpf_first_sum % 11) < 2:
         cpf_calculated.append(0)
     else:
-        cpf_calculated.append(11-mod)
+        cpf_calculated.append(11 - (cpf_first_sum % 11))
 
     # now we have the starting 9 digits and 1 calculated, so we have 10 digits on total
-    # to find the second verification digit we need to make the same process, but with 10 numbers
+    # to find the second verification digit we need to make the calculation with the first
+    # validation number added
+    cpf_second_sum += cpf_numbers[9] * 2
 
-    cpf_sum = 0
-    for i in range(0, cpf_calculated.__len__()):
-        cpf_sum += cpf_numbers[i] * (11-i)
-
-    mod = cpf_sum % 11
-
-    if mod < 2:
+    if (cpf_second_sum % 11) < 2:
         cpf_calculated.append(0)
     else:
-        cpf_calculated.append(11-mod)
+        cpf_calculated.append(11 - (cpf_second_sum % 11))
 
     # now we check if the calculated cpf is the same as the informed
 
