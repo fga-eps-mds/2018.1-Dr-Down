@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}User: {{ object.username }}{% endblock %}
 
@@ -14,6 +15,13 @@
         <p>{{ object.name }}</p>
       {% endif %}
     </div>
+  </div>
+
+  <div class="container" >
+      {% if user.patient %}
+        <p><strong> SES: </strong> {{ patient_ses }} </p>
+        <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
+      {% endif %}
   </div>
 
 {% if object == request.user %}
