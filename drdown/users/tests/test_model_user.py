@@ -23,7 +23,7 @@ class TestUser(TestCase):
     def test_short_name(self):
 
         self.assertEquals(self.user.get_short_name(),
-        	self.user.first_name)
+            self.user.first_name)
 
 class TestField(TestCase):
 
@@ -40,7 +40,9 @@ class TestField(TestCase):
             password='ohaio123456',
             birthday='1998-03-05',
             telephone='(11)11111-1111',
-            gender='M'
+            gender='M',
+            created_at='2018-03-05',
+            updated_at='2018-03-05'
         )
 
         self.user1 = User.objects.create_user(
@@ -51,7 +53,9 @@ class TestField(TestCase):
             password='pedro123456',
             birthday='1998-04-05',
             telephone='(22)22222-2222',
-            gender='F'
+            gender='F',
+            created_at='2018-04-05',
+            updated_at='2018-04-05'
         )
 
         self.user2 = User.objects.create_user(
@@ -62,7 +66,9 @@ class TestField(TestCase):
             password='jobs123456',
             birthday='1998-05-05',
             telephone='(33)33333-3333',
-            gender='M'
+            gender='M',
+            created_at='2018-05-05',
+            updated_at='2018-05-05'
         )
 
     def tearDown(self):
@@ -138,6 +144,39 @@ class TestField(TestCase):
         self.assertEquals( self.superuser.gender, 'M')
         self.assertEquals(self.user1.gender, 'F')
         self.assertEquals(self.user2.gender, 'M')
+
+    def test_created_at(self):
+        """
+        Test for verify if the create_at is the same for compare
+        """
+        self.assertEquals( self.superuser.created_at, '2018-03-05')
+        self.assertEquals(self.user1.created_at, '2018-04-05')
+        self.assertEquals(self.user2.created_at, '2018-05-05')
+
+    def test_in_not_creted_at(self):
+        """
+        Test for verify if the create_at is diferent for compare
+        """
+        self.assertNotEquals( self.superuser.created_at, '')
+        self.assertNotEquals(self.user1.created_at, '')
+        self.assertNotEquals(self.user2.created_at, '')
+
+    def test_updated_at(self):
+        """
+        Test for verify if the update_at is the same for compare
+        """
+        self.assertEquals( self.superuser.updated_at, '2018-03-05')
+        self.assertEquals(self.user1.updated_at, '2018-04-05')
+        self.assertEquals(self.user2.updated_at, '2018-05-05')
+
+    def test_in_not_updated_at(self):
+        """
+        Test for verify if the update_at is the diferent for compare
+        """
+        self.assertNotEquals( self.superuser.updated_at, '')
+        self.assertNotEquals(self.user1.updated_at, '')
+        self.assertNotEquals(self.user2.updated_at, '')
+
 
 
 
