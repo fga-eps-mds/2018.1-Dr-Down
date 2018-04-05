@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import Group
+
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
@@ -50,13 +52,25 @@ class Employee(models.Model):
         max_length=30
     )
 
+    # const representig the name of the group wich this model will add to the related user
+    GROUP_NAME = "Employees"
+
     def __str__(self):
         return self.user.get_username() + " - " + self.get_departament_display()
 
     def save(self, *args, **kwargs):
 
-        # we wan't to add the required permissions to the user, before saving
+        # we wan't to add the required permissions to the related user, before saving
         self.user.is_staff = True
+
+        try:
+            employee_group = Group.objects.get(name=Employee.GROUP_NAME)
+        except Group.DoesNotExist:
+            employee_group = Group.objects.create(name=Employee.GROUP_NAME)
+
+        # TODO: add permissions to edit Patient and Parent when they get ready
+        self.user.groups.add(employee_group)
+
         self.user.save()
 
         super().save(*args, **kwargs)
