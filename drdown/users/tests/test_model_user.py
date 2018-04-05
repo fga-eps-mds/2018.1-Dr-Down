@@ -34,6 +34,7 @@ class TestField(TestCase):
 
         self.superuser = User.objects.create_superuser(
             name='Ohaio',
+            last_name='Nini',
             first_name='Ohaio',
             username='Ohaionini',
             email='ohaio@gmail.com',
@@ -42,11 +43,13 @@ class TestField(TestCase):
             telephone='(11)11111-1111',
             gender='M',
             created_at='2018-03-05',
-            updated_at='2018-03-05'
+            updated_at='2018-03-05',
+            photo='example.jpg'
         )
 
         self.user1 = User.objects.create_user(
             first_name='Pedro',
+            last_name='Victor',
             name='Pedro',
             username='pedro100',
             email='pedro@gmail.com',
@@ -55,11 +58,13 @@ class TestField(TestCase):
             telephone='(22)22222-2222',
             gender='F',
             created_at='2018-04-05',
-            updated_at='2018-04-05'
+            updated_at='2018-04-05',
+            photo='example.jpg'
         )
 
         self.user2 = User.objects.create_user(
             first_name='Jobs',
+            last_name='Rogers',
             name='Jobs',
             username='jobs101',
             email='jobs@gmail.com',
@@ -68,7 +73,8 @@ class TestField(TestCase):
             telephone='(33)33333-3333',
             gender='M',
             created_at='2018-05-05',
-            updated_at='2018-05-05'
+            updated_at='2018-05-05',
+            photo='example.jpg'
         )
 
     def tearDown(self):
@@ -87,6 +93,60 @@ class TestField(TestCase):
         self.assertEquals(self.superuser.get_short_name(), self.superuser.name)
         self.assertEquals(self.user1.get_short_name(), self.user1.name)
         self.assertEquals(self.user2.get_short_name(), self.user2.name)
+
+
+    def test_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertEquals( self.superuser.name, 'Ohaio')
+        self.assertEquals( self.user1.name, 'Pedro')
+        self.assertEquals(self.user2.name, 'Jobs')
+
+
+    def test_invalid_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertNotEquals( self.superuser.name, '')
+        self.assertNotEquals( self.user1.name, '')
+        self.assertNotEquals(self.user2.name, '')
+
+    def test_first_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertEquals( self.superuser.first_name, 'Ohaio')
+        self.assertEquals( self.user1.first_name, 'Pedro')
+        self.assertEquals(self.user2.first_name, 'Jobs')
+
+
+    def test_invalid_first_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertNotEquals( self.superuser.first_name, '')
+        self.assertNotEquals( self.user1.first_name, '')
+        self.assertNotEquals(self.user2.first_name, '')
+
+
+    def test_last_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertEquals( self.superuser.last_name, 'Nini')
+        self.assertEquals( self.user1.last_name, 'Victor')
+        self.assertEquals(self.user2.last_name, 'Rogers')
+
+
+    def test_invalid_last_name(self):
+        """
+        Test to get the full name of user
+        """
+        self.assertNotEquals( self.superuser.last_name, '')
+        self.assertNotEquals( self.user1.last_name, '')
+        self.assertNotEquals(self.user2.last_name, '')
+
 
     def test_birthday(self):
         """
@@ -177,6 +237,17 @@ class TestField(TestCase):
         self.assertNotEquals(self.user1.updated_at, '')
         self.assertNotEquals(self.user2.updated_at, '')
 
+    def test_photo(self):
+
+         self.assertEquals( self.superuser.photo, 'example.jpg')
+         self.assertEquals(self.user1.photo, 'example.jpg')
+         self.assertEquals(self.user2.photo, 'example.jpg')
+
+    def test_photo(self):
+
+         self.assertNotEquals( self.superuser.photo, '')
+         self.assertNotEquals(self.user1.photo, '')
+         self.assertNotEquals(self.user2.photo, '')
 
 
 
