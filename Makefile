@@ -9,11 +9,11 @@ file := "local.yml"
 
 up:
 	# Create the image and container
-ifeq (${file}, "local.yml")
-	sudo docker-compose -f ${file} up --build
-else
 	sudo docker-compose -f ${file} up
-endif
+
+rebuild:
+	# Create the image, container and force a build
+	sudo docker-compose -f ${file} up --build
 
 logs:
 	# See the logs from application
@@ -80,8 +80,12 @@ sql: manage.py
 local := "**/tests/"
 
 test: manage.py
-	# Run all tests
+	# Run tests
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py test ${local}
+
+test-all: manage.py
+	# Run tests
+	sudo docker-compose -f ${file} run --rm ${container} python manage.py test
 
 coverage: coverage
 	# Run django coverage (create a covarege page)
