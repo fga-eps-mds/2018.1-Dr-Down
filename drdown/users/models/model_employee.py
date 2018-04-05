@@ -12,7 +12,7 @@ class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     cpf = models.CharField(
-        help_text=_("Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
+        help_text=_("Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
         max_length=14
@@ -31,6 +31,7 @@ class Employee(models.Model):
     PSYCHOLOGY = "PSY"
     PHYSIOTHERAPY = "PHYS"
     SECRETAY = "SEC"
+    ADMINISTRATION = "ADM"
     OTHER = "OTH"
 
     DEPARTAMENT_CHOICES = (
@@ -42,6 +43,7 @@ class Employee(models.Model):
         (PSYCHOLOGY, _('Psychology')),
         (PHYSIOTHERAPY, _('Physiotherapy')),
         (SECRETAY, _('Secretary')),
+        (ADMINISTRATION, _('Administration')),
         (OTHER, _('Other')),
     )
 
