@@ -99,7 +99,7 @@ ao finalizar você pode acessar a aplicação utilizando a seguinde URL: ```0.0.
 
 * Com isso você pode modificar os arquivos localmente em sua máquina que ele serão automaticamente modificados dentro do container, possibilitando assim ter um ambiente de desenvolvimento sem a necessidade de muita configuração do mesmo.
 
-* **Observação**: Os comandos (make up, start, logs, stop, rm, ps) são comandos para manipulação de containers e tem como parâmetro opcional o **file** que pode passar o compose que deseja utilizar, por padrão é utilizado o **docker-compose-dev.yml** para gerar o ambiente de desenvolvimento. O de deploy é o arquivo **docker-compose-prod.yml** e o de teste é o arquivo **docker-compose-test.yml**.
+* **Observação**: Os comandos (make up, rebuild, start, logs, stop, rm, ps) são comandos para manipulação de containers e tem como parâmetro opcional o **file** que pode passar o compose que deseja utilizar, por padrão é utilizado o **local.yml** para gerar o ambiente de desenvolvimento. O de deploy é o arquivo **production.yml**.
 
 * **Observação**: Os comandos relacionados ao django tem como parâmetro opcional o **container** de execução do mesmo e alguns comandos tem parâmetros obrigatórios como é o caso o **test** e **app**.
 
@@ -128,6 +128,8 @@ ao finalizar você pode acessar a aplicação utilizando a seguinde URL: ```0.0.
   - ```make test```: Comando para rodar os testes automatizados do projeto, os testes por padrão deve estar em uma
     pasta chamada **tests** dentro de cada aplicação criada, tem como parâmetros opcionais o **container** e o **local**
     onde estão os testes.
+
+  - ```make test-all```: Comando para rodar **TODOS** os testes automatizados do projeto.
 
   - ```make migrations```: Gera todas as migrações da aplicação.
 
