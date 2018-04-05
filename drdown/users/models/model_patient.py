@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from drdown.utils.validators import validate_ses
+from drdown.utils.validators import validate_ses, validate_generic_number, validate_names
 
 from .model_user import User
 
@@ -27,10 +27,12 @@ class Patient(models.Model):
     mother_name = models.CharField(
                 help_text=_("Please, insert your mother name"),
                 max_length=80,
+                validators=[validate_names],
     )
     father_name = models.CharField(
                 help_text=_("Please, insert your father name"),
                 max_length=80,
+                validators=[validate_names],
     )
     COLOR = (
         (5, _('White')),
@@ -46,20 +48,22 @@ class Patient(models.Model):
     sus_number = models.CharField(
         help_text=_("Please, enter the valid SUS number"),
         unique=True,
-        default='',
         max_length=11,
+        validators=[validate_generic_number],
     )
     civil_registry_of_birth = models.CharField(
         help_text=_("Please, enter the civil registry of birth number"),
         unique=True,
         default='',
         max_length=11,
+        validators=[validate_generic_number],
     )
     declaration_of_live_birth = models.CharField(
         help_text=_("Please, enter the declaration of live birth number"),
         unique=True,
         default='',
         max_length=11,
+        validators=[validate_generic_number],
     )
 
     def __str__(self):
