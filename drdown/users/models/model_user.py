@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-
+from drdown.utils.validators import validate_phone
 
 class User(AbstractUser):
 
@@ -19,9 +19,10 @@ class User(AbstractUser):
 
     name = models.CharField(
         ('Name of User'),
-        blank=True,
+        blank=False,
         max_length=255,
         help_text="Full user name"
+
     )
 
     gender = models.CharField(
@@ -30,33 +31,37 @@ class User(AbstractUser):
             ("M", "Male"),
             ("F", "Female"),
         ),
-        blank=True,
+        blank=False,
         max_length=6,
         null=True
     )
 
-    telephone = models.DecimalField(
+    telephone = models.CharField(
         ('Telephone'),
-        blank=True, null=True,
-        decimal_places=0,
-        max_digits=12
+        blank=False,
+        null=True,
+        max_length=14,
+         validators=[validate_phone],
+        help_text=("(xx)xxxxx-xxxx")
+
     )
 
     birthday = models.DateField(
         ('Birthday'),
-        blank=True,
+        help_text=("xx/xx/xxxx"),
+        blank=False,
         null=True
     )
 
     created_at = models.DateField(
     	('Created at'),
-    	blank=True,
+    	blank=False,
     	null=True
     )
 
     updated_at = models.DateField(
     	('Updated at'),
-    	blank=True,
+    	blank=False,
     	null=True
     )
 
@@ -67,4 +72,4 @@ class User(AbstractUser):
         return reverse('users:detail', kwargs={'username': self.username})
 
     def get_short_name(self):
-        return(self.first_name)   
+        return(self.first_name)
