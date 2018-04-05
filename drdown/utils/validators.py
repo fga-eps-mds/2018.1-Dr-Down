@@ -95,3 +95,25 @@ def validate_ses(value):
 
     # this will raise an exception in case of failure
     regex_validator(value)
+
+    regex_code_all_equal_9 = r"([\d])\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_9,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+    regex_code_all_equal_7 = r"([\d])\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_7,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
