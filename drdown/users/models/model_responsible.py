@@ -8,7 +8,8 @@ from .model_patient import Patient
 
 class Responsible(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    patient = models.OneToOneField(Patient, on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+
     cpf = models.CharField(
         help_text=_("Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
         unique=True,
