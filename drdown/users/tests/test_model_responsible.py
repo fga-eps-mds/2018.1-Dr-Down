@@ -8,7 +8,13 @@ class TestModelResponsible(TestCase):
     def setUp(self):
         self.user_1 = self.make_user()
         self.user_2 = self.make_user(username="teste_2")
-        self.patient = Patient.objects.create(ses="1234567", user=self.user_2, priority=1)
+        self.patient = Patient.objects.create(ses="1234567",
+                                              user=self.user_2, priority=1,
+                                              mother_name="Mãe", father_name="Pai",
+                                              ethnicity=3, sus_number="12345678911",
+                                              civil_registry_of_birth="12345678911",
+                                              declaration_of_live_birth="12345678911")
+
         self.responsible = Responsible.objects.create(cpf="974.220.200-16", patient=self.patient, user=self.user_1)
 
     def test_get_absolute_url(self):
