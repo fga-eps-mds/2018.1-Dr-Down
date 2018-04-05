@@ -17,7 +17,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         if hasattr(user, 'doctor'):
             context['doctor_cpf'] = user.doctor.cpf
             context['doctor_crm'] = user.doctor.crm
-            context['doctor_specility'] = user.doctor.speciality
+            context['doctor_speciality'] = user.doctor.speciality
         return context
 
 
