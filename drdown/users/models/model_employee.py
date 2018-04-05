@@ -30,6 +30,7 @@ class Employee(models.Model):
     PEDIATRICS = "PED"
     PSYCHOLOGY = "PSY"
     PHYSIOTHERAPY = "PHYS"
+    NURSERY = "NUR"
     SECRETAY = "SEC"
     ADMINISTRATION = "ADM"
     OTHER = "OTH"
@@ -44,6 +45,7 @@ class Employee(models.Model):
         (PHYSIOTHERAPY, _('Physiotherapy')),
         (SECRETAY, _('Secretary')),
         (ADMINISTRATION, _('Administration')),
+        (NURSERY, _('Nursery')),
         (OTHER, _('Other')),
     )
 
