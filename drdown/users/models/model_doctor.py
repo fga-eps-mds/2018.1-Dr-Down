@@ -50,34 +50,34 @@ class Doctor(models.Model):
         blank=True
     )
 
-# const representig the name of the group wich this model will add to the
-# related user
-GROUP_NAME = "Doctors"
+    # const representig the name of the group wich this model will add to the
+    # related user
+    GROUP_NAME = "Doctors"
 
 
-def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
 
-    # we wan't to add the required permissions to the related user, before
-    # saving
-    self.user.is_staff = True
+        # we wan't to add the required permissions to the related user, before
+        # saving
+        self.user.is_staff = True
 
-    try:
-        doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
-    except Group.DoesNotExist:
-        doctor_group = Group.objects.create(name=Doctor.GROUP_NAME)
+        try:
+            doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
+        except Group.DoesNotExist:
+            doctor_group = Group.objects.create(name=Doctor.GROUP_NAME)
 
-    # TODO: add permissions to edit Patient and Parent when they get ready
-    self.user.groups.add(doctor_group)
+        # TODO: add permissions to edit Patient and Parent when they get ready
+        self.user.groups.add(doctor_group)
 
-    self.user.save()
+        self.user.save()
 
-    super().save(*args, **kwargs)
-
-
-class Meta:
-    verbose_name = _('Doctor')
-    verbose_name_plural = _('Doctors')
+        super().save(*args, **kwargs)
 
 
-def __str__(self):
-    return self.user.get_username() + " - " + self.get_speciality_display()
+    class Meta:
+        verbose_name = _('Doctor')
+        verbose_name_plural = _('Doctors')
+
+
+    def __str__(self):
+        return self.user.get_username() + " - " + self.get_speciality_display()
