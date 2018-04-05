@@ -11,6 +11,15 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     slug_field = 'username'
     slug_url_kwarg = 'username'
 
+    def get_context_data(self, **kwargs):
+        user = self.request.user
+        context = super(UserDetailView, self).get_context_data(**kwargs)
+        if hasattr(user, 'doctor'):
+            context['doctor_cpf'] = user.doctor.cpf
+            context['doctor_crm'] = user.doctor.crm
+            context['doctor_specility'] = user.doctor.speciality
+        return context
+
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
     permanent = False
