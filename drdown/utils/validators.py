@@ -1,3 +1,4 @@
+
 import re
 
 from django.core.exceptions import ValidationError
@@ -116,4 +117,46 @@ def validate_ses(value):
         message=_('This SES is not permited'),
         inverse_match=True
     )
+    regex_validator(value)
+
+
+def validate_generic_number(value):
+    """
+        validate a GENERIC_NUMBER pass just numbers, and if have equal numbers
+    """
+
+    # regex to check if have just numbers and 7 or 9 numbers
+    regex_code = r"^\d{11}$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong NUMBER format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+    regex_code_all_equal_11 = r"([\d])\1\1\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_11,
+        message=_('This NUMBER is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+
+def validate_names(value):
+    """
+        Tests if the name is being passed correctly
+    """
+    # regex to check if a name has no numbers
+    regex_code = r"^[a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+" \
+                 r"( [a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+)*$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Invalid name.')
+    )
+    # this will raise an exception in case of failure
     regex_validator(value)
