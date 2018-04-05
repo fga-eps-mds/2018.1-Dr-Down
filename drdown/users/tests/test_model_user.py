@@ -37,7 +37,10 @@ class TestField(TestCase):
             first_name='Ohaio',
             username='Ohaionini',
             email='ohaio@gmail.com',
-            password='ohaio123456'
+            password='ohaio123456',
+            birthday='1998-03-05',
+            telephone='(11)11111-1111',
+            gender='M'
         )
 
         self.user1 = User.objects.create_user(
@@ -45,7 +48,10 @@ class TestField(TestCase):
             name='Pedro',
             username='pedro100',
             email='pedro@gmail.com',
-            password='pedro123456'
+            password='pedro123456',
+            birthday='1998-04-05',
+            telephone='(22)22222-2222',
+            gender='F'
         )
 
         self.user2 = User.objects.create_user(
@@ -53,7 +59,10 @@ class TestField(TestCase):
             name='Jobs',
             username='jobs101',
             email='jobs@gmail.com',
-            password='jobs123456'
+            password='jobs123456',
+            birthday='1998-05-05',
+            telephone='(33)33333-3333',
+            gender='M'
         )
 
     def tearDown(self):
@@ -61,6 +70,7 @@ class TestField(TestCase):
         This method will run after any test.
         """
 
+        self.superuser.delete()
         self.user1.delete()
         self.user2.delete()
 
@@ -68,9 +78,73 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
-
+        self.assertEquals(self.superuser.get_short_name(), self.superuser.name)
         self.assertEquals(self.user1.get_short_name(), self.user1.name)
         self.assertEquals(self.user2.get_short_name(), self.user2.name)
+
+    def test_birthday(self):
+        """
+        Test for verify if the birthday is the same for compare
+        """
+        self.assertEquals( self.superuser.birthday, '1998-03-05')
+        self.assertEquals(self.user1.birthday, '1998-04-05')
+        self.assertEquals(self.user2.birthday, '1998-05-05')
+
+    def test_in_not_birthday(self):
+        """
+        Test for verify if the birthday is the same for compare
+        """
+        self.assertNotEquals( self.superuser.birthday, '')
+        self.assertNotEquals(self.user1.birthday, '')
+        self.assertNotEquals(self.user2.birthday, '')
+
+    def test_telephone(self):
+        """
+        Test for verify if the phone is the same for compare
+        """
+        self.assertEquals( self.superuser.telephone, '(11)11111-1111')
+        self.assertEquals(self.user1.telephone, '(22)22222-2222')
+        self.assertEquals(self.user2.telephone, '(33)33333-3333')
+
+    def test_is_not_telephone(self):
+        """
+        Test for verify if the phone is the same for compare
+        """
+        self.assertNotEquals( self.superuser.telephone, '')
+        self.assertNotEquals(self.user1.telephone, '')
+        self.assertNotEquals(self.user2.telephone, '')
+
+    def test_email(self):
+        """
+        Test for verify if the phone is the same for compare
+        """
+        self.assertEquals( self.superuser.email, 'ohaio@gmail.com')
+        self.assertEquals(self.user1.email, 'pedro@gmail.com')
+        self.assertEquals(self.user2.email, 'jobs@gmail.com')
+
+    def test_is_not_email(self):
+        """
+        Test for verify if the phone is the diferent for compare
+        """
+        self.assertNotEqual( self.superuser.email, '')
+        self.assertNotEqual(self.user1.email, '')
+        self.assertNotEqual(self.user2.email, '')
+
+    def test_gender(self):
+        """
+        Teste for verify if the gender is the same of compare
+        """
+
+        self.assertEquals( self.superuser.gender, 'M')
+        self.assertEquals(self.user1.gender, 'F')
+        self.assertEquals(self.user2.gender, 'M')
+
+
+
+
+
+
+
 
 
 
