@@ -29,6 +29,20 @@
         <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
       {% endif %}
 
+       {% if user.photo %}
+                  <img
+                    class = "profile-pic"
+                    src="../../static/homepage/img/prognosis-logo.png"
+                    alt="User"
+                  />
+                {% else %}
+                  <img
+                    class = "profile-pic"
+                    src="../../static/images/user.png"
+                    alt="User"
+                  />
+        {% endif %}
+
     </div>
   </div>
 
