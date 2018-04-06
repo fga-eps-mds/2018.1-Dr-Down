@@ -1,12 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from drdown.utils.validators import validate_ses, validate_generic_number, validate_names
+from drdown.utils.validators import validate_ses, validate_generic_number, validate_names, validate_sus
 
 from .model_user import User
 
 
 class Patient(models.Model):
-    user = models.OneToOneField(User,related_name='patient', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='patient', on_delete=models.CASCADE)
     ses = models.CharField(
         help_text=_("Please, enter the valid SES number"),
         unique=True,
@@ -48,8 +48,8 @@ class Patient(models.Model):
     sus_number = models.CharField(
         help_text=_("Please, enter the valid SUS number"),
         unique=True,
-        max_length=11,
-        validators=[validate_generic_number],
+        max_length=15,
+        validators=[validate_sus],
     )
     civil_registry_of_birth = models.CharField(
         help_text=_("Please, enter the civil registry of birth number"),
