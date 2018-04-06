@@ -128,6 +128,18 @@ def validate_generic_number(value):
     # this will raise an exception in case of failure
     regex_validator(value)
 
+    regex_code_all_equal_11 = r"([\d])\1\1\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_11,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+
 def validate_names(value):
     """
         Tests if the name is being passed correctly
@@ -139,4 +151,31 @@ def validate_names(value):
         message=_('Invalid name.')
     )
     # this will raise an exception in case of failure
+    regex_validator(value)
+
+
+def validate_sus(value):
+    """
+        validate a SUS number pass just numbers, and if have equal numbers
+    """
+
+    # regex to check if the number has up to 15 digits
+    regex_code = r"^\d{15}$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong NUMBER format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+    regex_code_all_equal_15 = r"([\d])\1\1\1\1\1\1\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_15,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
     regex_validator(value)
