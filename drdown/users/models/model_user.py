@@ -11,7 +11,7 @@ class User(AbstractUser):
     # around the globe.
 
     photo = models.ImageField(
-        upload_to='../../static/images/',
+         upload_to='media/',
         help_text=("Photo of user."),
         verbose_name=('Photo'),
         blank=True,
