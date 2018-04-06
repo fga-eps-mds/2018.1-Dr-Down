@@ -2,12 +2,12 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.template.response import TemplateResponse
+from django.contrib.admin import helpers
 from .models import (
         User,
         Employee,
     )
-
-admin.site.register(Employee)
 
 
 class MyUserChangeForm(UserChangeForm):
@@ -42,3 +42,8 @@ class MyUserAdmin(AuthUserAdmin):
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'name', 'is_superuser')
     search_fields = ['name']
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    change_form_template = "admin/change_form.html"
