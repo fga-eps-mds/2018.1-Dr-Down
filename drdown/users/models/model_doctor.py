@@ -4,6 +4,7 @@ from django.contrib.auth.models import Group
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
+from drdown.utils.validators import validate_crm
 
 
 class Doctor(models.Model):
@@ -15,23 +16,29 @@ class Doctor(models.Model):
 
     cpf = models.CharField(
         help_text=_(
-            "Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
+            "Please, use enter a valid CPF in the following format:" +
+            "XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
         max_length=14
     )
 
     crm = models.CharField(
-        max_length=7
+        validators=[validate_crm],
+        max_length=7,
+        help_text=_("Use enter a valid CRM. \n" +
+                    "All digits must contain numbers from 0 to 9"
+                    )
+
     )
 
-    SPEECH_THERAPHY = "Speech Therapy"
-    OCCUPATIONAL_THERAPY = "Occupational Therapy"
-    CARDIOLOGY = "Cardiology"
-    NEUROLOGY = "Neurology"
-    PEDIATRICS = "Pediatrics"
-    PSYCHOLOGY = "Psychology"
-    PHYSIOTHERAPY = "Physiotherapy"
+    SPEECH_THERAPHY = _("Speech Therapy")
+    OCCUPATIONAL_THERAPY = _("Occupational Therapy")
+    CARDIOLOGY = _("Cardiology")
+    NEUROLOGY = _("Neurology")
+    PEDIATRICS = _("Pediatrics")
+    PSYCHOLOGY = _("Psychology")
+    PHYSIOTHERAPY = _("Physiotherapy")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
