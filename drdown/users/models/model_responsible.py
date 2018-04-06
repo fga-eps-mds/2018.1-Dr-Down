@@ -11,7 +11,8 @@ class Responsible(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
 
     cpf = models.CharField(
-        help_text=_("Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
+        help_text=_("Please, use enter a valid CPF in" +
+                    "the following format: XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
         max_length=14,

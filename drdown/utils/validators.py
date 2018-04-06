@@ -90,7 +90,8 @@ def validate_ses(value):
 
     regex_code_all_equal_9 = r"([\d])\1\1\1\1\1\1\1\1"
 
-    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_9,
@@ -101,7 +102,8 @@ def validate_ses(value):
 
     regex_code_all_equal_7 = r"([\d])\1\1\1\1\1\1"
 
-    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # this time, we will set inverse_match to true
+    # because we wan't to check if the SES is
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_7,
@@ -128,7 +130,8 @@ def validate_generic_number(value):
 
     regex_code_all_equal_11 = r"([\d])\1\1\1\1\1\1\1\1\1\1"
 
-    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_11,
@@ -143,7 +146,8 @@ def validate_names(value):
         Tests if the name is being passed correctly
     """
     # regex to check if a name has no numbers
-    regex_code = r"^[a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+( [a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+)*$"
+    regex_code = r"^[a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+" \
+                 r"( [a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+)*$"
     regex_validator = RegexValidator(
         regex=regex_code,
         message=_('Invalid name.')
@@ -169,7 +173,8 @@ def validate_sus(value):
 
     regex_code_all_equal_15 = r"([\d])\1\1\1\1\1\1\1\1\1\1\1\1\1\1"
 
-    # this time, we will set inverse_match to true, because we wan't to check if the SES is
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_15,

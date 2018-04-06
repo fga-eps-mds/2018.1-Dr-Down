@@ -1,12 +1,15 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from drdown.utils.validators import validate_ses, validate_generic_number, validate_names, validate_sus
+from drdown.utils.validators import (validate_ses,
+                                     validate_generic_number,
+                                     validate_names, validate_sus)
 
 from .model_user import User
 
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, related_name='patient', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='patient',
+                                on_delete=models.CASCADE)
     ses = models.CharField(
         help_text=_("Please, enter the valid SES number"),
         unique=True,
@@ -46,7 +49,7 @@ class Patient(models.Model):
         help_text=_("Please insert the ethnicity of the patient"),
     )
     sus_number = models.CharField(
-        help_text=_("Please, use enter a valid SUS in the following format: XXXXXXXXXXXXXXX"),
+        help_text=_("Please, enter valid SUS in format: XXXXXXXXXXXXXXX"),
         unique=True,
         max_length=15,
         validators=[validate_sus],
