@@ -1,7 +1,8 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 
-from drdown.utils.validators import validate_cpf, validate_ses
+from drdown.utils.validators import validate_cpf, validate_ses,\
+    validate_generic_number,validate_names
 
 
 class TestValidator(TestCase):
@@ -71,5 +72,49 @@ class TestValidator(TestCase):
         # test if ses is rigth
         try:
             validate_ses(value="000796544")
+        except ValidationError as error:
+            self.fail(msg=error.message)
+
+    def test_validate_generic_number(self):
+
+        wrong_test_values = [
+            "11234567890123",
+            "asdqweqwe",
+            "qweqweq",
+            "qwe123qwe",
+            "qwe1234",
+            "12345678Z",
+            "123456Z",
+            ""
+        ]
+
+        for i in range(0, wrong_test_values.__len__()):
+            with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
+                validate_generic_number(wrong_test_values[i])
+
+        # test a valid number
+        try:
+            validate_generic_number(value="000796544")
+        except ValidationError as error:
+            self.fail(msg=error.message)
+
+    def test_valid_names(self):
+
+        wrong_test_values = [
+            "11234567890123",
+            "João ",
+            "João2 da silva",
+            "João da silva ",
+            "123",
+            ""
+        ]
+
+        for i in range(0, wrong_test_values.__len__()):
+            with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
+                validate_names(wrong_test_values[i])
+
+        # test a valid number
+        try:
+            validate_names(value="João da Silva")
         except ValidationError as error:
             self.fail(msg=error.message)
