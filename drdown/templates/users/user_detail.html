@@ -20,6 +20,7 @@
 
     <div class="container" >
       {% if user.employee %}
+        <p><strong> Employee </strong> </p>
         <p><strong> CPF: </strong> {{ employee_cpf }} </p>
         <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
       {% endif %}
