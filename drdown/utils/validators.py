@@ -51,20 +51,14 @@ def validate_cpf(value):
 
     # we divide the sum by 11 and get the mod
     # and apply the rules
-    if (cpf_first_sum % 11) < 2:
-        cpf_calculated.append(0)
-    else:
-        cpf_calculated.append(11 - (cpf_first_sum % 11))
+    cpf_calculated.append(calculate_cpf_verification_digit(cpf_first_sum))
 
     # now we have the starting 9 digits and 1 calculated, so we have 10 digits on total
     # to find the second verification digit we need to make the calculation with the first
     # validation number added
     cpf_second_sum += cpf_numbers[9] * 2
 
-    if (cpf_second_sum % 11) < 2:
-        cpf_calculated.append(0)
-    else:
-        cpf_calculated.append(11 - (cpf_second_sum % 11))
+    cpf_calculated.append(calculate_cpf_verification_digit(cpf_second_sum))
 
     # now we check if the calculated cpf is the same as the informed
 
@@ -179,3 +173,12 @@ def validate_sus(value):
         inverse_match=True
     )
     regex_validator(value)
+
+
+def calculate_cpf_verification_digit(sum):
+    digit = 0
+
+    if (sum % 11) >= 2:
+        digit = (11 - (sum % 11))
+
+    return digit
