@@ -14,14 +14,18 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super(UserDetailView, self).get_context_data(**kwargs)
-        context['patient_ses'] = user.patient.ses
-        context['patient_priority'] = user.patient.priority
-        context['patient_mother_name'] = user.patient.mother_name
-        context['patient_father_name'] = user.patient.father_name
-        context['patient_ethnicity'] = user.patient.ethnicity
-        context['patient_sus_number'] = user.patient.sus_number
-        context['patient_civil_registry_of_birth'] = user.patient.civil_registry_of_birth
-        context['patient_declaration_of_live_birth'] = user.patient.declaration_of_live_birth
+        if hasattr(user, 'patient'):
+            context['patient_ses'] = user.patient.ses
+            context['patient_priority'] = user.patient.priority
+            context['patient_mother_name'] = user.patient.mother_name
+            context['patient_father_name'] = user.patient.father_name
+            context['patient_ethnicity'] = user.patient.ethnicity
+            context['patient_sus_number'] = user.patient.sus_number
+            context['patient_civil_registry_of_birth'] = user.patient.civil_registry_of_birth
+            context['patient_declaration_of_live_birth'] = user.patient.declaration_of_live_birth
+        elif hasattr(user, 'responsible'):
+            context['responsible_cpf'] = user.responsible.cpf
+            context['responsible_patient'] = user.responsible.patient
         return context
 
 
