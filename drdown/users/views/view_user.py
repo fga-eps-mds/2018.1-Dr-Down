@@ -17,7 +17,10 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         if hasattr(user, 'employee'):
             context = super(UserDetailView, self).get_context_data(**kwargs)
             context['employee_cpf'] = user.employee.cpf
-            context['employee_department'] = user.employee.get_departament_display()
+            context['employee_department'] = (
+                        user.employee.get_departament_display()
+                        )
+
         return context
 
 
