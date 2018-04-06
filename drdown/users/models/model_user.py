@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from drdown.utils.validators import validate_phone
 import datetime
 
+
 class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
