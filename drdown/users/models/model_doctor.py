@@ -25,13 +25,13 @@ class Doctor(models.Model):
         max_length=7
     )
 
-    SPEECH_THERAPHY = "SP_TH"
-    OCCUPATIONAL_THERAPY = "OC_TH"
-    CARDIOLOGY = "CARD"
-    NEUROLOGY = "NEURO"
-    PEDIATRICS = "PED"
-    PSYCHOLOGY = "PSY"
-    PHYSIOTHERAPY = "PHYS"
+    SPEECH_THERAPHY = "Speech Therapy"
+    OCCUPATIONAL_THERAPY = "Occupational Therapy"
+    CARDIOLOGY = "Cardiology"
+    NEUROLOGY = "Neurology"
+    PEDIATRICS = "Pediatrics"
+    PSYCHOLOGY = "Psychology"
+    PHYSIOTHERAPY = "Physiotherapy"
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
