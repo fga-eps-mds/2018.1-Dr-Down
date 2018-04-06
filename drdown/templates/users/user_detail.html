@@ -19,6 +19,7 @@
 
   <div class="container" >
       {% if user.patient %}
+        <p><strong> Patient </strong> </p>
         <p><strong> SES: </strong> {{ patient_ses }} </p>
         <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
         <p><strong> {% trans "Mother name" %} : </strong> {{ patient_mother_name }} </p>
@@ -27,6 +28,14 @@
         <p><strong> {% trans "SUS number" %} : </strong> {{ patient_sus_number }} </p>
         <p><strong> {% trans "Civil registry of birth" %} : </strong> {{ patient_civil_registry_of_birth }} </p>
         <p><strong> {% trans "Declaration of live birth" %} : </strong> {{ patient_declaration_of_live_birth }} </p>
+      {% endif %}
+  </div>
+
+  <div class="container" >
+      {% if object.responsible_id is not None %}
+        <p><strong> Responsible </strong> </p>
+        <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
+        <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
       {% endif %}
   </div>
 
@@ -47,4 +56,3 @@
 
 </div>
 {% endblock content %}
-
