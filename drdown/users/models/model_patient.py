@@ -6,7 +6,7 @@ from .model_user import User
 
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User,related_name='patient', on_delete=models.CASCADE)
     ses = models.CharField(
         help_text=_("Please, enter the valid SES number"),
         unique=True,

@@ -21,6 +21,12 @@
       {% if user.patient %}
         <p><strong> SES: </strong> {{ patient_ses }} </p>
         <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
+        <p><strong> {% trans "Mother name" %} : </strong> {{ patient_mother_name }} </p>
+        <p><strong> {% trans "Father name" %} : </strong> {{ patient_father_name }} </p>
+        <p><strong> {% trans "Ethnicity" %} : </strong> {{ patient_ethnicity }} </p>
+        <p><strong> {% trans "SUS number" %} : </strong> {{ patient_sus_number }} </p>
+        <p><strong> {% trans "Civil registry of birth" %} : </strong> {{ patient_civil_registry_of_birth }} </p>
+        <p><strong> {% trans "Declaration of live birth" %} : </strong> {{ patient_declaration_of_live_birth }} </p>
       {% endif %}
   </div>
 
