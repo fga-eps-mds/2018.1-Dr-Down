@@ -24,4 +24,9 @@ urlpatterns = [
         view=views.UserDetailView.as_view(),
         name='detail'
     ),
+    url(
+        regex=r'^~delete/',
+        view=views.UserDeleteView.as_view(),
+        name='delete'
+    ),
 ]
