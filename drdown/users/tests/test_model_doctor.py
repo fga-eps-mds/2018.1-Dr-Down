@@ -57,7 +57,6 @@ class TestModelDoctorNoSetUp(TestCase):
         doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
 
         # and change things in the user
-        self.assertEquals(self.user.is_staff, True)
         self.assertEqual(self.user.groups.get(
             name=Doctor.GROUP_NAME), doctor_group)
 
@@ -88,3 +87,12 @@ class ModelTestCase(TestCase):
 
     def test_save_speciality_ok(self):
         self.assertEquals(self.doctor1.speciality, Doctor.PEDIATRICS)
+
+    def test_save_cpf_error(self):
+        self.assertNotEquals(self.doctor1.cpf, '057.641.271-65')
+
+    def test_save_crm_error(self):
+        self.assertNotEquals(self.doctor1.crm, '7654321')
+
+    def test_save_speciality_error(self):
+        self.assertNotEquals(self.doctor1.speciality, Doctor.CARDIOLOGY)

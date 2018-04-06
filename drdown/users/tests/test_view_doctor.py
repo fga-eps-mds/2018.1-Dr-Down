@@ -12,14 +12,11 @@ class TestViewDoctor (TestCase):
         self.client = Client()
         self.user = self.make_user()
         self.doctor = Doctor.objects.create(
-            cpf="057.641.271-65", 
-            user=self.user, 
+            cpf="057.641.271-65",
+            user=self.user,
             speciality=Doctor.NEUROLOGY)
 
     def test_doctor_get_context_data(self):
-        """
-        Makes sure that the doctor data is showing at the user detail view
-        """
 
         self.doctor.save()
         self.client.force_login(user=self.user)
@@ -35,4 +32,11 @@ class TestViewDoctor (TestCase):
 
         self.assertContains(response, text=self.user.doctor.cpf)
 
-    
+    def test_doctor_get_context_data_error(self):
+
+        self.doctor.save()
+        self.client.force_login(user=self.user)
+
+        response = self.client.get(path='/users/testuser1/', follow=True)
+
+        self.assertEquals(response.status_code, 404)
