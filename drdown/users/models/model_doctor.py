@@ -54,7 +54,6 @@ class Doctor(models.Model):
     # related user
     GROUP_NAME = "Doctors"
 
-
     def save(self, *args, **kwargs):
 
         # we wan't to add the required permissions to the related user, before
@@ -73,11 +72,9 @@ class Doctor(models.Model):
 
         super().save(*args, **kwargs)
 
-
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
-
 
     def __str__(self):
         return self.user.get_username() + " - " + self.get_speciality_display()
