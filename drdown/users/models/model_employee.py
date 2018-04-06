@@ -12,7 +12,8 @@ class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     cpf = models.CharField(
-        help_text=_("Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
+        help_text=_("Please, enter a valid CPF" +
+                    " in the following format: XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
         max_length=14
@@ -21,8 +22,8 @@ class Employee(models.Model):
     # this is separated from the list because of Django standars
     # if we leave like this we can access the choices from outside
     # example: employee.SPEECH_THERAPHY
-    # note: those texts aren't using _() because they are not meant to be translated nor
-    # shown to the user
+    # note: those texts aren't using _() because they are not meant
+    # to be translated norshown to the user
     SPEECH_THERAPHY = "SP_TH"
     OCCUPATIONAL_THERAPY = "OC_TH"
     CARDIOLOGY = "CARD"
@@ -56,15 +57,19 @@ class Employee(models.Model):
         max_length=30
     )
 
-    # const representig the name of the group wich this model will add to the related user
+    # const representig the name of the group wich this model
+    # will add to the related user
     GROUP_NAME = "Employees"
 
     def __str__(self):
-        return self.user.get_username() + " - " + self.get_departament_display()
+        return (self.user.get_username() +
+                " - " +
+                self.get_departament_display())
 
     def save(self, *args, **kwargs):
 
-        # we wan't to add the required permissions to the related user, before saving
+        # we wan't to add the required permissions to the
+        # related user, before saving
         self.user.is_staff = True
 
         try:
