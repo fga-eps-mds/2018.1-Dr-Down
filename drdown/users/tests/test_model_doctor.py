@@ -4,6 +4,7 @@ from django.contrib.auth.models import Group
 
 
 from ..models.model_doctor import Doctor
+from ..models import User
 
 
 class TestModelDoctor(TestCase):
@@ -11,7 +12,9 @@ class TestModelDoctor(TestCase):
     def setUp(self):
         self.user = self.make_user()
         self.doctor = Doctor.objects.create(
-            cpf="057.641.271-65", user=self.user, speciality=Doctor.NEUROLOGY)
+            cpf="057.641.271-65",
+            user=self.user,
+            speciality=Doctor.NEUROLOGY)
 
     def test_get_absolute_url(self):
         self.assertEqual(
@@ -58,3 +61,31 @@ class TestModelDoctorNoSetUp(TestCase):
         self.assertEquals(self.user.is_staff, True)
         self.assertEqual(self.user.groups.get(
             name=Doctor.GROUP_NAME), doctor_group)
+
+
+class ModelTestCase(TestCase):
+
+    def setUp(self):
+
+        self.user1 = User.objects.create(
+            name='Pedro',
+            username='pedro',
+            email='pedro@gmail.com',
+            password='pedro123456'
+        )
+
+        self.doctor1 = Doctor.objects.create(
+            cpf='057.640.991-02',
+            crm='1234567',
+            speciality=Doctor.PEDIATRICS,
+            user=self.user1
+        )
+
+    def test_save_cpf_ok(self):
+        self.assertEquals(self.doctor1.cpf, '057.640.991-02')
+
+    def test_save_crm_ok(self):
+        self.assertEquals(self.doctor1.crm, '1234567')
+
+    def test_save_speciality_ok(self):
+        self.assertEquals(self.doctor1.speciality, Doctor.PEDIATRICS)
