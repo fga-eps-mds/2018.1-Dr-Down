@@ -14,7 +14,7 @@ class Responsible(models.Model):
         help_text=_("Please, use enter a valid CPF in the following format: XXX.XXX.XXX-XX"),
         unique=True,
         validators=[validate_cpf],
-        max_length=14
+        max_length=14,
     )
 
     def __str__(self):

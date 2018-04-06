@@ -46,7 +46,7 @@ class Patient(models.Model):
         help_text=_("Please insert the ethnicity of the patient"),
     )
     sus_number = models.CharField(
-        help_text=_("Please, enter the valid SUS number"),
+        help_text=_("Please, use enter a valid SUS in the following format: XXXXXXXXXXXXXXX"),
         unique=True,
         max_length=15,
         validators=[validate_sus],
