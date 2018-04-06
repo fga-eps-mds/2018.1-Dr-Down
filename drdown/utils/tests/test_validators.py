@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf, validate_ses,\
-    validate_generic_number,validate_names
+    validate_generic_number, validate_names, validate_sus
 
 
 class TestValidator(TestCase):
@@ -116,5 +116,38 @@ class TestValidator(TestCase):
         # test a valid number
         try:
             validate_names(value="João da Silva")
+        except ValidationError as error:
+            self.fail(msg=error.message)
+
+    def test_valid_sus(self):
+
+        wrong_test_values = [
+            "12345678",
+            "123456",
+            "1123456789",
+            "12345",
+            "1234",
+            "123",
+            "12",
+            "1",
+            "0",
+            "12345678912345",
+            "1234567891234",
+            "123456789123",
+            "12345678912",
+            "111111111111111",
+            "asdasdasdasdasd",
+            "asdasdasdasd123",
+            "asdas123dasdasd",
+            ""
+        ]
+
+        for i in range(0, wrong_test_values.__len__()):
+            with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
+                validate_sus(wrong_test_values[i])
+
+        # test a valid number
+        try:
+            validate_sus(value="123456789123456")
         except ValidationError as error:
             self.fail(msg=error.message)
