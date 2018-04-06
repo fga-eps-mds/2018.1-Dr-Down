@@ -82,7 +82,7 @@ def validate_cpf(value):
 
 def validate_phone(value):
 
-    regex_code = r"[(][\d]{2}[)][\d]{5}[-][\d]{4}"
+    regex_code = r"[(][\d]{2}[)][\d]{4,5}[-][\d]{4}"
     regex_validator = RegexValidator(regex=regex_code, message=_('Wrong phone format'))
 
     # this will raise an exception in case of failure

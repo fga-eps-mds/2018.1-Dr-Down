@@ -42,7 +42,7 @@ class User(AbstractUser):
         null=True,
         max_length=14,
          validators=[validate_phone],
-        help_text=("(xx)xxxxx-xxxx")
+        help_text=("(xx)xxxxx-xxxx or (xx)xxxx-xxxx")
 
     )
 
