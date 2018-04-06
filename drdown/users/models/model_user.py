@@ -11,15 +11,15 @@ class User(AbstractUser):
     # around the globe.
 
     photo = models.ImageField(
-         upload_to='media/',
-        help_text=("Photo of user."),
-        verbose_name=('Photo'),
+        upload_to='media/',
+        help_text="Photo of user.",
+        verbose_name='Photo',
         blank=True,
         null=True
     )
 
     name = models.CharField(
-        ('Name of User'),
+        _('Name of User'),
         blank=False,
         max_length=255,
         help_text="Full user name"
@@ -27,7 +27,7 @@ class User(AbstractUser):
     )
 
     gender = models.CharField(
-        ('Gender'),
+        _('Gender'),
         choices=(
             ("M", "Male"),
             ("F", "Female"),
@@ -38,32 +38,32 @@ class User(AbstractUser):
     )
 
     telephone = models.CharField(
-        ('Telephone'),
+        _('Telephone'),
         blank=False,
         null=True,
         max_length=14,
-         validators=[validate_phone],
-        help_text=("(xx)xxxxx-xxxx or (xx)xxxx-xxxx")
+        validators=[validate_phone],
+        help_text="(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
 
     )
 
     birthday = models.DateField(
-        ('Birthday'),
-        help_text=("xx/xx/xxxx"),
+        _('Birthday'),
+        help_text="xx/xx/xxxx",
         blank=False,
         null=True
     )
 
     created_at = models.DateField(
-    	('Created at'),
-    	blank=False,
-    	null=True
+      _('Created at'),
+      blank=False,
+      null=True
     )
 
     updated_at = models.DateField(
-    	('Updated at'),
-    	blank=False,
-    	null=True
+       _('Updated at'),
+       blank=False,
+       null=True
     )
 
     def __str__(self):

@@ -1,13 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
-from django.views.generic import DetailView, ListView, RedirectView, UpdateView, DeleteView
+from django.views.generic import (DetailView, ListView, RedirectView,
+                                  UpdateView, DeleteView)
 from django.urls import reverse_lazy
 
 from ..models import User
 
 
 class UserDeleteView (LoginRequiredMixin, DeleteView):
-
 
     """
     Delete the user account
@@ -30,6 +30,7 @@ class UserDeleteView (LoginRequiredMixin, DeleteView):
 
         # Redirect to success_url
         return super(UserDeleteView, self).get_success_url()
+
 
 class UserDetailView(LoginRequiredMixin, DetailView):
     model = User

@@ -3,7 +3,7 @@ import re
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.utils.translation import ugettext_lazy as _
-import datetime
+
 
 def validate_cpf(value):
     """
@@ -11,7 +11,7 @@ def validate_cpf(value):
          valida math
     """
 
-    # regex to check if CPF is XYZ.XYZ.XYZ-XX (X is a nunber from 0 to 9)
+    # regex to check if CPF is XYZ.XYZ.XYZ-XX (X is a number from 0 to 9)
     regex_code = r"[0-9]{3}[\.][0-9]{3}[\.][0-9]{3}[-][0-9]{2}"
     regex_validator = RegexValidator(
         regex=regex_code,
@@ -80,20 +80,17 @@ def calculate_cpf_verification_digit(sum):
 
     return digit
 
+
 def validate_phone(value):
 
+    # regex for validate field
     regex_code = r"[(][\d]{2}[)][\d]{4,5}[-][\d]{4}"
+
     regex_validator = RegexValidator(regex=regex_code, message=_('Wrong phone format'))
 
     # this will raise an exception in case of failure
     regex_validator(value)
 
-def validate_date(date_text):
 
-    regex_code = r"[\d]{2}[/][\d]{2}[/][\d]{4}"
-    regex_validator = RegexValidator(regex=regex_code, message=_('Wrong pattern date'))
-
-    # this will raise an exception in case of failure
-    regex_validator(value)
 
 
