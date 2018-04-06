@@ -72,9 +72,9 @@ class Doctor(models.Model):
 
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.user.get_username() + " - " + self.get_speciality_display()
+
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
-
-    def __str__(self):
-        return self.user.get_username() + " - " + self.get_speciality_display()

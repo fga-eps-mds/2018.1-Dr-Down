@@ -15,6 +15,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         user = self.request.user
         context = super(UserDetailView, self).get_context_data(**kwargs)
         if hasattr(user, 'doctor'):
+            context = super(UserDetailView, self).get_context_data(**kwargs)
             context['doctor_cpf'] = user.doctor.cpf
             context['doctor_crm'] = user.doctor.crm
             context['doctor_speciality'] = user.doctor.speciality

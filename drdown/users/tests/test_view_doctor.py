@@ -12,7 +12,9 @@ class TestViewDoctor (TestCase):
         self.client = Client()
         self.user = self.make_user()
         self.doctor = Doctor.objects.create(
-            cpf="057.641.271-65", user=self.user, speciality=Doctor.NEUROLOGY)
+            cpf="057.641.271-65", 
+            user=self.user, 
+            speciality=Doctor.NEUROLOGY)
 
     def test_doctor_get_context_data(self):
         """
@@ -32,3 +34,5 @@ class TestViewDoctor (TestCase):
         self.assertContains(response, text=self.user.username)
 
         self.assertContains(response, text=self.user.doctor.cpf)
+
+    
