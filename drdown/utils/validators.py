@@ -204,4 +204,3 @@ def validate_phone(value):
 
     # this will raise an exception in case of failure
     regex_validator(value)
-

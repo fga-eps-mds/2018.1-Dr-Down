@@ -2,7 +2,14 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import User, Patient, Responsible
+from django.template.response import TemplateResponse
+from django.contrib.admin import helpers
+from .models import (
+        User,
+        Employee,
+        Patient,
+        Responsible
+    )
 
 admin.site.register(Patient)
 admin.site.register(Responsible)

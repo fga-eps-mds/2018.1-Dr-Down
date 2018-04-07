@@ -56,6 +56,11 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         elif hasattr(user, 'responsible'):
             context['responsible_cpf'] = user.responsible.cpf
             context['responsible_patient'] = user.responsible.patient
+        elif hasattr(user, 'employee'):
+            context['employee_cpf'] = user.employee.cpf
+            context['employee_department'] = (
+                        user.employee.get_departament_display()
+                        )
         return context
 
 
