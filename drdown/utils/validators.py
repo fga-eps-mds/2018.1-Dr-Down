@@ -191,3 +191,17 @@ def calculate_cpf_verification_digit(sum):
         digit = (11 - (sum % 11))
 
     return digit
+
+
+def validate_phone(value):
+
+    # regex for validate field
+    regex_code = r"[(][\d]{2}[)][\d]{4,5}[-][\d]{4}"
+
+    regex_validator = RegexValidator(
+        regex=regex_code, message=_('Wrong phone format')
+    )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+

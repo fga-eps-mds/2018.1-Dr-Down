@@ -1,1 +1,2 @@
-from .view_user import UserDetailView, UserRedirectView, UserUpdateView, UserListView
+from .view_user import (UserDetailView, UserRedirectView,
+                         UserUpdateView, UserListView, UserDeleteView, )

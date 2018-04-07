@@ -151,3 +151,4 @@ class TestValidator(TestCase):
             validate_sus(value="123456789123456")
         except ValidationError as error:
             self.fail(msg=error.message)
+

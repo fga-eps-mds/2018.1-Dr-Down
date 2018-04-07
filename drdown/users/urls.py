@@ -1,4 +1,6 @@
 from django.conf.urls import url
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views
 
@@ -24,4 +26,9 @@ urlpatterns = [
         view=views.UserDetailView.as_view(),
         name='detail'
     ),
-]
+    url(
+        regex=r'^~delete/',
+        view=views.UserDeleteView.as_view(),
+        name='delete'
+    ),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
