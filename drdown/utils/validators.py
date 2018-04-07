@@ -1,3 +1,4 @@
+
 import re
 
 from django.core.exceptions import ValidationError
@@ -72,6 +73,117 @@ def validate_cpf(value):
         )
 
 
+def validate_ses(value):
+    """
+        validate a SES pass just numbers, and if have 7 or 9 numbers
+    """
+
+    # regex to check if have just numbers and 7 or 9 numbers
+    regex_code = r"^\d{7}(?:\d{2})?$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong SES format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+    regex_code_all_equal_9 = r"([\d])\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_9,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+    regex_code_all_equal_7 = r"([\d])\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true
+    # because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_7,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+
+def validate_generic_number(value):
+    """
+        validate a GENERIC_NUMBER pass just numbers, and if have equal numbers
+    """
+
+    # regex to check if the number has up to 11 digits
+    regex_code = r"^[0-9]{1,11}$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong NUMBER format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+    regex_code_all_equal_11 = r"([\d])\1\1\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_11,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+
+def validate_names(value):
+    """
+        Tests if the name is being passed correctly
+    """
+    # regex to check if a name has no numbers
+    regex_code = r"^[a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+" \
+                 r"( [a-zA-ZáàãâèẽéêîĩíìôóòõùûúũçÀÁÂÃÈÉÊẼÎÍÌĨÔÕÓÒÙÛÇ_]+)*$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Invalid name.')
+    )
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+
+def validate_sus(value):
+    """
+        validate a SUS number pass just numbers, and if have equal numbers
+    """
+
+    # regex to check if the number has up to 15 digits
+    regex_code = r"^\d{15}$"
+    regex_validator = RegexValidator(
+        regex=regex_code,
+        message=_('Wrong NUMBER format')
+        )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+    regex_code_all_equal_15 = r"([\d])\1\1\1\1\1\1\1\1\1\1\1\1\1\1"
+
+    # this time, we will set inverse_match to true,
+    # because we wan't to check if the SES is
+    # out of the range
+    regex_validator = RegexValidator(
+        regex=regex_code_all_equal_15,
+        message=_('This SES is not permited'),
+        inverse_match=True
+    )
+    regex_validator(value)
+
+
 def calculate_cpf_verification_digit(sum):
     digit = 0
 
@@ -79,3 +191,16 @@ def calculate_cpf_verification_digit(sum):
         digit = (11 - (sum % 11))
 
     return digit
+
+
+def validate_phone(value):
+
+    # regex for validate field
+    regex_code = r"[(][\d]{2}[)][\d]{4,5}[-][\d]{4}"
+
+    regex_validator = RegexValidator(
+        regex=regex_code, message=_('Wrong phone format')
+    )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)

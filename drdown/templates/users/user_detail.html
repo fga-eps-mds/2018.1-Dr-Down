@@ -5,43 +5,86 @@
 {% block title %}User: {{ object.username }}{% endblock %}
 
 {% block content %}
+<div class="container">
 
-  <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
 
-    <div class="row">
-      <div class="col-sm-12">
+      <h2>{{ object.username }}</h2>
+      {% if object.name %}
+        <p><strong><label>{% trans 'Name: '%}</label></strong>{{ object.name }}</p>
+      {% endif %}
+      {% if object.gender %}
+        <p><strong><label>{% trans 'Gender: '%}</label></strong>{{ object.gender }}</p>
+      {% endif %}
 
-        <h2>{{ object.username }}</h2>
-        {% if object.name %}
-          <p>{{ object.name }}</p>
-        {% endif %}
-      </div>
+      {% if object.telephone %}
+        <p><strong><label>{% trans 'Telephone: '%}</label></strong>{{ object.telephone }}</p>
+      {% endif %}
+
+      {% if object.birthday %}
+        <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
+      {% endif %}
+
+    {% if object.photo %}
+
+    <img src="{{ object.photo.url }}" width="300px">
+
+        {% else %}
+
+       <img src='../../static/images/user.png'>
+
+    {% endif %}
+    </div>
     </div>
 
+  <br/>
     <div class="container" >
       {% if user.employee %}
         <p><strong> Employee </strong> </p>
         <p><strong> CPF: </strong> {{ employee_cpf }} </p>
         <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
       {% endif %}
-    </div>
-
-    {% if object == request.user %}
-      <!-- Action buttons -->
-      <div class="row">
-
-        <div class="col-sm-12">
-          <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My info</a>
-          <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-          <!-- Your Stuff: Custom user template urls -->
-        </div>
-
-      </div>
-      <!-- End Action buttons -->
-    {% endif %}
   </div>
 
+  <div class="container" >
+      {% if user.patient %}
+        <p><strong> Patient </strong> </p>
+        <p><strong> SES: </strong> {{ patient_ses }} </p>
+        <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
+        <p><strong> {% trans "Mother name" %} : </strong> {{ patient_mother_name }} </p>
+        <p><strong> {% trans "Father name" %} : </strong> {{ patient_father_name }} </p>
+        <p><strong> {% trans "Ethnicity" %} : </strong> {{ patient_ethnicity }} </p>
+        <p><strong> {% trans "SUS number" %} : </strong> {{ patient_sus_number }} </p>
+        <p><strong> {% trans "Civil registry of birth" %} : </strong> {{ patient_civil_registry_of_birth }} </p>
+        <p><strong> {% trans "Declaration of live birth" %} : </strong> {{ patient_declaration_of_live_birth }} </p>
+      {% endif %}
+  </div>
+
+  <div class="container" >
+      {% if user.responsible %}
+        <p><strong> Responsible </strong> </p>
+        <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
+        <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
+      {% endif %}
+
+  </div>
+{% if object == request.user %}
+<!-- Action buttons -->
+<div class="row">
+
+  <div class="col-sm-12">
+    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
+    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+    <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">Delete</a>
+    <!-- Your Stuff: Custom user template urls -->
+  </div>
+
+</div>
+<!-- End Action buttons -->
+{% endif %}
 
 
+</div>
 {% endblock content %}
 

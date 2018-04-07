@@ -7,7 +7,12 @@ from django.contrib.admin import helpers
 from .models import (
         User,
         Employee,
+        Patient,
+        Responsible
     )
+
+admin.site.register(Patient)
+admin.site.register(Responsible)
 
 
 class MyUserChangeForm(UserChangeForm):
@@ -38,12 +43,8 @@ class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
     fieldsets = (
-            ('User Profile', {'fields': ('name',)}),
+        ('User Profile', {
+         'fields': ('name', 'gender', 'telephone', 'birthday', 'photo')}),
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'name', 'is_superuser')
     search_fields = ['name']
-
-
-@admin.register(Employee)
-class EmployeeAdmin(admin.ModelAdmin):
-    change_form_template = "admin/change_form.html"
