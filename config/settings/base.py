@@ -256,3 +256,4 @@ SOCIALACCOUNT_ADAPTER = 'drdown.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+DATE_INPUT_FORMATS = ["%d/%m/%Y"]

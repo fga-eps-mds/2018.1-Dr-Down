@@ -1,5 +1,5 @@
 [run]
 include = drdown/*
-omit = *migrations*, *tests*
+omit = *migrations*, *tests*, *.html*, *__init__.py*
 plugins =
     django_coverage_plugin
