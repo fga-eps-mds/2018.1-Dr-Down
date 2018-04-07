@@ -209,7 +209,10 @@ def validate_phone(value):
 def validate_crm(value):
 
     regex_code = r'[\d][7]'
-    regex_validator = RegexValidator(regex=regex_code, message=_('Wrong CRM format'))
+    regex_validator = RegexValidator(
+            regex=regex_code,
+            message=_('Wrong CRM format')
+        )
 
     # this will raise an exception in case of failure
     regex_validator(value)
