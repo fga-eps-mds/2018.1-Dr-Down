@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class ForumConfig(AppConfig):
-    name = 'forum'
+    name = 'drdown.forum'
+    verbose_name = "Forum"
