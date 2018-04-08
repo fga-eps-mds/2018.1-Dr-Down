@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from drdown.utils.validators import validate_cpf
 
@@ -7,7 +8,8 @@ from .model_patient import Patient
 
 
 class Responsible(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                limit_choices_to=Q(patient=None))
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
 
     cpf = models.CharField(
