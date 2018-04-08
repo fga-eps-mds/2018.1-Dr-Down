@@ -208,7 +208,7 @@ def validate_phone(value):
 
 def validate_crm(value):
 
-    regex_code = r'[\d]{7}'
+    regex_code = r"^[0-9]{7}$"
     regex_validator = RegexValidator(
             regex=regex_code,
             message=_('Wrong CRM format')

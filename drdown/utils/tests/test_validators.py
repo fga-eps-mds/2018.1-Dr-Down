@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf, validate_ses,\
-    validate_generic_number, validate_names, validate_sus
+    validate_generic_number, validate_names, validate_sus, \
+    validate_phone, validate_crm
 
 
 class TestValidator(TestCase):
@@ -149,5 +150,44 @@ class TestValidator(TestCase):
         # test a valid number
         try:
             validate_sus(value="123456789123456")
+        except ValidationError as error:
+            self.fail(msg=error.message)
+
+    def test_valid_phone(self):
+
+        wrong_test_values = [
+            "9999-9999"
+            "61-9999-9999"
+            "(61)99999999"
+            "(91)987654321"
+            "987654321"
+            ""
+        ]
+
+        for i in range(0, wrong_test_values.__len__()):
+            with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
+                validate_phone(wrong_test_values[i])
+
+        # test a valid number
+        try:
+            validate_phone(value="(61)98266-7064")
+        except ValidationError as error:
+            self.fail(msg=error.message)
+
+    def test_valid_crm(self):
+
+        wrong_test_values = [
+            "12345678"
+            "123456"
+            ""
+        ]
+
+        for i in range(0, wrong_test_values.__len__()):
+            with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
+                validate_crm(wrong_test_values[i])
+
+        # test a valid number
+        try:
+            validate_crm(value="1234567")
         except ValidationError as error:
             self.fail(msg=error.message)
