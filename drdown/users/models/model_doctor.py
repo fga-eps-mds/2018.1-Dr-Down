@@ -27,7 +27,7 @@ class Doctor(models.Model):
         validators=[validate_crm],
         max_length=7,
         help_text=_("Use enter a valid CRM. \n" +
-                    "All digits must contain numbers from 0 to 9"
+                    "Enter 7 digits from 0 to 9"
                     )
 
     )
