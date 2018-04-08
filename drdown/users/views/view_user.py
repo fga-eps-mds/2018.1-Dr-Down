@@ -41,7 +41,14 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super(UserDetailView, self).get_context_data(**kwargs)
+
+        self.prepare_context_data(user, context)
+
+        return context
+
+    def prepare_context_data(self, user, context):
         if hasattr(user, 'patient'):
+
             context['patient_ses'] = user.patient.ses
             context['patient_priority'] = (user.patient.get_priority_display())
             context['patient_mother_name'] = user.patient.mother_name
@@ -53,15 +60,23 @@ class UserDetailView(LoginRequiredMixin, DetailView):
                 user.patient.civil_registry_of_birth
             context['patient_declaration_of_live_birth'] = \
                 user.patient.declaration_of_live_birth
+
         elif hasattr(user, 'responsible'):
+
             context['responsible_cpf'] = user.responsible.cpf
             context['responsible_patient'] = user.responsible.patient
+
         elif hasattr(user, 'employee'):
+
             context['employee_cpf'] = user.employee.cpf
             context['employee_department'] = (
                         user.employee.get_departament_display()
                         )
-        return context
+
+        elif hasattr(user, 'doctor'):
+            context['doctor_cpf'] = user.doctor.cpf
+            context['doctor_crm'] = user.doctor.crm
+            context['doctor_speciality'] = user.doctor.get_speciality_display()
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):

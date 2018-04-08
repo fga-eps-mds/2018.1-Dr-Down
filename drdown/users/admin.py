@@ -8,9 +8,11 @@ from .models import (
         User,
         Employee,
         Patient,
-        Responsible
+        Responsible,
+        Doctor
     )
 
+admin.site.register(Doctor)
 admin.site.register(Patient)
 admin.site.register(Responsible)
 
@@ -43,8 +45,7 @@ class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
     fieldsets = (
-        ('User Profile', {
-         'fields': ('name', 'gender', 'telephone', 'birthday', 'photo')}),
+            ('User Profile', {'fields': ('name',)}),
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'name', 'is_superuser')
     search_fields = ['name']

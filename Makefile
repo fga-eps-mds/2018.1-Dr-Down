@@ -81,7 +81,7 @@ local := "**/tests/"
 
 test: manage.py
 	# Run all tests
-	sudo docker-compose -f ${file} run --rm ${container} python manage.py test ${local}
+	sudo docker-compose -f ${file} run --rm ${container} python manage.py test
 
 coverage: coverage
 	# Run django coverage (create a covarege page)

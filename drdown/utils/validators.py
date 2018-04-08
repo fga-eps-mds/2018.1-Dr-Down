@@ -50,8 +50,8 @@ def validate_cpf(value):
     # by 10 to 2 (from the first to the last) and we sum them
     cpf_first_sum = cpf_second_sum = 0
     for i in range(0, 9):
-        cpf_first_sum += cpf_numbers[i] * (10-i)
-        cpf_second_sum += cpf_numbers[i] * (11-i)
+        cpf_first_sum += cpf_numbers[i] * (10 - i)
+        cpf_second_sum += cpf_numbers[i] * (11 - i)
 
     # we divide the sum by 11 and get the mod
     # and apply the rules
@@ -201,6 +201,18 @@ def validate_phone(value):
     regex_validator = RegexValidator(
         regex=regex_code, message=_('Wrong phone format')
     )
+
+    # this will raise an exception in case of failure
+    regex_validator(value)
+
+
+def validate_crm(value):
+
+    regex_code = r'[\d][7]'
+    regex_validator = RegexValidator(
+            regex=regex_code,
+            message=_('Wrong CRM format')
+        )
 
     # this will raise an exception in case of failure
     regex_validator(value)

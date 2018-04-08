@@ -31,7 +31,7 @@ class HomepageTestCase(TestCase):
         response = self.client.get(reverse('home'))
         self.assertTemplateUsed(response, 'pages/home.html')
 
-    def test_homepage_view_success_status_code(self): 
+    def test_homepage_view_success_status_code(self):
         """
             Checks if 'About SD' view is loaded successfully
         """

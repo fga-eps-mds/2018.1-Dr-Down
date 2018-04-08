@@ -36,7 +36,7 @@
 
     {% endif %}
     </div>
-    </div>
+  </div>
 
   <br/>
     <div class="container" >
@@ -46,6 +46,16 @@
         <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
       {% endif %}
   </div>
+
+  <div class="container">
+    {% if user.doctor %}
+        <p><strong>Doctor</strong></p>
+        <p><strong> CPF: </strong> {{ doctor_cpf }} </p>
+        <p><strong> CRM: </strong> {{ doctor_crm }} </p>
+        <p><strong> {% trans 'Speciality' %}: </strong> {{ doctor_speciality }}</p>
+    {% endif %}
+  </div>
+
 
   <div class="container" >
       {% if user.patient %}
