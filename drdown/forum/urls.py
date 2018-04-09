@@ -10,7 +10,7 @@ urlpatterns = [
         name='list_categories'
     ),
     url(
-        regex=r'^categories/(?P<pk>\d+)/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/$',
         view=PostListView.as_view(),
         name='list_posts'
     ),
