@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>{% trans "Posts" %}</h2>
+
+  <div class="list-group">
+    {% for post in post_list %}
+      <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ post.title }}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
