@@ -1,0 +1,7 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block content %}
+<strong> {% trans "Make sure user is confirmed before turning into an employee." %}</strong>
+{{ block.super }}
+{% endblock %}

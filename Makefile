@@ -52,6 +52,7 @@ down-remove-images:
 # DJANGO -------------------------------------------------------
 container := "django"
 
+container := "django"
 bash:
 	# Get in the bash of container
 	sudo docker exec -it ${container} /bin/sh

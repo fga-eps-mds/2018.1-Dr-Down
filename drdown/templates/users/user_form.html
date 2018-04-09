@@ -6,10 +6,29 @@
 {% block content %}
 <div class="col-md-6 offset-md-3">
   <h1>{{ user.username }}</h1>
-  <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+  <form class="form-horizontal" method="post" action="{% url 'users:update' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
-    {{ form|crispy }}
+
+    {{ form.name  |as_crispy_field }}
+    {{ form.gender  |as_crispy_field }}
+    {{ form.telephone  |as_crispy_field }}
+
+    <label>Birthday:* </label>
+
+    <div class="input-field row">
+
+    &emsp;<input type="date"  name="birthday" class="date" required>
+    <span class="validity"></span>
+
+   </div>
+
+   <br />
+
+    {{ form.photo  |as_crispy_field }}
+
+
+
     <div class="control-group">
       <div class="controls">
         <button type="submit" class="btn">Update</button>
