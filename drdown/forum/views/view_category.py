@@ -6,3 +6,5 @@ class CategoryListView(ListView):
     model = Category
     slug_field = 'name'
     slug_url_kwarg = 'name'
+
+
