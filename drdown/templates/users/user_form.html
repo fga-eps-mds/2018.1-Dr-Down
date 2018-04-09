@@ -14,7 +14,7 @@
     {{ form.gender  |as_crispy_field }}
     {{ form.telephone  |as_crispy_field }}
 
-    <label>Birthday:* </label>
+    <label>{% trans "Birthday:*" %} </label>
 
     <div class="input-field row">
 
@@ -31,7 +31,7 @@
 
     <div class="control-group">
       <div class="controls">
-        <button type="submit" class="btn">Update</button>
+        <button type="submit" class="btn">{% trans "Update" %}</button>
       </div>
     </div>
   </form>
