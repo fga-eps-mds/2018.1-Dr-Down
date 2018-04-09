@@ -83,6 +83,11 @@ Mas como nessa sprint o time de desenvolvimento voltou a programar a aplicação
 ![Gráfico do EVM da Sprint 4](https://docs.google.com/spreadsheets/d/e/2PACX-1vQKMfVULMAzNcT2kQ3RjJA0WiTdpXL3ASXXArDoIfE5NX3sl74a5KzXtprSBcKHwnn8qaD2Rcn2tfQ8/pubchart?oid=1954917483&format=image)
 
 Esse gráfico mostra que, pela primeira vez desde o início deste projeto, o APC foi maior do que o PPC. Isso é consequência de conseguirmos manter o ritmo da sprint passada e, graças a isso, poder sair do débito que vínhamos tendo.
+
 ## 9. Análise do Scrum Master
 
+Esta Sprint, do ponto de vista do progresso do projeto, foi bem sucedida. Conseguimos tirar o débito relacionado ao EVM, e também entregar todas as histórias do Time de Desenvolvimento, inclusive as envolvendo programação. Além disso, os combinados em sprints passadas tem sido mantidos.
 
+Por outro lado, desentendimentos dentro da equipe começaram a surgir nesta sprint. Por isso, serão tomadas medidas já na Sprint 5 para lidar com isso, pois esse problema representa um grande risco para o bom progresso e produtividade que a equipe como um todo tem apresentado até aqui.
+
+Além disso, o tempo que alguns membros da equipe gastaram durante a semana passou significativamente do esperado, e por isso esta questão será acompanhada mais de perto na próxima sprint, com o objetivo de evitar que os membros se sobrecarreguem com as atividades pelas quais são responsáveis.
