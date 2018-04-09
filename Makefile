@@ -8,15 +8,15 @@
 file := "local.yml"
 
 up:
-	# Create the image and container
+	# Create the image and container, if the image is not present it will be builded
 	sudo docker-compose -f ${file} up
 
-rebuild:
+build:
 	# Create the image, container and force a build
 	sudo docker-compose -f ${file} up --build
 
 logs:
-	# See the logs from application
+	# See the logs from all containers that are running
 	sudo docker-compose -f ${file} logs -f -t
 
 start:
@@ -31,17 +31,27 @@ ps:
 	# Verify running containers
 	sudo docker-compose -f ${file} ps
 
+show-images:
+	# Show installed images
+	sudo docker images
+
 down:
 	# Shutdown containers and remove the images
 	sudo docker-compose -f ${file} down
 
 down-force:
-	# Shutdown containers, remove the images and remove the volumes
+	# Shutdown containers and and remove the volumes
 	sudo docker-compose -f ${file} down -v
 
-# DJANGO -------------------------------------------------------
+down-remove-images:
+	# Shutdown containers, remove the images and remove the volumes.
+	# The images will nedd to be rebuilded
+	sudo docker-compose -f ${file} down --rmi local -v
 
+
+# DJANGO -------------------------------------------------------
 container := "django"
+
 bash:
 	# Get in the bash of container
 	sudo docker exec -it ${container} /bin/sh
@@ -68,6 +78,10 @@ migrations: manage.py
 	# Create all migrations from models
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py makemigrations
 
+migrations-merge: manage.py
+	# Create migrations from models with the --merge flag
+	sudo docker-compose -f ${file} run --rm ${container} python manage.py makemigrations --merge
+
 migrate: manage.py
 	# Migrate all migrations on database
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py migrate
@@ -88,7 +102,11 @@ test-all: manage.py
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py test
 
 coverage: coverage
-	# Run django coverage (create a covarege page)
+	# Run django coverage tests
+	docker-compose -f local.yml run --rm django coverage run -m py.test
+
+coverage-html: coverage
+	# Create a covarege page based on the tests
 	sudo docker-compose -f ${file} run --rm ${container} django coverage html
 
 # TRANSLATION --------------------------------------------------
