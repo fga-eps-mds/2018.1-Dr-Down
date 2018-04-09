@@ -10,7 +10,7 @@ __Data de Término:__ 06/04/2018
 
 __Duração__: 6 dias
 
-__Pontos Planejados:__ 44 pontos
+__Pontos Planejados:__ 47 pontos
 
 __Membros presentes:__ Todos
 
@@ -91,3 +91,11 @@ Por outro lado, EPS procurará conversar mais entre si antes de responder as dú
 - [TS47 - Criar documento de riscos do projeto](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/81)
 
 - [TS48 - Configuração do Deploy Contínuo](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/83)
+
+## 7. Risk Burndown
+
+![Risk Burndown da Sprint 4](https://docs.google.com/spreadsheets/d/e/2PACX-1vQInpEeWxgT4t3ahBRMK80FWcp57nhDMwCY58w1c-AyRuy-ZWrX9-87pl_X9Xo1mgGoTGf8kqrICsb4/pubchart?oid=1353294600&format=image)
+
+Estes são os riscos selecionados para compor o gráfico de riscos do projeto. Como é possível ver, um novo risco foi incluído, que é o atraso no roadmap do projeto. Ele pode ser incluído nesta sprint pois o roadmap foi confeccionado na anterior.
+
+Em geral os riscos previamente estabelecidos foram mantidos no mesmo nível ou reduziram. Entre os que aumentaram, estão o relacionado à tecnologia utilizada no desenvolvimento e também o da dificuldade de entrar em contato com o cliente.
