@@ -40,7 +40,7 @@
 
   <br/>
     <div class="container" >
-      {% if user.employee %}
+      {% if user.employee != None  %}
         <p><strong> {% trans "Employee" %} </strong> </p>
         <p><strong> CPF: </strong> {{ employee_cpf }} </p>
         <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
@@ -48,7 +48,7 @@
   </div>
 
   <div class="container">
-    {% if user.doctor %}
+    {% if user.doctor != None %}
         <p><strong>{% trans "Doctor" %}</strong></p>
         <p><strong> CPF: </strong> {{ doctor_cpf }} </p>
         <p><strong> CRM: </strong> {{ doctor_crm }} </p>
@@ -58,7 +58,7 @@
 
 
   <div class="container" >
-      {% if user.patient %}
+      {% if user.patient != None %}
         <p><strong> {% trans "Patient" %} </strong> </p>
         <p><strong> SES: </strong> {{ patient_ses }} </p>
         <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
@@ -72,7 +72,7 @@
   </div>
 
   <div class="container" >
-      {% if user.responsible %}
+      {% if user.responsible != None %}
         <p><strong> {% trans "Responsible" %} </strong> </p>
         <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
         <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
