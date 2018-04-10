@@ -8,7 +8,17 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-3">
+    {% if object.photo %}
+
+    <img src="{{ object.photo.url }}" width="300px">
+
+        {% else %}
+
+       <img src='../../static/images/user.png'>
+    </div>
+    {% endif %}
+    <div class="col-sm-8">
 
       <h2>{{ object.username }}</h2>
       {% if object.name %}
@@ -26,21 +36,12 @@
         <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
       {% endif %}
 
-    {% if object.photo %}
-
-    <img src="{{ object.photo.url }}" width="300px">
-
-        {% else %}
-
-       <img src='../../static/images/user.png'>
-
-    {% endif %}
     </div>
   </div>
 
   <br/>
     <div class="container" >
-      {% if user.employee != None  %}
+      {% if user.employee  %}
         <p><strong> {% trans "Employee" %} </strong> </p>
         <p><strong> CPF: </strong> {{ employee_cpf }} </p>
         <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
@@ -48,7 +49,7 @@
   </div>
 
   <div class="container">
-    {% if user.doctor != None %}
+    {% if user.doctor %}
         <p><strong>{% trans "Doctor" %}</strong></p>
         <p><strong> CPF: </strong> {{ doctor_cpf }} </p>
         <p><strong> CRM: </strong> {{ doctor_crm }} </p>
@@ -58,7 +59,7 @@
 
 
   <div class="container" >
-      {% if user.patient != None %}
+      {% if user.patient %}
         <p><strong> {% trans "Patient" %} </strong> </p>
         <p><strong> SES: </strong> {{ patient_ses }} </p>
         <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
@@ -72,7 +73,7 @@
   </div>
 
   <div class="container" >
-      {% if user.responsible != None %}
+      {% if user.responsible %}
         <p><strong> {% trans "Responsible" %} </strong> </p>
         <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
         <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
