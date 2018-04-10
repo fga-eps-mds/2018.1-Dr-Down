@@ -56,12 +56,15 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'about' %}">{% trans "Down's Syndrome" %}</a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">{% trans "Foruns" %}</a>
+            </li>
             {% if user.is_authenticated %}
-
+<!--
               <li class="nav-item mx-0 mx-lg-1">
                 <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_logout' %}">{% trans "Log out" %}</a>
               </li>
-<!--
+
               <li class="nav-item mx-0 mx-lg-1">
                 <div class="dropdown">
                   <a class="btn btn-secondary dropdown-toggle nav-link py-3 px-0 px-lg-3 rounded" href="users:detail" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>{{user.username}}</strong></a>
@@ -80,11 +83,12 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">History</a>
-                  <a class="dropdown-item" href="#">Queue</a>
-                  <a class="dropdown-item" href="#">Medical Appointment</a>
+                  <a class="dropdown-item" href="#">{% trans "History" %}</a>
+                  <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
+                  <a class="dropdown-item" href="#">{% trans "Medical Appointment" %}</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% url 'users:update' %}">Edit Profile</a>
+                  <a class="dropdown-item" href="{% url 'users:update' %}">{% trans "Edit Profile" %}</a>
+                  <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
                 </div>
               </div>
 
