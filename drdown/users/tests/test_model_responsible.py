@@ -33,6 +33,12 @@ class TestModelResponsible(TestCase):
             '/users/testuser/'
         )
 
+    def test__str__(self):
+        self.assertEqual(
+            self.responsible.__str__(),
+            'testuser'  # This is the default username for self.make_user()
+        )
+
     def test_one_to_one_relation(self):
         self.assertIs(self.user_1, self.responsible.user)
         self.assertIs(self.responsible, self.user_1.responsible)
