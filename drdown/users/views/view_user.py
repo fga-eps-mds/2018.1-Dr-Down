@@ -106,7 +106,8 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         return User.objects.get(username=self.request.user.username)
 
 
-@method_decorator(user_passes_test(lambda u: u.is_superuser,login_url='users:redirect',), name='dispatch')
+@method_decorator(user_passes_test(lambda u: u.is_superuser,
+                  login_url='users:redirect'), name='dispatch')
 class UserListView(LoginRequiredMixin, ListView):
     model = User
     # These next two lines tell the view to index lookups by username
