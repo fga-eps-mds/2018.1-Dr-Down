@@ -21,10 +21,16 @@ class Responsible(models.Model):
         max_length=14,
     )
 
-    def clean(self):
+    def clean(self, *args, **kwargs):
+
         if hasattr(self.user, 'patient'):
             raise ValidationError(
-                _("A patient cannot be a responsible!"))
+                {'user': _("A patient cannot be a responsible!")}
+            )
+
+    def save(self, *args, **kwargs):
+        self.clean()  # enforce model validation
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.user.get_username()
