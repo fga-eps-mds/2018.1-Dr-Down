@@ -62,12 +62,9 @@ No projeto ele é utilizado como um redirecionador de portas utilizando-se de pr
 
 O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelas aplicações do Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.
 
-Como citado acima, cada aplicação do django, pode ser considerada um microserviços se seguir todas as caracteristicas
-citadas, estiver empacotado e mantido no **pypi**. Para mais informações:
-https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/
+Como citado acima, cada aplicação do django, pode ser considerada um microserviços se seguir todas as caracteristicas citadas, estiver empacotado e mantido no **pypi**. Para mais informações: https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/
 
-Abaixo será explicado como funciona a arquitetura interna de cada aplicação do Django e quais microserviços foram
-selecionados para complementar o projeto.
+Abaixo será explicado como funciona a arquitetura interna de cada aplicação do Django e quais microserviços foram selecionados para complementar o projeto.
 
 #### 2.2.1 Model
 
@@ -87,25 +84,19 @@ Agrega toda a parte visual que estará visível para os usuários. Inclui os có
 
 Critérios de aceitação de um microserviço:
 
-1. **Alta coesão**: O microserviço deve realizar uma, e apenas uma tarefa especifica e deve ser pequeno, ou seja, não
-   matar um formiga com uma bazuca.
-2. **Baixo acoplamento**: O microserviço não deve depender de nenhuma classe ou funcionalidade do projeto na qual está
-   sendo inserido.
+1. **Alta coesão**: O microserviço deve realizar uma, e apenas uma tarefa especifica e deve ser pequeno, ou seja, não matar um formiga com uma bazuca.
+2. **Baixo acoplamento**: O microserviço não deve depender de nenhuma classe ou funcionalidade do projeto na qual está sendo inserido.
 3. **Autônomo e Independente**: O microserviço deve ser criado, mantido, executado e distribuido de forma independente.
-4. **Reutilizavel**: O microserviço deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente
-   de seu contexto.
+4. **Reutilizavel**: O microserviço deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto.
 5. **Externo ao projeto**: O microserviço deve está disponibilizado no **pypi** ou em outro servidor na internet.
-6. **Qualidade**: O microserviço deve ser testado, cobertura de no mínimo 90% ter build funcionando, deve ser completo e
-   em uma versão estável.
+6. **Qualidade**: O microserviço deve ser testado, cobertura de no mínimo 90% ter build funcionando, deve ser completo e em uma versão estável.
 
-|Microserviço|Descrição|É um microserviço?|Foi utilizado?|Motivo|Issue relacionada|
-|------------|---------|------------------|--------------|------|-----------------|
+|Aplicação|Descrição da aplicação|É um microserviço?|Foi utilizado?|Motivo da utilização ou não|Issue relacionada|
+|---------|----------------------|:----------------:|:------------:|---------------------------|-----------------|
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja é totalmente independente.|Sim|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|[#69](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/69)|
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente usando o seu framework CSS favorito, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Não|Sim|Não foi considerado um microserviço, apenas uma biblioteca que facilita a criação de formularios|Não há issue relacionada|
-|[django-allauth](https://www.intenct.nl/projects/django-allauth/)|O django-allauth é um aplicativo Django reutilizável que permite autenticação local e social.|Ele será utilizado para a criação de toda autenticação do projeto, adaptando-o as necessidades do mesmo.|Não|Sim|Um dos motivos que ele não foi considerado um microserviço foi sua dependência com o usuário do nosso projeto, ou seja, ele não atendeu aos critérios definidos|[#69](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/69)|
-|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista de um
-fórum|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe, já que foi proposta no meio da implementação do
-mesmo pela equipe de desenvolvimento|[#101](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/101)|
+|[django-allauth](https://www.intenct.nl/projects/django-allauth/)|O django-allauth é um aplicativo Django reutilizável que permite autenticação local e social. Ele será utilizado para a criação de toda autenticação do projeto, adaptando-o as necessidades do mesmo.|Não|Sim|Um dos motivos que ele não foi considerado um microserviço foi sua dependência com o usuário do nosso projeto, ou seja, ele não atendeu aos critérios definidos|[#69](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/69)|
+|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista de um fórum|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe, já que foi proposta no meio da implementação do mesmo pela equipe de desenvolvimento|[#101](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/101)|
 |[minc-rouanet-bot](https://github.com/lappis-unb/minc-rouanet-bot)|O Rouanet Bot é um projeto para responder dúvidas dos usuários relacionadas à Lei Rouanet. O projeto é desenvolvido com base no Rocket Chat e no Hubot-Natural.|Não|A decidir|O projeto ainda está sendo avaliado pela equipe, porém de primeira impressão é como matar uma formiga com uma bazuca, ou seja, é um serviço, porém não micro, ele tem toda uma estrutura e realizar muitas coisas tornando o serviço um pouco complexo para o cliente e para o contexto que queremos aplicar.|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
 |[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar a prescrição de receitas|Não|Não|Não passou em quase todos so critérios definidos acima, a aplicação chat do projeto está bastante acoplado, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gerando tempo e esforço|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
 |[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em Websocket|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
