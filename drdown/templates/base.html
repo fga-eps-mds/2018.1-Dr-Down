@@ -75,7 +75,6 @@
                 </div>
               </li>
 -->
-
               <div class="btn-group">
                 <a class="nav-link px-0 px-lg-3" href= "{% url 'users:detail' user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{user.username}}</strong></button></strong></a>
 
@@ -91,7 +90,6 @@
                   <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
                 </div>
               </div>
-
 
             {% else %}
               <li class="nav-item mx-0 mx-lg-1">

@@ -9,28 +9,52 @@
 
   <div class="row">
     <div class="col-sm-12">
-
       <h2>{{ object.username }}</h2>
       {% if object.photo %}
-      <img src="{{ object.photo.url }}" width="300px">
+      <img src="{{ object.photo.url }}" width="300px" class="float-left mr-1">
         {% else %}
       <img src='../../static/images/user.png'>
-
-    {% endif %}
-      {% if object.name %}
-        <p><strong><label>{% trans 'Name: '%}</label></strong>{{ object.name }}</p>
-      {% endif %}
-      {% if object.gender %}
-        <p><strong><label>{% trans 'Gender: '%}</label></strong>{{ object.gender }}</p>
       {% endif %}
 
-      {% if object.telephone %}
-        <p><strong><label>{% trans 'Telephone: '%}</label></strong>{{ object.telephone }}</p>
-      {% endif %}
+      <form>
+        {% if object.name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Name: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ object.name }}" disabled>
+          </div>
+        </div>          
+        {% endif %}
 
-      {% if object.birthday %}
-        <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
-      {% endif %}
+        {% if object.gender %}
+        <div class="form-group row mb-1">
+          <label for="inputGender" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Gender: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputGender" placeholder="{{ object.gender }}" disabled>
+          </div>
+        </div>          
+        {% endif %}
+
+        {% if object.telephone %}
+        <div class="form-group row mb-1">
+          <label for="inputTelephone" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Telephone: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputTelephone" placeholder="{{ object.telephone }}" disabled>
+          </div>
+        </div>          
+        {% endif %}
+
+        {% if object.birthday %}
+        <div class="form-group row mb-1">
+          <label for="inputBirthday" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Birthday: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputBirthday" placeholder="{{ object.birthday }}" disabled>
+          </div>
+        </div>          
+        {% endif %}
+
+
+      </form>
     </div>
   </div>
 
@@ -81,17 +105,16 @@
       {% endif %}
     </div>
   </div>
+
 {% if object == request.user %}
 <!-- Action buttons -->
 <div class="row">
-
   <div class="col-sm-12">
     <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">Confirm data</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
     <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">Delete</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
-
 </div>
 <!-- End Action buttons -->
 {% endif %}
