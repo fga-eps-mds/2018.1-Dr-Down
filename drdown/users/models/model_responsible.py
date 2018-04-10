@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from drdown.utils.validators import validate_cpf
+from django.core.exceptions import ValidationError
 
 from .model_user import User
 from .model_patient import Patient
@@ -19,6 +20,11 @@ class Responsible(models.Model):
         validators=[validate_cpf],
         max_length=14,
     )
+
+    def clean(self):
+        if hasattr(self.user, 'patient'):
+            raise ValidationError(
+                _("A patient cannot be a responsible!"))
 
     def __str__(self):
         return self.user.get_username()
