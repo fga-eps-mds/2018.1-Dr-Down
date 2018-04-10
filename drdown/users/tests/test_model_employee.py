@@ -78,9 +78,10 @@ class TestModelEmployeeNoSetUp(TestCase):
             add=True
         )
 
-        self.assertEqual(
-            employee_group.permissions,
-            employee_group.permissions
+        self.assertQuerysetEqual(
+            employee_group.permissions.all(),
+            mock_group.permissions.all(),
+            transform=lambda x: x
         )
 
         # and change things in the user
@@ -89,4 +90,27 @@ class TestModelEmployeeNoSetUp(TestCase):
         self.assertEqual(
             self.user.groups.get(name=Employee.GROUP_NAME),
             employee_group
+        )
+
+    def test_permission_set(self):
+
+        # this will be tested with the Patient model
+        content_type = ContentType.objects.get_for_model(Patient)
+ 
+        mock_group = Group.objects.create(name="mock")
+
+        # adds all permissions avaliable in set_permissions
+        set_permissions(
+            Patient,
+            mock_group,
+            change=True,
+            add=True,
+            delete=True
+        )
+
+        # check if the where added
+        self.assertQuerysetEqual(
+            Permission.objects.filter(content_type=content_type), 
+            mock_group.permissions.all(),
+            transform=lambda x: x
         )
