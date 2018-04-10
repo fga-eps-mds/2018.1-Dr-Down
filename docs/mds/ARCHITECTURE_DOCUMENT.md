@@ -18,6 +18,7 @@
 | 29/03/2018 | 1.1.0 | Adição do tópico 2.4 | Geovana Ramos |
 | 01/04/2018 | 1.2.0 | Melhorando o tópico de representação arquitetural e microserviços | Victor Arnaud |
 | 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
+| 09/04/2018 | 1.3.0 | Corrigindo a arquitetura de microserviços | Victor Arnaud |
 
 ## 1: Introdução
 
@@ -45,7 +46,11 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/354/177/full/MICROSERVI%C3%87OS-SETA.png?1522593562)
 
-A arquitetura utilizada no projeto será o arquitetura de microserviços, em que foram separados cada serviço em containers diferentes utilizando da ferramenta docker, temos os seguintes microserviços se comunicando entre si:
+A arquitetura utilizada no projeto será a arquitetura de microserviços, por padrão cada aplicação dentro do projeto django pode ser considerado um microserviço se ele for desacoplado e reutilizado em outros projetos, ou seja, um micro serviço é um componente criado, mantido, executado e distribuido de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, autônomo, independente e reutilizavel, que representa um contexto de negócio de uma aplicação, além de ser externo ao projeto que irá utiliza-lo, com isso podemos concluir que uma aplicação django pode ser considerada um microserviço se tiver todas essas caractísticas, e estiver empacotado no [pypi](https://pypi.python.org/pypi). Cada aplicação do django utiliza da arquitetura MVT internamente.
+
+O projeto terá alguns microserviços externos que serão inseridos e comunicados com as aplicações do projeto, o framework já disponibiliza toda a estrutura para fazer essa comunicação se o microserviço for um _app_ django. Será priorizado esse tipo de microserviço, porém não será descartados microserviços que se comunicam via requisições HTTP ou outros tipos de comunicação.
+
+Abaixo será listado como a arquitetura do projeto será comunicada com outros serviços externos de configuração, como servidor NGINX, banco de dados postgresql entre outros e terá o tópico em que será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto django (MVT) e uma tabela com os possíveis microserviços selecionados para a inserção ou não no projeto.
 
 ### 2.1 NGINX:
 
@@ -55,11 +60,19 @@ No projeto ele é utilizado como um redirecionador de portas utilizando-se de pr
 
 ### 2.2 Django
 
-O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelo Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.
+O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelas aplicações do Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.
+
+Como citado acima, cada aplicação do django, pode ser considerada um microserviços se seguir todas as caracteristicas
+citadas, estiver empacotado e mantido no **pypi**. Para mais informações:
+https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/
+
+Abaixo será explicado como funciona a arquitetura interna de cada aplicação do Django e quais microserviços foram
+selecionados para complementar o projeto.
 
 #### 2.2.1 Model
 
 É uma representação do banco de dados. Além disso, também inclui características, relações e outros comportamentos que os dados podem assumir.
+
 O Django inclui varias ferramentas para automatizar tanto quanto possível o processo e a manipulação do banco de dados, de forma que o desenvolvedor não precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplicação de forma mais rápida.
 
 #### 2.2.2 View
@@ -69,6 +82,35 @@ Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do us
 #### 2.2.3 Template
 
 Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
+
+#### 2.2.4 Microserviços
+
+Critérios de aceitação de um microserviço:
+
+1. **Alta coesão**: O microserviço deve realizar uma, e apenas uma tarefa especifica e deve ser pequeno, ou seja, não
+   matar um formiga com uma bazuca.
+2. **Baixo acoplamento**: O microserviço não deve depender de nenhuma classe ou funcionalidade do projeto na qual está
+   sendo inserido.
+3. **Autônomo e Independente**: O microserviço deve ser criado, mantido, executado e distribuido de forma independente.
+4. **Reutilizavel**: O microserviço deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente
+   de seu contexto.
+5. **Externo ao projeto**: O microserviço deve está disponibilizado no **pypi** ou em outro servidor na internet.
+6. **Qualidade**: O microserviço deve ser testado, cobertura de no mínimo 90% ter build funcionando, deve ser completo e
+   em uma versão estável.
+
+|Microserviço|Descrição|É um microserviço?|Foi utilizado?|Motivo|Issue relacionada|
+|------------|---------|------------------|--------------|------|-----------------|
+|[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja é totalmente independente.|Sim|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|[#69](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/69)|
+|[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente usando o seu framework CSS favorito, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Não|Sim|Não foi considerado um microserviço, apenas uma biblioteca que facilita a criação de formularios|Não há issue relacionada|
+|[django-allauth](https://www.intenct.nl/projects/django-allauth/)|O django-allauth é um aplicativo Django reutilizável que permite autenticação local e social.|Ele será utilizado para a criação de toda autenticação do projeto, adaptando-o as necessidades do mesmo.|Não|Sim|Um dos motivos que ele não foi considerado um microserviço foi sua dependência com o usuário do nosso projeto, ou seja, ele não atendeu aos critérios definidos|[#69](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/69)|
+|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista de um
+fórum|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe, já que foi proposta no meio da implementação do
+mesmo pela equipe de desenvolvimento|[#101](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/101)|
+|[minc-rouanet-bot](https://github.com/lappis-unb/minc-rouanet-bot)|O Rouanet Bot é um projeto para responder dúvidas dos usuários relacionadas à Lei Rouanet. O projeto é desenvolvido com base no Rocket Chat e no Hubot-Natural.|Não|A decidir|O projeto ainda está sendo avaliado pela equipe, porém de primeira impressão é como matar uma formiga com uma bazuca, ou seja, é um serviço, porém não micro, ele tem toda uma estrutura e realizar muitas coisas tornando o serviço um pouco complexo para o cliente e para o contexto que queremos aplicar.|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
+|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar a prescrição de receitas|Não|Não|Não passou em quase todos so critérios definidos acima, a aplicação chat do projeto está bastante acoplado, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gerando tempo e esforço|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
+|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em Websocket|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
+|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto django simples integrado com o chat [tawk.to](https://www.tawk.to/)|Sim|A decidir|O projeto ainda está sendo avaliado pela equipe|[#92](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/92)|
+
 
 ### 2.3 Banco de dados PostgreSQL
 
@@ -90,7 +132,7 @@ O redis é usado na aplicação para fazer o cacheamento (_cache_) django, com i
 
 O celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como django, flash e etc.
 
-No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processameno, ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
+No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento, ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
 Dependendo da tarefa que você executa no servidor a resposta pode demorar muito e isso leva à problemas de **TimeOut**, a experiência do usuário fica comprometida. Existem diversas tarefas no projeto que podem demorar para ser executadas, como relatórios pesados, enviar diferentes emails para uma lista de usuários, e por ai vai...
 
@@ -98,7 +140,7 @@ O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista 
 
 Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão de utiliza-lo ou não no projeto ainda está sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas, caso não precise esse microserviço será descartado.
 
-### 2.6 Comunicação atual
+### 2.6 Comunicação
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
