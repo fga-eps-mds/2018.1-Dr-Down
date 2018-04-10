@@ -20,6 +20,7 @@ pages:
   - Riscos: eps/RISKS.md
   - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
   - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
+  - Canvas: eps/CANVAS.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
