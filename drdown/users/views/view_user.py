@@ -1,4 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import user_passes_test
+from django.utils.decorators import method_decorator
 from django.urls import reverse
 from django.views.generic import (DetailView, ListView, RedirectView,
                                   UpdateView, DeleteView)
@@ -104,6 +106,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         return User.objects.get(username=self.request.user.username)
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser,login_url='users:redirect',), name='dispatch')
 class UserListView(LoginRequiredMixin, ListView):
     model = User
     # These next two lines tell the view to index lookups by username
