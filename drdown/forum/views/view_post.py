@@ -3,8 +3,10 @@ from ..models.model_category import Category
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import DeleteView
+from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from django.utils.text import slugify
+from datetime import datetime
 
 
 class PostListView(ListView):
@@ -42,17 +44,45 @@ class PostCreateView(CreateView):
 
         return super(PostCreateView, self).form_valid(form)
 
+
 class PostDeleteView ( DeleteView):
-
-
     model = Post
-
     success_url = reverse_lazy('forum:list_categories')
 
+    def get_object(self):
+        post = Post.objects.get(
+            pk=self.kwargs.get('post_pk')
+        )
+        return post
 
-    def get_success_url(self):
 
-        return super(PostDeleteView, self).get_success_url()
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'forum/form_post.html'
+    fields = ['message']
+    success_url = reverse_lazy('forum:list_categories')
+
+    def get_object(self):
+        post = Post.objects.get(
+            pk=self.kwargs.get('post_pk')
+        )
+        return post
+
+    def form_valid(self, form):
+
+        # Get updated_at datetime
+        form.instance.updated_at = datetime.now()
+        form.save()
+
+        # Change slug to new title
+        form.instance.slug = slugify(
+            str(form.instance.id) +
+            "-" +
+            form.instance.title
+        )
+        form.save()
+        return super(PostUpdateView, self).form_valid(form)
+
 
 
 

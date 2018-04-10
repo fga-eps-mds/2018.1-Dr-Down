@@ -3,6 +3,7 @@ from .views.view_category import CategoryListView
 from .views.view_post import PostListView
 from .views.view_post import PostCreateView
 from .views.view_post import PostDeleteView
+from .views.view_post import PostUpdateView
 
 app_name = 'forum'
 urlpatterns = [
@@ -22,8 +23,13 @@ urlpatterns = [
         name='create_post'
     ),
     url(
-        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/delete/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/delete/$',
         view=PostDeleteView.as_view(),
         name='delete_post'
+    ),
+    url(
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
+        view=PostUpdateView.as_view(),
+        name='update_post'
     ),
 ]
