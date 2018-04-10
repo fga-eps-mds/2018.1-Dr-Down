@@ -205,7 +205,7 @@
         {% endif %}
 
         <p></p>
-        
+
       {% endif %}
     </div>
   </div>
@@ -214,8 +214,26 @@
     <div class="col-sm-12">
       {% if user.responsible %}
         <p><strong></label> Responsible </label></strong> </p>
-        <p><strong></label> CPF: </label></strong> {{ responsible_cpf }} </p>
-        <p><strong></label> {% trans "Patient" %} : </label></strong> {{ responsible_patient }} </p>
+        {% if responsible_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CPF: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ responsible_cpf }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if responsible_patient %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Patient: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ responsible_patient }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        <p></p>
+        
       {% endif %}
     </div>
   </div>
