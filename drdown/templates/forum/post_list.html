@@ -14,6 +14,7 @@
     {% for post in post_list %}
       <a href="#" class="list-group-item">
         <h4 class="list-group-item-heading">{{ post.title }}</h4>
+      <a href="{% url 'forum:delete_post' category_slug category_pk %}" class="btn btn-danger">Delete</a>
       </a>
     {% endfor %}
   </div>

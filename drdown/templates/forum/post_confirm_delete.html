@@ -1,0 +1,17 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Post" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans "Delete" %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>{% trans 'Are you sure you want to delete ' %}{{ post.title }} ?</p>
+  <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+</form>
+
+
+{% endblock %}

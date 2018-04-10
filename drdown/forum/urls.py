@@ -2,6 +2,7 @@ from django.conf.urls import url
 from .views.view_category import CategoryListView
 from .views.view_post import PostListView
 from .views.view_post import PostCreateView
+from .views.view_post import PostDeleteView
 
 app_name = 'forum'
 urlpatterns = [
@@ -19,5 +20,10 @@ urlpatterns = [
         regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/new/$',
         view=PostCreateView.as_view(),
         name='create_post'
+    ),
+    url(
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/delete/$',
+        view=PostDeleteView.as_view(),
+        name='delete_post'
     ),
 ]

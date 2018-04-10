@@ -2,6 +2,7 @@ from ..models.model_post import Post
 from ..models.model_category import Category
 from django.views.generic import ListView
 from django.views.generic import CreateView
+from django.views.generic import DeleteView
 from django.urls import reverse_lazy
 from django.utils.text import slugify
 
@@ -40,6 +41,18 @@ class PostCreateView(CreateView):
         form.save()
 
         return super(PostCreateView, self).form_valid(form)
+
+class PostDeleteView ( DeleteView):
+
+
+    model = Post
+
+    success_url = reverse_lazy('forum:list_categories')
+
+
+    def get_success_url(self):
+
+        return super(PostDeleteView, self).get_success_url()
 
 
 
