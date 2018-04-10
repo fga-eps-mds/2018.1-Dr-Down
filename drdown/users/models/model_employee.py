@@ -1,10 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission, ContentType
 
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
+from .model_patient import Patient
+from .model_responsible import Responsible
 
 
 class Employee(models.Model):
@@ -77,7 +79,20 @@ class Employee(models.Model):
         except Group.DoesNotExist:
             employee_group = Group.objects.create(name=Employee.GROUP_NAME)
 
-        # TODO: add permissions to edit Patient and Parent when they get ready
+        set_permissions(
+                Patient,
+                employee_group,
+                change=True,
+                add=True
+            )
+
+        set_permissions(
+                Responsible,
+                employee_group,
+                change=True,
+                add=True
+            )
+
         self.user.groups.add(employee_group)
 
         self.user.save()
@@ -87,3 +102,22 @@ class Employee(models.Model):
     class Meta:
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
+
+
+def set_permissions(model, group, change=False, add=False, delete=False):
+    content_type = ContentType.objects.get_for_model(model)
+
+    if add:
+        group.permissions.add(Permission.objects.get(
+            content_type=content_type, codename__startswith='add_')
+        )
+
+    if delete:
+        group.permissions.add(Permission.objects.get(
+            content_type=content_type, codename__startswith='delete_')
+        )
+
+    if change:
+        group.permissions.add(Permission.objects.get(
+            content_type=content_type, codename__startswith='change_')
+        )

@@ -1,15 +1,20 @@
 from test_plus.test import TestCase
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission, ContentType
 
 
-from ..models import Employee
+from ..models import Employee, Patient, Responsible
+from ..models.model_employee import set_permissions
 
 
 class TestModelEmployee(TestCase):
 
     def setUp(self):
         self.user = self.make_user()
-        self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user, departament=Employee.NEUROLOGY)
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user,
+            departament=Employee.NEUROLOGY
+        )
 
     def test_get_absolute_url(self):
         self.assertEqual(
@@ -23,7 +28,10 @@ class TestModelEmployee(TestCase):
 
     def test_delete_cascade(self):
 
-        self.assertEquals(Employee.objects.get(cpf="974.220.200-16"), self.employee)
+        self.assertEquals(
+            Employee.objects.get(cpf="974.220.200-16"),
+            self.employee
+        )
 
         self.user.delete()
 
@@ -45,11 +53,64 @@ class TestModelEmployeeNoSetUp(TestCase):
             self.user.groups.get(name=Employee.GROUP_NAME)
 
         # now we add the employee<--->user relation
-        self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user, departament=Employee.NEUROLOGY)
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user,
+            departament=Employee.NEUROLOGY
+        )
 
-        # it should create the group
+        # it should create the group with permissons
         employee_group = Group.objects.get(name=Employee.GROUP_NAME)
+
+        mock_group = Group.objects.create(name="mock")
+
+        set_permissions(
+            Patient,
+            mock_group,
+            change=True,
+            add=True
+        )
+
+        set_permissions(
+            Responsible,
+            mock_group,
+            change=True,
+            add=True
+        )
+
+        self.assertQuerysetEqual(
+            employee_group.permissions.all(),
+            mock_group.permissions.all(),
+            transform=lambda x: x
+        )
 
         # and change things in the user
         self.assertEquals(self.user.is_staff, True)
-        self.assertEqual(self.user.groups.get(name=Employee.GROUP_NAME), employee_group)
+
+        self.assertEqual(
+            self.user.groups.get(name=Employee.GROUP_NAME),
+            employee_group
+        )
+
+    def test_permission_set(self):
+
+        # this will be tested with the Patient model
+        content_type = ContentType.objects.get_for_model(Patient)
+ 
+        mock_group = Group.objects.create(name="mock")
+
+        # adds all permissions avaliable in set_permissions
+        set_permissions(
+            Patient,
+            mock_group,
+            change=True,
+            add=True,
+            delete=True
+        )
+
+        # check if the where added
+        self.assertQuerysetEqual(
+            Permission.objects.filter(content_type=content_type), 
+            mock_group.permissions.all(),
+            transform=lambda x: x
+        )
