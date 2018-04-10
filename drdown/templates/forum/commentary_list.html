@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="list-group-item">
+    {% for commentary in commentary_list %}
+        <h4 class="list-group-item-heading">{{ commentary.created_by }}</h4>
+        <p class="list-group-item-heading">{{ commentary.message }}</p>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock content %}

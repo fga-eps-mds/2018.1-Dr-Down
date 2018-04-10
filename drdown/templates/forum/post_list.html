@@ -24,7 +24,7 @@
     <tbody>
       {% for post in post_list %}
         <tr>
-          <td>{{ post.title }}</td>
+          <td><a href="{% url 'forum:list_commentary' category_slug category_pk post.pk %}"> {{ post.title }} </td>
           <td>{{ post.created_by.username }}</td>
           <td>0</td>
           <td>{{ post.updated_at }}</td>
