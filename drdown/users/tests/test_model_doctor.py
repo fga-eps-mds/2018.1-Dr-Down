@@ -35,6 +35,16 @@ class TestModelDoctor(TestCase):
         with self.assertRaises(Doctor.DoesNotExist):
             Doctor.objects.get(cpf="057.641.271-65")
 
+    def test__str__(self):
+        self.assertEqual(
+            self.doctor.__str__(),
+            (
+                self.user.get_username() +
+                " - " +
+                self.doctor.get_speciality_display()
+            )
+        )
+
 
 class TestModelDoctorNoSetUp(TestCase):
 
