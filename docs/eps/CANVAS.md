@@ -1,4 +1,4 @@
-# Estrutura Analítica do Projeto (EAP)
+# Canvas do Produto 
 
 | Data | Versão | Descrição | Autor |
 |:----:|:------:|:---------:|:-----:|
