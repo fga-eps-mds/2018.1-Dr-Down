@@ -1,5 +1,5 @@
-from .model_category import Category
-from .model_post import Post
-from .model_commentary import Commentary
+from ..models import model_category
+from ..models import model_post
+from ..models import model_commentary
 
 
