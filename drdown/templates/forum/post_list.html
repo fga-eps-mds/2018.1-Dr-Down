@@ -6,6 +6,10 @@
 <div class="container">
   <h2>{% trans "Posts" %}</h2>
 
+   <div class="mb-4">
+    <a href="{% url 'forum:create_post' category_slug category_pk %}" class="btn btn-primary">New post</a>
+   </div>
+
   <div class="list-group">
     {% for post in post_list %}
       <a href="#" class="list-group-item">
