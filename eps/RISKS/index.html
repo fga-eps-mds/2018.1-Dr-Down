@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Riscos - drdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Riscos";
+    var mkdocs_page_input_path = "eps/RISKS.md";
+    var mkdocs_page_url = "/eps/RISKS/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> drdown</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../TAP/">Termo de abertura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/VISION_DOCUMENT/">Documento de visão</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ARCHITECTURE_DOCUMENT/">Documento de arquitetura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ADDITIONAL_SPECIFICATION/">Especificação Suplementar</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EAP/">EAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ROADMAP/">ROADMAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../SCRUM_METHODOLOGY_DRDOWN/">Metodologia</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../DONE_DEFINITION/">Definição de Pronto</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EVM_AGILE/">EVM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../QUALITY_MANAGEMENT_PLAN/">Gerenciamento de Qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../CODE_OF_CONDUCT/">Código de conduta</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PROJECT_TOOLS/">Ferramentas</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Riscos</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#riscos">Riscos</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#sprint-1">Sprint 1</a></li>
+        
+            <li><a class="toctree-l3" href="#sprint-2">Sprint 2</a></li>
+        
+            <li><a class="toctree-l3" href="#sprint-3">Sprint 3</a></li>
+        
+            <li><a class="toctree-l3" href="#sprint-4">Sprint 4</a></li>
+        
+            <li><a class="toctree-l3" href="#burndown-de-riscos">Burndown de Riscos</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/LOW_FIDELITY_PROTOTYPE/">Protótipo de baixa qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/HIGH_FIDELITY_PROTOTYPE/">Protótipo de alta qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 0</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">drdown</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Riscos</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/edit/master/docs/eps/RISKS.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="riscos">Riscos</h1>
+<h2 id="sprint-1">Sprint 1</h2>
+<h3 id="score-32">Score: 32</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Risco</strong></th>
+<th align="left"><strong>Ações para prevení-lo</strong></th>
+<th align="left"><strong>Ações para mitigá-lo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Mudança do escopo do projeto</td>
+<td align="left">- levantar bem o escopo usando os stakeholders e documentos disponíveis no início do projeto</td>
+<td align="left">- fazer as alterações necessárias;<br>- fechar o escopo assim que possível</td>
+</tr>
+<tr>
+<td align="center">Equipe com dificuldades no uso das tecnologias usadas no projeto (linguagem, framework, etc)</td>
+<td align="left">- realizar dojôs sobre as tecnologias;<br>- distribuir materiais para estudo sobre as tecnologias</td>
+<td align="left">- levantar as dificuldades existentes;<br>- realização de treinamentos focados nas dificuldades levantadas</td>
+</tr>
+<tr>
+<td align="center">Falta de infraestrutura para o desenvolvimento do software (configuração de ambiente de desenvolvimento, configuração do github, etc)</td>
+<td align="left">- criar o ambiente de desenvolvimento e configurar das ferramentas necessárias antes do início da codificação do aplicativo.</td>
+<td align="left">- diagnósticar dos problemas;<br>- corregir dos problemas identificados</td>
+</tr>
+<tr>
+<td align="center">Membro da equipe temporariamente impossibilitado de trabalhar</td>
+<td align="left">- levantar junto aos membros, no planejamento de cada sprint, ausências previstas por eles;<br>- evitar ou preparar-se para as ausências previsíveis</td>
+<td align="left">- reorganizar os membros da equipe e o trabalho para se adaptar à ausência da pessoa</td>
+</tr>
+<tr>
+<td align="center">Saída de um membro da equipe</td>
+<td align="left">- acompanhar de cada membro da equipe para levantar possíveis motivos de abandono;<br>- mitigar os possíveis motivos de abandono levantados o mais cedo possível</td>
+<td align="left">- reorganizar os membros da equipe e o trabalho para se adaptar à falta permanente de uma pessoa</td>
+</tr>
+<tr>
+<td align="center">Dívida técnica por não conseguir entregar as histórias previstas</td>
+<td align="left">- fazer um planejamento cuidadoso da sprint;<br>- acompanhar o andamento das atividades da sprint, diagnosticando e agindo em possíveis causas de atraso</td>
+<td align="left">- levantar as causas que levaram à dívida técnica;<br>- evitar repetir as causas para dívidas nas outras sprints;<br>- buscar sanar as dívidas no menor número de sprints possível</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="sprint-2">Sprint 2</h2>
+<h3 id="score-33">Score: 33</h3>
+<hr />
+<h2 id="sprint-3">Sprint 3</h2>
+<h3 id="score-31">Score: 31</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Risco</strong></th>
+<th align="left"><strong>Ações para prevení-lo</strong></th>
+<th align="left"><strong>Ações para mitigá-lo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Quebra de pacotes de dependências</td>
+<td align="left">- usar um número reduzido de dependências;<br>- buscar dependências que sejam estáveis e ativamente mantidas</td>
+<td align="left">- remover as dependências com problemas;<br>- buscar substitutos</td>
+</tr>
+<tr>
+<td align="center">Descontinuação de pacotes de dependências</td>
+<td align="left">- Usar um número reduzido de dependências;<br>- buscar aquelas que sejam estáveis e ativamente mantidas</td>
+<td align="left">- remover as dependências descontinuadas;<br>- buscar substitutos</td>
+</tr>
+<tr>
+<td align="center">Falta de recursos para manter a máquina de deploy</td>
+<td align="left">- buscar opções para o deploy que sejam de qualidade mas gratuitas ou com preço compatível com o orçamento disponível;<br>- ter um plano B que seja de rápida implementação para o caso de haver problemas com a máquina de deploy.</td>
+<td align="left">- colocar o plano B em prática;<br>- mobilizar recursos para o reestabelecimento do plano A, se for possível</td>
+</tr>
+<tr>
+<td align="center">Dificuldades no contato com o cliente</td>
+<td align="left">- ter diversas formas de contato com os clientes;<br>- ter mais de um cliente;<br>- não ter uma dependência excessiva dos clientes para a continuidade das atividades</td>
+<td align="left">- reestabelecimento do contato assim que possível;<br>- levantar os motivos para os problemas no contato para mitigá-los em outros momentos;<br>- deixar claro para o cliente como o contato com ele é importante para o bom andamento do projeto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sprint-4">Sprint 4</h2>
+<h3 id="score-35">Score: 35</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Risco</strong></th>
+<th align="left"><strong>Ações para prevení-lo</strong></th>
+<th align="left"><strong>Ações para mitigá-lo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Desentendimentos entre membros da equipe</td>
+<td align="left">- levantar possíveis pontos de atrito entre os membros;<br>- tomar ações que acabem ou reduzam os pontos de atrito antes que gerem conflitos</td>
+<td align="left">- conversar com os envolvidos no desentendimento;<br>- estabelecer acordos com todo o time com o intuito de evitar novos conflitos semelhantes ao que ocorreu;<br>- tomar atitudes mais energéticas apropriadas caso as ações acima não resolvam</td>
+</tr>
+<tr>
+<td align="center">Membros com carga excessiva de trabalho</td>
+<td align="left">- fazer uma pontuação das histórias que realmente reflitam o esforço para completá-las;<br>- fazer o acompanhamento da velocity e de como a equipe está se comportando para estimar se a equipe ainda suporta uma carga maior de trabalho</td>
+<td align="left">- levantar se o excesso de trabalho foi geral ou apenas de alguns membros e os motivos para isso;<br>- se possível, redistribuir o a carga de trabalho da sprint entre os membros;<br>- tomar mais cuidado com a pontuação e/ou a quantidade de histórias na sprint seguinte</td>
+</tr>
+<tr>
+<td align="center">Atraso no roadmap do projeto</td>
+<td align="left">- quando possível, antecipar atividades de sprints futuras;<br>- antecipar gargalos que podem gerar atrasos para que sejam solucionados antes que gerem problemas</td>
+<td align="left">- cuidar das causas do atraso;<br>- replanejar as sprints seguintes com o objetivo de voltar a ficar em dia com o roadmap;<br>- verificar se haverá a necessidade e a possibilidade de alterar o roadmap</td>
+</tr>
+</tbody>
+</table>
+<h2 id="burndown-de-riscos">Burndown de Riscos</h2>
+<p>Essa escala deve ser usada para pontuar o impacto (usando como referência uma estimativa do número de dias necessários para mitigar os efeitos da ocorrência do risco):</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Escala</strong></th>
+<th align="center"><strong>Chance do risco</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">Nenhuma</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">Muito pouco provável</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Pouco provável</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">Probabilidade média</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">Muito provável</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">Extremamente provável</td>
+</tr>
+</tbody>
+</table>
+<p>Esta outra escala será usada para pontuar a chance de o risco ocorrer:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Escala</strong></th>
+<th align="center"><strong>Impacto</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">1 a 2 dias</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">3 a 5 dias</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">6 ou mais dias</td>
+</tr>
+</tbody>
+</table>
+<p>A pontuação dos riscos por sprint e os gráficos do burndown de riscos podem ser encontrados <a href="https://docs.google.com/spreadsheets/d/1F16FrZia-9KAUWTVCgra7ZcmcKqbLxbcwmbP1dEJcUg/edit?usp=sharing">aqui.</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../mds/LOW_FIDELITY_PROTOTYPE/" class="btn btn-neutral float-right" title="Protótipo de baixa qualidade">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../PROJECT_TOOLS/" class="btn btn-neutral" title="Ferramentas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../PROJECT_TOOLS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../mds/LOW_FIDELITY_PROTOTYPE/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
