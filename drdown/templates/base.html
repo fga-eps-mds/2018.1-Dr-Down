@@ -58,7 +58,18 @@
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'users:detail' request.user.username %}">{% trans "My Profile" %}</a>
+
+                <div class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Profile
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'users:detail' request.user.username %}">{% trans "View My Profile" %}</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+
               </li>
               <li class="nav-item mx-0 mx-lg-1">
                 <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_logout' %}">{% trans "Log out" %}</a>
@@ -172,8 +183,8 @@
 
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/project.js' %}"></script>
-      <script src="{% static 'homepage/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'homepage/vendor/jquery/jquery.min.js' %}"></script>
 
       <!-- Plugin JavaScript -->
       <script src="{% static 'homepage/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
@@ -186,4 +197,3 @@
 
   </body>
 </html>
-
