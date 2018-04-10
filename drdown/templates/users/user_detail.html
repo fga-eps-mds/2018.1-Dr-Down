@@ -16,6 +16,8 @@
       <img src='../../static/images/user.png'>
       {% endif %}
 
+      <p></p>
+
       <form>
         {% if object.name %}
         <div class="form-group row mb-1">
@@ -23,7 +25,7 @@
           <div>
             <input class="form-control col-sm-5" id="inputName" placeholder="{{ object.name }}" disabled>
           </div>
-        </div>          
+        </div>
         {% endif %}
 
         {% if object.gender %}
@@ -32,7 +34,7 @@
           <div>
             <input class="form-control col-sm-5" id="inputGender" placeholder="{{ object.gender }}" disabled>
           </div>
-        </div>          
+        </div>
         {% endif %}
 
         {% if object.telephone %}
@@ -41,7 +43,7 @@
           <div>
             <input class="form-control col-sm-5" id="inputTelephone" placeholder="{{ object.telephone }}" disabled>
           </div>
-        </div>          
+        </div>
         {% endif %}
 
         {% if object.birthday %}
@@ -50,7 +52,7 @@
           <div>
             <input class="form-control col-sm-5" id="inputBirthday" placeholder="{{ object.birthday }}" disabled>
           </div>
-        </div>          
+        </div>
         {% endif %}
 
 
@@ -63,8 +65,27 @@
     <div class="col-sm-12">
       {% if user.employee %}
         <p><strong><label>{% trans 'Employee' %}</label></strong> </p>
-        <p><strong><label> CPF: </strong> {{ employee_cpf }} </p>
-        <p><strong><label> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
+        
+        {% if employee_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CPF: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ employee_cpf }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if employee_department %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Department: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ employee_department }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        <p></p>
+
       {% endif %}
     </div>
   </div>
@@ -122,4 +143,3 @@
 
 </div>
 {% endblock content %}
-
