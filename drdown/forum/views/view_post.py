@@ -20,6 +20,10 @@ class PostListView(ListView):
         context['category_slug'] = self.kwargs.get('slug')
         return context
 
+    def get_queryset(self):
+        queryset = Post.objects.filter(category=Category.objects.get(pk=self.kwargs.get('pk')))
+        return queryset
+
 
 class PostCreateView(CreateView):
     model = Post
@@ -45,7 +49,7 @@ class PostCreateView(CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-class PostDeleteView ( DeleteView):
+class PostDeleteView (DeleteView):
     model = Post
     success_url = reverse_lazy('forum:list_categories')
 
