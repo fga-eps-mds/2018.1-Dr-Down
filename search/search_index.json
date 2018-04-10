@@ -1216,6 +1216,21 @@
             "title": "Eventos"
         }, 
         {
+            "location": "/eps/CANVAS/", 
+            "text": "Estrutura Anal\u00edtica do Projeto (EAP)\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutor\n\n\n\n\n\n\n\n\n\n\n10/04/2018\n\n\n0.0.1\n\n\nPrimeira Vers\u00e3o da Canvas\n\n\nMariana De Souza Mendes\n\n\n\n\n\n\n\n\nv0.0.1\n\n\n\n\nClique aqui para ampliar a imagem", 
+            "title": "Canvas"
+        }, 
+        {
+            "location": "/eps/CANVAS/#estrutura-analitica-do-projeto-eap", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autor      10/04/2018  0.0.1  Primeira Vers\u00e3o da Canvas  Mariana De Souza Mendes", 
+            "title": "Estrutura Anal\u00edtica do Projeto (EAP)"
+        }, 
+        {
+            "location": "/eps/CANVAS/#v001", 
+            "text": "Clique aqui para ampliar a imagem", 
+            "title": "v0.0.1"
+        }, 
+        {
             "location": "/sprints/00/planning/", 
             "text": "Planejamento Sprint 00\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint\n: 0\n\n\nData de in\u00edcio\n: 05/03/2018\n\n\nData de T\u00e9rmino\n: 10/03/2018\n\n\nDura\u00e7\u00e3o\n: 5 dias\n\n\nPontos Planejados\n: 15 pontos\n\n\nMembros presentes\n: Todos\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\nArquiteto:\n  Victor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Planejamento da Sprint\n\n\nO planejamento da sprint foi feito com o pouco de informa\u00e7\u00f5es que temos, e com o intuito de come\u00e7ar a preparar todos os membros da equipe, em especial aqueles que est\u00e3o cursando MDS, para a execu\u00e7\u00e3o do projeto. Isso resultou em hist\u00f3rias de treinamentos e estudos sobre as tecnologias e processos que ser\u00e3o usadas ao longo de todo o semestre.\n\n\n4. Backlog da Sprint\n\n\nMDS e EPS\n\n\n\n\n\n\nS01\n - Estudar a respeito de GitFlow\n\n\n\n\n\n\nS02\n - Treinamento de Documenta\u00e7\u00f5es  (Vis\u00e3o, Arquitetura, Especifica\u00e7\u00e3o, Prototipagem)\n\n\n\n\n\n\nS03\n - Estudar a metodologia SCRUM\n\n\n\n\n\n\nS04\n - Treinamento de Python/Django\n\n\n\n\n\n\nS05\n - Treinamento de Git e Git Flow", 
             "title": "Planejamento"
