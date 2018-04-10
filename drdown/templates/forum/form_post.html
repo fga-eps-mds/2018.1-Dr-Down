@@ -4,9 +4,20 @@
 {% block title %}{% trans "New Post" %}{% endblock %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-     {{ form.as_p }}
-    <button type="submit" class="btn btn-success">{% trans "Post" %}</button>
-  </form>
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' category_slug category_pk %}">{% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item active">{% trans "New Post" %}</li>
+    </ol>
+  </div>
+  <div class="container">
+    <h2>{% trans "New Post" %}</h2><hr>
+    <form method="post">
+      {% csrf_token %}
+       {{ form.as_p }}
+      <button type="submit" class="btn btn-success">{% trans "Post" %}</button>
+    </form>
+  </div>
+
 {% endblock %}

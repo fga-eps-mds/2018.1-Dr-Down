@@ -4,7 +4,16 @@
 
 {% block content %}
 <div class="container">
-  <h2>{% trans "Posts" %}</h2>
+
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item active">{% trans "Posts" %}</li>
+    </ol>
+  </div>
+
+  <h2>{% trans "Posts" %}</h2><hr>
+
 
   <div class="mb-4">
     <a href="{% url 'forum:create_post' category_slug category_pk %}" class="btn btn-primary">New post</a>

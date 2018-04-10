@@ -31,6 +31,12 @@ class PostCreateView(CreateView):
     fields = ['title', 'message']
     success_url = reverse_lazy('forum:list_categories')
 
+    def get_context_data(self, **kwargs):
+        context = super(PostCreateView, self).get_context_data(**kwargs)
+        context['category_pk'] = self.kwargs.get('pk')
+        context['category_slug'] = self.kwargs.get('slug')
+        return context
+
     def form_valid(self, form):
 
         # Get category that post belongs to
@@ -65,6 +71,12 @@ class PostUpdateView(UpdateView):
     template_name = 'forum/form_post.html'
     fields = ['message']
     success_url = reverse_lazy('forum:list_categories')
+
+    def get_context_data(self, **kwargs):
+        context = super(PostUpdateView, self).get_context_data(**kwargs)
+        context['category_pk'] = self.kwargs.get('pk')
+        context['category_slug'] = self.kwargs.get('slug')
+        return context
 
     def get_object(self):
         post = Post.objects.get(
