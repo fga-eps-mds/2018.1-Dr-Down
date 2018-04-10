@@ -17,6 +17,9 @@ pages:
   - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md
   - Código de conduta: CODE_OF_CONDUCT.md
   - Ferramentas: eps/PROJECT_TOOLS.md
+  - Riscos: eps/RISKS.md
+  - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
+  - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
