@@ -11,6 +11,12 @@
     <div class="col-sm-12">
 
       <h2>{{ object.username }}</h2>
+      {% if object.photo %}
+      <img src="{{ object.photo.url }}" width="300px">
+        {% else %}
+      <img src='../../static/images/user.png'>
+
+    {% endif %}
       {% if object.name %}
         <p><strong><label>{% trans 'Name: '%}</label></strong>{{ object.name }}</p>
       {% endif %}
@@ -25,67 +31,63 @@
       {% if object.birthday %}
         <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
       {% endif %}
-
-    {% if object.photo %}
-
-    <img src="{{ object.photo.url }}" width="300px">
-
-        {% else %}
-
-       <img src='../../static/images/user.png'>
-
-    {% endif %}
     </div>
   </div>
 
   <br/>
-    <div class="container" >
+  <div class="row">
+    <div class="col-sm-12">
       {% if user.employee %}
-        <p><strong> Employee </strong> </p>
-        <p><strong> CPF: </strong> {{ employee_cpf }} </p>
-        <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
+        <p><strong><label>{% trans 'Employee' %}</label></strong> </p>
+        <p><strong><label> CPF: </strong> {{ employee_cpf }} </p>
+        <p><strong><label> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
       {% endif %}
+    </div>
   </div>
 
-  <div class="container">
+  <div class="row">
+    <div class="col-sm-12">
     {% if user.doctor %}
-        <p><strong>Doctor</strong></p>
-        <p><strong> CPF: </strong> {{ doctor_cpf }} </p>
-        <p><strong> CRM: </strong> {{ doctor_crm }} </p>
-        <p><strong> {% trans 'Speciality' %}: </strong> {{ doctor_speciality }}</p>
+        <p><strong><label>{% trans 'Doctor' %}</label></strong></p>
+        <p><strong><label> CPF: </strong> {{ doctor_cpf }} </label></p>
+        <p><strong><label> CRM: </strong> {{ doctor_crm }} </label></p>
+        <p><strong><label> {% trans 'Speciality' %}: </label></strong> {{ doctor_speciality }}</p>
     {% endif %}
+    </div>
   </div>
 
-
-  <div class="container" >
+  <div class="row">
+    <div class="col-sm-12">
       {% if user.patient %}
-        <p><strong> Patient </strong> </p>
-        <p><strong> SES: </strong> {{ patient_ses }} </p>
-        <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
-        <p><strong> {% trans "Mother name" %} : </strong> {{ patient_mother_name }} </p>
-        <p><strong> {% trans "Father name" %} : </strong> {{ patient_father_name }} </p>
-        <p><strong> {% trans "Ethnicity" %} : </strong> {{ patient_ethnicity }} </p>
-        <p><strong> {% trans "SUS number" %} : </strong> {{ patient_sus_number }} </p>
-        <p><strong> {% trans "Civil registry of birth" %} : </strong> {{ patient_civil_registry_of_birth }} </p>
-        <p><strong> {% trans "Declaration of live birth" %} : </strong> {{ patient_declaration_of_live_birth }} </p>
+        <p><strong><label> Patient </label></strong></p>
+        <p><strong><label> SES: </label></strong> {{ patient_ses }} </p>
+        <p><strong><label> {% trans "Priority" %} : </label></strong> {{ patient_priority }} </p>
+        <p><strong><label> {% trans "Mother name" %} : </label></strong> {{ patient_mother_name }} </p>
+        <p><strong><label> {% trans "Father name" %} : </label></strong> {{ patient_father_name }} </p>
+        <p><strong><label> {% trans "Ethnicity" %} : </label></strong> {{ patient_ethnicity }} </p>
+        <p><strong><label> {% trans "SUS number" %} : </label></strong> {{ patient_sus_number }} </p>
+        <p><strong><label> {% trans "Civil registry of birth" %} : </label></strong> {{ patient_civil_registry_of_birth }} </p>
+        <p><strong><label> {% trans "Declaration of live birth" %} : </label></strong> {{ patient_declaration_of_live_birth }} </p>
       {% endif %}
+    </div>
   </div>
 
-  <div class="container" >
+  <div class="row">
+    <div class="col-sm-12">
       {% if user.responsible %}
-        <p><strong> Responsible </strong> </p>
-        <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
-        <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
+        <p><strong></label> Responsible </label></strong> </p>
+        <p><strong></label> CPF: </label></strong> {{ responsible_cpf }} </p>
+        <p><strong></label> {% trans "Patient" %} : </label></strong> {{ responsible_patient }} </p>
       {% endif %}
-
+    </div>
   </div>
 {% if object == request.user %}
 <!-- Action buttons -->
 <div class="row">
 
   <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">Confirm data</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+    <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">Confirm data</a>
+    <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
     <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">Delete</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
