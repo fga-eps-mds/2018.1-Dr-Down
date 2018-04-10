@@ -1,6 +1,10 @@
 from django.test import RequestFactory
+from django.urls import reverse_lazy
+from django.test.client import Client
 
 from test_plus.test import TestCase
+
+from ..models import User
 
 from ..views import (
     UserRedirectView,
@@ -62,3 +66,29 @@ class TestUserUpdateView(BaseUserTestCase):
             self.view.get_object(),
             self.user
         )
+
+
+class TestUserDeleteView(BaseUserTestCase):
+
+    def setUp(self):
+        super(TestUserDeleteView, self).setUp()
+        self.url = reverse_lazy('users:delete')
+        self.client = Client()
+
+    def tearDownUser(self):
+
+        self.user.delete()
+
+    def test_delete_user_ok(self):
+
+        self.assertEquals(User.objects.count(), 1)
+
+        self.client.force_login(user=self.user)
+
+        response = self.client.post(self.url, follow=True)
+
+        home_url = reverse_lazy('home')
+
+        self.assertRedirects(response, home_url)
+
+        self.assertEquals(User.objects.count(), 0)
