@@ -1,4 +1,5 @@
 from ..models.model_commentary import Commentary
+from ..models.model_post import Post
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import DeleteView
@@ -10,20 +11,20 @@ from datetime import datetime
 
 class CommentaryListView(ListView):
     model = Commentary
-    slug_field = 'message'
-    slug_url_kwarg = 'message'
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryListView, self).get_context_data(**kwargs)
         context['category_pk'] = self.kwargs.get('pk')
         context['category_slug'] = self.kwargs.get('slug')
+        context['post_pk'] = self.kwargs.get('post_pk')
+        context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
         return context
 
 
 class CommentaryCreateView(CreateView):
     model = Commentary
     template_name = 'forum/form_post.html'
-    fields = ['title', 'message']
+    fields = ['message']
     success_url = reverse_lazy('forum:list_commentary')
 
     def form_valid(self, form):

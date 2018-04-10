@@ -22,17 +22,17 @@ urlpatterns = [
         name='create_post'
     ),
     url(
-        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/delete/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/delete/(?P<post_pk>\d+)/$',
         view=view_post.PostDeleteView.as_view(),
         name='delete_post'
     ),
     url(
-        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/edit/(?P<post_pk>\d+)/$',
         view=view_post.PostUpdateView.as_view(),
         name='update_post'
     ),
     url(
-        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<commentary_pk>\d+)/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/$',
         view=view_commentary.CommentaryListView.as_view(),
         name='list_commentary'
     ),
@@ -42,7 +42,7 @@ urlpatterns = [
         name='create_commentary'
     ),
     url(
-        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<commentary_pk>\d+)/delete/$',
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/delete/(?P<commentary_pk>\d+)/$',
         view=view_commentary.CommentaryDeleteView.as_view(),
         name='delete_commentary'
     ),
