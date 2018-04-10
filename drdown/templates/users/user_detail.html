@@ -123,7 +123,7 @@
         {% endif %}
 
         <p></p>
-        
+
     {% endif %}
     </div>
   </div>
@@ -132,14 +132,80 @@
     <div class="col-sm-12">
       {% if user.patient %}
         <p><strong><label> Patient </label></strong></p>
-        <p><strong><label> SES: </label></strong> {{ patient_ses }} </p>
-        <p><strong><label> {% trans "Priority" %} : </label></strong> {{ patient_priority }} </p>
-        <p><strong><label> {% trans "Mother name" %} : </label></strong> {{ patient_mother_name }} </p>
-        <p><strong><label> {% trans "Father name" %} : </label></strong> {{ patient_father_name }} </p>
-        <p><strong><label> {% trans "Ethnicity" %} : </label></strong> {{ patient_ethnicity }} </p>
-        <p><strong><label> {% trans "SUS number" %} : </label></strong> {{ patient_sus_number }} </p>
-        <p><strong><label> {% trans "Civil registry of birth" %} : </label></strong> {{ patient_civil_registry_of_birth }} </p>
-        <p><strong><label> {% trans "Declaration of live birth" %} : </label></strong> {{ patient_declaration_of_live_birth }} </p>
+        {% if patient_ses %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'SES: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_ses }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_priority %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Priority: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_priority }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_mother_name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Mother name: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_mother_name }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_father_name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Father name: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_father_name }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_ethnicity %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Ethnicity: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_ethnicity }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_sus_number %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'SUS number: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_sus_number }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_civil_registry_of_birth %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Civil registry of birth: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_civil_registry_of_birth }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_declaration_of_live_birth %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Declaration of live birth: '%}<strong></label>
+          <div>
+            <input class="form-control col-sm-5" id="inputName" placeholder="{{ patient_declaration_of_live_birth }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        <p></p>
+        
       {% endif %}
     </div>
   </div>
