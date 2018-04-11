@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-{% block css %}
-  	<link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+{% block css %}	
+	<link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   	<!-- Custom fonts for this template -->
+    <link href="{% static 'homepage/vendor/font-awesome/css/font-awesome.min.css' %}"" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   	<!-- Custom styles for this template -->
   	<link href="{% static 'homepage/css/freelancer.css' %}" rel="stylesheet">
-  	<link href="{% static 'css/drdown.css' %}" rel="stylesheet">
+  	<link href="{% static 'css/home.css' %}" rel="stylesheet">
+
 {% endblock css %}
 
 {% block content %}

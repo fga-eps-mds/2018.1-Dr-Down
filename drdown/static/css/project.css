@@ -29,11 +29,3 @@ body {
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
-
-.bg-blue {
-  background-color: #CAE1FF;
-}
-
-hr.bg-star-blue:after{
-  background-color: #CAE1FF;
-}
