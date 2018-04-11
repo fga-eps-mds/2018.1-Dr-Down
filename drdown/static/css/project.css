@@ -14,11 +14,13 @@
 html {
   height: 100%;
 }
+
 body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .content {
   flex: 1;
 }
@@ -26,4 +28,12 @@ body {
 .content-margin {
   margin-top: 10rem;
   margin-bottom: 10rem;
+}
+
+.bg-blue {
+  background-color: #CAE1FF;
+}
+
+hr.bg-star-blue:after{
+  background-color: #CAE1FF;
 }
