@@ -84,39 +84,39 @@
   {% endif %}
 
   {% if user.doctor %}
-    <div class="row">
-      <div class="col-sm-12">
-        <form>
-          <p><strong><label>{% trans 'Doctor' %}</label></strong></p>
-          {% if doctor_cpf %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CPF: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_cpf }}" disabled>
-            </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <p><strong><label>{% trans 'Doctor' %}</label></strong></p>
+        {% if doctor_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CPF: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_cpf }}" disabled>
           </div>
-          {% endif %}
+        </div>
+        {% endif %}
 
-          {% if doctor_crm %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CRM: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_crm }}" disabled>
-            </div>
-          </div>
-          {% endif %}
-
-          {% if doctor_speciality %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Speciality: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ doctor_speciality }}" disabled>
-            </div>
-          </div>
-          {% endif %}
-        </form>
+      {% if doctor_crm %}
+      <div class="form-group row mb-1">
+        <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CRM: '%}</strong></label>
+        <div>
+          <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_crm }}" disabled>
+        </div>
       </div>
+      {% endif %}
+
+      {% if doctor_speciality %}
+      <div class="form-group row mb-1">
+        <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Speciality: '%}</strong></label>
+        <div>
+          <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ doctor_speciality }}" disabled>
+        </div>
+      </div>
+      {% endif %}
+      </form>
     </div>
+  </div>
   {% endif %}
 
   {% if user.patient %}
@@ -231,8 +231,11 @@
 <!-- Action buttons -->
 <div class="row mt-4">
   <div class="col-sm-12">
-    <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">Confirm data</a>
+    <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+    {% if user.patient or user.responsible %}
+    <a class="btn btn-secondary" href="#" role="button">My Medical Records</a>
+    {% endif %}
     <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">Delete</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
