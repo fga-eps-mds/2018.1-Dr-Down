@@ -20,6 +20,10 @@
   <div class="mb-4">
     <a href="{% url 'forum:create_commentary' category_slug category_pk post_pk %}"
        class="btn btn-primary">{% trans "New commentary" %}</a>
+    <a href="{% url 'forum:update_post' category_slug category_pk post.pk %}"
+                  class="btn btn-secondary">{% trans "Edit" %}</a>
+    <a href="{% url 'forum:delete_post' category_slug category_pk post.pk %}"
+                  class="btn btn-danger">{% trans "Delete" %}</a>
   </div>
 
 
@@ -38,7 +42,7 @@
         <p>{% trans "Posted on" %} {{ post.created_at }}</p>
         <hr>
         <!-- Post Content -->
-        <p class="lead"> {{post.message }} </p>
+        <p class="lead"> {{ post.message }} </p>
         <hr>
       </div>
     </div>

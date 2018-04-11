@@ -26,8 +26,6 @@
         <th>{% trans "Starter" %}</th>
         <th>{% trans "Commentaries" %}</th>
         <th>{% trans "Last Update" %}</th>
-        <th>{% trans "Update" %}</th>
-        <th>{% trans "Delete" %}</th>
       </tr>
     </thead>
     <tbody>
@@ -38,10 +36,6 @@
           <td>{{ post.created_by.username }}</td>
           <td>0</td>
           <td>{{ post.updated_at }}</td>
-          <td> <a href="{% url 'forum:update_post' category_slug category_pk post.pk %}"
-                  class="btn btn-secondary">{% trans "Edit" %}</td>
-          <td> <a href="{% url 'forum:delete_post' category_slug category_pk post.pk %}"
-                  class="btn btn-danger">{% trans "Delete" %}</td>
         </tr>
       {% endfor %}
     </tbody>
