@@ -8,8 +8,11 @@
   <div class="container">
     <ol class="breadcrumb my-4">
       <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">
-        {% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">
+        {% trans "Posts" %}
+        </a>
+      </li>
       <li class="breadcrumb-item active">{{ post.title }}</li>
     </ol>
   </div>
@@ -29,7 +32,7 @@
         <!-- Title -->
         <h1 class="mt-4">{{ post.title }}</h1>
         <!-- Author -->
-        <p class="lead"> by {{ post.created_by }}</p>
+        <p class="lead"> {% trans "by" %} {{ post.created_by }}</p>
         <hr>
         <!-- Date/Time -->
         <p>{% trans "Posted on" %} {{ post.created_at }}</p>

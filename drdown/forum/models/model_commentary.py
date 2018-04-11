@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 class Commentary(models.Model):
     message = models.TextField(
         _('Message'),
-        help_text=_('Message of post'),
         max_length=4000
     )
     post = models.ForeignKey(

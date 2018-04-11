@@ -27,23 +27,23 @@ class CommentaryListView(ListView):
 
 class CommentaryCreateView(CreateView):
     model = Commentary
-    template_name = 'forum/form_post.html'
+    template_name = 'forum/form_commentary.html'
     fields = ['message']
-    success_url = reverse_lazy('forum:list_commentary')
+    success_url = reverse_lazy('forum:list_categories')
+
+    def get_context_data(self, **kwargs):
+        context = super(CommentaryCreateView, self).get_context_data(**kwargs)
+        context['category_pk'] = self.kwargs.get('pk')
+        context['category_slug'] = self.kwargs.get('slug')
+        context['post_pk'] = self.kwargs.get('post_pk')
+        context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
+        return context
 
     def form_valid(self, form):
 
-        # Get category that post belongs to
-        form.instance.category = Commentary.objects.get(pk=self.kwargs.get('pk'))
+        # Get post that commentary belongs to
+        form.instance.post = Post.objects.get(pk=self.kwargs.get('post_pk'))
         form.instance.created_by = self.request.user
-        form.save()
-
-        # Save slug with post title
-        form.instance.slug = slugify(
-            str(form.instance.id) +
-            "-" +
-            form.instance.title
-        )
         form.save()
 
         return super(CommentaryCreateView, self).form_valid(form)
@@ -67,7 +67,15 @@ class CommentaryUpdateView(UpdateView):
     model = Commentary
     template_name = 'forum/form_commentary.html'
     fields = ['message']
-    success_url = reverse_lazy('forum:list_post')
+    success_url = reverse_lazy('forum:list_categories')
+
+    def get_context_data(self, **kwargs):
+        context = super(CommentaryUpdateView, self).get_context_data(**kwargs)
+        context['category_pk'] = self.kwargs.get('pk')
+        context['category_slug'] = self.kwargs.get('slug')
+        context['post_pk'] = self.kwargs.get('post_pk')
+        context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
+        return context
 
     def get_object(self):
         commentary = Commentary.objects.get(
@@ -81,13 +89,4 @@ class CommentaryUpdateView(UpdateView):
         form.instance.updated_at = datetime.now()
         form.save()
 
-        # Change slug to new title
-        form.instance.slug = slugify(
-            str(form.instance.id) +
-            "-" +
-            form.instance.title
-        )
-        form.save()
         return super(CommentaryUpdateView, self).form_valid(form)
-
-
