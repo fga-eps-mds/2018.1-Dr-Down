@@ -5,6 +5,7 @@ from drdown.utils.validators import (validate_ses,
                                      validate_names, validate_sus)
 
 from .model_user import User
+from .model_responsible import Responsible
 
 
 class Patient(models.Model):
@@ -16,6 +17,13 @@ class Patient(models.Model):
         max_length=9,
         validators=[validate_ses],
     )
+
+    responsible = models.ForeignKey(
+        Responsible,
+        on_delete=models.CASCADE,
+        null=True
+    )
+
     PRIORITIES = (
         (5, _('Not urgent')),
         (4, _('Not very urgent')),
