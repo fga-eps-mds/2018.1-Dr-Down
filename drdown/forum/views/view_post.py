@@ -5,19 +5,15 @@ from django.views.generic import CreateView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from django.utils.text import slugify
 from datetime import datetime
 
 
 class PostListView(ListView):
     model = Post
-    slug_field = 'title'
-    slug_url_kwarg = 'title'
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
+        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
         return context
 
     def get_queryset(self):
@@ -33,8 +29,7 @@ class PostCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(PostCreateView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
+        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
         return context
 
     def form_valid(self, form):
@@ -42,14 +37,6 @@ class PostCreateView(CreateView):
         # Get category that post belongs to
         form.instance.category = Category.objects.get(pk=self.kwargs.get('pk'))
         form.instance.created_by = self.request.user
-        form.save()
-
-        # Save slug with post title
-        form.instance.slug = slugify(
-            str(form.instance.id) +
-            "-" +
-            form.instance.title
-        )
         form.save()
 
         return super(PostCreateView, self).form_valid(form)
@@ -74,8 +61,7 @@ class PostUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(PostUpdateView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
+        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
         return context
 
     def get_object(self):
@@ -90,13 +76,6 @@ class PostUpdateView(UpdateView):
         form.instance.updated_at = datetime.now()
         form.save()
 
-        # Change slug to new title
-        form.instance.slug = slugify(
-            str(form.instance.id) +
-            "-" +
-            form.instance.title
-        )
-        form.save()
         return super(PostUpdateView, self).form_valid(form)
 
 

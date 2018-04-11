@@ -18,12 +18,11 @@
   </div>
 
   <div class="mb-4">
-    <a href="{% url 'forum:create_commentary' category_slug category_pk post_pk %}"
-       class="btn btn-primary">{% trans "New commentary" %}</a>
-    <a href="{% url 'forum:update_post' category_slug category_pk post.pk %}"
-                  class="btn btn-secondary">{% trans "Edit" %}</a>
-    <a href="{% url 'forum:delete_post' category_slug category_pk post.pk %}"
-                  class="btn btn-danger">{% trans "Delete" %}</a>
+    <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-primary">{% trans "New commentary" %}</a>
+    {% if user.username == post.created_by.username %}
+      <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+    {% endif %}
   </div>
 
 
@@ -60,9 +59,9 @@
           <h5 class="mt-0">{{commentary.created_by.username}}</h5>
           <p> {{commentary.message}}</p>
           {% if user.username == commentary.created_by.username %}
-            <a href="{% url 'forum:delete_commentary' category_slug category_pk post_pk commentary.pk %}"
+            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
                class="btn btn-danger">{% trans "Delete" %}</a>
-            <a href="{% url 'forum:update_commentary' category_slug category_pk post_pk commentary.pk %}"
+            <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
                class="btn btn-primary">{% trans "Update" %}</a>
           {% endif %}
         </div>

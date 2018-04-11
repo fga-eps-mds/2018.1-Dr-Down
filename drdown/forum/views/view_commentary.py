@@ -5,7 +5,6 @@ from django.views.generic import CreateView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from django.utils.text import slugify
 from datetime import datetime
 
 
@@ -14,9 +13,6 @@ class CommentaryListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryListView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
-        context['post_pk'] = self.kwargs.get('post_pk')
         context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
         return context
 
@@ -33,9 +29,6 @@ class CommentaryCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryCreateView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
-        context['post_pk'] = self.kwargs.get('post_pk')
         context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
         return context
 
@@ -59,9 +52,6 @@ class CommentaryDeleteView (DeleteView):
         )
         return commentary
 
-    def get_success_url(self):
-        return super(CommentaryDeleteView, self).get_success_url()
-
 
 class CommentaryUpdateView(UpdateView):
     model = Commentary
@@ -71,9 +61,6 @@ class CommentaryUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryUpdateView, self).get_context_data(**kwargs)
-        context['category_pk'] = self.kwargs.get('pk')
-        context['category_slug'] = self.kwargs.get('slug')
-        context['post_pk'] = self.kwargs.get('post_pk')
         context['post'] = Post.objects.get(pk=self.kwargs.get('post_pk'))
         return context
 

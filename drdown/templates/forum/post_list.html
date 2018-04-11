@@ -16,7 +16,7 @@
 
 
   <div class="mb-4">
-    <a href="{% url 'forum:create_post' category_slug category_pk %}" class="btn btn-primary">New post</a>
+    <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-primary">{% trans "New post" %}</a>
   </div>
 
   <table class="table">
@@ -31,7 +31,7 @@
     <tbody>
       {% for post in post_list %}
         <tr>
-          <td><a href="{% url 'forum:list_commentary' category_slug category_pk post.pk %}">
+          <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}">
             {{ post.title }} </td>
           <td>{{ post.created_by.username }}</td>
           <td>0</td>
