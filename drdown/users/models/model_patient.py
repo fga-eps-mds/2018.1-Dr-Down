@@ -5,6 +5,7 @@ from drdown.utils.validators import (validate_ses,
                                      validate_names, validate_sus)
 
 from .model_user import User
+from django.utils.translation import ugettext_lazy as _
 
 
 class Patient(models.Model):
@@ -24,6 +25,7 @@ class Patient(models.Model):
         (1, _('Emerging')),
       )
     priority = models.IntegerField(
+        _('Priority'),
         choices=PRIORITIES,
         help_text=_("Please, insert the degree of priority of the patient"),
         )
@@ -33,6 +35,7 @@ class Patient(models.Model):
                 validators=[validate_names],
     )
     father_name = models.CharField(
+                _('Name of father'),
                 help_text=_("Please, insert your father name"),
                 max_length=80,
                 validators=[validate_names],
@@ -45,16 +48,19 @@ class Patient(models.Model):
         (1, _('Indigenous')),
     )
     ethnicity = models.IntegerField(
+        _('Ethnicity'),
         choices=COLOR,
         help_text=_("Please insert the ethnicity of the patient"),
     )
     sus_number = models.CharField(
+        _('SUS number'),
         help_text=_("Please, enter valid SUS in format: XXXXXXXXXXXXXXX"),
         unique=True,
         max_length=15,
         validators=[validate_sus],
     )
     civil_registry_of_birth = models.CharField(
+        _('Civil register of birth'),
         help_text=_("Please, enter the civil registry of birth number"),
         unique=True,
         default='',
@@ -62,6 +68,7 @@ class Patient(models.Model):
         validators=[validate_generic_number],
     )
     declaration_of_live_birth = models.CharField(
+        _('Declaration of live birth'),
         help_text=_("Please, enter the declaration of live birth number"),
         unique=True,
         default='',

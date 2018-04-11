@@ -20,10 +20,10 @@ class User(AbstractUser):
     )
 
     name = models.CharField(
-        _('Name of User'),
+        _('Name'),
         blank=False,
         max_length=255,
-        help_text="Full user name"
+        help_text=_("Full user name")
 
     )
 
@@ -44,13 +44,13 @@ class User(AbstractUser):
         null=True,
         max_length=14,
         validators=[validate_phone],
-        help_text="(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
+        help_text=_("(xx)xxxxx-xxxx or (xx)xxxx-xxxx"),
 
     )
 
     birthday = models.DateField(
         _('Birthday'),
-        help_text="xx/xx/xxxx",
+        help_text=_("xx/xx/xxxx"),
         blank=False,
         null=True
     )
