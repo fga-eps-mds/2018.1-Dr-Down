@@ -1,40 +1,33 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-
+ 
 {% block title %}{{ user.username }}{% endblock %}
-
+ 
 {% block content %}
 <div class="col-md-6 offset-md-3">
   <h1>{{ user.username }}</h1>
   <form class="form-horizontal" method="post" action="{% url 'users:update' %}" enctype="multipart/form-data">
-    {% csrf_token %}
-
-
+    {% csrf_token %} 
+ 
     {{ form.name  |as_crispy_field }}
     {{ form.gender  |as_crispy_field }}
     {{ form.telephone  |as_crispy_field }}
-
-    <label>Birthday:* </label>
-
-    <div class="input-field row">
-
-    &emsp;<input type="date"  name="birthday" class="date" required>
+ 
+    <label>Birthday* </label>
+ 
+    <input type="date"  name="birthday" required=true class="form-control">
     <span class="validity"></span>
-
-   </div>
-
+ 
    <br />
-
-    {{ form.photo  |as_crispy_field }}
-
-
-
+ 
+    {{ form.photo  |as_crispy_field }} 
+ 
     <div class="control-group">
       <div class="controls">
-        <button type="submit" class="btn">Update</button>
+        <button type="submit" class="btn btn-success">Update</button>
       </div>
     </div>
   </form>
 </div>
-
+ 
 {% endblock %}

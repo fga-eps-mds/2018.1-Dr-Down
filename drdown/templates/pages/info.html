@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
 				</p>
 				<p class="lead">
 					{% trans "A person with Down Syndrome is a capable human being who can work in many areas, ranging from the performing arts, or a career in the field of education to political positions." %}
-				</p>p>
+				</p>
 				<p class="lead">
 					{% trans "The lack of information about the syndrome and the people affected by it is the main cause of the segregation to which these people can be subjected. Therefore, it is essential to have comprehension and understatement from society and, above all, family members about the care and duties needed by those around them." %}
 				</p>
@@ -80,47 +80,55 @@ jQuery(document).ready(function($) {
 <section class="bg-primary text-white text-center" id="faq">
   	<div class="container">
 	   <!-- <img class="img-fluid mb-5 d-block mx-auto img-short" src="{% static 'images/img-question.png' %}" alt=""> -->
-    	<h1 class="text-uppercase mb-0 text-size-9">FAQ</h1>
-    	<hr class="star-light">
-    	<h2 class="font-weight-light mb-0"> 
-    		<p class="lead text-white text-center">{% trans "Frequently Asked Questions" %}</p>
+    	<h1 class="text-uppercase text-secondary mb-0 text-size-9">FAQ</h1>
+    	<hr class="star-dark bg-star-blue">
+    	<h2 class="font-weight-light mb-0 text-secondary"> 
+    		<p class="lead text-white text-center text-secondary">{% trans "Frequently Asked Questions" %}</p>
     	</h2>
   	</div>
 </section>
 
 <section class="mb-0 border-blue margin-1" >
-  	<div class="container ">
-    	<h2 class="text-center text-uppercase text-size-2 text-blue-1" id="question-1">{% trans "What can be done to prevent Down's Syndrome?" %}</h2>
+
+  	<div class="container" id="question-1">
+    	<h2 class="text-center text-uppercase text-size-2 text-blue-1" >{% trans "What can be done to prevent Down's Syndrome?" %}</h2>
     	<div class="row">
 	      	<div class="col-lg-8 mx-auto text-center">
 		        <p class="lead"> {% trans "Even though the chance of Down's syndrome increases according to the age range of the child's parents, Down's syndrome is not caused by the parents, it's no one's fault and there's nothing you can do to avoid it. This syndrome affects people of all races, levels of study, social classes and others." %}</p>
 	      	</div>
 		</div>
-		<hr class="star-dark mb-5"> 
-		<h2 class="text-center text-uppercase text-size-2 text-blue-1" id="question-2">{% trans "Is Down Syndrome a Disease? Can I catch it during my life?" %}</h2>
-    	<div class="row">
-	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead">{% trans "Down Syndrome is not a disease, just a condition that affects the life of an individual since birth and requires greater attention and care from the parents." %}</p>
-	      	</div>
-		</div>
-		<hr class="star-dark mb-5"> 
-		<h2 class="text-center text-uppercase text-size-2 text-blue-1" id="question-3">{% trans "How can I identify Down Syndrome?" %}</h2>
-    	<div class="row">
-	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead">{% trans "Down Syndrome can be detected during pregnancy. You should see a doctor for the diagnosis." %}</p>
-	      	</div>
-		</div>
-		<hr class="star-dark mb-5"> 
-		<h2 class="text-center text-uppercase text-size-2 text-blue-1" id="question-4">{% trans "How far does the autonomy of a child with Down syndrome develop?" %}</h2>
-    	<div class="row">
-	      	<div class="col-lg-8 mx-auto text-center">
-		        <p class="lead">{% trans "There is no fixed limit that represents a developmental apex of a child with Down Syndrome. It is common for medical monitoring and the help of family members or caregivers to facilitate a child's development." %}</p>
-	      	</div>
+
+    <div class="container" id="question-2">
+      <hr class="star-dark mb-5" > 
+      <h2 class="text-center text-uppercase text-size-2 text-blue-1" >{% trans "Is Down Syndrome a Disease? Can I catch it during my life?" %}</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <p class="lead">{% trans "Down Syndrome is not a disease, just a condition that affects the life of an individual since birth and requires greater attention and care from the parents." %}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="question-3">
+  		<hr class="star-dark mb-5"> 
+  		<h2 class="text-center text-uppercase text-size-2 text-blue-1" >{% trans "How can I identify Down Syndrome?" %}</h2>
+      	<div class="row">
+  	      	<div class="col-lg-8 mx-auto text-center">
+  		        <p class="lead">{% trans "Down Syndrome can be detected during pregnancy. You should see a doctor for the diagnosis." %}</p>
+  	      	</div>
+  		</div>
+    </div>
+
+    <div class="container" id="question-4">
+  		<hr class="star-dark mb-5" > 
+  		<h2 class="text-center text-uppercase text-size-2 text-blue-1" >{% trans "How far does the autonomy of a child with Down syndrome develop?" %}</h2>
+      	<div class="row">
+  	      	<div class="col-lg-8 mx-auto text-center">
+  		        <p class="lead">{% trans "There is no fixed limit that represents a developmental apex of a child with Down Syndrome. It is common for medical monitoring and the help of family members or caregivers to facilitate a child's development." %}</p>
+  	      	</div>
+      	</div>
     	</div>
-  	</div>
-</section>
-
-
+    </div>
+  </section>
 
 <section class="mb-0 border-blue margin-1" id="further-reading">
     <div class="container ">
@@ -139,5 +147,4 @@ jQuery(document).ready(function($) {
     </div>
 </section>
 
-<br>
 {% endblock %}
