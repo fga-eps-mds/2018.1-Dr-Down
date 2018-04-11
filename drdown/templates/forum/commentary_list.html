@@ -14,7 +14,8 @@
   </div>
 
   <div class="mb-4">
-    <a href="{% url 'forum:create_commentary' category_slug category_pk post_pk %}" class="btn btn-primary">New commentary</a>
+    <a href="{% url 'forum:create_commentary' category_slug category_pk post_pk %}"
+       class="btn btn-primary">New commentary</a>
   </div>
 
 
@@ -50,6 +51,12 @@
         <div class="media-body">
           <h5 class="mt-0">{{commentary.created_by.username}}</h5>
           <p> {{commentary.message}}</p>
+          {% if user.username == commentary.created_by.username %}
+            <a href="{% url 'forum:delete_commentary' category_slug category_pk post_pk commentary.pk %}"
+               class="btn btn-danger">Delete</a>
+            <a href="{% url 'forum:update_commentary' category_slug category_pk post_pk commentary.pk %}"
+               class="btn btn-primary">Update</a>
+          {% endif %}
         </div>
       </div>
     {% endfor %}

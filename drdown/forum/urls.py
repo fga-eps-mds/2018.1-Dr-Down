@@ -46,4 +46,9 @@ urlpatterns = [
         view=view_commentary.CommentaryDeleteView.as_view(),
         name='delete_commentary'
     ),
+    url(
+        regex=r'^categories/(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/update/(?P<commentary_pk>\d+)/$',
+        view=view_commentary.CommentaryUpdateView.as_view(),
+        name='update_commentary'
+    ),
 ]
