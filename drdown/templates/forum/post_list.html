@@ -22,23 +22,26 @@
   <table class="table">
     <thead class="thead-inverse">
       <tr>
-        <th>Post</th>
-        <th>Starter</th>
-        <th>Commentaries</th>
-        <th>Last Update</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>{% trans "Post" %}</th>
+        <th>{% trans "Starter" %}</th>
+        <th>{% trans "Commentaries" %}</th>
+        <th>{% trans "Last Update" %}</th>
+        <th>{% trans "Update" %}</th>
+        <th>{% trans "Delete" %}</th>
       </tr>
     </thead>
     <tbody>
       {% for post in post_list %}
         <tr>
-          <td><a href="{% url 'forum:list_commentary' category_slug category_pk post.pk %}"> {{ post.title }} </td>
+          <td><a href="{% url 'forum:list_commentary' category_slug category_pk post.pk %}">
+            {{ post.title }} </td>
           <td>{{ post.created_by.username }}</td>
           <td>0</td>
           <td>{{ post.updated_at }}</td>
-          <td> <a href="{% url 'forum:update_post' category_slug category_pk post.pk %}" class="btn btn-secondary">Edit</td>
-          <td> <a href="{% url 'forum:delete_post' category_slug category_pk post.pk %}" class="btn btn-danger">Delete</td>
+          <td> <a href="{% url 'forum:update_post' category_slug category_pk post.pk %}"
+                  class="btn btn-secondary">{% trans "Edit" %}</td>
+          <td> <a href="{% url 'forum:delete_post' category_slug category_pk post.pk %}"
+                  class="btn btn-danger">{% trans "Delete" %}</td>
         </tr>
       {% endfor %}
     </tbody>

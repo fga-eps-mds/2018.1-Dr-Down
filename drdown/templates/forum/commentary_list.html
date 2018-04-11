@@ -8,14 +8,15 @@
   <div class="container">
     <ol class="breadcrumb my-4">
       <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">{% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">
+        {% trans "Posts" %}</a></li>
       <li class="breadcrumb-item active">{{ post.title }}</li>
     </ol>
   </div>
 
   <div class="mb-4">
     <a href="{% url 'forum:create_commentary' category_slug category_pk post_pk %}"
-       class="btn btn-primary">New commentary</a>
+       class="btn btn-primary">{% trans "New commentary" %}</a>
   </div>
 
 
@@ -31,7 +32,7 @@
         <p class="lead"> by {{ post.created_by }}</p>
         <hr>
         <!-- Date/Time -->
-        <p>Posted on {{ post.created_at }}</p>
+        <p>{% trans "Posted on" %} {{ post.created_at }}</p>
         <hr>
         <!-- Post Content -->
         <p class="lead"> {{post.message }} </p>
@@ -53,9 +54,9 @@
           <p> {{commentary.message}}</p>
           {% if user.username == commentary.created_by.username %}
             <a href="{% url 'forum:delete_commentary' category_slug category_pk post_pk commentary.pk %}"
-               class="btn btn-danger">Delete</a>
+               class="btn btn-danger">{% trans "Delete" %}</a>
             <a href="{% url 'forum:update_commentary' category_slug category_pk post_pk commentary.pk %}"
-               class="btn btn-primary">Update</a>
+               class="btn btn-primary">{% trans "Update" %}</a>
           {% endif %}
         </div>
       </div>
