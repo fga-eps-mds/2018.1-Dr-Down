@@ -66,7 +66,8 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         elif hasattr(user, 'responsible'):
 
             context['responsible_cpf'] = user.responsible.cpf
-            context['responsible_patient'] = user.responsible.patient
+            patients = list(user.responsible.patient_set.all())
+            context['responsible_patient'] = patients
 
         elif hasattr(user, 'employee'):
 

@@ -76,7 +76,12 @@
       {% if user.responsible %}
         <p><strong> {% trans "Responsible" %} </strong> </p>
         <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
-        <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
+      
+        <p><strong> {% trans "Patient" %} : </strong></p>
+      
+        {% for patient in responsible_patient %}
+          <p>{{ patient }} </p>
+        {% endfor %}
       {% endif %}
 
   </div>
