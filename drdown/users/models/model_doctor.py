@@ -91,6 +91,7 @@ class Doctor(models.Model):
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
 
+
 @receiver(post_delete, sender=Doctor)
 def remove_specialization(sender, instance, *args, **kwargs):
     if instance.user.has_specialization:

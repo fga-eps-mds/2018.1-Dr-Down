@@ -95,6 +95,7 @@ class Patient(models.Model):
         self.clean()
         super().save(*args, **kwargs)
 
+
 @receiver(post_delete, sender=Patient)
 def remove_specialization(sender, instance, *args, **kwargs):
     if instance.user.has_specialization:

@@ -34,6 +34,7 @@ class Responsible(models.Model):
     def __str__(self):
         return self.user.get_username()
 
+
 @receiver(post_delete, sender=Responsible)
 def remove_specialization(sender, instance, *args, **kwargs):
     if instance.user.has_specialization:
