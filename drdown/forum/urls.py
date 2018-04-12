@@ -42,12 +42,14 @@ urlpatterns = [
         name='create_commentary'
     ),
     url(
-        regex=r'^(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/delete/(?P<commentary_pk>\d+)/$',
+        regex=r'^(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/'
+              'delete/(?P<commentary_pk>\d+)/$',
         view=view_commentary.CommentaryDeleteView.as_view(),
         name='delete_commentary'
     ),
     url(
-        regex=r'^(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/update/(?P<commentary_pk>\d+)/$',
+        regex=r'^(?P<slug>[-\w]+)-(?P<pk>\d+)/posts/(?P<post_pk>\d+)/'
+              'update/(?P<commentary_pk>\d+)/$',
         view=view_commentary.CommentaryUpdateView.as_view(),
         name='update_commentary'
     ),
