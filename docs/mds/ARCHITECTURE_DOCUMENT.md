@@ -152,65 +152,37 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 ### 2.3 Banco de dados PostgreSQL
 
-PostgreSQL é um poderoso sistema de banco de dados objeto-relacional de código aberto. Ele é executado em todos os
-principais sistemas operacionais, tem 15 anos de desenvolvimento ativo e uma arquitetura comprovada que lhe garantiu uma
-forte reputação de confiabilidade, integridade de dados e correção.
+PostgreSQL é um poderoso sistema de banco de dados objeto-relacional de código aberto. Ele é executado em todos os principais sistemas operacionais, tem 15 anos de desenvolvimento ativo e uma arquitetura comprovada que lhe garantiu uma forte reputação de confiabilidade, integridade de dados e correção.
 
-Para o projeto será utilizado o PostgreSQL como o banco de dados de desenvolvimento e produção da aplicação Dr. Down,
-pela simplicidade e segurança do mesmo.
+Para o projeto será utilizado o PostgreSQL como o banco de dados de desenvolvimento e produção da aplicação Dr. Down, pela simplicidade e segurança do mesmo.
 
 ### 2.4 Redis
 
-Redis é um banco de dados não relacional, também conhecido como NOSQL que armazena dados no formato "chave-valor" em
-memória e é extremamente rápido.
+Redis é um banco de dados não relacional, também conhecido como NOSQL que armazena dados no formato "chave-valor" em memória e é extremamente rápido.
 
-O Redis é um servidor TCP, e seu funcionamento baseado em um modelo cliente-servidor, dessa forma, quando uma requisição
-é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente, e este fica aguardando uma resposta do
-servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de
-volta ao cliente.
+O Redis é um servidor TCP, e seu funcionamento baseado em um modelo cliente-servidor, dessa forma, quando uma requisição é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente, e este fica aguardando uma resposta do servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de volta ao cliente.
 
-O Redis é uma boa opção para cenários que você precisa de alta performance para gravação e/ou leitura de dados baseado
-em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda
-permite que uma chave expire após um determinado período, dessa forma pode ser utilizado para gerenciar sessões de
-usuário.
+O Redis é uma boa opção para cenários que você precisa de alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período, dessa forma pode ser utilizado para gerenciar sessões de usuário.
 
-O redis é usado na aplicação para fazer o cacheamento (_cache_) django, com isso alguma _query_ que a aplicação faria
-diretamente ao banco o redis se comunicada e armazena o cache já com o resultado desta forma aumentando o desempenho e
-mantendo a aplicação _mint_ (com performance sempre igual desde o primeiro), mesmo com grandes quantidades de dados. O
-redis comunica o container do django com o postgre e serve resultados de volta para o django
+O redis é usado na aplicação para fazer o cacheamento (_cache_) django, com isso alguma _query_ que a aplicação faria diretamente ao banco o redis se comunicada e armazena o cache já com o resultado desta forma aumentando o desempenho e mantendo a aplicação _mint_ (com performance sempre igual desde o primeiro), mesmo com grandes quantidades de dados. O redis comunica o container do django com o postgre e serve resultados de volta para o django
 
 ### 2.5 Celery
 
-O celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por
-meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com
-a maioria dos frameworks python mais utilizados como django, flash e etc.
+O celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como django, flash e etc.
 
-No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento, ele lê a
-requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum
-processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o
-cliente.
+No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento, ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
-Dependendo da tarefa que você executa no servidor a resposta pode demorar muito e isso leva à problemas de **TimeOut**,
-a experiência do usuário fica comprometida. Existem diversas tarefas no projeto que podem demorar para ser executadas,
-como relatórios pesados, enviar diferentes emails para uma lista de usuários, e por ai vai...
+Dependendo da tarefa que você executa no servidor a resposta pode demorar muito e isso leva à problemas de **TimeOut**, a experiência do usuário fica comprometida. Existem diversas tarefas no projeto que podem demorar para ser executadas, como relatórios pesados, enviar diferentes emails para uma lista de usuários, e por ai vai...
 
-O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista de tarefas para a fila do **Message
-Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery,
-geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis. O Message Broker distribui essas tarefas ente os
-**workers**, que vão executar as tarefas que você quer que sejam assíncronas, e o resultado dessas tarefas pode ser
-escrito em um **Result Score** (Memóri cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente
-novamente.
+O celery funciona da seguinte maneira: O cliente (django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery, geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis. O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que você quer que sejam assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memóri cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
-Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão de utiliza-lo ou não no projeto ainda está
-sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas
-assíncronas, caso não precise esse serviço será descartado.
+Ele é configurado por padrão pela ferramenta cookiecutter, porém a decisão de utiliza-lo ou não no projeto ainda está sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas, caso não precise esse serviço será descartado.
 
 ### 2.6 Comunicação
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
-2 - Os arquivos estáticos armazenados no sistema de arquivos, como CSS, JavaScript, Imagens e documentos PDF, são
-processados diretamente pelo **web server (Nginx)**.
+2 - Os arquivos estáticos armazenados no sistema de arquivos, como CSS, JavaScript, Imagens e documentos PDF, são processados diretamente pelo **web server (Nginx)**.
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do django, no caso o **gunicorn** que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework django, ele irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework django que irá ter um arquivo chamado urls.py que diz ao nginx qual código deverá ser executado de acordo com o path e código HTTP recebido, através de proxy reverso será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o nginx e o django através do gunicorn.
 
