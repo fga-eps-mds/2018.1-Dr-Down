@@ -263,7 +263,7 @@ class TestField(TestCase):
             departament=Employee.NEUROLOGY
         )
 
-		# try to define a new relation to the same user
+        # try to define a new relation to the same user
         with(self.assertRaises(ValidationError)):
             patient = Patient.objects.create(
                 ses="1234567",
@@ -298,7 +298,7 @@ class TestField(TestCase):
                 departament=Employee.NEUROLOGY
             )
 
-    def test_specialization_on_delete_reset_flag(self):
+    def test_employee_specialization_on_delete_reset_flag(self):
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -315,3 +315,96 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
+    def test_doctor_specialization_on_delete_reset_flag(self):
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        # define a initial relation to user
+        doctor = Doctor.objects.create(
+            cpf="057.641.271-65",
+            user=self.user1,
+            speciality=Doctor.NEUROLOGY
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+
+        doctor.delete()
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+    def test_responsible_specialization_on_delete_reset_flag(self):
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        # define a initial relation to user
+        responsible = Responsible.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+
+        responsible.delete()
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+    def test_patient_specialization_on_delete_reset_flag(self):
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        # define a initial relation to user
+        patient = Patient.objects.create(
+            ses="1234567",
+            user=self.user1,
+            priority=1,
+            mother_name="Mãe",
+            father_name="Pai",
+            ethnicity=3,
+            sus_number="12345678911",
+            civil_registry_of_birth="12345678911",
+            declaration_of_live_birth="12345678911"
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+
+        patient.delete()
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+    def test_removing_employee_specialization_remove_staff(self):
+
+        self.assertEqual(self.user1.has_specialization, False)
+        self.assertEqual(self.user1.is_staff, False)
+
+        employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+            departament=Employee.NEUROLOGY
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(self.user1.is_staff, True)
+
+        employee.delete()
+
+        self.assertEqual(self.user1.has_specialization, False)
+        self.assertEqual(self.user1.is_staff, False)
+
+    def test_removing_doctor_specialization_remove_staff(self):
+
+        self.assertEqual(self.user1.has_specialization, False)
+        self.assertEqual(self.user1.is_staff, False)
+
+        doctor = Doctor.objects.create(
+                cpf="057.641.271-65",
+                user=self.user1,
+                speciality=Doctor.NEUROLOGY
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(self.user1.is_staff, True)
+
+        doctor.delete()
+
+        self.assertEqual(self.user1.has_specialization, False)
+        self.assertEqual(self.user1.is_staff, False)
