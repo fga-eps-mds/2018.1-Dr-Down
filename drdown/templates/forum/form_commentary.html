@@ -16,7 +16,15 @@
     <h2>{% trans "New Commentary" %}</h2><hr>
     <form method="post">
       {% csrf_token %}
-       {{ form.as_p }}
+      {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
+        </div>
+      {% endfor %}
       <button type="submit" class="btn btn-success">{% trans "Post" %}</button>
     </form>
   </div>
