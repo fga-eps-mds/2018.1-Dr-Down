@@ -48,6 +48,18 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes, o conceito de _Django Application_ é uma das principais sacadas do Django, e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criado, mantido, executado e distribuido de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizavel e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utiliza-lo. Com isso será adotado aplicações que siga todas essas caractísticas, e esteja empacotado no [pypi](https://pypi.python.org/pypi). Cada aplicação do django utiliza da arquitetura MVT internamente.
 
+A arquitetura baseada em componentes é um ramo de Engenharia de Software, com ênfase na decomposição dos sistemas em componentes independentes, substituíveis e modulares, elas ajudam a gerenciar a complexidade e encorajam a reutilização.
+
+Alguns benefícios desse modelo de arquitetura:
+
+* **Fácil deploy**: Compatilidade de novas versões quando disponíveis. Você pode substituir a versão existente sem impacto em outros componentes do sistema como um todo.
+
+* **Redução de custos**: O uso do componente de terceiros permite a redução do custo do desenvolvimento e manutenção.
+
+* **Fácil desenvolvimento**: Implementar componentes bem como a funcionalidade definida pela interface, permite desenvolvimento sem impacto em outros partes do sistema.
+
+* **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção onde agrega na redução de custo da aplicação.
+
 O projeto terá algumas aplicações externas que serão inseridos e comunicados com as aplicações do projeto, o framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes.
 
 Abaixo será listado como a arquitetura do projeto será comunicada com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL entre outros e terá o tópico em que será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
@@ -86,10 +98,12 @@ Critérios de aceitação de um componente:
 
 1. **Alta coesão**: O componente deve realizar uma, e apenas uma tarefa especifica e deve ser pequeno, ou seja, não matar um formiga com uma bazuca.
 2. **Baixo acoplamento**: O componente não deve depender de nenhuma classe ou funcionalidade do projeto na qual está sendo inserido.
-3. **Independente**: O componente deve ser criado, mantido, executado e distribuido de forma independente.
-4. **Reutilizavel**: O componente deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto.
-5. **Externo ao projeto**: O componente deve está disponibilizado no **pypi**.
-6. **Qualidade**: O componente deve está testado e ter build funcionando, deve ser completo e em uma versão estável.
+3. **Independente**: O componente deve ser criado, mantido, executado e distribuido de forma independente, ou seja, deve ter o mínimo de dependência com outros componentes.
+4. **Reutilizavel**: O componente deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto e fácilmente substituido se for preciso.
+5. **Extensibilidade**: Um componente pode ser extendido a partir de um componente para fornecer um novo comportamento.
+6. **Encapsulamento**: Componentes expõe uma interface dele para os invocadores utilizar suas funcionalidades e não revelar detalhes do seu processo interno ou alguma variável interna e estado.
+7. **Externo ao projeto**: O componente deve está disponibilizado no **pypi**.
+8. **Qualidade**: O componente deve está testado e ter build funcionando, deve ser completo e em uma versão estável.
 
 A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo.
 
@@ -394,6 +408,8 @@ Cardinalidade: 1 X 1
 ## Referências
 
 ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm>. Acesso em: 24 Mar. 2018.
+
+ARQUITETURA BASEADA EM COMPONENTES. Disponível em: <https://marcobaccaro.wordpress.com/2010/10/05/arquitetura-baseada-em-componentes/>. Acessado em: 10 Abril. 2018.
 
 CLASS-BASED VIEWS. DJANGO PROJECT. Disponível em: <https://docs.djangoproject.com/en/2.0/topics/class-based-views/>. Acesso em: 28 Mar. 2018.
 
