@@ -99,6 +99,13 @@ class User(AbstractUser):
 
         return count
 
+    def remove_staff(user):
+
+        # we want to remove staff from a user if he is no longer has a 
+        # specialization that needs it
+        user.is_staff = False
+        user.save()
+
     def clean(self, *args, **kwargs):
         data = super(User, self).clean()
 

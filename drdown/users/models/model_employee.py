@@ -111,10 +111,7 @@ class Employee(models.Model):
 
     def delete(self, *args, **kwargs):
 
-        # we want to remove staff from a user if he is no longer a employee
-        self.user.is_staff = False
-        self.user.save()
-
+        User.remove_staff(self.user)
         super().delete(*args, **kwargs)
 
     class Meta:
