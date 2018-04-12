@@ -87,6 +87,14 @@ class Doctor(models.Model):
     def __str__(self):
         return self.user.get_username() + " - " + self.get_speciality_display()
 
+    def delete(self, *args, **kwargs):
+
+        # we want to remove staff from a user if he is no longer a doctor
+        self.user.is_staff = False
+        self.user.save()
+
+        super().delete(*args, **kwargs)
+
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')

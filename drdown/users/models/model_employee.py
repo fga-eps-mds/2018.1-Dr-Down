@@ -94,6 +94,14 @@ class Employee(models.Model):
 
         super().save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+
+        # we want to remove staff from a user if he is no longer a employee
+        self.user.is_staff = False
+        self.user.save()
+
+        super().delete(*args, **kwargs)
+
     class Meta:
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
