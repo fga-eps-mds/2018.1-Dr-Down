@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
+from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 from drdown.utils.validators import validate_phone
 import datetime
@@ -67,6 +68,11 @@ class User(AbstractUser):
        null=True
     )
 
+    has_specialization = models.BooleanField(
+        default=False,
+        editable=False
+    )
+
     def __str__(self):
         return self.username
 
@@ -75,3 +81,38 @@ class User(AbstractUser):
 
     def get_short_name(self):
         return(self.first_name)
+
+    def count_user_specialization(self):
+
+        count = 0
+
+        atributes_to_check = [
+            'patient',
+            'employee',
+            'responsible',
+            'doctor'
+        ]
+
+        for attr in atributes_to_check:
+            if hasattr(self, attr):
+                count += 1
+
+        return count
+
+    def clean(self, *args, **kwargs):
+        data = super(User, self).clean()
+
+        if self.count_user_specialization() > 1:
+            error = ValidationError(
+               {'user': _("This user is already specialized!")}
+            )
+
+            raise error
+        else:
+            self.has_specialization = (self.count_user_specialization() is 1)
+
+        return data
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
