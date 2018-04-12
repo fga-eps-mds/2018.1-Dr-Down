@@ -3,11 +3,15 @@ from django.test.client import Client
 from ..models.model_category import Category
 from ..models.model_post import Post
 from django.urls import reverse, resolve
+from datetime import datetime
 
 
 class TestViewPost(TestCase):
 
     def setUp(self):
+        """
+        This method will run before any test case.
+        """
         self.client = Client()
         self.user = self.make_user()
         self.category = Category.objects.create(
@@ -21,42 +25,109 @@ class TestViewPost(TestCase):
             created_by=self.user,
             category=self.category,
         )
-        self.url = "{% url 'forum:list_posts' self.category.slug self.category.pk %}"
         self.post.save()
 
     def test_post_list_view(self):
         """
         Makes sure that the post list view is loaded correctly
         """
-        response = self.client.get(reverse('forum:list_posts', args=(self.category.slug, self.category.pk)))
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:list_posts',
+                args=(self.category.slug, self.category.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_post_create_view(self):
         """
         Makes sure that the post create view is loaded correctly
         """
-        response = self.client.get(reverse('forum:create_post', args=(self.category.slug, self.category.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:create_post',
+                args=(self.category.slug, self.category.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_post_update_view(self):
         """
         Makes sure that the post update view is loaded correctly
         """
-        response = self.client.get(reverse('forum:update_post', args=(self.category.slug, self.category.pk, self.post.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:update_post',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_post_delete_view(self):
         """
         Makes sure that the post update view is loaded correctly
         """
-        response = self.client.get(reverse('forum:delete_post', args=(self.category.slug, self.category.pk, self.post.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:delete_post',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            )
+        )
         self.assertContains(response, text=self.post.title)
 
-    def test_form(self):
+    def test_form_invalid(self):
+        """
+        Test if form is valid with blank fields
+        """
         response = self.client.post(
-            reverse('forum:create_post', args=(self.category.slug, self.category.pk)),
-            data={'form': {'title': "",'message': "Making a post test case", 'user':'self.user' }},
+            path=reverse(
+                viewname='forum:create_post',
+                args=(self.category.slug, self.category.pk)
+            ),
+            data={'form': {'title': "",'message': "Making a post test case", 'user':'self.user'}},
         )
         self.assertFormError(response, 'form', 'title', 'This field is required.')
         self.assertEquals(response.status_code, 200)
 
+    def test_post_form_valid_create_view(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+            'title': 'Test',
+            'message': 'hello test',
+            'category': 'self.category',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:create_post',
+                args=(self.category.slug, self.category.pk)
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+    def test_post_form_valid_update_view(self):
+        """
+        Test if update form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+            'title': 'Test',
+            'message': 'hello test',
+            'category': 'self.category',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:update_post',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)

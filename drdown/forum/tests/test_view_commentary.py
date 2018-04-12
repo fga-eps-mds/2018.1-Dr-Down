@@ -10,9 +10,8 @@ class TestViewPost(TestCase):
 
     def setUp(self):
         """
-               This method will run before any test case.
+        This method will run before any test case.
         """
-
         self.client = Client()
         self.user = self.make_user()
         self.category = Category.objects.create(
@@ -36,7 +35,6 @@ class TestViewPost(TestCase):
             slug='test',
         )
 
-        self.url = "{% url 'forum:list_commentary' self.category.slug self.category.pk self.post.pk%}"
         self.commentary.save()
 
     def test_commentary_list_view(self):
@@ -44,26 +42,101 @@ class TestViewPost(TestCase):
         Makes sure that the commentary list view is loaded correctly
         """
         response = self.client.get(
-            reverse('forum:list_commentary', args=(self.category.slug, self.category.pk, self.post.pk)))
+            path=reverse(
+                viewname='forum:list_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_create_view(self):
         """
         Makes sure that the commentary create view is loaded correctly
         """
-        response = self.client.get(reverse('forum:create_commentary', args=(self.category.slug, self.category.pk, self.post.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:create_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_update_view(self):
         """
         Makes sure that the post commentary view is loaded correctly
         """
-        response = self.client.get(reverse('forum:update_commentary', args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:update_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_delete_view(self):
         """
         Makes sure that the commentary update view is loaded correctly
         """
-        response = self.client.get(reverse('forum:delete_commentary', args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)))
+        response = self.client.get(
+            path=reverse(
+                viewname='forum:delete_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_form_invalid(self):
+        """
+        Test if form is valid with blank fields
+        """
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:create_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            data={'form': {'message': "", 'user': 'self.user'}},
+        )
+        self.assertFormError(response, 'form', 'message', 'This field is required.')
+        self.assertEquals(response.status_code, 200)
+
+    def test_commentary_form_valid_create_view(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+            'message': 'hello test',
+            'post': 'self.post',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:create_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            data=data,
+            follow=True
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_commentary_form_valid_update_view(self):
+        """
+        Test if update form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+            'message': 'hello test',
+            'post': 'self.post',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:update_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)
+            ),
+            data=data,
+            follow=True
+        )
         self.assertEquals(response.status_code, 200)
