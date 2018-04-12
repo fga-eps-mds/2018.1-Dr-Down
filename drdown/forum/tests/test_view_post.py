@@ -153,11 +153,10 @@ class TestViewPost(TestCase):
                 data=data,
                 follow=True
             )
-            # self.assertEqual(response.status_code, 302)
             self.assertRedirects(
                 response,
                 reverse(
-                    'forum:list_posts',
+                    viewname='forum:list_posts',
                     args=(self.category.slug, self.category.pk)
                 ),
                 status_code=302,

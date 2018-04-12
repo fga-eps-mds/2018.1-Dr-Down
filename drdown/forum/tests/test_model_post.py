@@ -55,8 +55,8 @@ class ModelTestCase(TestCase):
 
     def setUp(self):
         """
-            This method will run before any test case.
-         """
+        This method will run before any test case.
+        """
 
         self.user = self.make_user()
         self.category = Category.objects.create(
@@ -76,97 +76,97 @@ class ModelTestCase(TestCase):
 
     def test_save_title_ok(self):
         """
-            Test to verify if title is the correct passed
+        Test to verify if title is the correct passed
         """
 
         self.assertEquals(self.post.title, 'abc')
 
     def test_save_message_ok(self):
         """
-            Test to verify if message is the correct passed
+        Test to verify if message is the correct passed
         """
 
         self.assertEquals(self.post.message, 'cba')
 
     def test_save_category_ok(self):
         """
-            Test to verify if category is the correct passed
+        Test to verify if category is the correct passed
         """
 
         self.assertEquals(self.post.category, self.category)
 
     def test_save_updated_ok(self):
         """
-            Test to verify if updated is the correct passed
+        Test to verify if updated is the correct passed
         """
 
         self.assertEquals(self.post.updated_at, '1998-06-05')
 
     def test_save_created_by_ok(self):
         """
-             Test to verify if created_by is the correct passed
+        Test to verify if created_by is the correct passed
         """
 
         self.assertEquals(self.post.created_by, self.user)
 
     def test_save_updated_by_ok(self):
         """
-            Test to verify if updated_by is the correct passed
+        Test to verify if updated_by is the correct passed
         """
 
         self.assertEquals(self.post.updated_by, self.user)
 
     def test_save_slug_ok(self):
         """
-            Test to verify if slug is the correct passed
+        Test to verify if slug is the correct passed
         """
 
         self.assertEquals(self.post.slug, 'test')
 
     def test_save_title_error(self):
         """
-            Test to verify if title really fail
+        Test to verify if title really fail
         """
 
         self.assertNotEquals(self.post.title, '')
 
     def test_save_message_error(self):
         """
-             Test to verify if message really fail
+        Test to verify if message really fail
         """
 
         self.assertNotEquals(self.post.message, '')
 
     def test_save_category_error(self):
         """
-            Test to verify if category really fail
+        Test to verify if category really fail
         """
 
         self.assertNotEquals(self.post.category, '')
 
     def test_save_updated_error(self):
         """
-            Test to verify if updated really fail
+        Test to verify if updated really fail
         """
 
         self.assertNotEquals(self.post.updated_at, '1997-06-05')
 
     def test_save_created_by_error(self):
         """
-            Test to verify if created_by really fail
+        Test to verify if created_by really fail
         """
         self.assertNotEquals(self.post.created_by, '')
 
     def test_save_updated_by_error(self):
         """
-             Test to verify if updated_by really fail
+        Test to verify if updated_by really fail
         """
 
         self.assertNotEquals(self.post.updated_by, '')
 
     def test_save_slug_error(self):
         """
-            Test to verify if slug really fail
+        Test to verify if slug really fail
         """
 
         self.assertNotEquals(self.post.slug, '')

@@ -162,11 +162,11 @@ class TestViewPost(TestCase):
             data=data,
             follow=True
         )
-        # self.assertEqual(response.status_code, 302)
+
         self.assertRedirects(
             response,
             reverse(
-                'forum:list_commentary',
+                viewname='forum:list_commentary',
                 args=(self.category.slug, self.category.pk, self.post.pk)
             ),
             status_code=302,
@@ -194,11 +194,10 @@ class TestViewPost(TestCase):
             data=data,
             follow=True
         )
-        # self.assertEqual(response.status_code, 302)
         self.assertRedirects(
             response,
             reverse(
-                'forum:list_commentary',
+                viewname='forum:list_commentary',
                 args=(self.category.slug, self.category.pk, self.post.pk)
             ),
             status_code=302,
@@ -226,11 +225,10 @@ class TestViewPost(TestCase):
                 data=data,
                 follow=True
             )
-            # self.assertEqual(response.status_code, 302)
             self.assertRedirects(
                 response,
                 reverse(
-                    'forum:list_commentary',
+                    viewname='forum:list_commentary',
                     args=(self.category.slug, self.category.pk, self.post.pk)
                 ),
                 status_code=302,

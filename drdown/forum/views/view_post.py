@@ -29,10 +29,8 @@ class PostCreateView(CreateView):
     fields = ['title', 'message']
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
+        # Create url to redirect after create post.
         return reverse_lazy('forum:list_posts',
                             kwargs={'pk': self.kwargs.get('pk'),
                                     'slug': self.kwargs.get('slug')})
@@ -57,10 +55,8 @@ class PostDeleteView (DeleteView):
     model = Post
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
+        # Create url to redirect after delete post.
         return reverse_lazy('forum:list_posts',
                             kwargs={'pk': self.kwargs.get('pk'),
                                     'slug': self.kwargs.get('slug')})
@@ -78,10 +74,8 @@ class PostUpdateView(UpdateView):
     fields = ['message']
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
+        # Create url to redirect after update post.
         return reverse_lazy('forum:list_commentary',
                             kwargs={'pk': self.kwargs.get('pk'),
                                     'post_pk': self.kwargs.get('post_pk'),

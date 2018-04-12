@@ -28,14 +28,14 @@ class CommentaryCreateView(CreateView):
     fields = ['message']
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
-        return reverse_lazy('forum:list_commentary',
-                            kwargs={'pk': self.kwargs.get('pk'),
-                                    'post_pk': self.kwargs.get('post_pk'),
-                                    'slug': self.kwargs.get('slug')})
+        # Create url to redirect after create commentary.
+        success_url = reverse_lazy('forum:list_commentary',
+                                   kwargs={'pk': self.kwargs.get('pk'),
+                                           'post_pk': self.kwargs.get('post_pk'),
+                                           'slug': self.kwargs.get('slug')})
+
+        return success_url
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryCreateView, self).get_context_data(**kwargs)
@@ -43,6 +43,7 @@ class CommentaryCreateView(CreateView):
         return context
 
     def form_valid(self, form):
+
         # Get post that commentary belongs to
         form.instance.post = Post.objects.get(pk=self.kwargs.get('post_pk'))
         form.instance.created_by = self.request.user
@@ -62,14 +63,14 @@ class CommentaryDeleteView (DeleteView):
         return commentary
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
-        return reverse_lazy('forum:list_commentary',
-                            kwargs={'pk': self.kwargs.get('pk'),
-                                    'post_pk': self.kwargs.get('post_pk'),
-                                    'slug': self.kwargs.get('slug')})
+        # Create url to redirect after delete commentary
+        success_url = reverse_lazy('forum:list_commentary',
+                                   kwargs={'pk': self.kwargs.get('pk'),
+                                           'post_pk': self.kwargs.get('post_pk'),
+                                           'slug': self.kwargs.get('slug')})
+
+        return success_url
 
 
 class CommentaryUpdateView(UpdateView):
@@ -79,15 +80,14 @@ class CommentaryUpdateView(UpdateView):
     success_url = reverse_lazy('forum:list_categories')
 
     def get_success_url(self, **kwargs):
-        """
-        Create a success url to redirect.
-        """
 
-        return reverse_lazy('forum:list_commentary',
-                            kwargs=
-                            {'pk': self.kwargs.get('pk'),
-                             'post_pk': self.kwargs.get('post_pk'),
-                             'slug': self.kwargs.get('slug')})
+        # Create url to redirect after update commentary .
+        success_url = reverse_lazy('forum:list_commentary',
+                                   kwargs={'pk': self.kwargs.get('pk'),
+                                           'post_pk': self.kwargs.get('post_pk'),
+                                           'slug': self.kwargs.get('slug')})
+
+        return success_url
 
     def get_context_data(self, **kwargs):
         context = super(CommentaryUpdateView, self).get_context_data(**kwargs)
@@ -107,4 +107,3 @@ class CommentaryUpdateView(UpdateView):
         form.save()
 
         return super(CommentaryUpdateView, self).form_valid(form)
-
