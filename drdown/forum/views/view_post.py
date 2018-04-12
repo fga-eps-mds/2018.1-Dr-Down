@@ -27,7 +27,15 @@ class PostCreateView(CreateView):
     model = Post
     template_name = 'forum/form_post.html'
     fields = ['title', 'message']
-    success_url = reverse_lazy('forum:list_categories')
+
+    def get_success_url(self, **kwargs):
+        """
+        Create a success url to redirect.
+        """
+
+        return reverse_lazy('forum:list_posts',
+                            kwargs={'pk': self.kwargs.get('pk'),
+                                    'slug': self.kwargs.get('slug')})
 
     def get_context_data(self, **kwargs):
         context = super(PostCreateView, self).get_context_data(**kwargs)
@@ -47,7 +55,15 @@ class PostCreateView(CreateView):
 
 class PostDeleteView (DeleteView):
     model = Post
-    success_url = reverse_lazy('forum:list_categories')
+
+    def get_success_url(self, **kwargs):
+        """
+        Create a success url to redirect.
+        """
+
+        return reverse_lazy('forum:list_posts',
+                            kwargs={'pk': self.kwargs.get('pk'),
+                                    'slug': self.kwargs.get('slug')})
 
     def get_object(self):
         post = Post.objects.get(
@@ -60,7 +76,16 @@ class PostUpdateView(UpdateView):
     model = Post
     template_name = 'forum/form_post.html'
     fields = ['message']
-    success_url = reverse_lazy('forum:list_categories')
+
+    def get_success_url(self, **kwargs):
+        """
+        Create a success url to redirect.
+        """
+
+        return reverse_lazy('forum:list_commentary',
+                            kwargs={'pk': self.kwargs.get('pk'),
+                                    'post_pk': self.kwargs.get('post_pk'),
+                                    'slug': self.kwargs.get('slug')})
 
     def get_context_data(self, **kwargs):
         context = super(PostUpdateView, self).get_context_data(**kwargs)

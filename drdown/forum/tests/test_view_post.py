@@ -131,3 +131,35 @@ class TestViewPost(TestCase):
             data=data,
             follow=True)
         self.assertEquals(response.status_code, 200)
+
+    def test_redirect_delete_ok(self):
+            """
+            Test the home page url status code.
+            """
+
+            self.client.force_login(user=self.user)
+            data = {
+                'message': 'hello test',
+                'post': 'self.post',
+                'created_at': 'datetime.now',
+                'slug': 'test',
+            }
+
+            response = self.client.post(
+                path=reverse(
+                    viewname='forum:delete_post',
+                    args=(self.category.slug, self.category.pk, self.post.pk)
+                ),
+                data=data,
+                follow=True
+            )
+            # self.assertEqual(response.status_code, 302)
+            self.assertRedirects(
+                response,
+                reverse(
+                    'forum:list_posts',
+                    args=(self.category.slug, self.category.pk)
+                ),
+                status_code=302,
+                target_status_code=200
+            )

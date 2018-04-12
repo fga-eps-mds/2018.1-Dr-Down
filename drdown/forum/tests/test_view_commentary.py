@@ -140,3 +140,99 @@ class TestViewPost(TestCase):
             follow=True
         )
         self.assertEquals(response.status_code, 200)
+
+    def test_redirect_create_ok(self):
+        """
+        Test the home page url status code.
+        """
+
+        self.client.force_login(user=self.user)
+        data = {
+            'message': 'hello test',
+            'post': 'self.post',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:create_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            data=data,
+            follow=True
+        )
+        # self.assertEqual(response.status_code, 302)
+        self.assertRedirects(
+            response,
+            reverse(
+                'forum:list_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            status_code=302,
+            target_status_code=200
+        )
+
+    def test_redirect_update_ok(self):
+        """
+        Test the home page url status code.
+        """
+
+        self.client.force_login(user=self.user)
+        data = {
+            'message': 'hello test',
+            'post': 'self.post',
+            'created_at': 'datetime.now',
+            'slug': 'test',
+        }
+
+        response = self.client.post(
+            path=reverse(
+                viewname='forum:update_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)
+            ),
+            data=data,
+            follow=True
+        )
+        # self.assertEqual(response.status_code, 302)
+        self.assertRedirects(
+            response,
+            reverse(
+                'forum:list_commentary',
+                args=(self.category.slug, self.category.pk, self.post.pk)
+            ),
+            status_code=302,
+            target_status_code=200
+        )
+
+    def test_redirect_delete_ok(self):
+            """
+            Test the home page url status code.
+            """
+
+            self.client.force_login(user=self.user)
+            data = {
+                'message': 'hello test',
+                'post': 'self.post',
+                'created_at': 'datetime.now',
+                'slug': 'test',
+            }
+
+            response = self.client.post(
+                path=reverse(
+                    viewname='forum:delete_commentary',
+                    args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)
+                ),
+                data=data,
+                follow=True
+            )
+            # self.assertEqual(response.status_code, 302)
+            self.assertRedirects(
+                response,
+                reverse(
+                    'forum:list_commentary',
+                    args=(self.category.slug, self.category.pk, self.post.pk)
+                ),
+                status_code=302,
+                target_status_code=200
+            )
