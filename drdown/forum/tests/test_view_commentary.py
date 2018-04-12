@@ -9,6 +9,10 @@ from django.urls import reverse, resolve
 class TestViewPost(TestCase):
 
     def setUp(self):
+        """
+               This method will run before any test case.
+        """
+
         self.client = Client()
         self.user = self.make_user()
         self.category = Category.objects.create(
@@ -37,7 +41,7 @@ class TestViewPost(TestCase):
 
     def test_commentary_list_view(self):
         """
-        Makes sure that the post list view is loaded correctly
+        Makes sure that the commentary list view is loaded correctly
         """
         response = self.client.get(
             reverse('forum:list_commentary', args=(self.category.slug, self.category.pk, self.post.pk)))
@@ -45,21 +49,21 @@ class TestViewPost(TestCase):
 
     def test_commentary_create_view(self):
         """
-        Makes sure that the post create view is loaded correctly
+        Makes sure that the commentary create view is loaded correctly
         """
         response = self.client.get(reverse('forum:create_commentary', args=(self.category.slug, self.category.pk, self.post.pk)))
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_update_view(self):
         """
-        Makes sure that the post update view is loaded correctly
+        Makes sure that the post commentary view is loaded correctly
         """
         response = self.client.get(reverse('forum:update_commentary', args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)))
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_delete_view(self):
         """
-        Makes sure that the post update view is loaded correctly
+        Makes sure that the commentary update view is loaded correctly
         """
         response = self.client.get(reverse('forum:delete_commentary', args=(self.category.slug, self.category.pk, self.post.pk, self.commentary.pk)))
         self.assertEquals(response.status_code, 200)
