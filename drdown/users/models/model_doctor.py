@@ -72,6 +72,8 @@ class Doctor(models.Model):
 
         # we wan't to add the required permissions to the related user, before
         # saving
+        self.user.is_staff = True
+
         try:
             doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
         except Group.DoesNotExist:
@@ -81,6 +83,8 @@ class Doctor(models.Model):
         self.user.groups.add(doctor_group)
 
         self.user.save()
+
+        self.clean()
 
         super().save(*args, **kwargs)
 

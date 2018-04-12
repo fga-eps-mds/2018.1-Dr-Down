@@ -92,6 +92,8 @@ class Employee(models.Model):
 
         self.user.save()
 
+        self.clean()
+
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
