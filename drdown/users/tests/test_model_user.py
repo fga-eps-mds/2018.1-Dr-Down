@@ -1,5 +1,8 @@
 from test_plus.test import TestCase
 from drdown.users.models import User
+from django.core.exceptions import ValidationError
+
+from ..models import Employee, Doctor, Patient, Responsible
 
 
 class TestUser(TestCase):
@@ -251,15 +254,64 @@ class TestField(TestCase):
         self.assertNotEquals(self.user1.photo, '')
         self.assertNotEquals(self.user2.photo, '')
 
+    def test_multiple_specialization(self):
 
+        # define a initial relation to user
+        employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+            departament=Employee.NEUROLOGY
+        )
 
+		# try to define a new relation to the same user
+        with(self.assertRaises(ValidationError)):
+            patient = Patient.objects.create(
+                ses="1234567",
+                user=self.user1,
+                priority=1,
+                mother_name="Mãe",
+                father_name="Pai",
+                ethnicity=3,
+                sus_number="12345678911",
+                civil_registry_of_birth="12345678911",
+                declaration_of_live_birth="12345678911"
+            )
 
+        with(self.assertRaises(ValidationError)):
+            responsible = Responsible.objects.create(
+                cpf="974.220.200-16",
+                user=self.user1
+            )
 
+        with(self.assertRaises(ValidationError)):
+            doctor = Doctor.objects.create(
+                cpf="057.641.271-65",
+                user=self.user1,
+                speciality=Doctor.NEUROLOGY
+            )
 
+        # test employee again
+        with(self.assertRaises(ValidationError)):
+            employee = Employee.objects.create(
+                cpf="057.641.271-65",
+                user=self.user1,
+                departament=Employee.NEUROLOGY
+            )
 
+    def test_specialization_on_delete_reset_flag(self):
 
+        self.assertEqual(self.user1.has_specialization, False)
 
+        # define a initial relation to user
+        employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+            departament=Employee.NEUROLOGY
+        )
 
+        self.assertEqual(self.user1.has_specialization, True)
 
+        employee.delete()
 
+        self.assertEqual(self.user1.has_specialization, False)
 
