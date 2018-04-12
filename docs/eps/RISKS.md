@@ -29,18 +29,26 @@
 |:--------------:|:-------------------|:-------------------|
 | Quebra de pacotes de dependências | - usar um número reduzido de dependências;<br>- buscar dependências que sejam estáveis e ativamente mantidas | - remover as dependências com problemas;<br>- buscar substitutos |
 | Descontinuação de pacotes de dependências | - Usar um número reduzido de dependências;<br>- buscar aquelas que sejam estáveis e ativamente mantidas | - remover as dependências descontinuadas;<br>- buscar substitutos |
-| Falta de recursos para manter a máquina de deploy | - buscar opções para o deploy que sejam de qualidade mas gratuitas ou com preço compatível com o orçamento disponível;<br>- ter um plano B que seja de rápida implementação para o caso de haver problemas com a máquina de deploy. | - colocar o plano B em prática;<br>- mobilizar recursos para o reestabelecimento do plano A, se for possível |
+| Dificuldades para realizar o deploy | - buscar opções para o deploy que sejam de qualidade mas gratuitas ou com preço compatível com o orçamento disponível;<br>- ter um plano B que seja de rápida implementação para o caso de haver problemas com a máquina de deploy. | - colocar o plano B em prática;<br>- mobilizar recursos para o reestabelecimento do plano A, se for possível |
 | Dificuldades no contato com o cliente | - ter diversas formas de contato com os clientes;<br>- ter mais de um cliente;<br>- não ter uma dependência excessiva dos clientes para a continuidade das atividades | - reestabelecimento do contato assim que possível;<br>- levantar os motivos para os problemas no contato para mitigá-los em outros momentos;<br>- deixar claro para o cliente como o contato com ele é importante para o bom andamento do projeto
 
 ## Sprint 4
 
-### Score: 35
+### Score: 50
 
 | **Risco** | **Ações para prevení-lo** | **Ações para mitigá-lo** |
 |:--------------:|:-------------------|:-------------------|
 | Desentendimentos entre membros da equipe | - levantar possíveis pontos de atrito entre os membros;<br>- tomar ações que acabem ou reduzam os pontos de atrito antes que gerem conflitos | - conversar com os envolvidos no desentendimento;<br>- estabelecer acordos com todo o time com o intuito de evitar novos conflitos semelhantes ao que ocorreu;<br>- tomar atitudes mais energéticas apropriadas caso as ações acima não resolvam |
 | Membros com carga excessiva de trabalho | - fazer uma pontuação das histórias que realmente reflitam o esforço para completá-las;<br>- fazer o acompanhamento da velocity e de como a equipe está se comportando para estimar se a equipe ainda suporta uma carga maior de trabalho | - levantar se o excesso de trabalho foi geral ou apenas de alguns membros e os motivos para isso;<br>- se possível, redistribuir o a carga de trabalho da sprint entre os membros;<br>- tomar mais cuidado com a pontuação e/ou a quantidade de histórias na sprint seguinte |
 | Atraso no roadmap do projeto | - quando possível, antecipar atividades de sprints futuras;<br>- antecipar gargalos que podem gerar atrasos para que sejam solucionados antes que gerem problemas | - cuidar das causas do atraso;<br>- replanejar as sprints seguintes com o objetivo de voltar a ficar em dia com o roadmap;<br>- verificar se haverá a necessidade e a possibilidade de alterar o roadmap |
+
+## Sprint 5
+
+### Score: 65
+
+| **Risco** | **Ações para prevení-lo** | **Ações para mitigá-lo** |
+|:--------------:|:-------------------|:-------------------|
+| Atraso na implementação da arquitetura do projeto | - apresentar as features com antecedência para o arquiteto do software para que ele possa planejar como implementá-las com antecedência;<br>- checar o andamento do planejamento e implementação da arquitetura constantemente com o arquiteto | - analisar o que houve de errado na implementação para remediar;<br>- incluir no planejamento das sprints seguintes histórias para tirar o atraso da implementação da arquitetura
 
 ## Burndown de Riscos
 
