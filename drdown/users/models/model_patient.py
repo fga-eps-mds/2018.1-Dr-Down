@@ -1,16 +1,23 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.db.models import Q
 from drdown.utils.validators import (validate_ses,
                                      validate_generic_number,
                                      validate_names, validate_sus)
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 from .model_user import User
 from .model_responsible import Responsible
 
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, related_name='patient',
-                                on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User,
+        related_name='patient',
+        on_delete=models.CASCADE,
+        limit_choices_to=Q(has_specialization=False)
+    )
     ses = models.CharField(
         help_text=_("Please, enter the valid SES number"),
         unique=True,
@@ -20,8 +27,9 @@ class Patient(models.Model):
 
     responsible = models.ForeignKey(
         Responsible,
-        on_delete=models.CASCADE,
-        null=True
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
     )
 
     PRIORITIES = (
@@ -79,3 +87,15 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.user.get_username()
+
+    def clean(self, *args, **kwargs):
+        self.user.clean()
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+
+@receiver(post_delete, sender=Patient)
+def remove_specialization(sender, instance, *args, **kwargs):
+    if instance.user.has_specialization:
+        instance.user.has_specialization = False

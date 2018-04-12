@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group
+from django.db.models import Q
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 
 from drdown.utils.validators import validate_cpf
@@ -9,7 +12,11 @@ from .model_user import User
 
 class Employee(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        limit_choices_to=Q(has_specialization=False)
+    )
 
     cpf = models.CharField(
         help_text=_("Please, enter a valid CPF" +
@@ -66,6 +73,9 @@ class Employee(models.Model):
                 " - " +
                 self.get_departament_display())
 
+    def clean(self, *args, **kwargs):
+        self.user.clean()
+
     def save(self, *args, **kwargs):
 
         # we wan't to add the required permissions to the
@@ -87,3 +97,9 @@ class Employee(models.Model):
     class Meta:
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
+
+
+@receiver(post_delete, sender=Employee)
+def remove_specialization(sender, instance, *args, **kwargs):
+    if instance.user.has_specialization:
+        instance.user.has_specialization = False

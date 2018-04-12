@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group
+from django.db.models import Q
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
@@ -11,7 +14,8 @@ class Doctor(models.Model):
 
     user = models.OneToOneField(
         User,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        limit_choices_to=Q(has_specialization=False)
     )
 
     cpf = models.CharField(
@@ -61,6 +65,9 @@ class Doctor(models.Model):
     # related user
     GROUP_NAME = "Doctors"
 
+    def clean(self, *args, **kwargs):
+        self.user.clean()
+
     def save(self, *args, **kwargs):
 
         # we wan't to add the required permissions to the related user, before
@@ -83,3 +90,8 @@ class Doctor(models.Model):
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
+
+@receiver(post_delete, sender=Doctor)
+def remove_specialization(sender, instance, *args, **kwargs):
+    if instance.user.has_specialization:
+        instance.user.has_specialization = False

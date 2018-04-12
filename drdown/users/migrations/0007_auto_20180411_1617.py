@@ -20,7 +20,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='patient',
             name='responsible',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='users.Responsible'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='users.Responsible'),
+        ),
         migrations.AddField(
             model_name='user',
             name='has_specialization',
@@ -32,8 +33,23 @@ class Migration(migrations.Migration):
             field=models.CharField(help_text='Use enter a valid CRM. \nEnter 7 digits from 0 to 9', max_length=7, validators=[drdown.utils.validators.validate_crm]),
         ),
         migrations.AlterField(
+            model_name='doctor',
+            name='user',
+            field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+        ),
+        migrations.AlterField(
+            model_name='employee',
+            name='user',
+            field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+        ),
+        migrations.AlterField(
+            model_name='patient',
+            name='user',
+            field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, related_name='patient', to=settings.AUTH_USER_MODEL),
+        ),
+        migrations.AlterField(
             model_name='responsible',
             name='user',
-            field=models.OneToOneField(limit_choices_to=models.Q(patient=None), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]
