@@ -17,7 +17,8 @@ class CommentaryListView(ListView):
         return context
 
     def get_queryset(self):
-        queryset = Commentary.objects.filter(post=Post.objects.get(pk=self.kwargs.get('post_pk')))
+        post = Post.objects.get(pk=self.kwargs.get('post_pk'))
+        queryset = Commentary.objects.filter(post=post)
         return queryset
 
 

@@ -13,11 +13,13 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
+        pk = self.kwargs.get('pk')
+        context['post_category'] = Category.objects.get(pk=pk)
         return context
 
     def get_queryset(self):
-        queryset = Post.objects.filter(category=Category.objects.get(pk=self.kwargs.get('pk')))
+        pk = self.kwargs.get('pk')
+        queryset = Post.objects.filter(category=Category.objects.get(pk=pk))
         return queryset
 
 
@@ -29,7 +31,8 @@ class PostCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(PostCreateView, self).get_context_data(**kwargs)
-        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
+        pk = self.kwargs.get('pk')
+        context['post_category'] = Category.objects.get(pk=pk)
         return context
 
     def form_valid(self, form):
@@ -61,7 +64,8 @@ class PostUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(PostUpdateView, self).get_context_data(**kwargs)
-        context['post_category'] = Category.objects.get(pk=self.kwargs.get('pk'))
+        pk = self.kwargs.get('pk')
+        context['post_category'] = Category.objects.get(pk=pk)
         return context
 
     def get_object(self):
@@ -77,8 +81,3 @@ class PostUpdateView(UpdateView):
         form.save()
 
         return super(PostUpdateView, self).form_valid(form)
-
-
-
-
-

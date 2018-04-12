@@ -3,6 +3,7 @@ from drdown.users.models import User
 from .model_category import Category
 from django.utils.translation import ugettext_lazy as _
 
+
 class Post(models.Model):
     title = models.CharField(
         _('Title'),
@@ -44,5 +45,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-
