@@ -25,8 +25,9 @@
     <thead class="thead-inverse">
       <tr>
         <th>{% trans "Post" %}</th>
-        <th>{% trans "Starter" %}</th>
+        <th>{% trans "Created by" %}</th>
         <th>{% trans "Commentaries" %}</th>
+        <th>{% trans "Created at" %}</th>
         <th>{% trans "Last Update" %}</th>
       </tr>
     </thead>
@@ -36,8 +37,13 @@
           <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}">
             {{ post.title }} </td>
           <td>{{ post.created_by.username }}</td>
-          <td>0</td>
-          <td>{{ post.updated_at }}</td>
+          <td>{{ post.commentaries.count }}</td>
+          <td>{{ post.created_at}}</td>
+          {% if post.updated_at %}
+            <td>{{ post.updated_at }}</td>
+          {% else %}
+            <td>{% trans "Not updated yet"%}</td>
+          {% endif %}
         </tr>
       {% endfor %}
     </tbody>
