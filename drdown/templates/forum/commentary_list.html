@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">
+        {% trans "Posts" %}
+        </a>
+      </li>
+      <li class="breadcrumb-item active">{{ post.title }}</li>
+    </ol>
+  </div>
+
+  <div class="mb-4">
+    {% if user.is_authenticated %}
+      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-primary">{% trans "New commentary" %}</a>
+    {% endif %}
+    {% if user.username == post.created_by.username %}
+      <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+    {% endif %}
+  </div>
+
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">{{ post.title }}</h1>
+        <!-- Author -->
+        <p class="lead"> {% trans "by" %} {{ post.created_by }}</p>
+        <hr>
+        <!-- Date/Time -->
+        <p>{% trans "Posted on" %} {{ post.created_at }}</p>
+        <hr>
+        <!-- Post Content -->
+        <p class="lead"> {{ post.message }} </p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    {% for commentary in commentary_list %}
+      <!-- Single Comment -->
+      <div class="media mb-4">
+        {% if commentary.created_by.photo %}
+          <img class="d-flex mr-3 rounded-circle" src="{{commentary.created_by.photo.url}}" alt="" width="40px">
+        {% else %}
+         <img class="d-flex mr-3 rounded-circle" src="{% static 'images/user.png' %}" width="40px">
+        {% endif %}
+        <div class="media-body">
+          <h5 class="mt-0">{{commentary.created_by.username}}</h5>
+          <p> {{commentary.message}}</p>
+          {% if commentary.updated_at != None %}
+            <p><font size="1">{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
+            {% else %}
+            <p><font size="1">{% trans 'Created on'%} {{ commentary.created_at }}</font></p>
+          {% endif %}
+          {% if user.username == commentary.created_by.username %}
+            <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
+               class="btn btn-secondary">{% trans "Edit" %}</a>
+            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
+               class="btn btn-danger">{% trans "Delete" %}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+
+</div>
+{% endblock content %}

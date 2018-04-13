@@ -49,3 +49,8 @@ class MyUserAdmin(AuthUserAdmin):
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'name', 'is_superuser')
     search_fields = ['name']
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    change_form_template = "admin/change_form.html"

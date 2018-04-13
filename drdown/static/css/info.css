@@ -1,16 +1,9 @@
-/*.lead{
-	text-indent: 1em;
-	margin-top: 0em;
-	padding-top: 0em;
-	color: #2C3E50
-}*/
-
 .link{
 	text-decoration: underline;
 }
 
 a.hover-yellow:hover {
-	color: #C9AA0F;
+	color: #0A0A2A;
 }
 
 .text-blue-1{
@@ -49,5 +42,9 @@ a.hover-yellow:hover {
 .marginl-1{
 	margin-left: 0.5em;
 	margin-right: 0.5em;
+}
+
+#further-reading{
+	
 }
 
