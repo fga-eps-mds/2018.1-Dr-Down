@@ -101,7 +101,7 @@ class User(AbstractUser):
 
     def remove_staff(user):
 
-        # we want to remove staff from a user if he is no longer has a 
+        # we want to remove staff from a user if he is no longer has a
         # specialization that needs it
         user.is_staff = False
         user.save()
