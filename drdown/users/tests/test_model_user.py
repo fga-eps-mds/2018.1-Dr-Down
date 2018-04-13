@@ -408,3 +408,76 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
+
+    def test_cant_update_user_on_responsible_specialization(self):
+        self.assertEqual(self.user1.has_specialization, False)
+
+        responsible = Responsible.objects.create(
+            cpf="507.522.730-94",
+            user=self.user1,
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(hasattr(self.user1, 'responsible'), True)
+
+        with self.assertRaises(ValidationError):
+            responsible.user=self.user2
+            responsible.save()
+
+    def test_cant_update_user_on_doctor_specialization(self):
+        self.assertEqual(self.user1.has_specialization, False)
+
+        doctor = Doctor.objects.create(
+            cpf="507.522.730-94",
+            user=self.user1,
+            speciality=Doctor.NEUROLOGY
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(hasattr(self.user1, 'doctor'), True)
+
+        with self.assertRaises(ValidationError):
+            doctor.user=self.user2
+            doctor.save()
+
+    def test_cant_update_user_on_patient_specialization(self):
+        self.assertEqual(self.user1.has_specialization, False)
+
+        patient = Patient.objects.create(
+            ses="1234567",
+            user=self.user1,
+            priority=1,
+            mother_name="Mãe",
+            father_name="Pai",
+            ethnicity=3,
+            sus_number="12345678911",
+            civil_registry_of_birth="12345678911",
+            declaration_of_live_birth="12345678911"
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(hasattr(self.user1, 'patient'), True)
+
+        with self.assertRaises(ValidationError):
+            patient.user=self.user2
+            patient.save()
+
+    def test_cant_update_user_on_employee_specialization(self):
+        self.assertEqual(self.user1.has_specialization, False)
+
+        employee=Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+            departament=Employee.NEUROLOGY
+        )
+
+        self.assertEqual(self.user1.has_specialization, True)
+        self.assertEqual(hasattr(self.user1, 'employee'), True)
+
+        with self.assertRaises(ValidationError):
+            employee.user=self.user2
+            employee.save()
+
+
+
+
