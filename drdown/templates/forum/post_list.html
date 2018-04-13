@@ -17,7 +17,7 @@
 
   <div class="mb-4">
     {% if user.is_authenticated %}
-      <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-primary">{% trans "New post" %}</a>
+      <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-secondary">{% trans "New post" %}</a>
     {% endif %}
   </div>
 
