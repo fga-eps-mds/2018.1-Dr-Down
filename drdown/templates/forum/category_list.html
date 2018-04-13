@@ -4,13 +4,13 @@
 
 {% block content %}
 <div class="container">
-  <h2>{% trans "Categories" %}</h2>
+  <h2 class="text-tertiary">{% trans "Categories" %}</h2>
 
   <div class="list-group">
     {% for category in category_list %}
-      <a href= "{% url 'forum:list_posts' category.slug category.pk  %}" class="list-group-item">
-        <h4 class="list-group-item-heading">{{ category.name }}</h4>
-        <p> {{ category.description }} </p>
+      <a href= "{% url 'forum:list_posts' category.slug category.pk  %}" class=" h-blue list-group-item">
+        <h4 class="list-group-item-heading text-tertiary h-blue">{{ category.name }}</h4>
+        <p class="text-tertiary h-blue"> {{ category.description }} </p>
       </a>
     {% endfor %}
   </div>

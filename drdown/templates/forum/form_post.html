@@ -6,8 +6,8 @@
 {% block content %}
   <div class="container">
     <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}"> {% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post_category.slug post_category.pk %}"> {% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}" class="text-tertiary"> {% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post_category.slug post_category.pk %}" class="text-tertiary"> {% trans "Posts" %}</a></li>
       <li class="breadcrumb-item active">{% trans "New Post" %}</li>
     </ol>
   </div>
@@ -18,13 +18,13 @@
       {% for field in form %}
         <div class="fieldWrapper">
             {{ field.errors }}
-          <p>
+          <p class="lead">
             {{ field.label_tag }}<br>
             {{ field }}
           </p>
         </div>
       {% endfor %}
-      <button type="submit" class="btn btn-success">{% trans "Post" %}</button>
+      <button type="submit" class="btn btn-secondary">{% trans "Post" %}</button>
     </form>
   </div>
 

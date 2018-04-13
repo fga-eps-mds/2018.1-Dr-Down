@@ -7,8 +7,8 @@
 
   <div class="container">
     <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item active">{% trans "Posts" %}</li>
+      <li class="breadcrumb-item "><a href="{% url 'forum:list_categories' %}" class="text-tertiary">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item active text-tertiary">{% trans "Posts" %}</li>
     </ol>
   </div>
 
@@ -17,7 +17,7 @@
 
   <div class="mb-4">
     {% if user.is_authenticated %}
-      <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-primary">{% trans "New post" %}</a>
+      <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-secondary">{% trans "New post" %}</a>
     {% endif %}
   </div>
 
@@ -34,7 +34,7 @@
     <tbody>
       {% for post in post_list %}
         <tr>
-          <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}">
+          <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="lead text-secondary">
             {{ post.title }} </td>
           <td>{{ post.created_by.username }}</td>
           <td>{{ post.commentaries.count }}</td>

@@ -7,9 +7,9 @@
 
   <div class="container">
     <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}" class="text-tertiary">{% trans "Categories" %}</a></li>
       <li class="breadcrumb-item">
-        <a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">
+        <a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}" class="text-tertiary">
         {% trans "Posts" %}
         </a>
       </li>
@@ -19,7 +19,7 @@
 
   <div class="mb-4">
     {% if user.is_authenticated %}
-      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-primary">{% trans "New commentary" %}</a>
+      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "New commentary" %}</a>
     {% endif %}
     {% if user.username == post.created_by.username %}
       <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
