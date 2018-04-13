@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Categories" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>{% trans "Categories" %}</h2>
+
+  <div class="list-group">
+    {% for category in category_list %}
+      <a href= "{% url 'forum:list_posts' category.slug category.pk  %}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ category.name }}</h4>
+        <p> {{ category.description }} </p>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

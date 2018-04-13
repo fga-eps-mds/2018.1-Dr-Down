@@ -51,6 +51,7 @@ class Doctor(models.Model):
     )
 
     speciality = models.CharField(
+        _('Speciality'),
         choices=SPECIALITY_CHOICES,
         help_text=_("The speciality that this doctor works."),
         max_length=30,

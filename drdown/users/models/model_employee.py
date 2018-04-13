@@ -53,6 +53,7 @@ class Employee(models.Model):
     )
 
     departament = models.CharField(
+        _('Departament'),
         null=False,
         choices=DEPARTAMENT_CHOICES,
         help_text=_("The departament where this user works."),
