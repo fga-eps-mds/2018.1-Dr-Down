@@ -60,7 +60,7 @@ Alguns benefícios desse modelo de arquitetura:
 
 * **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção onde agrega na redução de custo da aplicação.
 
-O projeto terá algumas aplicações externas que serão inseridos e comunicados com as aplicações do projeto, o framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes.
+O projeto terá algumas aplicações externas que serão inseridos e comunicados com as aplicações do projeto, o framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém não será descartado a utilização de microserviços caso seja necessário, esse **microserviços** serão comunicados via requisições HTTP.
 
 Abaixo será listado como a arquitetura do projeto será comunicada com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL entre outros e terá o tópico em que será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
 
@@ -135,6 +135,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
+|[Rocket.Chat](https://github.com/RocketChat/Rocket.Chat#docker)|É um microserviço de chat open sourcer baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
 |[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar a prescrição de receitas|Não|Não passou em quase todos so critérios definidos acima, a aplicação chat do projeto está bastante acoplado, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gerando tempo e esforço|
 |[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em Websocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
 |[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto django simples integrado com o chat [tawk.to](https://www.tawk.to/)|A decidir|O projeto ainda está sendo avaliado pela equipe|
