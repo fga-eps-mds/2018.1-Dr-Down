@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
+from django.core.exceptions import ValidationError
 from drdown.utils.validators import (validate_ses,
                                      validate_generic_number,
                                      validate_names, validate_sus)
@@ -89,6 +90,18 @@ class Patient(models.Model):
         return self.user.get_username()
 
     def clean(self, *args, **kwargs):
+
+        try:
+            user_db = Patient.objects.get(id=self.id).user
+
+            if self.user != user_db:
+                raise ValidationError(
+                    _("Don't change users"))
+            else:
+                pass
+        except Patient.DoesNotExist:
+            pass
+
         self.user.clean()
 
     def save(self, *args, **kwargs):

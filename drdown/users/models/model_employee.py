@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group
 from django.db.models import Q
+from django.core.exceptions import ValidationError
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
@@ -74,6 +75,18 @@ class Employee(models.Model):
                 self.get_departament_display())
 
     def clean(self, *args, **kwargs):
+
+        try:
+            user_db = Employee.objects.get(id=self.id).user
+
+            if self.user != user_db:
+                raise ValidationError(
+                    _("Don't change users"))
+            else:
+                pass
+        except Employee.DoesNotExist:
+            pass
+
         self.user.clean()
 
     def save(self, *args, **kwargs):

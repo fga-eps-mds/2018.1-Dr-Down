@@ -25,6 +25,18 @@ class Responsible(models.Model):
     )
 
     def clean(self, *args, **kwargs):
+
+        try:
+            user_db = Responsible.objects.get(id=self.id).user
+
+            if self.user != user_db:
+                raise ValidationError(
+                    _("Don't change users"))
+            else:
+                pass
+        except Responsible.DoesNotExist:
+            pass
+
         self.user.clean()
 
     def save(self, *args, **kwargs):

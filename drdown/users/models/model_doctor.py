@@ -4,6 +4,7 @@ from django.contrib.auth.models import Group
 from django.db.models import Q
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
+from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
@@ -66,6 +67,18 @@ class Doctor(models.Model):
     GROUP_NAME = "Doctors"
 
     def clean(self, *args, **kwargs):
+
+        try:
+            user_db = Doctor.objects.get(id=self.id).user
+
+            if self.user != user_db:
+                raise ValidationError(
+                    _("Don't change users"))
+            else:
+                pass
+        except Doctor.DoesNotExist:
+            pass
+
         self.user.clean()
 
     def save(self, *args, **kwargs):
