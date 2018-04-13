@@ -7,8 +7,15 @@ from ..models import User
 
 
 class TestModelDoctor(TestCase):
+    """
+    Test if model Doctor is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.user = self.make_user()
         self.doctor = Doctor.objects.create(
             cpf="057.641.271-65",
@@ -16,16 +23,27 @@ class TestModelDoctor(TestCase):
             speciality=Doctor.NEUROLOGY)
 
     def test_get_absolute_url(self):
+        """
+        This test will get the absolute url of user.
+        """
+
         self.assertEqual(
             self.user.get_absolute_url(),
             '/users/testuser/'
         )
 
     def test_one_to_one_relation(self):
+        """
+        This test will check if the one_to_one relation is being respected.
+        """
+
         self.assertIs(self.user, self.doctor.user)
         self.assertIs(self.doctor, self.user.doctor)
 
     def test_delete_cascade(self):
+        """
+        This test check if all object data is deleted along with it.
+        """
 
         self.assertEquals(Doctor.objects.get(
             cpf="057.641.271-65"), self.doctor)
@@ -36,6 +54,9 @@ class TestModelDoctor(TestCase):
             Doctor.objects.get(cpf="057.641.271-65")
 
     def test__str__(self):
+        """
+        This test check if __str__ is returning the data correctly.
+        """
         self.assertEqual(
             self.doctor.__str__(),
             (
@@ -49,8 +70,9 @@ class TestModelDoctor(TestCase):
 class TestModelDoctorNoSetUp(TestCase):
 
     def test_save_making_changes_on_user(self):
-
-        # this test should have no setup executed before it
+        """
+        This test should have no setup executed before it.
+        """
 
         self.user = self.make_user()
 
@@ -74,6 +96,9 @@ class TestModelDoctorNoSetUp(TestCase):
 class ModelTestCase(TestCase):
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
 
         self.user1 = User.objects.create(
             name='Pedro',
@@ -90,19 +115,41 @@ class ModelTestCase(TestCase):
         )
 
     def test_save_cpf_ok(self):
+        """
+        This method will check if the cpf is equal to the informed
+        """
+
         self.assertEquals(self.doctor1.cpf, '057.640.991-02')
 
     def test_save_crm_ok(self):
+        """
+        This method will check if the crm is equal to the informed
+        """
         self.assertEquals(self.doctor1.crm, '1234567')
 
     def test_save_speciality_ok(self):
+        """
+        This method will check if the speciality is equal to the informed
+        """
         self.assertEquals(self.doctor1.speciality, Doctor.PEDIATRICS)
 
     def test_save_cpf_error(self):
+        """
+        This method will check if the cpf is different from informed
+        """
+
         self.assertNotEquals(self.doctor1.cpf, '057.641.271-65')
 
     def test_save_crm_error(self):
+        """
+        This method will check if the crm is different from informed
+        """
+
         self.assertNotEquals(self.doctor1.crm, '7654321')
 
     def test_save_speciality_error(self):
+        """
+        This method will check if the speciality is different from informed
+        """
+
         self.assertNotEquals(self.doctor1.speciality, Doctor.CARDIOLOGY)

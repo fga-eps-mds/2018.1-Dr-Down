@@ -13,8 +13,14 @@ from ..views import (
 
 
 class BaseUserTestCase(TestCase):
-
+    """
+    Test if BasedUser is working correctly
+    """
+    
     def setUp(self):
+        """
+        This method will run before any test.
+        """
         self.user = self.make_user()
         self.factory = RequestFactory()
 
@@ -41,6 +47,9 @@ class TestUserRedirectView(BaseUserTestCase):
 class TestUserUpdateView(BaseUserTestCase):
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
         # call BaseUserTestCase.setUp()
         super(TestUserUpdateView, self).setUp()
         # Instantiate the view directly. Never do this outside a test!
@@ -53,15 +62,20 @@ class TestUserUpdateView(BaseUserTestCase):
         self.view.request = request
 
     def test_get_success_url(self):
-        # Expect: '/users/testuser/', as that is the default username for
-        #   self.make_user()
+        """
+        Expect: '/users/testuser/', as that is the default username for
+        """
+
         self.assertEqual(
             self.view.get_success_url(),
             '/users/testuser/'
         )
 
     def test_get_object(self):
-        # Expect: self.user, as that is the request's user object
+        """
+        Expect: self.user, as that is the request's user object
+        """
+
         self.assertEqual(
             self.view.get_object(),
             self.user
@@ -71,16 +85,25 @@ class TestUserUpdateView(BaseUserTestCase):
 class TestUserDeleteView(BaseUserTestCase):
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         super(TestUserDeleteView, self).setUp()
         self.url = reverse_lazy('users:delete')
         self.client = Client()
 
     def tearDownUser(self):
+        """
+        This method will run after any test.
+        """
 
         self.user.delete()
 
     def test_delete_user_ok(self):
-
+        """
+        Test is user is being correcty deleted.
+        """
         self.assertEquals(User.objects.count(), 1)
 
         self.client.force_login(user=self.user)

@@ -6,8 +6,15 @@ from ..models import Employee
 
 
 class TestModelEmployee(TestCase):
+    """
+    Test if model Employee is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.user = self.make_user()
         self.employee = Employee.objects.create(
             cpf="974.220.200-16",
@@ -16,16 +23,27 @@ class TestModelEmployee(TestCase):
         )
 
     def test_get_absolute_url(self):
+        """
+        This test will get the absolute url of user.
+        """
+
         self.assertEqual(
             self.user.get_absolute_url(),
             '/users/testuser/'
         )
 
     def test_one_to_one_relation(self):
+        """
+        This test will check if the one_to_one relation is being respected.
+        """
+
         self.assertIs(self.user, self.employee.user)
         self.assertIs(self.employee, self.user.employee)
 
     def test_delete_cascade(self):
+        """
+        This test check if all object data is deleted along with it.
+        """
 
         self.assertEquals(
             Employee.objects.get(cpf="974.220.200-16"),
@@ -38,6 +56,10 @@ class TestModelEmployee(TestCase):
             Employee.objects.get(cpf="974.220.200-16")
 
     def test__str__(self):
+        """
+        This test check if __str__ is returning the data correctly.
+        """
+
         self.assertEqual(
             self.employee.__str__(),
             (
@@ -51,8 +73,9 @@ class TestModelEmployee(TestCase):
 class TestModelEmployeeNoSetUp(TestCase):
 
     def test_save_making_changes_on_user(self):
-
-        # this test should have no setup executed before it
+        """
+        This test should have no setup executed before it
+        """
 
         self.user = self.make_user()
 

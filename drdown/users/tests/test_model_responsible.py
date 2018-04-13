@@ -5,8 +5,15 @@ from ..models import Responsible, Patient
 
 
 class TestModelResponsible(TestCase):
+    """
+    Test if model Responsible is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.user_1 = self.make_user()
         self.user_2 = self.make_user(username="teste_2")
         self.patient = Patient.objects.create(
@@ -28,22 +35,37 @@ class TestModelResponsible(TestCase):
         )
 
     def test_get_absolute_url(self):
+        """
+        This test will get the absolute url of user.
+        """
+
         self.assertEqual(
             self.user_1.get_absolute_url(),
             '/users/testuser/'
         )
 
     def test__str__(self):
+        """
+        This test check if __str__ is returning the data correctly.
+        """
+
         self.assertEqual(
             self.responsible.__str__(),
             'testuser'  # This is the default username for self.make_user()
         )
 
     def test_one_to_one_relation(self):
+        """
+        This test will check if the one_to_one relation is being respected.
+        """
+
         self.assertIs(self.user_1, self.responsible.user)
         self.assertIs(self.responsible, self.user_1.responsible)
 
     def test_delete_cascade(self):
+        """
+        This test check if all object data is deleted along with it.
+        """
 
         self.assertEquals(
             Responsible.objects.get(cpf="974.220.200-16"),
@@ -56,10 +78,11 @@ class TestModelResponsible(TestCase):
             Responsible.objects.get(cpf="974.220.200-16")
 
     def test_patient_responsible_for_itself(self):
-
-        # user 2 is the patient
-        # we will check if its not possible to set
-        # a patient as its responsible
+        """
+         user 2 is the patient
+         we will check if its not possible to set
+         a patient as its responsible
+        """
 
         self.assertIs(self.patient.user, self.user_2)
 

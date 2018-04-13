@@ -6,23 +6,41 @@ from ..models import Employee, Doctor, Patient, Responsible
 
 
 class TestUser(TestCase):
+    """
+    Test if model Employee is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.user = self.make_user()
 
     def test__str__(self):
+        """
+        This test check if __str__ is returning the data correctly.
+        """
+
         self.assertEqual(
             self.user.__str__(),
             'testuser'  # This is the default username for self.make_user()
         )
 
     def test_get_absolute_url(self):
+        """
+        This test will get the absolute url of user.
+        """
+
         self.assertEqual(
             self.user.get_absolute_url(),
             '/users/testuser/'
         )
 
     def test_short_name(self):
+        """
+        Test to get the full name of user
+        """
 
         self.assertEquals(self.user.get_short_name(),
                           self.user.first_name)
@@ -93,6 +111,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertEquals(self.superuser.get_short_name(), self.superuser.name)
         self.assertEquals(self.user1.get_short_name(), self.user1.name)
         self.assertEquals(self.user2.get_short_name(), self.user2.name)
@@ -101,6 +120,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertEquals(self.superuser.name, 'Ohaio')
         self.assertEquals(self.user1.name, 'Pedro')
         self.assertEquals(self.user2.name, 'Jobs')
@@ -109,6 +129,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertEquals(self.superuser.username, 'Ohaionini')
         self.assertEquals(self.user1.username, 'pedro100')
         self.assertEquals(self.user2.username, 'jobs101')
@@ -117,6 +138,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertNotEquals(self.superuser.name, '')
         self.assertNotEquals(self.user1.name, '')
         self.assertNotEquals(self.user2.name, '')
@@ -125,14 +147,16 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
-        self.assertEquals( self.superuser.first_name, 'Ohaio')
-        self.assertEquals( self.user1.first_name, 'Pedro')
+
+        self.assertEquals(self.superuser.first_name, 'Ohaio')
+        self.assertEquals(self.user1.first_name, 'Pedro')
         self.assertEquals(self.user2.first_name, 'Jobs')
 
     def test_invalid_first_name(self):
         """
         Test to get the full name of user
         """
+
         self.assertNotEquals(self.superuser.first_name, '')
         self.assertNotEquals(self.user1.first_name, '')
         self.assertNotEquals(self.user2.first_name, '')
@@ -141,6 +165,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertEquals(self.superuser.last_name, 'Nini')
         self.assertEquals(self.user1.last_name, 'Victor')
         self.assertEquals(self.user2.last_name, 'Rogers')
@@ -149,6 +174,7 @@ class TestField(TestCase):
         """
         Test to get the full name of user
         """
+
         self.assertNotEquals(self.superuser.last_name, '')
         self.assertNotEquals(self.user1.last_name, '')
         self.assertNotEquals(self.user2.last_name, '')
@@ -157,6 +183,7 @@ class TestField(TestCase):
         """
         Test for verify if the birthday is the same for compare
         """
+
         self.assertEquals(self.superuser.birthday, '1998-03-05')
         self.assertEquals(self.user1.birthday, '1998-04-05')
         self.assertEquals(self.user2.birthday, '1998-05-05')
@@ -165,6 +192,7 @@ class TestField(TestCase):
         """
         Test for verify if the birthday is the same for compare
         """
+
         self.assertNotEquals(self.superuser.birthday, '')
         self.assertNotEquals(self.user1.birthday, '')
         self.assertNotEquals(self.user2.birthday, '')
@@ -173,6 +201,7 @@ class TestField(TestCase):
         """
         Test for verify if the phone is the same for compare
         """
+
         self.assertEquals(self.superuser.telephone, '(11)11111-1111')
         self.assertEquals(self.user1.telephone, '(22)22222-2222')
         self.assertEquals(self.user2.telephone, '(33)33333-3333')
@@ -181,6 +210,7 @@ class TestField(TestCase):
         """
         Test for verify if the phone is the same for compare
         """
+
         self.assertNotEquals(self.superuser.telephone, '')
         self.assertNotEquals(self.user1.telephone, '')
         self.assertNotEquals(self.user2.telephone, '')
@@ -189,6 +219,7 @@ class TestField(TestCase):
         """
         Test for verify if the phone is the same for compare
         """
+
         self.assertEquals(self.superuser.email, 'ohaio@gmail.com')
         self.assertEquals(self.user1.email, 'pedro@gmail.com')
         self.assertEquals(self.user2.email, 'jobs@gmail.com')
@@ -197,13 +228,14 @@ class TestField(TestCase):
         """
         Test for verify if the phone is the diferent for compare
         """
+
         self.assertNotEqual( self.superuser.email, '')
         self.assertNotEqual(self.user1.email, '')
         self.assertNotEqual(self.user2.email, '')
 
     def test_gender(self):
         """
-        Teste for verify if the gender is the same of compare
+        Test for verify if the gender is the same of compare
         """
 
         self.assertEquals(self.superuser.gender, 'M')
@@ -214,6 +246,7 @@ class TestField(TestCase):
         """
         Test for verify if the create_at is the same for compare
         """
+
         self.assertEquals(self.superuser.created_at, '2018-03-05')
         self.assertEquals(self.user1.created_at, '2018-04-05')
         self.assertEquals(self.user2.created_at, '2018-05-05')
@@ -222,6 +255,7 @@ class TestField(TestCase):
         """
         Test for verify if the create_at is diferent for compare
         """
+
         self.assertNotEquals(self.superuser.created_at, '')
         self.assertNotEquals(self.user1.created_at, '')
         self.assertNotEquals(self.user2.created_at, '')
@@ -230,33 +264,42 @@ class TestField(TestCase):
         """
         Test for verify if the update_at is the same for compare
         """
+
         self.assertEquals(self.superuser.updated_at, '2018-03-05')
         self.assertEquals(self.user1.updated_at, '2018-04-05')
         self.assertEquals(self.user2.updated_at, '2018-05-05')
 
     def test_in_not_updated_at(self):
         """
-        Test for verify if the update_at is the diferent for compare
+        Test for verify if the update_at is the different for compare
         """
+
         self.assertNotEquals(self.superuser.updated_at, '')
         self.assertNotEquals(self.user1.updated_at, '')
         self.assertNotEquals(self.user2.updated_at, '')
 
     def test_photo(self):
-
+        """
+        Test for verify if the photo is the same for compare
+        """
         self.assertEquals(self.superuser.photo, 'example.jpg')
         self.assertEquals(self.user1.photo, 'example.jpg')
         self.assertEquals(self.user2.photo, 'example.jpg')
 
     def test_photo(self):
+        """
+        Test for verify if the update_at is different for compare
+        """
 
         self.assertNotEquals( self.superuser.photo, '')
         self.assertNotEquals(self.user1.photo, '')
         self.assertNotEquals(self.user2.photo, '')
 
     def test_multiple_specialization(self):
+        """
+        Define a initial relation to user
+        """
 
-        # define a initial relation to user
         employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
@@ -299,6 +342,11 @@ class TestField(TestCase):
             )
 
     def test_employee_specialization_on_delete_reset_flag(self):
+        """
+        Test that checks if the has_specialization flag
+        returns to "false" when the user loses the
+        employee specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -316,6 +364,11 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
 
     def test_doctor_specialization_on_delete_reset_flag(self):
+        """
+        Test that checks if the has_specialization flag
+        returns to "false" when the user loses the
+        doctor specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -333,6 +386,11 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
 
     def test_responsible_specialization_on_delete_reset_flag(self):
+        """
+        Test that checks if the has_specialization flag
+        returns to "false" when the user loses the
+        responsible specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -349,6 +407,11 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
 
     def test_patient_specialization_on_delete_reset_flag(self):
+        """
+        Test that checks if the has_specialization flag
+        returns to "false" when the user loses the
+        patient specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -372,6 +435,10 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
 
     def test_removing_employee_specialization_remove_staff(self):
+        """
+        Test that checks if the user loses staff
+        status when he loses the employee specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
@@ -391,6 +458,10 @@ class TestField(TestCase):
         self.assertEqual(self.user1.is_staff, False)
 
     def test_removing_doctor_specialization_remove_staff(self):
+        """
+        Test that checks if the user loses staff
+        status when he loses the doctor specialization
+        """
 
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
@@ -410,6 +481,10 @@ class TestField(TestCase):
         self.assertEqual(self.user1.is_staff, False)
 
     def test_cant_update_user_on_responsible_specialization(self):
+        """
+        Test that verifies that the user field can not be updated in an responsible specialization
+        """
+
         self.assertEqual(self.user1.has_specialization, False)
 
         responsible = Responsible.objects.create(
@@ -425,6 +500,10 @@ class TestField(TestCase):
             responsible.save()
 
     def test_cant_update_user_on_doctor_specialization(self):
+        """
+        Test that verifies that the user field can not be updated in an doctor specialization
+        """
+
         self.assertEqual(self.user1.has_specialization, False)
 
         doctor = Doctor.objects.create(
@@ -441,6 +520,10 @@ class TestField(TestCase):
             doctor.save()
 
     def test_cant_update_user_on_patient_specialization(self):
+        """
+        Test that verifies that the user field can not be updated in an patient specialization
+        """
+
         self.assertEqual(self.user1.has_specialization, False)
 
         patient = Patient.objects.create(
@@ -463,6 +546,10 @@ class TestField(TestCase):
             patient.save()
 
     def test_cant_update_user_on_employee_specialization(self):
+        """
+        Test that verifies that the user field can not be updated in an responsible specialization
+        """
+
         self.assertEqual(self.user1.has_specialization, False)
 
         employee=Employee.objects.create(
