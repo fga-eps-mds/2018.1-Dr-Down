@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}User: {{ object.username }}{% endblock %}
+{% block title %}{% trans "User:" %} {{ object.username }}{% endblock %}
 
 {% block css %}
 {{block.super}}
@@ -219,15 +219,16 @@
           </div>
         </div>
         {% endif %}
-
-        {% if responsible_patient %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Patient: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ responsible_patient }}" disabled>
+        {% for patient in responsible_patient %}
+          {% if patient %}
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Patient: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient }}" disabled>
+            </div>
           </div>
-        </div>
-        {% endif %}
+          {% endif %}
+        {% endfor %}
       </form>
     </div>
   </div>

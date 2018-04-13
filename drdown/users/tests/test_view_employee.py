@@ -7,8 +7,15 @@ from ..models import Employee
 
 
 class TestViewEmployee (TestCase):
+    """
+    Test if View Employee is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.client = Client()
         self.user = self.make_user()
         self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user, departament=Employee.NEUROLOGY)
