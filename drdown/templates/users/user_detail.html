@@ -2,94 +2,250 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}User: {{ object.username }}{% endblock %}
+{% block title %}{% trans "User:" %} {{ object.username }}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'css/user_detail.css' %}" rel="stylesheet">
+
+{% endblock %}
 
 {% block content %}
 <div class="container">
 
-  <div class="row">
+  <div class="row ">
     <div class="col-sm-12">
-
       <h2>{{ object.username }}</h2>
-      {% if object.name %}
-        <p><strong><label>{% trans 'Name: '%}</label></strong>{{ object.name }}</p>
-      {% endif %}
-      {% if object.gender %}
-        <p><strong><label>{% trans 'Gender: '%}</label></strong>{{ object.gender }}</p>
-      {% endif %}
-
-      {% if object.telephone %}
-        <p><strong><label>{% trans 'Telephone: '%}</label></strong>{{ object.telephone }}</p>
-      {% endif %}
-
-      {% if object.birthday %}
-        <p><strong><label>{% trans 'Birthday: '%}</label></strong>{{ object.birthday }}</p>
-      {% endif %}
-
-    {% if object.photo %}
-
-    <img src="{{ object.photo.url }}" width="300px">
-
+      {% if object.photo %}
+      <img src="{{ object.photo.url }}" width="300px" class="float-left mr-1 mb-2">
         {% else %}
+      <img src='../../static/images/user.png' class="float-left mr-1 mb-2">
+      {% endif %}
+      <form>
+        {% if object.name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class="col-form-label mr-2 pr-6 col-1 float-left"><strong>{% trans 'Name: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3 " id="inputName" placeholder="{{ object.name }}" disabled>
+          </div>
+        </div>
+        {% endif %}
 
-       <img src='../../static/images/user.png'>
+        {% if object.gender %}
+        <div class="form-group row mb-1">
+          <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 mr-2 col-1"><strong>{% trans 'Gender: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.gender }}" disabled>
+          </div>
+        </div>
+        {% endif %}
 
-    {% endif %}
+        {% if object.telephone %}
+        <div class="form-group row mb-1">
+          <label for="inputTelephone" class=" col-form-label float-left pr-6 mr-2 col-1"><strong>{% trans 'Telephone: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputTelephone" placeholder="{{ object.telephone }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if object.birthday %}
+        <div class="form-group row mb-1">
+          <label for="inputBirthday" class=" col-form-label float-left pr-6 mr-2 col-1"><strong>{% trans 'Birthday: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputBirthday" placeholder="{{ object.birthday }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+      </form>
     </div>
   </div>
 
-  <br/>
-    <div class="container" >
-      {% if user.employee %}
-        <p><strong> Employee </strong> </p>
-        <p><strong> CPF: </strong> {{ employee_cpf }} </p>
-        <p><strong> {% trans 'Department' %}: </strong> {{ employee_department }}</p>
+  {% if user.employee %}
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <h3 class="text-secondary mb-2 mt-2">{% trans 'Employee' %}</h3>
+
+        {% if employee_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label mr-2 col-1"><strong>{% trans 'CPF: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_cpf }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if employee_department %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Department: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_department }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if user.doctor %}
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <h3 class="text-secondary mb-2 mt-2"> {% trans 'Doctor' %} </h3>
+        {% if doctor_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'CPF: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_cpf }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+      {% if doctor_crm %}
+      <div class="form-group row mb-1">
+        <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'CRM: '%}</strong></label>
+        <div>
+          <input class="form-control col-sm-3" id="inputName" placeholder="{{ doctor_crm }}" disabled>
+        </div>
+      </div>
       {% endif %}
-  </div>
 
-  <div class="container">
-    {% if user.doctor %}
-        <p><strong>Doctor</strong></p>
-        <p><strong> CPF: </strong> {{ doctor_cpf }} </p>
-        <p><strong> CRM: </strong> {{ doctor_crm }} </p>
-        <p><strong> {% trans 'Speciality' %}: </strong> {{ doctor_speciality }}</p>
-    {% endif %}
-  </div>
-
-
-  <div class="container" >
-      {% if user.patient %}
-        <p><strong> Patient </strong> </p>
-        <p><strong> SES: </strong> {{ patient_ses }} </p>
-        <p><strong> {% trans "Priority" %} : </strong> {{ patient_priority }} </p>
-        <p><strong> {% trans "Mother name" %} : </strong> {{ patient_mother_name }} </p>
-        <p><strong> {% trans "Father name" %} : </strong> {{ patient_father_name }} </p>
-        <p><strong> {% trans "Ethnicity" %} : </strong> {{ patient_ethnicity }} </p>
-        <p><strong> {% trans "SUS number" %} : </strong> {{ patient_sus_number }} </p>
-        <p><strong> {% trans "Civil registry of birth" %} : </strong> {{ patient_civil_registry_of_birth }} </p>
-        <p><strong> {% trans "Declaration of live birth" %} : </strong> {{ patient_declaration_of_live_birth }} </p>
+      {% if doctor_speciality %}
+      <div class="form-group row mb-1">
+        <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'Speciality: '%}</strong></label>
+        <div>
+          <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ doctor_speciality }}" disabled>
+        </div>
+      </div>
       {% endif %}
+      </form>
+    </div>
   </div>
+  {% endif %}
 
-  <div class="container" >
-      {% if user.responsible %}
-        <p><strong> Responsible </strong> </p>
-        <p><strong> CPF: </strong> {{ responsible_cpf }} </p>
-        <p><strong> {% trans "Patient" %} : </strong> {{ responsible_patient }} </p>
-      {% endif %}
+  {% if user.patient %}
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <h3 class="text-secondary mb-2 mt-2"> {% trans 'Patient' %} </h3>
+        {% if patient_ses %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class="col-form-label mr-2 col-3 float-left"><strong>{% trans 'SES: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ses }}" disabled>
+          </div>
+        </div>
+        {% endif %}
 
+        {% if patient_priority %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Priority: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_priority }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_mother_name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Mother Name: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_mother_name }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_father_name %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Father Name: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_father_name }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_ethnicity %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Ethnicity: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ethnicity }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_sus_number %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'SUS: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_sus_number }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_civil_registry_of_birth %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Civil registry of birth: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_civil_registry_of_birth }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if patient_declaration_of_live_birth %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Declaration of live birth: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_declaration_of_live_birth }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+      </form>
+    </div>
   </div>
+  {% endif %}
+
+  {% if user.responsible %}
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <h3 class="text-secondary mb-2 mt-2"> {% trans 'Responsible' %} </h3>
+        {% if responsible_cpf %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'CPF: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ responsible_cpf }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+        {% for patient in responsible_patient %}
+          {% if patient %}
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Patient: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient }}" disabled>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </form>
+    </div>
+  </div>
+  {% endif %}
+
 {% if object == request.user %}
 <!-- Action buttons -->
-<div class="row">
-
+<div class="row mt-4">
   <div class="col-sm-12">
-    <a class="btn btn-primary" href="{% url 'users:update' %}" role="button">My Info</a>
-    <a class="btn btn-primary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+    <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
+    <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+    {% if user.patient or user.responsible %}
+    <a class="btn btn-secondary" href="#" role="button">My Medical Records</a>
+    {% endif %}
     <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">Delete</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
-
 </div>
 <!-- End Action buttons -->
 {% endif %}
@@ -97,4 +253,3 @@
 
 </div>
 {% endblock content %}
-

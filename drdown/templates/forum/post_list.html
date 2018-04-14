@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item "><a href="{% url 'forum:list_categories' %}" class="text-tertiary">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item active text-tertiary">{% trans "Posts" %}</li>
+    </ol>
+  </div>
+
+  <h2>{% trans "Posts" %}</h2><hr>
+
+
+  <div class="mb-4">
+    {% if user.is_authenticated %}
+      <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-secondary">{% trans "New post" %}</a>
+    {% endif %}
+  </div>
+
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>{% trans "Post" %}</th>
+        <th>{% trans "Created by" %}</th>
+        <th>{% trans "Commentaries" %}</th>
+        <th>{% trans "Created at" %}</th>
+        <th>{% trans "Last Update" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in post_list %}
+        <tr>
+          <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="lead text-secondary">
+            {{ post.title }} </td>
+          <td>{{ post.created_by.username }}</td>
+          <td>{{ post.commentaries.count }}</td>
+          <td>{{ post.created_at}}</td>
+          {% if post.updated_at %}
+            <td>{{ post.updated_at }}</td>
+          {% else %}
+            <td>{% trans "Not updated yet"%}</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}

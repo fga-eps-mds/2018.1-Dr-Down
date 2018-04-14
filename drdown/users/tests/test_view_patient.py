@@ -7,8 +7,15 @@ from ..models import Patient
 
 
 class TestViewEmployee (TestCase):
+    """
+    Test if View Patient is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.client = Client()
         self.user = self.make_user()
         self.patient = Patient.objects.create(ses="1234567",
@@ -20,7 +27,7 @@ class TestViewEmployee (TestCase):
 
     def test_patient_get_context_data(self):
         """
-        Makes sure that the employee data is showing at the user detail view
+        Makes sure that the patient data is showing at the user detail view
         """
 
         self.patient.save()

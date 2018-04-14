@@ -11,6 +11,7 @@ pages:
   - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
   - EAP: eps/EAP.md
   - ROADMAP: eps/ROADMAP.md
+  - ROADMAP dos Papéis: eps/ROADMAP_ROLES.md
   - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
   - Definição de Pronto: eps/DONE_DEFINITION.md
   - EVM: eps/EVM_AGILE.md
@@ -20,6 +21,7 @@ pages:
   - Riscos: eps/RISKS.md
   - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
   - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
+  - Canvas: eps/CANVAS.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md

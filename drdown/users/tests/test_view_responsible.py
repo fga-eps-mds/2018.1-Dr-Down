@@ -7,8 +7,15 @@ from ..models import Responsible, Patient
 
 
 class TestViewEmployee (TestCase):
+    """
+    Test if View Employee is working correctly
+    """
 
     def setUp(self):
+        """
+        This method will run before any test.
+        """
+
         self.client = Client()
         self.user_1 = self.make_user()
         self.user_2 = self.make_user(username="teste_2")

@@ -1,0 +1,23 @@
+.p-6 {
+  padding: 5rem;
+}
+
+.pt-6,
+.py-6 {
+  padding-top: 5rem;
+}
+
+.pr-6,
+.px-6 {
+  padding-right: 5rem;
+}
+
+.pb-6,
+.py-6 {
+  padding-bottom: 5rem;
+}
+
+.pl-6,
+.px-6 {
+  padding-left: 5rem;
+}

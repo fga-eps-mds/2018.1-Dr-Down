@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group
+from django.db.models import Q
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
@@ -11,7 +15,8 @@ class Doctor(models.Model):
 
     user = models.OneToOneField(
         User,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        limit_choices_to=Q(has_specialization=False)
     )
 
     cpf = models.CharField(
@@ -51,6 +56,7 @@ class Doctor(models.Model):
     )
 
     speciality = models.CharField(
+        _('Speciality'),
         choices=SPECIALITY_CHOICES,
         help_text=_("The speciality that this doctor works."),
         max_length=30,
@@ -61,10 +67,27 @@ class Doctor(models.Model):
     # related user
     GROUP_NAME = "Doctors"
 
+    def clean(self, *args, **kwargs):
+
+        try:
+            user_db = Doctor.objects.get(id=self.id).user
+
+            if self.user != user_db:
+                raise ValidationError(
+                    _("Don't change users"))
+            else:
+                pass
+        except Doctor.DoesNotExist:
+            pass
+
+        self.user.clean()
+
     def save(self, *args, **kwargs):
 
         # we wan't to add the required permissions to the related user, before
         # saving
+        self.user.is_staff = True
+
         try:
             doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
         except Group.DoesNotExist:
@@ -75,11 +98,24 @@ class Doctor(models.Model):
 
         self.user.save()
 
+        self.clean()
+
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.user.get_username() + " - " + self.get_speciality_display()
 
+    def delete(self, *args, **kwargs):
+
+        User.remove_staff(self.user)
+        super().delete(*args, **kwargs)
+
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
+
+
+@receiver(post_delete, sender=Doctor)
+def remove_specialization(sender, instance, *args, **kwargs):
+    if instance.user.has_specialization:
+        instance.user.has_specialization = False
