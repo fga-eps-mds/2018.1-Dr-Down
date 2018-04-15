@@ -22,6 +22,7 @@
   </div>
 
   <table class="table">
+    {% if   post_list %}
     <thead class="thead-inverse">
       <tr>
         <th>{% trans "Post" %}</th>
@@ -31,6 +32,7 @@
         <th>{% trans "Last Update" %}</th>
       </tr>
     </thead>
+    {% endif %}
     <tbody>
       {% for post in post_list %}
         <tr>
@@ -45,8 +47,8 @@
             <td>{% trans "Not updated yet"%}</td>
           {% endif %}
         </tr>
-      {% empty %}
-        <h4 class="lead text-secondary">{% trans 'There are no posts in this category.'%}</h4>
+        {% empty %}
+        <h4 class="lead text-secondary" align="center">{% trans 'There are no posts in this category.'%}</h4>
       {% endfor %}
     </tbody>
   </table>

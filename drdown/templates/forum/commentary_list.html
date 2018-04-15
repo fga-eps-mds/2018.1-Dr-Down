@@ -1,6 +1,13 @@
 {% extends "base.html" %}
-{% load static i18n %}
+{% load i18n %}
+{% load static%}
 {% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'css/info.css' %}" rel="stylesheet">
+
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -51,7 +58,7 @@
   <div class="container">
     {% for commentary in commentary_list %}
       <!-- Single Comment -->
-      <div class="media mb-4">
+      <div class="media mb-4 border-blue">
         {% if commentary.created_by.photo %}
           <img class="d-flex mr-3 rounded-circle" src="{{commentary.created_by.photo.url}}" alt="" width="40px">
         {% else %}
@@ -61,20 +68,21 @@
           <h5 class="mt-0">{{commentary.created_by.username}}</h5>
           <p> {{commentary.message}}</p>
           {% if commentary.updated_at != None %}
-            <p><font size="1">{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
+            <p><font size="1" >{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
             {% else %}
             <p><font size="1">{% trans 'Created on'%} {{ commentary.created_at }}</font></p>
           {% endif %}
           {% if user.username == commentary.created_by.username %}
             <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
-               class="btn btn-secondary">{% trans "Edit" %}</a>
+                            class="btn btn-secondary">{% trans "Edit" %}</a>
             <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
-               class="btn btn-danger">{% trans "Delete" %}</a>
+                              class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
           {% endif %}
+
         </div>
       </div>
       {% empty %}
-        <h4 class="lead text-secondary">{% trans 'There are no comments yet.'%}</h4>
+        <h4 class="lead text-secondary" align="left">{% trans 'There are no comments yet.'%}</h4>
     {% endfor %}
   </div>
 
