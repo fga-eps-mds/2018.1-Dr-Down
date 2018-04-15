@@ -121,5 +121,4 @@ class User(AbstractUser):
         return data
 
     def save(self, *args, **kwargs):
-        self.clean()
         super().save(*args, **kwargs)

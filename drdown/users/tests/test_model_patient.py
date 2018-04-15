@@ -1,5 +1,5 @@
 from test_plus.test import TestCase
-
+from ..admin import PatientAdmin
 from ..models import Patient
 
 
@@ -65,3 +65,29 @@ class TestModelPatient(TestCase):
             self.patient.__str__(),
             self.user.get_username()
         )
+
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an patient
+        """
+
+        ma = PatientAdmin(model=Patient, admin_site=None)
+
+        # since there is no atribute patient in self user, we
+        # can assume that obj=None
+        self.assertEqual(
+            list(ma.get_readonly_fields(self, obj=None)),
+            []
+        )
+
+        self.assertEqual(
+            hasattr(self.user, 'patient'),
+            True
+        )
+
+        ma1 = PatientAdmin(model=Patient, admin_site=None)
+        self.assertEqual(
+            list(ma1.get_readonly_fields(self, obj=self.user.patient)),
+            ['user']
+        )
+

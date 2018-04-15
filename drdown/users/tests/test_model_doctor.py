@@ -1,4 +1,5 @@
 from test_plus.test import TestCase
+from ..admin import DoctorAdmin
 from django.contrib.auth.models import Group
 
 
@@ -153,3 +154,39 @@ class ModelTestCase(TestCase):
         """
 
         self.assertNotEquals(self.doctor1.speciality, Doctor.CARDIOLOGY)
+
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an doctor
+        """
+
+        self.user = self.make_user()
+
+        ma = DoctorAdmin(model=Doctor, admin_site=None)
+
+        self.assertEqual(
+            hasattr(self.user, 'doctor'),
+            False
+        )
+        # since there is no atribute patient in self user, we
+        # can assume that obj=None
+        self.assertEqual(
+            list(ma.get_readonly_fields(self, obj=None)),
+            []
+        )
+
+        self.doctor = Doctor.objects.create(
+            cpf="057.641.271-65",
+            user=self.user,
+            speciality=Doctor.NEUROLOGY)
+
+        self.assertEqual(
+            hasattr(self.user, 'doctor'),
+            True
+        )
+
+        ma1 = DoctorAdmin(model=Doctor, admin_site=None)
+        self.assertEqual(
+            list(ma1.get_readonly_fields(self, obj=self.user.doctor)),
+            ['user']
+        )

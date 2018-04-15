@@ -1,7 +1,6 @@
 from test_plus.test import TestCase
 from django.contrib.auth.models import Group, Permission, ContentType
-
-
+from ..admin import EmployeeAdmin
 from ..models import Employee, Patient, Responsible
 from ..models.model_employee import set_permissions
 
@@ -129,7 +128,7 @@ class TestModelEmployeeNoSetUp(TestCase):
 
         # this will be tested with the Patient model
         content_type = ContentType.objects.get_for_model(Patient)
- 
+
         mock_group = Group.objects.create(name="mock")
 
         # adds all permissions avaliable in set_permissions
@@ -143,7 +142,44 @@ class TestModelEmployeeNoSetUp(TestCase):
 
         # check if the where added
         self.assertQuerysetEqual(
-            Permission.objects.filter(content_type=content_type), 
+            Permission.objects.filter(content_type=content_type),
             mock_group.permissions.all(),
             transform=lambda x: x
+        )
+
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an employee
+        """
+
+        self.user = self.make_user()
+
+        ma = EmployeeAdmin(model=Employee, admin_site=None)
+
+        self.assertEqual(
+            hasattr(self.user, 'employee'),
+            False
+        )
+        # since there is no atribute employee in self user, we
+        # can assume that obj=None
+        self.assertEqual(
+            list(ma.get_readonly_fields(self, obj=None)),
+            []
+        )
+
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user,
+            departament=Employee.NEUROLOGY
+        )
+
+        self.assertEqual(
+            hasattr(self.user, 'employee'),
+            True
+        )
+
+        ma1 = EmployeeAdmin(model=Employee, admin_site=None)
+        self.assertEqual(
+            list(ma1.get_readonly_fields(self, obj=self.user.employee)),
+            ['user']
         )
