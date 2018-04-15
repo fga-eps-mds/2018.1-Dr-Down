@@ -106,7 +106,7 @@ Para verificar a cobertura do seu código, assim como rodar a suíte de testes d
 Rodando os testes com py.test:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Para apenas rodar a suíte de testes com o py.test para executar o seguinte comando::
+Para apenas rodar a suíte de testes com o py.test basta executar o seguinte comando::
 
     $ docker-compose -f local.yml run --rm django py.test
 

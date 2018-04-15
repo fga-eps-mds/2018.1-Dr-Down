@@ -1,4 +1,4 @@
 Deploy
 ========
 
-This is where you describe how the project is deployed in production.
+O deploy da aplicação Dr. Down ainda está em desenvolvimento, assim que pronto será documentado aqui!
