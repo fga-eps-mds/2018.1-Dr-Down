@@ -253,8 +253,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_ADAPTER = 'drdown.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = 'drdown.users.adapters.SocialAccountAdapter'
-
-
 # Your stuff...
 # ------------------------------------------------------------------------------
 DATE_INPUT_FORMATS = ["%d/%m/%Y"]
