@@ -1,4 +1,5 @@
 from test_plus.test import TestCase
+from ..admin import ResponsibleAdmin
 from django.core.exceptions import ValidationError
 
 from ..models import Responsible, Patient
@@ -92,3 +93,25 @@ class TestModelResponsible(TestCase):
                 patient=self.patient,
                 user=self.user_2
             )
+
+    def teste_readonly_user(self):
+
+        ma = ResponsibleAdmin(model=Responsible, admin_site=None)
+
+        # since there is no atribute patient in self user, we
+        # can assume that obj=None
+        self.assertEqual(
+            list(ma.get_readonly_fields(self, obj=None)),
+            []
+        )
+
+        self.assertEqual(
+            hasattr(self, 'responsible'),
+            True
+        )
+
+        ma1 = ResponsibleAdmin(model=Responsible, admin_site=None)
+        self.assertEqual(
+            list(ma1.get_readonly_fields(self, obj=self.responsible)),
+            ['user']
+        )
