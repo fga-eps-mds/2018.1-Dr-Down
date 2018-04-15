@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load account %}
+{% load static %}
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
@@ -13,11 +14,10 @@
 
 {% user_display confirmation.email_address.user as user_display %}
 
-<p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+<p class="lead">{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
 
-<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button class="btn btn-secondary" type="submit">{% trans 'Confirm' %}</button>
+    <a href={% url "users:update" %}><button class="btn btn-secondary" type="submit">{% trans 'Confirm' %}</button></a>
 </form>
 
 {% else %}
@@ -29,3 +29,4 @@
 {% endif %}
 
 {% endblock %}
+
