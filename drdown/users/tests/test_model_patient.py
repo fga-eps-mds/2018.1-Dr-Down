@@ -66,7 +66,10 @@ class TestModelPatient(TestCase):
             self.user.get_username()
         )
 
-    def teste_readonly_user(self):
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an patient
+        """
 
         ma = PatientAdmin(model=Patient, admin_site=None)
 

@@ -94,7 +94,10 @@ class TestModelResponsible(TestCase):
                 user=self.user_2
             )
 
-    def teste_readonly_user(self):
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an responsible
+        """
 
         ma = ResponsibleAdmin(model=Responsible, admin_site=None)
 

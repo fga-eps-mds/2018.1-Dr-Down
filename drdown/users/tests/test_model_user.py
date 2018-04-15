@@ -567,7 +567,9 @@ class TestField(TestCase):
 
     def test_delete_employee_specialization(self):
         """
-        update this
+        Test that checks if the bool has_specialization goes true when
+        an employee is created and if that bool returns to false in the
+        employee deletion
         """
 
         self.assertEqual(self.user1.has_specialization, False)
@@ -593,7 +595,9 @@ class TestField(TestCase):
 
     def test_delete_patient_specialization(self):
         """
-        update this
+        Test that checks if the bool has_specialization goes true when
+        an patient is created and if that bool returns to false in the
+        patient deletion
         """
 
         self.assertEqual(self.user1.has_specialization, False)
@@ -626,7 +630,9 @@ class TestField(TestCase):
 
     def test_delete_responsible_specialization(self):
         """
-        update this
+        Test that checks if the bool has_specialization goes true when
+        an responsible is created and if that bool returns to false in the
+        responsible deletion
         """
 
         self.assertEqual(self.user1.has_specialization, False)
@@ -649,9 +655,11 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'responsible'), False)
         self.assertEqual(self.user1.has_specialization, False)
 
-    def test_doctor_responsible_specialization(self):
+    def test_delete_doctor_specialization(self):
         """
-        update this
+        Test that checks if the bool has_specialization goes true when
+        an doctor is created and if that bool returns to false in the
+        doctor deletion
         """
 
         self.assertEqual(self.user1.has_specialization, False)

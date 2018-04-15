@@ -147,7 +147,10 @@ class TestModelEmployeeNoSetUp(TestCase):
             transform=lambda x: x
         )
 
-    def teste_readonly_user(self):
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an employee
+        """
 
         self.user = self.make_user()
 

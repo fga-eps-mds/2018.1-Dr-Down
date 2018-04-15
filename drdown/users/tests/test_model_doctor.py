@@ -155,7 +155,10 @@ class ModelTestCase(TestCase):
 
         self.assertNotEquals(self.doctor1.speciality, Doctor.CARDIOLOGY)
 
-    def teste_readonly_user(self):
+    def test_readonly_user(self):
+        """
+        Test is user field is read_only after creation of an doctor
+        """
 
         self.user = self.make_user()
 
