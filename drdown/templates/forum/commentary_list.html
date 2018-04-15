@@ -73,6 +73,8 @@
           {% endif %}
         </div>
       </div>
+      {% empty %}
+        <h4 class="lead text-secondary">{% trans 'There are no comments yet.'%}</h4>
     {% endfor %}
   </div>
 

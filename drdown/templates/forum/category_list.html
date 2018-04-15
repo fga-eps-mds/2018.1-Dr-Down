@@ -12,6 +12,8 @@
         <h4 class="list-group-item-heading text-tertiary h-blue">{{ category.name }}</h4>
         <p class="text-tertiary h-blue"> {{ category.description }} </p>
       </a>
+    {% empty %}
+        <h4>{% trans 'There are no category.'%}</h4>
     {% endfor %}
   </div>
 </div>
