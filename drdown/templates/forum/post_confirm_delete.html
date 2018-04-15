@@ -11,6 +11,7 @@
   {% csrf_token %}
   <p>{% trans 'Are you sure you want to delete ' %}{{ post.title }} ?</p>
   <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+  <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
 </form>
 
 
