@@ -52,37 +52,45 @@ class EmployeeAdmin(admin.ModelAdmin):
     change_form_template = "admin/change_form.html"
 
     def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+
         if obj:  # This is the case when obj is already created i.e. it's an edit
-            return ['user']
-        else:
-            return []
+            fields += ("user",)
+
+        return fields
 
 
 @admin.register(Responsible)
 class ResponsibleAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+
         if obj:  # This is the case when obj is already created i.e. it's an edit
-            return ['user']
-        else:
-            return []
+            fields += ("user",)
+
+        return fields
 
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+
         if obj:  # This is the case when obj is already created i.e. it's an edit
-            return ['user']
-        else:
-            return []
+            fields += ("user",)
+
+        return fields
 
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+
         if obj:  # This is the case when obj is already created i.e. it's an edit
-            return ['user']
-        else:
-            return []
+            fields += ("user",)
+
+        return fields
