@@ -565,6 +565,112 @@ class TestField(TestCase):
             employee.user=self.user2
             employee.save()
 
+    def test_delete_employee_specialization(self):
+        """
+        update this
+        """
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        employee=Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+            departament=Employee.NEUROLOGY
+        )
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'employee'), True)
+        self.assertEqual(self.user1.has_specialization, True)
+
+        employee.delete()
+        self.assertEqual(self.user1.has_specialization, False)
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'employee'), False)
+        self.assertEqual(self.user1.has_specialization, False)
+
+    def test_delete_patient_specialization(self):
+        """
+        update this
+        """
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        patient = Patient.objects.create(
+            ses="1234567",
+            user=self.user1,
+            priority=1,
+            mother_name="Mãe",
+            father_name="Pai",
+            ethnicity=3,
+            sus_number="12345678911",
+            civil_registry_of_birth="12345678911",
+            declaration_of_live_birth="12345678911"
+        )
+        self.assertEqual(hasattr(self.user1, 'patient'), True)
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'patient'), True)
+        self.assertEqual(self.user1.has_specialization, True)
+
+        patient.delete()
+        self.assertEqual(self.user1.has_specialization, False)
+
+        self.user1.refresh_from_db()
 
 
+        self.assertEqual(hasattr(self.user1, 'patient'), False)
+        self.assertEqual(self.user1.has_specialization, False)
 
+    def test_delete_responsible_specialization(self):
+        """
+        update this
+        """
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        responsible=Responsible.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1,
+        )
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'responsible'), True)
+        self.assertEqual(self.user1.has_specialization, True)
+
+        responsible.delete()
+        self.assertEqual(self.user1.has_specialization, False)
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'responsible'), False)
+        self.assertEqual(self.user1.has_specialization, False)
+
+    def test_doctor_responsible_specialization(self):
+        """
+        update this
+        """
+
+        self.assertEqual(self.user1.has_specialization, False)
+
+        doctor = Doctor.objects.create(
+            cpf="507.522.730-94",
+            user=self.user1,
+            speciality=Doctor.NEUROLOGY
+        )
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'doctor'), True)
+        self.assertEqual(self.user1.has_specialization, True)
+
+        doctor.delete()
+        self.assertEqual(self.user1.has_specialization, False)
+
+        self.user1.refresh_from_db()
+
+        self.assertEqual(hasattr(self.user1, 'doctor'), False)
+        self.assertEqual(self.user1.has_specialization, False)
