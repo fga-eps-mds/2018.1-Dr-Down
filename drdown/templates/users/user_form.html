@@ -1,33 +1,105 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load static %}
 
 {% block title %}{{ user.username }}{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    function fMasc(objeto,mascara) {
+      obj=objeto
+      masc=mascara
+      setTimeout("fMascEx()",1)
+    }
+    function fMascEx() {
+      obj.value=masc(obj.value)
+    }
+    function mTel(tel) {
+      tel=tel.replace(/\D/g,"")
+      tel=tel.replace(/^(\d)/,"($1")
+      tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+      if(tel.length == 9) {
+        tel=tel.replace(/(.{1})$/,"-$1")
+      } else if (tel.length == 10) {
+        tel=tel.replace(/(.{2})$/,"-$1")
+      } else if (tel.length == 11) {
+        tel=tel.replace(/(.{3})$/,"-$1")
+      } else if (tel.length == 12) {
+        tel=tel.replace(/(.{4})$/,"-$1")
+      } else if (tel.length > 12) {
+        tel=tel.replace(/(.{4})$/,"-$1")
+      }
+      return tel;
+    }
+  </script>
+
+{% endblock %}
  
 {% block content %}
 <div class="col-md-6 offset-md-3">
   <h1>{{ user.username }}</h1>
   <form class="form-horizontal" method="post" action="{% url 'users:update' %}" enctype="multipart/form-data">
-    {% csrf_token %} 
- 
-    {{ form.name  |as_crispy_field }}
-    {{ form.gender  |as_crispy_field }}
-    {{ form.telephone  |as_crispy_field }}
- 
-    <label>Birthday* </label>
- 
-    <input type="date"  name="birthday" required=true class="form-control">
-    <span class="validity"></span>
- 
-   <br />
- 
-    {{ form.photo  |as_crispy_field }} 
- 
+    <input type="hidden" name="csrfmiddlewaretoken" value="nl09OiviXf6LaPZJCPPdIqzdC54SMFto6pZJKrQsdG6jqYumowkAb169z2D6ivop"> 
+
+    <div id="div_id_name" class="form-group">        
+      <label for="id_name" class="col-form-label  requiredField">
+          Name<span class="asteriskField">*</span>
+      </label>
+            
+      <div class="">
+          <input type="text" name="name" maxlength="255" class="textinput textInput form-control" required="" id="id_name">
+          <small id="hint_id_name" class="form-text text-muted">Full user name</small>
+      </div>  
+    </div>
+    
+    <div id="div_id_gender" class="form-group">        
+      <label for="id_gender" class="col-form-label  requiredField">
+          Gender<span class="asteriskField">*</span>
+      </label>
+      <div class="">
+        <select name="gender" class="select form-control" required="" id="id_gender">
+        <option value="" selected="">---------</option>
+
+        <option value="Male">Male</option>
+
+        <option value="Female">Female</option>
+
+        </select>
+      </div>
+    </div>
+
+    <div id="div_id_telephone" class="form-group">        
+      <label for="id_telephone" class="col-form-label  requiredField">
+          Telephone<span class="asteriskField">*</span>
+      </label>
+      <div class="">
+        <input type="text" name="tel" maxlength="14" class="textinput textInput form-control" required="" id="id_telephone" onkeydown="javascript: fMasc( this, mTel );">
+
+        <small id="hint_id_telephone" class="form-text text-muted">(xx)xxxxx-xxxx or (xx)xxxx-xxxx</small>
+      </div>
+    </div>
+
+    <label>Birthday* </label> 
+    <input type="date" name="birthday" required="true" class="form-control">
+    <span class="validity mb-3"></span>
+    <div id="div_id_photo" class="form-group">        
+      <label for="id_photo" class="col-form-label ">
+      Photo
+      </label>
+      <div class="">
+        <input type="file" name="photo" class="clearablefileinput" id="id_photo">
+
+        <small id="hint_id_photo" class="form-text text-muted">Photo of user.</small>
+      </div>
+    </div>
+
     <div class="control-group">
       <div class="controls">
         <button type="submit" class="btn btn-success">Update</button>
       </div>
     </div>
+  </form>
   </form>
 </div>
  
