@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
 {% load i18n %}
 {% load static %}
 
@@ -44,26 +43,26 @@
 
     <div id="div_id_name" class="form-group">        
       <label for="id_name" class="col-form-label  requiredField">
-          Name<span class="asteriskField">*</span>
+          {% trans 'Name' %}<span class="asteriskField">*</span>
       </label>
             
       <div class="">
           <input type="text" name="name" maxlength="255" class="textinput textInput form-control" required="" id="id_name">
-          <small id="hint_id_name" class="form-text text-muted">Full user name</small>
+          <small id="hint_id_name" class="form-text text-muted">{% trans 'Full user name' %}</small>
       </div>  
     </div>
     
     <div id="div_id_gender" class="form-group">        
       <label for="id_gender" class="col-form-label  requiredField">
-          Gender<span class="asteriskField">*</span>
+          {% trans 'Gender' %}<span class="asteriskField">*</span>
       </label>
       <div class="">
         <select name="gender" class="select form-control" required="" id="id_gender">
         <option value="" selected="">---------</option>
 
-        <option value="Male">Male</option>
+        <option value="Male">{% trans 'Male' %}</option>
 
-        <option value="Female">Female</option>
+        <option value="Female">{% trans 'Female' %}</option>
 
         </select>
       </div>
@@ -71,7 +70,7 @@
 
     <div id="div_id_telephone" class="form-group">        
       <label for="id_telephone" class="col-form-label  requiredField">
-          Telephone<span class="asteriskField">*</span>
+          {% trans 'Telephone' %}<span class="asteriskField">*</span>
       </label>
       <div class="">
         <input type="text" name="tel" maxlength="14" class="textinput textInput form-control" required="" id="id_telephone" onkeydown="javascript: fMasc( this, mTel );">
@@ -80,23 +79,23 @@
       </div>
     </div>
 
-    <label>Birthday* </label> 
+    <label>{% trans 'Birthday' %}* </label> 
     <input type="date" name="birthday" required="true" class="form-control">
     <span class="validity mb-3"></span>
     <div id="div_id_photo" class="form-group">        
       <label for="id_photo" class="col-form-label ">
-      Photo
+      {% trans 'Photo' %}
       </label>
       <div class="">
         <input type="file" name="photo" class="clearablefileinput" id="id_photo">
 
-        <small id="hint_id_photo" class="form-text text-muted">Photo of user.</small>
+        <small id="hint_id_photo" class="form-text text-muted">{% trans 'Photo of user' %}.</small>
       </div>
     </div>
 
     <div class="control-group">
       <div class="controls">
-        <button type="submit" class="btn btn-success">Update</button>
+        <button type="submit" class="btn btn-success">{% trans 'Update' %}</button>
       </div>
     </div>
   </form>
