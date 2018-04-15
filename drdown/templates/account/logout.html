@@ -7,7 +7,7 @@
 {% block inner %}
 <h1>{% trans "Log Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to log out?' %}</p>
+<p class="lead">{% trans 'Are you sure you want to log out?' %}</p>
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}

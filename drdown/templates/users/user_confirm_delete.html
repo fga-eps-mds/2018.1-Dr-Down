@@ -9,7 +9,7 @@
 
 <form method="post" action="">
   {% csrf_token %}
-  <p>{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
+  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
   <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
 </form>
 
