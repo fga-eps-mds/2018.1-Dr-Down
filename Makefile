@@ -52,7 +52,6 @@ down-remove-images:
 # DJANGO -------------------------------------------------------
 container := "django"
 
-container := "django"
 bash:
 	# Get in the bash of container
 	sudo docker exec -it ${container} /bin/sh
@@ -102,13 +101,13 @@ test-all: manage.py
 	# Run tests
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py test
 
-coverage: coverage
+coverage: manage.py
 	# Run django coverage tests
-	docker-compose -f local.yml run --rm django coverage run -m py.test
+	sudo docker-compose -f local.yml run --rm ${container} coverage run -m py.test
 
-coverage-html: coverage
+coverage-html: manage.py
 	# Create a covarege page based on the tests
-	sudo docker-compose -f ${file} run --rm ${container} django coverage html
+	sudo docker-compose -f ${file} run --rm ${container} coverage html
 
 # TRANSLATION --------------------------------------------------
 files := "**/*.py"
