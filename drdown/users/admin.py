@@ -12,10 +12,6 @@ from .models import (
         Doctor
     )
 
-admin.site.register(Doctor)
-admin.site.register(Patient)
-admin.site.register(Responsible)
-
 
 class MyUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
@@ -47,10 +43,46 @@ class MyUserAdmin(AuthUserAdmin):
     fieldsets = (
             ('User Profile', {'fields': ('name',)}),
     ) + AuthUserAdmin.fieldsets
-    list_display = ('username', 'name', 'is_superuser')
+    list_display = ('username','has_specialization', 'name', 'is_superuser')
     search_fields = ['name']
 
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     change_form_template = "admin/change_form.html"
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # This is the case when obj is already created i.e. it's an edit
+            return ['user']
+        else:
+            return []
+
+
+@admin.register(Responsible)
+class ResponsibleAdmin(admin.ModelAdmin):
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # This is the case when obj is already created i.e. it's an edit
+            return ['user']
+        else:
+            return []
+
+
+@admin.register(Doctor)
+class DoctorAdmin(admin.ModelAdmin):
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # This is the case when obj is already created i.e. it's an edit
+            return ['user']
+        else:
+            return []
+
+
+@admin.register(Patient)
+class PatientAdmin(admin.ModelAdmin):
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj:  # This is the case when obj is already created i.e. it's an edit
+            return ['user']
+        else:
+            return []
