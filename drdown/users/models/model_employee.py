@@ -137,6 +137,7 @@ class Employee(models.Model):
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
 
+
 def set_permissions(model, group, change=False, add=False, delete=False):
     content_type = ContentType.objects.get_for_model(model)
 

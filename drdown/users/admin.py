@@ -43,7 +43,7 @@ class MyUserAdmin(AuthUserAdmin):
     fieldsets = (
             ('User Profile', {'fields': ('name',)}),
     ) + AuthUserAdmin.fieldsets
-    list_display = ('username','has_specialization', 'name', 'is_superuser')
+    list_display = ('username', 'has_specialization', 'name', 'is_superuser')
     search_fields = ['name']
 
 
@@ -54,7 +54,8 @@ class EmployeeAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
 
-        if obj:  # This is the case when obj is already created i.e. it's an edit
+        # This is the case when obj is already created i.e. it's an edit
+        if obj:
             fields += ("user",)
 
         return fields
@@ -66,7 +67,8 @@ class ResponsibleAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
 
-        if obj:  # This is the case when obj is already created i.e. it's an edit
+        # This is the case when obj is already created i.e. it's an edit
+        if obj:
             fields += ("user",)
 
         return fields
@@ -78,7 +80,8 @@ class DoctorAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
 
-        if obj:  # This is the case when obj is already created i.e. it's an edit
+        # This is the case when obj is already created i.e. it's an edit
+        if obj:
             fields += ("user",)
 
         return fields
@@ -90,7 +93,8 @@ class PatientAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
 
-        if obj:  # This is the case when obj is already created i.e. it's an edit
+        # This is the case when obj is already created i.e. it's an edit
+        if obj: 
             fields += ("user",)
 
         return fields

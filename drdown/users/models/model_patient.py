@@ -120,4 +120,3 @@ class Patient(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
-
