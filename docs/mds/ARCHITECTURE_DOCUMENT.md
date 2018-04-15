@@ -19,6 +19,7 @@
 | 01/04/2018 | 1.2.0 | Melhorando o tópico de representação arquitetural | Victor Arnaud |
 | 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
 | 12/04/2018 | 1.3.0 | Modificando para arquitetura baseada em componentes | Victor Arnaud |
+| 15/04/2018 | 1.4.0 | Modificando imagem da arquitetura | Victor Arnaud e Geovana Ramos |
 
 ## 1: Introdução
 
@@ -44,7 +45,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Diagrama arquitetural](http://uploaddeimagens.com.br/images/001/354/177/full/MICROSERVI%C3%87OS-SETA.png?1522593562)
+![Arquitetura](https://user-images.githubusercontent.com/14116020/38784325-8dad88ee-40e6-11e8-8746-46ae3034d386.png)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas caractísticas e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
@@ -117,8 +118,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados
-de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliado pela equipe.|
+|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliado pela equipe.|
 
 
 #### Foruns e discussões
@@ -143,7 +143,7 @@ de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avali
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/RocketChat/Rocket.Chat#docker)|É um microserviço de chat open sourcer baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
+|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open sourcer baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
 |[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar a prescrição de receitas|Não|Não passou em quase todos so critérios definidos acima, a aplicação chat do projeto está bastante acoplado, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gerando tempo e esforço|
 |[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em Websocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
 |[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|A decidir|O projeto ainda está sendo avaliado pela equipe|
@@ -164,8 +164,7 @@ de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avali
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do google maps com informações sobre
-milhões de locais|A decidir|A API ainda está sendo avaliado pela equipe.|
+|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do google maps com informações sobre milhões de locais|A decidir|A API ainda está sendo avaliado pela equipe.|
 
 #### Outros
 
