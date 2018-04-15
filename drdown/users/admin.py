@@ -94,7 +94,7 @@ class PatientAdmin(admin.ModelAdmin):
         fields = super().get_readonly_fields(request, obj)
 
         # This is the case when obj is already created i.e. it's an edit
-        if obj: 
+        if obj:
             fields += ("user",)
 
         return fields
