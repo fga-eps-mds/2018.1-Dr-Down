@@ -31,6 +31,8 @@
     {% if user.username == post.created_by.username %}
       <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
       <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+    {% elif user.is_superuser %}
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
     {% endif %}
   </div>
 
@@ -75,6 +77,9 @@
           {% if user.username == commentary.created_by.username %}
             <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
                             class="btn btn-secondary">{% trans "Edit" %}</a>
+            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
+                              class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+          {% elif user.is_superuser %}
             <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
                               class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
           {% endif %}
