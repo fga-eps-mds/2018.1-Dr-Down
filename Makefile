@@ -114,7 +114,7 @@ files := "**/*.py"
 
 messages:
 	# Create a django.po to insert translations (pt-BR)
-	sudo docker-compose -f ${file} run --rm ${container} django-admin makemessages -l pt_BR -i ${files}
+	sudo docker-compose -f ${file} run --rm ${container} django-admin makemessages -l pt_BR
 
 compilemessages:
 	# Create translations
