@@ -96,30 +96,48 @@
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Health Team' %} </h3>
         {% if health_team_cpf %}
         <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'CPF: '%}</strong></label>
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'CPF: '%}</strong></label>
           <div>
             <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_cpf }}" disabled>
           </div>
         </div>
         {% endif %}
 
-      {% if health_team_crm %}
-      <div class="form-group row mb-1">
-        <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'CRM: '%}</strong></label>
-        <div>
-          <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_crm }}" disabled>
+        {% if health_team_council_acronym %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Council Acronym: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_council_acronym }}" disabled>
+          </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
 
-      {% if health_team_speciality %}
-      <div class="form-group row mb-1">
-        <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-1"><strong>{% trans 'Speciality: '%}</strong></label>
-        <div>
-          <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ health_team_speciality }}" disabled>
+        {% if health_team_register_number %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Register Number: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
+          </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
+
+        {% if health_team_registration_state %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Registration State: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_registration_state }}" disabled>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if health_team_speciality %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Speciality: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ health_team_speciality }}" disabled>
+          </div>
+        </div>
+        {% endif %}
       </form>
     </div>
   </div>
