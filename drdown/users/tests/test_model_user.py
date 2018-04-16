@@ -229,7 +229,7 @@ class TestField(TestCase):
         Test for verify if the phone is the diferent for compare
         """
 
-        self.assertNotEqual( self.superuser.email, '')
+        self.assertNotEqual(self.superuser.email, '')
         self.assertNotEqual(self.user1.email, '')
         self.assertNotEqual(self.user2.email, '')
 
@@ -280,27 +280,27 @@ class TestField(TestCase):
 
     def test_photo(self):
         """
-        Test for verify if the photo is the same for compare
+        Test for verifying if the photo is the same for compare
         """
         self.assertEquals(self.superuser.photo, 'example.jpg')
         self.assertEquals(self.user1.photo, 'example.jpg')
         self.assertEquals(self.user2.photo, 'example.jpg')
 
-    def test_photo(self):
+    def test_updated_at_photo(self):
         """
-        Test for verify if the update_at is different for compare
+        Test for verifying if the update_at is different for compare
         """
 
-        self.assertNotEquals( self.superuser.photo, '')
+        self.assertNotEquals(self.superuser.photo, '')
         self.assertNotEquals(self.user1.photo, '')
         self.assertNotEquals(self.user2.photo, '')
 
     def test_multiple_specialization(self):
         """
-        Define a initial relation to user
+        Defining an initial relation to user
         """
 
-        employee = Employee.objects.create(
+        Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
             departament=Employee.NEUROLOGY
@@ -308,7 +308,7 @@ class TestField(TestCase):
 
         # try to define a new relation to the same user
         with(self.assertRaises(ValidationError)):
-            patient = Patient.objects.create(
+            Patient.objects.create(
                 ses="1234567",
                 user=self.user1,
                 priority=1,
@@ -321,13 +321,13 @@ class TestField(TestCase):
             )
 
         with(self.assertRaises(ValidationError)):
-            responsible = Responsible.objects.create(
+            Responsible.objects.create(
                 cpf="974.220.200-16",
                 user=self.user1
             )
 
         with(self.assertRaises(ValidationError)):
-            health_team = Health_Team.objects.create(
+            Health_Team.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
                 speciality=Health_Team.NEUROLOGY
@@ -335,7 +335,7 @@ class TestField(TestCase):
 
         # test employee again
         with(self.assertRaises(ValidationError)):
-            employee = Employee.objects.create(
+            Employee.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
                 departament=Employee.NEUROLOGY
@@ -496,7 +496,7 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'responsible'), True)
 
         with self.assertRaises(ValidationError):
-            responsible.user=self.user2
+            responsible.user = self.user2
             responsible.save()
 
     def test_cant_update_user_on_health_team_specialization(self):
@@ -516,7 +516,7 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'health_team'), True)
 
         with self.assertRaises(ValidationError):
-            health_team.user=self.user2
+            health_team.user = self.user2
             health_team.save()
 
     def test_cant_update_user_on_patient_specialization(self):
@@ -542,7 +542,7 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'patient'), True)
 
         with self.assertRaises(ValidationError):
-            patient.user=self.user2
+            patient.user = self.user2
             patient.save()
 
     def test_cant_update_user_on_employee_specialization(self):
@@ -552,7 +552,7 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        employee=Employee.objects.create(
+        employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
             departament=Employee.NEUROLOGY
@@ -562,7 +562,7 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'employee'), True)
 
         with self.assertRaises(ValidationError):
-            employee.user=self.user2
+            employee.user = self.user2
             employee.save()
 
     def test_delete_employee_specialization(self):
@@ -574,7 +574,7 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        employee=Employee.objects.create(
+        employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
             departament=Employee.NEUROLOGY
@@ -624,7 +624,6 @@ class TestField(TestCase):
 
         self.user1.refresh_from_db()
 
-
         self.assertEqual(hasattr(self.user1, 'patient'), False)
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -637,7 +636,7 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        responsible=Responsible.objects.create(
+        responsible = Responsible.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
         )
