@@ -5,8 +5,7 @@
 
 {% block css %}
 {{block.super}}
-<link href="{% static 'css/info.css' %}" rel="stylesheet">
-
+<link href="{% static 'forum/css/forum.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -24,15 +23,15 @@
     </ol>
   </div>
 
-  <div class="mb-4">
+  <div class="mb-4 align-button">
     {% if user.is_authenticated %}
-      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "New commentary" %}</a>
+      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary space">{% trans "New commentary" %}</a>
     {% endif %}
     {% if user.username == post.created_by.username %}
-      <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
-      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+      <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary space">{% trans "Edit" %}</a>
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger space">{% trans "Delete" %}</a>
     {% elif user.is_superuser %}
-      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger">{% trans "Delete" %}</a>
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger space">{% trans "Delete" %}</a>
     {% endif %}
   </div>
 
