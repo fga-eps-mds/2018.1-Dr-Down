@@ -41,5 +41,5 @@ class Commentary(models.Model):
     )
 
     class Meta:
-        verbose_name = "Commentary"
-        verbose_name_plural = "Commentaries"
+        verbose_name = _("Commentary")
+        verbose_name_plural = _("Commentaries")
