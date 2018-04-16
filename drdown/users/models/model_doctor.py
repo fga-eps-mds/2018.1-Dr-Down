@@ -44,6 +44,7 @@ class Doctor(models.Model):
     PEDIATRICS = _("Pediatrics")
     PSYCHOLOGY = _("Psychology")
     PHYSIOTHERAPY = _("Physiotherapy")
+    DOCTOR = ("Doctor")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
@@ -53,6 +54,7 @@ class Doctor(models.Model):
         (PEDIATRICS, _('Pediatrics')),
         (PSYCHOLOGY, _('Psychology')),
         (PHYSIOTHERAPY, _('Physiotherapy')),
+        (DOCTOR, _('Doctor')),
     )
 
     speciality = models.CharField(
