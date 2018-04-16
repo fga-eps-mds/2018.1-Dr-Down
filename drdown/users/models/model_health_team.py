@@ -11,7 +11,7 @@ from .model_user import User
 from drdown.utils.validators import validate_crm
 
 
-class Doctor(models.Model):
+class HealthTeam(models.Model):
 
     user = models.OneToOneField(
         User,
@@ -60,26 +60,26 @@ class Doctor(models.Model):
     speciality = models.CharField(
         _('Speciality'),
         choices=SPECIALITY_CHOICES,
-        help_text=_("The speciality that this doctor works."),
+        help_text=_("The speciality that this member of health team works."),
         max_length=30,
         blank=True
     )
 
     # const representig the name of the group wich this model will add to the
     # related user
-    GROUP_NAME = "Doctors"
+    GROUP_NAME = "HealthTeams"
 
     def clean(self, *args, **kwargs):
 
         try:
-            user_db = Doctor.objects.get(id=self.id).user
+            user_db = HealthTeam.objects.get(id=self.id).user
 
             if self.user != user_db:
                 raise ValidationError(
                     _("Don't change users"))
             else:
                 pass
-        except Doctor.DoesNotExist:
+        except HealthTeam.DoesNotExist:
             pass
 
         self.user.clean()
@@ -91,12 +91,12 @@ class Doctor(models.Model):
         self.user.is_staff = True
 
         try:
-            doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
+            health_team_group = Group.objects.get(name=HealthTeam.GROUP_NAME)
         except Group.DoesNotExist:
-            doctor_group = Group.objects.create(name=Doctor.GROUP_NAME)
+            health_team_group = Group.objects.create(name=HealthTeam.GROUP_NAME)
 
         # TODO: add permissions to edit Patient and Parent when they get ready
-        self.user.groups.add(doctor_group)
+        self.user.groups.add(health_team_group)
 
         self.user.clean()
         self.user.save()
@@ -115,5 +115,5 @@ class Doctor(models.Model):
         super().delete(*args, **kwargs)
 
     class Meta:
-        verbose_name = _('Doctor')
-        verbose_name_plural = _('Doctors')
+        verbose_name = _('HealthTeam')
+        verbose_name_plural = _('HealthTeams')
