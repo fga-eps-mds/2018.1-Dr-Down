@@ -37,7 +37,7 @@ class CeleryConfig(AppConfig):
             from raven.contrib.celery import register_logger_signal as raven_register_logger_signal  # pragma: no cover
 # @formatter:on
 
-            raven_client = RavenClient(dsn=settings.RAVEN_CONFIG['DSN'])  # pragma: no cover
+            raven_client = RavenClient(dsn=settings.RAVEN_CONFIG['dsn'])  # pragma: no cover
             raven_register_logger_signal(raven_client)  # pragma: no cover
             raven_register_signal(raven_client)  # pragma: no cover
 

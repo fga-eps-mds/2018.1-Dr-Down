@@ -1,5 +1,5 @@
 www.{$DOMAIN_NAME} {
-    redir https://epsmds.com
+    redir http://drdown.ml
 }
 
 {$DOMAIN_NAME} {
