@@ -10,6 +10,7 @@ from datetime import datetime
 
 class PostListView(ListView):
     model = Post
+    paginate_by = 20
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
