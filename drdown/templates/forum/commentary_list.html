@@ -14,11 +14,7 @@
   <div class="container">
     <ol class="breadcrumb my-4">
       <li class="breadcrumb-item"><a href="{% url 'forum:list_categories' %}" class="text-tertiary">{% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item">
-        <a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}" class="text-tertiary">
-        {% trans "Posts" %}
-        </a>
-      </li>
+      <li class="breadcrumb-item"><a href="{% url 'forum:list_posts' post.category.slug post.category.pk %}" class="text-tertiary">{% trans "Posts" %}</a></li>
       <li class="breadcrumb-item active">{{ post.title }}</li>
     </ol>
   </div>
@@ -41,7 +37,6 @@
     <div class="row">
       <!-- Post Content Column -->
       <div class="col-lg-8">
-
         <!-- Title -->
         <h1 class="mt-4">{{ post.title }}</h1>
         <!-- Author -->
@@ -63,26 +58,22 @@
         {% if commentary.created_by.photo %}
           <img class="d-flex mr-3 rounded-circle" src="{{commentary.created_by.photo.url}}" alt="" width="40px">
         {% else %}
-         <img class="d-flex mr-3 rounded-circle" src="{% static 'images/user.png' %}" width="40px">
+          <img class="d-flex mr-3 rounded-circle" src="{% static 'images/user.png' %}" width="40px">
         {% endif %}
         <div class="media-body">
           <h5 class="mt-0">{{commentary.created_by.username}}</h5>
           <p> {{commentary.message}}</p>
           {% if commentary.updated_at != None %}
-            <p><font size="1" >{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
+            <p><font size="2" >{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
             {% else %}
-            <p><font size="1">{% trans 'Created on'%} {{ commentary.created_at }}</font></p>
+            <p><font size="2">{% trans 'Created on'%} {{ commentary.created_at }}</font></p>
           {% endif %}
           {% if user.username == commentary.created_by.username %}
-            <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
-                            class="btn btn-secondary">{% trans "Edit" %}</a>
-            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
-                              class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+            <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
           {% elif user.is_superuser %}
-            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}"
-                              class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+            <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
           {% endif %}
-
         </div>
       </div>
       {% empty %}

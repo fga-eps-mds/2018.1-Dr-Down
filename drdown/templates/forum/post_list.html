@@ -37,7 +37,8 @@
       {% for post in post_list %}
         <tr>
           <td><a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="lead text-secondary">
-            {{ post.title }}</td>
+            {{ post.title }}
+          </td>
           <td>{{ post.created_by.username }}</td>
           <td>{{ post.commentaries.count }}</td>
           <td>{{ post.created_at}}</td>
@@ -47,7 +48,7 @@
             <td>{% trans "Not updated yet"%}</td>
           {% endif %}
         </tr>
-        {% empty %}
+      {% empty %}
         <h4 class="lead text-secondary" align="center">{% trans 'There are no posts in this category.'%}</h4>
       {% endfor %}
     </tbody>
