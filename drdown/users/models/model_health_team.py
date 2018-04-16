@@ -11,7 +11,7 @@ from .model_user import User
 from drdown.utils.validators import validate_crm
 
 
-class HealthTeam(models.Model):
+class Health_Team(models.Model):
 
     user = models.OneToOneField(
         User,
@@ -67,19 +67,19 @@ class HealthTeam(models.Model):
 
     # const representig the name of the group wich this model will add to the
     # related user
-    GROUP_NAME = "HealthTeams"
+    GROUP_NAME = "Health_Team"
 
     def clean(self, *args, **kwargs):
 
         try:
-            user_db = HealthTeam.objects.get(id=self.id).user
+            user_db = Health_Team.objects.get(id=self.id).user
 
             if self.user != user_db:
                 raise ValidationError(
                     _("Don't change users"))
             else:
                 pass
-        except HealthTeam.DoesNotExist:
+        except Health_Team.DoesNotExist:
             pass
 
         self.user.clean()
@@ -91,9 +91,9 @@ class HealthTeam(models.Model):
         self.user.is_staff = True
 
         try:
-            health_team_group = Group.objects.get(name=HealthTeam.GROUP_NAME)
+            health_team_group = Group.objects.get(name=Health_Team.GROUP_NAME)
         except Group.DoesNotExist:
-            health_team_group = Group.objects.create(name=HealthTeam.GROUP_NAME)
+            health_team_group = Group.objects.create(name=Health_Team.GROUP_NAME)
 
         # TODO: add permissions to edit Patient and Parent when they get ready
         self.user.groups.add(health_team_group)
@@ -115,5 +115,5 @@ class HealthTeam(models.Model):
         super().delete(*args, **kwargs)
 
     class Meta:
-        verbose_name = _('HealthTeam')
-        verbose_name_plural = _('HealthTeams')
+        verbose_name = _('Health_Team')
+        verbose_name_plural = _('Health_Teams')

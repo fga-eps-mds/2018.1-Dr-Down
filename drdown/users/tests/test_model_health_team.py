@@ -1,15 +1,15 @@
 from test_plus.test import TestCase
-from ..admin import DoctorAdmin
+from ..admin import Health_TeamAdmin
 from django.contrib.auth.models import Group
 
 
-from ..models.model_doctor import Doctor
+from ..models.model_health_team import Health_Team
 from ..models import User
 
 
-class TestModelDoctor(TestCase):
+class TestModelHealth_Team(TestCase):
     """
-    Test if model Doctor is working correctly
+    Test if model Health_Team is working correctly
     """
 
     def setUp(self):
@@ -18,10 +18,10 @@ class TestModelDoctor(TestCase):
         """
 
         self.user = self.make_user()
-        self.doctor = Doctor.objects.create(
+        self.health_team = Health_Team.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=Doctor.NEUROLOGY)
+            speciality=Health_Team.NEUROLOGY)
 
     def test_get_absolute_url(self):
         """
@@ -38,37 +38,37 @@ class TestModelDoctor(TestCase):
         This test will check if the one_to_one relation is being respected.
         """
 
-        self.assertIs(self.user, self.doctor.user)
-        self.assertIs(self.doctor, self.user.doctor)
+        self.assertIs(self.user, self.health_team.user)
+        self.assertIs(self.health_team, self.user.health_team)
 
     def test_delete_cascade(self):
         """
         This test check if all object data is deleted along with it.
         """
 
-        self.assertEquals(Doctor.objects.get(
-            cpf="057.641.271-65"), self.doctor)
+        self.assertEquals(Health_Team.objects.get(
+            cpf="057.641.271-65"), self.health_team)
 
         self.user.delete()
 
-        with self.assertRaises(Doctor.DoesNotExist):
-            Doctor.objects.get(cpf="057.641.271-65")
+        with self.assertRaises(Health_Team.DoesNotExist):
+            Health_Team.objects.get(cpf="057.641.271-65")
 
     def test__str__(self):
         """
         This test check if __str__ is returning the data correctly.
         """
         self.assertEqual(
-            self.doctor.__str__(),
+            self.health_team.__str__(),
             (
                 self.user.get_username() +
                 " - " +
-                self.doctor.get_speciality_display()
+                self.health_team.get_speciality_display()
             )
         )
 
 
-class TestModelDoctorNoSetUp(TestCase):
+class TestModelHealth_TeamNoSetUp(TestCase):
 
     def test_save_making_changes_on_user(self):
         """
@@ -80,18 +80,18 @@ class TestModelDoctorNoSetUp(TestCase):
         self.assertEquals(self.user.is_staff, False)
 
         with self.assertRaises(Group.DoesNotExist):
-            self.user.groups.get(name=Doctor.GROUP_NAME)
+            self.user.groups.get(name=Health_Team.GROUP_NAME)
 
-        # now we add the doctor<--->user relation
-        self.doctor = Doctor.objects.create(
-            cpf="057.641.271-65", user=self.user, speciality=Doctor.NEUROLOGY)
+        # now we add the health team <--->user relation
+        self.health_team = Health_Team.objects.create(
+            cpf="057.641.271-65", user=self.user, speciality=Health_Team.NEUROLOGY)
 
         # it should create the group
-        doctor_group = Group.objects.get(name=Doctor.GROUP_NAME)
+        health_team_group = Group.objects.get(name=Health_Team.GROUP_NAME)
 
         # and change things in the user
         self.assertEqual(self.user.groups.get(
-            name=Doctor.GROUP_NAME), doctor_group)
+            name=Health_Team.GROUP_NAME), health_team_group)
 
 
 class ModelTestCase(TestCase):
@@ -108,10 +108,10 @@ class ModelTestCase(TestCase):
             password='pedro123456'
         )
 
-        self.doctor1 = Doctor.objects.create(
+        self.health_team1 = Health_Team.objects.create(
             cpf='057.640.991-02',
             crm='1234567',
-            speciality=Doctor.PEDIATRICS,
+            speciality=Health_Team.PEDIATRICS,
             user=self.user1
         )
 
@@ -120,52 +120,52 @@ class ModelTestCase(TestCase):
         This method will check if the cpf is equal to the informed
         """
 
-        self.assertEquals(self.doctor1.cpf, '057.640.991-02')
+        self.assertEquals(self.health_team1.cpf, '057.640.991-02')
 
     def test_save_crm_ok(self):
         """
         This method will check if the crm is equal to the informed
         """
-        self.assertEquals(self.doctor1.crm, '1234567')
+        self.assertEquals(self.health_team1.crm, '1234567')
 
     def test_save_speciality_ok(self):
         """
         This method will check if the speciality is equal to the informed
         """
-        self.assertEquals(self.doctor1.speciality, Doctor.PEDIATRICS)
+        self.assertEquals(self.health_team1.speciality, Health_Team.PEDIATRICS)
 
     def test_save_cpf_error(self):
         """
         This method will check if the cpf is different from informed
         """
 
-        self.assertNotEquals(self.doctor1.cpf, '057.641.271-65')
+        self.assertNotEquals(self.health_team1.cpf, '057.641.271-65')
 
     def test_save_crm_error(self):
         """
         This method will check if the crm is different from informed
         """
 
-        self.assertNotEquals(self.doctor1.crm, '7654321')
+        self.assertNotEquals(self.health_team1.crm, '7654321')
 
     def test_save_speciality_error(self):
         """
         This method will check if the speciality is different from informed
         """
 
-        self.assertNotEquals(self.doctor1.speciality, Doctor.CARDIOLOGY)
+        self.assertNotEquals(self.health_team1.speciality, Health_Team.CARDIOLOGY)
 
     def test_readonly_user(self):
         """
-        Test is user field is read_only after creation of an doctor
+        Test is user field is read_only after creation of an health team
         """
 
         self.user = self.make_user()
 
-        ma = DoctorAdmin(model=Doctor, admin_site=None)
+        ma = Health_TeamAdmin(model=Health_Team, admin_site=None)
 
         self.assertEqual(
-            hasattr(self.user, 'doctor'),
+            hasattr(self.user, 'health_team'),
             False
         )
         # since there is no atribute patient in self user, we
@@ -175,18 +175,18 @@ class ModelTestCase(TestCase):
             []
         )
 
-        self.doctor = Doctor.objects.create(
+        self.health_team = Health_Team.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=Doctor.NEUROLOGY)
+            speciality=Health_Team.NEUROLOGY)
 
         self.assertEqual(
-            hasattr(self.user, 'doctor'),
+            hasattr(self.user, 'health_team'),
             True
         )
 
-        ma1 = DoctorAdmin(model=Doctor, admin_site=None)
+        ma1 = Health_TeamAdmin(model=Health_Team, admin_site=None)
         self.assertEqual(
-            list(ma1.get_readonly_fields(self, obj=self.user.doctor)),
+            list(ma1.get_readonly_fields(self, obj=self.user.health_team)),
             ['user']
         )

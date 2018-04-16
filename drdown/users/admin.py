@@ -9,7 +9,7 @@ from .models import (
         Employee,
         Patient,
         Responsible,
-        HealthTeam
+        Health_Team
     )
 
 
@@ -74,8 +74,8 @@ class ResponsibleAdmin(admin.ModelAdmin):
         return fields
 
 
-@admin.register(HealthTeam)
-class HealthTeamAdmin(admin.ModelAdmin):
+@admin.register(Health_Team)
+class Health_TeamAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)

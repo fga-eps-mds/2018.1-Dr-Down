@@ -2,7 +2,7 @@ from test_plus.test import TestCase
 from drdown.users.models import User
 from django.core.exceptions import ValidationError
 
-from ..models import Employee, Doctor, Patient, Responsible
+from ..models import Employee, Health_Team, Patient, Responsible
 
 
 class TestUser(TestCase):
@@ -327,10 +327,10 @@ class TestField(TestCase):
             )
 
         with(self.assertRaises(ValidationError)):
-            doctor = Doctor.objects.create(
+            health_team = Health_Team.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=Doctor.NEUROLOGY
+                speciality=Health_Team.NEUROLOGY
             )
 
         # test employee again
@@ -363,25 +363,25 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-    def test_doctor_specialization_on_delete_reset_flag(self):
+    def test_health_team_specialization_on_delete_reset_flag(self):
         """
         Test that checks if the has_specialization flag
         returns to "false" when the user loses the
-        doctor specialization
+        health team specialization
         """
 
         self.assertEqual(self.user1.has_specialization, False)
 
         # define a initial relation to user
-        doctor = Doctor.objects.create(
+        health_team = Health_Team.objects.create(
             cpf="057.641.271-65",
             user=self.user1,
-            speciality=Doctor.NEUROLOGY
+            speciality=Health_Team.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
 
-        doctor.delete()
+        health_team.delete()
 
         self.assertEqual(self.user1.has_specialization, False)
 
@@ -457,25 +457,25 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
 
-    def test_removing_doctor_specialization_remove_staff(self):
+    def test_removing_health_team_specialization_remove_staff(self):
         """
         Test that checks if the user loses staff
-        status when he loses the doctor specialization
+        status when he loses the health team specialization
         """
 
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
 
-        doctor = Doctor.objects.create(
+        health_team = Health_Team.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=Doctor.NEUROLOGY
+                speciality=Health_Team.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
         self.assertEqual(self.user1.is_staff, True)
 
-        doctor.delete()
+        health_team.delete()
 
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
@@ -499,25 +499,25 @@ class TestField(TestCase):
             responsible.user=self.user2
             responsible.save()
 
-    def test_cant_update_user_on_doctor_specialization(self):
+    def test_cant_update_user_on_health_team_specialization(self):
         """
-        Test that verifies that the user field can not be updated in an doctor specialization
+        Test that verifies that the user field can not be updated in an health team specialization
         """
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        doctor = Doctor.objects.create(
+        health_team = Health_Team.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=Doctor.NEUROLOGY
+            speciality=Health_Team.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
-        self.assertEqual(hasattr(self.user1, 'doctor'), True)
+        self.assertEqual(hasattr(self.user1, 'health_team'), True)
 
         with self.assertRaises(ValidationError):
-            doctor.user=self.user2
-            doctor.save()
+            health_team.user=self.user2
+            health_team.save()
 
     def test_cant_update_user_on_patient_specialization(self):
         """
@@ -655,30 +655,30 @@ class TestField(TestCase):
         self.assertEqual(hasattr(self.user1, 'responsible'), False)
         self.assertEqual(self.user1.has_specialization, False)
 
-    def test_delete_doctor_specialization(self):
+    def test_delete_health_team_specialization(self):
         """
         Test that checks if the bool has_specialization goes true when
-        an doctor is created and if that bool returns to false in the
-        doctor deletion
+        an health team is created and if that bool returns to false in the
+        health team deletion
         """
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        doctor = Doctor.objects.create(
+        health_team = Health_Team.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=Doctor.NEUROLOGY
+            speciality=Health_Team.NEUROLOGY
         )
 
         self.user1.refresh_from_db()
 
-        self.assertEqual(hasattr(self.user1, 'doctor'), True)
+        self.assertEqual(hasattr(self.user1, 'health_team'), True)
         self.assertEqual(self.user1.has_specialization, True)
 
-        doctor.delete()
+        health_team.delete()
         self.assertEqual(self.user1.has_specialization, False)
 
         self.user1.refresh_from_db()
 
-        self.assertEqual(hasattr(self.user1, 'doctor'), False)
+        self.assertEqual(hasattr(self.user1, 'health_team'), False)
         self.assertEqual(self.user1.has_specialization, False)
