@@ -1,7 +1,37 @@
-.align-button{
-  margin-left: 50%;
+.tip {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid #D3DDFF;
 }
 
-.align-button .space{
-  margin-top: 5px;
+.tip-left {
+  top: 10px;
+  left: -25px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
 }
+
+.dialogbox .body {
+  position: relative;
+  max-width: 700px;
+  height: auto;
+  padding: 5px;
+  background-color: #EDF1FF;
+  border-radius: 3px;
+  border: 5px solid #D3DDFF;
+}
+
+.body .message {
+  min-height: 30px;
+  border-radius: 3px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 700px;
+  color: black;
+  word-break:break-all;
+}
+

@@ -12,14 +12,12 @@
     </ol>
   </div>
 
-  <h2>{% trans "Posts" %}</h2><hr>
-
-
-  <div class="mb-4">
+  <div class="mb-4" style="float:right;">
     {% if user.is_authenticated %}
       <a href="{% url 'forum:create_post' post_category.slug post_category.pk %}" class="btn btn-secondary">{% trans "New post" %}</a>
     {% endif %}
   </div>
+  <h2>{% trans "Posts" %}</h2>
 
   <table class="table">
     {% if   post_list %}
