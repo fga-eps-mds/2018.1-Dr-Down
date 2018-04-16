@@ -28,13 +28,76 @@ class Health_Team(models.Model):
         max_length=14
     )
 
-    crm = models.CharField(
+    register_number = models.CharField(
         validators=[validate_crm],
         max_length=7,
         help_text=_("Use enter a valid CRM. \n" +
-                    "Enter 7 digits from 0 to 9"
+                    "Enter 7 digits"
                     )
 
+    )
+
+    AC = ("AC")
+    AL = ("AL")
+    AP = ("AP")
+    BA = ("BA")
+    CE = ("CE")
+    DF = ("DF")
+    ES = ("ES")
+    GO = ("GO")
+    MA = ("MA")
+    MG = ("MG")
+    MS = ("MS")
+    MT = ("MT")
+    PA = ("PA")
+    PB = ("PB")
+    PE = ("PE")
+    PI = ("PI")
+    PR = ("PR")
+    RJ = ("RJ")
+    RN = ("RN")
+    RO = ("RO")
+    RR = ("RR")
+    RS = ("RS")
+    SC = ("SC")
+    SE = ("SE")
+    SP = ("SP")
+    TO = ("TO")
+
+    UF_CHOICES = (
+        (AC, 'AC'),
+        (AL, 'AL'),
+        (AP, 'AP'),
+        (BA, 'BA'),
+        (CE, 'CE'),
+        (DF, 'DF'),
+        (ES, 'ES'),
+        (GO, 'GO'),
+        (MA, 'MA'),
+        (MG, 'MG'),
+        (MS, 'MS'),
+        (MT, 'MT'),
+        (PA, 'PA'),
+        (PB, 'PB'),
+        (PE, 'PE'),
+        (PI, 'PI'),
+        (PR, 'PR'),
+        (RJ, 'RJ'),
+        (RN, 'RN'),
+        (RO, 'RO'),
+        (RR, 'RR'),
+        (RS, 'RS'),
+        (SC, 'SC'),
+        (SE, 'SE'),
+        (SP, 'SP'),
+        (TO, 'TO'),
+    )
+
+    state_register = models.CharField(
+        _('State'),
+        choices=UF_CHOICES,
+        help_text=_("The state of register health team member works."),
+        max_length=30
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
