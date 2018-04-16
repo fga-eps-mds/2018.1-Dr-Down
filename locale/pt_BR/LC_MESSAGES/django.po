@@ -411,7 +411,7 @@ msgstr "Menu"
 
 #: drdown/templates/base.html:51
 msgid "Home"
-msgstr "Página Inicial"
+msgstr "Início"
 
 #: drdown/templates/base.html:54
 msgid "Down's Syndrome"
