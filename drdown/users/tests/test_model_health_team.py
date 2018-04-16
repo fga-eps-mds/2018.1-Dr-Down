@@ -110,7 +110,7 @@ class ModelTestCase(TestCase):
 
         self.health_team1 = Health_Team.objects.create(
             cpf='057.640.991-02',
-            crm='1234567',
+            register_number='1234567',
             speciality=Health_Team.PEDIATRICS,
             user=self.user1
         )
@@ -126,7 +126,7 @@ class ModelTestCase(TestCase):
         """
         This method will check if the crm is equal to the informed
         """
-        self.assertEquals(self.health_team1.crm, '1234567')
+        self.assertEquals(self.health_team1.register_number, '1234567')
 
     def test_save_speciality_ok(self):
         """
@@ -146,7 +146,7 @@ class ModelTestCase(TestCase):
         This method will check if the crm is different from informed
         """
 
-        self.assertNotEquals(self.health_team1.crm, '7654321')
+        self.assertNotEquals(self.health_team1.register_number, '7654321')
 
     def test_save_speciality_error(self):
         """
