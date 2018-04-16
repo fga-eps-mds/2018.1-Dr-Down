@@ -10,7 +10,7 @@ __Data de Término:__ 13/04/2018
 
 __Duração__: 6 dias
 
-__Pontos Planejados:__ 24 pontos
+__Pontos Planejados:__ 21 pontos
 
 __Membros presentes:__ Todos
 
