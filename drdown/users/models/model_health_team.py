@@ -28,10 +28,28 @@ class Health_Team(models.Model):
         max_length=14
     )
 
+    CRM = ("CRM")
+    CRP = ("CRP")
+    COFFITO = ("COFFITO")
+
+    ACRONYM_CHOICES = (
+        (CRM, 'CRM'),
+        (CRP, 'CRP'),
+        (COFFITO, _('COFFITO')),
+    )
+
+    council_acronym = models.CharField(
+        _('Council Acronym'),
+        choices=ACRONYM_CHOICES,
+        help_text=_("The speciality that this member of health team works."),
+        max_length=30,
+        blank=True
+    )
+
     register_number = models.CharField(
         validators=[validate_crm],
         max_length=7,
-        help_text=_("Use enter a valid CRM. \n" +
+        help_text=_("Use enter a valid register number. \n" +
                     "Enter 7 digits"
                     )
 
@@ -97,7 +115,8 @@ class Health_Team(models.Model):
         _('State'),
         choices=UF_CHOICES,
         help_text=_("The state of register health team member works."),
-        max_length=30
+        max_length=30,
+        blank=True
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
@@ -180,3 +199,4 @@ class Health_Team(models.Model):
     class Meta:
         verbose_name = _('Health_Team')
         verbose_name_plural = _('Health_Teams')
+        unique_together = (("state_register", "register_number", "council_acronym"))
