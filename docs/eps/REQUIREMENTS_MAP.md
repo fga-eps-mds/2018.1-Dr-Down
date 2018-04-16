@@ -3,6 +3,7 @@
 | Data | Versão | Descrição | Autor |
 |:----:|:------:|:---------:|:-----:|
 |11/04/2018|0.0.1|Primeira Versão do Mapa de Requisitos|Mariana De Souza Mendes|
+|16/04/2018|0.0.3|Correção de erros|Mariana De Souza Mendes|
 
 
 ## Tema de investimento	
