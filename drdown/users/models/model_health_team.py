@@ -41,7 +41,7 @@ class Health_Team(models.Model):
     council_acronym = models.CharField(
         _('Council Acronym'),
         choices=ACRONYM_CHOICES,
-        help_text=_("The speciality that this member of health team works."),
+        help_text=_("The Regional Council."),
         max_length=30,
         blank=True
     )
@@ -111,10 +111,10 @@ class Health_Team(models.Model):
         (TO, 'TO'),
     )
 
-    state_register = models.CharField(
+    registration_state = models.CharField(
         _('State'),
         choices=UF_CHOICES,
-        help_text=_("The state of register health team member works."),
+        help_text=_("The registration state of member of health team."),
         max_length=30,
         blank=True
     )
@@ -199,4 +199,4 @@ class Health_Team(models.Model):
     class Meta:
         verbose_name = _('Health_Team')
         verbose_name_plural = _('Health_Teams')
-        unique_together = (("state_register", "register_number", "council_acronym"))
+        unique_together = (("registration_state", "register_number", "council_acronym"))
