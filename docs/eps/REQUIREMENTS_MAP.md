@@ -176,7 +176,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 ## Features e Histórias de Usuário
 
-As features e US foram cadastradas no software [Target Process](https://www.targetprocess.com/) e seu acompamento é feito atráves das [issues](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues) do github e estão mapeadas com a label: __Feature__ e __Histórias__de__Usuário__.
+As features e US foram cadastradas no software [Target Process](https://www.targetprocess.com/) e seu acompamento é feito atráves das [issues](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues) do github e estão mapeadas com a label: __Feature__ e __Histórias__ __de__ __Usuário__.
 
 
 
