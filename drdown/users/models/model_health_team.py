@@ -42,8 +42,7 @@ class Health_Team(models.Model):
         _('Council Acronym'),
         choices=ACRONYM_CHOICES,
         help_text=_("The Regional Council."),
-        max_length=30,
-        blank=True
+        max_length=30
     )
 
     register_number = models.CharField(
@@ -115,8 +114,7 @@ class Health_Team(models.Model):
         _('State'),
         choices=UF_CHOICES,
         help_text=_("The registration state of member of health team."),
-        max_length=30,
-        blank=True
+        max_length=30
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
@@ -143,8 +141,7 @@ class Health_Team(models.Model):
         _('Speciality'),
         choices=SPECIALITY_CHOICES,
         help_text=_("The speciality that this member of health team works."),
-        max_length=30,
-        blank=True
+        max_length=30
     )
 
     # const representig the name of the group wich this model will add to the
