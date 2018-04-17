@@ -265,5 +265,4 @@ SOCIALACCOUNT_ADAPTER = 'drdown.users.adapters.SocialAccountAdapter'
 DATE_INPUT_FORMATS = ["%d/%m/%Y"]
 RAVEN_CONFIG = {
     'dsn': 'https://4ee192dc54b6424ab65c5a6582af9bc7:30b28e38d7d74c43bf8371eb8b388c34@sentry.io/1189853',
-    'release': raven.fetch_git_sha(str(ROOT_DIR)),
 }
