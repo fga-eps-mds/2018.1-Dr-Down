@@ -15,6 +15,7 @@ pages:
   - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
   - Definição de Pronto: eps/DONE_DEFINITION.md
   - EVM: eps/EVM_AGILE.md
+  - Mapa de Requisitos: eps/REQUIREMENTS_MAPS.md
   - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md
   - Código de conduta: CODE_OF_CONDUCT.md
   - Ferramentas: eps/PROJECT_TOOLS.md
