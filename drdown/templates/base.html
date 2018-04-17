@@ -91,7 +91,9 @@
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
                 {% endif %}
+                {% if user.employee or user.responsible or user.patient or user.doctor %}
                 <div class="dropdown-divider"></div>
+                {% endif %}
                 <a class="dropdown-item" href="{% url 'users:update' %}">{% trans "Edit Profile" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Help" %}</a>
                 <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
