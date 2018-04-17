@@ -1,10 +1,8 @@
-
 from test_plus.test import TestCase
-from django.contrib.auth.models import Group
-
 from drdown.forum.models.model_commentary import Commentary
 from drdown.forum.models.model_post import Post
 from drdown.forum.models.model_category import Category
+from django.utils import timezone
 
 
 class TestModelCommentary(TestCase):
@@ -29,7 +27,6 @@ class TestModelCommentary(TestCase):
         self.commentary = Commentary.objects.create(
             message='abcde',
             post=self.post,
-            updated_at='2018-06-09',
             created_by=self.user,
         )
 
@@ -77,7 +74,6 @@ class ModelTestCase(TestCase):
         self.commentary1 = Commentary.objects.create(
             message='abcde',
             post=self.post1,
-            updated_at='2018-06-09',
             created_by=self.user1,
         )
 
@@ -94,13 +90,6 @@ class ModelTestCase(TestCase):
         """
 
         self.assertEquals(self.commentary1.post, self.post1)
-
-    def test_save_updated_ok(self):
-        """
-            Test to verify if updated is the correct passed
-        """
-
-        self.assertEquals(self.commentary1.updated_at, '2018-06-09')
 
     def test_save_created_by_ok(self):
         """
@@ -122,13 +111,6 @@ class ModelTestCase(TestCase):
         """
 
         self.assertNotEquals(self.commentary1.message, '')
-
-    def test_save_updated_error(self):
-        """
-             Test to verify if updated really fail
-        """
-
-        self.assertNotEquals(self.commentary1.updated_at, '')
 
     def test_save_created_by_error(self):
         """

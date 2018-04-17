@@ -5,7 +5,7 @@ from django.views.generic import CreateView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from datetime import datetime
+from django.utils import timezone
 
 
 class CommentaryListView(ListView):
@@ -107,7 +107,7 @@ class CommentaryUpdateView(UpdateView):
 
     def form_valid(self, form):
         # Get updated_at datetime
-        form.instance.updated_at = datetime.now()
+        form.instance.updated_at = timezone.now()
         form.save()
 
         return super(CommentaryUpdateView, self).form_valid(form)
