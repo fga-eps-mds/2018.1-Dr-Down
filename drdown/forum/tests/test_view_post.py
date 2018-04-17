@@ -5,6 +5,8 @@ from ..models.model_post import Post
 from django.urls import reverse, resolve
 from datetime import datetime
 
+from django.utils.translation import ugettext_lazy as _
+
 
 class TestViewPost(TestCase):
 
@@ -87,7 +89,7 @@ class TestViewPost(TestCase):
             ),
             data={'form': {'title': "",'message': "Making a post test case", 'user':'self.user'}},
         )
-        self.assertFormError(response, 'form', 'title', 'This field is required.')
+        self.assertFormError(response, 'form', 'title', _('This field is required.'))
         self.assertEquals(response.status_code, 200)
 
     def test_post_form_valid_create_view(self):
