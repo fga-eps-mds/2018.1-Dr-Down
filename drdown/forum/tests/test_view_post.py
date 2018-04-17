@@ -3,7 +3,8 @@ from django.test.client import Client
 from ..models.model_category import Category
 from ..models.model_post import Post
 from django.urls import reverse, resolve
-from datetime import datetime
+from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 
 class TestViewPost(TestCase):
@@ -87,7 +88,7 @@ class TestViewPost(TestCase):
             ),
             data={'form': {'title': "",'message': "Making a post test case", 'user':'self.user'}},
         )
-        self.assertFormError(response, 'form', 'title', 'This field is required.')
+        self.assertFormError(response, 'form', 'title', _('This field is required.'))
         self.assertEquals(response.status_code, 200)
 
     def test_post_form_valid_create_view(self):
@@ -99,8 +100,7 @@ class TestViewPost(TestCase):
             'title': 'Test',
             'message': 'hello test',
             'category': 'self.category',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -120,8 +120,7 @@ class TestViewPost(TestCase):
             'title': 'Test',
             'message': 'hello test',
             'category': 'self.category',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -141,8 +140,7 @@ class TestViewPost(TestCase):
             data = {
                 'message': 'hello test',
                 'post': 'self.post',
-                'created_at': 'datetime.now',
-                'slug': 'test',
+                'created_at': timezone.now(),
             }
 
             response = self.client.post(

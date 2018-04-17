@@ -4,6 +4,8 @@ from ..models.model_category import Category
 from ..models.model_post import Post
 from ..models.model_commentary import Commentary
 from django.urls import reverse, resolve
+from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 
 class TestViewPost(TestCase):
@@ -29,10 +31,7 @@ class TestViewPost(TestCase):
         self.commentary = Commentary.objects.create(
             message='abcde',
             post=self.post,
-            updated_at='2018-06-09',
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
         self.commentary.save()
@@ -96,7 +95,7 @@ class TestViewPost(TestCase):
             ),
             data={'form': {'message': "", 'user': 'self.user'}},
         )
-        self.assertFormError(response, 'form', 'message', 'This field is required.')
+        self.assertFormError(response, 'form', 'message', _('This field is required.'))
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_form_valid_create_view(self):
@@ -107,8 +106,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -128,8 +126,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -150,8 +147,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
 
         response = self.client.post(
@@ -182,8 +178,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
 
         response = self.client.post(
@@ -213,8 +208,7 @@ class TestViewPost(TestCase):
             data = {
                 'message': 'hello test',
                 'post': 'self.post',
-                'created_at': 'datetime.now',
-                'slug': 'test',
+                'created_at': timezone.now(),
             }
 
             response = self.client.post(

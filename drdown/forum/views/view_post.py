@@ -5,11 +5,12 @@ from django.views.generic import CreateView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
-from datetime import datetime
+from django.utils import timezone
 
 
 class PostListView(ListView):
     model = Post
+    paginate_by = 20
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
@@ -19,7 +20,9 @@ class PostListView(ListView):
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')
-        queryset = Post.objects.filter(category=Category.objects.get(pk=pk))
+        queryset = Post.objects.filter(
+            category=Category.objects.get(pk=pk)
+        ).order_by('-created_at')
         return queryset
 
 
@@ -103,7 +106,7 @@ class PostUpdateView(UpdateView):
 
     def form_valid(self, form):
         # Get updated_at datetime
-        form.instance.updated_at = datetime.now()
+        form.instance.updated_at = timezone.now()
         form.save()
 
         return super(PostUpdateView, self).form_valid(form)

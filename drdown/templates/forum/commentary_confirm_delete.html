@@ -10,6 +10,7 @@
 <form method="post" action="">
   {% csrf_token %}
   <p>{% trans 'Are you sure you want to delete this commentary?' %} </p>
+  <a href="{% url 'forum:list_commentary' commentary.post.category.slug commentary.post.category.pk commentary.post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
   <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
 </form>
 
