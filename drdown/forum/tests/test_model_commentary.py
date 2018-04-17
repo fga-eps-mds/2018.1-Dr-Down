@@ -24,8 +24,6 @@ class TestModelCommentary(TestCase):
             message="cba",
             category=self.category,
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
         self.commentary = Commentary.objects.create(
@@ -33,8 +31,6 @@ class TestModelCommentary(TestCase):
             post=self.post,
             updated_at='2018-06-09',
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
     def test_one_to_one_relation(self):
@@ -44,7 +40,6 @@ class TestModelCommentary(TestCase):
 
         self.assertIs(self.post, self.commentary.post)
         self.assertIs(self.user, self.post.created_by)
-        self.assertIs(self.user, self.post.updated_by)
 
     def test_delete_cascade(self):
         """
@@ -77,8 +72,6 @@ class ModelTestCase(TestCase):
             message="cba",
             category=self.category1,
             created_by=self.user1,
-            updated_by=self.user1,
-            slug='test',
         )
 
         self.commentary1 = Commentary.objects.create(
@@ -86,8 +79,6 @@ class ModelTestCase(TestCase):
             post=self.post1,
             updated_at='2018-06-09',
             created_by=self.user1,
-            updated_by=self.user1,
-            slug='test',
         )
 
     def test_save_message_ok(self):
@@ -118,20 +109,6 @@ class ModelTestCase(TestCase):
 
         self.assertEquals(self.commentary1.created_by, self.user1)
 
-    def test_save_updated_by_ok(self):
-        """
-            Test to verify if updated_by is the correct passed
-        """
-
-        self.assertEquals(self.commentary1.updated_by, self.user1)
-
-    def test_save_slug_ok(self):
-        """
-            Test to verify if slug is the correct passed
-        """
-
-        self.assertEquals(self.commentary1.slug, 'test')
-
     def test_save_post_error(self):
         """
             Test to verify if post really fail
@@ -160,17 +137,4 @@ class ModelTestCase(TestCase):
 
         self.assertNotEquals(self.commentary1.created_by, '')
 
-    def test_save_updated_by_error(self):
-        """
-            Test to verify if updated_by really fail
-        """
-
-        self.assertNotEquals(self.commentary1.updated_by, '')
-
-    def test_save_slug_error(self):
-        """
-            Test to verify if slug really fail
-        """
-
-        self.assertNotEquals(self.commentary1.slug, '')
 

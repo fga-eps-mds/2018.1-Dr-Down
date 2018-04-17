@@ -24,8 +24,6 @@ class TestModelPost(TestCase):
             created_at="1998-05-05",
             updated_at="1998-06-05",
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
     def test_one_to_one_relation(self):
@@ -35,7 +33,6 @@ class TestModelPost(TestCase):
 
         self.assertIs(self.category, self.post.category)
         self.assertIs(self.user, self.post.created_by)
-        self.assertIs(self.user, self.post.updated_by)
 
     def test_delete_cascade(self):
         """
@@ -70,8 +67,6 @@ class ModelTestCase(TestCase):
             created_at="1998-05-05",
             updated_at="1998-06-05",
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
     def test_save_title_ok(self):
@@ -109,20 +104,6 @@ class ModelTestCase(TestCase):
 
         self.assertEquals(self.post.created_by, self.user)
 
-    def test_save_updated_by_ok(self):
-        """
-        Test to verify if updated_by is the correct passed
-        """
-
-        self.assertEquals(self.post.updated_by, self.user)
-
-    def test_save_slug_ok(self):
-        """
-        Test to verify if slug is the correct passed
-        """
-
-        self.assertEquals(self.post.slug, 'test')
-
     def test_save_title_error(self):
         """
         Test to verify if title really fail
@@ -157,19 +138,6 @@ class ModelTestCase(TestCase):
         """
         self.assertNotEquals(self.post.created_by, '')
 
-    def test_save_updated_by_error(self):
-        """
-        Test to verify if updated_by really fail
-        """
-
-        self.assertNotEquals(self.post.updated_by, '')
-
-    def test_save_slug_error(self):
-        """
-        Test to verify if slug really fail
-        """
-
-        self.assertNotEquals(self.post.slug, '')
 
     def test_str_is_equal_to_title(self):
         """
