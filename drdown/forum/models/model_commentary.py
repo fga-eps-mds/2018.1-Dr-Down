@@ -12,32 +12,24 @@ class Commentary(models.Model):
     post = models.ForeignKey(
         Post,
         related_name='commentaries',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        verbose_name=_("Post")
     )
     created_at = models.DateTimeField(
         _('Created at'),
-        help_text=_('The date of create'),
+        help_text=_('Date of creation'),
         auto_now_add=True
     )
     updated_at = models.DateTimeField(
         _('Updated at'),
-        help_text=_('The date of update'),
-        null=True)
+        help_text=_('Date of update'),
+        null=True
+    )
     created_by = models.ForeignKey(
         User,
         related_name='commentaries',
-        on_delete=models.CASCADE
-    )
-    updated_by = models.ForeignKey(
-        User,
-        null=True,
-        related_name='+',
-        on_delete=models.CASCADE
-    )
-    slug = models.SlugField(
-        _('Shortcut'),
-        help_text=_('URL string shortcut'),
-        max_length=40
+        on_delete=models.CASCADE,
+        verbose_name=_("Created by")
     )
 
     class Meta:
