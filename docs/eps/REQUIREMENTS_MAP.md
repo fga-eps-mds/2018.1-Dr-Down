@@ -43,7 +43,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do cris down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em participar do fórum |
+|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em participar do fórum |
 | **que**| desejam encontrar ajuda e/ou trocar informações sobre a Síndrome de Down |
 |**o** | Dr Down|
 |**é um** | Web site |
