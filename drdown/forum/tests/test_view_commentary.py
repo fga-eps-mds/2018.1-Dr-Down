@@ -5,6 +5,8 @@ from ..models.model_post import Post
 from ..models.model_commentary import Commentary
 from django.urls import reverse, resolve
 
+from django.utils.translation import ugettext_lazy as _
+
 
 class TestViewPost(TestCase):
 
@@ -96,7 +98,7 @@ class TestViewPost(TestCase):
             ),
             data={'form': {'message': "", 'user': 'self.user'}},
         )
-        self.assertFormError(response, 'form', 'message', 'This field is required.')
+        self.assertFormError(response, 'form', 'message', _('This field is required.'))
         self.assertEquals(response.status_code, 200)
 
     def test_commentary_form_valid_create_view(self):
