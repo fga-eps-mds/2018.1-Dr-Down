@@ -20,7 +20,9 @@ class PostListView(ListView):
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')
-        queryset = Post.objects.filter(category=Category.objects.get(pk=pk))
+        queryset = Post.objects.filter(
+            category=Category.objects.get(pk=pk)
+        ).order_by('-created_at')
         return queryset
 
 
