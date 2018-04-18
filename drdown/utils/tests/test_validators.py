@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf, validate_ses,\
     validate_generic_number, validate_names, validate_sus, \
-    validate_phone, validate_crm
+    validate_phone, validate_register_number
 
 
 class TestValidator(TestCase):
@@ -174,7 +174,7 @@ class TestValidator(TestCase):
         except ValidationError as error:
             self.fail(msg=error.message)
 
-    def test_valid_crm(self):
+    def test_valid_register_number(self):
 
         wrong_test_values = [
             "12345678"
@@ -184,10 +184,10 @@ class TestValidator(TestCase):
 
         for i in range(0, wrong_test_values.__len__()):
             with self.assertRaises(ValidationError, msg=wrong_test_values[i]):
-                validate_crm(wrong_test_values[i])
+                validate_register_number(wrong_test_values[i])
 
         # test a valid number
         try:
-            validate_crm(value="1234567")
+            validate_register_number(value="1234567")
         except ValidationError as error:
             self.fail(msg=error.message)

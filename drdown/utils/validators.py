@@ -206,7 +206,7 @@ def validate_phone(value):
     regex_validator(value)
 
 
-def validate_crm(value):
+def validate_register_number(value):
 
     regex_code = r"^[0-9]{1,7}$"
     regex_validator = RegexValidator(

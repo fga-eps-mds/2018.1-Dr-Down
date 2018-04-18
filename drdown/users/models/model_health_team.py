@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError
 
 from drdown.utils.validators import validate_cpf
 from .model_user import User
-from drdown.utils.validators import validate_crm
+from drdown.utils.validators import validate_register_number
 
 
 class Health_Team(models.Model):
@@ -46,7 +46,7 @@ class Health_Team(models.Model):
     )
 
     register_number = models.CharField(
-        validators=[validate_crm],
+        validators=[validate_register_number],
         max_length=7,
         help_text=_("Use enter a valid register number. \n" +
                     "Enter 7 digits"
