@@ -259,11 +259,3 @@ a:focus, a:hover, a:active {
   border-color: #1a252f;
   color: #CAE1FF;
 }
-
- a:hover .h-blue{
-  color: #042d63;
-}
-
-.text-tertiary{
-  color: #01142d;
-}
