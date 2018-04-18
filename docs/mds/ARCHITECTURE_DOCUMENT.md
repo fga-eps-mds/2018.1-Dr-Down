@@ -219,7 +219,7 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 ### 3.1 Dr. Down
 
 | Requisito | Ferramenta/Solução |
-|---|---|---|---|
+|---|---|
 |Linguagem| Python 3.6.4 |
 |Framework| Django 2.0.3 |
 |Plataforma| Web - Navegadores Google Chrome, Safari e Firefox |
@@ -228,8 +228,8 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 ### 3.2 Docker e Compose
 
-| Nome| Versão |
-|---|---|---|---|
+| Nome | Versão |
+|---|---|
 | Docker | 1.13.1
 | Docker Compose | 1.8.0
 
@@ -241,39 +241,39 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 ![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/389/original/pacotes.jpeg?1524078223)
 
-- **apps: ** cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
+- **apps**: cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
-- **static: ** arquivos estáticos aplicados em todas os apps.
+- **static** : arquivos estáticos aplicados em todas os apps.
 
-- **templates: ** htmls aplicados em todos os apps.
+- **templates** : htmls aplicados em todos os apps.
 
-- **app/locale: ** traduções referentes ao app.
+- **app/locale** : traduções referentes ao app.
 
-- **locale: ** traduções de páginas estáticas globais.
+- **locale** : traduções de páginas estáticas globais.
 
-- **test: ** arquivos de testes refente ao app.
+- **test** : arquivos de testes refente ao app.
 
-- **models: ** arquivos models do app.
+- **models** : arquivos models do app.
 
-- **views: ** arquivos de views do app.
+- **views** : arquivos de views do app.
 
-- **form: ** arquivos de formularios do app.
+- **form** : arquivos de formularios do app.
 
-- **admin: ** arquivo de conexão do app com o admin.
+- **admin** : arquivo de conexão do app com o admin.
 
-- **app/urls.py: ** arquivo que mapeia as as views com templates de cada app
+- **app/urls.py** : arquivo que mapeia as as views com templates de cada app
 
-- **urls.py: ** inclui todos os URLs.py locais
+- **urls.py** : inclui todos os URLs.py locais
 
-- **init: ** arquivo de inicialização das aplicações.
+- **init** : arquivo de inicialização das aplicações.
 
-- **utils: ** arquivos de validação dos apps.
+- **utils** : arquivos de validação dos apps.
 
-- **settings: ** arquivos com as configurações básicas da aplicação.
+- **settings** : arquivos com as configurações básicas da aplicação.
 
-- **wsgi: ** especificação para uma interface simples e universal entre servidores web e aplicações web.
+- **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
 
-- **manage.py: ** arquivo criado automaticamente pelo django para gerênciamento de comandos.
+- **manage.py** : arquivo criado automaticamente pelo django para gerênciamento de comandos.
 
 ## 5:	Visão de Implementação
 
