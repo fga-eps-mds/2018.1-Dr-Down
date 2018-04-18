@@ -1,4 +1,5 @@
-﻿# Documento de Arquitetura
+
+# Documento de Arquitetura
 
 ## Histórico de Revisão
 
@@ -238,7 +239,41 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
 
-![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/350/330/full/DP.png?1522284479)
+![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/389/original/pacotes.jpeg?1524078223)
+
+- **apps: ** cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
+
+- **static: ** arquivos estáticos aplicados em todas os apps.
+
+- **templates: ** htmls aplicados em todos os apps.
+
+- **app/locale: ** traduções referentes ao app.
+
+- **locale: ** traduções de páginas estáticas globais.
+
+- **test: ** arquivos de testes refente ao app.
+
+- **models: ** arquivos models do app.
+
+- **views: ** arquivos de views do app.
+
+- **form: ** arquivos de formularios do app.
+
+- **admin: ** arquivo de conexão do app com o admin.
+
+- **app/urls.py: ** arquivo que mapeia as as views com templates de cada app
+
+- **urls.py: ** inclui todos os URLs.py locais
+
+- **init: ** arquivo de inicialização das aplicações.
+
+- **utils: ** arquivos de validação dos apps.
+
+- **settings: ** arquivos com as configurações básicas da aplicação.
+
+- **wsgi: ** especificação para uma interface simples e universal entre servidores web e aplicações web.
+
+- **manage.py: ** arquivo criado automaticamente pelo django para gerênciamento de comandos.
 
 ## 5:	Visão de Implementação
 
@@ -250,7 +285,7 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 
 ### 5.2 Diagrama de Classes
 
-![Diagrama de Classes](http://uploaddeimagens.com.br/images/001/352/613/original/DC2.jpeg?1522444895)
+![Diagrama de Classes](http://uploaddeimagens.com.br/images/001/379/381/original/Diagrama.jpeg?1524078112)
 
 ### 5.3 Modelo Entidade Relacionamento (MER)
 
@@ -381,7 +416,7 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
 | name | CharField[100] | Obrigatório | Nome do compromisso |
-| ddate | DateField | Obrigatório | Data do compromisso |
+| date | DateField | Obrigatório | Data do compromisso |
 | description | TextField[100] | Opcional | Descrição do compromisso |
 
 #### CLINIC:
