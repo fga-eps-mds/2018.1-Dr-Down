@@ -40,44 +40,44 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 | MDS | Métodos de Desenvolvimento de Software |
 | EPS| Engenharia de Produto de Software |
 | UnB | Universidade de Brasília |
-| SES | Secretaría de Estado de Saúde |
+| SES | Secretaria de Estado de Saúde |
 | CBV | Class-Based Views |
 
 ## 2: Representação Arquitetural
 
 ![Arquitetura](https://user-images.githubusercontent.com/14116020/38784325-8dad88ee-40e6-11e8-8746-46ae3034d386.png)
 
-A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas caractísticas e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
+A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
 A arquitetura baseada em componentes é um ramo de Engenharia de Software, com ênfase na decomposição dos sistemas em componentes independentes, substituíveis e modulares, elas ajudam a gerenciar a complexidade e encorajam a reutilização.
 
 Alguns benefícios desse modelo de arquitetura:
 
-* **Fácil deploy**: Compatilidade de novas versões quando disponíveis. É possível substituir a versão existente sem impacto em outros componentes do sistema como um todo.
+* **Fácil deploy**: Compatibilidade de novas versões quando disponíveis. É possível substituir a versão existente sem impacto em outros componentes do sistema como um todo.
 
 * **Redução de custos**: O uso do componente de terceiros permite a redução do custo do desenvolvimento e manutenção.
 
 * **Fácil desenvolvimento**: Implementar componentes bem como a funcionalidade definida pela interface, permite desenvolvimento sem impacto em outros partes do sistema.
 
-* **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção onde agrega na redução de custo da aplicação.
+* **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção, reduzindo custos da aplicação.
 
-O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém serão utilizados microsserviços ou APIs quando necessário, com esses sendo comunicados via requisições HTTP.
+O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs quando necessário, com esses se comunicando via requisições HTTP.
 
-Abaixo está listado como a arquitetura do projeto será comunicada com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL entre outros e terá o tópico em que será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
+Abaixo está listado como a arquitetura do projeto se comunicará com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL, entre outros. No tópicos seguintes será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
 
 ### 2.1 NGINX:
 
-O NGINX é um servidor web que pode atuar como um proxy reverso para HTTP, HTTPS, SMTP, POP3 e IMAP, bem como um balanceador de carga. O NGINX é um servidor web rápido e com inúmeras possibilidades de configuração para melhor performace.
+O NGINX é um servidor web que pode atuar como um proxy reverso para HTTP, HTTPS, SMTP, POP3 e IMAP, bem como um balanceador de carga. O NGINX é um servidor web rápido e com inúmeras possibilidades de configuração para melhor performance.
 
-No projeto ele é utilizado como um redirecionador de portas utilizando-se de proxy reverso para que ambos os arquivos estáticos e o servidor de produção do Django possam compartilhar da mesma porta 80 servindo os arquivos estáticos separados da aplicação.
+No projeto ele é utilizado como um redirecionador de portas utilizando-se de proxy reverso para que ambos os arquivos estáticos e o servidor de produção do Django possam compartilhar da mesma porta 80, servindo os arquivos estáticos separados da aplicação.
 
 ### 2.2 Django
 
 O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelas aplicações do Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.
 
-Como citado acima, cada aplicação do Django, pode ser considerada um componente se seguir todas as caracteristicas citadas e estiver empacotado e mantido no **pypi**. Para mais informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a>
+Como citado acima, cada aplicação do Django pode ser considerada um componente caso siga todas as características citadas e esteja empacotado e mantido no **pypi**. Para mais informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a>
 
-Abaixo está explicado como funciona a arquitetura interna de cada aplicação do Django e quais componentes foram selecionados para complementar o projeto.
+Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes foram selecionados para complementar o projeto.
 
 #### 2.2.1 Model
 
@@ -91,24 +91,24 @@ Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do us
 
 #### 2.2.3 Template
 
-Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
+Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, Javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
 
 #### 2.2.4 Componentes
 
 Critérios de aceitação de um componente:
 
-1. **Alta coesão**: O componente deve realizar uma, e apenas uma tarefa especifica e deve ser pequeno.
-2. **Baixo acoplamento**: O componente não deve depender de outra classe ou funcionalidade do projeto na qual está sendo inserido.
-3. **Independente**: O componente deve ser criado, mantido, executado e distribuido de forma independente, ou seja, deve ter o mínimo de dependência com outros componentes.
-4. **Reutilizavel**: O componente deve ser reutilizavel, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto e fácilmente substituido se for preciso.
-5. **Extensibilidade**: Um componente pode ser extendido a partir de outro componente para fornecer um novo comportamento.
-6. **Encapsulamento**: O componentes deve expor uma interface dele para os invocadores utilizar suas funcionalidades e não revelar detalhes do seu processo interno ou alguma variável interna e estado.
-7. **Externo ao projeto**: O componente deve está disponibilizado no **pypi**.
-8. **Qualidade**: O componente deve está testado e ter build funcionando, deve ser completo e em uma versão estável.
+1. **Alta coesão**: O componente deve realizar apenas uma tarefa específica e deve ser pequeno.
+2. **Baixo acoplamento**: O componente não deve depender de outra classe ou funcionalidade do projeto no qual está sendo inserido.
+3. **Independente**: O componente deve ser criado, mantido, executado e distribuído de forma independente, ou seja, deve ter o mínimo de dependência com outros componentes.
+4. **Reutilizável**: O componente deve ser reutilizável, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto, e facilmente substituído, se for preciso.
+5. **Extensibilidade**: Um componente pode ser estendido a partir de outro componente para fornecer um novo comportamento.
+6. **Encapsulamento**: O componentes devem expor uma interface para os invocadores utilizarem suas funcionalidades e não revelar detalhes do seu processo interno, das variáveis internas e de seu estado.
+7. **Externo ao projeto**: O componente deve estar disponibilizado no **pypi**.
+8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.
 
-A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microserviços e APIs consumidas também serão listadas nas tabelas abaixo.
+A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo.
 
-#### Manter usuário (Médico, Paciente, Parente, Funcionario):
+#### Manter usuário (Equipe de Saúde, Paciente, Parente, Funcionário):
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
@@ -118,7 +118,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliado pela equipe.|
+|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliada pela equipe.|
 
 
 #### Foruns e discussões
@@ -143,9 +143,9 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open sourcer baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
-|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar a prescrição de receitas|Não|Não passou em quase todos so critérios definidos acima, a aplicação chat do projeto está bastante acoplado, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gerando tempo e esforço|
-|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em Websocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
+|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
+|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
+|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
 |[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|A decidir|O projeto ainda está sendo avaliado pela equipe|
 
 #### Procedimento médico por faixa etária
@@ -164,14 +164,14 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do google maps com informações sobre milhões de locais|A decidir|A API ainda está sendo avaliado pela equipe.|
+|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais|A decidir|A API ainda está sendo avaliada pela equipe.|
 
 #### Outros
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de Django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do Django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja, é totalmente independente.|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|
-|[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
+|[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
 
 ### 2.3 Banco de dados PostgreSQL
 
@@ -183,23 +183,23 @@ Para o projeto será utilizado o PostgreSQL como o banco de dados de desenvolvim
 
 Redis é um banco de dados não relacional, também conhecido como NOSQL que armazena dados no formato "chave-valor" em memória e é extremamente rápido.
 
-O Redis é um servidor TCP, e seu funcionamento baseado em um modelo cliente-servidor, dessa forma, quando uma requisição é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente, e este fica aguardando uma resposta do servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de volta ao cliente.
+O Redis é um servidor TCP e seu funcionamento é baseado em um modelo cliente-servidor, dessa forma, quando uma requisição é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente e este fica aguardando uma resposta do servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de volta ao cliente.
 
-O Redis é uma boa opção para cenários nos quais é necessário alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período, dessa forma pode ser utilizado para gerenciar sessões de usuário.
+O Redis é uma boa opção para cenários nos quais é necessário alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período. Dessa forma, pode ser utilizado para gerenciar sessões de usuário.
 
-O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com isso alguma _query_ que a aplicação faria diretamente ao banco o redis se comunicada e armazena o cache já com o resultado desta forma aumentando o desempenho e mantendo a aplicação _mint_ (com performance sempre igual desde o primeiro), mesmo com grandes quantidades de dados. O redis comunica o container do Django com o postgre e serve resultados de volta para o Django
+O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com isso, alguma _query_ que a aplicação faria diretamente ao banco, o redis se comunica e armazena o cache já com o resultado. Desta forma, o desempenho é aumentado e a aplicação _mint_ (com performance sempre igual desde o primeiro) é mantida, mesmo com grandes quantidades de dados. O redis se comunica o container do Django e com o PostgreSQL e, em seguida, serve resultados de volta para o Django.
 
 ### 2.5 Celery
 
-O celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
+O Celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
 
 No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento. Ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
-Dependendo da tarefa que você executa no servidor a resposta pode demorar muito e isso leva à problemas de **TimeOut**, a experiência do usuário fica comprometida. Existem diversas tarefas no projeto que podem demorar para ser executadas, como relatórios pesados, enviar diferentes emails para uma lista de usuários, e por ai vai...
+Dependendo da tarefa que você executa no servidor, a resposta pode demorar muito e isso leva à problemas de **TimeOut**, comprometendo a experiência do usuário. Existem diversas tarefas no projeto que podem demorar para serem executadas, como relatórios pesados, enviar diferentes e-mails para uma lista de usuários, etc.
 
-O celery funciona da seguinte maneira: O cliente (Django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery, geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis. O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que devem ser assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memóri cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
+O Celery funciona da seguinte maneira: O cliente (Django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery (geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis). O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que devem ser assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memória cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
-Ele é configurado por padrão pela ferramenta "cookiecutter", porém a decisão de utiliza-lo ou não no projeto ainda está sendo discutido, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas. Caso não precise esse serviço será descartado.
+Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão de utilizá-lo ou não no projeto ainda está sendo discutida, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas. Caso não precise, esse serviço será descartado.
 
 ### 2.6 Comunicação
 
@@ -207,37 +207,36 @@ Ele é configurado por padrão pela ferramenta "cookiecutter", porém a decisão
 
 2 - Os arquivos estáticos armazenados no sistema de arquivos, como CSS, JavaScript, Imagens e documentos PDF, são processados diretamente pelo **web server (Nginx)**.
 
-3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django, no caso o **gunicorn** que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, ele irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django que irá ter um arquivo chamado urls.py que diz ao nginx qual código deverá ser executado de acordo com o path e código HTTP recebido, através de proxy reverso será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o nginx e o Django através do gunicorn.
+3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django. No caso, o **Gunicorn**, que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django, que irá ter um arquivo chamado urls.py que dirá ao Nginx qual código deverá ser executado de acordo com o path e código HTTP recebido. Através de proxy reverso, será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o Nginx e o Django através do Gunicorn.
 
-4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeado para uma view especifica através das urls, essa view pode ser tanto de aplicações do projeto Dr. Down como aplicações externas, elas pedem dados as modelos, as modelos do Dr. Down fazem uma requisição ao **redis** que pega os dados do banco de dados **postgresql** e retorna a view, a view seleciona o template e fornece os dados, com isso o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
+4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Essa view pode ser tanto de aplicações do projeto Dr. Down como aplicações externas. Elas pedem dados as modelos, as modelos do Dr. Down fazem uma requisição ao **redis** que pega os dados do banco de dados **Postgresql** e retorna a view, a view seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
 
-5 - O web server (nginx) retorna a resposta para o web client (navegador)
+5 - O web server (Nginx) retorna a resposta para o web client (navegador)
 
 ## 3:  Requisitos e Restrições Arquiteturais
 
 ### 3.1 Dr. Down
 
-Linguagem: Python 3.6.4
-
-Framework: Django 2.0.3
-
-Plataforma: Web - Navegadores Google Chrome, Safari e Firefox
-
-Segurança: O sistema terá informações pessoais dos pacientes que só poderão ser vistas pelo mesmo ou pelo(s) seu(s) respectivo(s) médico(s). Outros dados pessoais só poderão ser vistos pelo próprio usuário.
-
-Internacionalização (i18n):	A aplicação terá suporte aos idiomas: Inglês e Português do Brasil (sendo esta a linguagem padrão).
+| Requisito | Ferramenta/Solução |
+|---|---|---|---|
+|Linguagem| Python 3.6.4 |
+|Framework| Django 2.0.3 |
+|Plataforma| Web - Navegadores Google Chrome, Safari e Firefox |
+|Segurança | O sistema terá informações pessoais dos pacientes que só poderão ser vistas pelo mesmo ou pelo(s) seu(s) respectivo(s) médico(s). Outros dados pessoais só poderão ser vistos pelo próprio usuário.
+|Internacionalização (i18n)|	A aplicação terá suporte aos idiomas: Inglês e Português do Brasil (sendo esta a linguagem padrão).
 
 ### 3.2 Docker e Compose
 
-Docker versão: 1.13.1
-
-Docker Compose versão: 1.8.0
+| Nome| Versão |
+|---|---|---|---|
+| Docker | 1.13.1
+| Docker Compose | 1.8.0
 
 ## 4:	Visão Lógica
 
 ### 4.1	Visão Geral: Pacotes e Camadas
 
-O framework Django organiza os projetos em apps, que são pastas que contém uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
+O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
 
 ![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/350/330/full/DP.png?1522284479)
 
@@ -247,7 +246,7 @@ O framework Django organiza os projetos em apps, que são pastas que contém uma
 
 Proporcionam um método alternativo para implementar views como objetos ao invés de funções. As Class-Based Views (CBV) são classes que implementam métodos e atributos que são comumente utilizados na programação das views. Dessa maneira, o programador pode utilizar métodos já implementados ou sobrescrevê-los e implementá-los da sua maneira. Para atender os mais variados casos de uso das views, as CBV oferecem diversos temas para implementação.
 
-Podemos então agregar as funções básicas das views dentro de classes como métodos. E o recurso das Class Based Views está em algumas classes que já estão “pré-prontas” e que outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!
+Podemos então agregar as funções básicas das views dentro de classes, como métodos. Os recursos das Class Based Views estão em algumas classes “pré-prontas”, as quais outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!
 
 ### 5.2 Diagrama de Classes
 
@@ -260,7 +259,7 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 | Atributo | Tipo |Característica | Descrição |
 |---|---|---|---|
 | Name | CharField[100] | Obrigatório | Nome completo do usuário |
-| Email | CharField[50] | Obrigatório, único | Email será usado como username do usuário |
+| Email | CharField[50] | Obrigatório, único | E-mail que será usado como username do usuário |
 | Telephone| CharField | Obrigatório | Telefone do usuário |
 | Photo | Image | Opcional | Foto do usuário |
 | Is_active | Boolean | Obrigatório | Verifica se o usuário está ativo no sistema |
@@ -295,7 +294,7 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 | ethnicity | IntegerField | Obrigatório | Etnia |
 | sus_number | CharField[15] | Obrigatório | número do SUS |
 | civil_registry_of_birth | CharField | Obrigatório | Registro civil de nascimento |
-| declaration_of_live_birth | CharField | Obrigatorio | Declaração de nascimento |
+| declaration_of_live_birth | CharField | Obrigatório | Declaração de nascimento |
 
 
 ### Health Team:
@@ -331,7 +330,7 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 |---|---|---|---|
 | Psychosocial_risk | IntergerField | Obrigatório | Risco psicossocial |
 | Health_risk |IntergerField | Obrigatório | Risco de vida |
-| Family_risk | IntergerField | Obrigatorio | Risco familiar |
+| Family_risk | IntergerField | Obrigatório | Risco familiar |
 | Total_risk | IntergerField | Opcional | Risco total |
 
 ### QUEUE:
@@ -379,25 +378,25 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 
 ### RELACIONAMENTOS:
 
-#### 1 - APPOINTMENTS tem USERS (Doctor):
+#### 1 - APPOINTMENTS tem USERS (HealthTeam):
 
 Um médico pode ter uma ou várias consultas e uma consulta pertence a um único médico.
 
 Cardinalidade: 1 X N
 
-#### 2 - APPOINTMENTS tem USERS (pacientes):
+#### 2 - APPOINTMENTS tem USERS (Patient):
 
 Um paciente pode ter uma ou várias consultas e uma consulta pertence a um único paciente.
 
 Cardinalidade: 1 X N
 
-#### 3 - MEDICAL RECORDS tem USERS (pacientes):
+#### 3 - MEDICAL RECORDS tem USERS (Patient):
 
 Um prontuário pertence a um único paciente, mas uma paciente pode conter um ou vários prontuários.
 
 Cardinalidade: 1 X N
 
-#### 4 - USER (médico) tem USERS (pacientes):
+#### 4 - USER (médico) tem USERS (Patient):
 
 Um médicos pode ter um ou vários pacientes, e  um paciente pode ter um ou vários médicos.
 
@@ -411,13 +410,13 @@ Cardinalidade:  1 X N
 
 #### 6 - POST tem COMMENTARIES:
 
-Um comentário pode conter um único post, e um post pode conter vários comentrios.
+Um comentário pode conter um único post, e um post pode conter vários comentários.
 
 Cardinalidade: 1 X N
 
 #### 7 - CLINIC possui ADDRESS:
 
-Um endereço pode pertecer a apenas uma clinica, e uma clinica pode ter apenas um endereço.
+Um endereço pode pertencer a apenas uma clinica, e uma clinica pode ter apenas um endereço.
 
 Cardinalidade: 1 X 1
 
@@ -444,7 +443,7 @@ CLASS-BASED VIEWS. DJANGO PROJECT. Disponível em: <https://docs.djangoproject.c
 
 DESMISTIFICANDO O CONCEITO DE DJANGO APPS. Disponível em: <http://henriquebastos.net/desmistificando-o-conceito-de-django-apps/>. Acesso em: 10 abril. 2018
 
-PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Dispesclareceronível em: <https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django>. Acesso em: 26 Mar. 2018.
+PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: <https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django>. Acesso em: 26 Mar. 2018.
 
 POSTGRESQL. Disponível em: <https://www.postgresql.org/about/>. Acesso em: 03 abril. 2018
 
