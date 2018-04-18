@@ -46,7 +46,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Arquitetura](https://uploaddeimagens.com.br/images/001/378/954/original/arquitetura.png?1524062488)
+![Arquitetura](http://uploaddeimagens.com.br/images/001/379/821/original/diagramade.jpeg?1524095365)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
@@ -64,7 +64,7 @@ Alguns benefícios desse modelo de arquitetura:
 
 O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs quando necessário, com esses se comunicando via requisições HTTP.
 
-Abaixo está listado como a arquitetura do projeto se comunicará com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL, entre outros. No tópicos seguintes será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
+Abaixo está listado como a arquitetura do projeto se comunicará com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL, entre outros. Nos tópicos seguintes será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
 
 ### 2.1 NGINX:
 
@@ -76,7 +76,7 @@ No projeto ele é utilizado como um redirecionador de portas utilizando-se de pr
 
 O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelas aplicações do Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.
 
-Como citado acima, cada aplicação do Django pode ser considerada um componente caso siga todas as características citadas e esteja empacotado e mantido no **pypi**. Para mais informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a>
+Como citado acima, cada aplicação do Django pode ser considerada um componente caso siga todas as características citadas e esteja empacotado e mantido no **pypi**. Para maiores informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a>
 
 Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes foram selecionados para complementar o projeto.
 
@@ -92,7 +92,7 @@ Estabelece uma ponte entre a Models e o Templates. Recebe as requisições do us
 
 #### 2.2.3 Template
 
-Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, Javascript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
+Agrega toda a parte visual que estará visível para os usuários. Inclui os códigos HTML, CSS, JavaScript, entre outras linguagens que são utilizadas na apresentação da View ao usuário.
 
 #### 2.2.4 Componentes
 
@@ -103,7 +103,7 @@ Critérios de aceitação de um componente:
 3. **Independente**: O componente deve ser criado, mantido, executado e distribuído de forma independente, ou seja, deve ter o mínimo de dependência com outros componentes.
 4. **Reutilizável**: O componente deve ser reutilizável, ou seja, pode ser inserido em qualquer projeto, independente de seu contexto, e facilmente substituído, se for preciso.
 5. **Extensibilidade**: Um componente pode ser estendido a partir de outro componente para fornecer um novo comportamento.
-6. **Encapsulamento**: O componentes devem expor uma interface para os invocadores utilizarem suas funcionalidades e não revelar detalhes do seu processo interno, das variáveis internas e de seu estado.
+6. **Encapsulamento**: O componente deve expor uma interface para os invocadores utilizarem suas funcionalidades e não revelar detalhes do seu processo interno, das variáveis internas e de seu estado.
 7. **Externo ao projeto**: O componente deve estar disponibilizado no **pypi**.
 8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.
 
@@ -186,7 +186,7 @@ Redis é um banco de dados não relacional, também conhecido como NOSQL que arm
 
 O Redis é um servidor TCP e seu funcionamento é baseado em um modelo cliente-servidor, dessa forma, quando uma requisição é feita para o Redis, um comando é enviado ao servidor (Redis) pelo cliente e este fica aguardando uma resposta do servidor através de uma conexão estabelecida via socket. Quando o servidor processa o comando, ele envia a resposta de volta ao cliente.
 
-O Redis é uma boa opção para cenários nos quais é necessário alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado para servir como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período. Dessa forma, pode ser utilizado para gerenciar sessões de usuário.
+O Redis é uma boa opção para cenários nos quais é necessário alta performance para gravação e/ou leitura de dados baseado em chave-valor, sendo ele utilizado como um servidor de cache para a aplicação, pois além de tudo, ele ainda permite que uma chave expire após um determinado período. Dessa forma, pode ser utilizado para gerenciar sessões de usuário.
 
 O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com isso, alguma _query_ que a aplicação faria diretamente ao banco, o redis se comunica e armazena o cache já com o resultado. Desta forma, o desempenho é aumentado e a aplicação _mint_ (com performance sempre igual desde o primeiro) é mantida, mesmo com grandes quantidades de dados. O redis se comunica o container do Django e com o PostgreSQL e, em seguida, serve resultados de volta para o Django.
 
@@ -243,13 +243,7 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 - **apps**: cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
-- **static** : arquivos estáticos aplicados em todas os apps.
-
-- **templates** : htmls aplicados em todos os apps.
-
-- **app/locale** : traduções referentes ao app.
-
-- **locale** : traduções de páginas estáticas globais.
+- **locale** : traduções referentes ao app.
 
 - **test** : arquivos de testes refente ao app.
 
@@ -257,15 +251,15 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 - **views** : arquivos de views do app.
 
-- **form** : arquivos de formularios do app.
+- **forms** : arquivos de formulários do app.
 
 - **admin** : arquivo de conexão do app com o admin.
 
 - **app/urls.py** : arquivo que mapeia as as views com templates de cada app
 
-- **urls.py** : inclui todos os URLs.py locais
+- **config/urls.py** : inclui todos os URLs.py locais
 
-- **init** : arquivo de inicialização das aplicações.
+- **init** : arquivo que transforma o app em um pacote python.
 
 - **utils** : arquivos de validação dos apps.
 
@@ -273,7 +267,11 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 - **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
 
-- **manage.py** : arquivo criado automaticamente pelo django para gerênciamento de comandos.
+- **manage.py** : arquivo criado automaticamente pelo Django para gerênciamento de comandos.
+
+- **migrations** : pasta com as migrações para o banco de dados.
+
+- **compose** : pasta com arquivos do docker.
 
 ## 5:	Visão de Implementação
 
@@ -343,6 +341,8 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 | crm | CharField[7] | Obrigatório, único, validado | Número CRM do médicos |
 | speciality | CharField[20] | Obrigatório | Especialidade |
 | cpf | CharField[14] | Obrigatório, único, validado | CPF do médicos |
+| council_acronym | CharField{choices} | Obrigatório | Conselho Regional |
+| register_number | CharField[7] | Obrigatório, validado | Número de registro |
 
 #### ADDRESS:
 
@@ -350,7 +350,7 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 |---|---|---|---|
 | city | CharField[40] | Obrigatório | Cidade |
 | cep | CharFieldField[8] | Obrigatório, validado | CEP |
-| number |  CharField[5] | Obrigatório | Numero da moradia|
+| number |  CharField[5] | Obrigatório | Número da moradia|
 | uf | CharField{choices} | Obrigatório | Unidade da Federação |
 | neighborhood | CharField[30] | Opcional | Bairro |
 
@@ -430,7 +430,7 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 
 ##### 1 - APPOINTMENTS tem USERS (HealthTeam):
 
-Um médico pode ter uma ou várias consultas e uma consulta pertence a um único médico.
+A equipe de saúde pode ter uma ou várias consultas e uma consulta pertence a um membro da equipe de saúde.
 
 Cardinalidade: 1 X N
 
@@ -448,7 +448,7 @@ Cardinalidade: 1 X 1
 
 ##### 4 - USER (médico) tem USERS (Patient):
 
-Um médico pode ter um ou vários pacientes, e  um paciente pode ter um ou vários médicos.
+Um médico pode ter um ou vários pacientes, e  um paciente pode ter um ou vários membros da equipe de saúde.
 
 Cardinalidade: N X M
 
