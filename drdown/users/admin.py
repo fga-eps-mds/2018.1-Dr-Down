@@ -49,7 +49,6 @@ class MyUserAdmin(AuthUserAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    change_form_template = "admin/change_form.html"
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
