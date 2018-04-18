@@ -14,8 +14,8 @@ class User(AbstractUser):
 
     photo = models.ImageField(
         upload_to='media/',
-        help_text="Photo of user.",
-        verbose_name='Photo',
+        help_text=_("Photo of user."),
+        verbose_name=_('Photo'),
         blank=True,
         null=True
     )

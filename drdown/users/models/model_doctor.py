@@ -16,7 +16,8 @@ class Doctor(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        limit_choices_to=Q(has_specialization=False)
+        limit_choices_to=Q(has_specialization=False),
+        verbose_name=_('User')
     )
 
     cpf = models.CharField(
