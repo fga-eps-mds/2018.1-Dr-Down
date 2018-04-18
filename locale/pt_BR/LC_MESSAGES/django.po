@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-17 16:06+0000\n"
+"POT-Creation-Date: 2018-04-18 01:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,12 @@ msgstr "Nome"
 
 #: drdown/forum/models/model_category.py:8
 msgid "Name of category"
-msgstr ""
+msgstr "Nome da categoria"
 
 #: drdown/forum/models/model_category.py:13
 #: drdown/forum/models/model_category.py:14
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: drdown/forum/models/model_category.py:18
 #: drdown/forum/models/model_commentary.py:38
@@ -48,7 +48,7 @@ msgstr ""
 #: drdown/forum/models/model_commentary.py:9
 #: drdown/forum/models/model_post.py:14
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
 #: drdown/forum/models/model_commentary.py:18
 #: drdown/templates/forum/post_list.html:30
@@ -59,7 +59,7 @@ msgstr "Criado em"
 #: drdown/forum/models/model_commentary.py:19
 #: drdown/forum/models/model_post.py:25
 msgid "The date of create"
-msgstr ""
+msgstr "Data de criação"
 
 #: drdown/forum/models/model_commentary.py:23
 #: drdown/users/models/model_user.py:66
