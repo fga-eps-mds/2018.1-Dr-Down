@@ -45,7 +45,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Arquitetura](https://user-images.githubusercontent.com/14116020/38784325-8dad88ee-40e6-11e8-8746-46ae3034d386.png)
+![Arquitetura](https://uploaddeimagens.com.br/images/001/378/954/original/arquitetura.png?1524062488)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
@@ -108,7 +108,7 @@ Critérios de aceitação de um componente:
 
 A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo.
 
-#### Manter usuário (Equipe de Saúde, Paciente, Parente, Funcionário):
+#### Manter usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
@@ -254,180 +254,195 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 
 ### 5.3 Modelo Entidade Relacionamento (MER)
 
-### USER:
+#### USER:
 
 | Atributo | Tipo |Característica | Descrição |
 |---|---|---|---|
-| Name | CharField[100] | Obrigatório | Nome completo do usuário |
-| Email | CharField[50] | Obrigatório, único | E-mail que será usado como username do usuário |
-| Telephone| CharField | Obrigatório | Telefone do usuário |
-| Photo | Image | Opcional | Foto do usuário |
-| Is_active | Boolean | Obrigatório | Verifica se o usuário está ativo no sistema |
-| Is_superuser | Boolean | Obrigatório | Verifica se o usuário é um super administrador |
-| Last_login | DateField | Automático | Último momento que o usuário logou |
-| Created_at | DateField | Automático | Data de criação da conta |
-| Updated_at | DateField | Automático | Data de modificação das informações da conta |
-| Password | CharField[50] | Obrigatório | Senha do usuário |
-| Is_staff | Boolean | Obrigatório | Verifica se o usuário é um funcionário |
+| photo | Image | Opcional | Foto do usuário |
+| name | CharField[255] | Opcional | Nome completo do usuário |
+| gender | CharField{choices} | Opcional | Gênero: masculino ou feminino |
+| telephone| CharField[14] | Opcional | Telefone do usuário |
+| birthday | DateField | Opcional | Data de nascimento |
+| created_at | DateField | Automático | Data de criação da conta |
+| updated_at | DateField | Automático | Data de modificação das informações da conta |
+| has_specialization | BooleanField | Automático | Classifica em user base ou especializado |
+| username | CharField[150] | Obrigatório, único | Nome de usuário |
+| email | CharField[50] | Obrigatório, único | E-mail do usuário |
+| is_active | BooleanField | Obrigatório | Verifica se o usuário está ativo no sistema |
+| is_superuser | BooleanField | Obrigatório | Verifica se o usuário é um super administrador |
+| last_login | DateField | Automático | Último momento que o usuário logou |
+| password | CharField[50] | Obrigatório | Senha do usuário |
+| is_staff | BooleanField | Obrigatório | Verifica se o usuário é um funcionário |
 
-### EMPLOYEE:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| CPF | CharField | Obrigatório, único, validado | CPF do funcionário |
-| Departament | CharField[30] | Obrigatório | Departamento do funcionário |
-
-### PARENT:
+#### EMPLOYEE:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| CPF | CharField | Obrigatório, único, validado | CPF do parente |
+| cpf | CharField[14] | Obrigatório, único, validado | CPF do funcionário |
+| department | CharField{choices} | Obrigatório | Departamento do funcionário |
 
-### PATIENT:
+#### RESPONSIBLE:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| Priority | IntergerField | Obrigatório | Grau de urgência para atendimento do paciente |
-| SES | CharField[9] | Obrigatório, único, validado | Número SES do paciente |
+| cpf | CharField[14] | Obrigatório, único, validado | CPF do responsável |
+
+#### PATIENT:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| priority | IntergerField{choices} | Obrigatório | Grau de urgência para atendimento do paciente |
+| ses | CharField[9] | Obrigatório, único, validado | Número SES do paciente |
 | mother_name | CharField[80] | Obrigatório | Nome da mãe |
 | father_name | CharField[80] | Obrigatório | Nome da pai |
-| ethnicity | IntegerField | Obrigatório | Etnia |
+| ethnicity | IntegerField{choices} | Obrigatório | Etnia |
 | sus_number | CharField[15] | Obrigatório | número do SUS |
-| civil_registry_of_birth | CharField | Obrigatório | Registro civil de nascimento |
-| declaration_of_live_birth | CharField | Obrigatório | Declaração de nascimento |
+| civil_registry_of_birth | CharField[11] | Obrigatório | Registro civil de nascimento |
+| declaration_of_live_birth | CharField[11] | Obrigatório | Declaração de nascimento |
 
 
-### Health Team:
-
-| Atributo | Tipo | Característica| Descrição |
-|---|---|---|---|
-| CRM | CharField | Obrigatório, único, validado | Número CRM do médicos |
-| Specialty | CharField[20] | Obrigatório | Especialidade |
-| CPF | CharField | Obrigatório, único, validado | CPF do médicos |
-
-### ADDRESS:
+#### HEALTH TEAM:
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
-| City | CharField[40] | Obrigatório | Cidade |
-| CEP | CharFieldField | Obrigatório | CEP |
-| Number |  CharField | Obrigatório | Numero da moradia|
-| UF | CharField[2] | Obrigatório | Unidade da Federação |
+| crm | CharField[7] | Obrigatório, único, validado | Número CRM do médicos |
+| speciality | CharField[20] | Obrigatório | Especialidade |
+| cpf | CharField[14] | Obrigatório, único, validado | CPF do médicos |
+
+#### ADDRESS:
+
+| Atributo | Tipo | Característica| Descrição |
+|---|---|---|---|
+| city | CharField[40] | Obrigatório | Cidade |
+| cep | CharFieldField[8] | Obrigatório, validado | CEP |
+| number |  CharField[5] | Obrigatório | Numero da moradia|
+| uf | CharField{choices} | Obrigatório | Unidade da Federação |
 | neighborhood | CharField[30] | Opcional | Bairro |
 
-### POST:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| Title |CharField[100] | Obrigatório | Título do post |
-| Message | TextField | Obrigatório | Mensagem do post |
-| Created_at | DateField | Automático | Data de criação do post |
-| Updated_at | DateField | Automático | Data de modificação do post |
-
-### MEDICAL QUESTIONARY:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| Psychosocial_risk | IntergerField | Obrigatório | Risco psicossocial |
-| Health_risk |IntergerField | Obrigatório | Risco de vida |
-| Family_risk | IntergerField | Obrigatório | Risco familiar |
-| Total_risk | IntergerField | Opcional | Risco total |
-
-### QUEUE:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| Speciality | CharField[50] | Obrigatório | Especialidade |
-| Time_left | DateField | Automático | Tempo faltando |
-| Position | IntergerField | Automático | Posição |
-
-### EVENTS:
-
-| Atributo | Tipo | Característica| Descrição |
-|---|---|---|---|
-| Name | CharField[100] | Obrigatório |Nome do evento |
-| Date | DateField | Obrigatório | Data do evento |
-| Address | Address | Obrigatório | Endereço do evento |
-| Description | TextField | Obrigatório | Descrição do evento |
-
-### APPOINTMENTS:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| Name | CharField[100] | Obrigatório | Nome do compromisso |
-| Date | DateField | Obrigatório | Data do compromisso |
-| Description | TextField | Opcional | Descrição do compromisso |
-
-### Categoty:
+#### CATEGORY:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
 | name | CharField[100] | Obrigatório | Nome da categoria |
-| Description | TextField | Obrigatório | Assunto da categoria |
-| Slug | SlugField | Obrigatorio | Usado para inserir URLs renomeadas |
+| description | TextField[100] | Obrigatório | Assunto da categoria |
+| slug | SlugField[40] | Obrigatório | Usado para inserir URLs renomeadas |
 
-### Commentary:
+#### POST:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| Message | TextField | Obrigatório | Mensagem do comentário |
-| Created_at | DateField | Automático | Data de criação do comentário |
-| Updated_at | DateField | Automático | Data de modificação do comentário |
+| title |CharField[100] | Obrigatório | Título do post |
+| message | TextField[4000] | Obrigatório | Mensagem do post |
+| created_at | DateField | Automático | Data de criação do post |
+| updated_at | DateField | Automático | Data de modificação do post |
+
+#### COMMENTARY:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| message | TextField[4000] | Obrigatório | Mensagem do comentário |
+| created_at | DateField | Automático | Data de criação do comentário |
+| updated_at | DateField | Automático | Data de modificação do comentário |
+
+#### MEDICAL QUESTIONARY:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| psychosocial_risk | IntergerField | Obrigatório | Risco psicossocial |
+| health_risk |IntergerField | Obrigatório | Risco de vida |
+| family_risk | IntergerField | Obrigatório | Risco familiar |
+| total_risk | IntergerField | Obrigatório | Risco total |
+
+#### MEDICAL RECORD:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| history | CharField[4000] | Obrigatório | Histórico médico |
 
 
+#### QUEUE:
 
-### RELACIONAMENTOS:
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| speciality | CharField[50] | Obrigatório | Especialidade |
+| time_left | DateField | Automático | Tempo faltando |
+| position | IntergerField | Automático | Posição |
 
-#### 1 - APPOINTMENTS tem USERS (HealthTeam):
+#### EVENTS:
+
+| Atributo | Tipo | Característica| Descrição |
+|---|---|---|---|
+| name | CharField[100] | Obrigatório |Nome do evento |
+| date | DateField | Obrigatório | Data do evento |
+| description | TextField[4000] | Obrigatório | Descrição do evento |
+
+#### APPOINTMENTS:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| name | CharField[100] | Obrigatório | Nome do compromisso |
+| ddate | DateField | Obrigatório | Data do compromisso |
+| description | TextField[100] | Opcional | Descrição do compromisso |
+
+#### CLINIC:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| name | CharField[100] | Obrigatório | Nome da clínica |
+
+
+#### RELACIONAMENTOS:
+
+##### 1 - APPOINTMENTS tem USERS (HealthTeam):
 
 Um médico pode ter uma ou várias consultas e uma consulta pertence a um único médico.
 
 Cardinalidade: 1 X N
 
-#### 2 - APPOINTMENTS tem USERS (Patient):
+##### 2 - APPOINTMENTS tem USERS (Patient):
 
 Um paciente pode ter uma ou várias consultas e uma consulta pertence a um único paciente.
 
 Cardinalidade: 1 X N
 
-#### 3 - MEDICAL RECORDS tem USERS (Patient):
+##### 3 - MEDICAL RECORDS tem USERS (Patient):
 
-Um prontuário pertence a um único paciente, mas uma paciente pode conter um ou vários prontuários.
+Um prontuário pertence a um único paciente, e um paciente tem um prontuário.
 
-Cardinalidade: 1 X N
+Cardinalidade: 1 X 1
 
-#### 4 - USER (médico) tem USERS (Patient):
+##### 4 - USER (médico) tem USERS (Patient):
 
-Um médicos pode ter um ou vários pacientes, e  um paciente pode ter um ou vários médicos.
+Um médico pode ter um ou vários pacientes, e  um paciente pode ter um ou vários médicos.
 
 Cardinalidade: N X M
 
-#### 5 - POST pertence a USER:
+##### 5 - POST pertence a USER:
 
 Um usuário pode ter um ou vários Posts, e um post pertence a um único usuário.
 
 Cardinalidade:  1 X N
 
-#### 6 - POST tem COMMENTARIES:
+##### 6 - POST tem COMMENTARIES:
 
 Um comentário pode conter um único post, e um post pode conter vários comentários.
 
 Cardinalidade: 1 X N
 
-#### 7 - CLINIC possui ADDRESS:
+##### 7 - CLINIC possui ADDRESS:
 
 Um endereço pode pertencer a apenas uma clinica, e uma clinica pode ter apenas um endereço.
 
 Cardinalidade: 1 X 1
 
-### 8 - EVENTS possui ADDRESS:
+##### 8 - EVENTS possui ADDRESS:
 
 Um evento pode ter apenas um endereço, e um endereço pode ter apenas um evento.
 
 Cardinalidade: 1 X 1
 
 
-#### 9 - CATEGORIES tem POSTS:
+##### 9 - CATEGORIES tem POSTS:
 
 Um post pode conter uma única categoria, e uma categoria pode conter vários posts.
 
