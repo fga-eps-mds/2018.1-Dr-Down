@@ -36,26 +36,13 @@ class Employee(models.Model):
     # example: employee.SPEECH_THERAPHY
     # note: those texts aren't using _() because they are not meant
     # to be translated norshown to the user
-    SPEECH_THERAPHY = "SP_TH"
-    OCCUPATIONAL_THERAPY = "OC_TH"
-    CARDIOLOGY = "CARD"
-    NEUROLOGY = "NEURO"
-    PEDIATRICS = "PED"
-    PSYCHOLOGY = "PSY"
-    PHYSIOTHERAPY = "PHYS"
+
     NURSERY = "NUR"
     SECRETAY = "SEC"
     ADMINISTRATION = "ADM"
     OTHER = "OTH"
 
     DEPARTAMENT_CHOICES = (
-        (SPEECH_THERAPHY, _('Speech Therapy')),
-        (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
-        (CARDIOLOGY, _('Cardiology')),
-        (NEUROLOGY, _('Neurology')),
-        (PEDIATRICS, _('Pediatrics')),
-        (PSYCHOLOGY, _('Psychology')),
-        (PHYSIOTHERAPY, _('Physiotherapy')),
         (SECRETAY, _('Secretary')),
         (ADMINISTRATION, _('Administration')),
         (NURSERY, _('Nursery')),
