@@ -172,7 +172,9 @@ class Health_Team(models.Model):
         try:
             health_team_group = Group.objects.get(name=Health_Team.GROUP_NAME)
         except Group.DoesNotExist:
-            health_team_group = Group.objects.create(name=Health_Team.GROUP_NAME)
+            health_team_group = Group.objects.create(
+               name=Health_Team.GROUP_NAME
+            )
 
         # TODO: add permissions to edit Patient and Parent when they get ready
         self.user.groups.add(health_team_group)
@@ -196,4 +198,6 @@ class Health_Team(models.Model):
     class Meta:
         verbose_name = _('Health_Team')
         verbose_name_plural = _('Health_Teams')
-        unique_together = (("registration_state", "register_number", "council_acronym"))
+        unique_together = (
+            ("registration_state", "register_number", "council_acronym")
+        )

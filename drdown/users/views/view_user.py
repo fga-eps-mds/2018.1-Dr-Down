@@ -78,10 +78,14 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 
         elif hasattr(user, 'health_team'):
             context['health_team_cpf'] = user.health_team.cpf
-            context['health_team_register_number'] = user.health_team.register_number
-            context['health_team_registration_state'] = user.health_team.get_registration_state_display()
-            context['health_team_council_acronym'] = user.health_team.get_council_acronym_display()
-            context['health_team_speciality'] = user.health_team.get_speciality_display()
+            context['health_team_register_number'] = \
+                user.health_team.register_number
+            context['health_team_registration_state'] = \
+                user.health_team.get_registration_state_display()
+            context['health_team_council_acronym'] = \
+                user.health_team.get_council_acronym_display()
+            context['health_team_speciality'] = \
+                user.health_team.get_speciality_display()
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
