@@ -966,7 +966,7 @@ msgstr "Equipe de Saúde"
 
 #: drdown/users/models/model_health_team.py:198
 msgid "Health_Teams"
-msgstr "Equipes de Saúde"
+msgstr "Equipe de Saúde"
 
 
 #: drdown/users/models/model_patient.py:23
