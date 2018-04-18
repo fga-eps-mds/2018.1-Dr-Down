@@ -399,7 +399,7 @@ msgstr ""
 
 #: drdown/templates/base.html:66
 msgid "My Patients"
-msgstr ""
+msgstr "Meus Pacientes"
 
 #: drdown/templates/base.html:67 drdown/templates/base.html:81
 msgid "My Schedule"
@@ -407,12 +407,12 @@ msgstr ""
 
 #: drdown/templates/base.html:68 drdown/templates/base.html:87
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: drdown/templates/base.html:69 drdown/templates/base.html:76
 #: drdown/templates/base.html:83 drdown/templates/base.html:89
 msgid "Locations"
-msgstr ""
+msgstr "Localizações"
 
 #: drdown/templates/base.html:70
 msgid "Risk Rating"
@@ -441,15 +441,15 @@ msgstr ""
 
 #: drdown/templates/base.html:92
 msgid "Edit Profile"
-msgstr ""
+msgstr "Editar Perfil"
 
 #: drdown/templates/base.html:93
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: drdown/templates/base.html:94
 msgid "Log out"
-msgstr ""
+msgstr "Encerrar Sessão"
 
 #: drdown/templates/base.html:99
 msgid "Sign in"
@@ -760,7 +760,7 @@ msgstr ""
 
 #: drdown/templates/users/user_detail.html:96
 msgid "Health Team"
-msgstr ""
+msgstr "Equipe de Saúde"
 
 #: drdown/templates/users/user_detail.html:108
 msgid "Council Acronym: "
