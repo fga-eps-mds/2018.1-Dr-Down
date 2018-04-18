@@ -303,7 +303,7 @@ class TestField(TestCase):
         employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         # try to define a new relation to the same user
@@ -338,7 +338,7 @@ class TestField(TestCase):
             employee = Employee.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                departament=Employee.NEUROLOGY
+                departament=Employee.ADMINISTRATION
             )
 
     def test_employee_specialization_on_delete_reset_flag(self):
@@ -354,7 +354,7 @@ class TestField(TestCase):
         employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -446,7 +446,7 @@ class TestField(TestCase):
         employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -555,7 +555,7 @@ class TestField(TestCase):
         employee=Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -577,7 +577,7 @@ class TestField(TestCase):
         employee=Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user1,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         self.user1.refresh_from_db()
