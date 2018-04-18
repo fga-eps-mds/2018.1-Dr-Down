@@ -8,17 +8,17 @@ O Dr. Down é um sistema direcionado a auxiliar o cuidado de pessoas com Síndro
 
 <div class="list-group">
   <h2>No Dr. Down você pode: </h2>
-  <a class="list-group-item"><i class="fa fa-home fa-2x" aria-hidden="true"></i>&nbsp; Se cadastrar</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-home fa-2x" aria-hidden="true"></i>&nbsp; Se cadastrar</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-stethoscope fa-2x" aria-hidden="true"></i>&nbsp; Marcar uma consulta</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-stethoscope fa-2x" aria-hidden="true"></i>&nbsp; Marcar uma consulta</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-medkit fa-2x" aria-hidden="true"></i>&nbsp; Acompanhar sua ficha médica</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-medkit fa-2x" aria-hidden="true"></i>&nbsp; Acompanhar sua ficha médica</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i>&nbsp; Ver a agenda de eventos</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-calendar fa-2x" aria-hidden="true"></i>&nbsp; Ver a agenda de eventos</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>&nbsp; Participar de um Fórum</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>&nbsp; Participar de um Fórum</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp; Conversar com outros usuários do Dr. Down</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-users fa-2x" aria-hidden="true"></i>&nbsp; Conversar com outros usuários do Dr. Down</a>
   <br/>
-  <a class="list-group-item"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i>&nbsp; Se informar mais sobre a Síndrome de Down</a>
+  <a class="list-group-item" style="color:black"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i>&nbsp; Se informar mais sobre a Síndrome de Down</a>
 </div>
