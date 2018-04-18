@@ -29,3 +29,11 @@ body {
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
+
+.text-tertiary{
+  color: #01142d;
+}
+
+a:hover .h-blue{
+  color: #042d63;
+}

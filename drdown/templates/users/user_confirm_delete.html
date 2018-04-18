@@ -9,9 +9,11 @@
 
 <form method="post" action="">
   {% csrf_token %}
-  <p>{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
-  <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
+  <button class="btn float-left btn-danger" type="submit">{% trans 'Delete' %}</button>
 </form>
+
+<a href="{% url 'users:detail' user.username %}"><button class="btn ml-3 btn-secondary" type="submit">{% trans 'Cancel' %}</button></a>
 
 
 {% endblock %}
