@@ -261,7 +261,7 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 |---|---|---|---|
 | Name | CharField[100] | Obrigatório | Nome completo do usuário |
 | Email | CharField[50] | Obrigatório, único | Email será usado como username do usuário |
-| Telephone| IntergerField | Obrigatório | Telefone do usuário |
+| Telephone| CharField | Obrigatório | Telefone do usuário |
 | Photo | Image | Opcional | Foto do usuário |
 | Is_active | Boolean | Obrigatório | Verifica se o usuário está ativo no sistema |
 | Is_superuser | Boolean | Obrigatório | Verifica se o usuário é um super administrador |
@@ -275,37 +275,44 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| CPF | IntergerField | Obrigatório, único, validado | CPF do funcionário |
+| CPF | CharField | Obrigatório, único, validado | CPF do funcionário |
 | Departament | CharField[30] | Obrigatório | Departamento do funcionário |
 
 ### PARENT:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| CPF | IntergerField | Obrigatório, único, validado | CPF do parente |
+| CPF | CharField | Obrigatório, único, validado | CPF do parente |
 
 ### PATIENT:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| Urgency | IntergerField | Obrigatório | Grau de urgência para atendimento do paciente |
-| SES | IntergerField | Obrigatório, único, validado | Número SES do paciente |
+| Priority | IntergerField | Obrigatório | Grau de urgência para atendimento do paciente |
+| SES | CharField[9] | Obrigatório, único, validado | Número SES do paciente |
+| mother_name | CharField[80] | Obrigatório | Nome da mãe |
+| father_name | CharField[80] | Obrigatório | Nome da pai |
+| ethnicity | IntegerField | Obrigatório | Etnia |
+| sus_number | CharField[15] | Obrigatório | número do SUS |
+| civil_registry_of_birth | CharField | Obrigatório | Registro civil de nascimento |
+| declaration_of_live_birth | CharField | Obrigatorio | Declaração de nascimento |
 
-### DOCTOR:
+
+### Health Team:
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
-| CRM | IntergerField | Obrigatório, único, validado | Número CRM do médicos |
+| CRM | CharField | Obrigatório, único, validado | Número CRM do médicos |
 | Specialty | CharField[20] | Obrigatório | Especialidade |
-| CPF | IntergerField | Obrigatório, único, validado | CPF do médicos |
+| CPF | CharField | Obrigatório, único, validado | CPF do médicos |
 
 ### ADDRESS:
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
 | City | CharField[40] | Obrigatório | Cidade |
-| CEP | IntergerField | Obrigatório | CEP |
-| Number |  IntergerField | Obrigatório | Numero da moradia|
+| CEP | CharFieldField | Obrigatório | CEP |
+| Number |  CharField | Obrigatório | Numero da moradia|
 | UF | CharField[2] | Obrigatório | Unidade da Federação |
 | neighborhood | CharField[30] | Opcional | Bairro |
 
@@ -314,12 +321,9 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
 | Title |CharField[100] | Obrigatório | Título do post |
-| Description | TextField | Obrigatório | Descrição do post |
-| Author | User | Obrigatório | Nome do autor do post |
+| Message | TextField | Obrigatório | Mensagem do post |
 | Created_at | DateField | Automático | Data de criação do post |
 | Updated_at | DateField | Automático | Data de modificação do post |
-| Updated_by | User | Obrigatório | Usuário que modificou o post |
-|Slug | SlugField | Obrigatório | Usado para inserir URLs nomeadas |
 
 ### MEDICAL QUESTIONARY:
 
@@ -355,14 +359,23 @@ Podemos então agregar as funções básicas das views dentro de classes como m�
 | Date | DateField | Obrigatório | Data do compromisso |
 | Description | TextField | Opcional | Descrição do compromisso |
 
-### TOPIC:
+### Categoty:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| Title | CharField[100] | Obrigatório | Título do tópico |
-| Subject | TextField | Obrigatório | Assunto do tópico |
-| Last_update | DateField | Automático | Último data atualizada |
+| name | CharField[100] | Obrigatório | Nome da categoria |
+| Description | TextField | Obrigatório | Assunto da categoria |
 | Slug | SlugField | Obrigatorio | Usado para inserir URLs renomeadas |
+
+### Commentary:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| Message | TextField | Obrigatório | Mensagem do comentário |
+| Created_at | DateField | Automático | Data de criação do comentário |
+| Updated_at | DateField | Automático | Data de modificação do comentário |
+
+
 
 ### RELACIONAMENTOS:
 
@@ -396,9 +409,9 @@ Um usuário pode ter um ou vários Posts, e um post pertence a um único usuári
 
 Cardinalidade:  1 X N
 
-#### 6 - POST tem TOPICS:
+#### 6 - POST tem COMMENTARIES:
 
-Um post pode conter um único tópico, e um tópico pode conter vários posts.
+Um comentário pode conter um único post, e um post pode conter vários comentrios.
 
 Cardinalidade: 1 X N
 
@@ -413,6 +426,13 @@ Cardinalidade: 1 X 1
 Um evento pode ter apenas um endereço, e um endereço pode ter apenas um evento.
 
 Cardinalidade: 1 X 1
+
+
+#### 9 - CATEGORIES tem POSTS:
+
+Um post pode conter uma única categoria, e uma categoria pode conter vários posts.
+
+Cardinalidade: 1 X N
 
 ## Referências
 
