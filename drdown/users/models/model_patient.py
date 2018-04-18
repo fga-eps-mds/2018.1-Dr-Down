@@ -17,7 +17,8 @@ class Patient(models.Model):
         User,
         related_name='patient',
         on_delete=models.CASCADE,
-        limit_choices_to=Q(has_specialization=False)
+        limit_choices_to=Q(has_specialization=False),
+        verbose_name=_('User')
     )
     ses = models.CharField(
         help_text=_("Please, enter the valid SES number"),
@@ -30,7 +31,8 @@ class Patient(models.Model):
         Responsible,
         on_delete=models.SET_NULL,
         null=True,
-        blank=True
+        blank=True,
+        verbose_name=_('Responsible')
     )
 
     PRIORITIES = (
@@ -44,18 +46,22 @@ class Patient(models.Model):
         _('Priority'),
         choices=PRIORITIES,
         help_text=_("Please, insert the degree of priority of the patient"),
-        )
+    )
+
     mother_name = models.CharField(
-                help_text=_("Please, insert your mother name"),
-                max_length=80,
-                validators=[validate_names],
+        _('Name of mother'),
+        help_text=_("Please, insert your mother name"),
+        max_length=80,
+        validators=[validate_names],
     )
+
     father_name = models.CharField(
-                _('Name of father'),
-                help_text=_("Please, insert your father name"),
-                max_length=80,
-                validators=[validate_names],
+        _('Name of father'),
+        help_text=_("Please, insert your father name"),
+        max_length=80,
+        validators=[validate_names],
     )
+
     COLOR = (
         (5, _('White')),
         (4, _('Black')),
@@ -111,11 +117,12 @@ class Patient(models.Model):
         self.user.clean()
 
     def save(self, *args, **kwargs):
+        self.user.clean()
+        self.user.save()
         self.clean()
         super().save(*args, **kwargs)
 
-
-@receiver(post_delete, sender=Patient)
-def remove_specialization(sender, instance, *args, **kwargs):
-    if instance.user.has_specialization:
-        instance.user.has_specialization = False
+    def delete(self, *args, **kwargs):
+        self.user.has_specialization = False
+        self.user.save()
+        super().delete(*args, **kwargs)

@@ -13,7 +13,8 @@ class Responsible(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        limit_choices_to=Q(has_specialization=False)
+        limit_choices_to=Q(has_specialization=False),
+        verbose_name=_('User')
     )
 
     cpf = models.CharField(
@@ -40,14 +41,15 @@ class Responsible(models.Model):
         self.user.clean()
 
     def save(self, *args, **kwargs):
+        self.user.clean()
+        self.user.save()
         self.clean()  # enforce model validation
         super().save(*args, **kwargs)
 
     def __str__(self):
         return self.user.get_username()
 
-
-@receiver(post_delete, sender=Responsible)
-def remove_specialization(sender, instance, *args, **kwargs):
-    if instance.user.has_specialization:
-        instance.user.has_specialization = False
+    def delete(self, *args, **kwargs):
+        self.user.has_specialization = False
+        self.user.save()
+        super().delete(*args, **kwargs)

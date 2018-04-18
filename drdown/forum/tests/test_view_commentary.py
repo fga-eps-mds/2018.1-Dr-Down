@@ -4,6 +4,8 @@ from ..models.model_category import Category
 from ..models.model_post import Post
 from ..models.model_commentary import Commentary
 from django.urls import reverse, resolve
+from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -31,10 +33,7 @@ class TestViewPost(TestCase):
         self.commentary = Commentary.objects.create(
             message='abcde',
             post=self.post,
-            updated_at='2018-06-09',
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
         self.commentary.save()
@@ -109,8 +108,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -130,8 +128,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -152,8 +149,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
 
         response = self.client.post(
@@ -184,8 +180,7 @@ class TestViewPost(TestCase):
         data = {
             'message': 'hello test',
             'post': 'self.post',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
 
         response = self.client.post(
@@ -215,8 +210,7 @@ class TestViewPost(TestCase):
             data = {
                 'message': 'hello test',
                 'post': 'self.post',
-                'created_at': 'datetime.now',
-                'slug': 'test',
+                'created_at': timezone.now(),
             }
 
             response = self.client.post(

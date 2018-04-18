@@ -16,7 +16,8 @@ class Doctor(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        limit_choices_to=Q(has_specialization=False)
+        limit_choices_to=Q(has_specialization=False),
+        verbose_name=_('User')
     )
 
     cpf = models.CharField(
@@ -96,6 +97,7 @@ class Doctor(models.Model):
         # TODO: add permissions to edit Patient and Parent when they get ready
         self.user.groups.add(doctor_group)
 
+        self.user.clean()
         self.user.save()
 
         self.clean()
@@ -106,16 +108,11 @@ class Doctor(models.Model):
         return self.user.get_username() + " - " + self.get_speciality_display()
 
     def delete(self, *args, **kwargs):
-
+        self.user.has_specialization = False
+        self.user.save()
         User.remove_staff(self.user)
         super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Doctor')
         verbose_name_plural = _('Doctors')
-
-
-@receiver(post_delete, sender=Doctor)
-def remove_specialization(sender, instance, *args, **kwargs):
-    if instance.user.has_specialization:
-        instance.user.has_specialization = False

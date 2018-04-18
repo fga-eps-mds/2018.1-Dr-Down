@@ -19,7 +19,8 @@ class Employee(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        limit_choices_to=Q(has_specialization=False)
+        limit_choices_to=Q(has_specialization=False),
+        verbose_name=_('User')
     )
 
     cpf = models.CharField(
@@ -120,6 +121,7 @@ class Employee(models.Model):
 
         self.user.groups.add(employee_group)
 
+        self.user.clean()
         self.user.save()
 
         self.clean()
@@ -127,19 +129,14 @@ class Employee(models.Model):
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
-
+        self.user.has_specialization = False
+        self.user.save()
         User.remove_staff(self.user)
         super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
-
-
-@receiver(post_delete, sender=Employee)
-def remove_specialization(sender, instance, *args, **kwargs):
-    if instance.user.has_specialization:
-        instance.user.has_specialization = False
 
 
 def set_permissions(model, group, change=False, add=False, delete=False):

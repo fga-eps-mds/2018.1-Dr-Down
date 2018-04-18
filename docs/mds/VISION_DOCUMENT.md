@@ -27,7 +27,7 @@ O propósito deste documento é definir e especificar, de maneira ampla, as cara
 
 ### 1.2	Escopo
 
-No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte do médico, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
+No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte da equipe de saúde, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
 O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco, chat e sugestões de jogos voltados para os pacientes.
 
 ### 1.3	Definições, acrônimos e abreviações
@@ -75,10 +75,10 @@ O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúd
 
 |  |  |
 |--------|--------|
-|**Para** |médicos, comunidade do Hospital, familiares e pacientes|
+|**Para** |equipe de saúde, comunidade do Hospital, familiares e pacientes|
 |**Que**| necessitam de uma plataforma que disponibilize diversas informações sobre o paciente, como seu histórico, prontuário e posição na fila de espera por consultas|
 |**O**| Dr. Down|
-|**É uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, e para a divulgação de informações sobre a Síndrome de Down|
+|**É uma**|ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre a equipe de saúde e o paciente, e para a divulgação de informações sobre a Síndrome de Down|
 |**Diferente**|de outras ferramentas que apresentam somente uma ou duas dessas funções, o Dr. Down reúne todas essas funcionalidades em uma só aplicação|
 
 ***
@@ -97,7 +97,7 @@ O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúd
 
 | Nome | Descrição | Parte Interessada |
 |------|-----------|-------------------|
-| Médicos do Cris Down | Equipe médica que trabalha no Cris Down | Usuário |
+| Equipe de saúde do Cris Down | Equipe médica que trabalha no Cris Down | Usuário |
 | Profissional de Saúde | Profissional de saúde, de qualquer especialidade que não seja a médica, que é membro da equipe da saúde do Cris Down | Usuário |
 | Familiares |Familiares ou responsáveis do(s) paciente(s) com SD | Usuário |
 | Paciente com Síndrome de Down | Paciente com síndrome de Down atendido pelo Cris Down | Usuário |
@@ -136,9 +136,9 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 |               |                |
 |---------------|----------------|
-|**Representantes** | Pacientes, familiares e membros da equipe de saúde participante do Cris Down |
+|**Representantes** | Pacientes, familiares e membros da equipe de saúde participantes do Cris Down |
 | **Descrição**| Usuários que irão usufruir da aplicação e de suas informações.
-|**Tipo** | Médicos, funcionários do hospital,familiares e pacientes |
+|**Tipo** | Equipe de saúde, funcionários do hospital, familiares e pacientes |
 |**Responsabilidade** | Usar a aplicação de forma a otimizar o tempo de busca das informações do paciente e seu status para funcionalidades do Cris Down.|
 | **Critério de sucesso** | Diminuir o uso de métodos tradicionais usando papelada e recorrer informações do usuário de forma mais rápida e eficiente pelo aplicativo web.|
 | **Envolvimento** | Alto |
@@ -146,12 +146,12 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.5 Perfil dos Usuários
 
-#### 3.5.1 - Médicos do Cris Down
+#### 3.5.1 - Equipe de Saúde do Cris Down
 
 |               |           |
 |---------------|----------|
 | **Representante** | Usuários |
-| **Descrição** | Médico que trabalha no Cris Down atendendo casos de SD. |
+| **Descrição** | Equipe médica que trabalha no Cris Down atendendo casos de SD. |
 | **Tipo** | Usuário Avançado |
 | **Responsabilidade** | Conhecer a aplicação e todas as suas funcionalidades, além de utilizá-la para facilitar seu trabalho. |
 | **Critérios de sucesso** | Ser capaz de utilizar o sistema para melhorar o atendimento de seus pacientes e aprimorar o gerenciamento do Cris Down. |
@@ -199,9 +199,9 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 | Necessidade | Prioridades | Interesses | Solução atual | Solução proposta |
 |-------------|-------------|------------|---------------|------------------|
-| Ajustar a ficha médica de acordo com as especificidades da SD | Alta | Permitir e facilitar aos médicos o diagnóstico de pacientes com SD | Prontuário padronizado para todos os pacientes | Prontuário específico para pacientes com SD |
-| Maior comunicação entre as partes envolvidas | Alta | Facilitar a transmissão de informações entre pacientes, familiares e médicos | Informações transmitidas durante a consulta presencial | Um meio de comunicação virtual acessível entre os interessados |
-| Definição de atributos para a fila de espera | Alta | Padronizar e tornar mais eficiente o sistema de posicionamento da fila de espera | Classificação subjetiva de acordo com o diagnóstico feito pelo médico | Tornar os critérios para a posição na fila de espera objetivos e padronizados |
+| Ajustar a ficha médica de acordo com as especificidades da SD | Alta | Permitir e facilitar à equipe de saúde o diagnóstico de pacientes com SD | Prontuário padronizado para todos os pacientes | Prontuário específico para pacientes com SD |
+| Maior comunicação entre as partes envolvidas | Alta | Facilitar a transmissão de informações entre pacientes, familiares e equipe de saúde | Informações transmitidas durante a consulta presencial | Um meio de comunicação virtual acessível entre os interessados |
+| Definição de atributos para a fila de espera | Alta | Padronizar e tornar mais eficiente o sistema de posicionamento da fila de espera | Classificação subjetiva de acordo com o diagnóstico feito pela equipe de saúde | Tornar os critérios para a posição na fila de espera objetivos e padronizados |
 
 ### 3.7	Alternativas e Concorrência
 
@@ -220,7 +220,7 @@ Atualmente não há nenhum aplicativo que integre pacientes de SD, familiares e 
 |Benefícios para o Cliente |Recursos de |
 |------------------|-----------------|
 | Consulta rápida do histórico do paciente |Pesquisa no banco de dados do Cris Down. |
-| Comunicação entre pacientes, familiares e médicos |Fórum para dúvidas e mensagens diretas. |
+| Comunicação entre pacientes, familiares e equipe de saúde |Fórum para dúvidas e mensagens diretas. |
 | Verificação do paciente na fila de espera | Funcionalidade mostrando o tempo que falta até a sua consulta. |
 | Jogos pedagógicos e educacionais para auxiliar o desenvolvimento dos pacientes | Ligação da página com links para jogos interativos |
 
@@ -238,15 +238,15 @@ A autenticação do usuário deverá ocorrer por login.
 
 ### 5.2 Nível de acesso
 
-As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. O médico, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações no sistema sobre o paciente.
+As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. A equipe de saúde, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações sobre o paciente no sistema.
 
 ### 5.3 Cadastro
 
-O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de um  funcionário do hospital ou médico do Cris Dow. Dependerá de um administrador do sistema verificar as informações dos profissionais da rede.
+O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de alguém da equipe de saúde ou de algum outro funcionário do Cris Dow, a concretização do mesmo dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.
 
 ### 5.4 Espaço
 
-Dentro da aplicação o espaço deve fornecer salas de fóruns para o esclarecimento dúvidas dos usuários e chats privados para comunicação entre médicos e pacientes/familiares.
+Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários e chats privados para a comunicação entre a equipe de saúde e os pacientes/familiares.
 
 ### 5.5 Informações
 
@@ -266,7 +266,7 @@ O software irá gerar relatórios a respeito do uso do aplicativo e da lista de 
 
 ### 5.9 Marcação de consulta
 
-O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.
+A equipe de saúde e os outros funcionários do Cris Down poderão marcar consultas e definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.
 
 ### 5.10 Linha de Cuidado
 
@@ -278,7 +278,7 @@ O software listará diversos procedimentos e orientações que são recomendados
 ### 6.1 Restrições de sistema
 
 O sistema se comunica com um banco de dados externo.
-O sistema não deve revelar quaisquer informações a terceiros exceto funcionários e médicos do Cris Down, além de manter confidencialidade entre médico e paciente.
+O sistema não deve revelar quaisquer informações a terceiros, exceto funcionários e equipe de saúde do Cris Down, além de manter confidencialidade entre a equipe de saúde e o paciente.
 
 ### 6.2 Restrições externas
 
@@ -298,7 +298,7 @@ Para maior eficiência a aplicação será web, pois o gerenciamento de paciente
 ## 8:	Precedência e Prioridade
 ***
 
-O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
+O gerenciamento e cadastro dos usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e a disponibilização do local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
 
 ***
 ## 9:	Outros Requisitos do Produto
