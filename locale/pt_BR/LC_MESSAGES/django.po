@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-17 23:18+0000\n"
+"POT-Creation-Date: 2018-04-18 00:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: drdown/forum/models/model_category.py:7 drdown/users/models/model_user.py:24
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: drdown/forum/models/model_category.py:8
 msgid "Name of category"
@@ -52,7 +52,7 @@ msgstr ""
 #: drdown/templates/forum/post_list.html:30
 #: drdown/users/models/model_user.py:60
 msgid "Created at"
-msgstr "Criado em"
+msgstr ""
 
 #: drdown/forum/models/model_commentary.py:19
 #: drdown/forum/models/model_post.py:25
@@ -62,7 +62,7 @@ msgstr ""
 #: drdown/forum/models/model_commentary.py:23
 #: drdown/users/models/model_user.py:66
 msgid "Updated at"
-msgstr "Atualizado em"
+msgstr ""
 
 #: drdown/forum/models/model_commentary.py:24
 #: drdown/forum/models/model_post.py:30
@@ -192,20 +192,15 @@ msgid "Confirm E-mail Address"
 msgstr ""
 
 #: drdown/templates/account/email_confirm.html:16
-#, fuzzy, python-format
-#| msgid ""
-#| "Please confirm that <a href=\"mailto:%(email)s\" class=\"text-tertiary\">"
-#| "%(email)s</a> is an e-mail address for user %(user_display)s."
+#, python-format
 msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
-"Por favor confirme que <a href=\"mailto:%(email)s\" class=\"text-tertiary\">"
-"%(email)s</a> é o endereço de e-mail de user %(user_display)s."
 
 #: drdown/templates/account/email_confirm.html:20
 msgid "Confirm"
-msgstr "Confirmar"
+msgstr ""
 
 #: drdown/templates/account/email_confirm.html:27
 #, python-format
@@ -213,14 +208,11 @@ msgid ""
 "This e-mail confirmation link expired or is invalid. Please <a href="
 "\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
-"Esse link de confirmação de e-mail expirou ou é inválido. Por favor <a href="
-"\"%(email_url)s\"> faça um novo requerimento para a confirmação do seu e-"
-"mail</a>."
 
 #: drdown/templates/account/login.html:7 drdown/templates/account/login.html:11
 #: drdown/templates/account/login.html:44
 msgid "Sign In"
-msgstr "Entrar"
+msgstr ""
 
 #: drdown/templates/account/login.html:16
 #, python-format
@@ -233,36 +225,29 @@ msgstr ""
 
 #: drdown/templates/account/login.html:26
 msgid "or"
-msgstr "ou"
+msgstr ""
 
 #: drdown/templates/account/login.html:33
-#, fuzzy, python-format
-#| msgid ""
-#| "If you have not created an account yet, then please\n"
-#| "<a href=\"%(signup_url)s\" class=\"text-tertiary h-blue\">sign up</a> "
-#| "first."
+#, python-format
 msgid ""
 "If you have not created an account yet, then please\n"
 "<a href=\"%(signup_url)s\">sign up</a> first."
 msgstr ""
-"Se ainda não está cadastrado, por favor\n"
-"<a href=\"%(signup_url)s\" class=\"text-tertiary h-blue\">inscreva-se</a> "
-"primeiro."
 
 #: drdown/templates/account/login.html:43
 msgid "Forgot Password?"
-msgstr "Esqueceu a senha?"
+msgstr ""
 
 #: drdown/templates/account/logout.html:5
 #: drdown/templates/account/logout.html:8
 #: drdown/templates/account/logout.html:17
 #: drdown/templates/users/user_confirm_delete.html:5
 msgid "Log Out"
-msgstr "Sair"
+msgstr ""
 
 #: drdown/templates/account/logout.html:10
 msgid "Are you sure you want to log out?"
-msgstr "Você tem certeza que deseja sair?"
+msgstr ""
 
 #: drdown/templates/account/password_change.html:6
 #: drdown/templates/account/password_change.html:9
@@ -272,37 +257,34 @@ msgstr "Você tem certeza que deseja sair?"
 #: drdown/templates/account/password_reset_from_key_done.html:4
 #: drdown/templates/account/password_reset_from_key_done.html:7
 msgid "Change Password"
-msgstr "Mudar Senha"
+msgstr ""
 
 #: drdown/templates/account/password_reset.html:7
 #: drdown/templates/account/password_reset.html:11
 #: drdown/templates/account/password_reset_done.html:6
 #: drdown/templates/account/password_reset_done.html:9
 msgid "Password Reset"
-msgstr "Trocar Senha"
+msgstr ""
 
 #: drdown/templates/account/password_reset.html:16
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll send you "
 "an e-mail allowing you to reset it."
 msgstr ""
-"Esqueceu sua senha? Insira o seu endereço de e-mail abaixo e nós lhe "
-"enviaremosum e-email para redefiní-la."
 
 #: drdown/templates/account/password_reset.html:21
 msgid "Reset My Password"
-msgstr "Mudar minha senha"
+msgstr ""
 
 #: drdown/templates/account/password_reset.html:24
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
-"Entre em contato conosco caso tenha algum problema para redefinir sua senha"
 
 #: drdown/templates/account/password_reset_done.html:15
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
-msgstr "Um e-mail lhe seá enviado. Entre em contato caso não tenha recebido "
+msgstr ""
 
 #: drdown/templates/account/password_reset_from_key.html:8
 msgid "Bad Token"
@@ -315,59 +297,52 @@ msgid ""
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
 "a>."
 msgstr ""
-"Esse link é inválido, possivelmente já foi usado Por favor tente novamente "
-"<a href=\"%(passwd_reset_url)s\">mudar sua senha</a>."
 
 #: drdown/templates/account/password_reset_from_key.html:18
 msgid "change password"
-msgstr "mudar senha"
+msgstr ""
 
 #: drdown/templates/account/password_reset_from_key.html:21
 #: drdown/templates/account/password_reset_from_key_done.html:8
 msgid "Your password is now changed."
-msgstr "Sua senha foi alterada"
+msgstr ""
 
 #: drdown/templates/account/password_set.html:6
 #: drdown/templates/account/password_set.html:9
 #: drdown/templates/account/password_set.html:14
 msgid "Set Password"
-msgstr "Mudar Senha"
+msgstr ""
 
 #: drdown/templates/account/signup.html:6
 msgid "Signup"
-msgstr "Cadastro"
+msgstr ""
 
 #: drdown/templates/account/signup.html:9
 #: drdown/templates/account/signup.html:19
 msgid "Sign Up"
-msgstr "Cadastro"
+msgstr ""
 
 #: drdown/templates/account/signup.html:11
-#, fuzzy, python-format
-#| msgid ""
-#| "Already have an account? Then please <a href=\"%(login_url)s\" class="
-#| "\"text-tertiary\">sign in</a>."
+#, python-format
 msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
 msgstr ""
-"Já tem uma conta? Entre <a href=\"%(login_url)s\" class=\"text-tertiary"
-"\">aqui</a>."
 
 #: drdown/templates/account/signup_closed.html:5
 #: drdown/templates/account/signup_closed.html:8
 msgid "Sign Up Closed"
-msgstr "Cadastro Cancelado"
+msgstr ""
 
 #: drdown/templates/account/signup_closed.html:10
 msgid "We are sorry, but the sign up is currently closed."
-msgstr "Desculpe-nos, o cadastro não foi concluído"
+msgstr ""
 
 #: drdown/templates/account/verification_sent.html:5
 #: drdown/templates/account/verification_sent.html:8
 #: drdown/templates/account/verified_email_required.html:5
 #: drdown/templates/account/verified_email_required.html:8
 msgid "Verify Your E-mail Address"
-msgstr "Verifique seu endereço de e-mail"
+msgstr ""
 
 #: drdown/templates/account/verification_sent.html:10
 msgid ""
@@ -375,9 +350,6 @@ msgid ""
 "finalize the signup process. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
-"Foi enviado um link de confirmação para o seu e-mail. Entre no link "
-"fornecido para finalizar seu cadastro. Entre em contato caso não tenha "
-"recebido dentro de alguns minutos."
 
 #: drdown/templates/account/verified_email_required.html:12
 msgid ""
@@ -385,9 +357,6 @@ msgid ""
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
 msgstr ""
-"Para acessar essa página é necessário a confirmação \n"
-"do seu perfil. Para isso, \n"
-"verifique o seu endereço de e-mail. "
 
 #: drdown/templates/account/verified_email_required.html:16
 msgid ""
@@ -395,10 +364,6 @@ msgid ""
 "verification. Please click on the link inside this e-mail. Please\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
-" \n"
-"Foi enviado um link de confirmação para o seu e-mail. Acesse o link "
-"fornecido e entre em contato conosco caso não tenha o recebido dentro de "
-"alguns minutos."
 
 #: drdown/templates/account/verified_email_required.html:20
 #, python-format
@@ -414,102 +379,101 @@ msgstr ""
 #: drdown/templates/base.html:6 drdown/templates/base.html:42
 #: drdown/templates/pages/home.html:20
 msgid "Dr. Down"
-msgstr "Dr. Down"
+msgstr ""
 
 #: drdown/templates/base.html:44
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #: drdown/templates/base.html:50
 msgid "Home"
-msgstr "Início"
+msgstr ""
 
 #: drdown/templates/base.html:53
 msgid "Down's Syndrome"
-msgstr "Síndrome de Down"
+msgstr ""
 
 #: drdown/templates/base.html:56
 msgid "Forums"
-msgstr "Fóruns"
+msgstr ""
 
 #: drdown/templates/base.html:66
 msgid "My Patients"
-msgstr "Meus Pacientes"
+msgstr ""
 
 #: drdown/templates/base.html:67 drdown/templates/base.html:81
 msgid "My Schedule"
-msgstr "Minha Agenda"
+msgstr ""
 
 #: drdown/templates/base.html:68 drdown/templates/base.html:87
 msgid "Search"
-msgstr "Buscar"
+msgstr ""
 
 #: drdown/templates/base.html:69 drdown/templates/base.html:76
 #: drdown/templates/base.html:83 drdown/templates/base.html:89
 msgid "Locations"
-msgstr "Locais"
+msgstr ""
 
 #: drdown/templates/base.html:70
 msgid "Risk Rating"
-msgstr "Classificação de Risco"
+msgstr ""
 
 #: drdown/templates/base.html:73 drdown/templates/base.html:80
 msgid "Queue"
-msgstr "Fila de Espera"
+msgstr ""
 
 #: drdown/templates/base.html:74
 msgid "My Queries"
-msgstr "Minhas Consultas"
+msgstr ""
 
 #: drdown/templates/base.html:75 drdown/templates/base.html:82
 #: drdown/templates/base.html:88
 msgid "Events"
-msgstr "Eventos"
+msgstr ""
 
 #: drdown/templates/base.html:79
 msgid "My Patient"
-msgstr "Meus Pacientes"
+msgstr ""
 
 #: drdown/templates/base.html:86
 msgid "Schedules"
-msgstr "Horários"
+msgstr ""
 
 #: drdown/templates/base.html:92
 msgid "Edit Profile"
-msgstr "Editar Perfil"
+msgstr ""
 
 #: drdown/templates/base.html:93
 msgid "Help"
-msgstr "Ajuda"
+msgstr ""
 
 #: drdown/templates/base.html:94
 msgid "Log out"
-msgstr "Sair"
+msgstr ""
 
 #: drdown/templates/base.html:99
 msgid "Sign in"
-msgstr "Entrar"
+msgstr ""
 
 #: drdown/templates/base.html:102
 msgid "Sign up"
-msgstr "Cadastrar"
+msgstr ""
 
 #: drdown/templates/base.html:127
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
-msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
+msgstr ""
 
 #: drdown/templates/base.html:128
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
-"Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
 #: drdown/templates/base.html:129
 msgid "Phone: 3325-4219"
-msgstr "Telefone: 3325-4219"
+msgstr ""
 
 #: drdown/templates/base.html:137
 msgid "Copyright &copy; Dr. Down 2018"
-msgstr "Copyright &copy; Dr. Down 2018"
+msgstr ""
 
 #: drdown/templates/forum/category_list.html:3
 #: drdown/templates/forum/category_list.html:7
@@ -533,7 +497,7 @@ msgstr ""
 #: drdown/templates/users/user_confirm_delete.html:8
 #: drdown/templates/users/user_confirm_delete.html:13
 msgid "Delete"
-msgstr "Excluir"
+msgstr ""
 
 #: drdown/templates/forum/commentary_confirm_delete.html:12
 msgid "Are you sure you want to delete this commentary?"
@@ -596,7 +560,7 @@ msgstr ""
 #: drdown/templates/forum/post_confirm_delete.html:12
 #: drdown/templates/users/user_confirm_delete.html:12
 msgid "Are you sure you want to delete "
-msgstr "Você tem certeza que deseja excluir?"
+msgstr ""
 
 #: drdown/templates/forum/post_list.html:20
 msgid "New post"
@@ -620,15 +584,15 @@ msgstr ""
 
 #: drdown/templates/pages/home.html:23
 msgid "CRIS DOWN"
-msgstr "CRIS DOWN"
+msgstr ""
 
 #: drdown/templates/pages/home.html:24
 msgid "Medical Appointment - Queue - Foruns - Information"
-msgstr "Marcação de Consultas - Fila de Espera - Fóruns - Informações"
+msgstr ""
 
 #: drdown/templates/pages/home.html:32
 msgid "About"
-msgstr "Sobre"
+msgstr ""
 
 #: drdown/templates/pages/home.html:36
 msgid ""
@@ -646,47 +610,41 @@ msgstr ""
 
 #: drdown/templates/pages/info.html:25
 msgid "Down's Syndrome infos"
-msgstr "Informações sobre a Síndrome de Down"
+msgstr ""
 
 #: drdown/templates/pages/info.html:35
 msgid "About Down's syndrome"
-msgstr "Sobre a Síndrome de Down"
+msgstr ""
 
 #: drdown/templates/pages/info.html:36
 msgid "Frequently Asked Questions (FAQ)"
-msgstr "Dúvidas Frequentes"
+msgstr ""
 
 #: drdown/templates/pages/info.html:37 drdown/templates/pages/info.html:96
 msgid "What can be done to prevent Down's Syndrome?"
-msgstr "Como prevenir a Síndrome de Down?"
+msgstr ""
 
 #: drdown/templates/pages/info.html:40 drdown/templates/pages/info.html:105
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
 msgstr ""
-"A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
-"minha vida?"
 
 #: drdown/templates/pages/info.html:41 drdown/templates/pages/info.html:115
 msgid "How can I identify Down Syndrome?"
-msgstr "Como posso identificar a Síndrome de Down?"
+msgstr ""
 
 #: drdown/templates/pages/info.html:42 drdown/templates/pages/info.html:125
 msgid "How far does the autonomy of a child with Down syndrome develop?"
 msgstr ""
-"Até onde se desenvolve a autonomia de uma criança com Síndrome de Down?"
 
 #: drdown/templates/pages/info.html:50
 msgid "About Down's Syndrome"
-msgstr "Sobre a Síndrome de Down"
+msgstr ""
 
 #: drdown/templates/pages/info.html:55
 msgid ""
 "Down syndrome is a genetic condition caused by a mutation. Its characterized "
 "by the presence of an extra chromosome in all or most of a person's cells."
 msgstr ""
-"A Síndrome de Down é uma condição genética causada por uma mutação "
-"caracterizada pela presença de um cromossomo extra em todas ou em grande "
-"parte das células de uma pessoa."
 
 #: drdown/templates/pages/info.html:58 drdown/templates/pages/info.html:61
 msgid ""
@@ -695,10 +653,6 @@ msgid ""
 "importance to help this person reach his full potential and live with "
 "quality."
 msgstr ""
-"A pessoa portadora da síndrome de Down é capaz de viver de forma saudável e "
-"de se integrar totalmente à sociedade. Apesar disso, o acompanhamento de "
-"profissionais da área de saúde é de suma importância para auxiliar essa "
-"pessoa a alcançar todo seu potencial e a viver com qualidade."
 
 #: drdown/templates/pages/info.html:64
 msgid ""
@@ -707,10 +661,6 @@ msgid ""
 "first years of life, which causes several people with Down Syndrome to "
 "undergo the need to perform surgeries while they are still young."
 msgstr ""
-"Alguns riscos de saúde surgem de forma relacionada a presença da síndrome. "
-"Um deles é o aumento do risco de problemas cardíacos, principalmente durante "
-"os primeiros anos de vida, o que faz com que vários portadores de Síndrome "
-"de Down passem pela necessidade de realizar cirurgias ainda jovens."
 
 #: drdown/templates/pages/info.html:69
 msgid ""
@@ -726,11 +676,6 @@ msgid ""
 "areas, ranging from the performing arts, or a career in the field of "
 "education to political positions."
 msgstr ""
-"Os portadores da Síndrome de Down possuem diversas características que são "
-"geradas por sua mutação genética, entretanto existe um ponto em comum à "
-"todos eles: um déficit intelectual. Mas isso não impede o portador da "
-"Síndrome de Down de ter sucesso em sua vida profissional, acadêmica e "
-"pessoal."
 
 #: drdown/templates/pages/info.html:75
 msgid ""
@@ -740,15 +685,10 @@ msgid ""
 "society and, above all, family members about the care and duties needed by "
 "those around them."
 msgstr ""
-"A falta de informação sobre a síndrome e sobre as pessoas a ela "
-"condicionadas é a principal causa da segregação à qual essas pessoas podem "
-"ser submetidas. Por isso, é essencial a compreensão e o entendimento da "
-"sociedade e, principalmente, dos familiares sobre  os cuidados e deveres "
-"daqueles que os cercam. "
 
 #: drdown/templates/pages/info.html:88
 msgid "Frequently Asked Questions"
-msgstr "Dúvidas Frequentes"
+msgstr ""
 
 #: drdown/templates/pages/info.html:99
 msgid ""
@@ -758,11 +698,6 @@ msgid ""
 "syndrome affects people of all races, levels of study, social classes and "
 "others."
 msgstr ""
-"Mesmo que a chance de surgimento da Síndrome de Down aumente de acordo com a "
-"faixa etária dos pais da criança, a Síndrome de Down não é causada pelos "
-"pais, não é culpa de ninguém e não há nada que se possa fazer para evitá-la. "
-"Essa síndrome afeta pessoas de todas as raças, níveis de estudo, classes "
-"sociais e outros."
 
 #: drdown/templates/pages/info.html:108
 msgid ""
@@ -770,17 +705,12 @@ msgid ""
 "individual since birth and requires greater attention and care from the "
 "parents."
 msgstr ""
-"A Síndrome de Down não é uma doença, apenas uma condição que afeta a vida de "
-"um indivíduo desde o seu nascimento, o que exige uma maior atenção e cuidado "
-"por parte dos pais e familiares."
 
 #: drdown/templates/pages/info.html:118
 msgid ""
 "Down Syndrome can be detected during pregnancy. You should see a doctor for "
 "the diagnosis."
 msgstr ""
-"A Síndrome de Down pode ser detectada durante a gestação. Deve-se procurar "
-"um médico para que o diagnóstico seja feito."
 
 #: drdown/templates/pages/info.html:128
 msgid ""
@@ -788,48 +718,45 @@ msgid ""
 "Down Syndrome. It is common for medical monitoring and the help of family "
 "members or caregivers to facilitate a child's development."
 msgstr ""
-"Não existe um limite fixo que representa um ápice de desenvolvimento de uma "
-"criança portadora de Síndrome de Down. É comum que o acompanhamento médico e "
-"a ajuda dos familiares ou responsáveis facilita o desenvolvimento da criança."
 
 #: drdown/templates/pages/info.html:137
 msgid "Further reading"
-msgstr "Leituras complementares"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:5
 msgid "User:"
-msgstr "Usuário"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:27
 msgid "Name: "
-msgstr "Nome"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:36
 msgid "Gender: "
-msgstr "Gênero"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:45
 msgid "Telephone: "
-msgstr "Telefone"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:54
 msgid "Birthday: "
-msgstr "Data de Nascimento: "
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:68
 #: drdown/users/models/model_employee.py:137
 msgid "Employee"
-msgstr "Funcionário"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:72
 #: drdown/templates/users/user_detail.html:99
 #: drdown/templates/users/user_detail.html:234
 msgid "CPF: "
-msgstr "CPF: "
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:81
 msgid "Department: "
-msgstr "Departamento: "
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:96
 msgid "Health Team"
@@ -837,19 +764,19 @@ msgstr ""
 
 #: drdown/templates/users/user_detail.html:108
 msgid "Council Acronym: "
-msgstr ""
+msgstr "Sigla do Conselho:"
 
 #: drdown/templates/users/user_detail.html:117
 msgid "Register Number: "
-msgstr ""
+msgstr "Número de Registro:"
 
 #: drdown/templates/users/user_detail.html:126
 msgid "Registration State: "
-msgstr ""
+msgstr "Estado de Registro:"
 
 #: drdown/templates/users/user_detail.html:135
 msgid "Speciality: "
-msgstr ""
+msgstr "Especialidade:"
 
 #: drdown/templates/users/user_detail.html:150
 msgid "Patient"
@@ -897,15 +824,15 @@ msgstr ""
 
 #: drdown/templates/users/user_detail.html:259
 msgid "Confirm data"
-msgstr "Confirmar dados"
+msgstr ""
 
 #: drdown/templates/users/user_list.html:3
 msgid "Members"
-msgstr "Membros"
+msgstr ""
 
 #: drdown/templates/users/user_list.html:7
 msgid "Users"
-msgstr "Usuários"
+msgstr ""
 
 #: drdown/users/models/model_employee.py:26
 msgid "Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"
@@ -915,43 +842,43 @@ msgstr ""
 #: drdown/users/models/model_health_team.py:120
 #: drdown/users/models/model_health_team.py:130
 msgid "Speech Therapy"
-msgstr ""
+msgstr "Terapia de Fala"
 
 #: drdown/users/models/model_employee.py:52
 #: drdown/users/models/model_health_team.py:121
 #: drdown/users/models/model_health_team.py:131
 msgid "Occupational Therapy"
-msgstr ""
+msgstr "Terapia Ocupacional"
 
 #: drdown/users/models/model_employee.py:53
 #: drdown/users/models/model_health_team.py:122
 #: drdown/users/models/model_health_team.py:132
 msgid "Cardiology"
-msgstr ""
+msgstr "Cardiologia"
 
 #: drdown/users/models/model_employee.py:54
 #: drdown/users/models/model_health_team.py:123
 #: drdown/users/models/model_health_team.py:133
 msgid "Neurology"
-msgstr ""
+msgstr "Neurologia"
 
 #: drdown/users/models/model_employee.py:55
 #: drdown/users/models/model_health_team.py:124
 #: drdown/users/models/model_health_team.py:134
 msgid "Pediatrics"
-msgstr ""
+msgstr "Pediatria"
 
 #: drdown/users/models/model_employee.py:56
 #: drdown/users/models/model_health_team.py:125
 #: drdown/users/models/model_health_team.py:135
 msgid "Psychology"
-msgstr ""
+msgstr "Psicologia"
 
 #: drdown/users/models/model_employee.py:57
 #: drdown/users/models/model_health_team.py:126
 #: drdown/users/models/model_health_team.py:136
 msgid "Physiotherapy"
-msgstr ""
+msgstr "Fisioterapia"
 
 #: drdown/users/models/model_employee.py:58
 msgid "Secretary"
@@ -982,7 +909,7 @@ msgstr ""
 #: drdown/users/models/model_patient.py:105
 #: drdown/users/models/model_responsible.py:34
 msgid "Don't change users"
-msgstr ""
+msgstr "Usuário não alterado"
 
 #: drdown/users/models/model_employee.py:138
 msgid "Employees"
@@ -990,7 +917,7 @@ msgstr ""
 
 #: drdown/users/models/model_health_team.py:24
 msgid "Please, use enter a valid CPF in the following format:XXX.XXX.XXX-XX"
-msgstr ""
+msgstr "Por favor, insira um CPF com o formato a seguir: XXX.XXX.XXX-XX"
 
 #: drdown/users/models/model_health_team.py:38
 msgid "COFFITO"
@@ -998,45 +925,49 @@ msgstr ""
 
 #: drdown/users/models/model_health_team.py:42
 msgid "Council Acronym"
-msgstr ""
+msgstr "Sigla do Conselho"
 
 #: drdown/users/models/model_health_team.py:44
 msgid "The Regional Council."
-msgstr ""
+msgstr "Conselho Regional"
 
 #: drdown/users/models/model_health_team.py:51
 msgid ""
 "Use enter a valid register number. \n"
 "Enter 7 digits"
 msgstr ""
+"Insira um número de registro válido. \n"
+"Use até 7 dígitos"
 
 #: drdown/users/models/model_health_team.py:114
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #: drdown/users/models/model_health_team.py:116
 msgid "The registration state of member of health team."
-msgstr ""
+msgstr "O estado da inscrição do membro da equipe de saúde"
 
+#: drdown/users/models/model_health_team.py:127
 #: drdown/users/models/model_health_team.py:137
 msgid "Doctor"
-msgstr ""
+msgstr "Médico"
 
 #: drdown/users/models/model_health_team.py:141
 msgid "Speciality"
-msgstr ""
+msgstr "Especialidade"
 
 #: drdown/users/models/model_health_team.py:143
 msgid "The speciality that this member of health team works."
-msgstr ""
+msgstr "A área de atuação do membro da equipe de saúde"
 
 #: drdown/users/models/model_health_team.py:197
 msgid "Health_Team"
-msgstr ""
+msgstr "Equipe de Saúde"
 
 #: drdown/users/models/model_health_team.py:198
 msgid "Health_Teams"
-msgstr ""
+msgstr "Equipes de Saúde"
+
 
 #: drdown/users/models/model_patient.py:23
 msgid "Please, enter the valid SES number"
@@ -1140,31 +1071,31 @@ msgstr ""
 
 #: drdown/users/models/model_user.py:27
 msgid "Full user name"
-msgstr "Nome completo"
+msgstr ""
 
 #: drdown/users/models/model_user.py:32
 msgid "Gender"
-msgstr "Gênero"
+msgstr ""
 
 #: drdown/users/models/model_user.py:43
 msgid "Telephone"
-msgstr "Telefone"
+msgstr ""
 
 #: drdown/users/models/model_user.py:48
 msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
-msgstr "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
+msgstr ""
 
 #: drdown/users/models/model_user.py:53
 msgid "Birthday"
-msgstr "Data de nascimento"
+msgstr ""
 
 #: drdown/users/models/model_user.py:54
 msgid "xx/xx/xxxx"
-msgstr "xx/xx/xxxx"
+msgstr ""
 
 #: drdown/users/models/model_user.py:114
 msgid "This user is already specialized!"
-msgstr "Esse usuário já foi especializado!"
+msgstr ""
 
 #: drdown/utils/validators.py:19
 msgid "Wrong CPF format"
@@ -1172,49 +1103,34 @@ msgstr ""
 
 #: drdown/utils/validators.py:32
 msgid "This CPF is not permited"
-msgstr "Esse CPF não é permitido"
+msgstr ""
 
 #: drdown/utils/validators.py:71
 #, python-format
 msgid "%(value)s is a invalid CPF, the verification digit is wrong"
-msgstr "%(value)s é um CPF inválido, dígito de verificação incorreto"
+msgstr ""
 
 #: drdown/utils/validators.py:85
 msgid "Wrong SES format"
-msgstr "Formato do SES inválido"
+msgstr ""
 
 #: drdown/utils/validators.py:98 drdown/utils/validators.py:110
 #: drdown/utils/validators.py:138 drdown/utils/validators.py:181
 msgid "This SES is not permited"
-msgstr "Esse SES não é permitido"
+msgstr ""
 
 #: drdown/utils/validators.py:125 drdown/utils/validators.py:168
 msgid "Wrong NUMBER format"
-msgstr "Formato de NÚMERO errado"
+msgstr ""
 
 #: drdown/utils/validators.py:153
 msgid "Invalid name."
-msgstr "Nome inválido"
+msgstr ""
 
 #: drdown/utils/validators.py:202
 msgid "Wrong phone format"
-msgstr "Formato de telefone errado"
+msgstr ""
 
 #: drdown/utils/validators.py:214
 msgid "Wrong CRM format"
-msgstr "Formato de CRM errado"
-
-#~ msgid "Male"
-#~ msgstr "Masculino"
-
-#~ msgid "Female"
-#~ msgstr "Feminino"
-
-#~ msgid "Photo"
-#~ msgstr "Foto"
-
-#~ msgid "Photo of user"
-#~ msgstr "Foto do usuário"
-
-#~ msgid "Update"
-#~ msgstr "Atualizar"
+msgstr ""

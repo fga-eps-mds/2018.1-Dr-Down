@@ -124,7 +124,7 @@ class Health_Team(models.Model):
     PEDIATRICS = _("Pediatrics")
     PSYCHOLOGY = _("Psychology")
     PHYSIOTHERAPY = _("Physiotherapy")
-    DOCTOR = ("Doctor")
+    DOCTOR = _("Doctor")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
