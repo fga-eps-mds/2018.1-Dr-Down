@@ -93,7 +93,7 @@ msgstr "Atualizado em"
 #, fuzzy
 #| msgid "The date of create"
 msgid "Date of update"
-msgstr "Data de criação"
+msgstr "Data de atualização"
 
 #: drdown/forum/models/model_commentary.py:32
 #: drdown/forum/models/model_post.py:38
@@ -234,7 +234,8 @@ msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
-"No momento, você não tem um e-mail cadastrado. Você deve adicionar um e-mail "
+"No momento, você não tem um e-mail cadastrado. Você realmente deve "
+"adicionar um e-mail "
 "para poder receber notificações, trocar sua senha e etc."
 
 #: drdown/templates/account/email.html:51
@@ -261,7 +262,7 @@ msgid ""
 "%(email)s</a> is an e-mail address for user %(user_display)s."
 msgstr ""
 "Por favor confirme que <a href=\"mailto:%(email)s\" class=\"text-tertiary\">"
-"%(email)s</a> é o endereço de e-mail de user %(user_display)s."
+"%(email)s</a> é o endereço de e-mail do usuário %(user_display)s."
 
 #: drdown/templates/account/email_confirm.html:20
 msgid "Confirm"
@@ -290,6 +291,10 @@ msgid ""
 "up</a>\n"
 "for a %(site_name)s account and sign in below:"
 msgstr ""
+"Por favor entre com uma\n"
+"das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s\">entre "
+"</a>\n"
+"para uma conta do %(site_name)e logue abaixo:"
 
 #: drdown/templates/account/login.html:26
 msgid "or"
@@ -350,7 +355,7 @@ msgid ""
 "an e-mail allowing you to reset it."
 msgstr ""
 "Esqueceu sua senha? Insira o seu endereço de e-mail abaixo e nós lhe "
-"enviaremos um e-email para redefiní-la."
+"enviaremos um e-mail para redefini-la."
 
 #: drdown/templates/account/password_reset.html:21
 msgid "Reset My Password"
@@ -365,7 +370,7 @@ msgstr ""
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
-msgstr "Um e-mail lhe seá enviado. Entre em contato caso não tenha recebido "
+msgstr "Nós lhe enviamos um e-mail. Entre em contato caso não tenha recebido "
 
 #: drdown/templates/account/password_reset_from_key.html:8
 msgid "Bad Token"
@@ -388,7 +393,7 @@ msgstr "mudar senha"
 #: drdown/templates/account/password_reset_from_key.html:21
 #: drdown/templates/account/password_reset_from_key_done.html:8
 msgid "Your password is now changed."
-msgstr "Sua senha foi alterada"
+msgstr "Sua senha foi alterada."
 
 #: drdown/templates/account/password_set.html:6
 #: drdown/templates/account/password_set.html:9
@@ -421,7 +426,7 @@ msgstr "Cadastro Cancelado"
 
 #: drdown/templates/account/signup_closed.html:10
 msgid "We are sorry, but the sign up is currently closed."
-msgstr "Desculpe-nos, o cadastro não foi concluído"
+msgstr "Desculpe-nos, o cadastro não foi concluído."
 
 #: drdown/templates/account/verification_sent.html:5
 #: drdown/templates/account/verification_sent.html:8
@@ -495,7 +500,7 @@ msgstr "Síndrome de Down"
 
 #: drdown/templates/base.html:61
 msgid "Forums"
-msgstr "Fóruns"
+msgstr "Fórum"
 
 #: drdown/templates/base.html:73
 msgid "My Patients"
@@ -663,7 +668,7 @@ msgstr "Novo post"
 
 #: drdown/templates/forum/post_list.html:30
 msgid "Last Update"
-msgstr "Ultima atualização"
+msgstr "Última atualização"
 
 #: drdown/templates/forum/post_list.html:46
 msgid "Not updated yet"
@@ -691,9 +696,9 @@ msgid ""
 "Síndrome de Down) that makes possible to schedule medical appointments, to "
 "communicate with the doctor and visualize general information."
 msgstr ""
-"Dr. Down é uma ferramenta de gerenciamento para o CRIS DOWN(Centro de "
+"Dr. Down é uma ferramenta de gerenciamento para o CRIS DOWN (Centro de "
 "Referência em Síndrome de Down) que possibilita agendar consultas, se "
-"comunicar com o médico e vizualizar informações."
+"comunicar com o médico e visualizar informações."
 
 #: drdown/templates/pages/home.html:39
 msgid ""
@@ -762,7 +767,7 @@ msgid ""
 "importance to help this person reach his full potential and live with "
 "quality."
 msgstr ""
-"A pessoa portadora da síndrome de Down é capaz de viver de forma saudável e "
+"A pessoa portadora da Síndrome de Down é capaz de viver de forma saudável e "
 "de se integrar totalmente à sociedade. Apesar disso, o acompanhamento de "
 "profissionais da área de saúde é de suma importância para auxiliar essa "
 "pessoa a alcançar todo seu potencial e a viver com qualidade."
@@ -862,7 +867,7 @@ msgid ""
 msgstr ""
 "Não existe um limite fixo que representa um ápice de desenvolvimento de uma "
 "criança portadora de Síndrome de Down. É comum que o acompanhamento médico e "
-"a ajuda dos familiares ou responsáveis facilita o desenvolvimento da criança."
+"a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da criança."
 
 #: drdown/templates/pages/info.html:137
 msgid "Further reading"
@@ -907,11 +912,11 @@ msgstr "Departamento: "
 #: drdown/users/models/model_health_team.py:200
 #: drdown/users/models/model_health_team.py:201
 msgid "Health Team"
-msgstr ""
+msgstr "Equipe de Saúde"
 
 #: drdown/templates/users/user_detail.html:107
 msgid "Council Acronym: "
-msgstr ""
+msgstr "Sigla do Conselho: "
 
 #: drdown/templates/users/user_detail.html:116
 #, fuzzy
@@ -921,7 +926,7 @@ msgstr "Nome da mãe: "
 
 #: drdown/templates/users/user_detail.html:125
 msgid "Registration State: "
-msgstr ""
+msgstr "Estado de Registro: "
 
 #: drdown/templates/users/user_detail.html:134
 msgid "Speciality: "
@@ -983,7 +988,7 @@ msgstr "Meus registros médicos"
 #: drdown/templates/users/user_form.html:51
 #: drdown/users/models/model_user.py:27
 msgid "Full user name"
-msgstr "Nome completo"
+msgstr "Nome completo do usuário"
 
 #: drdown/templates/users/user_form.html:57
 #: drdown/users/models/model_user.py:32
@@ -1083,15 +1088,15 @@ msgstr "Por favor, insira um CPF válido no seguinte formato:XXX.XXX.XXX-XX"
 
 #: drdown/users/models/model_health_team.py:39
 msgid "COFFITO"
-msgstr ""
+msgstr "COFFITO"
 
 #: drdown/users/models/model_health_team.py:43
 msgid "Council Acronym"
-msgstr ""
+msgstr "Sigla do Conselho"
 
 #: drdown/users/models/model_health_team.py:45
 msgid "The Regional Council."
-msgstr ""
+msgstr "O conselho regional"
 
 #: drdown/users/models/model_health_team.py:52
 #, fuzzy
@@ -1102,16 +1107,16 @@ msgid ""
 "Use enter a valid register number. \n"
 "Enter 7 digits"
 msgstr ""
-"Insira um CRM válido. \n"
-"Digite 7 digitos de 0 à 9"
+"Insira um número de registo válido. \n"
+"Digite 7 dígitos de 0 à 9"
 
 #: drdown/users/models/model_health_team.py:115
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #: drdown/users/models/model_health_team.py:117
 msgid "The registration state of member of health team."
-msgstr ""
+msgstr "O estado de registro do membro do time de saúde."
 
 #: drdown/users/models/model_health_team.py:121
 #: drdown/users/models/model_health_team.py:131
@@ -1161,7 +1166,7 @@ msgstr "Especialidade"
 #, fuzzy
 #| msgid "The speciality that this doctor works."
 msgid "The speciality that this member of health team works."
-msgstr "A especialidade do médico."
+msgstr "A especialidade do membro do time de saúde."
 
 #: drdown/users/models/model_patient.py:24
 msgid "Please, enter the valid SES number"
@@ -1185,7 +1190,7 @@ msgstr "Muito urgente"
 
 #: drdown/users/models/model_patient.py:43
 msgid "Emerging"
-msgstr "Emergência"
+msgstr "Emergente"
 
 #: drdown/users/models/model_patient.py:46
 msgid "Priority"
@@ -1193,13 +1198,13 @@ msgstr "Prioridade"
 
 #: drdown/users/models/model_patient.py:48
 msgid "Please, insert the degree of priority of the patient"
-msgstr "Por favor, inisira o nível de prioridade do paciente"
+msgstr "Por favor, insira o nível de prioridade do paciente"
 
 #: drdown/users/models/model_patient.py:52
 #, fuzzy
 #| msgid "Name of category"
 msgid "Name of mother"
-msgstr "Nome da categoria"
+msgstr "Nome da mãe"
 
 #: drdown/users/models/model_patient.py:53
 msgid "Please, insert your mother name"
@@ -1273,7 +1278,7 @@ msgstr "Por favor, insira um CPF válido no seguinte formato: XXX.XXX.XXX-XX"
 #, fuzzy
 #| msgid "Photo of user"
 msgid "Photo of user."
-msgstr "Foto do usuário"
+msgstr "Foto do usuário."
 
 #: drdown/users/models/model_user.py:48
 msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
