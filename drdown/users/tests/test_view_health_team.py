@@ -3,12 +3,12 @@ from django.test import RequestFactory
 from django.test.client import Client
 
 
-from ..models.model_doctor import Doctor
+from ..models.model_health_team import Health_Team
 
 
-class TestViewDoctor (TestCase):
+class TestViewHealth_Team (TestCase):
     """
-    Test if View Doctor is working correctly
+    Test if View Health_Team is working correctly
     """
 
     def setUp(self):
@@ -18,36 +18,36 @@ class TestViewDoctor (TestCase):
 
         self.client = Client()
         self.user = self.make_user()
-        self.doctor = Doctor.objects.create(
+        self.health_team = Health_Team.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=Doctor.NEUROLOGY)
+            speciality=Health_Team.NEUROLOGY)
 
-    def test_doctor_get_context_data(self):
+    def test_health_team_get_context_data(self):
         """
-        Test if the view doctor is passing the data correctly
+        Test if the view health team is passing the data correctly
         """
 
-        self.doctor.save()
+        self.health_team.save()
         self.client.force_login(user=self.user)
 
         response = self.client.get(path='/users/testuser/', follow=True)
 
         self.assertEquals(response.status_code, 200)
 
-        self.assertEquals(self.user.doctor.cpf, self.doctor.cpf)
+        self.assertEquals(self.user.health_team.cpf, self.health_team.cpf)
 
         self.assertContains(response, text=self.user.username)
         self.assertContains(response, text=self.user.username)
 
-        self.assertContains(response, text=self.user.doctor.cpf)
+        self.assertContains(response, text=self.user.health_team.cpf)
 
-    def test_doctor_get_context_data_error(self):
+    def test_health_team_get_context_data_error(self):
         """
-        Test if the view doctor is not passing data in case of error
+        Test if the view health team is not passing data in case of error
         """
 
-        self.doctor.save()
+        self.health_team.save()
         self.client.force_login(user=self.user)
 
         response = self.client.get(path='/users/testuser1/', follow=True)

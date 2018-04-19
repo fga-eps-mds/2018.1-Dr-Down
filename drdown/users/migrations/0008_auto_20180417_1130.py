@@ -9,12 +9,12 @@ import drdown.utils.validators
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0007_auto_20180411_1617'),
+        ('users', '0007_auto_20180419_0000'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='doctor',
+            model_name='health_team',
             name='user',
             field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='User'),
         ),
@@ -43,4 +43,4 @@ class Migration(migrations.Migration):
             name='user',
             field=models.OneToOneField(limit_choices_to=models.Q(has_specialization=False), on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='User'),
         ),
-    ]
+]

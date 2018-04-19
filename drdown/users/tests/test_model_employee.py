@@ -19,7 +19,7 @@ class TestModelEmployee(TestCase):
         self.employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
     def test_get_absolute_url(self):
@@ -88,7 +88,7 @@ class TestModelEmployeeNoSetUp(TestCase):
         self.employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         # it should create the group with permissons
@@ -170,7 +170,7 @@ class TestModelEmployeeNoSetUp(TestCase):
         self.employee = Employee.objects.create(
             cpf="974.220.200-16",
             user=self.user,
-            departament=Employee.NEUROLOGY
+            departament=Employee.ADMINISTRATION
         )
 
         self.assertEqual(

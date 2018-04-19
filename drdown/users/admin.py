@@ -9,7 +9,7 @@ from .models import (
         Employee,
         Patient,
         Responsible,
-        Doctor
+        Health_Team
     )
 
 
@@ -41,7 +41,8 @@ class MyUserAdmin(AuthUserAdmin):
     form = MyUserChangeForm
     add_form = MyUserCreationForm
     fieldsets = (
-            ('User Profile', {'fields': ('name',)}),
+            ('User Profile', {'fields': (('name'), ('gender'),
+             ('telephone'), ('birthday'), ('photo'))}),
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'has_specialization', 'name', 'is_superuser')
     search_fields = ['name']
@@ -49,7 +50,6 @@ class MyUserAdmin(AuthUserAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    change_form_template = "admin/change_form.html"
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)
@@ -74,8 +74,8 @@ class ResponsibleAdmin(admin.ModelAdmin):
         return fields
 
 
-@admin.register(Doctor)
-class DoctorAdmin(admin.ModelAdmin):
+@admin.register(Health_Team)
+class Health_TeamAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         fields = super().get_readonly_fields(request, obj)

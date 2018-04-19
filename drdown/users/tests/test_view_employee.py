@@ -18,7 +18,7 @@ class TestViewEmployee (TestCase):
 
         self.client = Client()
         self.user = self.make_user()
-        self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user, departament=Employee.NEUROLOGY)
+        self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user, departament=Employee.ADMINISTRATION)
 
     def test_employee_get_context_data(self):
         """
