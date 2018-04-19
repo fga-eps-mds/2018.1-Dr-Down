@@ -196,8 +196,8 @@ class Health_Team(models.Model):
         super().delete(*args, **kwargs)
 
     class Meta:
-        verbose_name = _('Health_Team')
-        verbose_name_plural = _('Health_Teams')
+        verbose_name = _('Health Team')
+        verbose_name_plural = _('Health Team')
         unique_together = (
             ("registration_state", "register_number", "council_acronym")
         )
