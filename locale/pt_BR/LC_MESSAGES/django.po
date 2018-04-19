@@ -199,7 +199,7 @@ msgstr "Endereço de e-mail"
 
 #: drdown/templates/account/email.html:13
 msgid "The following e-mail addresses are associated with your account:"
-msgstr "Estes endereços de e-mail estão associados com sua conta"
+msgstr "Estes endereços de e-mail estão associados com sua conta:"
 
 #: drdown/templates/account/email.html:27
 msgid "Verified"
@@ -234,7 +234,7 @@ msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
-"No momento, você não tem um e-mail cadastrado. Você deve adicionar ume-mail "
+"No momento, você não tem um e-mail cadastrado. Você deve adicionar um e-mail "
 "para poder receber notificações, trocar sua senha e etc."
 
 #: drdown/templates/account/email.html:51
@@ -350,7 +350,7 @@ msgid ""
 "an e-mail allowing you to reset it."
 msgstr ""
 "Esqueceu sua senha? Insira o seu endereço de e-mail abaixo e nós lhe "
-"enviaremosum e-email para redefiní-la."
+"enviaremos um e-email para redefiní-la."
 
 #: drdown/templates/account/password_reset.html:21
 msgid "Reset My Password"
@@ -378,8 +378,8 @@ msgid ""
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
 "a>."
 msgstr ""
-"Esse link é inválido, possivelmente já foi usado Por favor tente novamente "
-"<a href=\"%(passwd_reset_url)s\">mudar sua senha</a>."
+"Esse link para resetar a senha é inválido, possivelmente já foi usado. Por favor tente "
+"<a href=\"%(passwd_reset_url)s\">mudar sua senha novamente</a>."
 
 #: drdown/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -578,7 +578,7 @@ msgstr "Copyright &copy; Dr. Down 2018"
 #, fuzzy
 #| msgid "Name of category"
 msgid "There are no category."
-msgstr "Nome da categoria"
+msgstr "Não há categorias."
 
 #: drdown/templates/forum/commentary_confirm_delete.html:8
 #: drdown/templates/forum/commentary_confirm_delete.html:14
@@ -643,7 +643,7 @@ msgstr "Novo Post"
 #: drdown/templates/forum/pagination.html:8
 #: drdown/templates/forum/pagination.html:12
 msgid "Previous"
-msgstr "Anterios"
+msgstr "Anterior"
 
 #: drdown/templates/forum/pagination.html:30
 #: drdown/templates/forum/pagination.html:34
@@ -1128,7 +1128,7 @@ msgstr "O departamento em que este usuário trabalha."
 
 #: drdown/users/models/model_employee.py:139
 msgid "Employees"
-msgstr "Funcipnários"
+msgstr "Funcionários"
 
 #: drdown/users/models/model_patient.py:24
 msgid "Please, enter the valid SES number"
@@ -1290,7 +1290,7 @@ msgstr "Formato de telefone errado"
 
 #: drdown/utils/validators.py:214
 msgid "Wrong CRM format"
-msgstr "Formato de CRM errado"
+msgstr "Formato de CRM inválido"
 
 #, fuzzy
 #~| msgid "Title of post"
