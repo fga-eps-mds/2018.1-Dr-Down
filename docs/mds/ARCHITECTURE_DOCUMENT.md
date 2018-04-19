@@ -46,7 +46,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Arquitetura](http://uploaddeimagens.com.br/images/001/379/821/original/diagramade.jpeg?1524095365)
+![Arquitetura](https://uploaddeimagens.com.br/images/001/378/954/original/arquitetura.png?1524062488)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
@@ -239,7 +239,7 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
 
-![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/389/original/pacotes.jpeg?1524078223)
+![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/821/original/diagramade.jpeg?1524095365)
 
 - **apps**: cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
