@@ -21,11 +21,6 @@ class Migration(migrations.Migration):
             field=models.CharField(help_text='Name of category', max_length=30, unique=True, verbose_name='Name'),
         ),
         migrations.AlterField(
-            model_name='category',
-            name='slug',
-            field=models.SlugField(help_text='URL string shortcut', max_length=40, verbose_name='Shortcut'),
-        ),
-        migrations.AlterField(
             model_name='commentary',
             name='created_at',
             field=models.DateTimeField(auto_now_add=True, help_text='The date of create', verbose_name='Created at'),
@@ -34,11 +29,6 @@ class Migration(migrations.Migration):
             model_name='commentary',
             name='message',
             field=models.TextField(max_length=4000, verbose_name='Message'),
-        ),
-        migrations.AlterField(
-            model_name='commentary',
-            name='slug',
-            field=models.SlugField(help_text='URL string shortcut', max_length=40, verbose_name='Shortcut'),
         ),
         migrations.AlterField(
             model_name='commentary',
@@ -54,11 +44,6 @@ class Migration(migrations.Migration):
             model_name='post',
             name='message',
             field=models.TextField(help_text='Message of post', max_length=4000, verbose_name='Message'),
-        ),
-        migrations.AlterField(
-            model_name='post',
-            name='slug',
-            field=models.SlugField(help_text='URL string shortcut', max_length=40, verbose_name='Shortcut'),
         ),
         migrations.AlterField(
             model_name='post',
