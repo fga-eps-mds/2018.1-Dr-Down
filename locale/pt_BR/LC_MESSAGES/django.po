@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-18 15:04+0000\n"
+"POT-Creation-Date: 2018-04-19 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,8 +142,8 @@ msgstr "Atualizado em"
 msgid "Posts"
 msgstr "Posts"
 
-#: drdown/forum/tests/test_view_commentary.py:100
-#: drdown/forum/tests/test_view_post.py:93
+#: drdown/forum/tests/test_view_commentary.py:102
+#: drdown/forum/tests/test_view_post.py:94
 msgid "This field is required."
 msgstr "Esse campo é obrigatório"
 
@@ -378,8 +378,8 @@ msgid ""
 "used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
 "a>."
 msgstr ""
-"Esse link para resetar a senha é inválido, possivelmente já foi usado. Por favor tente "
-"<a href=\"%(passwd_reset_url)s\">mudar sua senha novamente</a>."
+"Esse link para resetar a senha é inválido, possivelmente já foi usado. Por "
+"favor tente <a href=\"%(passwd_reset_url)s\">mudar sua senha novamente</a>."
 
 #: drdown/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -471,7 +471,9 @@ msgstr ""
 "seu e-email</a>."
 
 #: drdown/templates/admin/change_form.html:5
-msgid "Make sure user is confirmed before turning into an employee."
+#, fuzzy
+#| msgid "Make sure user is confirmed before turning into an employee."
+msgid "Make sure user is confirmed before adding a specialization."
 msgstr "Tenha certeza de que o usuário está confirmado antes de especializá-lo"
 
 #: drdown/templates/base.html:6 drdown/templates/base.html:47
@@ -590,7 +592,7 @@ msgstr "Não há categorias."
 #: drdown/templates/forum/post_confirm_delete.html:14
 #: drdown/templates/users/user_confirm_delete.html:8
 #: drdown/templates/users/user_confirm_delete.html:13
-#: drdown/templates/users/user_detail.html:245
+#: drdown/templates/users/user_detail.html:263
 msgid "Delete"
 msgstr "Excluir"
 
@@ -887,13 +889,13 @@ msgid "Birthday: "
 msgstr "Data de Nascimento: "
 
 #: drdown/templates/users/user_detail.html:67
-#: drdown/users/models/model_employee.py:138
+#: drdown/users/models/model_employee.py:125
 msgid "Employee"
 msgstr "Funcionário"
 
 #: drdown/templates/users/user_detail.html:71
 #: drdown/templates/users/user_detail.html:98
-#: drdown/templates/users/user_detail.html:215
+#: drdown/templates/users/user_detail.html:233
 msgid "CPF: "
 msgstr "CPF: "
 
@@ -902,68 +904,79 @@ msgid "Department: "
 msgstr "Departamento: "
 
 #: drdown/templates/users/user_detail.html:95
-#: drdown/users/models/model_doctor.py:117
-msgid "Doctor"
-msgstr "Médico"
+#: drdown/users/models/model_health_team.py:200
+#: drdown/users/models/model_health_team.py:201
+msgid "Health Team"
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:107
-msgid "CRM: "
-msgstr "CRM: "
+msgid "Council Acronym: "
+msgstr ""
 
 #: drdown/templates/users/user_detail.html:116
+#, fuzzy
+#| msgid "Mother Name: "
+msgid "Register Number: "
+msgstr "Nome da mãe: "
+
+#: drdown/templates/users/user_detail.html:125
+msgid "Registration State: "
+msgstr ""
+
+#: drdown/templates/users/user_detail.html:134
 msgid "Speciality: "
 msgstr "Especialidade: "
 
-#: drdown/templates/users/user_detail.html:131
+#: drdown/templates/users/user_detail.html:149
 msgid "Patient"
 msgstr "Paciente"
 
-#: drdown/templates/users/user_detail.html:134
+#: drdown/templates/users/user_detail.html:152
 msgid "SES: "
 msgstr "SES: "
 
-#: drdown/templates/users/user_detail.html:143
+#: drdown/templates/users/user_detail.html:161
 msgid "Priority: "
 msgstr "Prioridade: "
 
-#: drdown/templates/users/user_detail.html:152
+#: drdown/templates/users/user_detail.html:170
 msgid "Mother Name: "
 msgstr "Nome da mãe: "
 
-#: drdown/templates/users/user_detail.html:161
+#: drdown/templates/users/user_detail.html:179
 msgid "Father Name: "
 msgstr "Nome do pai: "
 
-#: drdown/templates/users/user_detail.html:170
+#: drdown/templates/users/user_detail.html:188
 msgid "Ethnicity: "
 msgstr "Etnia: "
 
-#: drdown/templates/users/user_detail.html:179
+#: drdown/templates/users/user_detail.html:197
 msgid "SUS: "
 msgstr "SUS: "
 
-#: drdown/templates/users/user_detail.html:188
+#: drdown/templates/users/user_detail.html:206
 msgid "Civil registry of birth: "
 msgstr "Registro civil de nascimento: "
 
-#: drdown/templates/users/user_detail.html:197
+#: drdown/templates/users/user_detail.html:215
 msgid "Declaration of live birth: "
 msgstr "Declaração de nascido vivo: "
 
-#: drdown/templates/users/user_detail.html:212
+#: drdown/templates/users/user_detail.html:230
 #: drdown/users/models/model_patient.py:35
 msgid "Responsible"
 msgstr "Responsável"
 
-#: drdown/templates/users/user_detail.html:224
+#: drdown/templates/users/user_detail.html:242
 msgid "Patient: "
 msgstr "Paciente: "
 
-#: drdown/templates/users/user_detail.html:240
+#: drdown/templates/users/user_detail.html:258
 msgid "Confirm data"
 msgstr "Confirmar dados"
 
-#: drdown/templates/users/user_detail.html:243
+#: drdown/templates/users/user_detail.html:261
 msgid "My Medical Records"
 msgstr "Meus registros médicos"
 
@@ -1016,8 +1029,8 @@ msgstr "Membros"
 msgid "Users"
 msgstr "Usuários"
 
-#: drdown/users/models/model_doctor.py:20
 #: drdown/users/models/model_employee.py:23
+#: drdown/users/models/model_health_team.py:20
 #: drdown/users/models/model_patient.py:21
 #: drdown/users/models/model_responsible.py:17
 #, fuzzy
@@ -1025,110 +1038,130 @@ msgstr "Usuários"
 msgid "User"
 msgstr "Usuário"
 
-#: drdown/users/models/model_doctor.py:25
-msgid "Please, use enter a valid CPF in the following format:XXX.XXX.XXX-XX"
-msgstr "Por favor, insira um CPF válido no seguinte formato:XXX.XXX.XXX-XX"
+#: drdown/users/models/model_employee.py:27
+msgid "Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"
+msgstr "Por favor, insira um CPF válido no seguinte formato: XXX.XXX.XXX-XX"
 
-#: drdown/users/models/model_doctor.py:35
-msgid ""
-"Use enter a valid CRM. \n"
-"Enter 7 digits from 0 to 9"
-msgstr ""
-"Insira um CRM válido. \n"
-"Digite 7 digitos de 0 à 9"
+#: drdown/users/models/model_employee.py:46
+msgid "Secretary"
+msgstr "Secretaria"
 
-#: drdown/users/models/model_doctor.py:41
-#: drdown/users/models/model_doctor.py:50
-#: drdown/users/models/model_employee.py:52
-msgid "Speech Therapy"
-msgstr "Fonoaudiologia"
+#: drdown/users/models/model_employee.py:47
+msgid "Administration"
+msgstr "Administração"
 
-#: drdown/users/models/model_doctor.py:42
-#: drdown/users/models/model_doctor.py:51
+#: drdown/users/models/model_employee.py:48
+msgid "Nursery"
+msgstr "Enfermagem"
+
+#: drdown/users/models/model_employee.py:49
+msgid "Other"
+msgstr "Outros"
+
 #: drdown/users/models/model_employee.py:53
-msgid "Occupational Therapy"
-msgstr "Terapia Ocupacional"
+msgid "Departament"
+msgstr "Departamento"
 
-#: drdown/users/models/model_doctor.py:43
-#: drdown/users/models/model_doctor.py:52
-#: drdown/users/models/model_employee.py:54
-msgid "Cardiology"
-msgstr "Cardiologia"
-
-#: drdown/users/models/model_doctor.py:44
-#: drdown/users/models/model_doctor.py:53
-#: drdown/users/models/model_employee.py:55
-msgid "Neurology"
-msgstr "Neurologia"
-
-#: drdown/users/models/model_doctor.py:45
-#: drdown/users/models/model_doctor.py:54
 #: drdown/users/models/model_employee.py:56
-msgid "Pediatrics"
-msgstr "Pediatria"
+msgid "The departament where this user works."
+msgstr "O departamento em que este usuário trabalha."
 
-#: drdown/users/models/model_doctor.py:46
-#: drdown/users/models/model_doctor.py:55
-#: drdown/users/models/model_employee.py:57
-msgid "Psychology"
-msgstr "Psicologia"
-
-#: drdown/users/models/model_doctor.py:47
-#: drdown/users/models/model_doctor.py:56
-#: drdown/users/models/model_employee.py:58
-msgid "Physiotherapy"
-msgstr "Fisioterapia"
-
-#: drdown/users/models/model_doctor.py:60
-msgid "Speciality"
-msgstr "Especialidade"
-
-#: drdown/users/models/model_doctor.py:62
-msgid "The speciality that this doctor works."
-msgstr "A especialidade do médico."
-
-#: drdown/users/models/model_doctor.py:78
-#: drdown/users/models/model_employee.py:89
+#: drdown/users/models/model_employee.py:76
+#: drdown/users/models/model_health_team.py:159
 #: drdown/users/models/model_patient.py:111
 #: drdown/users/models/model_responsible.py:35
 msgid "Don't change users"
 msgstr "Não altere o usuário"
 
-#: drdown/users/models/model_doctor.py:118
-msgid "Doctors"
-msgstr "Médicos"
-
-#: drdown/users/models/model_employee.py:27
-msgid "Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"
-msgstr "Por favor, insira um CPF válido no seguinte formato: XXX.XXX.XXX-XX"
-
-#: drdown/users/models/model_employee.py:59
-msgid "Secretary"
-msgstr "Secretaria"
-
-#: drdown/users/models/model_employee.py:60
-msgid "Administration"
-msgstr "Administração"
-
-#: drdown/users/models/model_employee.py:61
-msgid "Nursery"
-msgstr "Enfermagem"
-
-#: drdown/users/models/model_employee.py:62
-msgid "Other"
-msgstr "Outros"
-
-#: drdown/users/models/model_employee.py:66
-msgid "Departament"
-msgstr "Departamento"
-
-#: drdown/users/models/model_employee.py:69
-msgid "The departament where this user works."
-msgstr "O departamento em que este usuário trabalha."
-
-#: drdown/users/models/model_employee.py:139
+#: drdown/users/models/model_employee.py:126
 msgid "Employees"
 msgstr "Funcionários"
+
+#: drdown/users/models/model_health_team.py:25
+msgid "Please, use enter a valid CPF in the following format:XXX.XXX.XXX-XX"
+msgstr "Por favor, insira um CPF válido no seguinte formato:XXX.XXX.XXX-XX"
+
+#: drdown/users/models/model_health_team.py:39
+msgid "COFFITO"
+msgstr ""
+
+#: drdown/users/models/model_health_team.py:43
+msgid "Council Acronym"
+msgstr ""
+
+#: drdown/users/models/model_health_team.py:45
+msgid "The Regional Council."
+msgstr ""
+
+#: drdown/users/models/model_health_team.py:52
+#, fuzzy
+#| msgid ""
+#| "Use enter a valid CRM. \n"
+#| "Enter 7 digits from 0 to 9"
+msgid ""
+"Use enter a valid register number. \n"
+"Enter 7 digits"
+msgstr ""
+"Insira um CRM válido. \n"
+"Digite 7 digitos de 0 à 9"
+
+#: drdown/users/models/model_health_team.py:115
+msgid "State"
+msgstr ""
+
+#: drdown/users/models/model_health_team.py:117
+msgid "The registration state of member of health team."
+msgstr ""
+
+#: drdown/users/models/model_health_team.py:121
+#: drdown/users/models/model_health_team.py:131
+msgid "Speech Therapy"
+msgstr "Fonoaudiologia"
+
+#: drdown/users/models/model_health_team.py:122
+#: drdown/users/models/model_health_team.py:132
+msgid "Occupational Therapy"
+msgstr "Terapia Ocupacional"
+
+#: drdown/users/models/model_health_team.py:123
+#: drdown/users/models/model_health_team.py:133
+msgid "Cardiology"
+msgstr "Cardiologia"
+
+#: drdown/users/models/model_health_team.py:124
+#: drdown/users/models/model_health_team.py:134
+msgid "Neurology"
+msgstr "Neurologia"
+
+#: drdown/users/models/model_health_team.py:125
+#: drdown/users/models/model_health_team.py:135
+msgid "Pediatrics"
+msgstr "Pediatria"
+
+#: drdown/users/models/model_health_team.py:126
+#: drdown/users/models/model_health_team.py:136
+msgid "Psychology"
+msgstr "Psicologia"
+
+#: drdown/users/models/model_health_team.py:127
+#: drdown/users/models/model_health_team.py:137
+msgid "Physiotherapy"
+msgstr "Fisioterapia"
+
+#: drdown/users/models/model_health_team.py:128
+#: drdown/users/models/model_health_team.py:138
+msgid "Doctor"
+msgstr "Médico"
+
+#: drdown/users/models/model_health_team.py:142
+msgid "Speciality"
+msgstr "Especialidade"
+
+#: drdown/users/models/model_health_team.py:144
+#, fuzzy
+#| msgid "The speciality that this doctor works."
+msgid "The speciality that this member of health team works."
+msgstr "A especialidade do médico."
 
 #: drdown/users/models/model_patient.py:24
 msgid "Please, enter the valid SES number"
@@ -1291,6 +1324,12 @@ msgstr "Formato de telefone errado"
 #: drdown/utils/validators.py:214
 msgid "Wrong CRM format"
 msgstr "Formato de CRM inválido"
+
+#~ msgid "CRM: "
+#~ msgstr "CRM: "
+
+#~ msgid "Doctors"
+#~ msgstr "Médicos"
 
 #, fuzzy
 #~| msgid "Title of post"
