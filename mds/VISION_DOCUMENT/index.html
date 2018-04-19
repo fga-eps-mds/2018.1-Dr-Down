@@ -109,12 +109,22 @@
           
             <li class="toctree-l1">
 		
+    <a class="" href="../../eps/CANVAS/">Canvas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../../eps/ROADMAP/">ROADMAP</a>
 	    </li>
           
             <li class="toctree-l1">
 		
     <a class="" href="../../eps/ROADMAP_ROLES/">ROADMAP dos Papéis</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eps/REQUIREMENTS_MAP/">Mapa de Requisitos</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -160,11 +170,6 @@
             <li class="toctree-l1">
 		
     <a class="" href="../HIGH_FIDELITY_PROTOTYPE/">Protótipo de alta qualidade</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../eps/CANVAS/">Canvas</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -238,6 +243,21 @@
                 <li class="">
                     
     <a class="" href="../../sprints/04/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/results/">Resultado</a>
                 </li>
     </ul>
 	    </li>
@@ -365,7 +385,7 @@
 <h3 id="11-proposito">1.1 Propósito</h3>
 <p>O propósito deste documento é definir e especificar, de maneira ampla, as características pertinentes à aplicação solicitada pelo Centro de Referência em Síndrome de Down, mais conhecido como Cris Down. Este documento possui como objetivo definir o escopo, os recursos e o público alvo, que serão englobados pelo sistema, além das razões que levam às necessidades do mesmo. Visa explicar detalhes sobre a aplicação a ser desenvolvida: suas características, funcionalidades, como os usuários se relacionam nesse meio e possíveis restrições no desenvolvimento.</p>
 <h3 id="12-escopo">1.2 Escopo</h3>
-<p>No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte do médico, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
+<p>No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte da equipe de saúde, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
 O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco, chat e sugestões de jogos voltados para os pacientes.</p>
 <h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, acrônimos e abreviações</h3>
 <table>
@@ -451,7 +471,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <tbody>
 <tr>
 <td><strong>Para</strong></td>
-<td>médicos, comunidade do Hospital, familiares e pacientes</td>
+<td>equipe de saúde, comunidade do Hospital, familiares e pacientes</td>
 </tr>
 <tr>
 <td><strong>Que</strong></td>
@@ -463,7 +483,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </tr>
 <tr>
 <td><strong>É uma</strong></td>
-<td>ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre médico e paciente, e para a divulgação de informações sobre a Síndrome de Down</td>
+<td>ferramenta que disponibiliza todas as informações do prontuário do paciente e sua posição na fila de espera por atendimento de forma rápida e fácil, assim como uma interface de comunicação entre a equipe de saúde e o paciente, e para a divulgação de informações sobre a Síndrome de Down</td>
 </tr>
 <tr>
 <td><strong>Diferente</strong></td>
@@ -512,7 +532,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </thead>
 <tbody>
 <tr>
-<td>Médicos do Cris Down</td>
+<td>Equipe de saúde do Cris Down</td>
 <td>Equipe médica que trabalha no Cris Down</td>
 <td>Usuário</td>
 </tr>
@@ -625,7 +645,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <tbody>
 <tr>
 <td><strong>Representantes</strong></td>
-<td>Pacientes, familiares e membros da equipe de saúde participante do Cris Down</td>
+<td>Pacientes, familiares e membros da equipe de saúde participantes do Cris Down</td>
 </tr>
 <tr>
 <td><strong>Descrição</strong></td>
@@ -633,7 +653,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </tr>
 <tr>
 <td><strong>Tipo</strong></td>
-<td>Médicos, funcionários do hospital,familiares e pacientes</td>
+<td>Equipe de saúde, funcionários do hospital, familiares e pacientes</td>
 </tr>
 <tr>
 <td><strong>Responsabilidade</strong></td>
@@ -654,7 +674,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </tbody>
 </table>
 <h3 id="35-perfil-dos-usuarios">3.5 Perfil dos Usuários</h3>
-<h4 id="351-medicos-do-cris-down">3.5.1 - Médicos do Cris Down</h4>
+<h4 id="351-equipe-de-saude-do-cris-down">3.5.1 - Equipe de Saúde do Cris Down</h4>
 <table>
 <thead>
 <tr>
@@ -669,7 +689,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </tr>
 <tr>
 <td><strong>Descrição</strong></td>
-<td>Médico que trabalha no Cris Down atendendo casos de SD.</td>
+<td>Equipe médica que trabalha no Cris Down atendendo casos de SD.</td>
 </tr>
 <tr>
 <td><strong>Tipo</strong></td>
@@ -825,14 +845,14 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <tr>
 <td>Ajustar a ficha médica de acordo com as especificidades da SD</td>
 <td>Alta</td>
-<td>Permitir e facilitar aos médicos o diagnóstico de pacientes com SD</td>
+<td>Permitir e facilitar à equipe de saúde o diagnóstico de pacientes com SD</td>
 <td>Prontuário padronizado para todos os pacientes</td>
 <td>Prontuário específico para pacientes com SD</td>
 </tr>
 <tr>
 <td>Maior comunicação entre as partes envolvidas</td>
 <td>Alta</td>
-<td>Facilitar a transmissão de informações entre pacientes, familiares e médicos</td>
+<td>Facilitar a transmissão de informações entre pacientes, familiares e equipe de saúde</td>
 <td>Informações transmitidas durante a consulta presencial</td>
 <td>Um meio de comunicação virtual acessível entre os interessados</td>
 </tr>
@@ -840,7 +860,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <td>Definição de atributos para a fila de espera</td>
 <td>Alta</td>
 <td>Padronizar e tornar mais eficiente o sistema de posicionamento da fila de espera</td>
-<td>Classificação subjetiva de acordo com o diagnóstico feito pelo médico</td>
+<td>Classificação subjetiva de acordo com o diagnóstico feito pela equipe de saúde</td>
 <td>Tornar os critérios para a posição na fila de espera objetivos e padronizados</td>
 </tr>
 </tbody>
@@ -866,7 +886,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <td>Pesquisa no banco de dados do Cris Down.</td>
 </tr>
 <tr>
-<td>Comunicação entre pacientes, familiares e médicos</td>
+<td>Comunicação entre pacientes, familiares e equipe de saúde</td>
 <td>Fórum para dúvidas e mensagens diretas.</td>
 </tr>
 <tr>
@@ -887,11 +907,11 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <h3 id="51-acesso">5.1 Acesso.</h3>
 <p>A autenticação do usuário deverá ocorrer por login.</p>
 <h3 id="52-nivel-de-acesso">5.2 Nível de acesso</h3>
-<p>As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. O médico, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações no sistema sobre o paciente.</p>
+<p>As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. A equipe de saúde, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações sobre o paciente no sistema.</p>
 <h3 id="53-cadastro">5.3 Cadastro</h3>
-<p>O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de um  funcionário do hospital ou médico do Cris Dow. Dependerá de um administrador do sistema verificar as informações dos profissionais da rede.</p>
+<p>O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de alguém da equipe de saúde ou de algum outro funcionário do Cris Dow, a concretização do mesmo dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.</p>
 <h3 id="54-espaco">5.4 Espaço</h3>
-<p>Dentro da aplicação o espaço deve fornecer salas de fóruns para o esclarecimento dúvidas dos usuários e chats privados para comunicação entre médicos e pacientes/familiares.</p>
+<p>Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários e chats privados para a comunicação entre a equipe de saúde e os pacientes/familiares.</p>
 <h3 id="55-informacoes">5.5 Informações</h3>
 <p>No quesito informações, o aplicativo fornecerá um FAQ com as perguntas mais frequentes feitas pelos usuários, agenda com as futuras consultas, além dos locais de atendimento para a comunidade do Cris Down.</p>
 <h3 id="56-localizacao">5.6 Localização</h3>
@@ -901,14 +921,14 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <h3 id="58-relatorios-gerenciais">5.8 Relatórios gerenciais</h3>
 <p>O software irá gerar relatórios a respeito do uso do aplicativo e da lista de espera dos atendimentos.</p>
 <h3 id="59-marcacao-de-consulta">5.9 Marcação de consulta</h3>
-<p>O médico ou a equipe do Cris Down poderá marcar consultas e poderá definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.</p>
+<p>A equipe de saúde e os outros funcionários do Cris Down poderão marcar consultas e definir a prioridade do paciente para a fila de espera, de acordo com o seu risco ambulatorial.</p>
 <h3 id="510-linha-de-cuidado">5.10 Linha de Cuidado</h3>
 <p>O software listará diversos procedimentos e orientações que são recomendados à pessoas com Síndrome de Down de acordo com sua idade. Caso não haja confirmação de que o paciente tenha seguido o que foi listado até a data sugerida no aplicativo, o software notificará o paciente e/ou parente responsável, para que uma ação seja tomada para resolver a pendência.</p>
 <h2 id="6-restricoes">6: Restrições</h2>
 <hr />
 <h3 id="61-restricoes-de-sistema">6.1 Restrições de sistema</h3>
 <p>O sistema se comunica com um banco de dados externo.
-O sistema não deve revelar quaisquer informações a terceiros exceto funcionários e médicos do Cris Down, além de manter confidencialidade entre médico e paciente.</p>
+O sistema não deve revelar quaisquer informações a terceiros, exceto funcionários e equipe de saúde do Cris Down, além de manter confidencialidade entre a equipe de saúde e o paciente.</p>
 <h3 id="62-restricoes-externas">6.2 Restrições externas</h3>
 <p>Dentre as restrições externas as que mais irão influenciar são a inexperiência com a linguagem, perda ou dano de equipamento, e conflitos entre a equipe de desenvolvimento.</p>
 <h3 id="63-restricoes-de-design">6.3 Restrições de design</h3>
@@ -920,7 +940,7 @@ O sistema não deve revelar quaisquer informações a terceiros exceto funcioná
 <hr />
 <h2 id="8-precedencia-e-prioridade">8:   Precedência e Prioridade</h2>
 <hr />
-<p>O gerenciamento e cadastro de usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.</p>
+<p>O gerenciamento e cadastro dos usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e a disponibilização do local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.</p>
 <hr />
 <h2 id="9-outros-requisitos-do-produto">9:   Outros Requisitos do Produto</h2>
 <hr />

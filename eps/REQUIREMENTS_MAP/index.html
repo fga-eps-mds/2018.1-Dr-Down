@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Mapa de Requisitos - drdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mapa de Requisitos";
+    var mkdocs_page_input_path = "eps/REQUIREMENTS_MAP.md";
+    var mkdocs_page_url = "/eps/REQUIREMENTS_MAP/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> drdown</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../TAP/">Termo de abertura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/VISION_DOCUMENT/">Documento de visão</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ARCHITECTURE_DOCUMENT/">Documento de arquitetura</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/ADDITIONAL_SPECIFICATION/">Especificação Suplementar</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EAP/">EAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CANVAS/">Canvas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ROADMAP/">ROADMAP</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ROADMAP_ROLES/">ROADMAP dos Papéis</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Mapa de Requisitos</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#mapa-de-requisitos">Mapa de requisitos</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#tema-de-investimento">Tema de investimento</a></li>
+        
+            <li><a class="toctree-l3" href="#epicos">Épicos</a></li>
+        
+            <li><a class="toctree-l3" href="#features-e-historias-de-usuario">Features e Histórias de Usuário</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../SCRUM_METHODOLOGY_DRDOWN/">Metodologia</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../DONE_DEFINITION/">Definição de Pronto</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../EVM_AGILE/">EVM</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../QUALITY_MANAGEMENT_PLAN/">Gerenciamento de Qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../CODE_OF_CONDUCT/">Código de conduta</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PROJECT_TOOLS/">Ferramentas</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../RISKS/">Riscos</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/LOW_FIDELITY_PROTOTYPE/">Protótipo de baixa qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mds/HIGH_FIDELITY_PROTOTYPE/">Protótipo de alta qualidade</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 0</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">drdown</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Mapa de Requisitos</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/edit/master/docs/eps/REQUIREMENTS_MAP.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mapa-de-requisitos">Mapa de requisitos</h1>
+<table>
+<thead>
+<tr>
+<th align="center">Data</th>
+<th align="center">Versão</th>
+<th align="center">Descrição</th>
+<th align="center">Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">11/04/2018</td>
+<td align="center">0.0.1</td>
+<td align="center">Primeira Versão do Mapa de Requisitos</td>
+<td align="center">Mariana De Souza Mendes</td>
+</tr>
+<tr>
+<td align="center">16/04/2018</td>
+<td align="center">0.0.3</td>
+<td align="center">Correção de erros</td>
+<td align="center">Mariana De Souza Mendes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tema-de-investimento">Tema de investimento</h2>
+<p>Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham com esse público.</p>
+<h2 id="epicos">Épicos</h2>
+<p><img alt="Épicos.png" src="https://uploaddeimagens.com.br/images/001/374/577/original/Captura_de_tela_de_2018-04-15_12-35-05.png?1523806525" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/577/original/Captura_de_tela_de_2018-04-15_12-35-05.png?1523806525">Clique aqui para ampliar a imagem</a></p>
+<h3 id="cadastro-de-usuario">Cadastro de usuário</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Pacientes, familiares e ou responsáveis, e membros da equipe de saúde participantes do Cris Down</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>necessitam acompanhar o estado de sáude de pacientes do Cris Down</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que o usuário(tanto a equipe de saúde quanto paciente, funcionário e/ou responsável) faça seu cadastro e login</td>
+</tr>
+<tr>
+<td><strong>diferente</strong></td>
+<td>de outras aplicações que fornecem apenas o prontuário do paciente por meio do número de cadastro na secretária de sáude da cidade</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>permite que o usuário se cadastre, mantendo assim um histórico e acompanhamento médico de fácil uso</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Cadastro específico para cada usuário; Login; Páginas com permissões específicas de acordo com o tipo de usuário; Confirmação do cadastro por email; Paciente com menos de 13 anos não pode criar uma conta; Paciente precisa de ao menos um Responsável;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela de cadastro; Tela de login; Tela com informações gerais de cada tipo de usuário; Tela de editar informações; Tela de deletar conta;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Paciente sem Responsável; Paciente com menos de 13 anos com conta; Usuários verem informações de outros usuários;</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/603/original/Captura_de_tela_de_2018-04-15_13-04-05.png?1523808284" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/603/original/Captura_de_tela_de_2018-04-15_13-04-05.png?1523808284">Clique aqui para ampliar a imagem</a></p>
+<h3 id="forum">Fórum</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em participar do fórum</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>desejam encontrar ajuda e/ou trocar informações sobre a Síndrome de Down</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que o usuário cadastrado faça um post e/ou comente em algum fórum</td>
+</tr>
+<tr>
+<td><strong>diferente</strong></td>
+<td>outros site de fórum, como o <a href="https://www.reddit.com/">Reddit</a></td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>tem categorias pré definidas pelos moderadores do site e é focada em Síndrome de Down, facilitando a busca pelo assunto e o seu uso.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Apenas o moderador pode criar a categoria; Apenas usuários cadastrados podem criar um post e ou comentar; Usuários visitantes (sem cadastro) podem apenas visualizar os post; Cada usuário só pode editar ou cancelar o seu post ou comentário;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela de categorias; Tela com o post com os respecitivos comentários; Tela de deletar;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Usuário visitante criar um post ou comentar em algum post; Usuário cadastrado deletar ou editar o post de outro; Usuário que não seja moderador criar categorias.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/611/original/Captura_de_tela_de_2018-04-15_13-14-28.png?1523808887" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/611/original/Captura_de_tela_de_2018-04-15_13-14-28.png?1523808887">Clique aqui para ampliar a imagem</a></p>
+<h3 id="evento">Evento</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em ver a agenda de eventos</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>têm dificuldades em encontrar eventos relacionados à Síndrome de Down.</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que o funcionários do Dr. Down criem eventos e que qualquer outro usuário, cadastrado ou não, possa ver essa agenda de eventos</td>
+</tr>
+<tr>
+<td><strong>diferente</strong></td>
+<td>outros site com eventos, como o Facebook</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>tem eventos cadastrados pelos funcionários do site e são focados em Síndrome de Down, facilitando a busca pelo assunto e o seu uso</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Apenas um funcionário pode criar um evento, assim como editá-lo ou apagá-lo; Qualquer visitante do Dr. Down, cadastrado ou não, terá acesso à essa agenda de eventos;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela com agenda de eventos (como um calendário); Tela para o funcionário adminstrar esses eventos (criar, apagar, listar e editar)</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Qualquer um criar, editar ou apagar um evento;</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/621/original/Captura_de_tela_de_2018-04-15_13-24-58.png?1523809519" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/621/original/Captura_de_tela_de_2018-04-15_13-24-58.png?1523809519">Clique aqui para ampliar a imagem</a></p>
+<h3 id="chat">Chat</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>têm dificuldades em contactar algum outro usuário do sistema</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que os usuários do Dr. Down conversem entre si de forma sigilosa</td>
+</tr>
+<tr>
+<td><strong>diferente</strong></td>
+<td>outros sites que possuem chat, como o Facebook ou Whatsapp</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>permite que os usuários do Dr. Down possam conversar entre si, facilitando assim o proximidade e o contato de pessoas com situações em comum</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Apenas os usuários cadastrados podem ter acesso ao chat; Cada um terá acesso à sua conversa;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela com todos as conversas do usuário; Tela pra uma conversa específica;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Usuário ter acesso à conversa de outro usuários; Usuário sem cadastro ter acesso ao chat;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="informacoes-gerais-sobre-sindrome-de-down">Informações gerais sobre síndrome de Down</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>têm dificuldades em encontrar algo sobre o Cris Down e sobre a doença em si</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que os usuários encontrem informações, notícias e artigos sobre a doença</td>
+</tr>
+<tr>
+<td><strong>diferente</strong></td>
+<td>outros sites de informações e notícias</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>permite que os usuários do encontrem o que procuram de forma simples e fácil de usar</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>As informações precisam ser de fácil acesso e visando o público do site; As informações precisam ser de fontes confiáveis; Precisa de um FAQ;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela com informações gerais; Tela com FAQ; Tela com notícias e artigos;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Informações de outros assuntos; Informações com fontes duvidosas;</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/629/original/Captura_de_tela_de_2018-04-15_13-37-58.png?1523810297" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/629/original/Captura_de_tela_de_2018-04-15_13-37-58.png?1523810297">Clique aqui para ampliar a imagem</a></p>
+<h3 id="ficha-de-acompanhamento">Ficha de acompanhamento</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>têm necessidade em acompanhar o histórico médico de pacientes</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que os usuários tenham informações da primeira a última consulta</td>
+</tr>
+<tr>
+<td><strong>diferente de</strong></td>
+<td>outro site ou software de acompanhamento médico</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>permite que os usuários do acompanhem seu estado médico, a partir de relatórios e quadros evolutivos de fácil uso.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Qualquer um da equipe de sáude pode ter acesso ao prontuário do paciente; O paciente tem acesso ao prontúario; O responsável também possui acesso ao prontuário; Os usuários podem fazer o download do relatório e histórico médico; O quadro de urgência é feito com base nessas informações;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela com resumo do acompanhemento médico; Tela com relatório; Tela com checklist da linha de cuidado do paciente;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Paciente ou responsável tendo acesso a informações sigilosas; Paciente e/ou responsável tendo acesso à dados de outros pacientes;</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/633/original/Captura_de_tela_de_2018-04-15_13-45-39.png?1523810755" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/633/original/Captura_de_tela_de_2018-04-15_13-45-39.png?1523810755">Clique aqui para ampliar a imagem</a></p>
+<h3 id="consulta">Consulta</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Para</strong></td>
+<td>Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>têm dificuldades em agendar um consulta médica</td>
+</tr>
+<tr>
+<td><strong>o</strong></td>
+<td>Dr Down</td>
+</tr>
+<tr>
+<td><strong>é um</strong></td>
+<td>Web site</td>
+</tr>
+<tr>
+<td><strong>que</strong></td>
+<td>permite que os usuários agendem uma consulta</td>
+</tr>
+<tr>
+<td><strong>diferente de</strong></td>
+<td>outro site ou software de agendamento médico</td>
+</tr>
+<tr>
+<td><strong>nossa solução</strong></td>
+<td>permite que os usuários cadastrados agendem uma consulta, visualizem essa consulta ou reagendem ela. A prioridade no agendamento de consultas leva em consideração a urgência do paciente, facilitando assim a visita de pacientes que inspirem maiores cuidados ao Cris Down</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>critérios de sucesso</strong></td>
+<td>Apenas usuários cadastrados podem agendar uma consulta; Um paciente com menos de 13 anos não pode agendar uma consulta; O responsável precisa estar ciente dessa consulta; Caso um paciente tenha urgência em uma consulta, o outro paciente será contactado para fazer um reagendamento; Existe uma fila com pacientes com urgência;</td>
+</tr>
+<tr>
+<td><strong>no escopo</strong></td>
+<td>Tela de agendamento; Tela pra reagenamento; Tela pra deletar consulta;</td>
+</tr>
+<tr>
+<td><strong>fora do escopo</strong></td>
+<td>Paciente com menos de 13 anos agendar um consulta; Usuário não cadastrado agendar um consulta; Usuário sem urgência ser atendido antes de um usuário com urgência</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/642/original/Captura_de_tela_de_2018-04-15_13-53-02.png?1523811201" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/642/original/Captura_de_tela_de_2018-04-15_13-53-02.png?1523811201">Clique aqui para ampliar a imagem</a></p>
+<h2 id="features-e-historias-de-usuario">Features e Histórias de Usuário</h2>
+<p>As features e US foram cadastradas no software <a href="https://www.targetprocess.com/">Target Process</a> e seu acompamento é feito atráves das <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues">issues</a> do github e estão mapeadas com a label: <strong>Feature</strong> e <strong>Histórias</strong> <strong>de</strong> <strong>Usuário</strong>.</p>
+<h3 id="features">Features</h3>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/647/original/Captura_de_tela_de_2018-04-15_13-55-40.png?1523811515" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/647/original/Captura_de_tela_de_2018-04-15_13-55-40.png?1523811515">Clique aqui para ampliar a imagem</a></p>
+<h3 id="historias-de-usuario">Histórias de Usuário</h3>
+<p><img alt="Cadastro de usuário.png" src="https://uploaddeimagens.com.br/images/001/374/648/original/Captura_de_tela_de_2018-04-15_13-57-46.png?1523811579" /></p>
+<p><a href="https://uploaddeimagens.com.br/images/001/374/648/original/Captura_de_tela_de_2018-04-15_13-57-46.png?1523811579">Clique aqui para ampliar a imagem</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../SCRUM_METHODOLOGY_DRDOWN/" class="btn btn-neutral float-right" title="Metodologia">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ROADMAP_ROLES/" class="btn btn-neutral" title="ROADMAP dos Papéis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ROADMAP_ROLES/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../SCRUM_METHODOLOGY_DRDOWN/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
