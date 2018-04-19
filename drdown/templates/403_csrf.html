@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Forbidden (403)" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Forbidden (403)" %}</h1>
+
+<p class="lead">{% trans "CSRF verification failed. Request aborted." %}</p>
+{% endblock content %}

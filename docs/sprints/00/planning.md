@@ -1,14 +1,6 @@
-# Planejamento Sprint 0
+# Planejamento Sprint 00
 
-## Sumário
-
-1. [Resumo da Sprint](#resumo)
-2. [Planejamento das Histórias](#planejamento)
-3. [Histórias da Sprint](#historias)
-
-<a name="resumo"></a>
 ## 1. Resumo da Sprint
-
 
 __Número da sprint__: 0
 
@@ -18,37 +10,46 @@ __Data de Término__: 10/03/2018
 
 __Duração__: 5 dias
 
-__Pontos Planejados__: 15 pontos 
+__Pontos Planejados__: 15 pontos
 
 __Membros presentes__: Todos
 
-__Papéis__:
+## 2. Papéis
 
-* Scrum Master: Diego França
+- Scrum Master:
+  - Diego França
 
-* Product Onwer: João Pedro Sconetto
+- Product Owner:
+  - Mariana Mendes
 
-* Devops: João Pedro Sconetto
+- DevOps:
+  - João Pedro Sconetto
 
-* Arquitetura: Victor Arnaud 
+- Arquiteto:
+  Victor Arnaud
 
+- Time de Desenvolvimento:
+  - Daniel Maike
+  - Elias Bernardo
+  - Gabriela Medeiros
+  - Geovana Ramos
+  - Guilherme Guy
+  - Joberth Rodrigues
 
-<a name="planejamento"></a>
-## 2. Planejamento da Sprint
+## 3. Planejamento da Sprint
 
-O planejamento da sprint foi feito com o pouco de informações que tínhamos. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias que serão usadas ao longo de todo processo.
+O planejamento da sprint foi feito com o pouco de informações que temos, e com o intuito de começar a preparar todos os membros da equipe, em especial aqueles que estão cursando MDS, para a execução do projeto. Isso resultou em histórias de treinamentos e estudos sobre as tecnologias e processos que serão usadas ao longo de todo o semestre.
 
-<a name="historias"></a>
-## 3. Histórias da Sprint:
-	
-## Planejadas:
+## 4. Backlog da Sprint
 
-* [S01](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/19) - Estudar a respeito de GitFlow
- 
-* [S02](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/21) - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
+### MDS e EPS
 
-* [S03](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/22) - Estudar a metodologia SCRUM
+- [S01](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/19) - Estudar a respeito de GitFlow
 
-* [S04](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/14) - Treinamento de Python/Django
+- [S02](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/21) - Treinamento de Documentações  (Visão, Arquitetura, Especificação, Prototipagem)
 
-* [S05](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/6) - Treinamento de Git e Git Flow
+- [S03](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/22) - Estudar a metodologia SCRUM
+
+- [S04](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/14) - Treinamento de Python/Django
+
+- [S05](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/6) - Treinamento de Git e Git Flow

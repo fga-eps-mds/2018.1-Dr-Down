@@ -1,0 +1,44 @@
+sudo: true
+language: python
+python:
+  - "3.6"
+addons:
+  ssh_known_hosts:
+    - 104.236.68.6
+    - 159.203.182.32
+env:
+  global:
+    - CC_TEST_REPORTER_ID=bf64f4cd10722061b8cad12ca638ebfa7d3c1494df117613b2acd357bfd7aeb0
+notifications:
+  slack:
+    rooms:
+      - epsmds:XuAMBzep3dPckHegAe6quxOm#github
+services:
+  - docker
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-ce
+  - docker-compose --version
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - docker-compose -f local.yml pull
+  - docker-compose -f local.yml up --build -d
+script:
+  - docker-compose -f local.yml run --rm django py.test
+  - docker-compose -f local.yml run --rm django coverage run -m py.test
+  - docker-compose -f local.yml run --rm django coverage xml
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    script: bash staging-deploy.sh
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    script: bash production-deploy.sh
+    on:
+      branch: master

@@ -1,0 +1,6 @@
+# Celery
+# ------------------------------------------------------------------------------
+CELERY_BROKER_URL=redis://redis:6379/0
+POSTGRES_DB=drdown
+POSTGRES_USER=wtduwGGMnkrLyxRicMXPhnMuVUQvTHEO
+POSTGRES_PASSWORD=y5W7UcmKarPDVZbdRrQ8wzSojDkLCyDB8FwIUNoGaI2dikDT1rASUZyzJRucTubG
