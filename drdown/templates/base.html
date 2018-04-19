@@ -1,5 +1,5 @@
 {% load static i18n %}<!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="EPS/MDS">
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,6 +35,7 @@
     <link href="{% static 'homepage/css/freelancer.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
+    
     {% block script %}
     {%  endblock %}
   </head>
@@ -47,17 +52,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'home' %}#page-top">{% trans "Home" %}</a>
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'home' %}#page-top"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Home" %}</strong></button></a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'about' %}">{% trans "Down's Syndrome" %}</a>
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}">{% trans "Forums" %}</a>
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
             </li>
             {% if user.is_authenticated %}
             <div class="btn-group">
-              <a class="nav-link px-0 px-lg-3" href= "{% url 'users:detail' user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{user.username}}</strong></button></strong></a>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{user.username}}</strong></button></a>
+              </li>
               <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
@@ -88,7 +95,9 @@
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
                 {% endif %}
+                {% if user.employee or user.responsible or user.patient or user.doctor %}
                 <div class="dropdown-divider"></div>
+                {% endif %}
                 <a class="dropdown-item" href="{% url 'users:update' %}">{% trans "Edit Profile" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Help" %}</a>
                 <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
@@ -96,10 +105,10 @@
             </div>
             {% else %}
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_login' %}">{% trans "Sign in" %}</a>
+                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_login' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign in" %}</strong></button></a>
               </li>
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_signup' %}">{% trans "Sign up" %}</a>
+                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_signup' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign up" %}</strong></button></a>
               </li>
             {% endif %}
           </ul>

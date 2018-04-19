@@ -18,30 +18,29 @@ class Post(models.Model):
     category = models.ForeignKey(
         Category,
         related_name='posts',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        verbose_name=_("Category")
     )
     created_at = models.DateTimeField(
         _('Create at'),
-        help_text=_('The date of create'),
+        help_text=_('Date of creation'),
         auto_now_add=True
     )
     updated_at = models.DateTimeField(
         _('Update at'),
-        help_text=_('The date of update'),
-        null=True)
+        help_text=_('Date of update'),
+        null=True
+    )
     created_by = models.ForeignKey(
         User,
         related_name='posts',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        verbose_name=_("Created by")
     )
-    updated_by = models.ForeignKey(
-        User, null=True,
-        related_name='+',
-        on_delete=models.CASCADE)
-    slug = models.SlugField(
-        _('Shortcut'),
-        help_text=_('URL string shortcut'),
-        max_length=40)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = _("Post")
+        verbose_name_plural = _("Posts")

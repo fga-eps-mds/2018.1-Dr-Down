@@ -1,8 +1,7 @@
 from test_plus.test import TestCase
-from django.contrib.auth.models import Group
-
 from drdown.forum.models.model_category import Category
 from drdown.forum.models.model_post import Post
+from django.utils import timezone
 
 
 class TestModelPost(TestCase):
@@ -21,11 +20,8 @@ class TestModelPost(TestCase):
             title="abc",
             message="cba",
             category=self.category,
-            created_at="1998-05-05",
-            updated_at="1998-06-05",
+            created_at=timezone.datetime(1998, 5, 5),
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
     def test_one_to_one_relation(self):
@@ -35,7 +31,6 @@ class TestModelPost(TestCase):
 
         self.assertIs(self.category, self.post.category)
         self.assertIs(self.user, self.post.created_by)
-        self.assertIs(self.user, self.post.updated_by)
 
     def test_delete_cascade(self):
         """
@@ -67,11 +62,8 @@ class ModelTestCase(TestCase):
             title="abc",
             message="cba",
             category=self.category,
-            created_at="1998-05-05",
-            updated_at="1998-06-05",
+            created_at=timezone.datetime(1998, 5, 5),
             created_by=self.user,
-            updated_by=self.user,
-            slug='test',
         )
 
     def test_save_title_ok(self):
@@ -95,33 +87,12 @@ class ModelTestCase(TestCase):
 
         self.assertEquals(self.post.category, self.category)
 
-    def test_save_updated_ok(self):
-        """
-        Test to verify if updated is the correct passed
-        """
-
-        self.assertEquals(self.post.updated_at, '1998-06-05')
-
     def test_save_created_by_ok(self):
         """
         Test to verify if created_by is the correct passed
         """
 
         self.assertEquals(self.post.created_by, self.user)
-
-    def test_save_updated_by_ok(self):
-        """
-        Test to verify if updated_by is the correct passed
-        """
-
-        self.assertEquals(self.post.updated_by, self.user)
-
-    def test_save_slug_ok(self):
-        """
-        Test to verify if slug is the correct passed
-        """
-
-        self.assertEquals(self.post.slug, 'test')
 
     def test_save_title_error(self):
         """
@@ -144,32 +115,11 @@ class ModelTestCase(TestCase):
 
         self.assertNotEquals(self.post.category, '')
 
-    def test_save_updated_error(self):
-        """
-        Test to verify if updated really fail
-        """
-
-        self.assertNotEquals(self.post.updated_at, '1997-06-05')
-
     def test_save_created_by_error(self):
         """
         Test to verify if created_by really fail
         """
         self.assertNotEquals(self.post.created_by, '')
-
-    def test_save_updated_by_error(self):
-        """
-        Test to verify if updated_by really fail
-        """
-
-        self.assertNotEquals(self.post.updated_by, '')
-
-    def test_save_slug_error(self):
-        """
-        Test to verify if slug really fail
-        """
-
-        self.assertNotEquals(self.post.slug, '')
 
     def test_str_is_equal_to_title(self):
         """

@@ -3,7 +3,10 @@ from django.test.client import Client
 from ..models.model_category import Category
 from ..models.model_post import Post
 from django.urls import reverse, resolve
-from datetime import datetime
+from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
+
+from django.utils.translation import ugettext_lazy as _
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -100,8 +103,7 @@ class TestViewPost(TestCase):
             'title': 'Test',
             'message': 'hello test',
             'category': 'self.category',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -121,8 +123,7 @@ class TestViewPost(TestCase):
             'title': 'Test',
             'message': 'hello test',
             'category': 'self.category',
-            'created_at': 'datetime.now',
-            'slug': 'test',
+            'created_at': timezone.now(),
         }
         response = self.client.post(
             path=reverse(
@@ -142,8 +143,7 @@ class TestViewPost(TestCase):
             data = {
                 'message': 'hello test',
                 'post': 'self.post',
-                'created_at': 'datetime.now',
-                'slug': 'test',
+                'created_at': timezone.now(),
             }
 
             response = self.client.post(
