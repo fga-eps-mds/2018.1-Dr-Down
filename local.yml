@@ -18,7 +18,7 @@ services:
       - ./.envs/.local/.postgres
       - ./.envs/.local/.celery
     ports:
-      - "8000:8000"
+      - "80:8000"
     command: /start.sh
 
   postgres:
@@ -39,7 +39,7 @@ services:
     depends_on:
       - redis
       - postgres
-      
+
     env_file:
       - ./.envs/.local/.celery
     ports: []
@@ -50,7 +50,7 @@ services:
     depends_on:
       - redis
       - postgres
-      
+
     env_file:
       - ./.envs/.local/.celery
     ports: []

@@ -52,7 +52,7 @@ O primeiro passo é fazer o clone do projeto pelo GitHub (tenha certeza de ter o
     $ git clone https://github.com/fga-gpp-mds/2018.1-Dr-Down.git
 
 Para rodar a aplicação tenha certeza de ter algumas dependências instaladas. Existem dois scripts que auxiliam o você nessa etapa.
-Para fazer a instalação basta rodar (partindo que está na pasta base após clone) os seguintes ``shells scripts``::
+Para fazer a instalação basta rodar (partindo que está na pasta base após clone) os seguintes ``shell scripts``::
 
     $ sudo bash utility/install_os_dependencies.sh arg
     $ sudo bash utility/install_python_dependencies.sh
@@ -106,7 +106,7 @@ Para verificar a cobertura do seu código, assim como rodar a suíte de testes d
 Rodando os testes com py.test:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Para apenas rodar a suíte de testes com o py.test para executar o seguinte comando::
+Para apenas rodar a suíte de testes com o py.test basta executar o seguinte comando::
 
     $ docker-compose -f local.yml run --rm django py.test
 

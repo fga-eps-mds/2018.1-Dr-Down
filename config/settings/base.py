@@ -3,6 +3,7 @@ Base settings to build other settings files upon.
 """
 
 import environ
+import raven
 
 # (drdown/config/settings/base.py - 3 = drdown/)
 ROOT_DIR = environ.Path(__file__) - 3
@@ -72,6 +73,7 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'rolepermissions',
+    'raven.contrib.django.raven_compat'
 ]
 LOCAL_APPS = [
     'drdown.users.apps.UsersConfig',
@@ -261,3 +263,6 @@ SOCIALACCOUNT_ADAPTER = 'drdown.users.adapters.SocialAccountAdapter'
 # Your stuff...
 # ------------------------------------------------------------------------------
 DATE_INPUT_FORMATS = ["%d/%m/%Y"]
+RAVEN_CONFIG = {
+    'dsn': 'https://4ee192dc54b6424ab65c5a6582af9bc7:30b28e38d7d74c43bf8371eb8b388c34@sentry.io/1189853',
+}

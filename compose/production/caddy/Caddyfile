@@ -1,7 +1,3 @@
-www.{$DOMAIN_NAME} {
-    redir https://epsmds.com
-}
-
 {$DOMAIN_NAME} {
     proxy / django:5000 {
         header_upstream Host {host}
