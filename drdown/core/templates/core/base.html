@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="EPS/MDS">
 
-    <link rel="icon" href="{% static 'images/favicon.ico' %}">
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="icon" href="{% static 'core/images/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'core/images/favicon.ico' %}">
 
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -25,17 +25,17 @@
     <!-- Your stuff: Third-party CSS libraries go here -->
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="{% static 'homepage/vendor/font-awesome/css/font-awesome.min.css' %}"" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}"" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
-    <link href="{% static 'homepage/css/freelancer.css' %}" rel="stylesheet">
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'core/homepage/css/freelancer.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/project.css' %}" rel="stylesheet">
     {% endblock %}
-    
+
     {% block script %}
     {%  endblock %}
   </head>
@@ -44,7 +44,7 @@
     {% block navbar %}
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}#page-top">{% trans "Dr. Down" %}</a>
+        <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}#page-top">{% trans "Dr. Down" %}</a>
         <button class="navbar-toggler mb-3 navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           {% trans "Menu" %}
           <i class="fa fa-bars"></i>
@@ -52,10 +52,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'home' %}#page-top"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Home" %}</strong></button></a>
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:home' %}#page-top"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Home" %}</strong></button></a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
@@ -163,13 +163,13 @@
 
       <!-- Your stuff: Third-party javascript libraries go here -->
       <!-- place project specific Javascript in this file -->
-      <script src="{% static 'js/project.js' %}"></script>
-      <script src="{% static 'homepage/vendor/jquery/jquery.min.js' %}"></script>
-      <script src="{% static 'homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'core/js/project.js' %}"></script>
+      <script src="{% static 'core/homepage/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'core/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Plugin JavaScript -->
-      <script src="{% static 'homepage/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+      <script src="{% static 'core/homepage/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
       <!-- Custom scripts for this template -->
-      <script src="{% static 'homepage/js/freelancer.min.js' %}"></script>
+      <script src="{% static 'core/homepage/js/freelancer.min.js' %}"></script>
     {% endblock javascript %}
   </body>
 </html>
