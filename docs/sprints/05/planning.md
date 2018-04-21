@@ -28,7 +28,7 @@ __Membros presentes:__ Todos
 - Arquiteto:
   - Victor Arnaud
 
-- TDesenvolvedores:
+- Desenvolvedores:
   - Daniel Maike
   - Elias Bernardo
   - Gabriela Medeiros

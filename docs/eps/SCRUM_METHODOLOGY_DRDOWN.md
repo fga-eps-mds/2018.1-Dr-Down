@@ -16,7 +16,7 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
  - Definir e priorizar os itens do Backlog do Produto;
  - Vender o produto;
  - Intermediário(ligação) entre o cliente e a equipe;
- - Valor de negocio;
+ - Valor de negócio;
  - Visão de negócio;
  - Negociar com o time e com o cliente;
  - Canvas.

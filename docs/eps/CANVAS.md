@@ -4,7 +4,7 @@
 |:----:|:------:|:---------:|:-----:|
 |10/04/2018|0.0.1|Primeira Versão do Canvas|Mariana de Souza Mendes|
 |13/04/2018|0.0.2|Segunda Versão do Canvas| Mariana de Souza Mendes|
-|20/04/2018|0.0.2|Terceira Versão do Canvas| Mariana de Souza Mendes e Diego França|
+|20/04/2018|0.0.3|Terceira Versão do Canvas| Mariana de Souza Mendes e Diego França|
 
 
 ## v0.0.3
