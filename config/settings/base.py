@@ -8,6 +8,7 @@ import raven
 # (drdown/config/settings/base.py - 3 = drdown/)
 ROOT_DIR = environ.Path(__file__) - 3
 APPS_DIR = ROOT_DIR.path('drdown')
+CORE_DIR = APPS_DIR.path('core')
 
 env = environ.Env()
 
@@ -175,7 +176,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            str(APPS_DIR.path('templates')),
+            str(CORE_DIR.path('templates')),
         ],
         'OPTIONS': {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
