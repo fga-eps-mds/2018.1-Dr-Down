@@ -20,29 +20,29 @@ msgstr ""
 
 #: drdown/forum/models/model_category.py:7
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: drdown/forum/models/model_category.py:8
 msgid "Name of category"
-msgstr ""
+msgstr "Nome da categoria"
 
 #: drdown/forum/models/model_category.py:13
 #: drdown/forum/models/model_category.py:14
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: drdown/forum/models/model_category.py:18
 msgid "Shortcut"
-msgstr ""
+msgstr "Atalho"
 
 #: drdown/forum/models/model_category.py:19
 msgid "URL string shortcut"
-msgstr ""
+msgstr "Atalho da string URL"
 
 #: drdown/forum/models/model_category.py:27
 #: drdown/forum/models/model_post.py:22
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: drdown/forum/models/model_category.py:28
 #: drdown/forum/templates/forum/category_list.html:3
@@ -52,12 +52,12 @@ msgstr ""
 #: drdown/forum/templates/forum/form_post.html:9
 #: drdown/forum/templates/forum/post_list.html:10
 msgid "Categories"
-msgstr ""
+msgstr "Categorias"
 
 #: drdown/forum/models/model_commentary.py:9
 #: drdown/forum/models/model_post.py:14
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
 #: drdown/forum/models/model_commentary.py:16
 #: drdown/forum/models/model_post.py:45
@@ -72,50 +72,50 @@ msgstr ""
 #: drdown/forum/models/model_post.py:25
 #: drdown/forum/templates/forum/post_list.html:29
 msgid "Created at"
-msgstr ""
+msgstr "Criado em"
 
 #: drdown/forum/models/model_commentary.py:20
 #: drdown/forum/models/model_post.py:26
 msgid "Date of creation"
-msgstr ""
+msgstr "Data de criação"
 
 #: drdown/forum/models/model_commentary.py:24
 #: drdown/forum/models/model_post.py:30
 msgid "Updated at"
-msgstr ""
+msgstr "Atualizado em"
 
 #: drdown/forum/models/model_commentary.py:25
 #: drdown/forum/models/model_post.py:31
 msgid "Date of update"
-msgstr ""
+msgstr "Data de atualização"
 
 #: drdown/forum/models/model_commentary.py:32
 #: drdown/forum/models/model_post.py:38
 #: drdown/forum/templates/forum/post_list.html:27
 msgid "Created by"
-msgstr ""
+msgstr "Criado por"
 
 #: drdown/forum/models/model_commentary.py:36
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:5
 msgid "Commentary"
-msgstr ""
+msgstr "Comentário"
 
 #: drdown/forum/models/model_commentary.py:37
 #: drdown/forum/templates/forum/post_list.html:28
 msgid "Commentaries"
-msgstr ""
+msgstr "Comentários"
 
 #: drdown/forum/models/model_post.py:9
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: drdown/forum/models/model_post.py:10
 msgid "Title of post"
-msgstr ""
+msgstr "Título do post"
 
 #: drdown/forum/models/model_post.py:15
 msgid "Message of post"
-msgstr ""
+msgstr "Mensagem do post"
 
 #: drdown/forum/models/model_post.py:46
 #: drdown/forum/templates/forum/commentary_list.html:4
@@ -126,11 +126,11 @@ msgstr ""
 #: drdown/forum/templates/forum/post_list.html:11
 #: drdown/forum/templates/forum/post_list.html:20
 msgid "Posts"
-msgstr ""
+msgstr "Posts"
 
 #: drdown/forum/templates/forum/category_list.html:16
 msgid "There are no categories."
-msgstr ""
+msgstr "Não há categorias"
 
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:8
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:14
@@ -141,90 +141,90 @@ msgstr ""
 #: drdown/forum/templates/forum/post_confirm_delete.html:8
 #: drdown/forum/templates/forum/post_confirm_delete.html:14
 msgid "Delete"
-msgstr ""
+msgstr "Escluir"
 
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:12
 msgid "Are you sure you want to delete this commentary?"
-msgstr ""
+msgstr "Tem certeza que deseja excluir esse comentário?"
 
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:13
 #: drdown/forum/templates/forum/post_confirm_delete.html:13
 msgid "Cancel"
-msgstr ""
+msgstr "Cancela"
 
 #: drdown/forum/templates/forum/commentary_list.html:24
 msgid "New commentary"
-msgstr ""
+msgstr "Novo comentário"
 
 #: drdown/forum/templates/forum/commentary_list.html:27
 #: drdown/forum/templates/forum/commentary_list.html:79
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: drdown/forum/templates/forum/commentary_list.html:41
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #: drdown/forum/templates/forum/commentary_list.html:45
 #: drdown/forum/templates/forum/commentary_list.html:74
 msgid "Updated on"
-msgstr ""
+msgstr "Atualizado por"
 
 #: drdown/forum/templates/forum/commentary_list.html:48
 msgid "Posted on"
-msgstr ""
+msgstr "Postado por"
 
 #: drdown/forum/templates/forum/commentary_list.html:76
 msgid "Created on"
-msgstr ""
+msgstr "Criado por"
 
 #: drdown/forum/templates/forum/commentary_list.html:90
 msgid "There are no comments yet."
-msgstr ""
+msgstr "Ainda não há comentários."
 
 #: drdown/forum/templates/forum/form_commentary.html:4
 #: drdown/forum/templates/forum/form_commentary.html:12
 #: drdown/forum/templates/forum/form_commentary.html:16
 msgid "New Commentary"
-msgstr ""
+msgstr "Novo Comentário"
 
 #: drdown/forum/templates/forum/form_post.html:4
 #: drdown/forum/templates/forum/form_post.html:11
 #: drdown/forum/templates/forum/form_post.html:15
 msgid "New Post"
-msgstr ""
+msgstr "Nova Postagem"
 
 #: drdown/forum/templates/forum/pagination.html:8
 #: drdown/forum/templates/forum/pagination.html:12
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: drdown/forum/templates/forum/pagination.html:30
 #: drdown/forum/templates/forum/pagination.html:34
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: drdown/forum/templates/forum/post_confirm_delete.html:12
 msgid "Are you sure you want to delete "
-msgstr ""
+msgstr "Você tem certeza que deseja deletar "
 
 #: drdown/forum/templates/forum/post_list.html:17
 msgid "New post"
-msgstr ""
+msgstr "Novo post"
 
 #: drdown/forum/templates/forum/post_list.html:30
 msgid "Last Update"
-msgstr ""
+msgstr "Última Atualização"
 
 #: drdown/forum/templates/forum/post_list.html:46
 msgid "Not updated yet"
-msgstr ""
+msgstr "Não há atualizações"
 
 #: drdown/forum/templates/forum/post_list.html:50
 msgid "There are no posts in this category."
-msgstr ""
+msgstr "Não há posts nessa categoria"
 
 #: drdown/forum/tests/test_view_commentary.py:102
 #: drdown/forum/tests/test_view_post.py:94
 msgid "This field is required."
-msgstr ""
+msgstr "Esse campo é obrigatório."
