@@ -22,12 +22,12 @@ class Post(models.Model):
         verbose_name=_("Category")
     )
     created_at = models.DateTimeField(
-        _('Create at'),
+        _('Created at'),
         help_text=_('Date of creation'),
         auto_now_add=True
     )
     updated_at = models.DateTimeField(
-        _('Update at'),
+        _('Updated at'),
         help_text=_('Date of update'),
         null=True
     )
