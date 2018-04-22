@@ -131,7 +131,7 @@ msgstr ""
 "Por favor entre com uma\n"
 "das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s\">entre "
 "</a>\n"
-"para uma conta do %(site_name)e logue abaixo:"
+"para uma conta do %(site_name)s e logue abaixo:"
 
 #: drdown/core/templates/account/login.html:26
 msgid "or"
