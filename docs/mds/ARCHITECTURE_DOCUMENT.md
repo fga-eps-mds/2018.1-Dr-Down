@@ -21,6 +21,7 @@
 | 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
 | 12/04/2018 | 1.3.0 | Modificando para arquitetura baseada em componentes | Victor Arnaud |
 | 15/04/2018 | 1.4.0 | Modificando imagem da arquitetura | Victor Arnaud e Geovana Ramos |
+| 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
 
 ## 1: Introdução
 
@@ -62,7 +63,7 @@ Alguns benefícios desse modelo de arquitetura:
 
 * **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção, reduzindo custos da aplicação.
 
-O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs quando necessário, com esses se comunicando via requisições HTTP.
+O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs se necessário, com esses se comunicando via requisições HTTP.
 
 Abaixo está listado como a arquitetura do projeto se comunicará com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL, entre outros. Nos tópicos seguintes será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
 
@@ -144,10 +145,10 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
+|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|Não|O chat foi removido do escopo do projeto.|
 |[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
-|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
-|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|A decidir|O projeto ainda está sendo avaliado pela equipe|
+|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|Não|O chat foi removido do escopo do projeto.|
+|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|Não|O chat foi removido do escopo do projeto.|
 
 #### Procedimento médico por faixa etária
 
@@ -192,7 +193,7 @@ O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com i
 
 ### 2.5 Celery
 
-O Celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
+O celery é uma ferramenta de execução de tarefas assíncronas que trabalha de forma distribuída, ele é focado em operações _real-time_, mas suporta tarefas agendadas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
 
 No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento. Ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
@@ -200,9 +201,13 @@ Dependendo da tarefa que você executa no servidor, a resposta pode demorar muit
 
 O Celery funciona da seguinte maneira: O cliente (Django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery (geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis). O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que devem ser assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memória cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
-Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão de utilizá-lo ou não no projeto ainda está sendo discutida, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas. Caso não precise, esse serviço será descartado.
+Atualmente no nosso projeto o Celery executa a tarefa de comunicação com o Sentry (https://sentry.io), que é uma ferramenta para equipes que agrega logs de erro, podendo verificar ambientes de homologação e produção por erros de execução, dessa forma a equipe pode analisar e agir quando há problemas no software.
 
-### 2.6 Comunicação
+### 2.6 Caddy
+
+Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro", ou seja, é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança de acesso aos usuários.
+
+### 2.7 Comunicação
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
@@ -210,7 +215,7 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django. No caso, o **Gunicorn**, que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django, que irá ter um arquivo chamado urls.py que dirá ao Nginx qual código deverá ser executado de acordo com o path e código HTTP recebido. Através de proxy reverso, será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o Nginx e o Django através do Gunicorn.
 
-4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Essa view pode ser tanto de aplicações do projeto Dr. Down como aplicações externas. Elas pedem dados as modelos, as modelos do Dr. Down fazem uma requisição ao **redis** que pega os dados do banco de dados **Postgresql** e retorna a view, a view seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
+4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Elas pedem dados as modelos, as modelos fazem uma requisição ao **redis** que pega os dados do banco de dados **Postgresql** e retorna a view, a view seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
 
 5 - O web server (Nginx) retorna a resposta para o web client (navegador)
 
@@ -241,37 +246,52 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 ![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/821/original/diagramade.jpeg?1524095365)
 
-- **apps**: cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
+* **apps**: cada app tem uma pasta com as suas models, views, formulários, testes, templates e estáticos. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
-- **locale** : traduções referentes ao app.
+    - **migrations** : pasta com as migrações para o banco de dados.
 
-- **test** : arquivos de testes refente ao app.
+    - **static** : pasta com arquivos CSS, JavaScript e imagens.
 
-- **models** : arquivos models do app.
+    - **tests** : arquivos de testes refente ao app.
 
-- **views** : arquivos de views do app.
+    - **templates** : arquivos html do app.
 
-- **forms** : arquivos de formulários do app.
+    - **locale** : traduções referentes ao app.
 
-- **admin** : arquivo de conexão do app com o admin.
+    - **models** : arquivos models do app.
 
-- **app/urls.py** : arquivo que mapeia as as views com templates de cada app
+    - **views** : arquivos de views do app.
 
-- **config/urls.py** : inclui todos os URLs.py locais
+    - **forms** : arquivos de formulários do app.
 
-- **init** : arquivo que transforma o app em um pacote python.
+    - **admin** : arquivo de conexão do app com o admin.
 
-- **utils** : arquivos de validação dos apps.
+    - **urls.py** : arquivo que mapeia as as views com templates de cada app
 
-- **settings** : arquivos com as configurações básicas da aplicação.
+    - **\__init\__** : arquivo que transforma o app em um pacote python.
 
-- **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
+    - **apps** : mapeia essa pasta como um app.
+
+    - **utils** : arquivos de validação dos apps.
+
+
+* **config** : pasta com as configurações do projeto Django.
+
+    - **urls.py** : inclui todos os URLs.py dos apps.
+
+    - **\__init\__** : arquivo que transforma as configurações em um pacote python.
+
+    - **settings** : arquivos com as configurações básicas da aplicação.
+
+    - **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
 
 - **manage.py** : arquivo criado automaticamente pelo Django para gerênciamento de comandos.
 
-- **migrations** : pasta com as migrações para o banco de dados.
+- **docs** : documentação da aplicação.
 
 - **compose** : pasta com arquivos do docker.
+
+- **requirements** : organiza todos os pacotes/componentes que a aplicação utiliza em arquivos.
 
 ## 5:	Visão de Implementação
 
