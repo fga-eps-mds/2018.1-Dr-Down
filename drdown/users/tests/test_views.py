@@ -16,7 +16,7 @@ class BaseUserTestCase(TestCase):
     """
     Test if BasedUser is working correctly
     """
-    
+
     def setUp(self):
         """
         This method will run before any test.
@@ -110,7 +110,7 @@ class TestUserDeleteView(BaseUserTestCase):
 
         response = self.client.post(self.url, follow=True)
 
-        home_url = reverse_lazy('home')
+        home_url = reverse_lazy('core:home')
 
         self.assertRedirects(response, home_url)
 

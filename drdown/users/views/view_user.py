@@ -18,7 +18,7 @@ class UserDeleteView (LoginRequiredMixin, DeleteView):
     model = User
 
     # Redirect to home page
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('core:home')
 
     def get_object(self):
         """
