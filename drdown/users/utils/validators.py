@@ -29,7 +29,7 @@ def validate_cpf(value):
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal,
-        message=_('This CPF is not permited'),
+        message=_('This CPF is not permitted'),
         inverse_match=True
     )
 
@@ -68,7 +68,7 @@ def validate_cpf(value):
 
     if cpf_numbers != cpf_calculated:
         raise ValidationError(
-            _('%(value)s is a invalid CPF, the verification digit is wrong'),
+            _('%(value) is a invalid CPF, the verification digit is wrong'),
             params={'value': value}
         )
 
@@ -95,7 +95,7 @@ def validate_ses(value):
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_9,
-        message=_('This SES is not permited'),
+        message=_('This SES is not permitted'),
         inverse_match=True
     )
     regex_validator(value)
@@ -107,7 +107,7 @@ def validate_ses(value):
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_7,
-        message=_('This SES is not permited'),
+        message=_('This SES is not permitted'),
         inverse_match=True
     )
     regex_validator(value)
@@ -135,7 +135,7 @@ def validate_generic_number(value):
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_11,
-        message=_('This SES is not permited'),
+        message=_('This SES is not permitted'),
         inverse_match=True
     )
     regex_validator(value)
@@ -178,7 +178,7 @@ def validate_sus(value):
     # out of the range
     regex_validator = RegexValidator(
         regex=regex_code_all_equal_15,
-        message=_('This SES is not permited'),
+        message=_('This SES is not permitted'),
         inverse_match=True
     )
     regex_validator(value)

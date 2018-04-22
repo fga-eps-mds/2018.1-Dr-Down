@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-22 18:28+0000\n"
+"POT-Creation-Date: 2018-04-22 20:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: drdown/users/models/model_employee.py:23
+
+#: drdown/users/models/model_employee.py:21
 #: drdown/users/models/model_health_team.py:20
 #: drdown/users/models/model_patient.py:21
 #: drdown/users/models/model_responsible.py:17
 msgid "User"
 msgstr "Usuário"
 
-#: drdown/users/models/model_employee.py:27
+#: drdown/users/models/model_employee.py:25
 msgid "Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"
 msgstr "Por favor, insira um CPF no seguinte formato: XXX.XXX.XXX-XX"
 
-#: drdown/users/models/model_employee.py:46
+#: drdown/users/models/model_employee.py:44
 msgid "Secretary"
 msgstr "Secretário"
 
-#: drdown/users/models/model_employee.py:47
+#: drdown/users/models/model_employee.py:45
 msgid "Administration"
 msgstr "Administração"
 
-#: drdown/users/models/model_employee.py:48
+#: drdown/users/models/model_employee.py:46
 msgid "Nursery"
 msgstr "Nutrição"
 
-#: drdown/users/models/model_employee.py:49
+#: drdown/users/models/model_employee.py:47
 msgid "Other"
 msgstr "Outros"
 
-#: drdown/users/models/model_employee.py:53
+#: drdown/users/models/model_employee.py:51
 msgid "Departament"
 msgstr "Departamento"
 
-#: drdown/users/models/model_employee.py:56
+#: drdown/users/models/model_employee.py:54
 msgid "The departament where this user works."
 msgstr "O departamento no qual o usuário trabalha"
 
-#: drdown/users/models/model_employee.py:76
+#: drdown/users/models/model_employee.py:74
 #: drdown/users/models/model_health_team.py:159
 #: drdown/users/models/model_patient.py:111
 #: drdown/users/models/model_responsible.py:35
 msgid "Don't change users"
 msgstr "Não alterar usuário"
 
-#: drdown/users/models/model_employee.py:125
+#: drdown/users/models/model_employee.py:123
 #: drdown/users/templates/users/user_detail.html:67
 msgid "Employee"
 msgstr "Funcionário"
 
-#: drdown/users/models/model_employee.py:126
+#: drdown/users/models/model_employee.py:124
 msgid "Employees"
 msgstr "Funcionários"
 
@@ -88,8 +89,7 @@ msgstr "Conselho Regional"
 msgid ""
 "Use enter a valid register number. \n"
 "Enter 7 digits"
-msgstr ""
-"Insira um número de registro válido de até 7 dígitos."
+msgstr "Insira um número de registro válido de até 7 dígitos."
 
 #: drdown/users/models/model_health_team.py:115
 msgid "State"
@@ -455,3 +455,49 @@ msgstr "Membros"
 #: drdown/users/templates/users/user_list.html:7
 msgid "Users"
 msgstr "Usuários"
+
+#: drdown/users/utils/validators.py:19
+msgid "Wrong CPF format"
+msgstr "CPF inválido"
+
+#: drdown/users/utils/validators.py:32
+#, fuzzy
+#| msgid "This CPF is not permited"
+msgid "This CPF is not permitted"
+msgstr "Esse CPF não é permitido"
+
+#: drdown/users/utils/validators.py:71
+#, fuzzy, python-format
+#| msgid "%(value)s is a invalid CPF, the verification digit is wrong"
+msgid "%(value) is a invalid CPF, the verification digit is wrong"
+msgstr "%(value) é um CPF inválido, o dígito de verificação está incorreto"
+
+#: drdown/users/utils/validators.py:85
+msgid "Wrong SES format"
+msgstr "SES inválido"
+
+#: drdown/users/utils/validators.py:98 drdown/users/utils/validators.py:110
+#: drdown/users/utils/validators.py:138 drdown/users/utils/validators.py:181
+#, fuzzy
+#| msgid "This SES is not permited"
+msgid "This SES is not permitted"
+msgstr "Esse SES não é permitido"
+
+#: drdown/users/utils/validators.py:125 drdown/users/utils/validators.py:168
+msgid "Wrong NUMBER format"
+msgstr "Número inválido"
+
+#: drdown/users/utils/validators.py:153
+msgid "Invalid name."
+msgstr "Nome inválido"
+
+#: drdown/users/utils/validators.py:202
+msgid "Wrong phone format"
+msgstr "Telefone inválido"
+
+#: drdown/users/utils/validators.py:214
+msgid "Wrong CRM format"
+msgstr "CRM inválido"
+
+#~ msgid "This SES is not permited"
+#~ msgstr "Esse SES não é permitido"
