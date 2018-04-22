@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
-from drdown.utils.validators import (validate_ses,
+from ..utils.validators import (validate_ses,
                                      validate_generic_number,
                                      validate_names, validate_sus)
 from django.db.models.signals import post_delete

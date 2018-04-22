@@ -6,9 +6,9 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 
-from drdown.utils.validators import validate_cpf
+from ..utils.validators import validate_cpf
 from .model_user import User
-from drdown.utils.validators import validate_register_number
+from ..utils.validators import validate_register_number
 
 
 class Health_Team(models.Model):

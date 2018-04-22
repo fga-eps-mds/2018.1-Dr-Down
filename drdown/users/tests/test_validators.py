@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 
-from drdown.utils.validators import validate_cpf, validate_ses,\
+from drdown.users.utils.validators import validate_cpf, validate_ses,\
     validate_generic_number, validate_names, validate_sus, \
     validate_phone, validate_register_number
 
