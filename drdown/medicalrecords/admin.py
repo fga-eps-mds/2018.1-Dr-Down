@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models.model_medical_record import MedicalRecord
 
-# Register your models here.
+admin.site.register(MedicalRecord)

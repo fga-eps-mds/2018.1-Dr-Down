@@ -3,7 +3,7 @@ from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 
 
-class MedicalRecords(models.Model):
+class MedicalRecord(models.Model):
 
     day = models.DateTimeField(
         _('Created at'),
