@@ -168,15 +168,15 @@ msgstr "por"
 #: drdown/forum/templates/forum/commentary_list.html:45
 #: drdown/forum/templates/forum/commentary_list.html:74
 msgid "Updated on"
-msgstr "Atualizado por"
+msgstr "Atualizado em"
 
 #: drdown/forum/templates/forum/commentary_list.html:48
 msgid "Posted on"
-msgstr "Postado por"
+msgstr "Postado em"
 
 #: drdown/forum/templates/forum/commentary_list.html:76
 msgid "Created on"
-msgstr "Criado por"
+msgstr "Criado em"
 
 #: drdown/forum/templates/forum/commentary_list.html:90
 msgid "There are no comments yet."
