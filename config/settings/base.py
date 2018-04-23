@@ -81,7 +81,7 @@ LOCAL_APPS = [
     # Your stuff: custom apps go here
     'drdown.forum.apps.ForumConfig',
     'drdown.core.apps.CoreConfig',
-    'drdown.medicalrecord.apps.MedicalRecordsConfig',
+    'drdown.medicalrecords.apps.MedicalRecordsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
