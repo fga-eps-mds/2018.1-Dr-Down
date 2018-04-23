@@ -386,7 +386,7 @@
 <p>O propósito deste documento é definir e especificar, de maneira ampla, as características pertinentes à aplicação solicitada pelo Centro de Referência em Síndrome de Down, mais conhecido como Cris Down. Este documento possui como objetivo definir o escopo, os recursos e o público alvo, que serão englobados pelo sistema, além das razões que levam às necessidades do mesmo. Visa explicar detalhes sobre a aplicação a ser desenvolvida: suas características, funcionalidades, como os usuários se relacionam nesse meio e possíveis restrições no desenvolvimento.</p>
 <h3 id="12-escopo">1.2 Escopo</h3>
 <p>No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte da equipe de saúde, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
-O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco, chat e sugestões de jogos voltados para os pacientes.</p>
+O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco e sugestões de jogos voltados para os pacientes.</p>
 <h3 id="13-definicoes-acronimos-e-abreviacoes">1.3 Definições, acrônimos e abreviações</h3>
 <table>
 <thead>
@@ -405,14 +405,6 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <td>Centro de Referência em Síndrome de Down</td>
 </tr>
 <tr>
-<td>MDS</td>
-<td>Métodos de Desenvolvimento de Software</td>
-</tr>
-<tr>
-<td>EPS</td>
-<td>Engenharia de Produto de Software</td>
-</tr>
-<tr>
 <td>UnB</td>
 <td>Universidade de Brasília</td>
 </tr>
@@ -427,7 +419,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <p>RESENDE, Angelica Aguiar. ANÁLISE DA VIABILIDADE TÉCNICA PARA DESENVOLVIMENTO DE APLICATIVO PARA O CENTRO DE REFERÊNCIA EM SÍNDROME DE DOWN (CRIS DOWN). 2017. 90 f. Trabalho de conclusão de curso (Graduação em Engenharia de Produção)- UNIVERSIDADE DE BRASÍLIA, Faculdade de Tecnologia Departamento de Engenharia de Produção, 2017.</p>
 <p>(em inglês). Instituto de Tecnologia de Massachusetts, licença https://mit-license.org/. Consultado em 13 de Março de 2018.</p>
 <h3 id="15-visao-geral">1.5 Visão Geral</h3>
-<p>Este documento está organizado de maneira a se compreender primeiramente as funções e objetivos do projeto, seguidos pelos perfis de usuário e equipe de desenvolvimento. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.</p>
+<p>Este documento está organizado de maneira a se compreender primeiramente as funções e objetivos do projeto, seguidos pelos perfis de usuário e equipe do projeto. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.</p>
 <hr />
 <h2 id="2-posicionamento">2: Posicionamento</h2>
 <hr />
@@ -505,14 +497,9 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </thead>
 <tbody>
 <tr>
-<td>Equipe de Desenvolvimento</td>
-<td>Estudantes da Universidade de Brasília da disciplina Métodos de Desenvolvimento de Software</td>
-<td>Participar de forma ativa, implementando o software descrito neste documento.</td>
-</tr>
-<tr>
-<td>Equipe de Gestão de Projeto</td>
-<td>Estudantes da Universidade de Brasília da disciplina de Engenharia de Produto de Software</td>
-<td>Gerenciar a equipe de desenvolvimento, apontando caminhos, soluções e possíveis riscos</td>
+<td>Equipe</td>
+<td>é composta por graduandos em Engenharia de Software pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software.</td>
+<td>Desenvolver e gerir o softwarer.</td>
 </tr>
 <tr>
 <td>Clientes</td>
@@ -556,85 +543,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <h3 id="33-ambiente-do-usuario">3.3 Ambiente do Usuário</h3>
 <p>O acesso aos serviços da aplicação poderá ser feito por navegadores de internet, como o Mozilla Firefox, Google Chrome, Apple Safari.</p>
 <h3 id="34-perfis-das-partes-interessadas">3.4 Perfis das Partes Interessadas</h3>
-<h4 id="341-equipe-de-desenvolvimento">3.4.1 - Equipe de desenvolvimento</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Representantes</strong></td>
-<td>Daniel Maike, Elias Bernardo, Gabriela Medeiros, Geovana Ramos, Guilherme Guy, Joberth Rogers</td>
-</tr>
-<tr>
-<td><strong>Descrição</strong></td>
-<td>Desenvolvedores</td>
-</tr>
-<tr>
-<td><strong>Tipo</strong></td>
-<td>Estudantes da Universidade de Brasília da disciplina de Métodos de Desenvolvimento de Software</td>
-</tr>
-<tr>
-<td><strong>Responsabilidade</strong></td>
-<td>Desenvolvimento e Implementação da aplicação</td>
-</tr>
-<tr>
-<td><strong>Critério de sucesso</strong></td>
-<td>Entregar o software com todas as suas funcionalidades dentro do prazo</td>
-</tr>
-<tr>
-<td><strong>Envolvimento</strong></td>
-<td>Alto</td>
-</tr>
-<tr>
-<td><strong>Comentários ou problemas</strong></td>
-<td>Falta de experiência com projetos deste porte, dificuldades com o uso de novas ferramentas e linguagens de programação.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="342-equipe-de-gestao-de-projeto">3.4.2 - Equipe de gestão de projeto</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Representantes</strong></td>
-<td>Diego França, João Sconetto, Mariana Mendes, Victor Arnaud</td>
-</tr>
-<tr>
-<td><strong>Descrição</strong></td>
-<td>Gestores de Projeto</td>
-</tr>
-<tr>
-<td><strong>Tipo</strong></td>
-<td>Estudantes da Universidade de Brasília da disciplina de Engenharia de Produto de Software.</td>
-</tr>
-<tr>
-<td><strong>Responsabilidade</strong></td>
-<td>Estabelecer metas e prazos, informar os melhores caminhos e possíveis riscos na aplicação além de gerenciar a equipe de desenvolvimento.</td>
-</tr>
-<tr>
-<td><strong>Critério de sucesso</strong></td>
-<td>Manter o foco sobre a equipe impondo metas e tentar estabelecer uma relação profissional dentro da equipe de desenvolvimento, de forma que o software seja entregue no prazo, sem riscos e com qualidade.</td>
-</tr>
-<tr>
-<td><strong>Envolvimento</strong></td>
-<td>Alto</td>
-</tr>
-<tr>
-<td><strong>Comentários ou problemas</strong></td>
-<td>Dificuldade em aprender a gerenciar enquanto se coloca em prática.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="343-usuarios-do-aplicativo">3.4.3 - Usuários do Aplicativo</h4>
+<h4 id="341-usuarios-do-aplicativo">3.4.1 - Usuários do Aplicativo</h4>
 <table>
 <thead>
 <tr>
@@ -752,7 +661,7 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 </tr>
 </tbody>
 </table>
-<h4 id="353-familiares">3.5.3 - Familiares</h4>
+<h4 id="353-familiares-eou-responsaveis">3.5.3 - Familiares e/ou Responsáveis</h4>
 <table>
 <thead>
 <tr>
@@ -893,10 +802,6 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <td>Verificação do paciente na fila de espera</td>
 <td>Funcionalidade mostrando o tempo que falta até a sua consulta.</td>
 </tr>
-<tr>
-<td>Jogos pedagógicos e educacionais para auxiliar o desenvolvimento dos pacientes</td>
-<td>Ligação da página com links para jogos interativos</td>
-</tr>
 </tbody>
 </table>
 <h3 id="43-licenciamento-e-instalacao">4.3 Licenciamento e Instalação</h3>
@@ -910,8 +815,8 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 <p>As informações dependem do tipo de usuário. Os pacientes e familiares terão acesso apenas às informações básicas do prontuário e a de dados relacionados à marcação de consulta e fila de espera. Caso seja um funcionário do hospital, possuirá, além das informações básicas do paciente, o número de SES e poderá inserir informações sobre o atendimento realizado por ele. A equipe de saúde, por fim, terá acesso a todas as funcionalidades básicas, além de modificar/atualizar informações sobre o paciente no sistema.</p>
 <h3 id="53-cadastro">5.3 Cadastro</h3>
 <p>O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de alguém da equipe de saúde ou de algum outro funcionário do Cris Dow, a concretização do mesmo dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.</p>
-<h3 id="54-espaco">5.4 Espaço</h3>
-<p>Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários e chats privados para a comunicação entre a equipe de saúde e os pacientes/familiares.</p>
+<h3 id="54-forum">5.4 Fórum</h3>
+<p>Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários.</p>
 <h3 id="55-informacoes">5.5 Informações</h3>
 <p>No quesito informações, o aplicativo fornecerá um FAQ com as perguntas mais frequentes feitas pelos usuários, agenda com as futuras consultas, além dos locais de atendimento para a comunidade do Cris Down.</p>
 <h3 id="56-localizacao">5.6 Localização</h3>
