@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Medical Records:" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="text-tertiary">{% trans "Medical Records" %}</h2>
+
+  <div class="list-group">
+    {% for medicalrecords in medicalrecords_list %}
+      <a href= "{% url 'medicalrecords:list_medicalrecords' %}" class=" h-blue list-group-item">
+        <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecords.patient }}</h4>
+        <p class="text-tertiary h-blue"> {{ medicalrecords.message }} </p>
+      </a>
+    {% empty %}
+        <h4>{% trans 'There are no Medical Records.'%}</h4>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
