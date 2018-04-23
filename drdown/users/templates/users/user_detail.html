@@ -102,18 +102,9 @@
         </div>
         {% endif %}
 
-        {% if health_team_council_acronym %}
+        {% if health_team_register_number and health_team_council_acronym %}
         <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-4"><strong>{% trans 'Council Acronym: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_council_acronym }}" disabled>
-          </div>
-        </div>
-        {% endif %}
-
-        {% if health_team_register_number %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Register Number: '%}</strong></label>
+          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong> {{ health_team_council_acronym }}: </strong></label>
           <div>
             <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
           </div>
