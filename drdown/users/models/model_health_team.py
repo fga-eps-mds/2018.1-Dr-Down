@@ -155,6 +155,40 @@ class HealthTeam(models.Model):
     # related user
     GROUP_NAME = "Health_Team"
 
+    def get_speciality_relation_list(self):
+
+        crm = [
+            HealthTeam.DOCTOR,
+            HealthTeam.CARDIOLOGY,
+            HealthTeam.NEUROLOGY,
+            HealthTeam.PEDIATRICS,
+        ]
+
+        crp = [
+            HealthTeam.PSYCHOLOGY,
+        ]
+
+        coffito = [
+            HealthTeam.OCCUPATIONAL_THERAPY,
+            HealthTeam.PHYSIOTHERAPY,
+        ]
+
+        coren = [
+            HealthTeam.NURSE,
+        ]
+
+        crefono = [
+            HealthTeam.SPEECH_THERAPHY,
+        ]
+
+        return{
+            HealthTeam.CRM: crm,
+            HealthTeam.CRP: crp,
+            HealthTeam.COFFITO: coffito,
+            HealthTeam.CREFONO: crefono,
+            HealthTeam.COREN: coren,
+        }[self.council_acronym]
+
     def clean(self, *args, **kwargs):
 
         try:
@@ -167,6 +201,18 @@ class HealthTeam(models.Model):
                 pass
         except HealthTeam.DoesNotExist:
             pass
+
+        relational_list = self.get_speciality_relation_list()
+
+        if self.speciality not in relational_list:
+
+            raise ValidationError(
+                _('A %(speciality)s cannot have a %(register)s'),
+                params={
+                    'speciality': self.get_speciality_display(),
+                    'register': self.get_council_acronym_display()
+                }
+            )
 
         self.user.clean()
 
