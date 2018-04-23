@@ -10,7 +10,7 @@ __Data de Término:__ 20/04/2018
 
 __Duração__: 6 dias
 
-__Pontos Planejados:__ 26 pontos
+__Pontos Planejados:__ 30 pontos
 
 __Membros presentes:__ Todos
 
@@ -60,8 +60,6 @@ Nesta sprint, visando verificar como está a maturidade de MDS para se organizam
 
 ## 6. Backlog da Sprint
 
-### MDS
-
 - [TS56 - Refatorar documento de arquitetura](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/116)
 - [TS57 - Refatorar documento de visão](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/130)
 - [TS58 - Refatorar fórum](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/131)
@@ -69,13 +67,11 @@ Nesta sprint, visando verificar como está a maturidade de MDS para se organizam
 - [TS60 - Refatorar usuário time de saúde](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/133)
 - [TS61 - Refatorar usuário funcionário](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/134)
 - [TS62 - Inconsistência na especialização do usuário backend](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/135)
-
-### EPS
-
 - [TS63 - Refatorar a EAP](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/111)
 - [TS64 - Refatorar o RoadMap](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/90)
 - [TS65 - Criar mapa com os requisitos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/119)
 - [TS66 - Documentar a Sprint 5](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/143)
+- [TS67 - Configuração do deploy contínuo](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/145)
 
 ## 7. Risk Burndown
 
