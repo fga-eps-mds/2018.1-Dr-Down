@@ -32,11 +32,15 @@ class HealthTeam(models.Model):
     CRM = ("CRM")
     CRP = ("CRP")
     COFFITO = ("COFFITO")
+    COREN = ("COREN")
+    CREFONO = ("CREFONO")
 
     ACRONYM_CHOICES = (
         (CRM, 'CRM'),
         (CRP, 'CRP'),
-        (COFFITO, _('COFFITO')),
+        (COFFITO, ('COFFITO')),
+        (COREN, ('COREN')),
+        (CREFONO, ('CREFONO')),
     )
 
     council_acronym = models.CharField(
@@ -119,23 +123,25 @@ class HealthTeam(models.Model):
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
+    PSYCHOLOGY = _("Psychology")
+    PHYSIOTHERAPY = _("Physiotherapy")
     OCCUPATIONAL_THERAPY = _("Occupational Therapy")
+    DOCTOR = _("Doctor")
     CARDIOLOGY = _("Cardiology")
     NEUROLOGY = _("Neurology")
     PEDIATRICS = _("Pediatrics")
-    PSYCHOLOGY = _("Psychology")
-    PHYSIOTHERAPY = _("Physiotherapy")
-    DOCTOR = _("Doctor")
+    NURSE = _("Nurse")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
+        (PSYCHOLOGY, _('Psychology')),
+        (PHYSIOTHERAPY, _('Physiotherapy')),
         (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
+        (DOCTOR, _('Doctor')),
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
-        (PSYCHOLOGY, _('Psychology')),
-        (PHYSIOTHERAPY, _('Physiotherapy')),
-        (DOCTOR, _('Doctor')),
+        (NURSE, _('Nurse')),
     )
 
     speciality = models.CharField(
