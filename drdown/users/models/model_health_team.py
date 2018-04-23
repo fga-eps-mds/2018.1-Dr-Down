@@ -6,12 +6,12 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 
-from drdown.utils.validators import validate_cpf
+from ..utils.validators import validate_cpf
 from .model_user import User
-from drdown.utils.validators import validate_register_number
+from ..utils.validators import validate_register_number
 
 
-class Health_Team(models.Model):
+class HealthTeam(models.Model):
 
     user = models.OneToOneField(
         User,
@@ -152,14 +152,14 @@ class Health_Team(models.Model):
     def clean(self, *args, **kwargs):
 
         try:
-            user_db = Health_Team.objects.get(id=self.id).user
+            user_db = HealthTeam.objects.get(id=self.id).user
 
             if self.user != user_db:
                 raise ValidationError(
                     _("Don't change users"))
             else:
                 pass
-        except Health_Team.DoesNotExist:
+        except HealthTeam.DoesNotExist:
             pass
 
         self.user.clean()
@@ -171,10 +171,10 @@ class Health_Team(models.Model):
         self.user.is_staff = True
 
         try:
-            health_team_group = Group.objects.get(name=Health_Team.GROUP_NAME)
+            health_team_group = Group.objects.get(name=HealthTeam.GROUP_NAME)
         except Group.DoesNotExist:
             health_team_group = Group.objects.create(
-               name=Health_Team.GROUP_NAME
+               name=HealthTeam.GROUP_NAME
             )
 
         # TODO: add permissions to edit Patient and Parent when they get ready

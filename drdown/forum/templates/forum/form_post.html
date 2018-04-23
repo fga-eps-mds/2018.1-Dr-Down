@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "New Post" %}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_categories' %}"> {% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_posts' post_category.slug post_category.pk %}"> {% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item active">{% trans "New Post" %}</li>
+    </ol>
+  </div>
+  <div class="container">
+    <h2>{% trans "New Post" %}</h2><hr>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p class="lead">
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-secondary">{% trans "Post" %}</button>
+    </form>
+  </div>
+
+{% endblock %}

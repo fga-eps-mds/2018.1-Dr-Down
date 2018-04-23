@@ -2,11 +2,10 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
-from drdown.utils.validators import (validate_ses,
-                                     validate_generic_number,
-                                     validate_names, validate_sus)
-from django.db.models.signals import post_delete
-from django.dispatch import receiver
+from ..utils.validators import validate_ses
+from ..utils.validators import validate_generic_number
+from ..utils.validators import validate_names
+from ..utils.validators import validate_sus
 
 from .model_user import User
 from .model_responsible import Responsible

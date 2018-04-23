@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import drdown.utils.validators
+import drdown.users.utils.validators
 
 
 class Migration(migrations.Migration):
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='patient',
             name='mother_name',
-            field=models.CharField(help_text='Please, insert your mother name', max_length=80, validators=[drdown.utils.validators.validate_names], verbose_name='Name of mother'),
+            field=models.CharField(help_text='Please, insert your mother name', max_length=80, validators=[drdown.users.utils.validators.validate_names], verbose_name='Name of mother'),
         ),
         migrations.AlterField(
             model_name='patient',

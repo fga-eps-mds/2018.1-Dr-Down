@@ -1,0 +1,97 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static%}
+{% block title %}{% trans "Posts" %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'forum/css/forum.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
+      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">{% trans "Posts" %}</a></li>
+      <li class="breadcrumb-item active">{{ post.title }}</li>
+    </ol>
+  </div>
+
+  <div class="mb-4" style="float:right;">
+    {% if user.is_authenticated %}
+      <a href="{% url 'forum:create_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary space">{% trans "New commentary" %}</a>
+    {% endif %}
+    {% if user.username == post.created_by.username %}
+      <a href="{% url 'forum:update_post' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary space">{% trans "Edit" %}</a>
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger space">{% trans "Delete" %}</a>
+    {% elif user.is_superuser %}
+      <a href="{% url 'forum:delete_post' post.category.slug post.category.pk post.pk %}" class="btn btn-danger space">{% trans "Delete" %}</a>
+    {% endif %}
+  </div>
+  <h1 class="mt-4">{{ post.title }}</h1>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+        <!-- Author -->
+        <p class="lead"> {% trans "by" %} {{ post.created_by }}</p>
+        <hr>
+        <!-- Date/Time -->
+        {% if post.updated_at %}
+          <p>{% trans "Updated on" %} {{ post.updated_at }}</p>
+          <hr>
+        {% else %}
+          <p>{% trans "Posted on" %} {{ post.created_at }}</p>
+          <hr>
+        {% endif %}
+        <!-- Post Content -->
+        <p class="lead"> {{ post.message }} </p>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    {% for commentary in commentary_list %}
+      <!-- Single Comment -->
+      <div class="media mb-4">
+        {% if commentary.created_by.photo %}
+          <img class="d-flex mr-3 rounded-circle" src="{{commentary.created_by.photo.url}}" alt="" width="40px">
+        {% else %}
+          <img class="d-flex mr-3 rounded-circle" src="{% static 'images/user.png' %}" width="40px">
+        {% endif %}
+        <div class="media-body">
+            <div class="dialogbox">
+              <div class="body">
+                <span class="tip tip-left"></span>
+                  <div class="message">
+                    <h5 class="mt-0">{{commentary.created_by.username}}</h5>
+                    <p> {{commentary.message}}</p>
+                    {% if commentary.updated_at != None %}
+                      <p><font size="2" >{% trans 'Updated on'%} {{ commentary.updated_at }}</font></p>
+                      {% else %}
+                      <p><font size="2">{% trans 'Created on'%} {{ commentary.created_at }}</font></p>
+                    {% endif %}
+                    {% if user.username == commentary.created_by.username %}
+                      <a href="{% url 'forum:update_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+                      <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+                    {% elif user.is_superuser %}
+                      <a href="{% url 'forum:delete_commentary' post.category.slug post.category.pk post.pk commentary.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+                    {% endif %}
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      {% empty %}
+        <h4 class="lead text-secondary" align="left">{% trans 'There are no comments yet.'%}</h4>
+    {% endfor %}
+  </div>
+
+
+
+</div>
+{% endblock content %}

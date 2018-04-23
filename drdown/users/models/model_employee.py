@@ -6,9 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
-
-
-from drdown.utils.validators import validate_cpf
+from ..utils.validators import validate_cpf
 from .model_user import User
 from .model_patient import Patient
 from .model_responsible import Responsible

@@ -3,10 +3,10 @@ from django.test import RequestFactory
 from django.test.client import Client
 
 
-from ..models.model_health_team import Health_Team
+from ..models.model_health_team import HealthTeam
 
 
-class TestViewHealth_Team (TestCase):
+class TestViewHealthTeam (TestCase):
     """
     Test if View Health_Team is working correctly
     """
@@ -18,10 +18,10 @@ class TestViewHealth_Team (TestCase):
 
         self.client = Client()
         self.user = self.make_user()
-        self.health_team = Health_Team.objects.create(
+        self.health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=Health_Team.NEUROLOGY)
+            speciality=HealthTeam.NEUROLOGY)
 
     def test_health_team_get_context_data(self):
         """
@@ -35,12 +35,12 @@ class TestViewHealth_Team (TestCase):
 
         self.assertEquals(response.status_code, 200)
 
-        self.assertEquals(self.user.health_team.cpf, self.health_team.cpf)
+        self.assertEquals(self.user.healthteam.cpf, self.health_team.cpf)
 
         self.assertContains(response, text=self.user.username)
         self.assertContains(response, text=self.user.username)
 
-        self.assertContains(response, text=self.user.health_team.cpf)
+        self.assertContains(response, text=self.user.healthteam.cpf)
 
     def test_health_team_get_context_data_error(self):
         """

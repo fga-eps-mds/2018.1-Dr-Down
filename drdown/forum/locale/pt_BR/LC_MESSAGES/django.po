@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-22 20:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: drdown/forum/models/model_category.py:7
+msgid "Name"
+msgstr "Nome"
+
+#: drdown/forum/models/model_category.py:8
+msgid "Name of category"
+msgstr "Nome da categoria"
+
+#: drdown/forum/models/model_category.py:13
+#: drdown/forum/models/model_category.py:14
+msgid "Description"
+msgstr "Descrição"
+
+#: drdown/forum/models/model_category.py:18
+msgid "Shortcut"
+msgstr "Atalho"
+
+#: drdown/forum/models/model_category.py:19
+msgid "URL string shortcut"
+msgstr "Atalho da string URL"
+
+#: drdown/forum/models/model_category.py:27
+#: drdown/forum/models/model_post.py:22
+msgid "Category"
+msgstr "Categoria"
+
+#: drdown/forum/models/model_category.py:28
+#: drdown/forum/templates/forum/category_list.html:3
+#: drdown/forum/templates/forum/category_list.html:7
+#: drdown/forum/templates/forum/commentary_list.html:16
+#: drdown/forum/templates/forum/form_commentary.html:9
+#: drdown/forum/templates/forum/form_post.html:9
+#: drdown/forum/templates/forum/post_list.html:10
+msgid "Categories"
+msgstr "Categorias"
+
+#: drdown/forum/models/model_commentary.py:9
+#: drdown/forum/models/model_post.py:14
+msgid "Message"
+msgstr "Mensagem"
+
+#: drdown/forum/models/model_commentary.py:16
+#: drdown/forum/models/model_post.py:45
+#: drdown/forum/templates/forum/form_commentary.html:28
+#: drdown/forum/templates/forum/form_post.html:27
+#: drdown/forum/templates/forum/post_confirm_delete.html:5
+#: drdown/forum/templates/forum/post_list.html:26
+msgid "Post"
+msgstr ""
+
+#: drdown/forum/models/model_commentary.py:19
+#: drdown/forum/models/model_post.py:25
+#: drdown/forum/templates/forum/post_list.html:29
+msgid "Created at"
+msgstr "Criado em"
+
+#: drdown/forum/models/model_commentary.py:20
+#: drdown/forum/models/model_post.py:26
+msgid "Date of creation"
+msgstr "Data de criação"
+
+#: drdown/forum/models/model_commentary.py:24
+#: drdown/forum/models/model_post.py:30
+msgid "Updated at"
+msgstr "Atualizado em"
+
+#: drdown/forum/models/model_commentary.py:25
+#: drdown/forum/models/model_post.py:31
+msgid "Date of update"
+msgstr "Data de atualização"
+
+#: drdown/forum/models/model_commentary.py:32
+#: drdown/forum/models/model_post.py:38
+#: drdown/forum/templates/forum/post_list.html:27
+msgid "Created by"
+msgstr "Criado por"
+
+#: drdown/forum/models/model_commentary.py:36
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:5
+msgid "Commentary"
+msgstr "Comentário"
+
+#: drdown/forum/models/model_commentary.py:37
+#: drdown/forum/templates/forum/post_list.html:28
+msgid "Commentaries"
+msgstr "Comentários"
+
+#: drdown/forum/models/model_post.py:9
+msgid "Title"
+msgstr "Título"
+
+#: drdown/forum/models/model_post.py:10
+msgid "Title of post"
+msgstr "Título do post"
+
+#: drdown/forum/models/model_post.py:15
+msgid "Message of post"
+msgstr "Mensagem do post"
+
+#: drdown/forum/models/model_post.py:46
+#: drdown/forum/templates/forum/commentary_list.html:4
+#: drdown/forum/templates/forum/commentary_list.html:17
+#: drdown/forum/templates/forum/form_commentary.html:10
+#: drdown/forum/templates/forum/form_post.html:10
+#: drdown/forum/templates/forum/post_list.html:3
+#: drdown/forum/templates/forum/post_list.html:11
+#: drdown/forum/templates/forum/post_list.html:20
+msgid "Posts"
+msgstr "Posts"
+
+#: drdown/forum/templates/forum/category_list.html:16
+msgid "There are no categories."
+msgstr "Não há categorias"
+
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:8
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:14
+#: drdown/forum/templates/forum/commentary_list.html:28
+#: drdown/forum/templates/forum/commentary_list.html:30
+#: drdown/forum/templates/forum/commentary_list.html:80
+#: drdown/forum/templates/forum/commentary_list.html:82
+#: drdown/forum/templates/forum/post_confirm_delete.html:8
+#: drdown/forum/templates/forum/post_confirm_delete.html:14
+msgid "Delete"
+msgstr "Escluir"
+
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:12
+msgid "Are you sure you want to delete this commentary?"
+msgstr "Tem certeza que deseja excluir esse comentário?"
+
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:13
+#: drdown/forum/templates/forum/post_confirm_delete.html:13
+msgid "Cancel"
+msgstr "Cancela"
+
+#: drdown/forum/templates/forum/commentary_list.html:24
+msgid "New commentary"
+msgstr "Novo comentário"
+
+#: drdown/forum/templates/forum/commentary_list.html:27
+#: drdown/forum/templates/forum/commentary_list.html:79
+msgid "Edit"
+msgstr "Editar"
+
+#: drdown/forum/templates/forum/commentary_list.html:41
+msgid "by"
+msgstr "por"
+
+#: drdown/forum/templates/forum/commentary_list.html:45
+#: drdown/forum/templates/forum/commentary_list.html:74
+msgid "Updated on"
+msgstr "Atualizado em"
+
+#: drdown/forum/templates/forum/commentary_list.html:48
+msgid "Posted on"
+msgstr "Postado em"
+
+#: drdown/forum/templates/forum/commentary_list.html:76
+msgid "Created on"
+msgstr "Criado em"
+
+#: drdown/forum/templates/forum/commentary_list.html:90
+msgid "There are no comments yet."
+msgstr "Ainda não há comentários."
+
+#: drdown/forum/templates/forum/form_commentary.html:4
+#: drdown/forum/templates/forum/form_commentary.html:12
+#: drdown/forum/templates/forum/form_commentary.html:16
+msgid "New Commentary"
+msgstr "Novo Comentário"
+
+#: drdown/forum/templates/forum/form_post.html:4
+#: drdown/forum/templates/forum/form_post.html:11
+#: drdown/forum/templates/forum/form_post.html:15
+msgid "New Post"
+msgstr "Nova Postagem"
+
+#: drdown/forum/templates/forum/pagination.html:8
+#: drdown/forum/templates/forum/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/forum/templates/forum/pagination.html:30
+#: drdown/forum/templates/forum/pagination.html:34
+msgid "Next"
+msgstr "Próximo"
+
+#: drdown/forum/templates/forum/post_confirm_delete.html:12
+msgid "Are you sure you want to delete "
+msgstr "Você tem certeza que deseja deletar "
+
+#: drdown/forum/templates/forum/post_list.html:17
+msgid "New post"
+msgstr "Novo post"
+
+#: drdown/forum/templates/forum/post_list.html:30
+msgid "Last Update"
+msgstr "Última Atualização"
+
+#: drdown/forum/templates/forum/post_list.html:46
+msgid "Not updated yet"
+msgstr "Não há atualizações"
+
+#: drdown/forum/templates/forum/post_list.html:50
+msgid "There are no posts in this category."
+msgstr "Não há posts nessa categoria"
+
+#: drdown/forum/tests/test_view_commentary.py:102
+#: drdown/forum/tests/test_view_post.py:94
+msgid "This field is required."
+msgstr "Esse campo é obrigatório."

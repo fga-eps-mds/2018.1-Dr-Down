@@ -3,7 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-from drdown.utils.validators import validate_phone
+from ..utils.validators import validate_phone
 import datetime
 
 
@@ -90,7 +90,7 @@ class User(AbstractUser):
             'patient',
             'employee',
             'responsible',
-            'health_team'
+            'healthteam'
         ]
 
         for attr in atributes_to_check:

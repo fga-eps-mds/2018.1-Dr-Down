@@ -2,7 +2,7 @@ from test_plus.test import TestCase
 from drdown.users.models import User
 from django.core.exceptions import ValidationError
 
-from ..models import Employee, Health_Team, Patient, Responsible
+from ..models import Employee, HealthTeam, Patient, Responsible
 
 
 class TestUser(TestCase):
@@ -327,10 +327,10 @@ class TestField(TestCase):
             )
 
         with(self.assertRaises(ValidationError)):
-            Health_Team.objects.create(
+            HealthTeam.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=Health_Team.NEUROLOGY
+                speciality=HealthTeam.NEUROLOGY
             )
 
         # test employee again
@@ -373,10 +373,10 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
 
         # define a initial relation to user
-        health_team = Health_Team.objects.create(
+        health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user1,
-            speciality=Health_Team.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -466,10 +466,10 @@ class TestField(TestCase):
         self.assertEqual(self.user1.has_specialization, False)
         self.assertEqual(self.user1.is_staff, False)
 
-        health_team = Health_Team.objects.create(
+        health_team = HealthTeam.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=Health_Team.NEUROLOGY
+                speciality=HealthTeam.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -506,14 +506,14 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        health_team = Health_Team.objects.create(
+        health_team = HealthTeam.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=Health_Team.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY
         )
 
         self.assertEqual(self.user1.has_specialization, True)
-        self.assertEqual(hasattr(self.user1, 'health_team'), True)
+        self.assertEqual(hasattr(self.user1, 'healthteam'), True)
 
         with self.assertRaises(ValidationError):
             health_team.user = self.user2
@@ -663,15 +663,15 @@ class TestField(TestCase):
 
         self.assertEqual(self.user1.has_specialization, False)
 
-        health_team = Health_Team.objects.create(
+        health_team = HealthTeam.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=Health_Team.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY
         )
 
         self.user1.refresh_from_db()
 
-        self.assertEqual(hasattr(self.user1, 'health_team'), True)
+        self.assertEqual(hasattr(self.user1, 'healthteam'), True)
         self.assertEqual(self.user1.has_specialization, True)
 
         health_team.delete()
@@ -679,5 +679,5 @@ class TestField(TestCase):
 
         self.user1.refresh_from_db()
 
-        self.assertEqual(hasattr(self.user1, 'health_team'), False)
+        self.assertEqual(hasattr(self.user1, 'healthteam'), False)
         self.assertEqual(self.user1.has_specialization, False)
