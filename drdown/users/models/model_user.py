@@ -90,7 +90,7 @@ class User(AbstractUser):
             'patient',
             'employee',
             'responsible',
-            'health_team'
+            'healthteam'
         ]
 
         for attr in atributes_to_check:

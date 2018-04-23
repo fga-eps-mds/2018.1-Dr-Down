@@ -76,16 +76,16 @@ class UserDetailView(LoginRequiredMixin, DetailView):
                         user.employee.get_departament_display()
                         )
 
-        elif hasattr(user, 'health_team'):
-            context['health_team_cpf'] = user.health_team.cpf
+        elif hasattr(user, 'healthteam'):
+            context['health_team_cpf'] = user.healthteam.cpf
             context['health_team_register_number'] = \
-                user.health_team.register_number
+                user.healthteam.register_number
             context['health_team_registration_state'] = \
-                user.health_team.get_registration_state_display()
+                user.healthteam.get_registration_state_display()
             context['health_team_council_acronym'] = \
-                user.health_team.get_council_acronym_display()
+                user.healthteam.get_council_acronym_display()
             context['health_team_speciality'] = \
-                user.health_team.get_speciality_display()
+                user.healthteam.get_speciality_display()
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
