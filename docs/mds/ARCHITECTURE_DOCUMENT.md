@@ -193,7 +193,7 @@ O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com i
 
 ### 2.5 Celery
 
-O celery é uma ferramenta de execução de tarefas assíncronas que trabalha de forma distribuída, ele é focado em operações _real-time_, mas suporta tarefas agendadas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
+O Celery é uma ferramenta de execução de tarefas assíncronas que trabalha de forma distribuída. Ele é focado em operações _real-time_, mas suporta tarefas agendadas. Com ele é possível executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks Python mais utilizados como, por exemplo, o Django e o Flask.
 
 No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento. Ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
@@ -201,11 +201,11 @@ Dependendo da tarefa que você executa no servidor, a resposta pode demorar muit
 
 O Celery funciona da seguinte maneira: O cliente (Django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery (geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis). O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que devem ser assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memória cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
-Atualmente no nosso projeto o Celery executa a tarefa de comunicação com o Sentry (https://sentry.io), que é uma ferramenta para equipes que agrega logs de erro, podendo verificar ambientes de homologação e produção por erros de execução, dessa forma a equipe pode analisar e agir quando há problemas no software.
+No presente projeto o Celery executa a tarefa de comunicação com o Sentry (https://sentry.io), que é uma ferramenta para equipes que agrega logs de erro, podendo verificar os ambientes de homologação e produção buscando por erros de execução. Dessa forma, a equipe pode analisar e agir quando há problemas no software.
 
 ### 2.6 Caddy
 
-Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro", ou seja, é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança de acesso aos usuários.
+Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro". Ele é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança ao acesso dos usuários.
 
 ### 2.7 Comunicação
 
@@ -215,7 +215,7 @@ Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em ingl
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django. No caso, o **Gunicorn**, que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django, que irá ter um arquivo chamado urls.py que dirá ao Nginx qual código deverá ser executado de acordo com o path e código HTTP recebido. Através de proxy reverso, será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o Nginx e o Django através do Gunicorn.
 
-4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Elas pedem dados as modelos, as modelos fazem uma requisição ao **redis** que pega os dados do banco de dados **Postgresql** e retorna a view, a view seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
+4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Elas pedem dados às models, que por sua vez fazem uma requisição ao **redis**. Este que pega os dados do banco de dados **Postgresql** e retorna à view, que seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido à view, que devolve o template como resposta ao web server.
 
 5 - O web server (Nginx) retorna a resposta para o web client (navegador)
 
@@ -246,7 +246,7 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
 ![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/384/521/original/DiagramaPacotes.png?1524419574)
 
-* **apps**: cada app tem uma pasta com as suas models, views, formulários, testes, templates e estáticos. Além disso, também há um arquivo URLs que será incluso no URLs global.
+* **apps**: cada app tem uma pasta com as suas models, views, formulários, testes, templates e arquivos estáticos. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
     - **migrations** : pasta com as migrações para o banco de dados.
 
@@ -258,7 +258,7 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
     - **locale** : traduções referentes ao app.
 
-    - **models** : arquivos models do app.
+    - **models** : arquivos de models do app.
 
     - **views** : arquivos de views do app.
 
@@ -270,7 +270,7 @@ O framework Django organiza os projetos em apps, que são pastas que contêm uma
 
     - **\__init\__** : arquivo que transforma o app em um pacote python.
 
-    - **apps** : mapeia essa pasta como um app.
+    - **apps** : mapeia a pasta que o contém como um app.
 
     - **utils** : arquivos de validação dos apps.
 
