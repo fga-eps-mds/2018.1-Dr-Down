@@ -21,7 +21,11 @@ class TestViewHealthTeam (TestCase):
         self.health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=HealthTeam.NEUROLOGY)
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+            )
 
     def test_health_team_get_context_data(self):
         """
