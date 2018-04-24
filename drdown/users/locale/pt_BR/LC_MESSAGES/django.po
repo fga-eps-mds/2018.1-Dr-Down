@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 20:14+0000\n"
+"POT-Creation-Date: 2018-04-24 21:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,11 +152,13 @@ msgstr "A especialidade do membro da equipe médica."
 
 #: drdown/users/models/model_health_team.py:209
 #, python-format
-msgid "A %(speciality)s cannot have a %(register)s"
-msgstr "%(speciality)s não pode ter %(register)s"
+msgid ""
+"The %(register)s doesn't inscribe professionalswith %(speciality)s "
+"graduation, please correct"
+msgstr "O %(register)s não registra profissionais com formação em %(speciality)s, favor corrigir"
 
-#: drdown/users/models/model_health_team.py:250
-#: drdown/users/models/model_health_team.py:251
+#: drdown/users/models/model_health_team.py:252
+#: drdown/users/models/model_health_team.py:253
 #: drdown/users/templates/users/user_detail.html:95
 msgid "Health Team"
 msgstr "Equipe Médica"
@@ -506,6 +508,9 @@ msgstr "Telefone inválido"
 #: drdown/users/utils/validators.py:214
 msgid "Wrong CRM format"
 msgstr "CRM inválido"
+
+#~ msgid "A %(speciality)s cannot have a %(register)s"
+#~ msgstr "%(speciality)s não pode ter %(register)s"
 
 #~ msgid "COFFITO"
 #~ msgstr "COFFITO"

@@ -206,7 +206,8 @@ class HealthTeam(models.Model):
         if self.speciality not in relational_list:
 
             raise ValidationError(
-                _('A %(speciality)s cannot have a %(register)s'),
+                _("The %(register)s doesn't inscribe professionals" +
+                  "with %(speciality)s graduation, please correct"),
                 params={
                     'speciality': self.get_speciality_display(),
                     'register': self.get_council_acronym_display()
