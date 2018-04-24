@@ -130,7 +130,7 @@ class HealthTeam(models.Model):
     CARDIOLOGY = _("Cardiology")
     NEUROLOGY = _("Neurology")
     PEDIATRICS = _("Pediatrics")
-    NURSE = _("Nurse")
+    NURSING = _("Nursing")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
@@ -141,7 +141,7 @@ class HealthTeam(models.Model):
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
-        (NURSE, _('Nurse')),
+        (NURSING, _('Nursing')),
     )
 
     speciality = models.CharField(
@@ -174,7 +174,7 @@ class HealthTeam(models.Model):
         ]
 
         coren = [
-            HealthTeam.NURSE,
+            HealthTeam.NURSING,
         ]
 
         crefono = [
