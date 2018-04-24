@@ -6,7 +6,7 @@
 {% block content %}
   <div class="container">
     <h2>{% trans "New Medical Record" %}</h2><hr>
-    <form method="medicalrecord">
+    <form method="post">
       {% csrf_token %}
       {% for field in form %}
         <div class="fieldWrapper">
