@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 01:32+0000\n"
+"POT-Creation-Date: 2018-04-24 17:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,7 +82,6 @@ msgid "The Regional Council."
 msgstr "Conselho Regional"
 
 #: drdown/users/models/model_health_team.py:56
-#, fuzzy
 #| msgid ""
 #| "Use enter a valid register number. \n"
 #| "Enter 7 digits"
@@ -100,7 +99,7 @@ msgstr "O estado de registro do membro da equipe médica."
 #: drdown/users/models/model_health_team.py:123
 #: drdown/users/models/model_health_team.py:134
 msgid "Speech Therapy"
-msgstr "Terapia de Fala"
+msgstr "Fonoaudiologia"
 
 #: drdown/users/models/model_health_team.py:124
 #: drdown/users/models/model_health_team.py:135
@@ -139,7 +138,6 @@ msgstr "Pediatria"
 
 #: drdown/users/models/model_health_team.py:131
 #: drdown/users/models/model_health_team.py:142
-#, fuzzy
 #| msgid "Nursery"
 msgid "Nursing"
 msgstr "Enfermagem"
@@ -168,6 +166,7 @@ msgid "Please, enter the valid SES number"
 msgstr "Por favor, insira um número de SES válido"
 
 #: drdown/users/models/model_patient.py:34
+#: drdown/users/models/model_responsible.py:58
 #: drdown/users/templates/users/user_detail.html:221
 msgid "Responsible"
 msgstr "Responsável"
@@ -268,9 +267,24 @@ msgstr "Declaração de nascido vivo"
 msgid "Please, enter the declaration of live birth number"
 msgstr "Por favor, insira o número da declaração de nascido vivo"
 
+#: drdown/users/models/model_patient.py:130
+#: drdown/users/templates/users/user_detail.html:140
+msgid "Patient"
+msgstr "Paciente"
+
+#: drdown/users/models/model_patient.py:131
+#| msgid "Patient"
+msgid "Patients"
+msgstr "Pacientes"
+
 #: drdown/users/models/model_responsible.py:21
 msgid "Please, use enter a valid CPF inthe following format: XXX.XXX.XXX-XX"
 msgstr "Por favor, insira um número de CPF no seguinte formato: XXX.XXX.XXX-XX"
+
+#: drdown/users/models/model_responsible.py:59
+#| msgid "Responsible"
+msgid "Responsibles"
+msgstr "Responsáveis"
 
 #: drdown/users/models/model_user.py:17
 msgid "Photo of user."
@@ -303,7 +317,7 @@ msgstr "Telefone"
 
 #: drdown/users/models/model_user.py:48
 msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
-msgstr "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
+msgstr "(xx)xxxxx-xxxx ou (xx)xxxx-xxxx"
 
 #: drdown/users/models/model_user.py:53
 #: drdown/users/templates/users/user_form.html:81
@@ -386,10 +400,6 @@ msgstr "Estado do Registro: "
 msgid "Speciality: "
 msgstr "Especialidade: "
 
-#: drdown/users/templates/users/user_detail.html:140
-msgid "Patient"
-msgstr "Paciente"
-
 #: drdown/users/templates/users/user_detail.html:143
 msgid "SES: "
 msgstr "SES: "
@@ -400,11 +410,11 @@ msgstr "Prioridade: "
 
 #: drdown/users/templates/users/user_detail.html:161
 msgid "Mother Name: "
-msgstr "Nome da Mãe"
+msgstr "Nome da Mãe: "
 
 #: drdown/users/templates/users/user_detail.html:170
 msgid "Father Name: "
-msgstr "Nome do Pai"
+msgstr "Nome do Pai: "
 
 #: drdown/users/templates/users/user_detail.html:179
 msgid "Ethnicity: "
@@ -416,7 +426,7 @@ msgstr "SUS: "
 
 #: drdown/users/templates/users/user_detail.html:197
 msgid "Civil registry of birth: "
-msgstr "Registro civil de nascimento"
+msgstr "Registro civil de nascimento: "
 
 #: drdown/users/templates/users/user_detail.html:206
 msgid "Declaration of live birth: "
@@ -463,7 +473,6 @@ msgid "Wrong CPF format"
 msgstr "CPF inválido"
 
 #: drdown/users/utils/validators.py:32
-#, fuzzy
 #| msgid "This CPF is not permited"
 msgid "This CPF is not permitted"
 msgstr "Esse CPF não é permitido"
@@ -480,7 +489,6 @@ msgstr "SES inválido"
 
 #: drdown/users/utils/validators.py:98 drdown/users/utils/validators.py:110
 #: drdown/users/utils/validators.py:138 drdown/users/utils/validators.py:181
-#, fuzzy
 #| msgid "This SES is not permited"
 msgid "This SES is not permitted"
 msgstr "Esse SES não é permitido"
