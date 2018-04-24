@@ -34,7 +34,7 @@
         <div class="form-group row mb-1">
           <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 col-3"><strong>{% trans 'Gender: '%}</strong></label>
           <div>
-            <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.gender }}" disabled>
+            <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.get_gender_display }}" disabled>
           </div>
         </div>
         {% endif %}
