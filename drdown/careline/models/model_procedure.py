@@ -43,14 +43,14 @@ class Procedure(models.Model):
     def convert_age_to_item(age):
         pass
 
-    def create_chekitens(self, ages_required, ages_needed):
+    def create_check_items(self, ages_required, ages_needed):
 
         if self.initialized:
             return
 
         for age in Procedure.AGES:
             CheckItem.objects.create(
-                procedure=this,
+                procedure=self,
                 age=age,
                 required=(age in ages_required),
                 when_needed=(age in ages_needed),
