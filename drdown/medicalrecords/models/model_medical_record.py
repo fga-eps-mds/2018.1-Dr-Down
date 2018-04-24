@@ -11,6 +11,7 @@ class MedicalRecord(models.Model):
     day = models.DateTimeField(
         _('Created at'),
         help_text=_('Patient Care Day'),
+        auto_now=True
     )
 
     patient = models.ForeignKey(
@@ -32,10 +33,11 @@ class MedicalRecord(models.Model):
     )
 
     def clean(self, *args, **kwargs):
-        if self.day.replace(tzinfo=None)> datetime.now().replace(tzinfo=None):
-            raise ValidationError(
-                _("You can not create a medical record "
-                  "with a date in the future !!"))
+        if self.day is not None:
+            if self.day.replace(tzinfo=None)> datetime.now().replace(tzinfo=None):
+                raise ValidationError(
+                    _("You can not create a medical record "
+                      "with a date in the future !!"))
 
 
     def save(self, *args, **kwargs):
