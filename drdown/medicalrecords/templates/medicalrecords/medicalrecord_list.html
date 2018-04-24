@@ -14,14 +14,13 @@
 
   <div class="list-group">
     {% for medicalrecord in medicalrecord_list %}
-      <a href= "{% url 'medicalrecords:list_medicalrecords' %}" class=" h-blue list-group-item">
-        <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecord.patient }}</h4>
-        <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
-        <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
-        <a href="{% url 'medicalrecords:update_medicalrecords' medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
-        <a href="{% url 'medicalrecords:delete_medicalrecords' medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
-
-      </a>
+        <a href= "{% url 'medicalrecords:list_medicalrecords' medicalrecord.patient.user.username %}" class=" h-blue list-group-item">
+          <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecord.patient }}</h4>
+          <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
+          <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
+          <a href="{% url 'medicalrecords:update_medicalrecords' medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+          <a href="{% url 'medicalrecords:delete_medicalrecords' medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+        </a>
     {% empty %}
         <h4>{% trans 'There are no Medical Records.'%}</h4>
     {% endfor %}
