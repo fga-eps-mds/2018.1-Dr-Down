@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 17:19+0000\n"
+"POT-Creation-Date: 2018-04-24 21:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgid "The departament where this user works."
 msgstr "O departamento no qual o usuário trabalha"
 
 #: drdown/users/models/model_employee.py:74
-#: drdown/users/models/model_health_team.py:197
+#: drdown/users/models/model_health_team.py:198
 #: drdown/users/models/model_patient.py:110
 #: drdown/users/models/model_responsible.py:35
 msgid "Don't change users"
@@ -81,82 +81,84 @@ msgstr "Acrônimo do Conselho"
 msgid "The Regional Council."
 msgstr "Conselho Regional"
 
-#: drdown/users/models/model_health_team.py:56
-#| msgid ""
-#| "Use enter a valid register number. \n"
-#| "Enter 7 digits"
+#: drdown/users/models/model_health_team.py:54
+msgid "Register Number"
+msgstr "Número de Registro"
+
+#: drdown/users/models/model_health_team.py:57
 msgid "Enter a valid register number."
 msgstr "Insira um número de registro válido."
 
-#: drdown/users/models/model_health_team.py:117
+#: drdown/users/models/model_health_team.py:118
 msgid "State"
 msgstr "Estado"
 
-#: drdown/users/models/model_health_team.py:119
+#: drdown/users/models/model_health_team.py:120
 msgid "The registration state of member of health team."
 msgstr "O estado de registro do membro da equipe médica."
 
-#: drdown/users/models/model_health_team.py:123
-#: drdown/users/models/model_health_team.py:134
+#: drdown/users/models/model_health_team.py:124
+#: drdown/users/models/model_health_team.py:135
 msgid "Speech Therapy"
 msgstr "Fonoaudiologia"
 
-#: drdown/users/models/model_health_team.py:124
-#: drdown/users/models/model_health_team.py:135
+#: drdown/users/models/model_health_team.py:125
+#: drdown/users/models/model_health_team.py:136
 msgid "Psychology"
 msgstr "Psicologia"
 
-#: drdown/users/models/model_health_team.py:125
-#: drdown/users/models/model_health_team.py:136
+#: drdown/users/models/model_health_team.py:126
+#: drdown/users/models/model_health_team.py:137
 msgid "Physiotherapy"
 msgstr "Fisioterapia"
 
-#: drdown/users/models/model_health_team.py:126
-#: drdown/users/models/model_health_team.py:137
+#: drdown/users/models/model_health_team.py:127
+#: drdown/users/models/model_health_team.py:138
 msgid "Occupational Therapy"
 msgstr "Terapia Ocupacional"
 
-#: drdown/users/models/model_health_team.py:127
-#: drdown/users/models/model_health_team.py:138
+#: drdown/users/models/model_health_team.py:128
+#: drdown/users/models/model_health_team.py:139
 msgid "Doctor"
 msgstr "Médico"
 
-#: drdown/users/models/model_health_team.py:128
-#: drdown/users/models/model_health_team.py:139
+#: drdown/users/models/model_health_team.py:129
+#: drdown/users/models/model_health_team.py:140
 msgid "Cardiology"
 msgstr "Cardiologia"
 
-#: drdown/users/models/model_health_team.py:129
-#: drdown/users/models/model_health_team.py:140
+#: drdown/users/models/model_health_team.py:130
+#: drdown/users/models/model_health_team.py:141
 msgid "Neurology"
 msgstr "Neurologia"
 
-#: drdown/users/models/model_health_team.py:130
-#: drdown/users/models/model_health_team.py:141
+#: drdown/users/models/model_health_team.py:131
+#: drdown/users/models/model_health_team.py:142
 msgid "Pediatrics"
 msgstr "Pediatria"
 
-#: drdown/users/models/model_health_team.py:131
-#: drdown/users/models/model_health_team.py:142
-#| msgid "Nursery"
+#: drdown/users/models/model_health_team.py:132
+#: drdown/users/models/model_health_team.py:143
 msgid "Nursing"
 msgstr "Enfermagem"
 
-#: drdown/users/models/model_health_team.py:146
+#: drdown/users/models/model_health_team.py:147
 msgid "Speciality"
 msgstr "Especialidade"
 
-#: drdown/users/models/model_health_team.py:148
+#: drdown/users/models/model_health_team.py:149
 msgid "The speciality that this member of health team works."
 msgstr "A especialidade do membro da equipe médica."
 
-#: drdown/users/models/model_health_team.py:208
+#: drdown/users/models/model_health_team.py:209
 #, python-format
-msgid "A %(speciality)s cannot have a %(register)s"
-msgstr "%(speciality)s não pode ter %(register)s"
+msgid ""
+"The %(register)s doesn't inscribe professionalswith %(speciality)s "
+"graduation, please correct"
+msgstr "O %(register)s não registra profissionais com formação em %(speciality)s, favor corrigir"
 
-#: drdown/users/models/model_health_team.py:250
-#: drdown/users/models/model_health_team.py:251
+#: drdown/users/models/model_health_team.py:252
+#: drdown/users/models/model_health_team.py:253
 #: drdown/users/templates/users/user_detail.html:95
 msgid "Health Team"
 msgstr "Equipe Médica"
@@ -273,7 +275,6 @@ msgid "Patient"
 msgstr "Paciente"
 
 #: drdown/users/models/model_patient.py:131
-#| msgid "Patient"
 msgid "Patients"
 msgstr "Pacientes"
 
@@ -282,7 +283,6 @@ msgid "Please, use enter a valid CPF inthe following format: XXX.XXX.XXX-XX"
 msgstr "Por favor, insira um número de CPF no seguinte formato: XXX.XXX.XXX-XX"
 
 #: drdown/users/models/model_responsible.py:59
-#| msgid "Responsible"
 msgid "Responsibles"
 msgstr "Responsáveis"
 
@@ -309,6 +309,16 @@ msgstr "Nome do usuário"
 #: drdown/users/templates/users/user_form.html:57
 msgid "Gender"
 msgstr "Gênero"
+
+#: drdown/users/models/model_user.py:34
+#: drdown/users/templates/users/user_form.html:63
+msgid "Male"
+msgstr "Masculino"
+
+#: drdown/users/models/model_user.py:35
+#: drdown/users/templates/users/user_form.html:65
+msgid "Female"
+msgstr "Feminino"
 
 #: drdown/users/models/model_user.py:43
 #: drdown/users/templates/users/user_form.html:73
@@ -444,14 +454,6 @@ msgstr "Confirmar dados"
 msgid "My Medical Records"
 msgstr "Minhas Consultas"
 
-#: drdown/users/templates/users/user_form.html:63
-msgid "Male"
-msgstr "Masculino"
-
-#: drdown/users/templates/users/user_form.html:65
-msgid "Female"
-msgstr "Feminino"
-
 #: drdown/users/templates/users/user_form.html:93
 msgid "Photo of user"
 msgstr "Foto do usuário"
@@ -473,14 +475,13 @@ msgid "Wrong CPF format"
 msgstr "CPF inválido"
 
 #: drdown/users/utils/validators.py:32
-#| msgid "This CPF is not permited"
 msgid "This CPF is not permitted"
 msgstr "Esse CPF não é permitido"
 
 #: drdown/users/utils/validators.py:71
 #, fuzzy, python-format
 #| msgid "%(value)s is a invalid CPF, the verification digit is wrong"
-msgid "%(value) is a invalid CPF, the verification digit is wrong"
+msgid "%(value)s is a invalid CPF, the verification digit is wrong"
 msgstr "%(value) é um CPF inválido, o dígito de verificação está incorreto"
 
 #: drdown/users/utils/validators.py:85
@@ -489,7 +490,6 @@ msgstr "SES inválido"
 
 #: drdown/users/utils/validators.py:98 drdown/users/utils/validators.py:110
 #: drdown/users/utils/validators.py:138 drdown/users/utils/validators.py:181
-#| msgid "This SES is not permited"
 msgid "This SES is not permitted"
 msgstr "Esse SES não é permitido"
 
@@ -509,14 +509,14 @@ msgstr "Telefone inválido"
 msgid "Wrong CRM format"
 msgstr "CRM inválido"
 
+#~ msgid "A %(speciality)s cannot have a %(register)s"
+#~ msgstr "%(speciality)s não pode ter %(register)s"
+
 #~ msgid "COFFITO"
 #~ msgstr "COFFITO"
 
 #~ msgid "Council Acronym: "
 #~ msgstr "Acrônim do Conselho"
-
-#~ msgid "Register Number: "
-#~ msgstr "Número de Registro: "
 
 #~ msgid "This SES is not permited"
 #~ msgstr "Esse SES não é permitido"

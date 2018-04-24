@@ -31,8 +31,8 @@ class User(AbstractUser):
     gender = models.CharField(
         _('Gender'),
         choices=(
-            (_("Male"), _("Male")),
-            (_("Male"), _("Female")),
+            (("Male"), _("Male")),
+            (("Female"), _("Female")),
         ),
         blank=False,
         max_length=6,
