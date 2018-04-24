@@ -11,4 +11,10 @@ urlpatterns = [
         view=view_medical_record.MedicalRecordsListView.as_view(),
         name='list_medicalrecords'
     ),
+
+    url(
+        regex=r'^new/$',
+        view=view_medical_record.MedicalRecordsCreateView.as_view(),
+        name='create_medicalrecords'
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
