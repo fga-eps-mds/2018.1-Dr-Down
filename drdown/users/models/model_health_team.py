@@ -166,7 +166,7 @@ class HealthTeam(models.Model):
             HealthTeam.PSYCHOLOGY,
         ]
 
-        coffito = [
+        crefito = [
             HealthTeam.OCCUPATIONAL_THERAPY,
             HealthTeam.PHYSIOTHERAPY,
         ]
@@ -182,7 +182,7 @@ class HealthTeam(models.Model):
         return{
             HealthTeam.CRM: crm,
             HealthTeam.CRP: crp,
-            HealthTeam.COFFITO: coffito,
+            HealthTeam.CREFITO: crefito,
             HealthTeam.CREFONO: crefono,
             HealthTeam.COREN: coren,
         }[self.council_acronym]
