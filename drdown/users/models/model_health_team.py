@@ -244,6 +244,7 @@ class HealthTeam(models.Model):
     def delete(self, *args, **kwargs):
         self.user.has_specialization = False
         self.user.save()
+        User.remove_staff(self.user)
         super().delete(*args, **kwargs)
 
     class Meta:
