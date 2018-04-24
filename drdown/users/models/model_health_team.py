@@ -31,14 +31,14 @@ class HealthTeam(models.Model):
 
     CRM = ("CRM")
     CRP = ("CRP")
-    COFFITO = ("COFFITO")
+    CREFITO = ("CREFITO")
     COREN = ("COREN")
     CREFONO = ("CREFONO")
 
     ACRONYM_CHOICES = (
         (CRM, 'CRM'),
         (CRP, 'CRP'),
-        (COFFITO, ('COFFITO')),
+        (CREFITO, ('CREFITO')),
         (COREN, ('COREN')),
         (CREFONO, ('CREFONO')),
     )
@@ -52,10 +52,8 @@ class HealthTeam(models.Model):
 
     register_number = models.CharField(
         validators=[validate_register_number],
-        max_length=7,
-        help_text=_("Use enter a valid register number. \n" +
-                    "Enter 7 digits"
-                    )
+        max_length=9,
+        help_text=_("Use enter a valid register number.")
 
     )
 
