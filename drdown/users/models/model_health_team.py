@@ -53,7 +53,7 @@ class HealthTeam(models.Model):
     register_number = models.CharField(
         validators=[validate_register_number],
         max_length=9,
-        help_text=_("Use enter a valid register number.")
+        help_text=_("Enter a valid register number.")
 
     )
 
