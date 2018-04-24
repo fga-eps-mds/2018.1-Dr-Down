@@ -51,6 +51,7 @@ class HealthTeam(models.Model):
     )
 
     register_number = models.CharField(
+        _('Register Number'),
         validators=[validate_register_number],
         max_length=9,
         help_text=_("Enter a valid register number.")
@@ -243,7 +244,6 @@ class HealthTeam(models.Model):
     def delete(self, *args, **kwargs):
         self.user.has_specialization = False
         self.user.save()
-        User.remove_staff(self.user)
         super().delete(*args, **kwargs)
 
     class Meta:
