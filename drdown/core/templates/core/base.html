@@ -69,8 +69,8 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu">
-                {% if user.health_team %}
-                <a class="dropdown-item" href="#">{% trans "My Patients" %}</a>
+                {% if user.healthteam %}
+                <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' %}x  ">{% trans "My Patients" %}</a>
                 <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Search" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
