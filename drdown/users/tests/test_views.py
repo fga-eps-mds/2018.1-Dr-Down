@@ -1,15 +1,17 @@
 from django.test import RequestFactory
 from django.urls import reverse_lazy
 from django.test.client import Client
-
+from django.urls import reverse
 from test_plus.test import TestCase
-
 from ..models import User
-
 from ..views import (
     UserRedirectView,
     UserUpdateView
 )
+from django.conf import settings
+from ..adapters import AccountAdapter
+from ..adapters import SocialAccountAdapter
+
 
 
 class BaseUserTestCase(TestCase):
@@ -23,6 +25,45 @@ class BaseUserTestCase(TestCase):
         """
         self.user = self.make_user()
         self.factory = RequestFactory()
+
+
+class AccountsTestCase(BaseUserTestCase):
+
+    def test_login(self):
+        """
+        Test login
+        """
+        User.objects.create_user(username='test', password='12345')
+        response = self.client.post('/accounts/login/', {'username': 'test', 'password': '12345'})
+        self.assertEquals(response.status_code, 200)
+
+    # def test_login_redirect(self):
+    #     User.objects.create_user(username='test', password='12345')
+    #     response = self.client.post(
+    #         reverse('account_login'),
+    #         {
+    #             'username': 'test',
+    #             'password': '12345'
+    #         }
+    #     )
+    #
+    #     self.assertRedirects(
+    #         response,
+    #         reverse(
+    #             viewname='users:detail',
+    #             kwargs={'username': self.request.user.username}
+    #         )
+    #     )
+
+    def test_account_is_open_for_sign_up(self):
+        """
+        Test if sign up is open
+        """
+        self.assertEqual(
+            True,
+            AccountAdapter.is_open_for_signup(AccountAdapter, self.request)
+        )
+
 
 
 class TestUserRedirectView(BaseUserTestCase):
@@ -115,3 +156,42 @@ class TestUserDeleteView(BaseUserTestCase):
         self.assertRedirects(response, home_url)
 
         self.assertEquals(User.objects.count(), 0)
+
+
+class TestUserDetailView(BaseUserTestCase):
+
+    def setUp(self):
+        """
+        This method will run before any test.
+        """
+        self.user = self.make_user()
+        self.second_user = self.make_user('testuser2')
+
+    def test_logged_user_redirect_detail_view(self):
+        """
+        Test if view is redirected if user is not logged in user
+        """
+        self.client.force_login(user=self.user)
+
+        login_url = reverse(
+            viewname='users:detail',
+            kwargs={'username': self.second_user.username}
+        )
+
+        response = self.client.get(path=login_url, follow=True)
+
+        self.assertEquals(response.status_code, 200)
+
+    def test_not_logged_user_redirect_detail_view(self):
+        """
+        Test if view is redirected if user is not logged in
+        """
+
+        login_url = reverse(
+            viewname='users:detail',
+            kwargs={'username': self.second_user.username}
+        )
+
+        response = self.client.get(path=login_url, follow=True)
+
+        self.assertEquals(response.status_code, 200)

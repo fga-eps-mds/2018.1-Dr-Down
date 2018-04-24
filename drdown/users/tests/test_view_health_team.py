@@ -42,14 +42,3 @@ class TestViewHealthTeam (TestCase):
 
         self.assertContains(response, text=self.user.healthteam.cpf)
 
-    def test_health_team_get_context_data_error(self):
-        """
-        Test if the view health team is not passing data in case of error
-        """
-
-        self.health_team.save()
-        self.client.force_login(user=self.user)
-
-        response = self.client.get(path='/users/testuser1/', follow=True)
-
-        self.assertEquals(response.status_code, 404)
