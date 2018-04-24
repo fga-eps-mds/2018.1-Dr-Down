@@ -17,4 +17,16 @@ urlpatterns = [
         view=view_medical_record.MedicalRecordsCreateView.as_view(),
         name='create_medicalrecords'
     ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    url(
+        regex=r'^(?P<pk>\d+)/delete/$',
+        view=view_medical_record.MedicalRecordsDeleteView.as_view(),
+        name='delete_medicalrecords'
+    ),
+
+    url(
+        regex=r'^(?P<pk>\d+)/update/$',
+        view=view_medical_record.MedicalRecordsUpdateView.as_view(),
+        name='update_medicalrecords'
+    ),
+]
