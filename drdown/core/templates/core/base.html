@@ -63,7 +63,7 @@
             {% if user.is_authenticated %}
             <div class="btn-group">
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{user.username}}</strong></button></a>
+                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{request.user.username}}</strong></button></a>
               </li>
               <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>

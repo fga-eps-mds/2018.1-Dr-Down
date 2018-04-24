@@ -1,49 +1,52 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import user_passes_test
 from django.utils.decorators import method_decorator
 from django.urls import reverse
 from django.views.generic import (DetailView, ListView, RedirectView,
                                   UpdateView, DeleteView)
 from django.urls import reverse_lazy
-
 from ..models import User
 
 
 class UserDeleteView (LoginRequiredMixin, DeleteView):
-
-    """
-    Delete the user account
-    """
-
     model = User
-
     # Redirect to home page
     success_url = reverse_lazy('core:home')
 
     def get_object(self):
-        """
-        Search a ID or slug from url and return a object from model.
-        In this case return the current user logged from model.
-        """
-
         return self.request.user
 
     def get_success_url(self):
-
         # Redirect to success_url
         return super(UserDeleteView, self).get_success_url()
 
 
-class UserDetailView(LoginRequiredMixin, DetailView):
+class UserDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
     model = User
     # These next two lines tell the view to index lookups by username
     slug_field = 'username'
     slug_url_kwarg = 'username'
 
+    def get_login_url(self):
+        if self.request.user.is_authenticated:
+            # redirect when user tries to access other user's detail view
+            login_url = reverse(
+                viewname='users:detail',
+                kwargs={'username': self.request.user.username}
+            )
+            return login_url
+        else:
+            login_url = reverse('account_login')
+            return login_url
+
+    def test_func(self):
+        # checks if user is trying to access his own profile
+        return self.request.user.username == self.kwargs.get('username')
+
     def get_context_data(self, **kwargs):
         user = self.request.user
         context = super(UserDetailView, self).get_context_data(**kwargs)
-
         self.prepare_context_data(user, context)
 
         return context
@@ -97,13 +100,11 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-
     fields = ['name', 'gender', 'telephone', 'birthday', 'photo']
-
     # we already imported User in the view code above, remember?
     model = User
-
     # send the user back to their own page after a successful update
+
     def get_success_url(self):
         return reverse('users:detail',
                        kwargs={'username': self.request.user.username})
