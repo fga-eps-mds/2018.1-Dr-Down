@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 00:45+0000\n"
+"POT-Creation-Date: 2018-04-24 01:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgid "The departament where this user works."
 msgstr "O departamento no qual o usuário trabalha"
 
 #: drdown/users/models/model_employee.py:74
-#: drdown/users/models/model_health_team.py:199
+#: drdown/users/models/model_health_team.py:197
 #: drdown/users/models/model_patient.py:110
 #: drdown/users/models/model_responsible.py:35
 msgid "Don't change users"
@@ -82,81 +82,83 @@ msgid "The Regional Council."
 msgstr "Conselho Regional"
 
 #: drdown/users/models/model_health_team.py:56
-msgid ""
-"Use enter a valid register number. \n"
-"Enter 7 digits"
-msgstr "Insira um número de registro válido de até 7 dígitos."
+#, fuzzy
+#| msgid ""
+#| "Use enter a valid register number. \n"
+#| "Enter 7 digits"
+msgid "Use enter a valid register number."
+msgstr "Insira um número de registro válido."
 
-#: drdown/users/models/model_health_team.py:119
+#: drdown/users/models/model_health_team.py:117
 msgid "State"
 msgstr "Estado"
 
-#: drdown/users/models/model_health_team.py:121
+#: drdown/users/models/model_health_team.py:119
 msgid "The registration state of member of health team."
 msgstr "O estado de registro do membro da equipe médica."
 
-#: drdown/users/models/model_health_team.py:125
-#: drdown/users/models/model_health_team.py:136
+#: drdown/users/models/model_health_team.py:123
+#: drdown/users/models/model_health_team.py:134
 msgid "Speech Therapy"
 msgstr "Terapia de Fala"
 
-#: drdown/users/models/model_health_team.py:126
-#: drdown/users/models/model_health_team.py:137
+#: drdown/users/models/model_health_team.py:124
+#: drdown/users/models/model_health_team.py:135
 msgid "Psychology"
 msgstr "Psicologia"
 
-#: drdown/users/models/model_health_team.py:127
-#: drdown/users/models/model_health_team.py:138
+#: drdown/users/models/model_health_team.py:125
+#: drdown/users/models/model_health_team.py:136
 msgid "Physiotherapy"
 msgstr "Fisioterapia"
 
-#: drdown/users/models/model_health_team.py:128
-#: drdown/users/models/model_health_team.py:139
+#: drdown/users/models/model_health_team.py:126
+#: drdown/users/models/model_health_team.py:137
 msgid "Occupational Therapy"
 msgstr "Terapia Ocupacional"
 
-#: drdown/users/models/model_health_team.py:129
-#: drdown/users/models/model_health_team.py:140
+#: drdown/users/models/model_health_team.py:127
+#: drdown/users/models/model_health_team.py:138
 msgid "Doctor"
 msgstr "Médico"
 
-#: drdown/users/models/model_health_team.py:130
-#: drdown/users/models/model_health_team.py:141
+#: drdown/users/models/model_health_team.py:128
+#: drdown/users/models/model_health_team.py:139
 msgid "Cardiology"
 msgstr "Cardiologia"
 
-#: drdown/users/models/model_health_team.py:131
-#: drdown/users/models/model_health_team.py:142
+#: drdown/users/models/model_health_team.py:129
+#: drdown/users/models/model_health_team.py:140
 msgid "Neurology"
 msgstr "Neurologia"
 
-#: drdown/users/models/model_health_team.py:132
-#: drdown/users/models/model_health_team.py:143
+#: drdown/users/models/model_health_team.py:130
+#: drdown/users/models/model_health_team.py:141
 msgid "Pediatrics"
 msgstr "Pediatria"
 
-#: drdown/users/models/model_health_team.py:133
-#: drdown/users/models/model_health_team.py:144
+#: drdown/users/models/model_health_team.py:131
+#: drdown/users/models/model_health_team.py:142
 #, fuzzy
 #| msgid "Nursery"
 msgid "Nursing"
 msgstr "Enfermagem"
 
-#: drdown/users/models/model_health_team.py:148
+#: drdown/users/models/model_health_team.py:146
 msgid "Speciality"
 msgstr "Especialidade"
 
-#: drdown/users/models/model_health_team.py:150
+#: drdown/users/models/model_health_team.py:148
 msgid "The speciality that this member of health team works."
 msgstr "A especialidade do membro da equipe médica."
 
-#: drdown/users/models/model_health_team.py:210
+#: drdown/users/models/model_health_team.py:208
 #, python-format
 msgid "A %(speciality)s cannot have a %(register)s"
 msgstr "%(speciality)s não pode ter %(register)s"
 
-#: drdown/users/models/model_health_team.py:252
-#: drdown/users/models/model_health_team.py:253
+#: drdown/users/models/model_health_team.py:250
+#: drdown/users/models/model_health_team.py:251
 #: drdown/users/templates/users/user_detail.html:95
 msgid "Health Team"
 msgstr "Equipe Médica"
