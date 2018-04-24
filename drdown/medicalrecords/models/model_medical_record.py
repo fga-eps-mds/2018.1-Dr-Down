@@ -1,4 +1,5 @@
 from django.db import models
+from drdown.users.models import User
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
@@ -24,6 +25,12 @@ class MedicalRecord(models.Model):
         max_length=4000
     )
 
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name=_("Author")
+    )
+
     def clean(self, *args, **kwargs):
         if self.day.replace(tzinfo=None)> datetime.now().replace(tzinfo=None):
             raise ValidationError(
@@ -34,3 +41,7 @@ class MedicalRecord(models.Model):
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _("Medical Record")
+        verbose_name_plural = _("Medical Records")
