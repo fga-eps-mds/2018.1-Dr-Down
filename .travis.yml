@@ -26,8 +26,8 @@ before_install:
   - docker-compose --version
   - sudo apt-get install texlive-latex-base texlive-fonts-recommended -y
   - sudo apt-get install texlive-fonts-extra texlive-latex-extra -y
-  - python3 -m pip install --user pip -U
-  - python3 -m pip install --user mkdocs
+  - python3 -m pip install pip -U
+  - python3 -m pip install mkdocs
 before_script:
   - DEPLOY_DOCS="$(if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then echo -n 'true' ; else echo -n 'false' ; fi)"
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
