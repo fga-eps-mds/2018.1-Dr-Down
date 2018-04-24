@@ -19,6 +19,8 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-ce
   - docker-compose --version
+  - sudo apt-get install texlive-latex-base texlive-fonts-recommended -y
+  - sudo apt-get install texlive-fonts-extra texlive-latex-extra -y
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -42,3 +44,8 @@ deploy:
     script: bash production-deploy.sh
     on:
       branch: master
+after_sucess:
+  #- python3 -m pip install pip -U
+  #- python3 -m pip install mkdocs
+  #- make doc
+  - make -C docs/ latexpdf
