@@ -31,12 +31,16 @@ class HealthTeam(models.Model):
 
     CRM = ("CRM")
     CRP = ("CRP")
-    COFFITO = ("COFFITO")
+    CREFITO = ("CREFITO")
+    COREN = ("COREN")
+    CREFONO = ("CREFONO")
 
     ACRONYM_CHOICES = (
         (CRM, 'CRM'),
         (CRP, 'CRP'),
-        (COFFITO, _('COFFITO')),
+        (CREFITO, ('CREFITO')),
+        (COREN, ('COREN')),
+        (CREFONO, ('CREFONO')),
     )
 
     council_acronym = models.CharField(
@@ -48,10 +52,8 @@ class HealthTeam(models.Model):
 
     register_number = models.CharField(
         validators=[validate_register_number],
-        max_length=7,
-        help_text=_("Use enter a valid register number. \n" +
-                    "Enter 7 digits"
-                    )
+        max_length=9,
+        help_text=_("Enter a valid register number.")
 
     )
 
@@ -119,23 +121,25 @@ class HealthTeam(models.Model):
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
+    PSYCHOLOGY = _("Psychology")
+    PHYSIOTHERAPY = _("Physiotherapy")
     OCCUPATIONAL_THERAPY = _("Occupational Therapy")
+    DOCTOR = _("Doctor")
     CARDIOLOGY = _("Cardiology")
     NEUROLOGY = _("Neurology")
     PEDIATRICS = _("Pediatrics")
-    PSYCHOLOGY = _("Psychology")
-    PHYSIOTHERAPY = _("Physiotherapy")
-    DOCTOR = _("Doctor")
+    NURSING = _("Nursing")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
+        (PSYCHOLOGY, _('Psychology')),
+        (PHYSIOTHERAPY, _('Physiotherapy')),
         (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
+        (DOCTOR, _('Doctor')),
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
-        (PSYCHOLOGY, _('Psychology')),
-        (PHYSIOTHERAPY, _('Physiotherapy')),
-        (DOCTOR, _('Doctor')),
+        (NURSING, _('Nursing')),
     )
 
     speciality = models.CharField(
@@ -149,6 +153,40 @@ class HealthTeam(models.Model):
     # related user
     GROUP_NAME = "Health_Team"
 
+    def get_speciality_relation_list(self):
+
+        crm = [
+            HealthTeam.DOCTOR,
+            HealthTeam.CARDIOLOGY,
+            HealthTeam.NEUROLOGY,
+            HealthTeam.PEDIATRICS,
+        ]
+
+        crp = [
+            HealthTeam.PSYCHOLOGY,
+        ]
+
+        crefito = [
+            HealthTeam.OCCUPATIONAL_THERAPY,
+            HealthTeam.PHYSIOTHERAPY,
+        ]
+
+        coren = [
+            HealthTeam.NURSING,
+        ]
+
+        crefono = [
+            HealthTeam.SPEECH_THERAPHY,
+        ]
+
+        return{
+            HealthTeam.CRM: crm,
+            HealthTeam.CRP: crp,
+            HealthTeam.CREFITO: crefito,
+            HealthTeam.CREFONO: crefono,
+            HealthTeam.COREN: coren,
+        }[self.council_acronym]
+
     def clean(self, *args, **kwargs):
 
         try:
@@ -161,6 +199,18 @@ class HealthTeam(models.Model):
                 pass
         except HealthTeam.DoesNotExist:
             pass
+
+        relational_list = self.get_speciality_relation_list()
+
+        if self.speciality not in relational_list:
+
+            raise ValidationError(
+                _('A %(speciality)s cannot have a %(register)s'),
+                params={
+                    'speciality': self.get_speciality_display(),
+                    'register': self.get_council_acronym_display()
+                }
+            )
 
         self.user.clean()
 

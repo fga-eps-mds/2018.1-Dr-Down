@@ -53,3 +53,7 @@ class Responsible(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Responsible')
+        verbose_name_plural = _('Responsibles')

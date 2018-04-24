@@ -125,3 +125,7 @@ class Patient(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Patient')
+        verbose_name_plural = _('Patients')
