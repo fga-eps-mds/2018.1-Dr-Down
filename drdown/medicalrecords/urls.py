@@ -20,19 +20,19 @@ urlpatterns = [
         name='list_users_medicalrecords'),
 
     url(
-        regex=r'^new/$',
+        regex=r'^(?P<username>[\w.@+-]+)/new',
         view=view_medical_record.MedicalRecordsCreateView.as_view(),
         name='create_medicalrecords'
     ),
 
     url(
-        regex=r'^(?P<pk>\d+)/delete/$',
+        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/delete/$',
         view=view_medical_record.MedicalRecordsDeleteView.as_view(),
         name='delete_medicalrecords'
     ),
 
     url(
-        regex=r'^(?P<pk>\d+)/update/$',
+        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/update/$',
         view=view_medical_record.MedicalRecordsUpdateView.as_view(),
         name='update_medicalrecords'
     ),
