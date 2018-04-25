@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
 from drdown.medicalrecords.views import view_medical_record
@@ -14,9 +15,10 @@ urlpatterns = [
     ),
     url(
         regex=r'^$',
-        view=view_medical_record.MedicalRecordsUserListView.as_view(template_name='medicalrecords/medicalrecord_list_user.html'),
-        name='list_medicalrecords_user'
-    ),
+        view=view_user.UserListView.as_view(
+            template_name='medicalrecords/medicalrecord_patient_list.html'),
+        name='list_users_medicalrecords'),
+
     url(
         regex=r'^new/$',
         view=view_medical_record.MedicalRecordsCreateView.as_view(),
