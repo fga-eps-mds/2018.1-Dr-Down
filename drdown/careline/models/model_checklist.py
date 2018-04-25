@@ -10,9 +10,6 @@ from drdown.users.models import Patient
 
 class Checklist(models.Model):
 
-    # procedure identifiers for dictionary
-    PROCEDURE_NUTRITION = 'nut'
-
     CARE_LINE = [
         {
             Procedure.PROCEDURE_DESCRIPTION:
@@ -239,7 +236,6 @@ class Checklist(models.Model):
         blank=False,
         editable=False
     )
-
 
 @receiver(post_save, sender=Checklist)
 def create_procedures(sender, instance, **kwargs):
