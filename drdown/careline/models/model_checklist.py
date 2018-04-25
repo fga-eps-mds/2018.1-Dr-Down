@@ -237,6 +237,7 @@ class Checklist(models.Model):
         editable=False
     )
 
+
 @receiver(post_save, sender=Checklist)
 def create_procedures(sender, instance, **kwargs):
 
