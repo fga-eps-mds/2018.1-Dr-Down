@@ -123,7 +123,6 @@ class TestUserDetailView(BaseUserTestCase):
         """
         self.user = self.make_user()
         self.user2 = self.user = User.objects.create_user(username='mariam', password='12345', name='Maria')
-        self.user3 = self.user = User.objects.create_user(username='joao', password='12345')
 
     def test_logged_user_redirect_detail_view(self):
         """
@@ -153,16 +152,4 @@ class TestUserDetailView(BaseUserTestCase):
         response = self.client.get(path=login_url, follow=True)
 
         self.assertEquals(response.status_code, 200)
-
-    def test_redirect_login_sucess(self):
-        self.client.force_login(user=self.user2)
-        user_redirect = self.client.post('/accounts/login/')
-        detail_view = reverse('users:detail', kwargs={'username': self.user2.username})
-        self.assertRedirects(user_redirect, detail_view)
-
-    def test_redirect_not_logged_sucess(self):
-        self.client.force_login(user=self.user3)        
-        user_redirect = self.client.post('/accounts/login/')
-        update_view = reverse('users:update')
-        self.assertRedirects(user_redirect, update_view)
 
