@@ -7,19 +7,20 @@ from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 
 class AccountAdapter(DefaultAccountAdapter):
 
-	def is_open_for_signup(self, request):
-		return getattr(settings, 'ACCOUNT_ALLOW_REGISTRATION', True)
+    def is_open_for_signup(self):
+        return getattr(settings, 'ACCOUNT_ALLOW_REGISTRATION', True)
 
-	def get_email_confirmation_redirect_url(self, request):
-		return reverse('users:update')
+    def get_email_confirmation_redirect_url(self):
+        return reverse('users:update')
 
-	def get_login_redirect_url(self, request):
-		if request.user.name:
-			return reverse('users:detail', kwargs={'username': request.user.username})
-		else:
-			return reverse('users:update')
+    def get_login_redirect_url(self, request):
+        if request.user.name:
+            return reverse('users:detail', kwargs={'username': request.user.username})
+        else:
+            return reverse('users:update')
+
 
 class SocialAccountAdapter(DefaultSocialAccountAdapter):
 
-    def is_open_for_signup(self, request, sociallogin):
+    def is_open_for_signup(self):
         return getattr(settings, 'ACCOUNT_ALLOW_REGISTRATION', True)
