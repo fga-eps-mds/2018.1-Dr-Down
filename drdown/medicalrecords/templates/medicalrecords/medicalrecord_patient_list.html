@@ -6,12 +6,6 @@
 <div class="container">
   <h2 class="text-tertiary">{% trans "Medical Records" %}</h2>
 
-  <div class="mb-4" style="float:right;">
-    {% if user.is_authenticated %}
-      <a href="{% url 'medicalrecords:create_medicalrecords' %}" class="btn btn-secondary">{% trans "New" %}</a>
-    {% endif %}
-  </div>
-
   <div class="list-group">
     {% for users in user_list %}
     {% if users.patient %}
