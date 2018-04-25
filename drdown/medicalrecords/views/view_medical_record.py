@@ -17,7 +17,15 @@ class MedicalRecordsCreateView(CreateView):
     model = MedicalRecord
     template_name = 'medicalrecords/medicalrecord_form.html'
     fields = ['patient', 'message']
-    success_url = reverse_lazy('medicalrecords:list_medicalrecords')
+
+    def get_success_url(self, **kwargs):
+        success_create_url = reverse_lazy(
+            viewname='medicalrecords:list_medicalrecords',
+            kwargs={
+                'username': self.kwargs.get('username'),
+            }
+        )
+        return success_create_url
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -27,11 +35,27 @@ class MedicalRecordsCreateView(CreateView):
 
 class MedicalRecordsDeleteView(DeleteView):
     model = MedicalRecord
-    success_url = reverse_lazy('medicalrecords:list_medicalrecords')
+
+    def get_success_url(self, **kwargs):
+        success_create_url = reverse_lazy(
+            viewname='medicalrecords:list_medicalrecords',
+            kwargs={
+                'username': self.kwargs.get('username'),
+            }
+        )
+        return success_create_url
 
 
 class MedicalRecordsUpdateView(UpdateView):
     template_name = 'medicalrecords/medicalrecord_form.html'
     fields = ['patient', 'message']
     model = MedicalRecord
-    success_url = reverse_lazy('medicalrecords:list_medicalrecords')
+
+    def get_success_url(self, **kwargs):
+        success_create_url = reverse_lazy(
+            viewname='medicalrecords:list_medicalrecords',
+            kwargs={
+                'username': self.kwargs.get('username'),
+            }
+        )
+        return success_create_url
