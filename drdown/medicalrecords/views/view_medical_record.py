@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from ..models.model_medical_record import MedicalRecord
+from drdown.users.models.model_patient import Patient
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import CreateView
@@ -15,6 +16,7 @@ from ..forms.medicalrecords_forms import MedicalRecordSearchForm
 class MedicalRecordsFilter(BaseFilter):
     search_fields = {
         'search_text': ['message'],
+        'search_date': ['day'],
     }
 
 
@@ -29,6 +31,11 @@ class MedicalRecordsSearchList(SearchListView):
 class MedicalRecordsListView(ListView):
     model = MedicalRecord
 
+    def get_context_data(self, **kwargs):
+        context = super(MedicalRecordsListView, self).get_context_data(**kwargs)
+        context['user'] = Patient.objects.get(Patient.user)
+        return context
+
 
 class MedicalRecordsCreateView(CreateView):
     model = MedicalRecord
@@ -39,7 +46,7 @@ class MedicalRecordsCreateView(CreateView):
         success_create_url = reverse_lazy(
             viewname='medicalrecords:list_medicalrecords',
             kwargs={
-                'username': self.kwargs.get('username'),
+                'username': self.kwargs.get('username')
             }
         )
         return success_create_url
@@ -65,7 +72,7 @@ class MedicalRecordsDeleteView(DeleteView):
 
 class MedicalRecordsUpdateView(UpdateView):
     template_name = 'medicalrecords/medicalrecord_form.html'
-    fields = ['patient', 'message']
+    fields = ['message']
     model = MedicalRecord
 
     def get_success_url(self, **kwargs):
