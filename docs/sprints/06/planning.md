@@ -38,7 +38,7 @@ __Membros presentes:__ Todos
 
 ## 3. Pareamento
 
-Esta sprint foi a primeira na qual os membros do Time de Desenvolvimento pôde escolher suas duplas. Essa foi uma oportunidade de ver como eles se auto-gerenciariam neste quesito. As duplas formadas acabaram sendo as da sprint passada:
+Esta sprint foi a primeira na qual os membros do MDS pôde escolher suas duplas. Essa foi uma oportunidade de ver como eles se auto-gerenciariam neste quesito. As duplas formadas acabaram sendo as da sprint passada:
 
 - Daniel e Gabriela
 
@@ -50,13 +50,13 @@ Esta sprint foi a primeira na qual os membros do Time de Desenvolvimento pôde e
 
 O planejamento da Sprint 6 foi usar ela para corrigir bugs e melhorar coisas que já foram feitas, como documentos.
 
-Por isso, o Time de Desenvolvimento irá usar esta sprint para histórias técnicas de correção de bugs, documentos e arrumar coisas que foram levantadas durante a última reunião da equipe, quando a aplicação foi aberta na frente de todos para que procurássemos pontos a serem melhorados no que foi feito até então.
+Por isso, o MDS irá usar esta sprint para histórias técnicas de correção de bugs, documentos e arrumar coisas que foram levantadas durante a última reunião da equipe, quando a aplicação foi aberta na frente de todos para que procurássemos pontos a serem melhorados no que foi feito até então.
 
-Já a equipe de gerência irá refatorar diversos documentos a partir do segundo feedback que recebeu. Além disso, será criado um mapa com os requisitos da aplicação.
+Já EPS irá refatorar diversos documentos a partir do segundo feedback que recebeu. Além disso, será criado um mapa com os requisitos da aplicação.
 
 ## 5. Mudanças
 
-Nesta sprint, visando verificar como está a maturidade de MDS para se organizam, tendo em vista a evolução que estes têm demonstrado, e que esta sprint é basicamente para melhorar o que foi feito até então, foi permitido que eles se organizassem com relação às duplas e às histórias. A condição colocada para eles foi que as duplas ficassem com quantidades semelhantes de pontos, na medida do possível. Além disso, eles estão sendo monitorados e orientados, como nas sprints anteriores, pelos membros da equipe de gerência.
+Nesta sprint, visando verificar como está a maturidade de MDS para se organizam, tendo em vista a evolução que estes têm demonstrado, e que esta sprint é basicamente para melhorar o que foi feito até então, foi permitido que eles se organizassem com relação às duplas e às histórias. A condição colocada para eles foi que as duplas ficassem com quantidades semelhantes de pontos, na medida do possível. Além disso, eles estão sendo monitorados e orientados, como nas sprints anteriores, pelos membros de EPS.
 
 ## 6. Backlog da Sprint
 
