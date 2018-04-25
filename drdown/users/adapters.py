@@ -16,8 +16,8 @@ class AccountAdapter(DefaultAccountAdapter):
     def get_login_redirect_url(self, request):
         if request.user.name:
             return reverse(
-                        viewname='users:detail', 
-                        kwargs={'username': request.user.username}
+                viewname='users:detail',
+                kwargs={'username': request.user.username}
             )
         else:
             return reverse('users:update')
