@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "Care Line" %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="text-tertiary">{% trans "Care Line" %}</h2>
+
+  <div class="list-group">
+    {% for patient in patient_list %}
+      <a href= "{% url 'careline:checklist_detail' patient.user.username  %}" class=" h-blue list-group-item">
+        <h4 class="list-group-item-heading text-tertiary h-blue">{{ patient.user.name }}</h4>
+        <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
+      </a>
+    {% empty %}
+        <h4>{% trans 'There are no patients for this user.'%}</h4>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
