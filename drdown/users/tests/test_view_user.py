@@ -122,7 +122,7 @@ class TestUserDetailView(BaseUserTestCase):
         This method will run before any test.
         """
         self.user = self.make_user()
-        self.user2 = self.user = User.objects.create_user(username='mariam', password='12345', name='Maria')
+        self.second_user = self.make_user('testuser2')
 
     def test_logged_user_redirect_detail_view(self):
         """
@@ -132,7 +132,7 @@ class TestUserDetailView(BaseUserTestCase):
 
         login_url = reverse(
             viewname='users:detail',
-            kwargs={'username': self.user2.username}
+            kwargs={'username': self.second_user.username}
         )
 
         response = self.client.get(path=login_url, follow=True)
@@ -146,7 +146,7 @@ class TestUserDetailView(BaseUserTestCase):
 
         login_url = reverse(
             viewname='users:detail',
-            kwargs={'username': self.user2.username}
+            kwargs={'username': self.second_user.username}
         )
 
         response = self.client.get(path=login_url, follow=True)

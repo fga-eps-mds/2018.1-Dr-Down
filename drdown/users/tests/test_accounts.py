@@ -5,6 +5,8 @@ from django.urls import reverse
 from test_plus.test import TestCase
 from ..models import User
 from django.test.client import Client
+from django.utils.timezone import now
+from django.urls import reverse
 from allauth.account.models import (
     EmailAddress,
     EmailConfirmation,
@@ -74,3 +76,33 @@ class AccountsTestCase(TestCase):
         user_redirect = self.client.post('/accounts/login/')
         update_view = reverse('users:update')
         self.assertRedirects(user_redirect, update_view)
+
+
+
+    def test_email_confirmation_redirects(self):
+        user = self.user
+        email = EmailAddress.objects.create(
+            user=user,
+            email='a@b.com',
+            verified=False,
+            primary=True
+        )
+        self.client.force_login(user=user)
+        confirmation = EmailConfirmation.create(email)
+        confirmation.sent = now()
+        confirmation.save()
+        url_from = self.client.post(
+            reverse(
+                viewname='account_confirm_email',
+                args=[confirmation.key]
+            )
+        )
+        url_to = AccountAdapter.get_email_confirmation_redirect_url(
+            AccountAdapter,
+            self.request,
+        )
+        self.assertRedirects(
+            url_from,
+            url_to,
+            fetch_redirect_response=False
+        )
