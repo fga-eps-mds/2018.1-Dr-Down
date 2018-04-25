@@ -70,7 +70,7 @@
               </button>
               <div class="dropdown-menu">
                 {% if user.healthteam %}
-                <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' %}x  ">{% trans "My Patients" %}</a>
+                <a class="dropdown-item" href="{% url 'medicalrecords:list_users_medicalrecords' %}">{% trans "My Patients" %}</a>
                 <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Search" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
