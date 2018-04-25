@@ -32,18 +32,6 @@ class MedicalRecord(models.Model):
         verbose_name=_("Author")
     )
 
-    def clean(self, *args, **kwargs):
-        if self.day is not None:
-            if self.day.replace(tzinfo=None)> datetime.now().replace(tzinfo=None):
-                raise ValidationError(
-                    _("You can not create a medical record "
-                      "with a date in the future !!"))
-
-
-    def save(self, *args, **kwargs):
-        self.clean()
-        super().save(*args, **kwargs)
-
     class Meta:
         verbose_name = _("Medical Record")
         verbose_name_plural = _("Medical Records")
