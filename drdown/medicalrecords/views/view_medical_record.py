@@ -7,6 +7,23 @@ from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from django.utils import timezone
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
+from ..forms.medicalrecords_forms import MedicalRecordSearchForm
+
+
+class MedicalRecordsFilter(BaseFilter):
+    search_fields = {
+        'search_text': ['message'],
+    }
+
+
+class MedicalRecordsSearchList(SearchListView):
+    model = MedicalRecord
+    paginate_by = 30
+    template_name = "medicalrecords/medicalrecord_list.html"
+    form_class = MedicalRecordSearchForm
+    filter_class = MedicalRecordsFilter
 
 
 class MedicalRecordsListView(ListView):

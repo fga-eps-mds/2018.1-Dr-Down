@@ -10,7 +10,7 @@ app_name = 'medicalrecords'
 urlpatterns = [
     url(
         regex=r'^(?P<username>[\w.@+-]+)$',
-        view=view_medical_record.MedicalRecordsListView.as_view(),
+        view=view_medical_record.MedicalRecordsSearchList.as_view(),
         name='list_medicalrecords'
     ),
     url(

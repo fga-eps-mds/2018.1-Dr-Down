@@ -11,6 +11,22 @@
       <a href="{% url 'medicalrecords:create_medicalrecords' %}" class="btn btn-secondary">{% trans "New" %}</a>
     {% endif %}
   </div>
+  <div class="container">
+
+      <h2> list</h2>
+
+      <form class="form-inline" action="" method="GET">
+          {{form}}
+          <button class="btn" type="submit">Search</button>
+          </fieldset>
+      </form>
+
+
+      {% if is_paginated %}
+          {% include "paginator.html" %}
+      {% endif %}
+
+  </div>
 
 <div class="container">
   <div class="list-group">
