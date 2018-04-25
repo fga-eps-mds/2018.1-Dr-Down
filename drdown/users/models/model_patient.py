@@ -1,7 +1,11 @@
+from django.apps import apps
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
+
 from ..utils.validators import validate_ses
 from ..utils.validators import validate_generic_number
 from ..utils.validators import validate_names
@@ -125,3 +129,10 @@ class Patient(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
+
+
+@receiver(post_save, sender=Patient)
+def create_procedures(sender, instance, **kwargs):
+    if not hasattr(instance, 'checklist'):
+        apps.get_model('careline', 'Checklist') \
+            .objects.create(patient=instance)
