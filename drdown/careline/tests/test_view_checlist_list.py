@@ -1,6 +1,7 @@
 from test_plus.test import TestCase
 from django.test.client import Client
 from django.shortcuts import reverse
+from django.utils import  timezone
 
 from drdown.careline.models import Procedure
 from drdown.users.models import Patient, Responsible, Employee
@@ -19,12 +20,19 @@ class TestViewChecklistListView(TestCase):
 
         self.user_responsible = self.make_user(username='resp')
 
+        self.user_responsible.birthday = timezone.datetime(1950, 1, 1)
+
+        self.user_responsible.save()
+        self.user_responsible.refresh_from_db()
+
         Responsible.objects.create(
             user=self.user_responsible,
             cpf="974.220.200-16"
         )
 
         self.user_patient1 = self.make_user(username='pat1')
+
+        self.user_patient1.birthday = timezone.datetime(2000, 1, 1)
 
         Patient.objects.create(
             ses="1234567",
@@ -42,6 +50,8 @@ class TestViewChecklistListView(TestCase):
         self.user_patient1.refresh_from_db()
 
         self.user_patient2 = self.make_user(username='pat2')
+
+        self.user_patient2.birthday = timezone.datetime(2000, 1, 1)
 
         Patient.objects.create(
             ses="1234213",
@@ -84,6 +94,8 @@ class TestViewChecklistListView(TestCase):
         """
 
         user = self.make_user(username='nope')
+        user.birthday = timezone.datetime(1950, 1, 1)
+        user.save()
 
         self.client.force_login(user)
 

@@ -1,9 +1,10 @@
 from test_plus.test import TestCase
 from django.test.client import Client
 from django.shortcuts import reverse
+from django.utils import timezone
 
 from drdown.careline.models import Procedure
-from drdown.users.models import Patient, Responsible, Employee
+from drdown.users.models import Patient, Responsible
 
 from drdown.careline.views import ChecklistDetailView
 
@@ -19,12 +20,18 @@ class TestViewChecklistDetailView(TestCase):
 
         self.user_responsible = self.make_user(username='resp')
 
+        self.user_responsible.birthday = timezone.datetime(1950, 1, 1)
+        self.user_responsible.save()
+
         Responsible.objects.create(
             user=self.user_responsible,
             cpf="974.220.200-16"
         )
 
         self.user_patient1 = self.make_user(username='pat1')
+
+        self.user_patient1.birthday = timezone.datetime(2000, 1, 1)
+        self.user_patient1.save()
 
         Patient.objects.create(
             ses="1234567",
@@ -42,6 +49,9 @@ class TestViewChecklistDetailView(TestCase):
         self.user_patient1.refresh_from_db()
 
         self.user_patient2 = self.make_user(username='pat2')
+
+        self.user_patient2.birthday = timezone.datetime(2000, 1, 1)
+        self.user_patient2.save()
 
         Patient.objects.create(
             ses="1234213",
@@ -80,6 +90,8 @@ class TestViewChecklistDetailView(TestCase):
         """
 
         user = self.make_user(username='hacker')
+        user.birthday = timezone.datetime(1950, 1, 1)
+        user.save()
 
         self.assertEquals(
             self.view.has_permission(current_user=user, target_user=self.user_patient1),
