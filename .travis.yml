@@ -55,3 +55,4 @@ deploy:
 after_sucess:
   - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./mkdocs-build.sh ; echo "Completed deploying documentation" ; fi
   - make -C docs/ latexpdf
+  - mv docs/_build/latex/drdown.pdf docs/drdown.pdf
