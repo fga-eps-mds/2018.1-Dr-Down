@@ -28,6 +28,13 @@ class ChecklistListView(ListView):
             )
             return redirect(url)
 
+        if not hasattr(request.user, 'responsible'):
+            url = reverse(
+                viewname='users:detail',
+                kwargs={'username': request.user.username}
+            )
+            return redirect(url)
+
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self, *args, **kwargs):
