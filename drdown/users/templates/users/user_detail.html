@@ -16,45 +16,45 @@
     <div class="col-sm-12">
       <h2>{{ object.username }}</h2>
       {% if object.photo %}
-      <img src="{{ object.photo.url }}" width="300px" class="float-left mr-1 mb-2">
-        {% else %}
-      <img src="{% static 'users/img/user.png' %}" class="float-left mr-1 mb-2">
+        <img src="{{ object.photo.url }}" width="300px" class="float-left mr-1 mb-2">
+      {% else %}
+        <img src="{% static 'users/img/user.png' %}" class="float-left mr-1 mb-2">
       {% endif %}
       <form>
         {% if object.name %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class="col-form-label pr-6 col-3 float-left"><strong>{% trans 'Name: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3 " id="inputName" placeholder="{{ object.name }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class="col-form-label pr-6 col-3 float-left"><strong>{% trans 'Name: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3 " id="inputName" placeholder="{{ object.name }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if object.gender %}
-        <div class="form-group row mb-1">
-          <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 col-3"><strong>{% trans 'Gender: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.gender }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 col-3"><strong>{% trans 'Gender: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.gender }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if object.telephone %}
-        <div class="form-group row mb-1">
-          <label for="inputTelephone" class=" col-form-label float-left col-3"><strong>{% trans 'Telephone: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputTelephone" placeholder="{{ object.telephone }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputTelephone" class=" col-form-label float-left col-3"><strong>{% trans 'Telephone: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputTelephone" placeholder="{{ object.telephone }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if object.birthday %}
-        <div class="form-group row mb-1">
-          <label for="inputBirthday" class="col-form-label float-left col-3"><strong>{% trans 'Birthday: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputBirthday" placeholder="{{ object.birthday }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputBirthday" class="col-form-label float-left col-3"><strong>{% trans 'Birthday: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputBirthday" placeholder="{{ object.birthday }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
       </form>
     </div>
@@ -67,21 +67,21 @@
         <h3 class="text-secondary mb-2 mt-2">{% trans 'Employee' %}</h3>
 
         {% if employee_cpf %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-1 col-2"><strong>{% trans 'CPF: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_cpf }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-1 col-2"><strong>{% trans 'CPF: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_cpf }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if employee_department %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-1 col-2"><strong>{% trans 'Department: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_department }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-1 col-2"><strong>{% trans 'Department: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ employee_department }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
       </form>
     </div>
@@ -94,48 +94,48 @@
       <form>
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Health Team' %} </h3>
         {% if health_team_cpf %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'CPF: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_cpf }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'CPF: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_cpf }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if health_team_council_acronym %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Council Acronym: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_council_acronym }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Council Acronym: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_council_acronym }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if health_team_register_number %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Register Number: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Register Number: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if health_team_registration_state %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Registration State: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_registration_state }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Registration State: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_registration_state }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if health_team_speciality %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Speciality: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ health_team_speciality }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 pr-6 col-3"><strong>{% trans 'Speciality: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3 mb-3" id="inputName" placeholder="{{ health_team_speciality }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
       </form>
     </div>
@@ -148,75 +148,75 @@
       <form>
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Patient' %} </h3>
         {% if patient_ses %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class="col-form-label mr-2 col-4 float-left"><strong>{% trans 'SES: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ses }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class="col-form-label mr-2 col-4 float-left"><strong>{% trans 'SES: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ses }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_priority %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Priority: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_priority }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Priority: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_priority }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_mother_name %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Mother Name: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_mother_name }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Mother Name: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_mother_name }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_father_name %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Father Name: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_father_name }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Father Name: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_father_name }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_ethnicity %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Ethnicity: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ethnicity }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Ethnicity: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_ethnicity }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_sus_number %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'SUS: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_sus_number }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'SUS: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_sus_number }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_civil_registry_of_birth %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Civil registry of birth: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_civil_registry_of_birth }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Civil registry of birth: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_civil_registry_of_birth }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
 
         {% if patient_declaration_of_live_birth %}
-        <div class="form-group row mb-1">
-          <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Declaration of live birth: '%}</strong></label>
-          <div>
-            <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_declaration_of_live_birth }}" disabled>
+          <div class="form-group row mb-1">
+            <label for="inputName" class=" col-form-label float-left mr-2 col-4"><strong>{% trans 'Declaration of live birth: '%}</strong></label>
+            <div>
+              <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient_declaration_of_live_birth }}" disabled>
+            </div>
           </div>
-        </div>
         {% endif %}
       </form>
     </div>
@@ -258,9 +258,9 @@
     <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
     {% if user.patient or user.responsible %}
-    <a class="btn btn-secondary" href="#" role="button">{% trans 'My Medical Records' %}</a>
+      <a class="btn btn-secondary" href="#" role="button">{% trans 'My Medical Records' %}</a>
     {% endif %}
-    <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
+      <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
 </div>
