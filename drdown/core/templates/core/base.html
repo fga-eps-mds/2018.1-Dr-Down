@@ -119,12 +119,29 @@
     </nav>
     {% endblock navbar %}
 
+
     {% if messages %}
       {% for message in messages %}
           <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
       {% endfor %}
     {% endif %}
+
+
     <div class="content content-margin">
+
+        {% if user.is_authenticated %}
+            {% if user.patient and user.patient.have_procedures_almost_late %}
+                   <div class="alert alert-warning" role="alert">
+                        {% trans "Hey! You have procedures to be made."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
+                   </div>
+            {% endif %}
+            {% if user.responsible and have_patient_needing_atention%}
+                   <div class="alert alert-warning" role="alert">
+                        {% trans "One or more of your patients needs attention. Some procedures may be behind schedule."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
+                   </div>
+            {% endif %}
+        {% endif %}
+
       {% block content %}
       {% endblock content %}
     </div>
