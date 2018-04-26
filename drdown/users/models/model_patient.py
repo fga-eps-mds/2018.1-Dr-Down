@@ -5,6 +5,7 @@ from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 from ..utils.validators import validate_ses
 from ..utils.validators import validate_generic_number
@@ -100,6 +101,37 @@ class Patient(models.Model):
         max_length=11,
         validators=[validate_generic_number],
     )
+
+    def have_procedures_almost_late(self):
+
+        if self.birthday_is_close():
+            return self.have_incomplete_procedures_on_current_age()
+
+        return False
+
+    def have_incomplete_procedures_on_current_age(self):
+
+        result = False
+
+        for procedure in self.procedure_set.all():
+            check_item = procedure.checkitem_set.get(
+                age=procedure.convert_age_to_item(self.user.age())
+            )
+
+            if not check_item.check and check_item.required:
+                result = True
+                break
+
+        return result
+
+    def birthday_is_close(self):
+        from drdown.careline.models import Procedure
+
+        age = self.user.age()
+        current_item = Procedure.convert_age_to_item(age)
+        future_item = Procedure.convert_age_to_item(age + timezone.timedelta(days=30))
+
+        return current_item is not future_item
 
     def __str__(self):
         return self.user.get_username()
