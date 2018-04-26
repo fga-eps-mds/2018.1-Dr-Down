@@ -8,6 +8,8 @@ from django.core.exceptions import ValidationError
 
 class MedicalRecord(models.Model):
 
+    document = models.FileField(upload_to='media/')
+
     day = models.DateTimeField(
         _('Created at'),
         help_text=_('Patient Care Day'),

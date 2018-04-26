@@ -34,9 +34,12 @@
           <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecord.patient }}</h4>
           <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
           <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
+          <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+
           <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
           <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
           <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+
         </div>
     {% endif %}
     {% empty %}
