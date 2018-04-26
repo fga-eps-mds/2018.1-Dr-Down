@@ -1,11 +1,13 @@
-from django.shortcuts import redirect, reverse
+from django.shortcuts import get_object_or_404, render, redirect
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
 
 from drdown.careline.models import (
     Checklist,
     Procedure,
     CheckItem
 )
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView, RedirectView
 
 from drdown.users.models import User, Patient
 
@@ -97,7 +99,8 @@ class ChecklistDetailView(DetailView):
 
         return context
 
-    def has_permission(self, current_user, target_user):
+    @staticmethod
+    def has_permission(current_user, target_user):
 
         allowed = False
 
@@ -119,3 +122,61 @@ class ChecklistDetailView(DetailView):
 
         if hasattr(user, 'patient') and hasattr(user.patient, 'checklist'):
             context['checklist'] = user.patient.checklist
+
+
+class ChecklistUpdateView(RedirectView):
+
+    def get_redirect_url(self, *args, **kwargs):
+
+        return reverse(
+            viewname='careline:checklist_list',
+        )
+
+    @staticmethod
+    def has_permission(current_user, target_user):
+
+        allowed_on_view = ChecklistDetailView.has_permission(
+                current_user=current_user,
+                target_user=target_user
+            )
+
+        return (allowed_on_view and current_user.age() >= 13)
+
+    def post(self, request, *args, **kwargs):
+
+        message = "Error"
+
+        target_user = User.objects.get(
+            username=request.POST.get('username')
+        )
+
+        if(
+            self.has_permission(
+                current_user=request.user,
+                target_user=target_user
+            )
+        ):
+            message = self.process_change(
+                user=target_user,
+                checklist_id=request.POST.get('checklist_id'),
+                procedure_id=request.POST.get('procedure_id'),
+                value=request.POST.get('value')
+            )
+
+        return HttpResponse(message)
+
+    def process_change(self, user, checklist_id, procedure_id, value):
+
+        procedure = user.patient.checklist.procedure_set.get(id=procedure_id)
+        check_item = procedure.checkitem_set.get(id=checklist_id)
+
+        check_item.check = value
+        check_item.save()
+        check_item.refresh_from_db()
+
+        # won't translate, this message will not be seen by the user
+        return (
+                    "Success on update of procedure: " + str(procedure.id) +
+                    " and checkitem: " + str(check_item.id) +
+                    " value: " + str(check_item.check)
+                )

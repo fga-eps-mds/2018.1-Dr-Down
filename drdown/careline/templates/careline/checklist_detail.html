@@ -14,11 +14,55 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        
+        var csrftoken = getCookie('csrftoken');
+
+
         $(function() {
-          $('input:checkbox').change(function() {
-            $('#console-event').html('Toggle: ' + $(this).prop('checked'));
-            console.log("Change event: " + this.id);
-          })
+            $('input:checkbox').change(function() {
+
+                $.ajaxSetup({
+                    beforeSend: function(xhr, settings) {
+                        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                        }
+                    }
+                });
+
+                $.ajax({
+                    type:"POST",
+                    url:"/careline/view/update",
+                    data: {
+                           'checklist_id': this.id.split(",")[0],
+                           'procedure_id': this.id.split(",")[1],
+                           'username': document.getElementById("checklist_username").value,
+                           'value': (this.checked ? "True" : "False")
+                           },
+                    success: function(){
+                        console.log("POSTED")
+                    }
+               });
+            })
         })
     </script>
 {%endblock script%}
@@ -120,7 +164,7 @@
                         
                         {% elif age >= 0.5  and forloop.counter0 == 1 %}
                             
-                            {% if check_item.required %}
+                             {% if check_item.required %}
 
                                 {% if check_item.check %}
                                     <td><label class="container"><input id="{{check_item.id}},{{procedure.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark required active"></span></label></td>
@@ -191,7 +235,7 @@
                             {% endif %}
 
                         {% elif age >= 3 or age is 4  and forloop.counter0 == 4 %}
-                            
+                                    
                             {% if check_item.required %}
 
                                 {% if check_item.check %}
