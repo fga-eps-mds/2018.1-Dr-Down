@@ -1,11 +1,9 @@
 from django.test import RequestFactory
 from django.urls import reverse_lazy
 from django.test.client import Client
-
+from django.urls import reverse
 from test_plus.test import TestCase
-
 from ..models import User
-
 from ..views import (
     UserRedirectView,
     UserUpdateView
@@ -115,3 +113,43 @@ class TestUserDeleteView(BaseUserTestCase):
         self.assertRedirects(response, home_url)
 
         self.assertEquals(User.objects.count(), 0)
+
+
+class TestUserDetailView(BaseUserTestCase):
+
+    def setUp(self):
+        """
+        This method will run before any test.
+        """
+        self.user = self.make_user()
+        self.second_user = self.make_user('testuser2')
+
+    def test_logged_user_redirect_detail_view(self):
+        """
+        Test if view is redirected if user is not logged in user
+        """
+        self.client.force_login(user=self.user)
+
+        login_url = reverse(
+            viewname='users:detail',
+            kwargs={'username': self.second_user.username}
+        )
+
+        response = self.client.get(path=login_url, follow=True)
+
+        self.assertEquals(response.status_code, 200)
+
+    def test_not_logged_user_redirect_detail_view(self):
+        """
+        Test if view is redirected if user is not logged in
+        """
+
+        login_url = reverse(
+            viewname='users:detail',
+            kwargs={'username': self.second_user.username}
+        )
+
+        response = self.client.get(path=login_url, follow=True)
+
+        self.assertEquals(response.status_code, 200)
+

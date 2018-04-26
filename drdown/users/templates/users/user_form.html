@@ -33,6 +33,7 @@
       return tel;
     }
   </script>
+
 {% endblock %}
 
 {% block content %}
@@ -47,8 +48,12 @@
       </label>
 
       <div class="">
+        {% if object.name %}
+          <input type="text" name="name" maxlength="255" value="{{ object.name }}" class="textinput textInput form-control" required="" id="id_name">
+        {% else %}
           <input type="text" name="name" maxlength="255" class="textinput textInput form-control" required="" id="id_name">
           <small id="hint_id_name" class="form-text text-muted">{% trans 'Full user name' %}</small>
+        {% endif %}
       </div>
     </div>
 
@@ -58,12 +63,20 @@
       </label>
       <div class="">
         <select name="gender" class="select form-control" required="" id="id_gender">
-        <option value="" selected="">---------</option>
+        {% if object.gender %}
+          <option value="{{object.gender}}">{{ object.gender }}</option>
+        {% else %}
+          <option value="" selected="">---------</option>
+        {% endif %}
 
-        <option value="Male">{% trans 'Male' %}</option>
-
-        <option value="Female">{% trans 'Female' %}</option>
-
+        {% if object.gender != 'Male' and object.gender %}
+          <option value="Male">{% trans 'Male' %}</option>
+        {% elif object.gender != 'Female' and object.gender %}
+          <option value="Female">{% trans 'Female' %}</option>
+        {% else %}
+          <option value="Female">{% trans 'Female' %}</option>
+          <option value="Male">{% trans 'Male' %}</option>
+        {% endif %}
         </select>
       </div>
     </div>
@@ -73,15 +86,22 @@
           {% trans 'Telephone' %}<span class="asteriskField">*</span>
       </label>
       <div class="">
-          <input type="text" name="telephone" value= "" maxlength="14" class="textinput textInput form-control" required id="id_telephone" onkeydown="javascript: fMasc( this, mTel );" />
-          <small id="hint_id_telephone" class="form-text text-muted">(xx)xxxxx-xxxx or (xx)xxxx-xxxx</small>
+        {% if object.telephone %}
+          <input type="text" name="telephone" value= "{{ object.telephone }}" maxlength="14" class="textinput textInput form-control" required id="id_telephone" onkeydown="javascript: fMasc( this, mTel );" />
+        {% else %}
+          <input type="text" name="telephone" maxlength="14" class="textinput textInput form-control" required id="id_telephone" onkeydown="javascript: fMasc( this, mTel );" />
+        {% endif %}
+        <small id="hint_id_telephone" class="form-text text-muted">(xx)xxxxx-xxxx or (xx)xxxx-xxxx</small>
       </div>
     </div>
 
     <label>{% trans 'Birthday' %}<span class="asteriskField">*</span>
     </label>
-
-    <input type="date"  name="birthday" required=true class="form-control">
+    {% if object.birthday %}
+      <input type="date" name="birthday" value="{{ object.birthday | date:'Y-m-d' }}" required=true class="form-control">
+    {% else %}
+      <input type="date" name="birthday" required=true class="form-control">
+    {% endif %}
     <span class="validity"></span>
 
     <div id="div_id_photo" class="form-group">
@@ -89,7 +109,7 @@
         {% trans 'Photo' %}
       </label>
       <div class="">
-        <input type="file" name="photo" class="clearablefileinput" id="id_photo">
+        <input type="file" name="photo" class="clearablefileinput" id="id_photo" accept=".png, .jpg, .jpeg, .gif">
         <small id="hint_id_photo" class="form-text text-muted">{% trans 'Photo of user' %}.</small>
        </div>
   </div>
