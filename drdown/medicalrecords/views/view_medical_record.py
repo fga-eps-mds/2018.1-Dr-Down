@@ -8,6 +8,7 @@ from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from ..forms.medicalrecords_forms import MedicalRecordSearchForm
@@ -17,12 +18,12 @@ class MedicalRecordsFilter(BaseFilter):
     search_fields = {
         'search_text': ['message'],
         'search_date': ['day'],
+        'author': ['author__id']
     }
 
 
 class MedicalRecordsSearchList(SearchListView):
     model = MedicalRecord
-    paginate_by = 30
     template_name = "medicalrecords/medicalrecord_list.html"
     form_class = MedicalRecordSearchForm
     filter_class = MedicalRecordsFilter
@@ -40,7 +41,7 @@ class MedicalRecordsListView(ListView):
 class MedicalRecordsCreateView(CreateView):
     model = MedicalRecord
     template_name = 'medicalrecords/medicalrecord_form.html'
-    fields = ['patient', 'message']
+    fields = ['message']
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse_lazy(
@@ -52,6 +53,10 @@ class MedicalRecordsCreateView(CreateView):
         return success_create_url
 
     def form_valid(self, form):
+        for patient in Patient.objects.all():
+            if patient.user.username == self.kwargs.get('username'):
+                form.instance.patient = patient
+
         form.instance.author = self.request.user
         form.save()
         return super(MedicalRecordsCreateView, self).form_valid(form)
