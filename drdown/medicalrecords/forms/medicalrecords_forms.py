@@ -1,6 +1,7 @@
 from drdown.medicalrecords.models.model_medical_record import MedicalRecord
 from django import forms
 from drdown.users.models.model_health_team import HealthTeam
+from drdown.users.models.model_patient import Patient
 
 
 class MedicalRecordSearchForm(forms.Form):
@@ -12,7 +13,8 @@ class MedicalRecordSearchForm(forms.Form):
 
     search_date = forms.DateField(
         required=False,
-        label='Search date!'
+        label='Search date!',
+        widget=forms.TextInput(attrs={'placeholder': '(Year)-(Month)-(Day)'})
     )
 
     author = forms.ModelChoiceField(
@@ -21,3 +23,37 @@ class MedicalRecordSearchForm(forms.Form):
         label='Search author!'
     )
 
+
+class MedicalRecordCompleteSearchForm(forms.Form):
+    search_text = forms.CharField(
+        required=False,
+        label='Search patient!',
+        widget=forms.TextInput(attrs={'placeholder': 'search here!'})
+    )
+
+    search_date = forms.DateField(
+        required=False,
+        label='Search date!',
+        widget=forms.TextInput(attrs={'placeholder': '(Year)-(Month)-(Day)'})
+    )
+
+    author = forms.ModelChoiceField(
+        queryset=HealthTeam.objects.all(),
+        required=False,
+        label='Search author!'
+    )
+
+    patient = forms.ModelChoiceField(
+        queryset=Patient.objects.all(),
+        required=False,
+        label='Search patient!'
+    )
+
+
+class PatientSearchForm(forms.Form):
+
+    patient = forms.ModelChoiceField(
+        queryset=Patient.objects.all(),
+        required=False,
+        label='Search patient!'
+    )
