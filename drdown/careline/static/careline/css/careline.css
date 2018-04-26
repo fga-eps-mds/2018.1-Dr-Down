@@ -5,10 +5,10 @@
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 
 /* Hide the browser's default checkbox */
@@ -25,13 +25,20 @@
   left: 0;
   height: 25px;
   width: 25px;
+}
+
+.required {
   background-color: #ff6347;
 }
 
-/* On mouse-over, add a red background color */
-.container:hover input ~ .checkmark {
-  background-color: #ff6347;
+.when_needed {
+  background-color: #ffce47;
 }
+
+._disabled{
+  background-color: transparent
+}
+
 
 /* When the checkbox is checked, add a green background */
 .container input:checked ~ .checkmark {

@@ -9,9 +9,35 @@
 <link href="{% static 'careline/css/careline.css' %}" rel="stylesheet">
 {% endblock %}
 
+{% block script %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+          $('input:checkbox').change(function() {
+            $('#console-event').html('Toggle: ' + $(this).prop('checked'));
+            console.log("Change event: " + this.id);
+          })
+        })
+    </script>
+{%endblock script%}
+
 {% block content %}
+{% with age=checklist.patient.user.age %}  
 <div class="container">
   <h2 class="text-tertiary">{% trans "Care Line" %}</h2>
+  <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h4>
+
+    {% if age == 0 %}
+        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {% trans "Newborn" %}</h4>
+    {% elif age == 0.5 %}
+        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {% trans "Less than 1 year old" %}</h4>
+    {% else %}
+        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {{ age }}</h4>
+    {% endif %}
+  
+  <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'SES: ' %} {{ checklist.patient.ses}}</h4>
 
 
   <table class="table table-bordered" style="height: 100px;">
@@ -26,29 +52,209 @@
       <tr>
         <th rowspan="2" style="text-align: center;">{% trans 'Interventions / Evaluation'%}</th>
         <th scope="col" style="text-align: center;">{% trans 'Newborn'%}</th>
+        {% if age >= 0.5 %}
         <th scope="col" style="text-align: center;">{% trans 'Six Months'%}</th>
+        {% endif %}
+        {% if age >= 1 %}
         <th scope="col" style="text-align: center;">{% trans 'One Year'%}</th>
+        {% endif %}
+        {% if age >= 2 %}
         <th scope="col" style="text-align: center;">{% trans 'Two Years'%}</th>
+        {% endif %}
+        {% if age >= 3 %}
         <th scope="col" style="text-align: center;">{% trans 'Three Years'%}</th>
+        {% endif %}
+        {% if age >= 5 %}
         <th scope="col" style="text-align: center;">{% trans 'Five Years'%}</th>
+        {% endif %}
+        {% if age >= 6 %}
         <th scope="col" style="text-align: center;">{% trans 'Six to Ten Years'%}</th>
+        {% endif %}
       </tr>
     </thead>
     <tbody>
+    
+        <!--
+             index = age = ACR,
+             0 = 0 = RN,
+             1 = 0.5 = 6M,
+             2 = 1 = 1Y,
+             3 = 2 = 2Y,
+             4 = 3 = 3Y,
+             5 = 5 = 5Y,
+             6 = 6...10 = 6_10Y 
+        -->
+   
+            {%for procedure in checklist.procedure_set.all%}
+            <tr>
+                <th scope="row">{{procedure.description}}</th>
+
+                    {% for check_item in procedure.checkitem_set.all %}
 
 
-        {%for procedure in checklist.procedure_set.all%}
-          <tr>
-              <th scope="row">{{procedure.description}}</th>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
-          </tr>
-        {%endfor%}
+                        {% if age >= 0 and forloop.counter0 == 0 %}
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                            
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            
+                            {% endif %}
+
+                        
+                        {% elif age >= 0.5  and forloop.counter0 == 1 %}
+                            
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+
+                        {% elif age >= 1  and forloop.counter0 == 2 %}
+                            
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+                        
+                        {% elif age >= 2  and forloop.counter0 == 3 %}
+                            
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+
+                        {% elif age >= 3 or age is 4  and forloop.counter0 == 4 %}
+                            
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+
+                        {% elif age >= 5  and forloop.counter0 == 5 %}
+                                    
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+
+                        {% elif age >= 6  and forloop.counter0 == 6 %}
+                            
+                            {% if check_item.required %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% elif check_item.when_needed %}
+
+                                {% if check_item.check %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle"><span class="checkmark when_needed"></span></label></td>
+                                {% else %}
+                                    <td><label class="container"><input id="{{check_item.id}}" type="checkbox" data-toggle="toggle" active><span class="checkmark required"></span></label></td>
+                                {% endif %}
+                            
+                            {% else %}
+                                <td><label class="container"><input id="{{check_item.id}}" type="checkbox" disabled><span class="checkmark _disabled"></span></label></td>
+                            {% endif %}
+
+                        {% endif %}
+                        
+                        
+                    {% endfor %}
+
+            </tr>
+            {%endfor%}
 
       <tr>
           <th colspan="8">{% trans '* Routine as suggested and, if necessary, when initiating physical examination or surgical procedure with cervical manipulation.'%}</th>
@@ -64,4 +270,5 @@
   <button type="button" class="btn btn-danger">{% trans 'Submit'%}</button>
 
 </div>
+{% endwith %}
 {% endblock content %}
