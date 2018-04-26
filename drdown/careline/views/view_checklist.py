@@ -63,40 +63,57 @@ class ChecklistDetailView(DetailView):
     model = Checklist
     template_name = 'careline/checklist_detail.html'
 
-    def get_object(self, queryset=None):
-        # Only get the User record for the user making the request
-        user = User.objects.get(username=self.request.user.username)
+    def get(self, request, *args, **kwargs):
 
-        if hasattr(user, "patient"):
-            return user.patient.checklist
+        current_user = request.user
+        target_user = User.objects.get(username=kwargs.get('username'))
+
+        if (
+            not hasattr(target_user, 'patient') or
+            not self.has_permission(current_user=current_user, target_user=target_user)
+        ):
+            url = reverse(
+                viewname='careline:checklist_list',
+            )
+            return redirect(url)
+
+        self.object = self.get_object(*args, **kwargs)
+        context = self.get_context_data(object=self.object)
+
+        return self.render_to_response(context)
+
+    def get_object(self, queryset=None, *args, **kwargs):
+        target = User.objects.get(username=kwargs.get('username'))
+
+        return target.patient.checklist
 
     def get_context_data(self, **kwargs):
-        current_user = self.request.user
+
         context = super(ChecklistDetailView, self).get_context_data(**kwargs)
 
         target_user = User.objects.get(username=self.kwargs.get('username'))
 
-        # if we are the patient that the page is trying to access
-        if hasattr(current_user, 'patient'):
-            self.prepare_context_data(current_user, context)
-
-        # if we are someone else, we need to check permissions
-        # for instance, if the current user is a responsible of the target user
-        if current_user.username is not current_user.username:
-            if self.has_permission(current_user, target_user):
         self.prepare_context_data(target_user, context)
 
         return context
 
     def has_permission(self, current_user, target_user):
 
-        # check if target_user is a patient of responsible
-        if hasattr(current_user, 'responsible'):
-           for patient in current_user.responsible.patient_set:
-               if patient.user.username is target_user.username:
-                   return True
+        allowed = False
 
-        return False
+        # here using '==' is intended
+        if current_user == target_user:
+            # if we are the patient that the page is trying to access
+            allowed = True
+
+        elif hasattr(current_user, 'responsible'):
+            # if we are someone else, we need to check permissions
+            # for instance, if the current user is a responsible of the target user
+            for patient in current_user.responsible.patient_set.all():
+                if patient.user == target_user:
+                    allowed = True
+
+        return allowed
 
     def prepare_context_data(self, user, context):
 
