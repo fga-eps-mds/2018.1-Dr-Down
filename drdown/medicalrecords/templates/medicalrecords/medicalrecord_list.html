@@ -2,14 +2,18 @@
 {% load static i18n %}
 {% block title %}{% trans "Medical Records:" %}{% endblock %}
 
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h2 class="text-tertiary">{{ view.related_patient.user.name }} {% trans "Medical Records" %}</h2>
   {% if view.related_patient.user.patient  %}
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
-      <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary">{% trans "New" %}</a>
-      <a href="{% url 'medicalrecords:list_search_medicalrecords' %}" class="btn btn-secondary">{% trans "Advanced Search" %}</a>
+      <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary left-btn" >{% trans "New" %}</a>
     {% endif %}
   </div>
   <div class="container">
@@ -41,8 +45,10 @@
           <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
           {% endif %}
           <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
-          <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
-          <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+          {% if user == medicalrecord.author %}
+            <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+            <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+          {% endif %}
         </div>
 
     {% endif %}

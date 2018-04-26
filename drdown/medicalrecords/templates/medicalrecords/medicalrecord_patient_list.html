@@ -2,10 +2,15 @@
 {% load static i18n %}
 {% block title %}{% trans "Medical Records:" %}{% endblock %}
 
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h2 class="text-tertiary">{% trans "Medical Records" %}</h2>
-
+  <a href="{% url 'medicalrecords:list_search_medicalrecords' %}" class="btn btn-secondary left-btn" >{% trans "Advanced Search" %}</a>
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
       <form class="form-inline" action="" method="GET">
@@ -19,7 +24,6 @@
     {% for patients in patient_list %}
         <a href= "{% url 'medicalrecords:list_medicalrecords' patients.user.username %}" class=" h-blue list-group-item">
           <h4 class="list-group-item-heading text-tertiary h-blue">{{ patients.user.username }}</h4>
-
         </a>
     {% empty %}
         <h4>{% trans 'There are no Medical Records.'%}</h4>
