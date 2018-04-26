@@ -39,12 +39,14 @@ class ChecklistListView(ListView):
 
     def get_queryset(self, *args, **kwargs):
 
-        user = User.objects.get(username=self.request.user.username)
+        user = self.request.user
+
+        queryset = None
 
         if hasattr(user, "responsible"):
-            return Patient.objects.filter(responsible=user.responsible)
-        else:
-            return None
+            queryset = Patient.objects.filter(responsible=user.responsible)
+
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -55,10 +57,6 @@ class ChecklistListView(ListView):
         context['patient_list'] = patients
 
         return context
-
-
-    def prepare_context_data(self, user, context):
-        pass
 
 
 class ChecklistDetailView(DetailView):
@@ -86,7 +84,7 @@ class ChecklistDetailView(DetailView):
         # for instance, if the current user is a responsible of the target user
         if current_user.username is not current_user.username:
             if self.has_permission(current_user, target_user):
-                self.prepare_context_data(target_user, context)
+        self.prepare_context_data(target_user, context)
 
         return context
 
