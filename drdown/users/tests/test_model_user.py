@@ -1,6 +1,7 @@
 from test_plus.test import TestCase
 from drdown.users.models import User
 from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 from ..models import Employee, HealthTeam, Patient, Responsible
 
@@ -44,6 +45,69 @@ class TestUser(TestCase):
 
         self.assertEquals(self.user.get_short_name(),
                           self.user.first_name)
+
+    def test_age(self):
+        """
+        Test to get age of user
+        """
+
+        test_ages = [
+            5, 10, 4, 66, 12
+        ]
+
+        today = timezone.datetime.today()
+
+        for test_age in test_ages:
+            self.user.birthday = timezone.datetime(
+                year=(today.year - test_age),
+                month=today.month,
+                day=today.day
+            )
+
+            self.user.save()
+            self.user.refresh_from_db()
+
+            self.assertEquals(
+                self.user.age(),
+                test_age
+            )
+
+        edge_cases_months = [
+            0,
+            1,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13
+        ]
+
+        for months in edge_cases_months:
+            self.user.birthday = today - timezone.timedelta(days=30*months)
+
+            self.user.save()
+            self.user.refresh_from_db()
+
+            if 6 <= months < 12:
+                self.assertEquals(
+                    self.user.age(),
+                    0.5
+                )
+            elif months < 6:
+                if months is 6:
+                    self.assertEquals(
+                        self.user.age(),
+                        0
+                    )
+            elif months >= 12:
+                if months is 6:
+                    self.assertGreaterEqual(
+                        self.user.age(),
+                        1
+                    )
 
 
 class TestField(TestCase):

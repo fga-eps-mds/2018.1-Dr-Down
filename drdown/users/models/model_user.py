@@ -3,8 +3,9 @@ from django.db import models
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
+
 from ..utils.validators import validate_phone
-import datetime
 
 
 class User(AbstractUser):
@@ -81,6 +82,16 @@ class User(AbstractUser):
 
     def get_short_name(self):
         return(self.first_name)
+
+    def age(self):
+        today = timezone.datetime.today()
+        age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+
+        if age is 0:
+            diff_month = (today.year - self.birthday.year) * 12 + today.month - self.birthday.month
+            age = 0 if diff_month < 6 else 0.5
+
+        return age
 
     def count_user_specialization(self):
 
