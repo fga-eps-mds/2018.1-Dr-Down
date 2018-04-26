@@ -9,15 +9,22 @@ from drdown.users.views import view_user
 app_name = 'medicalrecords'
 urlpatterns = [
     url(
-        regex=r'^(?P<username>[\w.@+-]+)$',
-        view=view_medical_record.MedicalRecordsSearchList.as_view(),
+        regex=r'list/(?P<username>[\w.@+-]+)$',
+        view=view_medical_record.MedicalRecordsList.as_view(),
         name='list_medicalrecords'
     ),
     url(
         regex=r'^$',
-        view=view_user.UserListView.as_view(
+        view=view_medical_record.PatientSearchList.as_view(
             template_name='medicalrecords/medicalrecord_patient_list.html'),
         name='list_users_medicalrecords'),
+
+    url(
+        regex=r'search/$',
+        view=view_medical_record.MedicalRecordsSearchList.as_view(
+            template_name='medicalrecords/medicalrecord_search_list.html'),
+        name='list_search_medicalrecords'),
+
 
     url(
         regex=r'^(?P<username>[\w.@+-]+)/new',
