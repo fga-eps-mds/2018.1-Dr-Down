@@ -74,7 +74,8 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'rolepermissions',
-    'raven.contrib.django.raven_compat'
+    'raven.contrib.django.raven_compat',
+    'pagedown',
 ]
 LOCAL_APPS = [
     'drdown.users.apps.UsersConfig',
