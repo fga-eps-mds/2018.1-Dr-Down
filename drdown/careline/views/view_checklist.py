@@ -73,12 +73,34 @@ class ChecklistDetailView(DetailView):
             return user.patient.checklist
 
     def get_context_data(self, **kwargs):
-        user = self.request.user
+        current_user = self.request.user
         context = super(ChecklistDetailView, self).get_context_data(**kwargs)
 
-        self.prepare_context_data(user, context)
+        target_user = User.objects.get(username=self.kwargs.get('username'))
+
+        # if we are the patient that the page is trying to access
+        if hasattr(current_user, 'patient'):
+            self.prepare_context_data(current_user, context)
+
+        # if we are someone else, we need to check permissions
+        # for instance, if the current user is a responsible of the target user
+        if current_user.username is not current_user.username:
+            if self.has_permission(current_user, target_user):
+                self.prepare_context_data(target_user, context)
 
         return context
 
+    def has_permission(self, current_user, target_user):
+
+        # check if target_user is a patient of responsible
+        if hasattr(current_user, 'responsible'):
+           for patient in current_user.responsible.patient_set:
+               if patient.user.username is target_user.username:
+                   return True
+
+        return False
+
     def prepare_context_data(self, user, context):
-        pass
+
+        if hasattr(user, 'patient') and hasattr(user.patient, 'checklist'):
+            context['checklist'] = user.patient.checklist
