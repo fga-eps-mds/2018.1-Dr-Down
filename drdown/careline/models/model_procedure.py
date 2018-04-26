@@ -40,8 +40,25 @@ class Procedure(models.Model):
         editable=False
     )
 
+    @staticmethod
     def convert_age_to_item(age):
-        pass
+
+        if age < 0.5:
+            item = Procedure.AGE_NEWBORN
+        elif age < 1:
+            item = Procedure.AGE_SIX_MONTHS
+        elif age < 2:
+            item = Procedure.AGE_ONE_YEAR
+        elif age < 3:
+            item = Procedure.AGE_TWO_YEARS
+        elif age < 5:
+            item = Procedure.AGE_THREE_YEARS
+        elif age < 6:
+            item = Procedure.AGE_FIVE_YEARS
+        else:
+            item = Procedure.AGE_SIX_TO_TEN_YEARS
+
+        return item
 
     def create_check_items(self, ages_required, ages_needed):
 
