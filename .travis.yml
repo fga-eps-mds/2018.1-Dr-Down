@@ -29,7 +29,7 @@ before_install:
   - python3 -m pip install pip -U
   - python3 -m pip install mkdocs
 before_script:
-  - DEPLOY_DOCS="$(if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then echo -n 'true' ; else echo -n 'false' ; fi)"
+  - DEPLOY_DOCS="$(if [[ [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'develop']] && $TRAVIS_PULL_REQUEST == 'false' ]]; then echo -n 'true' ; else echo -n 'false' ; fi)"
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
