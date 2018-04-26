@@ -9,6 +9,7 @@
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
       <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary">{% trans "New" %}</a>
+      <a href="{% url 'medicalrecords:list_search_medicalrecords' %}" class="btn btn-secondary">{% trans "Advanced Search" %}</a>
     {% endif %}
   </div>
   <div class="container">
@@ -23,7 +24,8 @@
           </fieldset>
       </form>
     {% endif %}
-    {% else %} Não é um paciente
+    {% else %}
+    {% trans "This user is not a patient!!!" %}
     {%endif%}
   </div>
 
@@ -33,7 +35,6 @@
     {% if view.kwargs.username == medicalrecord.patient.user.username %}
 
         <div class="h-blue list-group-item">
-          <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecord.patient }}</h4>
           <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
           <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
           {% if medicalrecord.document %}
