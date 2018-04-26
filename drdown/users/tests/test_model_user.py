@@ -330,7 +330,10 @@ class TestField(TestCase):
             HealthTeam.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=HealthTeam.NEUROLOGY
+                speciality=HealthTeam.NEUROLOGY,
+                council_acronym=HealthTeam.CRM,
+                register_number="1234567",
+                registration_state=HealthTeam.DF,
             )
 
         # test employee again
@@ -376,7 +379,10 @@ class TestField(TestCase):
         health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user1,
-            speciality=HealthTeam.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -469,7 +475,10 @@ class TestField(TestCase):
         health_team = HealthTeam.objects.create(
                 cpf="057.641.271-65",
                 user=self.user1,
-                speciality=HealthTeam.NEUROLOGY
+                speciality=HealthTeam.NEUROLOGY,
+                council_acronym=HealthTeam.CRM,
+                register_number="1234567",
+                registration_state=HealthTeam.DF,
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -509,7 +518,10 @@ class TestField(TestCase):
         health_team = HealthTeam.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=HealthTeam.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
         )
 
         self.assertEqual(self.user1.has_specialization, True)
@@ -666,7 +678,10 @@ class TestField(TestCase):
         health_team = HealthTeam.objects.create(
             cpf="507.522.730-94",
             user=self.user1,
-            speciality=HealthTeam.NEUROLOGY
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
         )
 
         self.user1.refresh_from_db()

@@ -4,6 +4,8 @@
 |:----:|:------:|:---------:|:-----:|
 |11/04/2018|0.0.1|Primeira Versão do Mapa de Requisitos|Mariana De Souza Mendes|
 |16/04/2018|0.0.3|Correção de erros|Mariana De Souza Mendes|
+|24/04/2018|0.0.4|Correção de erros|Mariana De Souza Mendes e João Pedro Sconetto|
+|25/04/2018|0.0.4|Correção de erros|Mariana De Souza Mendes e Diego França|
 
 
 ## Tema de investimento	
@@ -12,9 +14,9 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 ## Épicos
 
-![Épicos.png](https://uploaddeimagens.com.br/images/001/374/577/original/Captura_de_tela_de_2018-04-15_12-35-05.png?1523806525)
+![Épicos.png](https://uploaddeimagens.com.br/images/001/390/397/original/Captura_de_tela_de_2018-04-25_21-16-31.png?1524701824)
 
-[Clique aqui para ampliar a imagem](https://uploaddeimagens.com.br/images/001/374/577/original/Captura_de_tela_de_2018-04-15_12-35-05.png?1523806525)
+[Clique aqui para ampliar a imagem](https://uploaddeimagens.com.br/images/001/390/397/original/Captura_de_tela_de_2018-04-25_21-16-31.png?1524701824)
 
 ### Cadastro de usuário
 
@@ -24,7 +26,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 | **que**| necessitam acompanhar o estado de sáude de pacientes do Cris Down |
 |**o** | Dr Down|
 |**é um** | Web site |
-|**que**  | permite que o usuário(tanto a equipe de saúde quanto paciente, funcionário e/ou responsável) faça seu cadastro e login |
+|**que**  | permite que o usuário (tanto a equipe de saúde quanto paciente, funcionário e/ou responsável) faça seu cadastro e login |
 | **diferente** | de outras aplicações que fornecem apenas o prontuário do paciente por meio do número de cadastro na secretária de sáude da cidade |
 | **nossa solução** | permite que o usuário se cadastre, mantendo assim um histórico e acompanhamento médico de fácil uso|
 
@@ -43,7 +45,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em participar do fórum |
+|**Para** | Integrantes do Cris Down (Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em participar do fórum |
 | **que**| desejam encontrar ajuda e/ou trocar informações sobre a Síndrome de Down |
 |**o** | Dr Down|
 |**é um** | Web site |
@@ -67,7 +69,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em ver a agenda de eventos |
+|**Para** | Integrantes do Cris Down (Pacientes, membros da equipe de saúde, funcionários e responsáveis) e outras pessoas interessadas em ver a agenda de eventos |
 | **que**| têm dificuldades em encontrar eventos relacionados à Síndrome de Down. |
 |**o** | Dr Down|
 |**é um** | Web site |
@@ -86,30 +88,12 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 [Clique aqui para ampliar a imagem](https://uploaddeimagens.com.br/images/001/374/621/original/Captura_de_tela_de_2018-04-15_13-24-58.png?1523809519)
 
-### Chat
+
+### Informações gerais sobre Síndrome de Down
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) |
-| **que**| têm dificuldades em contactar algum outro usuário do sistema |
-|**o** | Dr Down|
-|**é um** | Web site |
-|**que**  | permite que os usuários do Dr. Down conversem entre si de forma sigilosa |
-| **diferente** | outros sites que possuem chat, como o Facebook ou Whatsapp |
-| **nossa solução** | permite que os usuários do Dr. Down possam conversar entre si, facilitando assim o proximidade e o contato de pessoas com situações em comum|
-
-
-|               |                |
-|---------------|----------------|
-| **critérios de sucesso** | Apenas os usuários cadastrados podem ter acesso ao chat; Cada um terá acesso à sua conversa; |
-| **no escopo** | Tela com todos as conversas do usuário; Tela pra uma conversa específica; |
-| **fora do escopo** | Usuário ter acesso à conversa de outro usuários; Usuário sem cadastro ter acesso ao chat; |
-
-### Informações gerais sobre síndrome de Down
-
-|               |                |
-|---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis) |
+|**Para** | Integrantes do Cris Down (Pacientes, membros da equipe de saúde, funcionários e responsáveis) |
 | **que**| têm dificuldades em encontrar algo sobre o Cris Down e sobre a doença em si |
 |**o** | Dr Down|
 |**é um** | Web site |
@@ -132,7 +116,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)|
+|**Para** | Integrantes do Cris Down (Pacientes, membros da equipe de saúde, funcionários e responsáveis)|
 | **que**| têm necessidade em acompanhar o histórico médico de pacientes |
 |**o** | Dr Down|
 |**é um** | Web site |
@@ -155,7 +139,7 @@ Web site para auxílio de pessoas com Síndrome de Down e médicos que trabalham
 
 |               |                |
 |---------------|----------------|
-|**Para** | Integrantes do Cris Down(Pacientes, membros da equipe de saúde, funcionários e responsáveis)|
+|**Para** | Integrantes do Cris Down (Pacientes, membros da equipe de saúde, funcionários e responsáveis)|
 | **que**| têm dificuldades em agendar um consulta médica |
 |**o** | Dr Down|
 |**é um** | Web site |
@@ -192,3 +176,4 @@ As features e US foram cadastradas no software [Target Process](https://www.targ
 
 [Clique aqui para ampliar a imagem](https://uploaddeimagens.com.br/images/001/374/648/original/Captura_de_tela_de_2018-04-15_13-57-46.png?1523811579)
 
+	

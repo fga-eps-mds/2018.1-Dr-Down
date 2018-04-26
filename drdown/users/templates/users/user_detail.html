@@ -31,11 +31,10 @@
         {% endif %}
 
         {% if object.gender %}
-          <div class="form-group row mb-1">
-            <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 col-3"><strong>{% trans 'Gender: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.gender }}" disabled>
-            </div>
+        <div class="form-group row mb-1">
+          <label for="inputGender" class=" col-form-label pr-6 float-left pr-6 col-3"><strong>{% trans 'Gender: '%}</strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputGender" placeholder="{{ object.get_gender_display }}" disabled>
           </div>
         {% endif %}
 
@@ -102,21 +101,11 @@
           </div>
         {% endif %}
 
-        {% if health_team_council_acronym %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Council Acronym: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_council_acronym }}" disabled>
-            </div>
-          </div>
-        {% endif %}
-
-        {% if health_team_register_number %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong>{% trans 'Register Number: '%}</strong></label>
-            <div>
-              <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
-            </div>
+        {% if health_team_register_number and health_team_council_acronym %}
+        <div class="form-group row mb-1">
+          <label for="inputName" class=" col-form-label float-left mr-2 col-3"><strong> {{ health_team_council_acronym }}: </strong></label>
+          <div>
+            <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_register_number }}" disabled>
           </div>
         {% endif %}
 

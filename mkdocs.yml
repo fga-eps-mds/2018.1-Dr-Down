@@ -1,28 +1,31 @@
-site_name: drdown
+site_name: Dr. Down
 site_description: 'Sistema direcionado a auxiliar o cuidado de pessoas com Síndrome de Down'
 repo_url: https://github.com/fga-gpp-mds/2018.1-Dr-Down
 theme: readthedocs
 
 pages:
   - Home: index.md
-  - Termo de abertura: eps/TAP.md
-  - Documento de visão: mds/VISION_DOCUMENT.md
-  - Documento de arquitetura: mds/ARCHITECTURE_DOCUMENT.md
-  - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
-  - EAP: eps/EAP.md
-  - Canvas: eps/CANVAS.md
-  - ROADMAP: eps/ROADMAP.md
-  - ROADMAP dos Papéis: eps/ROADMAP_ROLES.md
-  - Mapa de Requisitos: eps/REQUIREMENTS_MAP.md
-  - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
-  - Definição de Pronto: eps/DONE_DEFINITION.md
-  - EVM: eps/EVM_AGILE.md
-  - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md
-  - Código de conduta: CODE_OF_CONDUCT.md
-  - Ferramentas: eps/PROJECT_TOOLS.md
-  - Riscos: eps/RISKS.md
-  - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
-  - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
+  - Abertura: 
+    - Termo de abertura: eps/TAP.md
+    - EAP: eps/EAP.md
+    - Código de conduta: CODE_OF_CONDUCT.md
+    - Canvas: eps/CANVAS.md
+  - Especificação:
+    - Documento de visão: mds/VISION_DOCUMENT.md
+    - Documento de arquitetura: mds/ARCHITECTURE_DOCUMENT.md
+    - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
+    - Mapa de Requisitos: eps/REQUIREMENTS_MAP.md
+    - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md 
+    - ROADMAP: eps/ROADMAP.md
+    - ROADMAP dos Papéis: eps/ROADMAP_ROLES.md
+    - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
+    - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
+  - Viabilidade Técnica:
+    - Metodologia: eps/SCRUM_METHODOLOGY_DRDOWN.md
+    - Definição de Pronto: eps/DONE_DEFINITION.md
+    - EVM: eps/EVM_AGILE.md
+    - Ferramentas: eps/PROJECT_TOOLS.md
+    - Riscos: eps/RISKS.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
@@ -41,4 +44,7 @@ pages:
   - Sprint 5:
     - Planejamento: sprints/05/planning.md
     - Resultado: sprints/05/results.md
+  - Sprint 6:
+    - Planejamento: sprints/06/planning.md
+    - Resultado: sprints/06/results.md
 

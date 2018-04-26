@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-22 20:16+0000\n"
+"POT-Creation-Date: 2018-04-24 01:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: drdown/core/templates/account/account_inactive.html:5
 #: drdown/core/templates/account/account_inactive.html:8
 msgid "Account Inactive"
@@ -70,9 +71,9 @@ msgstr "Atenção:"
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "No momento, você não tem um e-mail cadastrado. Você realmente deve "
-"adicionar um e-mail "
-"para poder receber notificações, trocar sua senha e etc."
+msgstr ""
+"No momento, você não tem um e-mail cadastrado. Você realmente deve adicionar "
+"um e-mail para poder receber notificações, trocar sua senha e etc."
 
 #: drdown/core/templates/account/email.html:51
 msgid "Add E-mail Address"
@@ -129,8 +130,8 @@ msgid ""
 "for a %(site_name)s account and sign in below:"
 msgstr ""
 "Por favor entre com uma\n"
-"das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s\">entre "
-"</a>\n"
+"das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s"
+"\">entre </a>\n"
 "para uma conta do %(site_name)s e logue abaixo:"
 
 #: drdown/core/templates/account/login.html:26
@@ -199,7 +200,6 @@ msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
 "Entre em contato conosco caso tenha algum problema para redefinir sua senha"
 
-
 #: drdown/core/templates/account/password_reset_done.html:15
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
@@ -219,7 +219,6 @@ msgid ""
 msgstr ""
 "Esse link para resetar a senha é inválido, possivelmente já foi usado. Por "
 "favor tente <a href=\"%(passwd_reset_url)s\">mudar sua senha novamente</a>."
-
 
 #: drdown/core/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -439,7 +438,8 @@ msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
 #: drdown/core/templates/core/base.html:137
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
-msgstr "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
+msgstr ""
+"Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
 #: drdown/core/templates/core/base.html:138
 msgid "Phone: 3325-4219"
@@ -505,7 +505,8 @@ msgstr "Como prevenir a Síndrome de Down?"
 #: drdown/core/templates/core/info.html:40
 #: drdown/core/templates/core/info.html:105
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
-msgstr "A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
+msgstr ""
+"A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
 "minha vida?"
 
 #: drdown/core/templates/core/info.html:41
@@ -640,8 +641,8 @@ msgid ""
 msgstr ""
 "Não existe um limite fixo que representa um ápice de desenvolvimento de uma "
 "criança portadora de Síndrome de Down. É comum que o acompanhamento médico e "
-"a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da criança."
-
+"a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
+"criança."
 
 #: drdown/core/templates/core/info.html:137
 msgid "Further reading"

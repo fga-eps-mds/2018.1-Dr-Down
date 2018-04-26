@@ -1,6 +1,7 @@
 from test_plus.test import TestCase
 from ..admin import HealthTeamAdmin
 from django.contrib.auth.models import Group
+from django.core.exceptions import ValidationError
 
 
 from ..models.model_health_team import HealthTeam
@@ -21,7 +22,11 @@ class TestModelHealthTeam(TestCase):
         self.health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=HealthTeam.NEUROLOGY)
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+            )
 
     def test_get_absolute_url(self):
         """
@@ -82,9 +87,15 @@ class TestModelHealthTeamNoSetUp(TestCase):
         with self.assertRaises(Group.DoesNotExist):
             self.user.groups.get(name=HealthTeam.GROUP_NAME)
 
-        # now we add the health team <--->user relation
+        # now we add 057the health team <--->user relation
         self.health_team = HealthTeam.objects.create(
-            cpf="057.641.271-65", user=self.user, speciality=HealthTeam.NEUROLOGY)
+            cpf="057.641.271-65",
+            user=self.user,
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+        )
 
         # it should create the group
         health_team_group = Group.objects.get(name=HealthTeam.GROUP_NAME)
@@ -92,6 +103,24 @@ class TestModelHealthTeamNoSetUp(TestCase):
         # and change things in the user
         self.assertEqual(self.user.groups.get(
             name=HealthTeam.GROUP_NAME), health_team_group)
+
+    def test_council_acronym_with_wrong_speciality_error(self):
+        """
+        This method will check if the council acronym is consistent with
+        speciality
+        """
+
+        self.user = self.make_user()
+
+        with self.assertRaises(ValidationError):
+            self.health_team = HealthTeam.objects.create(
+                cpf="057.641.271-65",
+                user=self.user,
+                speciality=HealthTeam.PHYSIOTHERAPY,
+                council_acronym=HealthTeam.CRM,
+                register_number="1234567",
+                registration_state=HealthTeam.DF,
+            )
 
 
 class ModelTestCase(TestCase):
@@ -109,10 +138,12 @@ class ModelTestCase(TestCase):
         )
 
         self.health_team1 = HealthTeam.objects.create(
-            cpf='057.640.991-02',
-            register_number='1234567',
+            cpf="057.640.991-02",
+            user=self.user1,
             speciality=HealthTeam.PEDIATRICS,
-            user=self.user1
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
         )
 
     def test_save_cpf_ok(self):
@@ -176,9 +207,13 @@ class ModelTestCase(TestCase):
         )
 
         self.health_team = HealthTeam.objects.create(
-            cpf="057.641.271-65",
+            cpf="629.720.500-02",
             user=self.user,
-            speciality=HealthTeam.NEUROLOGY)
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234657",
+            registration_state=HealthTeam.DF,
+        )
 
         self.assertEqual(
             hasattr(self.user, 'healthteam'),
