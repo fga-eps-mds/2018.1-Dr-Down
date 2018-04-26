@@ -4,6 +4,41 @@ from drdown.careline.models import Procedure
 from drdown.users.models import Patient
 
 
+
+class TestModelProcedureNoSetUp(TestCase):
+    """
+        Test if model Procedure is working (No setUp method)
+    """
+
+    def test_convert_age_to_item(self):
+
+        test_cases = [
+            (19, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (0, Procedure.AGE_NEWBORN),
+            (-1, Procedure.AGE_NEWBORN),
+            (0.4, Procedure.AGE_NEWBORN),
+            (0.5, Procedure.AGE_SIX_MONTHS),
+            (0.6, Procedure.AGE_SIX_MONTHS),
+            (0.9, Procedure.AGE_SIX_MONTHS),
+            (1, Procedure.AGE_ONE_YEAR),
+            (2, Procedure.AGE_TWO_YEARS),
+            (3, Procedure.AGE_THREE_YEARS),
+            (4, Procedure.AGE_THREE_YEARS),
+            (5, Procedure.AGE_FIVE_YEARS),
+            (6, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (7, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (8, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (9, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (10, Procedure.AGE_SIX_TO_TEN_YEARS),
+            (11, Procedure.AGE_SIX_TO_TEN_YEARS),
+        ]
+
+        for i in test_cases:
+            self.assertEquals(
+                Procedure.convert_age_to_item(i[0]),
+                i[1]
+            )
+
 class TestModelProcedure(TestCase):
     """
         Test if model Procedure is working
@@ -53,12 +88,16 @@ class TestModelProcedure(TestCase):
                 len(Procedure.AGES)
             )
 
-        # if we save the checklist again, the aumont of checkitens should
-        # remain the same
+        # if we save the checklist again (and force execution of create_checkitens on procedures), the aumont
+        # of checkitens should remain the same
 
         self.checklist.save()
 
         for procedure in self.checklist.procedure_set.all():
+
+            # any combination of ages needed and required will serve us
+            procedure.create_check_items(ages_needed=Procedure.AGES, ages_required=[])
+
             self.assertEquals(
                 procedure.checkitem_set.all().count(),
                 len(Procedure.AGES)
