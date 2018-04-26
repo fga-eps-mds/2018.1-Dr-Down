@@ -104,18 +104,23 @@ class Patient(models.Model):
 
     def have_procedures_almost_late(self):
 
-        if self.birthday_is_close():
-            return self.have_incomplete_procedures_on_current_age()
+        response = False
 
-        return False
+        if self.birthday_is_close():
+            response = self.have_incomplete_procedures_on_current_age()
+
+        return response
 
     def have_incomplete_procedures_on_current_age(self):
+        from drdown.careline.models import Procedure
 
         result = False
 
-        for procedure in self.procedure_set.all():
+        current_age = self.user.age()
+
+        for procedure in self.checklist.procedure_set.all():
             check_item = procedure.checkitem_set.get(
-                age=procedure.convert_age_to_item(self.user.age())
+                age=Procedure.convert_age_to_item(current_age)
             )
 
             if not check_item.check and check_item.required:
@@ -129,7 +134,13 @@ class Patient(models.Model):
 
         age = self.user.age()
         current_item = Procedure.convert_age_to_item(age)
-        future_item = Procedure.convert_age_to_item(age + timezone.timedelta(days=30))
+
+        self.user.birthday += timezone.timedelta(days=31)
+
+        future_age = self.user.age()
+        future_item = Procedure.convert_age_to_item(future_age)
+
+        self.user.birthday -= timezone.timedelta(days=31)
 
         return current_item is not future_item
 

@@ -27,11 +27,15 @@ class Responsible(models.Model):
 
     def have_patient_needing_atention(self):
 
-        for patient in self.patient_set.all():
-            if patient.have_procedures_almost_late():
-                return True
+        response = False
+        patients = self.patient_set.all()
 
-        return False
+        for patient in patients:
+            if patient.have_procedures_almost_late():
+                response = True
+                break
+
+        return response
 
     def clean(self, *args, **kwargs):
 
