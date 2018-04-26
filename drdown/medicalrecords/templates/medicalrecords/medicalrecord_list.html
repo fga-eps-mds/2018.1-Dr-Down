@@ -4,48 +4,51 @@
 
 {% block content %}
 <div class="container">
-  <h2 class="text-tertiary">{{ view.kwargs.username }} {% trans "Medical Records" %}</h2>
-
+  <h2 class="text-tertiary">{{ view.related_patient.user.name }} {% trans "Medical Records" %}</h2>
+  {% if view.related_patient.user.patient  %}
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
       <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary">{% trans "New" %}</a>
     {% endif %}
   </div>
   <div class="container">
-
+    <p>
+    {% if  elect_count == 0 %}
+    <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
+    {% else %}
+    </p>
       <form class="form-inline" action="" method="GET">
           {{form}}
           <button class="btn" type="submit">Search</button>
           </fieldset>
       </form>
-
-
-      {% if is_paginated %}
-          {% include "paginator.html" %}
-      {% endif %}
-
+    {% endif %}
+    {% else %} Não é um paciente
+    {%endif%}
   </div>
 
 <div class="container">
   <div class="list-group">
     {% for medicalrecord in medicalrecord_list %}
     {% if view.kwargs.username == medicalrecord.patient.user.username %}
+
         <div class="h-blue list-group-item">
           <h4 class="list-group-item-heading text-tertiary h-blue">{{ medicalrecord.patient }}</h4>
           <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
           <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
+          {% if medicalrecord.document %}
           <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
-
+          {% endif %}
           <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
           <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
           <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
-
         </div>
+
     {% endif %}
-    {% empty %}
-        <h4>{% trans 'There are no Medical Records.'%}</h4>
+
     {% endfor %}
     </div>
+
   </div>
 </div>
 {% endblock content %}

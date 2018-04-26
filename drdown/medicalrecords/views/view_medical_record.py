@@ -28,14 +28,23 @@ class MedicalRecordsSearchList(SearchListView):
     form_class = MedicalRecordSearchForm
     filter_class = MedicalRecordsFilter
 
+    def related_patient(self):
+        for patient in Patient.objects.all():
+            if patient.user.username == self.kwargs.get('username'):
+                return patient
+
+    def get_context_data(self, **kwargs):
+        context = super(MedicalRecordsSearchList, self).get_context_data(**kwargs)
+        elect_count = 0
+        for device in MedicalRecord.objects.all():
+            if device.patient.user.username == self.kwargs.get('username'):
+                elect_count += 1
+        context['elect_count'] = elect_count
+        return context
+
 
 class MedicalRecordsListView(ListView):
     model = MedicalRecord
-
-    def get_context_data(self, **kwargs):
-        context = super(MedicalRecordsListView, self).get_context_data(**kwargs)
-        context['user'] = Patient.objects.get(Patient.user)
-        return context
 
 
 class MedicalRecordsCreateView(CreateView):
