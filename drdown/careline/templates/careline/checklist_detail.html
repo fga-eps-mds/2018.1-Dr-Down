@@ -1,11 +1,67 @@
 {% extends "core/base.html" %}
-{% load static i18n %}
+{% load i18n %}
+{% load static%}
+
 {% block title %}{% trans "Care Line" %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'careline/css/careline.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 <div class="container">
   <h2 class="text-tertiary">{% trans "Care Line" %}</h2>
 
+
+  <table class="table table-bordered" style="height: 100px;">
+    <thead>
+      <tr>
+        <th rowspan="2" style="text-align: center;"></th>
+        <th colspan="7" style="text-align: center;">{% trans 'AGE'%}</th>
+
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th rowspan="2" style="text-align: center;">{% trans 'Interventions / Evaluation'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Newborn'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Six Months'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'One Year'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Two Years'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Three Years'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Five Years'%}</th>
+        <th scope="col" style="text-align: center;">{% trans 'Six to Ten Years'%}</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+        {%for procedure in checklist.procedure_set.all%}
+          <tr>
+              <th scope="row">{{procedure.description}}</th>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+              <td><label class="container"><input type="checkbox"><span class="checkmark"></span></label></td>
+          </tr>
+        {%endfor%}
+
+      <tr>
+          <th colspan="8">{% trans '* Routine as suggested and, if necessary, when initiating physical examination or surgical procedure with cervical manipulation.'%}</th>
+      </tr>
+
+      <tr>
+          <th colspan="8">{% trans '** Thyrogram: TSH, free T4. For antithyroid antibodies, routinely request between 9 and 12 years or when needed.'%}</th>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-danger">{% trans 'Submit'%}</button>
 
 </div>
 {% endblock content %}
