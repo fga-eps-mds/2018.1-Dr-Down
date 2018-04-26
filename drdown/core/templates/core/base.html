@@ -78,7 +78,7 @@
                 {% endif %}
                 {% if user.patient %}
                 <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                <a class="dropdown-item" href="#">{% trans "My Queries" %}</a>
+                <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' user.username %}">{% trans "My Queries" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
                 {% endif %}
