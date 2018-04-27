@@ -11,12 +11,12 @@
 {% block content %}
 <div class="container">
   <h2 class="text-tertiary">{% trans 'Medical Records' %}</h2>
-  <a href="{% url 'medicalrecords:list_search_medicalrecords' %}" class="btn btn-secondary left-btn" >{% trans 'Advanced Search' %}</a>
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
       <form class="form-inline" action="" method="GET">
         <div class="search"><label>{% trans 'Patient' %} :</label>{{form.list_patient}}</div >
-          <button class="btn align-btn" type="submit">{% trans 'Search' %}</button>
+          <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+          <a href="{% url 'medicalrecords:list_search_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans 'Advanced Search' %}</a>
           </fieldset>
       </form>
     {% endif %}
