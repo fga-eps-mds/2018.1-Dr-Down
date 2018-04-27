@@ -85,10 +85,14 @@ class User(AbstractUser):
 
     def age(self):
         today = timezone.datetime.today()
-        age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+        age = today.year - self.birthday.year - \
+            ((today.month,
+              today.day) < (self.birthday.month,
+                            self.birthday.day))
 
         if age is 0:
-            diff_month = (today.year - self.birthday.year) * 12 + today.month - self.birthday.month
+            diff_month = (today.year - self.birthday.year) * 12 + \
+             today.month - self.birthday.month
             age = 0 if diff_month < 6 else 0.5
 
         return age

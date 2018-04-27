@@ -1,5 +1,10 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden, HttpResponseServerError
+from django.http import (
+    HttpResponseRedirect,
+    HttpResponse,
+    HttpResponseForbidden,
+    HttpResponseServerError
+)
 from django.urls import reverse
 
 from django.utils.translation import ugettext_lazy as _
@@ -9,8 +14,12 @@ from drdown.careline.models import (
     Procedure,
     CheckItem
 )
-from django.views.generic import DetailView, ListView, TemplateView, RedirectView
-
+from django.views.generic import (
+    DetailView,
+    ListView,
+    TemplateView,
+    RedirectView
+)
 from drdown.users.models import User, Patient
 
 
@@ -74,7 +83,8 @@ class ChecklistDetailView(DetailView):
 
         if (
             not hasattr(target_user, 'patient') or
-            not self.has_permission(current_user=current_user, target_user=target_user)
+            not self.has_permission(current_user=current_user,
+                                    target_user=target_user)
         ):
             url = reverse(
                 viewname='careline:checklist_list',
@@ -113,7 +123,8 @@ class ChecklistDetailView(DetailView):
 
         elif hasattr(current_user, 'responsible'):
             # if we are someone else, we need to check permissions
-            # for instance, if the current user is a responsible of the target user
+            # for instance, if the current user is a responsible
+            # of the target user
             for patient in current_user.responsible.patient_set.all():
                 if patient.user == target_user:
                     allowed = True

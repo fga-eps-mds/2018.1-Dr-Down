@@ -18,7 +18,7 @@ urlpatterns = [
         view=ChecklistDetailView.as_view(),
         name='checklist_detail'
     ),
-        url(
+    url(
         regex=r'^view/update$',
         view=ChecklistUpdateView.as_view(),
         name='checklist_update'

@@ -6,7 +6,9 @@ from drdown.careline.models import CheckItem
 
 class Procedure(models.Model):
 
-    careline = models.ForeignKey('careline.Checklist', on_delete=models.CASCADE)
+    careline = models.ForeignKey(
+        'careline.Checklist', on_delete=models.CASCADE
+        )
 
     # consts for unifying procedure parameters
     PROCEDURE_DESCRIPTION = 'description'

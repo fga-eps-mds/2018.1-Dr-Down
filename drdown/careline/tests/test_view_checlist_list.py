@@ -1,12 +1,13 @@
 from test_plus.test import TestCase
 from django.test.client import Client
 from django.shortcuts import reverse
-from django.utils import  timezone
+from django.utils import timezone
 
 from drdown.careline.models import Procedure
 from drdown.users.models import Patient, Responsible, Employee
 
 from drdown.careline.views import ChecklistListView
+
 
 class TestViewChecklistListView(TestCase):
     """
