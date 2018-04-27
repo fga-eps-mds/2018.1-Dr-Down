@@ -82,19 +82,19 @@
 
         </div>
 
-  <h2 class="text-tertiary">{% trans "Care Line" %}</h2>
-  <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h4>
+  <center><h2 class="text-tertiary">{% trans "Care Line" %}</h2></center>
+  <hr class="star-dark bg-star-blue">
+  <h5 class="list-group-item-heading ">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h5>
 
     {% if age == 0 %}
-        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {% trans "Newborn" %}</h4>
+        <h5 class="list-group-item-heading h-blue">{% trans 'Age: ' %} {% trans "Newborn" %}</h5>
     {% elif age == 0.5 %}
-        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {% trans "Less than 1 year old" %}</h4>
+        <h5 class="list-group-item-heading  h-blue">{% trans 'Age: ' %} {% trans "Less than 1 year old" %}</h5>
     {% else %}
-        <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Age: ' %} {{ age }}</h4>
+        <h5 class="list-group-item-heading  h-blue">{% trans 'Age: ' %} {{ age }}</h5>
     {% endif %}
 
-  <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'SES: ' %} {{ checklist.patient.ses}}</h4>
-
+  <h5 class="list-group-item-heading h-blue">{% trans 'SES: ' %} {{ checklist.patient.ses}}</h5>
   <input id="checklist_username" value="{{checklist.patient.user.username}}" hidden />
 
   <table class="table table-bordered" style="height: 100px;">
