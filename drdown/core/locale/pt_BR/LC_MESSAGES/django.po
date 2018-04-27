@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-22 20:16+0000\n"
+"POT-Creation-Date: 2018-04-27 02:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: drdown/core/templates/account/account_inactive.html:5
 #: drdown/core/templates/account/account_inactive.html:8
 msgid "Account Inactive"
@@ -70,9 +71,9 @@ msgstr "Atenção:"
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
 "an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "No momento, você não tem um e-mail cadastrado. Você realmente deve "
-"adicionar um e-mail "
-"para poder receber notificações, trocar sua senha e etc."
+msgstr ""
+"No momento, você não tem um e-mail cadastrado. Você realmente deve adicionar "
+"um e-mail para poder receber notificações, trocar sua senha e etc."
 
 #: drdown/core/templates/account/email.html:51
 msgid "Add E-mail Address"
@@ -129,8 +130,8 @@ msgid ""
 "for a %(site_name)s account and sign in below:"
 msgstr ""
 "Por favor entre com uma\n"
-"das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s\">entre "
-"</a>\n"
+"das suas contas de terceiros existentes. Ou, <a href=\"%(signup_url)s"
+"\">entre </a>\n"
 "para uma conta do %(site_name)s e logue abaixo:"
 
 #: drdown/core/templates/account/login.html:26
@@ -199,7 +200,6 @@ msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
 "Entre em contato conosco caso tenha algum problema para redefinir sua senha"
 
-
 #: drdown/core/templates/account/password_reset_done.html:15
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
@@ -219,7 +219,6 @@ msgid ""
 msgstr ""
 "Esse link para resetar a senha é inválido, possivelmente já foi usado. Por "
 "favor tente <a href=\"%(passwd_reset_url)s\">mudar sua senha novamente</a>."
-
 
 #: drdown/core/templates/account/password_reset_from_key.html:18
 msgid "change password"
@@ -370,19 +369,19 @@ msgid "My Patients"
 msgstr "Meus Pacientes"
 
 #: drdown/core/templates/core/base.html:74
-#: drdown/core/templates/core/base.html:88
+#: drdown/core/templates/core/base.html:89
 msgid "My Schedule"
 msgstr "Minha Agenda"
 
 #: drdown/core/templates/core/base.html:75
-#: drdown/core/templates/core/base.html:94
+#: drdown/core/templates/core/base.html:96
 msgid "Search"
 msgstr "Buscar"
 
 #: drdown/core/templates/core/base.html:76
 #: drdown/core/templates/core/base.html:83
-#: drdown/core/templates/core/base.html:90
-#: drdown/core/templates/core/base.html:96
+#: drdown/core/templates/core/base.html:91
+#: drdown/core/templates/core/base.html:98
 msgid "Locations"
 msgstr "Locais"
 
@@ -391,7 +390,7 @@ msgid "Risk Rating"
 msgstr "Classificação de Risco"
 
 #: drdown/core/templates/core/base.html:80
-#: drdown/core/templates/core/base.html:87
+#: drdown/core/templates/core/base.html:88
 msgid "Queue"
 msgstr "Fila de Espera"
 
@@ -400,52 +399,74 @@ msgid "My Queries"
 msgstr "Minhas Filas de Espera"
 
 #: drdown/core/templates/core/base.html:82
-#: drdown/core/templates/core/base.html:89
-#: drdown/core/templates/core/base.html:95
+#: drdown/core/templates/core/base.html:90
+#: drdown/core/templates/core/base.html:97
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:86
+#: drdown/core/templates/core/base.html:84
+#: drdown/core/templates/core/base.html:92
+msgid "Care Line"
+msgstr ""
+
+#: drdown/core/templates/core/base.html:87
 msgid "My Patient"
 msgstr "Meu paciente"
 
-#: drdown/core/templates/core/base.html:93
+#: drdown/core/templates/core/base.html:95
 msgid "Schedules"
 msgstr "Agenda"
 
-#: drdown/core/templates/core/base.html:101
+#: drdown/core/templates/core/base.html:103
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: drdown/core/templates/core/base.html:102
+#: drdown/core/templates/core/base.html:104
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:103
+#: drdown/core/templates/core/base.html:105
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:108
+#: drdown/core/templates/core/base.html:110
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base.html:111
+#: drdown/core/templates/core/base.html:113
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base.html:136
+#: drdown/core/templates/core/base.html:135
+msgid "Hey! You have procedures to be made."
+msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+
+#: drdown/core/templates/core/base.html:135
+#: drdown/core/templates/core/base.html:140
+msgid "Click here to check it"
+msgstr "Clique aqui para conferir"
+
+#: drdown/core/templates/core/base.html:140
+msgid ""
+"One or more of your patients needs attention. Some procedures may be behind "
+"schedule."
+msgstr "Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
+"podem estar atrasados."
+
+#: drdown/core/templates/core/base.html:155
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base.html:137
+#: drdown/core/templates/core/base.html:156
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
-msgstr "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
+msgstr ""
+"Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base.html:138
+#: drdown/core/templates/core/base.html:157
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base.html:146
+#: drdown/core/templates/core/base.html:165
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -505,7 +526,8 @@ msgstr "Como prevenir a Síndrome de Down?"
 #: drdown/core/templates/core/info.html:40
 #: drdown/core/templates/core/info.html:105
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
-msgstr "A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
+msgstr ""
+"A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
 "minha vida?"
 
 #: drdown/core/templates/core/info.html:41
@@ -640,8 +662,8 @@ msgid ""
 msgstr ""
 "Não existe um limite fixo que representa um ápice de desenvolvimento de uma "
 "criança portadora de Síndrome de Down. É comum que o acompanhamento médico e "
-"a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da criança."
-
+"a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
+"criança."
 
 #: drdown/core/templates/core/info.html:137
 msgid "Further reading"
