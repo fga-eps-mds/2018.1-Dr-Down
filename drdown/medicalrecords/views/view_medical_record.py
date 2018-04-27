@@ -51,14 +51,14 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
     def get_login_url(self):
         if self.request.user.is_authenticated:
             # redirect if user is not a HealthTeam or the patient itself
-            login_url = reverse_lazy(
+            login_MedicalRecordsList_url = reverse_lazy(
                 viewname='users:detail',
                 kwargs={'username': self.request.user.username}
             )
-            return login_url
+            return login_MedicalRecordsList_url
         else:
-            login_url = reverse_lazy('account_login')
-            return login_url
+            login_MedicalRecordsList_url = reverse_lazy('account_login')
+            return login_MedicalRecordsList_url
 
     def related_patient(self):
         for patient in Patient.objects.all():
@@ -149,4 +149,3 @@ class MedicalRecordsUpdateView(UpdateView):
             }
         )
         return success_update_url
-
