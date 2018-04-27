@@ -11,7 +11,7 @@
 {% block content %}
 
   <div class="container mb-5">
-    <h2 class="text-tertiary">{% trans 'Medical Records' %}</h2>
+    <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ view.related_patient.user.name }}</h2>
     {% if  elect_count == 0 %}
       <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
       {% if user.healthteam %}
@@ -49,17 +49,17 @@
 
 
 
-    <div class="container">
+    <div class="container size-text">
       <div class="list-group">
         {% for medicalrecord in medicalrecord_list %}
           {% if view.kwargs.username == medicalrecord.patient.user.username %}
             <div class="h-blue list-group-item">
               <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
-              <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
+              <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.name }} </p>
               {% if medicalrecord.document %}
-                <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+              <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
               {% endif %}
-              <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
+              <p class="text-tertiary h-blue"><label>{% trans 'care day'%}: </label> {{ medicalrecord.day }} </p>
               {% if user == medicalrecord.author %}
                 <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
                 <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>

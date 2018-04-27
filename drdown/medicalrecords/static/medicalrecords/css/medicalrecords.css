@@ -37,3 +37,7 @@
   left: 100px;
 }
 
+.size-text{
+  word-wrap: break-word;
+
+}
