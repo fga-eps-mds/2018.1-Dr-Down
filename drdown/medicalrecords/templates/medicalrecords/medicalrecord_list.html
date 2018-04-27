@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load markdown_deux_tags %}
 {% load static i18n %}
 {% block title %}{% trans "Medical Records:" %}{% endblock %}
 
@@ -41,7 +42,7 @@
     {% if view.kwargs.username == medicalrecord.patient.user.username %}
 
         <div class="h-blue list-group-item">
-          <p class="text-tertiary h-blue"> {{ medicalrecord.message }} </p>
+          <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
           <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
           {% if medicalrecord.document %}
           <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
