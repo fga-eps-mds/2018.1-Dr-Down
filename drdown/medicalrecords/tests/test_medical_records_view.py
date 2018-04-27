@@ -1,10 +1,13 @@
 from test_plus.test import TestCase
 from ..models.model_medical_record import MedicalRecord
+from ..views.view_medical_record import MedicalRecordsSearchList
+from ..views.view_medical_record import MedicalRecordCompleteSearchForm
 from drdown.users.models.model_patient import Patient
 from django.test.client import Client
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+
 
 class TestViewMedicalRecords(TestCase):
 
@@ -112,3 +115,17 @@ class TestViewMedicalRecords(TestCase):
         )
 
         self.assertEquals(response.status_code,200)
+
+    def test_search_list_view(self):
+            """
+            Makes sure that the post search view is loaded correctly
+            """
+            self.url = ()
+            response = self.client.get(
+                path=reverse(
+                    viewname='medicalrecords:list_search_medicalrecords',
+                )
+            )
+            self.assertEquals(response.status_code, 200)
+
+
