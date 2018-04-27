@@ -1,15 +1,10 @@
 from django.shortcuts import render
 from ..models.model_medical_record import MedicalRecord
 from drdown.users.models.model_patient import Patient
-from django.views.generic import ListView
-from django.views.generic import DetailView
-from django.views.generic import CreateView
-from django.views.generic import DeleteView
-from django.views.generic import UpdateView
+from django.views.generic import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from django.utils import timezone
-from django.core.exceptions import ValidationError
 from search_views.search import SearchListView
+from django.contrib.auth.mixins import UserPassesTestMixin
 from search_views.filters import BaseFilter
 from ..forms.medicalrecords_forms import MedicalRecordSearchForm,\
     MedicalRecordCompleteSearchForm, PatientSearchForm, MedicalRecordForm
@@ -26,11 +21,44 @@ class MedicalRecordsFilter(BaseFilter):
     }
 
 
-class MedicalRecordsList(SearchListView):
+class CheckPermissions(UserPassesTestMixin):
+    def test_func(self):
+        return hasattr(self.request.user, 'healthteam')
+
+    def get_login_url(self):
+        if self.request.user.is_authenticated:
+            # redirect user is not a HealthTeam
+            login_url = reverse_lazy(
+                viewname='users:detail',
+                kwargs={'username': self.request.user.username}
+            )
+            return login_url
+        else:
+            login_url = reverse_lazy('account_login')
+            return login_url
+
+
+class MedicalRecordsList(UserPassesTestMixin, SearchListView):
     model = MedicalRecord
     template_name = "medicalrecords/medicalrecord_list.html"
     form_class = MedicalRecordSearchForm
     filter_class = MedicalRecordsFilter
+
+    def test_func(self):
+        return hasattr(self.request.user, 'healthteam') or \
+               self.request.user.username == self.kwargs.get('username')
+
+    def get_login_url(self):
+        if self.request.user.is_authenticated:
+            # redirect user is not a HealthTeam
+            login_url = reverse_lazy(
+                viewname='users:detail',
+                kwargs={'username': self.request.user.username}
+            )
+            return login_url
+        else:
+            login_url = reverse_lazy('account_login')
+            return login_url
 
     def related_patient(self):
         for patient in Patient.objects.all():
@@ -51,7 +79,7 @@ class MedicalRecordsList(SearchListView):
         return context
 
 
-class MedicalRecordsSearchList(SearchListView):
+class MedicalRecordsSearchList(CheckPermissions, SearchListView):
     model = MedicalRecord
     template_name = "medicalrecords/medicalrecord_search_list.html"
     form_class = MedicalRecordCompleteSearchForm
@@ -63,7 +91,7 @@ class MedicalRecordsSearchList(SearchListView):
         return queryset
 
 
-class PatientSearchList(SearchListView):
+class PatientSearchList(CheckPermissions, SearchListView):
     model = Patient
     template_name = "medicalrecords/medicalrecord_patient_list.html"
     form_class = PatientSearchForm
