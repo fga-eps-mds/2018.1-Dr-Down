@@ -1,16 +1,16 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans "New Medical Record" %}{% endblock %}
+{% block title %}{% trans 'New Medical Record' %}{% endblock %}
 
 {% block content %}
   <div class="container">
-    <h2>{% trans "New Medical Record" %}</h2>
+    <h2>{% trans 'New Medical Record' %}</h2>
     {{ form.media }}
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form }}<br/><br/>
-      <button type="submit" class="btn btn-secondary">{% trans "Create" %}</button>
+      <button type="submit" class="btn btn-secondary">{% trans 'Create' %}</button>
     </form>
   </div>
 

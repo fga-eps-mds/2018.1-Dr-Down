@@ -9,7 +9,7 @@
 
 {% block content %}
 <div class="container">
-  <h2 class="text-tertiary">{% trans "Medical Records" %}</h2>
+  <h2 class="text-tertiary">{% trans 'Medical Records' %}</h2>
   <div class="container">
     <p>
        <form class="form-inline" action="" method="GET">
@@ -18,7 +18,7 @@
         <div class="search"><label>{% trans 'date'%}:</label>{{ form.search_date }}</div>
         <div class="search"><label>{% trans 'paciente'%}:</label>{{ form.patient }}</div>
 
-          <button class="btn align-btn" type="submit">Search</button>
+          <button class="btn align-btn" type="submit">{% trans 'Search' %}</button>
           </fieldset>
       </form>
     </p>
@@ -37,8 +37,8 @@
           <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
           {% endif %}
           <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
-          <a href="{% url 'medicalrecords:update_medicalrecords' medicalrecord.patient medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
-          <a href="{% url 'medicalrecords:delete_medicalrecords' medicalrecord.patient medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+          <a href="{% url 'medicalrecords:update_medicalrecords' medicalrecord.patient medicalrecord.pk %}" class="btn btn-secondary">{% trans 'Edit' %}</a>
+          <a href="{% url 'medicalrecords:delete_medicalrecords' medicalrecord.patient medicalrecord.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a><br/><br/>
         </div>
 
     {% endfor %}

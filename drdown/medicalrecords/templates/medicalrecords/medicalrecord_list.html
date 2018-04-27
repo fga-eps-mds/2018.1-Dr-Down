@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="size-cont">
-  <h2 class="text-tertiary">{{ view.related_patient.user.name }} {% trans "Medical Records" %}</h2>
+  <h2 class="text-tertiary">{{ view.related_patient.user.name }} {% trans 'Medical Records' %}</h2>
 
   {% if view.related_patient.user.patient  %}
   <div class="mb-4" style="margin:right;">
@@ -47,12 +47,12 @@
         <div class="search"><label>{% trans 'author'%}:</label> {{ form.author }}</div>
         <div class="search"><label>{% trans 'message'%}:</label>{{ form.search_text }}</div>
         <div class="search"><label>{% trans 'date'%}:</label>{{ form.search_date }}</div>
-          <button class="btn align-btn" type="submit">Search</button>
+          <button class="btn align-btn" type="submit">{% trans 'Search' %}</button>
           </fieldset>
       </form>
     {% endif %}
     {% else %}
-    {% trans "This user is not a patient!!!" %}
+    {% trans 'This user is not a patient!!!' %}
     {%endif%}
   </div>
 
@@ -65,7 +65,7 @@
           <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
           <p class="text-tertiary h-blue"> {{ medicalrecord.author }} </p>
           {% if medicalrecord.document %}
-          <p>Anexo: <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+          <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
           {% endif %}
           <p class="text-tertiary h-blue"> {{ medicalrecord.day }} </p>
           {% if user == medicalrecord.author %}
