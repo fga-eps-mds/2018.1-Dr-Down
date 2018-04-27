@@ -51,6 +51,8 @@
                     }
                 });
 
+
+
                 $.ajax({
                     type:"POST",
                     url:"/careline/view/update",
@@ -61,11 +63,26 @@
                            'value': (this.checked ? "True" : "False")
                            },
                     success: function(response){
-                        document.getElementById('message_field').innerHTML += '<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response + '</div>'
+
+                        var element = '<div class="alert alert-success alert-dismissible fade show" id="alert_' + saved_id.split(",")[0] + '" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response + '</div>'
+                        document.getElementById('message_field').innerHTML += element
+
+                        $("#alert_" + saved_id.split(",")[0]).fadeTo(2000, 500).slideUp(500, function(){
+                            $("#alert_" + saved_id.split(",")[0]).slideUp(500);
+                            $("#alert_" + saved_id.split(",")[0]).alert('close');
+                        });
+
                     },
                     error: function(response){
-                        document.getElementById('message_field').innerHTML += '<div class="alert alert-error alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response.responseText + '</div>'
+                        var element = '<div class="alert alert-error alert-dismissible fade show" id="alert_' + saved_id.split(",")[0] + '" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response.responseText + '</div>'
+                        document.getElementById('message_field').innerHTML += element
                         document.getElementById(saved_id).checked = !document.getElementById(saved_id).checked
+
+                        $("#alert_" + saved_id.split(",")[0]).fadeTo(2000, 500).slideUp(500, function(){
+                            $("#alert_" + saved_id.split(",")[0]).slideUp(500);
+                            $("#alert_" + saved_id.split(",")[0]).alert('close');
+                        });
+
                     }
                });
             })
