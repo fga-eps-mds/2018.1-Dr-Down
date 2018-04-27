@@ -181,7 +181,8 @@ class ChecklistUpdateView(RedirectView):
                 value=request.POST.get('value')
             )
         else:
-            message = _("Error: You cannot change data on this form.")
+            message = _("Error: You cannot change data on this form. "
+                        "You need to be at least 13 years old.")
             return HttpResponseForbidden(message)
 
         return HttpResponse(message)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-27 12:46+0000\n"
+"POT-Creation-Date: 2018-04-27 21:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,69 +91,69 @@ msgid "Research for Celiac Disease (antigliadin antibody)"
 msgstr "Pesquisa para Doença Celíaca (anticorpo antigliadina)"
 
 #: drdown/careline/templates/careline/checklist_detail.html:5
-#: drdown/careline/templates/careline/checklist_detail.html:85
+#: drdown/careline/templates/careline/checklist_detail.html:102
 #: drdown/careline/templates/careline/checklist_list.html:3
 #: drdown/careline/templates/careline/checklist_list.html:7
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
-#: drdown/careline/templates/careline/checklist_detail.html:86
+#: drdown/careline/templates/careline/checklist_detail.html:104
 msgid "Name: "
 msgstr "Nome: "
 
-#: drdown/careline/templates/careline/checklist_detail.html:89
-#: drdown/careline/templates/careline/checklist_detail.html:91
-#: drdown/careline/templates/careline/checklist_detail.html:93
+#: drdown/careline/templates/careline/checklist_detail.html:107
+#: drdown/careline/templates/careline/checklist_detail.html:109
+#: drdown/careline/templates/careline/checklist_detail.html:111
 msgid "Age: "
 msgstr "Idade: "
 
-#: drdown/careline/templates/careline/checklist_detail.html:89
-#: drdown/careline/templates/careline/checklist_detail.html:111
+#: drdown/careline/templates/careline/checklist_detail.html:107
+#: drdown/careline/templates/careline/checklist_detail.html:128
 msgid "Newborn"
 msgstr "Recém-Nascido"
 
-#: drdown/careline/templates/careline/checklist_detail.html:91
+#: drdown/careline/templates/careline/checklist_detail.html:109
 msgid "Less than 1 year old"
 msgstr "Menos de 1 ano de idade"
 
-#: drdown/careline/templates/careline/checklist_detail.html:96
-#: drdown/careline/templates/careline/checklist_list.html:13
+#: drdown/careline/templates/careline/checklist_detail.html:114
+#: drdown/careline/templates/careline/checklist_list.html:20
 msgid "SES: "
 msgstr "SES: "
 
-#: drdown/careline/templates/careline/checklist_detail.html:104
+#: drdown/careline/templates/careline/checklist_detail.html:121
 msgid "AGE"
 msgstr "IDADE"
 
-#: drdown/careline/templates/careline/checklist_detail.html:110
+#: drdown/careline/templates/careline/checklist_detail.html:127
 msgid "Interventions / Evaluation"
 msgstr "Intervenções / Avaliação"
 
-#: drdown/careline/templates/careline/checklist_detail.html:113
+#: drdown/careline/templates/careline/checklist_detail.html:130
 msgid "Six Months"
 msgstr "Seis Meses"
 
-#: drdown/careline/templates/careline/checklist_detail.html:116
+#: drdown/careline/templates/careline/checklist_detail.html:133
 msgid "One Year"
 msgstr "Um Ano"
 
-#: drdown/careline/templates/careline/checklist_detail.html:119
+#: drdown/careline/templates/careline/checklist_detail.html:136
 msgid "Two Years"
 msgstr "Dois Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:122
+#: drdown/careline/templates/careline/checklist_detail.html:139
 msgid "Three Years"
 msgstr "Três Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:125
+#: drdown/careline/templates/careline/checklist_detail.html:142
 msgid "Five Years"
 msgstr "Cinco Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:128
+#: drdown/careline/templates/careline/checklist_detail.html:145
 msgid "Six to Ten Years"
 msgstr "Seis a Dez Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:328
+#: drdown/careline/templates/careline/checklist_detail.html:345
 msgid ""
 "* Routine as suggested and, if necessary, when initiating physical "
 "examination or surgical procedure with cervical manipulation."
@@ -161,7 +161,7 @@ msgstr ""
 "* Rotina como sugerido e, se preciso, ao iniciar atividade física ou em "
 "procedimento cirúrgico com manuseio cervical."
 
-#: drdown/careline/templates/careline/checklist_detail.html:332
+#: drdown/careline/templates/careline/checklist_detail.html:349
 msgid ""
 "** Thyrogram: TSH, free T4. For antithyroid antibodies, routinely request "
 "between 9 and 12 years or when needed."
@@ -169,26 +169,31 @@ msgstr ""
 "** Tireograma: TSH, T4 livre. Para os anticorpos antitiroidiano, solicitar "
 "como rotina entre 9 e 12 anos ou quando necessário."
 
-#: drdown/careline/templates/careline/checklist_detail.html:336
+#: drdown/careline/templates/careline/checklist_detail.html:353
 msgid "Required"
 msgstr "Obrigatório"
 
-#: drdown/careline/templates/careline/checklist_detail.html:337
+#: drdown/careline/templates/careline/checklist_detail.html:354
 msgid "When Needed"
 msgstr "Quando Necessário"
 
-#: drdown/careline/templates/careline/checklist_detail.html:338
+#: drdown/careline/templates/careline/checklist_detail.html:355
 msgid "Done"
 msgstr "Feito"
 
-#: drdown/careline/templates/careline/checklist_list.html:16
+#: drdown/careline/templates/careline/checklist_list.html:25
 msgid "There are no patients for this user."
 msgstr "Não há pacientes para este usuário."
 
-#: drdown/careline/views/view_checklist.py:166
-msgid "Error: You cannot change data on this form."
-msgstr "Erro: Você não pode mudar os dados neste formulário."
+#: drdown/careline/views/view_checklist.py:184
+#| msgid "Error: You cannot change data on this form."
+msgid ""
+"Error: You cannot change data on this form. You need to be at least 13 years "
+"old."
+msgstr ""
+"Erro: Você não pode mudar os dados neste formulário. Você deve ter pelo "
+"menos 13 anos de idade."
 
-#: drdown/careline/views/view_checklist.py:180
+#: drdown/careline/views/view_checklist.py:199
 msgid "Success! Your changes were saved."
 msgstr "Sucesso! Suas mudanças foram salvas."
