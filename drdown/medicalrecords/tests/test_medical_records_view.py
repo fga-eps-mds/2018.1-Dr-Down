@@ -2,7 +2,9 @@ from test_plus.test import TestCase
 from ..models.model_medical_record import MedicalRecord
 from ..views.view_medical_record import MedicalRecordsSearchList
 from ..views.view_medical_record import MedicalRecordCompleteSearchForm
+from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
+from drdown.users.models.model_user import User
 from django.test.client import Client
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -17,21 +19,31 @@ class TestViewMedicalRecords(TestCase):
         """
 
         self.client = Client()
-        self.user = self.make_user()
-        self.patient = Patient.objects.create(
-                     ses="1234567",user=self.user, priority=1,
-                     mother_name="Mae", father_name="Pai",ethnicity=3,
-                     sus_number="12345678911",
-                     civil_registry_of_birth="12345678911",
-                     declaration_of_live_birth="12345678911"
+        self.user_1 = self.make_user()
+        self.user_2 = self.make_user(username="teste_2")
+        self.patient = Patient.objects.create(ses="1234567",
+                                              user=self.user_2, priority=1,
+                                              mother_name="Mãe",
+                                              father_name="Pai",
+                                              ethnicity=3,
+                                              sus_number="123456789012345",
+                                              civil_registry_of_birth="12345678911",
+                                              declaration_of_live_birth="12345678911")
+
+        self.health_team = HealthTeam.objects.create(
+            cpf="507.522.730-94",
+            user=self.user_1,
+            speciality=HealthTeam.NEUROLOGY
         )
+
         self.medicalrecord = MedicalRecord.objects.create(
             day="05-09-1998",
             message="Making a post test case",
             patient=self.patient,
-            author=self.user,
+            author=self.user_1,
             document="test.txt",
         )
+
         self.medicalrecord.save()
         self.patient.save()
 
@@ -40,11 +52,11 @@ class TestViewMedicalRecords(TestCase):
         """
         Test if create form is valid with all required fields
         """
-        self.client.force_login(user=self.user)
+        self.client.force_login(user=self.user_1)
         data = {
             'message': 'test',
             'patient': 'self.patient',
-            'author': 'self.user',
+            'author': 'self.user_1',
         }
         response = self.client.post(
             path=reverse(
@@ -74,7 +86,7 @@ class TestViewMedicalRecords(TestCase):
         Test is medical records is being correcty updated.
         """
 
-        self.client.force_login(user=self.user)
+        self.client.force_login(user=self.user_1)
 
 
 
@@ -96,12 +108,12 @@ class TestViewMedicalRecords(TestCase):
         Test is medical records is being correcty updated.
         """
 
-        self.client.force_login(user=self.user)
+        self.client.force_login(user=self.user_1)
 
         data = {
             'message': 'test',
             'patient': 'self.patient',
-            'author': 'self.user',
+            'author': 'self.user_1',
             'document': 'test.txt',
         }
 
@@ -120,6 +132,8 @@ class TestViewMedicalRecords(TestCase):
             """
             Makes sure that the post search view is loaded correctly
             """
+
+            self.client.force_login(user=self.user_1)
             self.url = ()
             response = self.client.get(
                 path=reverse(
@@ -128,4 +142,11 @@ class TestViewMedicalRecords(TestCase):
             )
             self.assertEquals(response.status_code, 200)
 
+    def test_permissions_to_acess_view(self):
 
+        url = "/medicalrecords/"
+
+        self.client.force_login(user=self.user_1)
+
+        response = self.client.get(url, follow=True)
+        self.assertEqual(response.status_code, 200)
