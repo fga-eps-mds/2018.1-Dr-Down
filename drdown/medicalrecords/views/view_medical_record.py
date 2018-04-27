@@ -27,7 +27,7 @@ class CheckPermissions(UserPassesTestMixin):
 
     def get_login_url(self):
         if self.request.user.is_authenticated:
-            # redirect user is not a HealthTeam
+            # redirect if user is not a HealthTeam
             login_url = reverse_lazy(
                 viewname='users:detail',
                 kwargs={'username': self.request.user.username}
@@ -50,7 +50,7 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
 
     def get_login_url(self):
         if self.request.user.is_authenticated:
-            # redirect user is not a HealthTeam
+            # redirect if user is not a HealthTeam
             login_url = reverse_lazy(
                 viewname='users:detail',
                 kwargs={'username': self.request.user.username}

@@ -21,6 +21,7 @@ class TestViewMedicalRecords(TestCase):
         self.client = Client()
         self.user_1 = self.make_user()
         self.user_2 = self.make_user(username="teste_2")
+        self.user_3 = self.make_user(username="teste_3")
         self.patient = Patient.objects.create(ses="1234567",
                                               user=self.user_2, priority=1,
                                               mother_name="Mãe",
@@ -129,24 +130,107 @@ class TestViewMedicalRecords(TestCase):
         self.assertEquals(response.status_code,200)
 
     def test_search_list_view(self):
-            """
-            Makes sure that the post search view is loaded correctly
-            """
-
-            self.client.force_login(user=self.user_1)
-            self.url = ()
-            response = self.client.get(
-                path=reverse(
-                    viewname='medicalrecords:list_search_medicalrecords',
-                )
-            )
-            self.assertEquals(response.status_code, 200)
-
-    def test_permissions_to_acess_view(self):
-
-        url = "/medicalrecords/"
+        """
+        Makes sure that the medicalrecord search view is loaded correctly
+        """
 
         self.client.force_login(user=self.user_1)
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_search_medicalrecords',
+            )
+        )
+        self.assertEquals(response.status_code, 200)
 
-        response = self.client.get(url, follow=True)
-        self.assertEqual(response.status_code, 200)
+    def test_search_list_view_logout(self):
+        """
+        Makes sure that the medicalrecord search view gives 302 on a logout
+        """
+
+        self.client.force_login(user=self.user_1)
+        self.client.logout()
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_search_medicalrecords',
+            )
+        )
+        self.assertEquals(response.status_code, 302)
+
+    def test_search_list_view_no_permissions(self):
+        """
+        Makes sure that the medicalrecord gives 302 on a user without
+        permissions
+        """
+
+        self.client.force_login(user=self.user_2)
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_search_medicalrecords',
+            )
+        )
+        self.assertEquals(response.status_code, 302)
+
+    def test_list_view(self):
+        """
+        Makes sure that the medicalrecord search view is loaded correctly
+        """
+
+        self.client.force_login(user=self.user_1)
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_logout(self):
+        """
+        Makes sure that the medicalrecord search view gives 302
+        """
+
+        self.client.force_login(user=self.user_1)
+        self.client.logout()
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 302)
+
+    def test_list_view_no_permissions(self):
+        """
+        Makes sure that the patient can acess his medicalrecords
+        """
+
+        self.client.force_login(user=self.user_2)
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_not_specialized(self):
+        """
+        Makes sure that a user without permissions cannot
+         acess a medicalrecords
+        """
+
+        self.client.force_login(user=self.user_3)
+        self.url = ()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 302)
