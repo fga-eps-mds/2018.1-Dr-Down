@@ -88,6 +88,22 @@ class TestViewChecklistListView(TestCase):
 
         self.assertRedirects(response=response, expected_url=url)
 
+    def test_get_redirect_for_not_authenticated(self):
+        """
+            Test if a not authenticated user is redirected to login screen
+        """
+
+        response = self.client.get(
+            path=reverse(
+                viewname='careline:checklist_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(viewname='account_login')
+
+        self.assertRedirects(response=response, expected_url=url)
+
     def test_get_redirect_for_other_specializations_or_no_specialization(self):
         """
             Test if a user that is not patient or responsible is redirected for its profile

@@ -33,6 +33,13 @@ class ChecklistListView(ListView):
 
     def get(self, request, *args, **kwargs):
 
+        if not request.user.is_authenticated:
+            # redirect not not authenticated to login screen
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
         if hasattr(request.user, 'patient'):
             # redirect user_patient to the checklist detail view
             url = reverse(
