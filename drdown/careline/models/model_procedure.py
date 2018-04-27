@@ -76,3 +76,21 @@ class Procedure(models.Model):
 
         self.initialized = True
         self.save()
+
+    def get_checkitens_ordered(self):
+
+        #  index = age = ACR,
+        #  0 = 0 = RN,
+        #  1 = 0.5 = 6M,
+        #  2 = 1 = 1Y,
+        #  3 = 2 = 2Y,
+        #  4 = 3 = 3Y,
+        #  5 = 5 = 5Y,
+        #  6 = 6...10 = 6_10Y
+
+        response = [None] * Procedure.AGES.__len__()
+
+        for item in self.checkitem_set.all():
+            response[Procedure.AGES.index(item.age)] = item
+
+        return iter(response)

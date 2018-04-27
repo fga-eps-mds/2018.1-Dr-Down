@@ -135,7 +135,7 @@
             <tr>
                 <th scope="row">{{procedure.description}}</th>
 
-                    {% for check_item in procedure.checkitem_set.all %}
+                    {% for check_item in procedure.get_checkitens_ordered %}
 
 
                         {% if age >= 0 and forloop.counter0 == 0 %}
