@@ -1,6 +1,6 @@
 from test_plus.test import TestCase
 
-from drdown.careline.models import Procedure
+from drdown.careline.models import Procedure, Checklist
 from drdown.users.models import Patient
 
 
@@ -62,6 +62,22 @@ class TestModelProcedure(TestCase):
             declaration_of_live_birth="12345678911",
             responsible=None
         )
+
+    def test_get_checkitens_ordered(self):
+        """
+            Test if the method returns a list ordered in the rigth order
+        """
+
+        procedures = list(self.patient1.checklist.procedure_set.all())
+        chosen_procedure = procedures.pop(0)
+
+        ordered = chosen_procedure.get_checkitens_ordered()
+
+        for i in range(0, Procedure.AGES.__len__()):
+            self.assertEquals(
+                next(ordered).age,
+                Procedure.AGES[i]
+            )
 
     def test_procedure_created_checkitens_only_on_first_run(self):
         """
