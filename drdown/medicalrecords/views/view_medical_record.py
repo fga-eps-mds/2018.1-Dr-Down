@@ -12,7 +12,7 @@ from django.core.exceptions import ValidationError
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from ..forms.medicalrecords_forms import MedicalRecordSearchForm,\
-    MedicalRecordCompleteSearchForm, PatientSearchForm
+    MedicalRecordCompleteSearchForm, PatientSearchForm, MedicalRecordForm
 
 
 class MedicalRecordsFilter(BaseFilter):
@@ -20,7 +20,8 @@ class MedicalRecordsFilter(BaseFilter):
         'search_text': ['message'],
         'search_date': ['day'],
         'author': ['author__id'],
-        'patient': ['patient__id']
+        'patient': ['patient__id'],
+        'message': ['message']
     }
 
 
@@ -63,8 +64,8 @@ class PatientSearchList(SearchListView):
 
 class MedicalRecordsCreateView(CreateView):
     model = MedicalRecord
+    form_class = MedicalRecordForm
     template_name = 'medicalrecords/medicalrecord_form.html'
-    fields = ['message']
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse_lazy(
@@ -99,9 +100,9 @@ class MedicalRecordsDeleteView(DeleteView):
 
 
 class MedicalRecordsUpdateView(UpdateView):
-    template_name = 'medicalrecords/medicalrecord_form.html'
-    fields = ['message']
     model = MedicalRecord
+    form_class = MedicalRecordForm
+    template_name = 'medicalrecords/medicalrecord_form.html'
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse_lazy(

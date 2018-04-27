@@ -2,6 +2,16 @@ from drdown.medicalrecords.models.model_medical_record import MedicalRecord
 from django import forms
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
+from pagedown.widgets import PagedownWidget
+
+
+class MedicalRecordForm(forms.ModelForm):
+
+    message = forms.CharField(widget=PagedownWidget())
+
+    class Meta:
+        model = MedicalRecord
+        fields = ["message"]
 
 
 class MedicalRecordSearchForm(forms.Form):
@@ -57,3 +67,4 @@ class PatientSearchForm(forms.Form):
         required=False,
         label='Search patient!'
     )
+
