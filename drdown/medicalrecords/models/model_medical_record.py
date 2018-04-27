@@ -24,7 +24,7 @@ class MedicalRecord(models.Model):
 
     message = models.TextField(
         _('Message'),
-        help_text=_('Message of post'),
+        help_text=_('Message of medical records'),
         max_length=4000
     )
 

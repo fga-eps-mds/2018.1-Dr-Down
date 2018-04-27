@@ -3,6 +3,7 @@ from django import forms
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from pagedown.widgets import PagedownWidget
+from django.utils.translation import ugettext_lazy as _
 
 
 class MedicalRecordForm(forms.ModelForm):
@@ -18,7 +19,7 @@ class MedicalRecordSearchForm(forms.Form):
     search_text = forms.CharField(
         required=False,
         label='Search patient!',
-        widget=forms.TextInput(attrs={'placeholder': 'search here!'})
+        widget=forms.TextInput(attrs={'placeholder': _('search here!')})
     )
 
     search_date = forms.DateField(
@@ -30,33 +31,33 @@ class MedicalRecordSearchForm(forms.Form):
     author = forms.ModelChoiceField(
         queryset=HealthTeam.objects.all(),
         required=False,
-        label='Search author!'
+        label=_('Search author!')
     )
 
 
 class MedicalRecordCompleteSearchForm(forms.Form):
     search_text = forms.CharField(
         required=False,
-        label='Search patient!',
-        widget=forms.TextInput(attrs={'placeholder': 'search here!'})
+        label=_('Search patient!'),
+        widget=forms.TextInput(attrs={'placeholder': _('search here!')})
     )
 
     search_date = forms.DateField(
         required=False,
-        label='Search date!',
+        label=_('Search date!'),
         widget=forms.TextInput(attrs={'placeholder': '(Year)-(Month)-(Day)'})
     )
 
     author = forms.ModelChoiceField(
         queryset=HealthTeam.objects.all(),
         required=False,
-        label='Search author!'
+        label=_('Search author!')
     )
 
     patient = forms.ModelChoiceField(
         queryset=Patient.objects.all(),
         required=False,
-        label='Search patient!'
+        label=_('Search patient!')
     )
 
 
@@ -65,6 +66,6 @@ class PatientSearchForm(forms.Form):
     patient = forms.ModelChoiceField(
         queryset=Patient.objects.all(),
         required=False,
-        label='Search patient!'
+        label=_('Search patient!')
     )
 
