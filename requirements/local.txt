@@ -30,6 +30,7 @@ pytest-django==3.1.2  # https://github.com/pytest-dev/pytest-django
 # ------------------------------------------------------------------------------
 django-search-views==0.3.7 #https://github.com/inmagik/django-search-views
 
-# Django Pagedown
+# MarkDown
 # ------------------------------------------------------------------------------
 django-pagedown==1.0.4 # https://github.com/timmyomahony/django-pagedown
+django-markdown-deux==1.0.5 # https://github.com/trentm/django-markdown-deux

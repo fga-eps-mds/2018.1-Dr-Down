@@ -76,6 +76,7 @@ THIRD_PARTY_APPS = [
     'rolepermissions',
     'raven.contrib.django.raven_compat',
     'pagedown',
+    'markdown_deux',
 ]
 LOCAL_APPS = [
     'drdown.users.apps.UsersConfig',
