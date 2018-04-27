@@ -3,15 +3,22 @@
 
 {% block title %}{% trans 'New Medical Record' %}{% endblock %}
 
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
   <div class="container">
     <h2>{% trans 'New Medical Record' %}</h2>
     {{ form.media }}
-    <form method="post" enctype="multipart/form-data">
+    <div method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form }}<br/><br/>
-      <button type="submit" class="btn btn-secondary">{% trans 'Create' %}</button>
+
+      <label>{% trans 'Attachments'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
+      <div><label>{% trans 'Attachments'%} : </label> {{ form.document }}</div><br/>
+      <button type="submit" class="btn btn-secondary" style="margin-left: 0%;">{% trans 'Create' %}</button>
     </form>
-  </div>
+  </div><br/><br/>
 
 {% endblock %}
