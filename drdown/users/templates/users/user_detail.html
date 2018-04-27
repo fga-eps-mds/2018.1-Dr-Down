@@ -257,8 +257,8 @@
   <div class="col-sm-12">
     <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
-    {% if user.patient or user.responsible %}
-    <a class="btn btn-secondary" href="#" role="button">{% trans 'My Medical Records' %}</a>
+    {% if user.patient %}
+    <a class="btn btn-secondary" href="{% url 'medicalrecords:list_medicalrecords' user.username %}" role="button">{% trans 'My Medical Records' %}</a>
     {% endif %}
     <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
     <!-- Your Stuff: Custom user template urls -->
