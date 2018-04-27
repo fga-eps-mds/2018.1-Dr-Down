@@ -11,9 +11,10 @@
     {{ form.media }}
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      <label>{% trans 'Attachments'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
+      <label>{% trans 'Message'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
       <div><label>{% trans 'Attachments'%} : </label> {{ form.document }}</div><br/>
-      <button type="submit" class="btn btn-secondary" style="margin-left: 0%;">{% trans 'Create' %}</button>
+      <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
+      <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
     </form>
   </div><br/><br/>
 {% endblock %}

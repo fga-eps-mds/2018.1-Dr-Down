@@ -19,6 +19,7 @@
         <div class="search"><label>{% trans 'paciente'%}:</label>{{ form.patient }}</div>
 
           <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+          <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
           </fieldset>
       </form>
     </p>

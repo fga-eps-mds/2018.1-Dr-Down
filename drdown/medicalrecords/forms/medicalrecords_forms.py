@@ -19,13 +19,17 @@ class MedicalRecordSearchForm(forms.Form):
     search_text = forms.CharField(
         required=False,
         label='Search patient!',
-        widget=forms.TextInput(attrs={'placeholder': _('search here!')})
+        widget=forms.TextInput(
+            attrs={'placeholder': _('search here!')}
+        )
     )
 
     search_date = forms.DateField(
         required=False,
         label='Search date!',
-        widget=forms.TextInput(attrs={'placeholder': _('(Year)-(Month)-(Day)')})
+        widget=forms.TextInput(
+            attrs={'placeholder': _('(Year)-(Month)-(Day)')}
+        )
     )
 
     author = forms.ModelChoiceField(
@@ -39,13 +43,17 @@ class MedicalRecordCompleteSearchForm(forms.Form):
     search_text = forms.CharField(
         required=False,
         label=_('Search patient!'),
-        widget=forms.TextInput(attrs={'placeholder': _('search here!')})
+        widget=forms.TextInput(
+            attrs={'placeholder': _('search here!')}
+        )
     )
 
     search_date = forms.DateField(
         required=False,
         label=_('Search date!'),
-        widget=forms.TextInput(attrs={'placeholder': _('(Year)-(Month)-(Day)')})
+        widget=forms.TextInput(
+            attrs={'placeholder': _('(Year)-(Month)-(Day)')}
+        )
     )
 
     author = forms.ModelChoiceField(
