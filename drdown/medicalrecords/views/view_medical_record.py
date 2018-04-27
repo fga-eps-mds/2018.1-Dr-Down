@@ -21,7 +21,8 @@ class MedicalRecordsFilter(BaseFilter):
         'search_date': ['day'],
         'author': ['author__id'],
         'patient': ['patient__id'],
-        'message': ['message']
+        'message': ['message'],
+        'list_patient': ['id']
     }
 
 

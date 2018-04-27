@@ -63,7 +63,7 @@ class MedicalRecordCompleteSearchForm(forms.Form):
 
 class PatientSearchForm(forms.Form):
 
-    patient = forms.ModelChoiceField(
+    list_patient = forms.ModelChoiceField(
         queryset=Patient.objects.all(),
         required=False,
         label=_('Search patient!')
