@@ -247,7 +247,7 @@ def create_procedures(sender, instance, **kwargs):
     for procedure in Checklist.CARE_LINE:
         p = Procedure.objects.create(
             careline=instance,
-            description=procedure[Procedure.PROCEDURE_DESCRIPTION],
+            proc_id=Checklist.CARE_LINE.index(procedure),
         )
 
         p.create_check_items(

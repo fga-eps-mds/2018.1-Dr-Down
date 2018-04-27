@@ -31,7 +31,7 @@ class Procedure(models.Model):
         AGE_SIX_TO_TEN_YEARS,
     ]
 
-    description = models.TextField(blank=False, null=False)
+    proc_id = models.IntegerField(blank=False, null=False)
 
     initialized = models.BooleanField(
         default=False,
@@ -94,3 +94,10 @@ class Procedure(models.Model):
             response[Procedure.AGES.index(item.age)] = item
 
         return iter(response)
+
+    def description(self):
+        from drdown.careline.models import Checklist
+
+        return Checklist.CARE_LINE[self.proc_id].get(
+            Procedure.PROCEDURE_DESCRIPTION
+            )
