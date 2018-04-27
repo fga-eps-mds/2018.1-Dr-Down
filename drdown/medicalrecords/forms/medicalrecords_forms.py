@@ -11,7 +11,7 @@ class MedicalRecordForm(forms.ModelForm):
 
     class Meta:
         model = MedicalRecord
-        fields = ["message"]
+        fields = ["message","document"]
 
 
 class MedicalRecordSearchForm(forms.Form):

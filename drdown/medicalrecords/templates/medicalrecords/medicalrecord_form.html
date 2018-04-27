@@ -7,9 +7,9 @@
   <div class="container">
     <h2>{% trans "New Medical Record" %}</h2>
     {{ form.media }}
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form }}
+      {{ form }}<br/><br/>
       <button type="submit" class="btn btn-secondary">{% trans "Create" %}</button>
     </form>
   </div>
