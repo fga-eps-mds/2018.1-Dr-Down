@@ -128,20 +128,27 @@
 
 
     <div class="content content-margin">
+        <div class="container">
+            {% if user.is_authenticated %}
+                {% if user.patient and user.patient.have_procedures_almost_late %}
+                       <div class="alert alert-warning" role="alert">
+                            {% trans "Hey! You have procedures to be made."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
 
-        {% if user.is_authenticated %}
-            {% if user.patient and user.patient.have_procedures_almost_late %}
-                   <div class="alert alert-warning" role="alert">
-                        {% trans "Hey! You have procedures to be made."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
-                   </div>
+                       </div>
+                {% endif %}
+                {% if user.responsible and user.responsible.have_patient_needing_atention %}
+                       <div class="alert alert-warning" role="alert">
+                            {% trans "One or more of your patients needs attention. Some procedures may be behind schedule."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                       </div>
+                {% endif %}
             {% endif %}
-            {% if user.responsible and user.responsible.have_patient_needing_atention %}
-                   <div class="alert alert-warning" role="alert">
-                        {% trans "One or more of your patients needs attention. Some procedures may be behind schedule."%} <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}</a>.
-                   </div>
-            {% endif %}
-        {% endif %}
-
+        </div>
       {% block content %}
       {% endblock content %}
     </div>
