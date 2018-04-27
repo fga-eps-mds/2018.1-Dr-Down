@@ -9,14 +9,34 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="size-cont">
   <h2 class="text-tertiary">{{ view.related_patient.user.name }} {% trans "Medical Records" %}</h2>
+
   {% if view.related_patient.user.patient  %}
   <div class="mb-4" style="margin:right;">
     {% if user.healthteam %}
       <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary left-btn" >{% trans "New" %}</a>
     {% endif %}
   </div>
+
+    <div>
+      {% if view.related_patient.user.photo %}
+        <img src="{{ view.related_patient.user.photo }}" width="20px" class="align-photo">
+      {% else %}
+        <img src="{% static 'users/img/user.png' %}" class="align-photo">
+      {% endif %}
+    </div>
+    <div class="margintoleft">
+      <div><label ><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ view.related_patient.user.name }}</div>
+    <div><label ><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.sus_number }}</div>
+      <div><label ><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.user.birthday }}</div>
+      {% if view.related_patient.user.cpf %}
+          <label ><strong>{% trans 'cpf: '%}</strong></label>{{ view.related_patient.cpf }}
+      {% endif %}
+    </div>
+  </div>
+
+
   <div class="container">
     <p>
     {% if  elect_count == 0 %}

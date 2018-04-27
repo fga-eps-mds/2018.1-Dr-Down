@@ -15,8 +15,8 @@
   <div class="mb-4" style="margin:right;">
     {% if user.is_authenticated %}
       <form class="form-inline" action="" method="GET">
-          {{form}}
-          <button class="btn" type="submit">Search</button>
+        <div class="search"><label>{% trans 'Patient' %} :</label>{{form.patient}}</div >
+          <button class="btn align-btn" type="submit">Search</button>
           </fieldset>
       </form>
     {% endif %}
