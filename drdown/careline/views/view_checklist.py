@@ -70,7 +70,7 @@ class ChecklistDetailView(DetailView):
     def get(self, request, *args, **kwargs):
 
         current_user = request.user
-        target_user = User.objects.get(username=kwargs.get('username'))
+        target_user = get_object_or_404(User, username=kwargs.get('username'))
 
         if (
             not hasattr(target_user, 'patient') or
