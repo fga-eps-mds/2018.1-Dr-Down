@@ -41,6 +41,8 @@
         $(function() {
             $('input:checkbox').change(function() {
 
+                var saved_id = this.id
+
                 $.ajaxSetup({
                     beforeSend: function(xhr, settings) {
                         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
@@ -58,8 +60,12 @@
                            'username': document.getElementById("checklist_username").value,
                            'value': (this.checked ? "True" : "False")
                            },
-                    success: function(){
-                        console.log("POSTED")
+                    success: function(response){
+                        document.getElementById('message_field').innerHTML += '<div class="alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response.responseText + '</div>'
+                    },
+                    error: function(response){
+                        document.getElementById('message_field').innerHTML += '<div class="alert alert-error alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + response.responseText + '</div>'
+                        document.getElementById(saved_id).checked = !document.getElementById(saved_id).checked 
                     }
                });
             })
@@ -70,6 +76,12 @@
 {% block content %}
 {% with age=checklist.patient.user.age %}  
 <div class="container">
+
+
+        <div id="message_field">
+
+        </div>
+
   <h2 class="text-tertiary">{% trans "Care Line" %}</h2>
   <h4 class="list-group-item-heading text-tertiary h-blue">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h4>
 

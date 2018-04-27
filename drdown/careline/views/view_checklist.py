@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden, HttpResponseServerError
 from django.urls import reverse
+
+from django.utils.translation import ugettext_lazy as _
 
 from drdown.careline.models import (
     Checklist,
@@ -144,8 +146,6 @@ class ChecklistUpdateView(RedirectView):
 
     def post(self, request, *args, **kwargs):
 
-        message = "Error"
-
         target_user = User.objects.get(
             username=request.POST.get('username')
         )
@@ -162,6 +162,9 @@ class ChecklistUpdateView(RedirectView):
                 procedure_id=request.POST.get('procedure_id'),
                 value=request.POST.get('value')
             )
+        else:
+            message = _("Error: You cannot change data on this form.")
+            return HttpResponseForbidden(message)
 
         return HttpResponse(message)
 
@@ -174,9 +177,4 @@ class ChecklistUpdateView(RedirectView):
         check_item.save()
         check_item.refresh_from_db()
 
-        # won't translate, this message will not be seen by the user
-        return (
-                    "Success on update of procedure: " + str(procedure.id) +
-                    " and checkitem: " + str(check_item.id) +
-                    " value: " + str(check_item.check)
-                )
+        return _("Success! Your changes were saved.")
