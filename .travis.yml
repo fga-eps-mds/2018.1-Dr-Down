@@ -39,8 +39,10 @@ script:
   - docker-compose -f local.yml run --rm django py.test
   - docker-compose -f local.yml run --rm django coverage run -m py.test
   - docker-compose -f local.yml run --rm django coverage xml
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py
+after_sucess:
+  - make -C docs/ latexpdf
+  - mv docs/_build/latex/drdown.pdf docs/drdown.pdf
+  - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./mkdocs-build.sh ; echo "Completed deploying documentation" ; fi
 deploy:
   # deploy develop to the staging environment
   - provider: script
@@ -52,7 +54,5 @@ deploy:
     script: bash production-deploy.sh
     on:
       branch: master
-after_sucess:
-  - make -C docs/ latexpdf
-  - mv docs/_build/latex/drdown.pdf docs/drdown.pdf
-  - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./mkdocs-build.sh ; echo "Completed deploying documentation" ; fi
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py
