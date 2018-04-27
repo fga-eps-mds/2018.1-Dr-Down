@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-27 00:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: drdown/careline/models/model_checklist.py:16
+msgid "Nutritional and growind/development"
+msgstr "Nutricional e de crescimento/desenvolvimento"
+
+#: drdown/careline/models/model_checklist.py:24
+msgid "Early stimulation"
+msgstr "Estimulação precoce"
+
+#: drdown/careline/models/model_checklist.py:39
+msgid "Psychosocial support to thefamily (associations, references)"
+msgstr "Apoio psicossocial à família (associações, referências)"
+
+#: drdown/careline/models/model_checklist.py:48
+msgid "Physiotherapy"
+msgstr "Fisioterapia"
+
+#: drdown/careline/models/model_checklist.py:65
+msgid "Speech Therapy"
+msgstr "Fonoterapia"
+
+#: drdown/careline/models/model_checklist.py:73
+msgid "Cardiologic (echocardiogram, electrocardiogram)"
+msgstr "Cardiológica (ecocardiograma, eletrocardiograma)"
+
+#: drdown/careline/models/model_checklist.py:89
+msgid "Genetics (karyotype, counseling)"
+msgstr "Genética (cariótipo, aconselhamento)"
+
+#: drdown/careline/models/model_checklist.py:99
+msgid "Audiological (otoacoustic emissions, PEATE)"
+msgstr "Audiológica (emissões otoacústicas, PEATE)"
+
+#: drdown/careline/models/model_checklist.py:109
+msgid "Audiological (audio/impedanciometry, PEATE) +otolaryngologist"
+msgstr "Audiológica (áudio/impedanciometria, PEATE) + otorrinolaringologista"
+
+#: drdown/careline/models/model_checklist.py:125
+msgid "Dentistry"
+msgstr "Odontológica"
+
+#: drdown/careline/models/model_checklist.py:142
+msgid "Ophthalmologic"
+msgstr "Oftalmológica"
+
+#: drdown/careline/models/model_checklist.py:157
+msgid ""
+"Other therapies (occupational therapy, swimming,psychomotricity, "
+"psychopedagogy, hydro/equo/musictherapy, arts, others)"
+msgstr "Outras terapias (terapia ocupacional, natação, psicomotricidade, psicopedagogia, hidro/equo/musicoterapia, artes, outras)"
+
+#: drdown/careline/models/model_checklist.py:174
+msgid "Abdominal ultrasound"
+msgstr "Ecografia abdominal"
+
+#: drdown/careline/models/model_checklist.py:189
+msgid "Atlantoaxial X-ray * (extension, flexion and neutral)"
+msgstr "Raio X atlantoaxial* (extensão, flexão e neutra)"
+
+#: drdown/careline/models/model_checklist.py:200
+msgid ""
+"Laboratory tests ** (blood count, thyrogram,blood glucose and lipidogram - "
+"if diabetes/obesityis suspected)"
+msgstr "Exames laboratoriais** (hemograma, tireograma, glicemia e lipidograma - se tiver suspeita de diabetes/obesidade)"
+
+#: drdown/careline/models/model_checklist.py:217
+msgid "Research for Celiac Disease (antigliadin antibody)"
+msgstr "Pesquisa para Doença Celíaca (anticorpo antigliadina)"
+
+#: drdown/careline/templates/careline/checklist_detail.html:5
+#: drdown/careline/templates/careline/checklist_detail.html:73
+#: drdown/careline/templates/careline/checklist_list.html:3
+#: drdown/careline/templates/careline/checklist_list.html:7
+msgid "Care Line"
+msgstr "Linha de Cuidado"
+
+#: drdown/careline/templates/careline/checklist_detail.html:74
+msgid "Name: "
+msgstr "Nome: "
+
+#: drdown/careline/templates/careline/checklist_detail.html:77
+#: drdown/careline/templates/careline/checklist_detail.html:79
+#: drdown/careline/templates/careline/checklist_detail.html:81
+msgid "Age: "
+msgstr "Idade: "
+
+#: drdown/careline/templates/careline/checklist_detail.html:77
+#: drdown/careline/templates/careline/checklist_detail.html:100
+msgid "Newborn"
+msgstr "Recém-Nascido"
+
+#: drdown/careline/templates/careline/checklist_detail.html:79
+msgid "Less than 1 year old"
+msgstr "Menos de 1 ano de idade"
+
+#: drdown/careline/templates/careline/checklist_detail.html:84
+#: drdown/careline/templates/careline/checklist_list.html:13
+msgid "SES: "
+msgstr "SES: "
+
+#: drdown/careline/templates/careline/checklist_detail.html:93
+msgid "AGE"
+msgstr "IDADE: "
+
+#: drdown/careline/templates/careline/checklist_detail.html:99
+msgid "Interventions / Evaluation"
+msgstr "Intervenções / Avaliação"
+
+#: drdown/careline/templates/careline/checklist_detail.html:102
+msgid "Six Months"
+msgstr "Seis Meses"
+
+#: drdown/careline/templates/careline/checklist_detail.html:105
+msgid "One Year"
+msgstr "Um Ano"
+
+#: drdown/careline/templates/careline/checklist_detail.html:108
+msgid "Two Years"
+msgstr "Dois Anos"
+
+#: drdown/careline/templates/careline/checklist_detail.html:111
+msgid "Three Years"
+msgstr "Três Anos"
+
+#: drdown/careline/templates/careline/checklist_detail.html:114
+msgid "Five Years"
+msgstr "Cinco Anos"
+
+#: drdown/careline/templates/careline/checklist_detail.html:117
+msgid "Six to Ten Years"
+msgstr "Seis a Dez Anos"
+
+#: drdown/careline/templates/careline/checklist_detail.html:317
+msgid ""
+"* Routine as suggested and, if necessary, when initiating physical "
+"examination or surgical procedure with cervical manipulation."
+msgstr "* Rotina como sugerido e, se preciso, ao iniciar atividade física ou em procedimento cirúrgico com manuseio cervical."
+
+#: drdown/careline/templates/careline/checklist_detail.html:321
+msgid ""
+"** Thyrogram: TSH, free T4. For antithyroid antibodies, routinely request "
+"between 9 and 12 years or when needed."
+msgstr "** Tireograma: TSH, T4 livre. Para os anticorpos antitiroidiano, solicitar como rotina entre 9 e 12 anos ou quando necessário."
+
+#: drdown/careline/templates/careline/checklist_detail.html:327
+msgid "Submit"
+msgstr ""
+
+#: drdown/careline/templates/careline/checklist_list.html:16
+msgid "There are no patients for this user."
+msgstr "Não há pacientes para este usuário."
