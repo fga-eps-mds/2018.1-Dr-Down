@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from ..models.model_medical_record import MedicalRecord
+from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
@@ -33,9 +34,8 @@ class CheckPermissions(UserPassesTestMixin):
                 kwargs={'username': self.request.user.username}
             )
             return login_url
-        else:
-            login_url = reverse_lazy('account_login')
-            return login_url
+        login_MedicalRecordsList_url = reverse_lazy('account_login')
+        return login_MedicalRecordsList_url
 
 
 class MedicalRecordsList(UserPassesTestMixin, SearchListView):
@@ -56,14 +56,17 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
                 kwargs={'username': self.request.user.username}
             )
             return login_MedicalRecordsList_url
-        else:
-            login_MedicalRecordsList_url = reverse_lazy('account_login')
-            return login_MedicalRecordsList_url
+        login_MedicalRecordsList_url = reverse_lazy('account_login')
+        return login_MedicalRecordsList_url
 
     def related_patient(self):
-        for patient in Patient.objects.all():
-            if patient.user.username == self.kwargs.get('username'):
-                return patient
+        user = User.objects.get(
+            username=self.kwargs.get('username')
+        )
+        patient = Patient.objects.get(
+            user=user
+        )
+        return patient
 
     def get_queryset(self):
         queryset = MedicalRecord.objects.all().order_by('-day')
