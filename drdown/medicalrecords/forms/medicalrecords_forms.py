@@ -12,7 +12,7 @@ class MedicalRecordForm(forms.ModelForm):
 
     class Meta:
         model = MedicalRecord
-        fields = ["message","document"]
+        fields = ["message", "document"]
 
 
 class MedicalRecordSearchForm(forms.Form):
@@ -68,4 +68,3 @@ class PatientSearchForm(forms.Form):
         required=False,
         label=_('Search patient!')
     )
-

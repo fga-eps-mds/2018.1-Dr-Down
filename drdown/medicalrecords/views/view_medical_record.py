@@ -50,7 +50,7 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
 
     def get_login_url(self):
         if self.request.user.is_authenticated:
-            # redirect if user is not a HealthTeam
+            # redirect if user is not a HealthTeam or the patient itself
             login_url = reverse_lazy(
                 viewname='users:detail',
                 kwargs={'username': self.request.user.username}
@@ -127,13 +127,13 @@ class MedicalRecordsDeleteView(DeleteView):
     model = MedicalRecord
 
     def get_success_url(self, **kwargs):
-        success_create_url = reverse_lazy(
+        success_delete_url = reverse_lazy(
             viewname='medicalrecords:list_medicalrecords',
             kwargs={
                 'username': self.kwargs.get('username'),
             }
         )
-        return success_create_url
+        return success_delete_url
 
 
 class MedicalRecordsUpdateView(UpdateView):
@@ -142,10 +142,11 @@ class MedicalRecordsUpdateView(UpdateView):
     template_name = 'medicalrecords/medicalrecord_form.html'
 
     def get_success_url(self, **kwargs):
-        success_create_url = reverse_lazy(
+        success_update_url = reverse_lazy(
             viewname='medicalrecords:list_medicalrecords',
             kwargs={
                 'username': self.kwargs.get('username'),
             }
         )
-        return success_create_url
+        return success_update_url
+
