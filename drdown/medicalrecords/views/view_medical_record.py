@@ -36,6 +36,10 @@ class MedicalRecordsList(SearchListView):
             if patient.user.username == self.kwargs.get('username'):
                 return patient
 
+    def get_queryset(self):
+        queryset = MedicalRecord.objects.all().order_by('-day')
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super(MedicalRecordsList, self).get_context_data(**kwargs)
         elect_count = 0
@@ -52,6 +56,10 @@ class MedicalRecordsSearchList(SearchListView):
     form_class = MedicalRecordCompleteSearchForm
     filter_class = MedicalRecordsFilter
     paginate_by = 10
+
+    def get_queryset(self):
+        queryset = MedicalRecord.objects.all().order_by('-day')
+        return queryset
 
 
 class PatientSearchList(SearchListView):
