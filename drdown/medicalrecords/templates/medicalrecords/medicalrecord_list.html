@@ -46,9 +46,7 @@
       <form class="form-inline" action="" method="GET">
         <div class="search"><label>{% trans 'author'%}:</label> {{ form.author }}</div>
         <div class="search"><label>{% trans 'message'%}:</label>{{ form.search_text }}</div>
-        <div class="search"><label>{% trans 'date'%}:</label>
-        <input type="date"  name="search_date" required=true class="form-control">
-          <span class="validity"></span></div>
+       <div class="search"><label>{% trans 'date'%}:</label>{{ form.search_date }}</div>
           <button class="btn align-btn" type="submit">{% trans 'Search' %}</button>
           </fieldset>
       </form>
