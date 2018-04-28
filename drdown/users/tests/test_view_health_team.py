@@ -3,10 +3,10 @@ from django.test import RequestFactory
 from django.test.client import Client
 
 
-from ..models.model_health_team import Health_Team
+from ..models.model_health_team import HealthTeam
 
 
-class TestViewHealth_Team (TestCase):
+class TestViewHealthTeam (TestCase):
     """
     Test if View Health_Team is working correctly
     """
@@ -18,10 +18,14 @@ class TestViewHealth_Team (TestCase):
 
         self.client = Client()
         self.user = self.make_user()
-        self.health_team = Health_Team.objects.create(
+        self.health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user,
-            speciality=Health_Team.NEUROLOGY)
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+            )
 
     def test_health_team_get_context_data(self):
         """
@@ -35,21 +39,10 @@ class TestViewHealth_Team (TestCase):
 
         self.assertEquals(response.status_code, 200)
 
-        self.assertEquals(self.user.health_team.cpf, self.health_team.cpf)
+        self.assertEquals(self.user.healthteam.cpf, self.health_team.cpf)
 
         self.assertContains(response, text=self.user.username)
         self.assertContains(response, text=self.user.username)
 
-        self.assertContains(response, text=self.user.health_team.cpf)
+        self.assertContains(response, text=self.user.healthteam.cpf)
 
-    def test_health_team_get_context_data_error(self):
-        """
-        Test if the view health team is not passing data in case of error
-        """
-
-        self.health_team.save()
-        self.client.force_login(user=self.user)
-
-        response = self.client.get(path='/users/testuser1/', follow=True)
-
-        self.assertEquals(response.status_code, 404)

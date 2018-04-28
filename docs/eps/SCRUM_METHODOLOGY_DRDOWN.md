@@ -10,11 +10,17 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
 
 - Atribuições:
 
-  - definir claramente os ítens do Backlog do Produto
-  - priorizar os ítens do Backlog do Produto
-  - otimizar o valor do trabalho do Time de Desenvolvimento
-  - mostrar ao Time de Desenvolvimento no que eles devem trabalhar a seguir
-  - garantir que o Time de Desenvolvimento entenda os ítens do Backlog do Produto no nível necessário
+  - Responsável pelo gerenciamento do Backlog do Produto e por garantir o valor do trabalho realizado pelo Time;
+ - Manter o Backlog do Produto e garante que ele está visível para todos;
+ - Informar a todos quais itens têm a maior prioridade, de forma que todos sabem em que se irá trabalhar;
+ - Definir e priorizar os itens do Backlog do Produto;
+ - Vender o produto;
+ - Intermediário(ligação) entre o cliente e a equipe;
+ - Valor de negócio;
+ - Visão de negócio;
+ - Negociar com o time e com o cliente;
+ - Canvas.
+
 
 ## Arquiteto de Software
 
@@ -40,13 +46,13 @@ Esta sessão lista todos os papéis existentes dentro do Time Scrum do projeto D
   - servir ao Product Owner, auxiliando de diversas formas, tais como:
     - gerir de maneira eficiente o Backlog do produto
     - fazer todos do Time Scrum entenderem ao máximo os ítens do Backlog do Produto
-  - servir ao Time de Desenvolvimento, auxiliando de diversas formas, tais como:
-    - remover impedimentos ao progresso do Time de Desenvolvimento
+  - servir a equipe, auxiliando de diversas formas, tais como:
+    - remover impedimentos ao progresso de todos da equipe.
     - instrui-lo em auto-organização e a serem multifuncionais
   - documentar cada Sprint
   - determinar e analisar as métricas e indicadores utilizados para acompanhar o progresso de toda a equipe
 
-## Time de Desenvolvimento
+## Desenvolvedores
 
 - Atribuições:
 
@@ -72,7 +78,7 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
   - determinar o que poderá ser entregue na Sprint que se inicia (criação do Backlog da Sprint)
 
-    - isso deve ser negociado entre o Product Owner e o Time de Desenvolvimento, respeitando a capacidade projetada e a performance passada deste
+    - isso deve ser negociado entre o Product Owner e restante da equipe, respeitando a capacidade projetada e a performance passada deste
 
   - estimar o esforço necessário para entregar as histórias do backlog, através da pontuação delas usando o _planning poker_:
     - antes do início da pontuação de cada história, o Product Owner deve explicá-la e tirar as dúvidas da equipe, para que todos possam ter uma melhor base para a pontuação
@@ -92,8 +98,8 @@ Abaixo ritos do Scrum que serão realizados pelo Time Scrum do projeto Dr. Down.
 
   - cada membro responder as 3 perguntas abaixo, sobre sua participação no andamento da Sprint:
 
-    - O que foi feito pelo membro no dia anterior para ajudar o Time de Desenvolvimento na Sprint?
-    - O que será feito pelo membro no dia atual para ajudar o Time de Desenvolvimento na Sprint?
+    - O que foi feito pelo membro no dia anterior para ajudar a desenvolver na Sprint?
+    - O que será feito pelo membro no dia atual para ajudar no desenvolvimento na Sprint?
     - Houve algum empedimento para o membro que impossibilitou ele ajudar o restante da equipe na Sprint? (gerenciamento de riscos)
 
 - time box:

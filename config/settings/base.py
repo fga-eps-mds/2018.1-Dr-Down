@@ -8,6 +8,7 @@ import raven
 # (drdown/config/settings/base.py - 3 = drdown/)
 ROOT_DIR = environ.Path(__file__) - 3
 APPS_DIR = ROOT_DIR.path('drdown')
+CORE_DIR = APPS_DIR.path('core')
 
 env = environ.Env()
 
@@ -73,12 +74,17 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'rolepermissions',
-    'raven.contrib.django.raven_compat'
+    'raven.contrib.django.raven_compat',
+    'pagedown',
+    'markdown_deux',
 ]
 LOCAL_APPS = [
     'drdown.users.apps.UsersConfig',
     # Your stuff: custom apps go here
     'drdown.forum.apps.ForumConfig',
+    'drdown.core.apps.CoreConfig',
+    'drdown.careline.apps.CarelineConfig',
+    'drdown.medicalrecords.apps.MedicalRecordsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -151,9 +157,7 @@ STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [
-    str(APPS_DIR.path('static')),
-]
+STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -176,7 +180,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         'DIRS': [
-            str(APPS_DIR.path('templates')),
+            str(CORE_DIR.path('templates')),
         ],
         'OPTIONS': {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-debug

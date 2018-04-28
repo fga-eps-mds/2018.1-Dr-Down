@@ -28,7 +28,7 @@ O propósito deste documento é definir e especificar, de maneira ampla, as cara
 ### 1.2	Escopo
 
 No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento do número de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte da equipe de saúde, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
-O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco, chat e sugestões de jogos voltados para os pacientes.
+O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde do Cris Down como para os pacientes e familiares, tratando de áreas como agenda de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down, classificação de risco e sugestões de jogos voltados para os pacientes.
 
 ### 1.3	Definições, acrônimos e abreviações
 
@@ -36,8 +36,6 @@ O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestã
 | --------         | ------         |
 | SD | Síndrome de Down |
 | CRIS DOWN |Centro de Referência em Síndrome de Down |
-| MDS | Métodos de Desenvolvimento de Software |
-| EPS| Engenharia de Produto de Software |
 |UnB|Universidade de Brasília|
 |SES|Secretaría de Estado de Saúde|
 
@@ -51,7 +49,7 @@ RESENDE, Angelica Aguiar. ANÁLISE DA VIABILIDADE TÉCNICA PARA DESENVOLVIMENTO 
 
 ### 1.5 Visão Geral
 
-Este documento está organizado de maneira a se compreender primeiramente as funções e objetivos do projeto, seguidos pelos perfis de usuário e equipe de desenvolvimento. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
+Este documento está organizado de maneira a se compreender primeiramente as funções e objetivos do projeto, seguidos pelos perfis de usuário e equipe do projeto. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
 
 ***
 ## 2: Posicionamento
@@ -89,8 +87,7 @@ O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúd
 
 | Nome | Descrição | Responsabilidade |
 |------|------------|-----------------|
-| Equipe de Desenvolvimento | Estudantes da Universidade de Brasília da disciplina Métodos de Desenvolvimento de Software | Participar de forma ativa, implementando o software descrito neste documento. |
-|Equipe de Gestão de Projeto | Estudantes da Universidade de Brasília da disciplina de Engenharia de Produto de Software | Gerenciar a equipe de desenvolvimento, apontando caminhos, soluções e possíveis riscos |
+| Equipe | é composta por graduandos em Engenharia de Software pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software. | Desenvolver e gerir o softwarer. |
 | Clientes | Comunidade Médica, Pacientes e familiares do Centro de Referência em Síndrome de Down - Cris Down | Manipular as informações disponibilizadas no sistema para aprimorar o atendimento dos pacientes com SD |
 
 ### 3.2  Resumo do Usuário
@@ -108,31 +105,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.4 Perfis das Partes Interessadas
 
-#### 3.4.1 - Equipe de desenvolvimento
-
-|   |  |
-|------------------------|--------------------|
-| **Representantes** | Daniel Maike, Elias Bernardo, Gabriela Medeiros, Geovana Ramos, Guilherme Guy, Joberth Rogers |
-| **Descrição** | Desenvolvedores |
-| **Tipo** | Estudantes da Universidade de Brasília da disciplina de Métodos de Desenvolvimento de Software |
-| **Responsabilidade** | Desenvolvimento e Implementação da aplicação
-| **Critério de sucesso** | Entregar o software com todas as suas funcionalidades dentro do prazo |
-| **Envolvimento** | Alto |
-| **Comentários ou problemas** | Falta de experiência com projetos deste porte, dificuldades com o uso de novas ferramentas e linguagens de programação. |
-
-#### 3.4.2 - Equipe de gestão de projeto
-
-|                |                                                            |
-|-----------------|-----------------------------------------------------------|
-| **Representantes** | Diego França, João Sconetto, Mariana Mendes, Victor Arnaud |
-| **Descrição** | Gestores de Projeto |
-| **Tipo** | Estudantes da Universidade de Brasília da disciplina de Engenharia de Produto de Software. |
-| **Responsabilidade** | Estabelecer metas e prazos, informar os melhores caminhos e possíveis riscos na aplicação além de gerenciar a equipe de desenvolvimento. |
-| **Critério de sucesso** | Manter o foco sobre a equipe impondo metas e tentar estabelecer uma relação profissional dentro da equipe de desenvolvimento, de forma que o software seja entregue no prazo, sem riscos e com qualidade. |
-| **Envolvimento** | Alto |
-| **Comentários ou problemas** | Dificuldade em aprender a gerenciar enquanto se coloca em prática. |
-
-#### 3.4.3 - Usuários do Aplicativo
+#### 3.4.1 - Usuários do Aplicativo
 
 |               |                |
 |---------------|----------------|
@@ -170,7 +143,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
-#### 3.5.3 - Familiares
+#### 3.5.3 - Familiares e/ou Responsáveis
 
 |                  |                     |
 |------------------|---------------------|
@@ -222,7 +195,6 @@ Atualmente não há nenhum aplicativo que integre pacientes de SD, familiares e 
 | Consulta rápida do histórico do paciente |Pesquisa no banco de dados do Cris Down. |
 | Comunicação entre pacientes, familiares e equipe de saúde |Fórum para dúvidas e mensagens diretas. |
 | Verificação do paciente na fila de espera | Funcionalidade mostrando o tempo que falta até a sua consulta. |
-| Jogos pedagógicos e educacionais para auxiliar o desenvolvimento dos pacientes | Ligação da página com links para jogos interativos |
 
 ### 4.3	Licenciamento e Instalação
 
@@ -244,9 +216,9 @@ As informações dependem do tipo de usuário. Os pacientes e familiares terão 
 
 O cadastro ocorrerá no próprio aplicativo. Quando o perfil for de alguém da equipe de saúde ou de algum outro funcionário do Cris Dow, a concretização do mesmo dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.
 
-### 5.4 Espaço
+### 5.4 Fórum
 
-Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários e chats privados para a comunicação entre a equipe de saúde e os pacientes/familiares.
+Dentro da aplicação, o espaço deve fornecer salas de fóruns para o esclarecimento de dúvidas dos usuários.
 
 ### 5.5 Informações
 

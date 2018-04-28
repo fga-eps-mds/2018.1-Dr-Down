@@ -6,12 +6,12 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 
-from drdown.utils.validators import validate_cpf
+from ..utils.validators import validate_cpf
 from .model_user import User
-from drdown.utils.validators import validate_register_number
+from ..utils.validators import validate_register_number
 
 
-class Health_Team(models.Model):
+class HealthTeam(models.Model):
 
     user = models.OneToOneField(
         User,
@@ -31,12 +31,16 @@ class Health_Team(models.Model):
 
     CRM = ("CRM")
     CRP = ("CRP")
-    COFFITO = ("COFFITO")
+    CREFITO = ("CREFITO")
+    COREN = ("COREN")
+    CREFONO = ("CREFONO")
 
     ACRONYM_CHOICES = (
         (CRM, 'CRM'),
         (CRP, 'CRP'),
-        (COFFITO, _('COFFITO')),
+        (CREFITO, ('CREFITO')),
+        (COREN, ('COREN')),
+        (CREFONO, ('CREFONO')),
     )
 
     council_acronym = models.CharField(
@@ -47,11 +51,10 @@ class Health_Team(models.Model):
     )
 
     register_number = models.CharField(
+        _('Register Number'),
         validators=[validate_register_number],
-        max_length=7,
-        help_text=_("Use enter a valid register number. \n" +
-                    "Enter 7 digits"
-                    )
+        max_length=9,
+        help_text=_("Enter a valid register number.")
 
     )
 
@@ -119,23 +122,25 @@ class Health_Team(models.Model):
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
+    PSYCHOLOGY = _("Psychology")
+    PHYSIOTHERAPY = _("Physiotherapy")
     OCCUPATIONAL_THERAPY = _("Occupational Therapy")
+    DOCTOR = _("Doctor")
     CARDIOLOGY = _("Cardiology")
     NEUROLOGY = _("Neurology")
     PEDIATRICS = _("Pediatrics")
-    PSYCHOLOGY = _("Psychology")
-    PHYSIOTHERAPY = _("Physiotherapy")
-    DOCTOR = _("Doctor")
+    NURSING = _("Nursing")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
+        (PSYCHOLOGY, _('Psychology')),
+        (PHYSIOTHERAPY, _('Physiotherapy')),
         (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
+        (DOCTOR, _('Doctor')),
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
-        (PSYCHOLOGY, _('Psychology')),
-        (PHYSIOTHERAPY, _('Physiotherapy')),
-        (DOCTOR, _('Doctor')),
+        (NURSING, _('Nursing')),
     )
 
     speciality = models.CharField(
@@ -149,18 +154,65 @@ class Health_Team(models.Model):
     # related user
     GROUP_NAME = "Health_Team"
 
+    def get_speciality_relation_list(self):
+
+        crm = [
+            HealthTeam.DOCTOR,
+            HealthTeam.CARDIOLOGY,
+            HealthTeam.NEUROLOGY,
+            HealthTeam.PEDIATRICS,
+        ]
+
+        crp = [
+            HealthTeam.PSYCHOLOGY,
+        ]
+
+        crefito = [
+            HealthTeam.OCCUPATIONAL_THERAPY,
+            HealthTeam.PHYSIOTHERAPY,
+        ]
+
+        coren = [
+            HealthTeam.NURSING,
+        ]
+
+        crefono = [
+            HealthTeam.SPEECH_THERAPHY,
+        ]
+
+        return{
+            HealthTeam.CRM: crm,
+            HealthTeam.CRP: crp,
+            HealthTeam.CREFITO: crefito,
+            HealthTeam.CREFONO: crefono,
+            HealthTeam.COREN: coren,
+        }[self.council_acronym]
+
     def clean(self, *args, **kwargs):
 
         try:
-            user_db = Health_Team.objects.get(id=self.id).user
+            user_db = HealthTeam.objects.get(id=self.id).user
 
             if self.user != user_db:
                 raise ValidationError(
                     _("Don't change users"))
             else:
                 pass
-        except Health_Team.DoesNotExist:
+        except HealthTeam.DoesNotExist:
             pass
+
+        relational_list = self.get_speciality_relation_list()
+
+        if self.speciality not in relational_list:
+
+            raise ValidationError(
+                _("The %(register)s doesn't inscribe professionals" +
+                  "with %(speciality)s graduation, please correct"),
+                params={
+                    'speciality': self.get_speciality_display(),
+                    'register': self.get_council_acronym_display()
+                }
+            )
 
         self.user.clean()
 
@@ -171,10 +223,10 @@ class Health_Team(models.Model):
         self.user.is_staff = True
 
         try:
-            health_team_group = Group.objects.get(name=Health_Team.GROUP_NAME)
+            health_team_group = Group.objects.get(name=HealthTeam.GROUP_NAME)
         except Group.DoesNotExist:
             health_team_group = Group.objects.create(
-               name=Health_Team.GROUP_NAME
+               name=HealthTeam.GROUP_NAME
             )
 
         # TODO: add permissions to edit Patient and Parent when they get ready

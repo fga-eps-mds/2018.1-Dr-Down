@@ -8,6 +8,11 @@ addons:
     - 159.203.182.32
 env:
   global:
+    - SITE_URL: https://fga-gpp-mds.github.io/2018.1-Dr-Down/
+    - GH_USER_NAME: "Robot Down"
+    - GH_USER_EMAIL: equipe.drdown@gmail.com
+    - GH_REF: github.com/fga-gpp-mds/2018.1-Dr-Down.git
+    - secure: "wrb7hIKvhTmybgkW/kAubZmmdnIeKlXG6vczz8ct2ZbvVBvPflOQCDLQuqoRWDHDPs8PdLHwLZ6J3zlFCtkxBX0AKrSC1fCedkZSoTYEzrI3hj3k+IhTthWPao1GYuIyE+/GUIY82+4b8AHuE3weTSjl0JlOVpxIFfOXL9T2oRhZxjxdGJmUkJgWLXZIsDjvX1bmBZ/SbdMgGGer1YSu8UoiAAr94IrEU5dyJ9Yc8sX6HTZnCdkGgMckPMyZkVwbW9sw9DcjSCB0W/h3aYIP86zocBUk1xGD0tzbnd1mEYaScXRU1rxVBYoe0XnTmFAhyAae1NTtw+6Pqrz1RDudbfTxJBLvkkaBse1w5XN3oBUeuOFLGyoagItnxqzbprt3QN6Tno23LLrefhShVAvzemRceB/Ie6NWRmyhDbsEJpLgAhUpdAGY+Phh2iFRjAsfCnsHT1AKJIoNBoJoi8d79dSOHTK1XxgdBJi9zfhIXB3jjFPhKIx0UHd4aNsIzfuTQWWC8cm05UcdWiTAxunWumoh94jQ6flkIk7RdNyeM+dytJW9mqTvw2lxCRAuyYo7eGs5jqTMqokSAuSDzRFPMUDlP+t/lewAsuwLsxXVOjrMn8TnT28yimay4bK4ZocYP6M3EJPg1DsJ/QOyCqFIFqEMs8lAqJDNky/cJ/79ZIY="
     - CC_TEST_REPORTER_ID=bf64f4cd10722061b8cad12ca638ebfa7d3c1494df117613b2acd357bfd7aeb0
 notifications:
   slack:
@@ -19,7 +24,12 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-ce
   - docker-compose --version
+  - sudo apt-get install texlive-latex-base texlive-fonts-recommended -y
+  - sudo apt-get install texlive-fonts-extra texlive-latex-extra -y
+  - python3 -m pip install pip -U
+  - python3 -m pip install mkdocs
 before_script:
+  - DEPLOY_DOCS="$(if [[ $TRAVIS_BRANCH == 'master' || $TRAVIS_BRANCH == 'develop' ]]; then if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then echo -n 'true'; else echo -n 'false'; fi; fi)"
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
@@ -29,8 +39,10 @@ script:
   - docker-compose -f local.yml run --rm django py.test
   - docker-compose -f local.yml run --rm django coverage run -m py.test
   - docker-compose -f local.yml run --rm django coverage xml
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py
+after_sucess:
+  - make -C docs/ latexpdf
+  - mv docs/_build/latex/drdown.pdf docs/drdown.pdf
+  - if [[ $DEPLOY_DOCS == "true" ]]; then echo "Preparing to build and deploy documentation" ; ./mkdocs-build.sh ; echo "Completed deploying documentation" ; fi
 deploy:
   # deploy develop to the staging environment
   - provider: script
@@ -42,3 +54,5 @@ deploy:
     script: bash production-deploy.sh
     on:
       branch: master
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t coverage.py

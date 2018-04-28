@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import drdown.utils.validators
+import drdown.users.utils.validators
 
 
 class Migration(migrations.Migration):
@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Employee',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cpf', models.CharField(help_text='Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.utils.validators.validate_cpf])),
+                ('cpf', models.CharField(help_text='Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.users.utils.validators.validate_cpf])),
                 ('departament', models.CharField(choices=[('SP_TH', 'Speech Therapy'), ('OC_TH', 'Occupational Therapy'), ('CARD', 'Cardiology'), ('NEURO', 'Neurology'), ('PED', 'Pediatrics'), ('PSY', 'Psychology'), ('PHYS', 'Physiotherapy'), ('SEC', 'Secretary'), ('ADM', 'Administration'), ('NUR', 'Nursery'), ('OTH', 'Other')], help_text='The departament where this user works.', max_length=30, verbose_name='Departament')),
             ],
             options={
@@ -29,9 +29,9 @@ class Migration(migrations.Migration):
             name='Health_Team',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cpf', models.CharField(help_text='Please, use enter a valid CPF in the following format:XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.utils.validators.validate_cpf])),
+                ('cpf', models.CharField(help_text='Please, use enter a valid CPF in the following format:XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.users.utils.validators.validate_cpf])),
                 ('council_acronym', models.CharField(choices=[('CRM', 'CRM'), ('CRP', 'CRP'), ('COFFITO', 'COFFITO')], help_text='The Regional Council.', max_length=30, verbose_name='Council Acronym')),
-                ('register_number', models.CharField(help_text='Use enter a valid register number. \nEnter 7 digits', max_length=7, validators=[drdown.utils.validators.validate_register_number])),
+                ('register_number', models.CharField(help_text='Use enter a valid register number. \nEnter 7 digits', max_length=7, validators=[drdown.users.utils.validators.validate_register_number])),
                 ('registration_state', models.CharField(choices=[('AC', 'AC'), ('AL', 'AL'), ('AP', 'AP'), ('BA', 'BA'), ('CE', 'CE'), ('DF', 'DF'), ('ES', 'ES'), ('GO', 'GO'), ('MA', 'MA'), ('MG', 'MG'), ('MS', 'MS'), ('MT', 'MT'), ('PA', 'PA'), ('PB', 'PB'), ('PE', 'PE'), ('PI', 'PI'), ('PR', 'PR'), ('RJ', 'RJ'), ('RN', 'RN'), ('RO', 'RO'), ('RR', 'RR'), ('RS', 'RS'), ('SC', 'SC'), ('SE', 'SE'), ('SP', 'SP'), ('TO', 'TO')], help_text='The registration state of member of health team.', max_length=30, verbose_name='State')),
                 ('speciality', models.CharField(choices=[('Speech Therapy', 'Speech Therapy'), ('Occupational Therapy', 'Occupational Therapy'), ('Cardiology', 'Cardiology'), ('Neurology', 'Neurology'), ('Pediatrics', 'Pediatrics'), ('Psychology', 'Psychology'), ('Physiotherapy', 'Physiotherapy'), ('Doctor', 'Doctor')], help_text='The speciality that this member of health team works.', max_length=30, verbose_name='Speciality')),
             ],
@@ -44,21 +44,21 @@ class Migration(migrations.Migration):
             name='Patient',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ses', models.CharField(help_text='Please, enter the valid SES number', max_length=9, unique=True, validators=[drdown.utils.validators.validate_ses])),
+                ('ses', models.CharField(help_text='Please, enter the valid SES number', max_length=9, unique=True, validators=[drdown.users.utils.validators.validate_ses])),
                 ('priority', models.IntegerField(choices=[(5, 'Not urgent'), (4, 'Not very urgent'), (3, 'Urgent'), (2, 'Very urgent'), (1, 'Emerging')], help_text='Please, insert the degree of priority of the patient', verbose_name='Priority')),
-                ('mother_name', models.CharField(help_text='Please, insert your mother name', max_length=80, validators=[drdown.utils.validators.validate_names])),
-                ('father_name', models.CharField(help_text='Please, insert your father name', max_length=80, validators=[drdown.utils.validators.validate_names], verbose_name='Name of father')),
+                ('mother_name', models.CharField(help_text='Please, insert your mother name', max_length=80, validators=[drdown.users.utils.validators.validate_names])),
+                ('father_name', models.CharField(help_text='Please, insert your father name', max_length=80, validators=[drdown.users.utils.validators.validate_names], verbose_name='Name of father')),
                 ('ethnicity', models.IntegerField(choices=[(5, 'White'), (4, 'Black'), (3, 'Yellow'), (2, 'Brown'), (1, 'Indigenous')], help_text='Please insert the ethnicity of the patient', verbose_name='Ethnicity')),
-                ('sus_number', models.CharField(help_text='Please, enter valid SUS in format: XXXXXXXXXXXXXXX', max_length=15, unique=True, validators=[drdown.utils.validators.validate_sus], verbose_name='SUS number')),
-                ('civil_registry_of_birth', models.CharField(default='', help_text='Please, enter the civil registry of birth number', max_length=11, unique=True, validators=[drdown.utils.validators.validate_generic_number], verbose_name='Civil register of birth')),
-                ('declaration_of_live_birth', models.CharField(default='', help_text='Please, enter the declaration of live birth number', max_length=11, unique=True, validators=[drdown.utils.validators.validate_generic_number], verbose_name='Declaration of live birth')),
+                ('sus_number', models.CharField(help_text='Please, enter valid SUS in format: XXXXXXXXXXXXXXX', max_length=15, unique=True, validators=[drdown.users.utils.validators.validate_sus], verbose_name='SUS number')),
+                ('civil_registry_of_birth', models.CharField(default='', help_text='Please, enter the civil registry of birth number', max_length=11, unique=True, validators=[drdown.users.utils.validators.validate_generic_number], verbose_name='Civil register of birth')),
+                ('declaration_of_live_birth', models.CharField(default='', help_text='Please, enter the declaration of live birth number', max_length=11, unique=True, validators=[drdown.users.utils.validators.validate_generic_number], verbose_name='Declaration of live birth')),
             ],
         ),
         migrations.CreateModel(
             name='Responsible',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cpf', models.CharField(help_text='Please, use enter a valid CPF inthe following format: XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.utils.validators.validate_cpf])),
+                ('cpf', models.CharField(help_text='Please, use enter a valid CPF inthe following format: XXX.XXX.XXX-XX', max_length=14, unique=True, validators=[drdown.users.utils.validators.validate_cpf])),
             ],
         ),
         migrations.AddField(
@@ -104,7 +104,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='user',
             name='telephone',
-            field=models.CharField(help_text='(xx)xxxxx-xxxx or (xx)xxxx-xxxx', max_length=14, null=True, validators=[drdown.utils.validators.validate_phone], verbose_name='Telephone'),
+            field=models.CharField(help_text='(xx)xxxxx-xxxx or (xx)xxxx-xxxx', max_length=14, null=True, validators=[drdown.users.utils.validators.validate_phone], verbose_name='Telephone'),
         ),
         migrations.AddField(
             model_name='responsible',

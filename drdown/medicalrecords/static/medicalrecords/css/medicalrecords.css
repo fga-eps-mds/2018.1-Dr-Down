@@ -1,0 +1,43 @@
+.left-btn{
+  margin-left: 75%;
+}
+
+.search{
+  padding: 20px;
+}
+
+.align-btn{
+  margin-top: 22px;
+}
+
+.align-photo{
+  position: relative;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+
+}
+
+.margintoleft{
+  width: 50%;
+  height: 70%;
+  position: relative;
+  top:-170px;
+  right: -200px;
+
+}
+
+.size-cont{
+  width: 70%;
+  height: 370px;
+  position: relative;
+  left: 100px;
+}
+
+.size-text{
+  word-wrap: break-word;
+
+}

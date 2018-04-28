@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
-from drdown.utils.validators import validate_cpf
+from ..utils.validators import validate_cpf
 from django.core.exceptions import ValidationError
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
@@ -24,6 +24,18 @@ class Responsible(models.Model):
         validators=[validate_cpf],
         max_length=14,
     )
+
+    def have_patient_needing_atention(self):
+
+        response = False
+        patients = self.patient_set.all()
+
+        for patient in patients:
+            if patient.have_procedures_almost_late():
+                response = True
+                break
+
+        return response
 
     def clean(self, *args, **kwargs):
 
@@ -53,3 +65,7 @@ class Responsible(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('Responsible')
+        verbose_name_plural = _('Responsibles')

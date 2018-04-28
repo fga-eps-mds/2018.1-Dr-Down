@@ -21,12 +21,14 @@
 | 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
 | 12/04/2018 | 1.3.0 | Modificando para arquitetura baseada em componentes | Victor Arnaud |
 | 15/04/2018 | 1.4.0 | Modificando imagem da arquitetura | Victor Arnaud e Geovana Ramos |
+| 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura e componentes da sprint 07 | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
+| 26/04/2018 | 2.1.0 | Inserindo componentes da sprint 08 | Victor Arnaud |
 
 ## 1: Introdução
 
 ### 1.1	Finalidade
 
-Este documento tem como finalidade apresentar uma visão geral da arquitetura que será usada no desenvolvimento do projeto e permitir um maior entendimento do sistema Dr. Down e de como ele irá se comportar e se comunicar com as outras aplicações que compõem o projeto. Com o maior detalhamento da arquitetura, espera-se deixar explícitas as decisões arquiteturais feitas pela equipe de desenvolvimento em conjunto com os gestores do projeto para o desenvolvimento do software.
+Este documento tem como finalidade apresentar uma visão geral da arquitetura que será usada no desenvolvimento do projeto e permitir um maior entendimento do sistema Dr. Down e de como ele irá se comportar e se comunicar com as outras aplicações que compõem o projeto. Com o maior detalhamento da arquitetura, espera-se deixar explícitas as decisões arquiteturais feitas pela equipe.
 
 ### 1.2	Escopo
 
@@ -46,7 +48,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Arquitetura](https://uploaddeimagens.com.br/images/001/378/954/original/arquitetura.png?1524062488)
+![Arquitetura](https://uploaddeimagens.com.br/images/001/384/606/full/arquitetura.png?1524422037)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 
@@ -62,7 +64,7 @@ Alguns benefícios desse modelo de arquitetura:
 
 * **Reutilização**: A reutilização de componentes é um meio de agilizar o desenvolvimento e manutenção, reduzindo custos da aplicação.
 
-O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs quando necessário, com esses se comunicando via requisições HTTP.
+O projeto terá algumas aplicações externas que serão inseridas e comunicadas com as aplicações do projeto. O framework já disponibiliza toda a estrutura para fazer essa comunicação entre componentes. Porém, serão utilizados microsserviços ou APIs se necessário, com esses se comunicando via requisições HTTP.
 
 Abaixo está listado como a arquitetura do projeto se comunicará com outros serviços externos de configuração, como servidor NGINX, banco de dados PostgreSQL, entre outros. Nos tópicos seguintes será explicado com mais detalhes o funcionamento da arquitetura de cada aplicação presente no projeto Django (MVT) e uma tabela com os possíveis aplicações selecionados para a inserção ou não no projeto.
 
@@ -107,59 +109,46 @@ Critérios de aceitação de um componente:
 7. **Externo ao projeto**: O componente deve estar disponibilizado no **pypi**.
 8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.
 
-A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo.
+A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo. As tabelas abaixo está mapeada com a EAP do projeto.
 
-#### Manter usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):
+#### Cadastro de usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
 |[django-allauth](https://www.intenct.nl/projects/django-allauth/)|O django-allauth é um aplicativo Django reutilizável que permite autenticação local e social.|Sim|Ele foi utilizado para a criação do usuário base que será a base para todos os outros usuários do sistema|
 
-#### Página de informações e notícias
+#### Informações gerais
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliada pela equipe.|
-
+|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|Não|Essa API é complexa e não pega informações especificas que precisamos.|
 
 #### Foruns e discussões
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista para criar fóruns|Não|Foi proposta no meio da implementação do mesmo pela equipe de desenvolvimento, logo foi descartado|
+|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista para criar fóruns|Não|Foi proposta no meio da implementação do mesmo, logo foi descartado|
 
-#### Ficha Médica
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|||||
-
-#### Fila de espera
+#### Consultas e Eventos
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|||||
+|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação django para publicar eventos como um calendario|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-calendarium](https://github.com/bitlabstudio/django-calendarium)|Um aplicativo Django reutilizável para gerenciar e exibir um calendário em seus modelos.|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-schedule-thauber](https://github.com/thauber/django-schedule)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada|
+|[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|A decidir|A aplicação ainda está sendo avaliada|
+|[django-frontend-notification](https://github.com/areski/django-frontend-notification)|Aplicativo Django para exibir no frontend a lista de notificações e executar algumas ações básicas como "visualizar todas as notificações", "excluir notificações", ele também fornece ajudantes para exibir notificações|A decidir|A aplicação ainda está sendo avaliada|
+|[django-webline-notifications](https://github.com/alireza-molaee/django-webline-notifications)|É uma biblioteca python, que permite notificar tudo para o(s) usuário(s)|A decidir|A aplicação ainda está sendo avaliada|
 
-#### Comunicação entre usuários
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|A decidir|O projeto ainda está sendo avaliado pela equipe.|
-|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
-|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|A decidir|O projeto ainda está sendo avaliado pela equipe|
-|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|A decidir|O projeto ainda está sendo avaliado pela equipe|
-
-#### Procedimento médico por faixa etária
+#### Ficha de acompanhamento e Relatórios
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|||||
-
-#### Agenda com eventos
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|||||
+|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
+|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
+|[pdf-report](https://github.com/Edinburgh-Genome-Foundry/pdf_reports)|Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug|A decidir|A aplicação está sendo avaliada pela equipe|
+|[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|A decidir|A aplicação está sendo avaliada pela equipe|
 
 #### Localização
 
@@ -173,6 +162,17 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de Django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do Django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja, é totalmente independente.|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
+|[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|A decidir|A aplicação ainda está sendo avaliada|
+|[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
+
+#### Comunicação entre usuários (Removido do escopo)
+
+|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
+|---------|----------------------|:------------:|---------------------------|
+|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|Não|O chat foi removido do escopo do projeto.|
+|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
+|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|Não|O chat foi removido do escopo do projeto.|
+|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|Não|O chat foi removido do escopo do projeto.|
 
 ### 2.3 Banco de dados PostgreSQL
 
@@ -192,7 +192,7 @@ O redis é usado na aplicação para fazer o cacheamento (_cache_) Django, com i
 
 ### 2.5 Celery
 
-O Celery é um gerenciador de tarefas assíncronas. Com ele você pode executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks python mais utilizados como Django, Flask e etc.
+O Celery é uma ferramenta de execução de tarefas assíncronas que trabalha de forma distribuída. Ele é focado em operações _real-time_, mas suporta tarefas agendadas. Com ele é possível executar uma fila de tarefas (que ele recebe por meio de mensagens), pode agendar tarefas direto no seu projeto sem precisar do cron e ele ainda tem integração fácil com a maioria dos frameworks Python mais utilizados como, por exemplo, o Django e o Flask.
 
 No caso do Django, sempre que um cliente faz uma requisição web (request), o servidor faz um processamento. Ele lê a requisição, trata os dados recebidos, salva ou recupera registros do banco de dados (através dos models), faz algum processamento do que será exibido para o usuário, renderiza isso em um template e manda uma resposta (response) para o cliente.
 
@@ -200,9 +200,13 @@ Dependendo da tarefa que você executa no servidor, a resposta pode demorar muit
 
 O Celery funciona da seguinte maneira: O cliente (Django) pode passar uma lista de tarefas para a fila do **Message Broker**, um programa responsável por manter a fila de mensagens que serão trocadas entre o seu programa e o Celery (geralmente é o RabbitMQ ou o Redis, no nosso caso será o Redis). O Message Broker distribui essas tarefas ente os **workers**, que vão executar as tarefas que devem ser assíncronas, e o resultado dessas tarefas pode ser escrito em um **Result Score** (Memória cache, MongoDb ou até mesmo o Redis) que mais tarde pode ser lido pelo cliente novamente.
 
-Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão de utilizá-lo ou não no projeto ainda está sendo discutida, já que futuramente o projeto pode precisar dessa ferramenta para o gerenciamento de tarefas assíncronas. Caso não precise, esse serviço será descartado.
+No presente projeto o Celery executa a tarefa de comunicação com o Sentry (https://sentry.io), que é uma ferramenta para equipes que agrega logs de erro, podendo verificar os ambientes de homologação e produção buscando por erros de execução. Dessa forma, a equipe pode analisar e agir quando há problemas no software.
 
-### 2.6 Comunicação
+### 2.6 Caddy
+
+Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro". Ele é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança ao acesso dos usuários.
+
+### 2.7 Comunicação
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
@@ -210,7 +214,7 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django. No caso, o **Gunicorn**, que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django, que irá ter um arquivo chamado urls.py que dirá ao Nginx qual código deverá ser executado de acordo com o path e código HTTP recebido. Através de proxy reverso, será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o Nginx e o Django através do Gunicorn.
 
-4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Essa view pode ser tanto de aplicações do projeto Dr. Down como aplicações externas. Elas pedem dados as modelos, as modelos do Dr. Down fazem uma requisição ao **redis** que pega os dados do banco de dados **Postgresql** e retorna a view, a view seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido a view, que devolve o template como resposta ao web server.
+4 - Dentro do **Django** a requisição recebida pelo **web server** é mapeada para uma view específica através das urls. Elas pedem dados às models, que por sua vez fazem uma requisição ao **redis**. Este que pega os dados do banco de dados **Postgresql** e retorna à view, que seleciona o template e fornece os dados. Assim, o template é preenchido e devolvido à view, que devolve o template como resposta ao web server.
 
 5 - O web server (Nginx) retorna a resposta para o web client (navegador)
 
@@ -239,39 +243,57 @@ Ele é configurado por padrão pela ferramenta "Cookiecutter", porém a decisão
 
 O framework Django organiza os projetos em apps, que são pastas que contêm uma funcionalidade independente do restante da aplicação. Além disso, existem arquivos de configuração e arquivos estáticos globais. A figura a seguir mostra a organização de pastas de um app.
 
-![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/379/821/original/diagramade.jpeg?1524095365)
+![Diagrama de Pacotes](http://uploaddeimagens.com.br/images/001/384/521/original/DiagramaPacotes.png?1524419574)
 
-- **apps**: cada app tem uma pasta com as suas models, views, formulários e testes. Além disso, também há um arquivo URLs que será incluso no URLs global.
+* **apps**: cada app tem uma pasta com as suas models, views, formulários, testes, templates e arquivos estáticos. Além disso, também há um arquivo URLs que será incluso no URLs global.
 
-- **locale** : traduções referentes ao app.
+    - **migrations** : pasta com as migrações para o banco de dados.
 
-- **test** : arquivos de testes refente ao app.
+    - **static** : pasta com arquivos CSS, JavaScript e imagens.
 
-- **models** : arquivos models do app.
+    - **tests** : arquivos de testes refente ao app.
 
-- **views** : arquivos de views do app.
+    - **templates** : arquivos html do app.
 
-- **forms** : arquivos de formulários do app.
+    - **locale** : traduções referentes ao app.
 
-- **admin** : arquivo de conexão do app com o admin.
+    - **models** : arquivos de models do app.
 
-- **app/urls.py** : arquivo que mapeia as as views com templates de cada app
+    - **views** : arquivos de views do app.
 
-- **config/urls.py** : inclui todos os URLs.py locais
+    - **forms** : arquivos de formulários do app.
 
-- **init** : arquivo que transforma o app em um pacote python.
+    - **admin** : arquivo de conexão do app com o admin.
 
-- **utils** : arquivos de validação dos apps.
+    - **urls.py** : arquivo que mapeia as as views com templates de cada app
 
-- **settings** : arquivos com as configurações básicas da aplicação.
+    - **\__init\__** : arquivo que transforma o app em um pacote python.
 
-- **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
+    - **apps** : mapeia a pasta que o contém como um app.
+
+    - **utils** : arquivos de validação dos apps.
+
+
+* **config** : pasta com as configurações do projeto Django.
+
+    - **urls.py** : inclui todos os URLs.py dos apps.
+
+    - **\__init\__** : arquivo que transforma as configurações em um pacote python.
+
+    - **settings** : arquivos com as configurações básicas da aplicação.
+
+    - **wsgi** : especificação para uma interface simples e universal entre servidores web e aplicações web.
 
 - **manage.py** : arquivo criado automaticamente pelo Django para gerênciamento de comandos.
 
-- **migrations** : pasta com as migrações para o banco de dados.
+- **docs** : documentação da aplicação.
 
 - **compose** : pasta com arquivos do docker.
+
+- **utility** : arquivos para o auxílio na instalação do software.
+
+- **requirements** : organiza todos os pacotes/componentes que a aplicação utiliza em arquivos.
+
 
 ## 5:	Visão de Implementação
 
