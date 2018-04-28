@@ -1,7 +1,12 @@
+from django.apps import apps
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+
 from ..utils.validators import validate_ses
 from ..utils.validators import validate_generic_number
 from ..utils.validators import validate_names
@@ -97,6 +102,48 @@ class Patient(models.Model):
         validators=[validate_generic_number],
     )
 
+    def have_procedures_almost_late(self):
+
+        response = False
+
+        if self.birthday_is_close():
+            response = self.have_incomplete_procedures_on_current_age()
+
+        return response
+
+    def have_incomplete_procedures_on_current_age(self):
+        from drdown.careline.models import Procedure
+
+        result = False
+
+        current_age = self.user.age()
+
+        for procedure in self.checklist.procedure_set.all():
+            check_item = procedure.checkitem_set.get(
+                age=Procedure.convert_age_to_item(current_age)
+            )
+
+            if not check_item.check and check_item.required:
+                result = True
+                break
+
+        return result
+
+    def birthday_is_close(self):
+        from drdown.careline.models import Procedure
+
+        age = self.user.age()
+        current_item = Procedure.convert_age_to_item(age)
+
+        self.user.birthday += timezone.timedelta(days=31)
+
+        future_age = self.user.age()
+        future_item = Procedure.convert_age_to_item(future_age)
+
+        self.user.birthday -= timezone.timedelta(days=31)
+
+        return current_item is not future_item
+
     def __str__(self):
         return self.user.get_username()
 
@@ -125,6 +172,13 @@ class Patient(models.Model):
         self.user.has_specialization = False
         self.user.save()
         super().delete(*args, **kwargs)
+
+
+@receiver(post_save, sender=Patient)
+def create_procedures(sender, instance, **kwargs):
+    if not hasattr(instance, 'checklist'):
+        apps.get_model('careline', 'Checklist') \
+            .objects.create(patient=instance)
 
     class Meta:
         verbose_name = _('Patient')

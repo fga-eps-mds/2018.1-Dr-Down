@@ -2,6 +2,7 @@ from test_plus.test import TestCase
 from ..admin import PatientAdmin
 from ..models import Patient
 
+from django.utils import timezone
 
 class TestModelPatient(TestCase):
     """
@@ -14,6 +15,12 @@ class TestModelPatient(TestCase):
         """
 
         self.user = self.make_user()
+
+        self.user.birthday = timezone.datetime(year=2000, month=1, day=1)
+
+        self.user.save()
+        self.user.refresh_from_db()
+
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user,
@@ -89,5 +96,99 @@ class TestModelPatient(TestCase):
         self.assertEqual(
             list(ma1.get_readonly_fields(self, obj=self.user.patient)),
             ['user']
+        )
+
+    def test_birthday_is_close(self):
+        """
+            Test if response is accurate based on patient birthday
+        """
+
+        today = timezone.datetime.today()
+
+        self.user.birthday = today - timezone.timedelta(days=365 + 29)
+
+        self.assertEquals(
+            self.user.patient.birthday_is_close(),
+            True
+        )
+
+        self.user.birthday = today - timezone.timedelta(days=365 + 30)
+
+        self.assertEquals(
+            self.user.patient.birthday_is_close(),
+            True
+        )
+
+        self.user.birthday = today - timezone.timedelta(days=365 + 31)
+
+        self.assertEquals(
+            self.user.patient.birthday_is_close(),
+            False
+        )
+
+    def test_have_incomplete_procedures_on_current_age(self):
+        """
+            Test if method produces correct response based on patient checklist
+        """
+
+        checklist = self.user.patient.checklist
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = True
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.user.patient.have_incomplete_procedures_on_current_age(),
+            False
+        )
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = False
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.user.patient.have_incomplete_procedures_on_current_age(),
+            True
+        )
+
+    def test_have_procedures_almost_late(self):
+        """
+            Test if method produces correct response based on patient checklist
+        """
+
+        today = timezone.datetime.today()
+
+        self.user.birthday = today - timezone.timedelta(days=365 + 29)
+
+        checklist = self.user.patient.checklist
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = True
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.user.patient.have_procedures_almost_late(),
+            False
+        )
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = False
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.user.patient.have_procedures_almost_late(),
+            True
         )
 

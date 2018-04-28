@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 01:32+0000\n"
+"POT-Creation-Date: 2018-04-28 01:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -369,19 +369,19 @@ msgid "My Patients"
 msgstr "Meus Pacientes"
 
 #: drdown/core/templates/core/base.html:74
-#: drdown/core/templates/core/base.html:88
+#: drdown/core/templates/core/base.html:89
 msgid "My Schedule"
 msgstr "Minha Agenda"
 
 #: drdown/core/templates/core/base.html:75
-#: drdown/core/templates/core/base.html:94
+#: drdown/core/templates/core/base.html:96
 msgid "Search"
 msgstr "Buscar"
 
 #: drdown/core/templates/core/base.html:76
 #: drdown/core/templates/core/base.html:83
-#: drdown/core/templates/core/base.html:90
-#: drdown/core/templates/core/base.html:96
+#: drdown/core/templates/core/base.html:91
+#: drdown/core/templates/core/base.html:98
 msgid "Locations"
 msgstr "Locais"
 
@@ -390,7 +390,7 @@ msgid "Risk Rating"
 msgstr "Classificação de Risco"
 
 #: drdown/core/templates/core/base.html:80
-#: drdown/core/templates/core/base.html:87
+#: drdown/core/templates/core/base.html:88
 msgid "Queue"
 msgstr "Fila de Espera"
 
@@ -399,53 +399,58 @@ msgid "My Queries"
 msgstr "Minhas Filas de Espera"
 
 #: drdown/core/templates/core/base.html:82
-#: drdown/core/templates/core/base.html:89
-#: drdown/core/templates/core/base.html:95
+#: drdown/core/templates/core/base.html:90
+#: drdown/core/templates/core/base.html:97
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:86
+#: drdown/core/templates/core/base.html:84
+#: drdown/core/templates/core/base.html:92
+msgid "Care Line"
+msgstr ""
+
+#: drdown/core/templates/core/base.html:87
 msgid "My Patient"
 msgstr "Meu paciente"
 
-#: drdown/core/templates/core/base.html:93
+#: drdown/core/templates/core/base.html:95
 msgid "Schedules"
 msgstr "Agenda"
 
-#: drdown/core/templates/core/base.html:101
+#: drdown/core/templates/core/base.html:103
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: drdown/core/templates/core/base.html:102
+#: drdown/core/templates/core/base.html:104
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:103
+#: drdown/core/templates/core/base.html:105
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:108
+#: drdown/core/templates/core/base.html:110
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base.html:111
+#: drdown/core/templates/core/base.html:113
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base.html:136
+#: drdown/core/templates/core/base.html:141
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base.html:137
+#: drdown/core/templates/core/base.html:142
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base.html:138
+#: drdown/core/templates/core/base.html:143
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base.html:146
+#: drdown/core/templates/core/base.html:151
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -647,3 +652,16 @@ msgstr ""
 #: drdown/core/templates/core/info.html:137
 msgid "Further reading"
 msgstr "Leituras complementares"
+
+msgid "Hey! You have procedures to be made."
+msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+
+msgid "Click here to check it"
+msgstr "Clique aqui para conferir"
+
+msgid ""
+"One or more of your patients needs attention. Some procedures may be "
+"behind schedule."
+msgstr ""
+"Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
+"podem estar atrasados."

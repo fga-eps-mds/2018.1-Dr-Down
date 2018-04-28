@@ -81,6 +81,7 @@
                 <a class="dropdown-item" href="#">{% trans "My Queries" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
+                <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
                 {% endif %}
                 {% if user.responsible %}
                 <a class="dropdown-item" href="#">{% trans "My Patient" %}</a>
@@ -88,6 +89,7 @@
                 <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
+                <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
                 {% endif %}
                 {% if user.employee %}
                 <a class="dropdown-item" href="#">{% trans "Schedules" %}</a>
@@ -117,11 +119,14 @@
     </nav>
     {% endblock navbar %}
 
+
     {% if messages %}
       {% for message in messages %}
           <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
       {% endfor %}
     {% endif %}
+
+
     <div class="content content-margin">
       {% block content %}
       {% endblock content %}

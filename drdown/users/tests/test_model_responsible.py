@@ -1,3 +1,4 @@
+from django.utils import timezone
 from test_plus.test import TestCase
 from ..admin import ResponsibleAdmin
 from django.core.exceptions import ValidationError
@@ -17,6 +18,12 @@ class TestModelResponsible(TestCase):
 
         self.user_1 = self.make_user()
         self.user_2 = self.make_user(username="teste_2")
+
+        self.responsible = Responsible.objects.create(
+            cpf="974.220.200-16",
+            user=self.user_1
+        )
+
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user_2,
@@ -26,13 +33,8 @@ class TestModelResponsible(TestCase):
             ethnicity=3,
             sus_number="12345678911",
             civil_registry_of_birth="12345678911",
-            declaration_of_live_birth="12345678911"
-        )
-
-        self.responsible = Responsible.objects.create(
-            cpf="974.220.200-16",
-            patient=self.patient,
-            user=self.user_1
+            declaration_of_live_birth="12345678911",
+            responsible=self.responsible
         )
 
     def test_get_absolute_url(self):
@@ -118,3 +120,40 @@ class TestModelResponsible(TestCase):
             list(ma1.get_readonly_fields(self, obj=self.responsible)),
             ['user']
         )
+
+    def test_patient_needs_attention(self):
+        """
+            Test if method produces correct response based on this responsible patient's checklist
+        """
+
+        today = timezone.datetime.today()
+
+        self.patient.user.birthday = today - timezone.timedelta(days=365 + 29)
+        self.patient.user.save()
+
+        checklist = self.patient.checklist
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = True
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.responsible.have_patient_needing_atention(),
+            False
+        )
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = False
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.responsible.have_patient_needing_atention(),
+            True
+        )
+

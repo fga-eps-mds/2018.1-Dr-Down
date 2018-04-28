@@ -25,6 +25,18 @@ class Responsible(models.Model):
         max_length=14,
     )
 
+    def have_patient_needing_atention(self):
+
+        response = False
+        patients = self.patient_set.all()
+
+        for patient in patients:
+            if patient.have_procedures_almost_late():
+                response = True
+                break
+
+        return response
+
     def clean(self, *args, **kwargs):
 
         try:
