@@ -57,7 +57,7 @@
           {% if view.kwargs.username == medicalrecord.patient.user.username %}
             <div class="h-blue list-group-item">
               <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
-              <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.name }} </p>
+              <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.user.name }} </p>
               {% if medicalrecord.document %}
               <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
               {% endif %}
