@@ -68,7 +68,7 @@ def validate_cpf(value):
 
     if cpf_numbers != cpf_calculated:
         raise ValidationError(
-            _('%(value) is a invalid CPF, the verification digit is wrong'),
+            _('%(value)s is a invalid CPF, the verification digit is wrong'),
             params={'value': value}
         )
 

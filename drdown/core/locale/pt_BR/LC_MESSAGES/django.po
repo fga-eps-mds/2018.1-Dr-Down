@@ -473,8 +473,8 @@ msgid ""
 "communicate with the doctor and visualize general information."
 msgstr ""
 "Dr. Down é uma ferramenta de gerenciamento para o CRIS DOWN (Centro de "
-"Referência em Síndrome de Down) que possibilita agendar consultas, se "
-"comunicar com o médico e visualizar informações."
+"Referência em Síndrome de Down) que possibilita agendar consultas, "
+"comunicar-se com o médico e visualizar informações."
 
 #: drdown/core/templates/core/home.html:39
 msgid ""
@@ -496,7 +496,7 @@ msgstr "Índice"
 
 #: drdown/core/templates/core/info.html:35
 msgid "About Down's syndrome"
-msgstr ""
+msgstr "Sobre a Síndrome de Down"
 
 #: drdown/core/templates/core/info.html:36
 msgid "Frequently Asked Questions (FAQ)"
