@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-27 02:13+0000\n"
+"POT-Creation-Date: 2018-04-28 01:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -437,36 +437,20 @@ msgstr "Entrar"
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base.html:135
-msgid "Hey! You have procedures to be made."
-msgstr "Oi! Você tem procedimentos que precisam ser feitos."
-
-#: drdown/core/templates/core/base.html:135
-#: drdown/core/templates/core/base.html:140
-msgid "Click here to check it"
-msgstr "Clique aqui para conferir"
-
-#: drdown/core/templates/core/base.html:140
-msgid ""
-"One or more of your patients needs attention. Some procedures may be behind "
-"schedule."
-msgstr "Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
-"podem estar atrasados."
-
-#: drdown/core/templates/core/base.html:155
+#: drdown/core/templates/core/base.html:141
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base.html:156
+#: drdown/core/templates/core/base.html:142
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base.html:157
+#: drdown/core/templates/core/base.html:143
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base.html:165
+#: drdown/core/templates/core/base.html:151
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -668,3 +652,16 @@ msgstr ""
 #: drdown/core/templates/core/info.html:137
 msgid "Further reading"
 msgstr "Leituras complementares"
+
+msgid "Hey! You have procedures to be made."
+msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+
+msgid "Click here to check it"
+msgstr "Clique aqui para conferir"
+
+msgid ""
+"One or more of your patients needs attention. Some procedures may be "
+"behind schedule."
+msgstr ""
+"Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
+"podem estar atrasados."
