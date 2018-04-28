@@ -34,6 +34,9 @@ class TestViewMedicalRecords(TestCase):
         self.health_team = HealthTeam.objects.create(
             cpf="507.522.730-94",
             user=self.user_1,
+            council_acronym= 'CRM',
+            register_number=123456789,
+            registration_state='DF',
             speciality=HealthTeam.NEUROLOGY
         )
 
