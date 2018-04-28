@@ -62,7 +62,7 @@
               <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
               {% endif %}
               <p class="text-tertiary h-blue"><label>{% trans 'care day'%}: </label> {{ medicalrecord.day }} </p>
-              {% if user == medicalrecord.author %}
+              {% if request.user.username == medicalrecord.author.user.username %}
                 <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
                 <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
               {% endif %}
