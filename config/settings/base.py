@@ -74,7 +74,9 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'rolepermissions',
-    'raven.contrib.django.raven_compat'
+    'raven.contrib.django.raven_compat',
+    'pagedown',
+    'markdown_deux',
 ]
 LOCAL_APPS = [
     'drdown.users.apps.UsersConfig',
@@ -82,6 +84,7 @@ LOCAL_APPS = [
     'drdown.forum.apps.ForumConfig',
     'drdown.core.apps.CoreConfig',
     'drdown.careline.apps.CarelineConfig',
+    'drdown.medicalrecords.apps.MedicalRecordsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

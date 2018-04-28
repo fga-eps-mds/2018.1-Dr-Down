@@ -18,6 +18,10 @@ urlpatterns = [
     url(r'^forum/', include('drdown.forum.urls', namespace='forum')),
     url(r'^careline/', include('drdown.careline.urls', namespace='careline')),
 
+    # Medical Records urls
+    url(r'^medicalrecords/', include('drdown.medicalrecords.urls', namespace='medicalrecords'))
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

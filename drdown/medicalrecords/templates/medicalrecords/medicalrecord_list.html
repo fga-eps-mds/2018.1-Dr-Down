@@ -1,0 +1,75 @@
+{% extends "core/base.html" %}
+{% load markdown_deux_tags %}
+{% load static i18n %}
+{% block title %}{% trans "Medical Records:" %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+  <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container mb-5">
+    <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ view.related_patient.user.name }}</h2>
+    {% if  elect_count == 0 %}
+      <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
+      {% if user.healthteam %}
+          <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
+      {% endif %}
+    {% else %}
+      <form class="form-inline" action="" method="GET">
+        <div class="search"><label>{% trans 'author'%}:</label> {{ form.author }}</div>
+        <div class="search"><label>{% trans 'date'%}:</label>{{ form.search_date }}</div>
+        <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+        {% if user.healthteam %}
+          <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
+        {% endif %}
+
+      </form>
+    {% endif %}
+    <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+  </div>
+
+  <div class="container">
+    {% if view.related_patient.user.patient  %}
+      {% if view.related_patient.user.photo %}
+        <img src="{{ view.related_patient.user.photo }}" width="20px" class="align-photo">
+      {% else %}
+        <img src="{% static 'users/img/user.png' %}" class="align-photo">
+      {% endif %}
+      <div class="margintoleft">
+        <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ view.related_patient.user.name }}</div>
+        <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.sus_number }}</div>
+        <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.user.birthday }}</div>
+        {% if view.related_patient.user.cpf %}
+            <label ><strong>{% trans 'cpf: '%}</strong></label>{{ view.related_patient.cpf }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+
+
+    <div class="container size-text">
+      <div class="list-group">
+        {% for medicalrecord in medicalrecord_list %}
+          {% if view.kwargs.username == medicalrecord.patient.user.username %}
+            <div class="h-blue list-group-item">
+              <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
+              <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.user.name }} </p>
+              {% if medicalrecord.document %}
+              <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+              {% endif %}
+              <p class="text-tertiary h-blue"><label>{% trans 'care day'%}: </label> {{ medicalrecord.day }} </p>
+              {% if request.user.username == medicalrecord.author.user.username %}
+                <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
+                <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

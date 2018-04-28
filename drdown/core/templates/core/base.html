@@ -70,7 +70,7 @@
               </button>
               <div class="dropdown-menu">
                 {% if user.healthteam %}
-                <a class="dropdown-item" href="#">{% trans "My Patients" %}</a>
+                <a class="dropdown-item" href="{% url 'medicalrecords:list_users_medicalrecords' %}">{% trans "My Patients" %}</a>
                 <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Search" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
@@ -78,7 +78,7 @@
                 {% endif %}
                 {% if user.patient %}
                 <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                <a class="dropdown-item" href="#">{% trans "My Queries" %}</a>
+                <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' user.username %}">{% trans "My Queries" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Events" %}</a>
                 <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
                 <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>

@@ -1,0 +1,18 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Medical Record" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans 'Delete' %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>{% trans 'Are you sure you want to delete this medical record?' %} </p>
+  <a href="{% url 'medicalrecords:list_medicalrecords' medicalrecord.patient.user.username %}" class="btn btn-secondary">{% trans 'Cancel' %}</a>
+  <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+</form>
+
+
+{% endblock %}

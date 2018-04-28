@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-27 20:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:22
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:42
+msgid "search here!"
+msgstr "busque aqui!"
+
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:28
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:48
+msgid "(Year)-(Month)-(Day)"
+msgstr "(Ano)-(Mês)-(Dia)"
+
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:34
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:54
+#, fuzzy
+#| msgid "author"
+msgid "Search author!"
+msgstr "Buscar autor"
+
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:41
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:60
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:69
+msgid "Search patient!"
+msgstr "Buscar paciente"
+
+#: drdown/medicalrecords/forms/medicalrecords_forms.py:47
+#, fuzzy
+#| msgid "Search"
+msgid "Search date!"
+msgstr "Buscar data"
+
+#: drdown/medicalrecords/models/model_medical_record.py:14
+msgid "Created at"
+msgstr "Criado em"
+
+#: drdown/medicalrecords/models/model_medical_record.py:15
+msgid "Patient Care Day"
+msgstr "Dia de criação do prontuário"
+
+#: drdown/medicalrecords/models/model_medical_record.py:22
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:17
+msgid "Patient"
+msgstr "Paciente"
+
+#: drdown/medicalrecords/models/model_medical_record.py:26
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:14
+msgid "Message"
+msgstr "Mensagem"
+
+#: drdown/medicalrecords/models/model_medical_record.py:27
+#, fuzzy
+#| msgid "There are no Medical Records."
+msgid "Message of medical records"
+msgstr "Não há prontuários.Mensagem do prontuário"
+
+#: drdown/medicalrecords/models/model_medical_record.py:34
+msgid "Author"
+msgstr "Autor"
+
+#: drdown/medicalrecords/models/model_medical_record.py:38
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:14
+msgid "Medical Record"
+msgstr "Prontuário"
+
+#: drdown/medicalrecords/models/model_medical_record.py:39
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:13
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:12
+msgid "Medical Records"
+msgstr "Prontuários"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:8
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:14
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:66
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:42
+msgid "Delete"
+msgstr "Apagar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:12
+msgid "Are you sure you want to delete this medical record?"
+msgstr "Você tem certeza que deseja apagar este prontuário?"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:13
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:17
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:3
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:10
+msgid "New Medical Record"
+msgstr "Novo prontuário"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:15
+msgid "Attachments"
+msgstr "Anexos"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:16
+msgid "Save"
+msgstr "Salvar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:4
+msgid "Medical Records:"
+msgstr "Prontuários:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:14
+msgid "'s"
+msgstr "do(a)"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:16
+msgid "There are no Medical Records for this patient."
+msgstr "Não prontuário para este paciente."
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:18
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:26
+msgid "New"
+msgstr "Novo"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:22
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:59
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:16
+msgid "author"
+msgstr "autor"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:23
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:18
+msgid "date"
+msgstr "data"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:24
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:18
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:21
+msgid "Search"
+msgstr "Buscar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:28
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:22
+msgid "Return"
+msgstr "Retornar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:41
+msgid "Name: "
+msgstr "Nome: "
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:42
+msgid "SUS: "
+msgstr "SUS: "
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:43
+msgid "birthday: "
+msgstr "Data de nascimento: "
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:45
+msgid "cpf: "
+msgstr "CPF"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:61
+msgid "Anexo:"
+msgstr "Anexo:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:63
+msgid "care day"
+msgstr "Dia de atendimento"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:65
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:41
+msgid "Edit"
+msgstr "Editar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:19
+msgid "Advanced Search"
+msgstr "Busca avançada"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:30
+msgid "There are no Medical Records."
+msgstr "Não há prontuários."
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:3
+msgid "Search a Medical Records:"
+msgstr "Buscar um prontuário:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:17
+msgid "message"
+msgstr "mensagem"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:19
+msgid "paciente"
+msgstr "paciente"
+
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:8
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:30
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:34
+msgid "Next"
+msgstr "Proximo"
+
+#: drdown/medicalrecords/tests/test_medical_records_view.py:82
+msgid "This field is required."
+msgstr "Este campo é obrigatório."
+
+#, fuzzy
+#~| msgid "Attachments"
+#~ msgid "Documents"
+#~ msgstr "Anexos"
+
+#~ msgid "Create"
+#~ msgstr "Criar"
+
+#~ msgid "This user is not a patient!!!"
+#~ msgstr "Este usuário não é um paciente!"
+
+#~ msgid "Message of post"
+#~ msgstr "Mensagem do post"
