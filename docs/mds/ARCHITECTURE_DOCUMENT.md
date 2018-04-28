@@ -21,7 +21,8 @@
 | 01/04/2018 | 1.2.1 | Corrigindo inconsistências | Victor Arnaud |
 | 12/04/2018 | 1.3.0 | Modificando para arquitetura baseada em componentes | Victor Arnaud |
 | 15/04/2018 | 1.4.0 | Modificando imagem da arquitetura | Victor Arnaud e Geovana Ramos |
-| 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
+| 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura e componentes da sprint 07 | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
+| 26/04/2018 | 2.1.0 | Inserindo componentes da sprint 08 | Victor Arnaud |
 
 ## 1: Introdução
 
@@ -108,20 +109,19 @@ Critérios de aceitação de um componente:
 7. **Externo ao projeto**: O componente deve estar disponibilizado no **pypi**.
 8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.
 
-A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo.
+A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo. As tabelas abaixo está mapeada com a EAP do projeto.
 
-#### Manter usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):
+#### Cadastro de usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
 |[django-allauth](https://www.intenct.nl/projects/django-allauth/)|O django-allauth é um aplicativo Django reutilizável que permite autenticação local e social.|Sim|Ele foi utilizado para a criação do usuário base que será a base para todos os outros usuários do sistema|
 
-#### Página de informações e notícias
+#### Informações gerais
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliada pela equipe.|
-
+|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|Não|Essa API é complexa e não pega informações especificas que precisamos.|
 
 #### Foruns e discussões
 
@@ -129,38 +129,26 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista para criar fóruns|Não|Foi proposta no meio da implementação do mesmo, logo foi descartado|
 
-#### Ficha Médica
+#### Consultas e Eventos
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|||||
+|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação django para publicar eventos como um calendario|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-calendarium](https://github.com/bitlabstudio/django-calendarium)|Um aplicativo Django reutilizável para gerenciar e exibir um calendário em seus modelos.|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
+|[django-schedule-thauber](https://github.com/thauber/django-schedule)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada|
+|[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|A decidir|A aplicação ainda está sendo avaliada|
+|[django-frontend-notification](https://github.com/areski/django-frontend-notification)|Aplicativo Django para exibir no frontend a lista de notificações e executar algumas ações básicas como "visualizar todas as notificações", "excluir notificações", ele também fornece ajudantes para exibir notificações|A decidir|A aplicação ainda está sendo avaliada|
+|[django-webline-notifications](https://github.com/alireza-molaee/django-webline-notifications)|É uma biblioteca python, que permite notificar tudo para o(s) usuário(s)|A decidir|A aplicação ainda está sendo avaliada|
 
-#### Fila de espera
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|||||
-
-#### Comunicação entre usuários
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|Não|O chat foi removido do escopo do projeto.|
-|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
-|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|Não|O chat foi removido do escopo do projeto.|
-|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|Não|O chat foi removido do escopo do projeto.|
-
-#### Procedimento médico por faixa etária
+#### Ficha de acompanhamento e Relatórios
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|||||
-
-#### Agenda com eventos
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|||||
+|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
+|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
+|[pdf-report](https://github.com/Edinburgh-Genome-Foundry/pdf_reports)|Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug|A decidir|A aplicação está sendo avaliada pela equipe|
+|[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|A decidir|A aplicação está sendo avaliada pela equipe|
 
 #### Localização
 
@@ -174,6 +162,17 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de Django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do Django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja, é totalmente independente.|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
+|[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|A decidir|A aplicação ainda está sendo avaliada|
+|[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
+
+#### Comunicação entre usuários (Removido do escopo)
+
+|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
+|---------|----------------------|:------------:|---------------------------|
+|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|Não|O chat foi removido do escopo do projeto.|
+|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
+|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|Não|O chat foi removido do escopo do projeto.|
+|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|Não|O chat foi removido do escopo do projeto.|
 
 ### 2.3 Banco de dados PostgreSQL
 
