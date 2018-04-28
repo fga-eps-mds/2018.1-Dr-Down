@@ -41,7 +41,7 @@ class TestViewMedicalRecords(TestCase):
             day="05-09-1998",
             message="Making a post test case",
             patient=self.patient,
-            author=self.user_1,
+            author=self.health_team,
             document="test.txt",
         )
 

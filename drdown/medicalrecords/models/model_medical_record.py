@@ -1,5 +1,5 @@
 from django.db import models
-from drdown.users.models import User
+from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
@@ -29,7 +29,7 @@ class MedicalRecord(models.Model):
     )
 
     author = models.ForeignKey(
-        User,
+        HealthTeam,
         on_delete=models.CASCADE,
         verbose_name=_("Author")
     )

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from drdown.users.models.model_health_team import HealthTeam
 from ..models.model_medical_record import MedicalRecord
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
@@ -15,7 +15,7 @@ class MedicalRecordsFilter(BaseFilter):
     search_fields = {
         'search_text': ['message'],
         'search_date': ['day'],
-        'author': ['author__id'],
+        'author': ['author_id__id'],
         'patient': ['patient__id'],
         'message': ['message'],
         'list_patient': ['id']
@@ -120,8 +120,13 @@ class MedicalRecordsCreateView(CreateView):
         for patient in Patient.objects.all():
             if patient.user.username == self.kwargs.get('username'):
                 form.instance.patient = patient
-
-        form.instance.author = self.request.user
+        user = User.objects.get(
+            username=self.request.user
+        )
+        healthteam = HealthTeam.objects.get(
+            user=user
+        )
+        form.instance.author = healthteam
         form.save()
         return super(MedicalRecordsCreateView, self).form_valid(form)
 
