@@ -121,7 +121,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|A decidir|A API ainda está sendo avaliada pela equipe.|
+|[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|Não|Essa API é complexa e não pega informações especificas que precisamos.|
 
 #### Foruns e discussões
 
@@ -145,8 +145,8 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|A decidir|A aplicação está sendo avaliada pela equipe|
-|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|A decidir|A aplicação está sendo avaliada pela equipe|
+|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
+|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
 |[pdf-report](https://github.com/Edinburgh-Genome-Foundry/pdf_reports)|Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug|A decidir|A aplicação está sendo avaliada pela equipe|
 |[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|A decidir|A aplicação está sendo avaliada pela equipe|
 
@@ -163,7 +163,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de Django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do Django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja, é totalmente independente.|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
 |[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|A decidir|A aplicação ainda está sendo avaliada|
-|[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|A decidir|A aplicação ainda está sendo avaliada|
+|[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
 
 #### Comunicação entre usuários (Removido do escopo)
 
