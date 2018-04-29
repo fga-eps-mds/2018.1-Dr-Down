@@ -4,7 +4,7 @@
 #
 # Author: João Pedro Sconetto <sconetto.joao@gmail.com>
 
-echo $DOCKER_ID_USER_PASSWORD | docker login --username $DOCKER_ID_USER --password-stdin
+docker login --username $DOCKER_ID_USER --password $DOCKER_ID_USER_PASSWORD
 docker tag 20181drdown_django_1 $DOCKER_ID_USER/20181-dr-down_django
 docker push $DOCKER_ID_USER/20181-dr-down_django
 
