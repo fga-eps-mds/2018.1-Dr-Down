@@ -86,6 +86,13 @@
           {% trans 'Telephone' %}<span class="asteriskField">*</span>
       </label>
       <div class="">
+
+            {% for error in form.telephone.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{error}}
+                </div>
+            {% endfor %}
+
         {% if object.telephone %}
           <input type="text" name="telephone" value= "{{ object.telephone }}" maxlength="14" class="textinput textInput form-control" required id="id_telephone" onkeydown="javascript: fMasc( this, mTel );" />
         {% else %}
