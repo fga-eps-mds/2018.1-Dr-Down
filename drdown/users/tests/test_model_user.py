@@ -2,6 +2,7 @@ from test_plus.test import TestCase
 from drdown.users.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from dateutil.relativedelta import relativedelta
 
 from ..models import Employee, HealthTeam, Patient, Responsible
 
@@ -73,6 +74,7 @@ class TestUser(TestCase):
             )
 
         edge_cases_months = [
+            -1,
             0,
             1,
             5,
@@ -86,7 +88,7 @@ class TestUser(TestCase):
         ]
 
         for months in edge_cases_months:
-            self.user.birthday = today - timezone.timedelta(days=30*months)
+            self.user.birthday = today + relativedelta(months=-months)
 
             self.user.save()
             self.user.refresh_from_db()
