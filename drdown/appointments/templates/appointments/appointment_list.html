@@ -11,18 +11,33 @@
   <div class="col-2 border-right border-info float-left mr-2" style="height: 100%">
     {% for year in years %}
       <div class="panel panel-info">
-        <div class="panel-heading collapsed" data-toggle="collapse" data-target="#bar-{{year}}">
-          <i class="fa fa-fw fa-chevron-down"></i>
-          <i class="fa fa-fw fa-chevron-right"></i>
-          {{year}}
-        </div>
-        <div class="panel-body">
-          <!-- The inside div eliminates the 'jumping' animation. -->
-          <div class="collapse" id="bar-{{year}}">
-            {% for month in months %}
-              <a href="#" class="text-tertiary">{{month}}</a></br>
-            {% endfor %}
+        {% if year == current_year %}
+          <div class="panel-heading" data-toggle="collapse" data-target="#bar-{{year}}">
+            <i class="fa fa-fw fa-chevron-down"></i>
+            <i class="fa fa-fw fa-chevron-right"></i>
+            {{year}}
           </div>
+        {% else %}
+          <div class="panel-heading collapsed" data-toggle="collapse" data-target="#bar-{{year}}">
+            <i class="fa fa-fw fa-chevron-down"></i>
+            <i class="fa fa-fw fa-chevron-right"></i>
+            {{year}}
+          </div>
+        {% endif %}
+        <div class="panel-body">
+          {% if year == current_year %}
+            <div class="collapse show" id="bar-{{year}}">
+              {% for month in months %}
+                <a href="#" class="text-tertiary">{{month}}</a></br>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="collapse" id="bar-{{year}}">
+              {% for month in months %}
+                <a href="#" class="text-tertiary">{{month}}</a></br>
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}

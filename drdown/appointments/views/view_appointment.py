@@ -2,6 +2,7 @@ from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from drdown.appointments.models import Appointment
+from django.utils import timezone
 
 
 class AppointmentListView(ListView):
@@ -26,7 +27,7 @@ class AppointmentListView(ListView):
         if first == last:
             years.append(first)
         else:
-            for year in range(last, first-1, -1):
+            for year in range(first, last+1):
                 years.append(year)
         return years
 
@@ -49,5 +50,6 @@ class AppointmentListView(ListView):
         range_years = self.get_year_range_of_appointment()
         context['years'] = self.get_list_of_years(range_years)
         context['months'] = months
+        context['current_year'] = timezone.now().year
         return context
 
