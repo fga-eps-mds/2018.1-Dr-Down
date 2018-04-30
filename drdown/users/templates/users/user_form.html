@@ -97,6 +97,13 @@
 
     <label>{% trans 'Birthday' %}<span class="asteriskField">*</span>
     </label>
+
+    {% for error in form.birthday.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{error}}
+        </div>
+    {% endfor %}
+
     {% if object.birthday %}
       <input type="date" name="birthday" value="{{ object.birthday | date:'Y-m-d' }}" required=true class="form-control">
     {% else %}
