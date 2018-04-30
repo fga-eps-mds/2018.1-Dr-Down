@@ -55,7 +55,7 @@ class TestUser(TestCase):
             5, 10, 4, 66, 12
         ]
 
-        today = timezone.datetime.today()
+        today = timezone.localdate()
 
         for test_age in test_ages:
             self.user.birthday = timezone.datetime(
