@@ -95,7 +95,7 @@ class Appointment(models.Model):
     )
 
     def __str__(self):
-        return _('Appointment of ') + self.patient
+        return _('Appointment of ') + self.patient.user.name
 
     class Meta:
         verbose_name = _("Appointment")
