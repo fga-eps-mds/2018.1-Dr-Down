@@ -28,13 +28,13 @@
           {% if year == current_year %}
             <div class="collapse show" id="bar-{{year}}">
               {% for month in months %}
-                <a href="#" class="text-tertiary">{{month}}</a></br>
+                <a href="{% url 'appointments:archive_month' year forloop.counter %}" class="text-tertiary">{{month}}</a></br>
               {% endfor %}
             </div>
           {% else %}
             <div class="collapse" id="bar-{{year}}">
               {% for month in months %}
-                <a href="#" class="text-tertiary">{{month}}</a></br>
+                <a href="{% url 'appointments:archive_month' year forloop.counter %}" class="text-tertiary">{{month}}</a></br>
               {% endfor %}
             </div>
           {% endif %}

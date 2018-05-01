@@ -1,6 +1,7 @@
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
+from django.views.generic.dates import MonthArchiveView
 from drdown.appointments.models import Appointment
 from django.utils import timezone
 from django.urls import reverse
@@ -9,7 +10,8 @@ from django.urls import reverse
 class AppointmentListView(ListView):
     model = Appointment
 
-    def get_year_range_of_appointment(self):
+    @staticmethod
+    def get_year_range_of_appointment():
         first = 3000
         last = 0
         for appointment in Appointment.objects.all():
@@ -21,7 +23,8 @@ class AppointmentListView(ListView):
 
         return [first, last]
 
-    def get_list_of_years(self, range_years):
+    @staticmethod
+    def get_list_of_years(range_years):
         years = []
         first = range_years[0]
         last = range_years[1]
@@ -32,8 +35,8 @@ class AppointmentListView(ListView):
                 years.append(year)
         return years
 
-    def get_context_data(self, **kwargs):
-        context = super(AppointmentListView, self).get_context_data(**kwargs)
+    @staticmethod
+    def prepare_context(context):
         months = [
             'January',
             'February',
@@ -48,11 +51,15 @@ class AppointmentListView(ListView):
             'November',
             'December'
         ]
-        range_years = self.get_year_range_of_appointment()
-        context['years'] = self.get_list_of_years(range_years)
+        range_years = AppointmentListView.get_year_range_of_appointment()
+        context['years'] = AppointmentListView.get_list_of_years(range_years)
         context['months'] = months
         context['current_year'] = timezone.now().year
         return context
+
+    def get_context_data(self, **kwargs):
+        context = super(AppointmentListView, self).get_context_data(**kwargs)
+        return self.prepare_context(context)
 
 
 class AppointmentCreateView(CreateView):
@@ -71,3 +78,15 @@ class AppointmentCreateView(CreateView):
         )
 
         return success_create_url
+
+
+class AppointmentMonthArchiveView(MonthArchiveView):
+    queryset = Appointment.objects.all()
+    date_field = "date_time"
+    allow_future = True
+    template_name = 'appointments/appointment_list.html'
+    allow_empty = True
+
+    def get_context_data(self, **kwargs):
+        context = super(AppointmentMonthArchiveView, self).get_context_data(**kwargs)
+        return AppointmentListView.prepare_context(context)
