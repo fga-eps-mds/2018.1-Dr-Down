@@ -1,14 +1,28 @@
-from django.views.generic import ListView
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic.dates import MonthArchiveView
 from drdown.appointments.models import Appointment
+from ..forms.appointments_form import AppointmentSearchForm
 from django.utils import timezone
 from django.urls import reverse
 
 
-class AppointmentListView(ListView):
+class AppointmentFilter(BaseFilter):
+    search_fields = {
+        'search_date': ['date_time'],
+        'search_speciality': ['speciality'],
+        'search_doctor': ['doctor__id'],
+        'search_patient': ['patient__id'],
+}
+
+
+class AppointmentListView(SearchListView):
     model = Appointment
+    template_name = 'appointments/appointment_list.html'
+    form_class = AppointmentSearchForm
+    filter_class = AppointmentFilter
 
     @staticmethod
     def get_year_range_of_appointment():

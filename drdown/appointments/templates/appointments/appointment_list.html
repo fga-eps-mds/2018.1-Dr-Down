@@ -2,6 +2,11 @@
 {% load static i18n %}
 
 {% block content-appointment %}
+  <form class="form-inline" action="" method="GET">
+    {{ form }}
+    <button class="btn" type="submit">Search</button>
+    </fieldset>
+  </form>
 
   {% for appointment in appointment_list %}
    <!-- Single Comment -->
