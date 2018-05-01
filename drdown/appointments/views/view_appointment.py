@@ -3,6 +3,7 @@ from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from drdown.appointments.models import Appointment
 from django.utils import timezone
+from django.urls import reverse
 
 
 class AppointmentListView(ListView):
@@ -27,7 +28,7 @@ class AppointmentListView(ListView):
         if first == last:
             years.append(first)
         else:
-            for year in range(first, last+1):
+            for year in range(first, last + 1):
                 years.append(year)
         return years
 
@@ -53,3 +54,20 @@ class AppointmentListView(ListView):
         context['current_year'] = timezone.now().year
         return context
 
+
+class AppointmentCreateView(CreateView):
+    model = Appointment
+    template_name = 'appointments/form_appointment.html'
+    fields = ['speciality',
+              'shift',
+              'doctor',
+              'patient',
+              'date_time',
+              'motive', ]
+
+    def get_success_url(self, **kwargs):
+        success_create_url = reverse(
+            viewname='appointments:list_appointments',
+        )
+
+        return success_create_url
