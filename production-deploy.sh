@@ -4,7 +4,7 @@
 #
 # Author: João Pedro Sconetto <sconetto.joao@gmail.com>
 
-docker tag 20181drdown_django_1 $DOCKER_ID_USER/20181-dr-down_django
+docker tag 20181-dr-down_django:latest $DOCKER_ID_USER/20181-dr-down_django
 docker push $DOCKER_ID_USER/20181-dr-down_django
 
 sudo apt-get install sshpass -y
