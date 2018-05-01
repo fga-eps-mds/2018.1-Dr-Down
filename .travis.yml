@@ -41,6 +41,7 @@ script:
   - docker-compose -f local.yml run --rm django coverage run -m py.test
   - docker-compose -f local.yml run --rm django coverage xml
 deploy:
+  - skip_cleanup: true
   # deploy develop to the staging environment
   - provider: script
     script: bash staging-deploy.sh
