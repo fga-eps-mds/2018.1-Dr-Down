@@ -30,7 +30,8 @@ class Appointment(models.Model):
     motive = models.TextField(
         _('Motive'),
         help_text=_('Why are you requesting an appointment?'),
-        max_length=500
+        max_length=500,
+        null=True,
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
