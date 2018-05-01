@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "New Appointment" %}{% endblock %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  	<h1>{% trans "New Appointment" %}</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-success">{% trans "Schedule" %}</button>
+  </form>
+</div>
+{% endblock %}
