@@ -41,6 +41,7 @@ before_script:
   - docker-compose -f local.yml pull
   - docker-compose -f local.yml up --build -d
 script:
+  - echo $DOCKER_ID_USER_PASSWORD | docker login -u $DOCKER_ID_USER --password-stdin
   - docker-compose -f local.yml run --rm django py.test
   - docker-compose -f local.yml run --rm django coverage run -m py.test
   - docker-compose -f local.yml run --rm django coverage xml
