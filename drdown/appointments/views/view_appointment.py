@@ -57,9 +57,33 @@ class AppointmentListView(ListView):
         context['current_year'] = timezone.now().year
         return context
 
+    @staticmethod
+    def prepare_queryset(request):
+        user = request.user
+        if hasattr(user, 'patient'):
+            queryset = Appointment.objects.filter(
+                patient=user.patient
+            )
+        elif hasattr(user, 'responsible'):
+            queryset = Appointment.objects.filter(
+                patient=user.responsible.patient
+            )
+        elif hasattr(user, 'employee'):
+            queryset = Appointment.objects.all()
+        elif hasattr(user, 'healthteam'):
+            queryset = Appointment.objects.filter(
+                doctor=user.healthteam
+            )
+        else:
+            queryset = Appointment.objects.none()
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super(AppointmentListView, self).get_context_data(**kwargs)
         return self.prepare_context(context)
+
+    def get_queryset(self):
+        return self.prepare_queryset(self.request)
 
 
 class AppointmentCreateView(CreateView):
@@ -81,7 +105,6 @@ class AppointmentCreateView(CreateView):
 
 
 class AppointmentMonthArchiveView(MonthArchiveView):
-    queryset = Appointment.objects.all()
     date_field = "date_time"
     allow_future = True
     template_name = 'appointments/appointment_list.html'
@@ -90,3 +113,6 @@ class AppointmentMonthArchiveView(MonthArchiveView):
     def get_context_data(self, **kwargs):
         context = super(AppointmentMonthArchiveView, self).get_context_data(**kwargs)
         return AppointmentListView.prepare_context(context)
+
+    def get_queryset(self):
+        return AppointmentListView.prepare_queryset(self.request)
