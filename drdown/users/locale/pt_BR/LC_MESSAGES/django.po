@@ -360,11 +360,11 @@ msgstr "Esse usuário já é éspecializado!"
 
 #: drdown/users/models/model_user.py:142
 msgid "The birthday cannot be in the future!"
-msgstr ""
+msgstr "A data de nascimento não pode estar no futuro!"
 
 #: drdown/users/models/model_user.py:149
 msgid "This birthday is too old."
-msgstr ""
+msgstr "Essa data de nascimento é muito antiga."
 
 #: drdown/users/templates/admin/users/change_form.html:5
 msgid "Make sure user is confirmed before adding a specialization."
