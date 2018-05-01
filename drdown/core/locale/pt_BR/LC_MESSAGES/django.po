@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-28 01:16+0000\n"
+"POT-Creation-Date: 2018-05-01 01:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -473,8 +473,8 @@ msgid ""
 "communicate with the doctor and visualize general information."
 msgstr ""
 "Dr. Down é uma ferramenta de gerenciamento para o CRIS DOWN (Centro de "
-"Referência em Síndrome de Down) que possibilita agendar consultas, "
-"comunicar-se com o médico e visualizar informações."
+"Referência em Síndrome de Down) que possibilita agendar consultas, comunicar-"
+"se com o médico e visualizar informações."
 
 #: drdown/core/templates/core/home.html:39
 msgid ""
@@ -503,24 +503,24 @@ msgid "Frequently Asked Questions (FAQ)"
 msgstr "Dúvidas Frequentes"
 
 #: drdown/core/templates/core/info.html:37
-#: drdown/core/templates/core/info.html:96
+#: drdown/core/templates/core/info.html:98
 msgid "What can be done to prevent Down's Syndrome?"
 msgstr "Como prevenir a Síndrome de Down?"
 
 #: drdown/core/templates/core/info.html:40
-#: drdown/core/templates/core/info.html:105
+#: drdown/core/templates/core/info.html:107
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
 msgstr ""
 "A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
 "minha vida?"
 
 #: drdown/core/templates/core/info.html:41
-#: drdown/core/templates/core/info.html:115
+#: drdown/core/templates/core/info.html:117
 msgid "How can I identify Down Syndrome?"
 msgstr "Como posso identificar a Síndrome de Down?"
 
 #: drdown/core/templates/core/info.html:42
-#: drdown/core/templates/core/info.html:125
+#: drdown/core/templates/core/info.html:127
 msgid "How far does the autonomy of a child with Down syndrome develop?"
 msgstr ""
 "Até onde se desenvolve a autonomia de uma criança com Síndrome de Down?"
@@ -606,7 +606,7 @@ msgstr ""
 msgid "Frequently Asked Questions"
 msgstr "Dúvidas Frequentes"
 
-#: drdown/core/templates/core/info.html:99
+#: drdown/core/templates/core/info.html:101
 msgid ""
 "Even though the chance of Down's syndrome increases according to the age "
 "range of the child's parents, Down's syndrome is not caused by the parents, "
@@ -620,7 +620,7 @@ msgstr ""
 "Essa síndrome afeta pessoas de todas as raças, níveis de estudo, classes "
 "sociais e outros."
 
-#: drdown/core/templates/core/info.html:108
+#: drdown/core/templates/core/info.html:110
 msgid ""
 "Down Syndrome is not a disease, just a condition that affects the life of an "
 "individual since birth and requires greater attention and care from the "
@@ -630,7 +630,7 @@ msgstr ""
 "um indivíduo desde o seu nascimento, o que exige uma maior atenção e cuidado "
 "por parte dos pais e familiares."
 
-#: drdown/core/templates/core/info.html:118
+#: drdown/core/templates/core/info.html:120
 msgid ""
 "Down Syndrome can be detected during pregnancy. You should see a doctor for "
 "the diagnosis."
@@ -638,7 +638,7 @@ msgstr ""
 "A Síndrome de Down pode ser detectada durante a gestação. Deve-se procurar "
 "um médico para que o diagnóstico seja feito."
 
-#: drdown/core/templates/core/info.html:128
+#: drdown/core/templates/core/info.html:130
 msgid ""
 "There is no fixed limit that represents a developmental apex of a child with "
 "Down Syndrome. It is common for medical monitoring and the help of family "
@@ -649,19 +649,19 @@ msgstr ""
 "a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
 "criança."
 
-#: drdown/core/templates/core/info.html:137
+#: drdown/core/templates/core/info.html:139
 msgid "Further reading"
 msgstr "Leituras complementares"
 
-msgid "Hey! You have procedures to be made."
-msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+#~ msgid "Hey! You have procedures to be made."
+#~ msgstr "Oi! Você tem procedimentos que precisam ser feitos."
 
-msgid "Click here to check it"
-msgstr "Clique aqui para conferir"
+#~ msgid "Click here to check it"
+#~ msgstr "Clique aqui para conferir"
 
-msgid ""
-"One or more of your patients needs attention. Some procedures may be "
-"behind schedule."
-msgstr ""
-"Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
-"podem estar atrasados."
+#~ msgid ""
+#~ "One or more of your patients needs attention. Some procedures may be "
+#~ "behind schedule."
+#~ msgstr ""
+#~ "Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
+#~ "podem estar atrasados."

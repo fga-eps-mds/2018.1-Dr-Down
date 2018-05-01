@@ -1,6 +1,6 @@
 from django.apps import AppConfig
-
+from django.utils.translation import ugettext_lazy as _
 
 class MedicalRecordsConfig(AppConfig):
     name = 'drdown.medicalrecords'
-    verbose_name = 'Medical Records'
+    verbose_name = _("Medical Record")

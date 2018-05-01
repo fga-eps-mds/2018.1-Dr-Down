@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 01:32+0000\n"
+"POT-Creation-Date: 2018-05-01 01:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,6 @@ msgid "Category"
 msgstr "Categoria"
 
 #: drdown/forum/models/model_category.py:28
-#: drdown/forum/templates/forum/category_list.html:3
 #: drdown/forum/templates/forum/category_list.html:7
 #: drdown/forum/templates/forum/commentary_list.html:16
 #: drdown/forum/templates/forum/form_commentary.html:9
@@ -127,6 +126,10 @@ msgstr "Mensagem do post"
 #: drdown/forum/templates/forum/post_list.html:20
 msgid "Posts"
 msgstr "Posts"
+
+#: drdown/forum/templates/forum/category_list.html:3
+msgid "Care ine"
+msgstr ""
 
 #: drdown/forum/templates/forum/category_list.html:16
 msgid "There are no categories."

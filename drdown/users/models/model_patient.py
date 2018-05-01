@@ -174,12 +174,15 @@ class Patient(models.Model):
         super().delete(*args, **kwargs)
 
 
+    class Meta:
+        verbose_name = _("Patient")
+        verbose_name_plural = _("Patients")
+
 @receiver(post_save, sender=Patient)
 def create_procedures(sender, instance, **kwargs):
     if not hasattr(instance, 'checklist'):
         apps.get_model('careline', 'Checklist') \
             .objects.create(patient=instance)
 
-    class Meta:
-        verbose_name = _('Patient')
-        verbose_name_plural = _('Patients')
+
+
