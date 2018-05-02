@@ -81,8 +81,9 @@
     </div>
   </div>
 
+
   {% if user.employee %}
-  <div class="row">
+
     <div class="col-sm-12">
       <form>
         <h3 class="text-secondary mb-2 mt-2">{% trans 'Employee' %}</h3>
@@ -107,10 +108,12 @@
       </form>
     </div>
   </div>
+</div>
+
   {% endif %}
 
   {% if user.healthteam %}
-  <div class="row">
+
     <div class="col-sm-12">
       <form>
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Health Team' %} </h3>
@@ -151,6 +154,8 @@
       </form>
     </div>
   </div>
+</div>
+
   {% endif %}
 
   {% if user.patient %}
@@ -232,6 +237,7 @@
       </form>
     </div>
   </div>
+</div>
   {% endif %}
 
   {% if user.responsible %}
@@ -262,24 +268,27 @@
       </form>
     </div>
   </div>
-
+</div>
   {% endif %}
 
 {% if object == request.user %}
 <!-- Action buttons -->
 <div class="row mt-4">
   <div class="col-sm-12">
-    
-    {% if user.responsible %}
+
+    {% if user.responsible or user.healthteam%}
         <a class="btn btn-secondary" href="{% url 'users:patient_list' %}" role="button">{% trans 'My Patients' %}</a>
     {% endif %}
-    
+
+    {% if user.patient %}
+        <a class="btn btn-secondary" href="{% url 'medicalrecords:list_medicalrecords' user.username %}" role="button">{% trans 'My Medical Records' %}</a>
+        <a class="btn btn-secondary" href="{% url 'users:patient_list' %}" role="button">{% trans 'My Medical Follow-up Sheet' %}</a>
+    {% endif %}
+
     <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
 
-    {% if user.patient %}
-    <a class="btn btn-secondary" href="{% url 'medicalrecords:list_medicalrecords' user.username %}" role="button">{% trans 'My Medical Records' %}</a>
-    {% endif %}
+
       <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
     <!-- Your Stuff: Custom user template urls -->
   </div>
