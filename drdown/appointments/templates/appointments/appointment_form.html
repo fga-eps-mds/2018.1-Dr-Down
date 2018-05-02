@@ -54,15 +54,20 @@
     </div>
 
     <div class="fieldWrapper form-group">
-      <label for="id_date_time" class="col-form-label">{% trans 'Date' %}:</label><br>
-      <input type="datetime" name="date_time" id="id_date_time" class="form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4} [0-9]{2}:[0-9]{2}" required>
+      <label for="id_date" class="col-form-label">{% trans 'Date' %}:</label><br>
+      <input type="date" name="date" id="id_date" class="form-control" required>
       <span class="validity"></span>
-      <small>{% trans 'Enter a date and time in format: dd/mm/yyyy hh:mm' %}</small>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_time" class="col-form-label">{% trans 'Time' %}:</label><br>
+      <input type="time" name="time" id="id_time" class="form-control" required>
+      <span class="validity"></span>
     </div>
 
     <div class="fieldWrapper form-group">
       <label for="id_motive" class="col-form-label">{% trans 'Motive' %}:</label><br>
-      <textarea name="motive" cols="40" rows="10" maxlength="500" required id="id_motive" class="form-control">
+      <textarea name="motive" cols="40" rows="10" maxlength="500" id="id_motive" class="form-control">
       </textarea>
     </div>
     <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>

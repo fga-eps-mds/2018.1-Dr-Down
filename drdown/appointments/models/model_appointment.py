@@ -21,9 +21,15 @@ class Appointment(models.Model):
         max_length=10
     )
 
-    date_time = models.DateTimeField(
-        _('Date and Time'),
-        help_text=_('Date and time of appointment'),
+    date = models.DateField(
+        _('Date'),
+        help_text=_('Date of appointment'),
+        max_length=50
+    )
+
+    time = models.TimeField(
+        _('Time'),
+        help_text=_('Time of appointment'),
         max_length=50
     )
 
@@ -31,7 +37,7 @@ class Appointment(models.Model):
         _('Motive'),
         help_text=_('Why are you requesting an appointment?'),
         max_length=500,
-        null=True,
+        blank=True,
     )
 
     SPEECH_THERAPHY = _("Speech Therapy")
@@ -90,9 +96,10 @@ class Appointment(models.Model):
     status = models.CharField(
         _('Status'),
         choices=STATUS_CHOICES,
-        help_text=_("Is the appointment still scheduled?"),
+        help_text=_("Is this appointment still scheduled?"),
         default=SCHEDULED,
-        max_length=20
+        max_length=20,
+        editable=False,
     )
 
     def __str__(self):

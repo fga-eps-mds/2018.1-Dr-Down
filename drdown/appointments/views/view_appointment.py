@@ -13,7 +13,7 @@ from django.urls import reverse
 
 class AppointmentFilter(BaseFilter):
     search_fields = {
-        'search_date': ['date_time'],
+        'search_date': ['date'],
         'search_speciality': ['speciality'],
         'search_doctor': ['doctor__id'],
         'search_patient': ['patient__id'],
@@ -31,10 +31,10 @@ class AppointmentListView(SearchListView):
         first = 3000
         last = 0
         for appointment in Appointment.objects.all():
-            date = appointment.date_time.year
-            if date < first:
+            year = appointment.date.year
+            if year < first:
                 first = date
-            if date > last:
+            if year > last:
                 last = date
 
         return [first, last]
@@ -106,12 +106,15 @@ class AppointmentCreateView(CreateView):
     model = Appointment
     sucess_url = 'appointmentslist_appointments'
     template_name = 'appointments/appointment_form.html'
-    fields = ['speciality',
-              'shift',
-              'doctor',
-              'patient',
-              'date_time',
-              'motive', ]
+    fields = [
+        'speciality',
+        'shift',
+        'doctor',
+        'patient',
+        'date',
+        'time',
+        'motive',
+    ]
 
     def get_success_url(self, **kwargs):
         print("Entra em get_success_url")
@@ -150,7 +153,7 @@ class AppointmentCreateView(CreateView):
 
 
 class AppointmentMonthArchiveView(MonthArchiveView):
-    date_field = "date_time"
+    date_field = "date"
     allow_future = True
     template_name = 'appointments/appointment_list.html'
     allow_empty = True
