@@ -2,8 +2,12 @@ from django.test import RequestFactory
 from django.urls import reverse_lazy
 from django.test.client import Client
 from django.urls import reverse
+from django.utils import timezone
 from test_plus.test import TestCase
-from ..models import User
+from ..models import (
+    User, Responsible, Employee,
+    HealthTeam, Patient
+)
 from ..views import (
     UserRedirectView,
     UserUpdateView
@@ -153,3 +157,191 @@ class TestUserDetailView(BaseUserTestCase):
 
         self.assertEquals(response.status_code, 200)
 
+
+class TestPatientListViewSelector(TestCase):
+    """
+        Test if the Selector of List View of user is working correctly
+    """
+
+    def setUp(self):
+        """
+            Runs before every test
+        """
+
+        self.user_responsible = self.make_user(username='resp')
+
+        self.user_responsible.birthday = timezone.datetime(1950, 1, 1)
+
+        self.user_responsible.save()
+        self.user_responsible.refresh_from_db()
+
+        Responsible.objects.create(
+            user=self.user_responsible,
+            cpf="974.220.200-16"
+        )
+
+        self.user_patient1 = self.make_user(username='pat1')
+
+        self.user_patient1.birthday = timezone.datetime(2000, 1, 1)
+
+        Patient.objects.create(
+            ses="1234567",
+            user=self.user_patient1,
+            priority=1,
+            mother_name="Mae",
+            father_name="Pai",
+            ethnicity=3,
+            sus_number="12345678911",
+            civil_registry_of_birth="12345678911",
+            declaration_of_live_birth="12345678911",
+            responsible=self.user_responsible.responsible
+        )
+
+        self.user_patient1.refresh_from_db()
+
+        self.user_patient2 = self.make_user(username='pat2')
+
+        self.user_patient2.birthday = timezone.datetime(2000, 1, 1)
+
+        Patient.objects.create(
+            ses="1234213",
+            user=self.user_patient2,
+            priority=1,
+            mother_name="Mae",
+            father_name="Pai",
+            ethnicity=3,
+            sus_number="12345633912",
+            civil_registry_of_birth="12345123911",
+            declaration_of_live_birth="1212338911",
+            responsible=self.user_responsible.responsible
+        )
+
+        self.user_health_team = self.make_user()
+        self.user_health_team.birthday = timezone.datetime(2000, 1, 1)
+
+        self.health_team = HealthTeam.objects.create(
+            cpf="057.641.271-65",
+            user=self.user_health_team,
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+            )
+
+
+        self.client = Client()
+
+    def test_get_redirect_for_patient(self):
+        """
+            Test if a patient is redirected for its medical follow-up sheet when accessing the  List View
+        """
+
+        self.client.force_login(self.user_patient1)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='users:patient_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(
+            viewname='careline:patient_medical_sheet',
+            kwargs={'username': self.user_patient1.username},
+            follow=True
+        )
+
+        self.assertRedirects(response=response, expected_url=url)
+
+    def test_get_redirect_for_not_authenticated(self):
+        """
+            Test if a not authenticated user is redirected to login screen
+        """
+
+        response = self.client.get(
+            path=reverse(
+                viewname='users:patient_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(viewname='account_login')
+
+        self.assertRedirects(response=response, expected_url=url)
+
+    def test_get_redirect_for_other_specializations_or_no_specialization(self):
+        """
+            Test if a user that is not specialized or employee it is redirected for its profile
+            when accessing Checklist List View
+        """
+
+        user = self.make_user(username='nope')
+        user.birthday = timezone.datetime(1950, 1, 1)
+        user.save()
+
+        self.client.force_login(user)
+
+        response = self.client.get(
+            path=reverse(viewname='careline:checklist_list')
+        )
+
+        expected_status_codes = [301, 302]
+
+        self.assertIn(
+            response.status_code,
+            expected_status_codes
+        )
+
+        Employee.objects.create(
+            cpf="306.585.340-09",
+            user=user
+        )
+
+        user.refresh_from_db()
+
+        response = self.client.get(
+            path=reverse(viewname='careline:checklist_list')
+        )
+
+        expected_status_codes = [301, 302]
+
+        self.assertIn(
+            response.status_code,
+            expected_status_codes
+        )
+
+    def test_get_redirect_for_healthteam(self):
+        """
+            Test if the page loads when a health team is the current user
+        """
+
+        self.client.force_login(self.user_health_team)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='users:patient_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(viewname='users:healthteam_patient_list')
+
+        self.assertRedirects(response=response, expected_url=url)
+
+    def test_get_redirect_for_responsible(self):
+        """
+            Test if the page loads when a responsible is the current user
+        """
+
+        self.client.force_login(self.user_responsible)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='users:patient_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(viewname='users:responsible_patient_list')
+
+        self.assertRedirects(response=response, expected_url=url)
