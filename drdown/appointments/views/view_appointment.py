@@ -129,7 +129,7 @@ class AppointmentCreateView(CreateView):
         return super(AppointmentCreateView, self).form_valid(form)
 
     @staticmethod
-    def get_health_team(self):
+    def get_health_team():
         health_team = []
 
         for doctor in HealthTeam.objects.all():
@@ -138,7 +138,7 @@ class AppointmentCreateView(CreateView):
         return health_team
 
     @staticmethod
-    def get_patients(self):
+    def get_patients():
         patients = []
 
         for patient in Patient.objects.all():
@@ -188,6 +188,6 @@ class AppointmentUpdateView(UpdateView):
     def get_context_data(self, **kwargs):
         context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
 
-        context['health_team'] = self.get_health_team()
-        context['patients'] = self.get_patients()
+        context['health_team'] = AppointmentCreateView.get_health_team()
+        context['patients'] = AppointmentCreateView.get_patients()
         return context
