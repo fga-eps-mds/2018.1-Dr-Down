@@ -3,6 +3,7 @@ from drdown.appointments.views.view_appointment import AppointmentListView
 from drdown.appointments.views.view_appointment import AppointmentCreateView
 from drdown.appointments.views.view_appointment import AppointmentUpdateView
 from drdown.appointments.views.view_appointment import AppointmentMonthArchiveView
+from drdown.appointments.views.view_appointment import AppointmentUpdateStatusView
 
 
 app_name = 'appointments'
@@ -26,5 +27,10 @@ urlpatterns = [
         regex=r'^update/(?P<appointment_pk>\d+)/$',
         view=AppointmentUpdateView.as_view(),
         name='update_appointment'
-    )
+    ),
+    url(
+        regex=r'^cancel/(?P<appointment_pk>\d+)/$',
+        view=AppointmentUpdateStatusView.as_view(),
+        name='update_status_appointment'
+    ),
 ]

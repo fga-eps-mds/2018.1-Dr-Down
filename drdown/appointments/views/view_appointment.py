@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from django.views.generic import CreateView
@@ -199,6 +200,7 @@ class AppointmentUpdateView(UpdateView):
 class AppointmentUpdateStatusView(UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_confirm_cancel.html'
+    fields = []
 
     def get_success_url(self, **kwargs):
         success_update_status_url = reverse(
