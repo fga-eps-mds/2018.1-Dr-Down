@@ -47,7 +47,7 @@ class AppointmentListView(SearchListView):
         if first == last:
             years.append(first)
         else:
-            for year in range(first, last + 1):
+            for year in range(last + 1, first, -1):
                 years.append(year)
         return years
 
@@ -123,10 +123,6 @@ class AppointmentCreateView(CreateView):
 
         return success_create_url
 
-    def form_valid(self, form):
-        form.save()
-        return super(AppointmentCreateView, self).form_valid(form)
-
     @staticmethod
     def get_health_team():
         health_team = []
@@ -170,7 +166,6 @@ class AppointmentMonthArchiveView(MonthArchiveView):
 
 class AppointmentUpdateView(UpdateView):
     model = Appointment
-    sucess_url = 'appointments:list_appointments'
     template_name = 'appointments/appointment_form.html'
     fields = ['speciality',
               'shift',
@@ -181,12 +176,11 @@ class AppointmentUpdateView(UpdateView):
               'motive', ]
 
     def get_success_url(self, **kwargs):
-        print("Entra em get_success_url")
-        success_create_url = reverse(
+        success_update_url = reverse(
             viewname='appointments:list_appointments',
         )
 
-        return success_create_url
+        return success_update_url
 
     def get_object(self):
         appointment = Appointment.objects.get(
@@ -200,3 +194,29 @@ class AppointmentUpdateView(UpdateView):
         context['health_team'] = AppointmentCreateView.get_health_team()
         context['patients'] = AppointmentCreateView.get_patients()
         return context
+
+
+class AppointmentUpdateStatusView(UpdateView):
+    model = Appointment
+    template_name = 'appointments/appointment_confirm_cancel.html'
+
+    def get_success_url(self, **kwargs):
+        success_update_status_url = reverse(
+            viewname='appointments:list_appointments',
+        )
+
+        return success_update_status_url
+
+    def get_object(self):
+        appointment = Appointment.objects.get(
+            pk=self.kwargs.get('appointment_pk')
+        )
+        return appointment
+
+    def form_valid(self, form):
+        form.instance.status = _('Canceled')
+        form.save()
+        return super(AppointmentUpdateStatusView, self).form_valid(form)
+
+
+
