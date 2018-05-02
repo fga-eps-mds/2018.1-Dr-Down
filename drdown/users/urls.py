@@ -30,5 +30,10 @@ urlpatterns = [
         regex=r'^~delete/',
         view=views.UserDeleteView.as_view(),
         name='delete'
+    ), 
+    url(
+        regex=r'^~patients/$',
+        view=views.PatientListView.as_view(),
+        name='patient_list'
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

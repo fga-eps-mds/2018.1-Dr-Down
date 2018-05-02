@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.views.generic import (DetailView, ListView, RedirectView,
                                   UpdateView, DeleteView)
 from django.urls import reverse_lazy
-from ..models import User
+from ..models import User, Patient, Employee, HealthTeam, Responsible
 
 
 class UserDeleteView (LoginRequiredMixin, DeleteView):
@@ -121,3 +121,60 @@ class UserListView(LoginRequiredMixin, ListView):
     # These next two lines tell the view to index lookups by username
     slug_field = 'username'
     slug_url_kwarg = 'username'
+
+
+class PatientListView(ListView):
+
+    # the List View for Checklists will list the patients that belong to the
+    # current user (specialized as a responsible), only responsibles will
+    # access this view
+    model = User
+    template_name = 'users/patient_list.html'
+
+    def get(self, request, *args, **kwargs):
+
+        if not request.user.is_authenticated:
+            # redirect not not authenticated to login screen
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
+        if hasattr(request.user, 'patient'):
+            # redirect user_patient to the checklist detail view
+            url = reverse(
+                viewname='careline:checklist_detail',
+                kwargs={'username': request.user.username}
+            )
+            return redirect(url)
+
+        if not hasattr(request.user, 'responsible'):
+            url = reverse(
+                viewname='users:detail',
+                kwargs={'username': request.user.username}
+            )
+            return redirect(url)
+
+        return super().get(request, *args, **kwargs)
+
+    def get_queryset(self, *args, **kwargs):
+
+        user = self.request.user
+
+        queryset = None
+
+        if hasattr(user, "responsible"):
+            queryset = Patient.objects.filter(responsible=user.responsible)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        user = self.request.user
+        patients = Patient.objects.filter(responsible=user.responsible)
+
+        context['patient_list'] = patients
+
+        return context
+
