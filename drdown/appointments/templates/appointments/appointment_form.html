@@ -5,19 +5,67 @@
 
 {% block content %}
 <div class="col-md-6 offset-md-3">
-  	<h1>{% trans "New Appointment" %}</h1>
-    <form method="post">
-      {% csrf_token %}
-      {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-          <p>
-            {{ field.label_tag }}<br>
-            {{ field }}
-          </p>
-        </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-success">{% trans "Schedule" %}</button>
+  <h1>{% trans "New Appointment" %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="fieldWrapper form-group">
+      <label for="id_speciality" class="col-form-label">{% trans 'Speciality' %}:</label>
+      <select class= "select form-control" name="speciality" required id="id_speciality">
+        <option value="" selected>---------</option>
+        <option value="{% trans 'Speech Therapy' %}">{% trans 'Speech Therapy' %}</option>
+        <option value="{% trans 'Psychology' %}">{% trans 'Psychology' %}</option>
+        <option value="{% trans 'Physiotherapy' %}">{% trans 'Physiotherapy' %}</option>
+        <option value="{% trans 'Occupational Therapy' %}">{% trans 'Occupational Therapy' %}</option>
+        <option value="{% trans 'Doctor' %}">{% trans 'Doctor' %}</option>
+        <option value="{% trans 'Cardiology' %}">{% trans 'Cardiology' %}</option>
+        <option value="{% trans 'Neurology' %}">{% trans 'Neurology' %}</option>
+        <option value="{% trans 'Pediatrics' %}">{% trans 'Pediatrics' %}</option>
+        <option value="{% trans 'Nursing' %}">{% trans 'Nursing' %}</option>
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_shift" class="col-form-label">{% trans 'Shift' %}:</label><br>
+      <select name="shift" class= "select form-control" required id="id_shift">
+        <option value="" selected>---------</option>
+        <option value="M">{% trans 'Morning' %}</option>
+        <option value="A">{% trans 'Afternoon' %}</option>
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_doctor" class="col-form-label">{% trans 'Doctor' %}:</label><br>
+      <select name="doctor" class= "select form-control" required id="id_doctor">
+        <option value="" selected>---------</option>
+        {% for doctor in health_team %}
+          <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_patient" class="col-form-label">{% trans 'Patient' %}:</label><br>
+      <select name="patient" class= "select form-control" required id="id_patient">
+        <option value="" selected>---------</option>
+        {% for patient in patients %}
+          <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_date_time" class="col-form-label">{% trans 'Date' %}:</label><br>
+      <input type="datetime" name="date_time" id="id_date_time" class="form-control" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4} [0-9]{2}:[0-9]{2}" required>
+      <span class="validity"></span>
+      <small>{% trans 'Enter a date and time in format: dd/mm/yyyy hh:mm' %}</small>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_motive" class="col-form-label">{% trans 'Motive' %}:</label><br>
+      <textarea name="motive" cols="40" rows="10" maxlength="500" required id="id_motive" class="form-control">
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
   </form>
 </div>
 {% endblock %}

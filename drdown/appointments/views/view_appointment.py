@@ -4,6 +4,8 @@ from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic.dates import MonthArchiveView
 from drdown.appointments.models import Appointment
+from drdown.users.models.model_health_team import HealthTeam
+from drdown.users.models.model_patient import Patient
 from ..forms.appointments_form import AppointmentSearchForm
 from django.utils import timezone
 from django.urls import reverse
@@ -15,7 +17,7 @@ class AppointmentFilter(BaseFilter):
         'search_speciality': ['speciality'],
         'search_doctor': ['doctor__id'],
         'search_patient': ['patient__id'],
-}
+    }
 
 
 class AppointmentListView(SearchListView):
@@ -102,7 +104,8 @@ class AppointmentListView(SearchListView):
 
 class AppointmentCreateView(CreateView):
     model = Appointment
-    template_name = 'appointments/form_appointment.html'
+    sucess_url = 'appointmentslist_appointments'
+    template_name = 'appointments/appointment_form.html'
     fields = ['speciality',
               'shift',
               'doctor',
@@ -111,11 +114,39 @@ class AppointmentCreateView(CreateView):
               'motive', ]
 
     def get_success_url(self, **kwargs):
+        print("Entra em get_success_url")
         success_create_url = reverse(
             viewname='appointments:list_appointments',
         )
 
         return success_create_url
+
+    def form_valid(self, form):
+        form.save()
+        return super(AppointmentCreateView, self).form_valid(form)
+
+    def get_health_team(self):
+        health_team = []
+
+        for doctor in HealthTeam.objects.all():
+            health_team.append(doctor)
+
+        return health_team
+
+    def get_patients(self):
+        patients = []
+
+        for patient in Patient.objects.all():
+            patients.append(patient)
+
+        return patients
+
+    def get_context_data(self, **kwargs):
+        context = super(AppointmentCreateView, self).get_context_data(**kwargs)
+
+        context['health_team'] = self.get_health_team()
+        context['patients'] = self.get_patients()
+        return context
 
 
 class AppointmentMonthArchiveView(MonthArchiveView):
@@ -125,7 +156,8 @@ class AppointmentMonthArchiveView(MonthArchiveView):
     allow_empty = True
 
     def get_context_data(self, **kwargs):
-        context = super(AppointmentMonthArchiveView, self).get_context_data(**kwargs)
+        context = super(AppointmentMonthArchiveView,
+                        self).get_context_data(**kwargs)
         return AppointmentListView.prepare_context(context)
 
     def get_queryset(self):
