@@ -10,14 +10,17 @@
 
 {% block content %}
   <div class="container">
-    <h2>{% trans 'Appointments' %}</h2>
+    {% if request.user.employee %}
+       <a href="{% url 'appointments:create_appointment' %}" class="btn btn-secondary btn-sm float-right">{% trans "New Appointment" %}</a>
+    {% endif %}
+    <h2>{% trans 'Appointments' %}</h2><hr>
 
     {% url 'appointments:list_appointments' as url %}
     {% if request.path == url %}
       <div id="search">
         <form class="form-inline" action="" method="GET">
           {{ form }}
-          <button class="btn btn-secondary ml-2 clear-" type="submit">Search</button>
+          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">Search</button>
           </fieldset>
         </form>
       </div>
@@ -29,11 +32,14 @@
          <!-- Single Comment -->
           <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="appointment">
             <div class="message">
-              <h5 class="mt-2">{{appointment.patient.user.name}}</h5>
+              <h5 class="mt-2">{% trans 'Patient'%}: {{appointment.patient.user.name}}</h5>
+              <font size="4" >{% trans 'Doctor'%}: {{ appointment.doctor.name}}</font><br>
+              <font size="2" >{% trans 'Especiality'%}: {{ appointment.speciality}}</font><br>
+              <font size="2" >{% trans 'Date'%}: {{ appointment.date}}</font><br>
+              <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
               <p> {{appointment.motive}}</p>
-              <p><font size="2" >{% trans 'Date'%} {{ appointment.date_time}}</font></p>
-              <a href="#" class="btn btn-secondary btn-sm">{% trans "Edit" %}</a>
-              <a href="#" class="btn btn-danger btn-sm">{% trans "Change Status" %}</a><br/><br/>
+              <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm">{% trans "Edit" %}</a>
+              <a href="#" class="btn btn-danger btn-sm">{% trans "Cancel" %}</a><br/><br/>
             </div>
           </div>
         {% empty %}

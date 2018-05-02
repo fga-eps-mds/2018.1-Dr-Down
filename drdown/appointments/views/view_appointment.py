@@ -104,7 +104,6 @@ class AppointmentListView(SearchListView):
 
 class AppointmentCreateView(CreateView):
     model = Appointment
-    sucess_url = 'appointmentslist_appointments'
     template_name = 'appointments/appointment_form.html'
     fields = [
         'speciality',
@@ -171,13 +170,23 @@ class AppointmentMonthArchiveView(MonthArchiveView):
 
 class AppointmentUpdateView(UpdateView):
     model = Appointment
+    sucess_url = 'appointments:list_appointments'
     template_name = 'appointments/appointment_form.html'
     fields = ['speciality',
               'shift',
               'doctor',
               'patient',
-              'date_time',
+              'date',
+              'time',
               'motive', ]
+
+    def get_success_url(self, **kwargs):
+        print("Entra em get_success_url")
+        success_create_url = reverse(
+            viewname='appointments:list_appointments',
+        )
+
+        return success_create_url
 
     def get_object(self):
         appointment = Appointment.objects.get(
