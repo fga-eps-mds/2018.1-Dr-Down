@@ -1,0 +1,297 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block css %}
+	<link href="{% static 'core/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  	<!-- Custom fonts for this template -->
+    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}"" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  	<!-- Custom styles for this template -->
+  	<link href="{% static 'core/homepage/css/freelancer.css' %}" rel="stylesheet">
+  	<link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+
+{% endblock css %}
+
+{% block content %}
+
+  <br/><br/><br/><br/><br/><br/><br/>
+  <center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
+  <hr class="star-dark bg-star-white">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="row" rowspan="2">{% trans 'Vaccines'%}</th>
+        <th scope="col" colspan="19">{% trans 'OF BIRTH TO THE 10 YEARS OF AGE'%}</th>
+        <th scope="col">{% trans 'ADOLESCENT'%}</th>
+        <th scope="col">{% trans 'ADULT'%}</th>
+        <th scope="col">{% trans 'OLD MAN'%}</th>
+      </tr>
+
+      <tr>
+        <th>{% trans 'At birth'%}</th>
+        <th>{% trans '1 month'%}</th>
+        <th>{% trans '2 months'%}</th>
+        <th>{% trans '3 months'%}</th>
+        <th>{% trans '4 months'%}</th>
+        <th>{% trans '5 months'%}</th>
+        <th>{% trans '6 months'%}</th>
+        <th>{% trans '7 months'%}</th>
+        <th>{% trans '8 months'%}</th>
+        <th>{% trans '9 months'%}</th>
+        <th>{% trans '12 months'%}</th>
+        <th>{% trans '15 months'%}</th>
+        <th>{% trans '18 months'%}</th>
+        <th>{% trans '24 months'%}</th>
+        <th>{% trans '4 years'%}</th>
+        <th>{% trans '5 years'%}</th>
+        <th>{% trans '6 years'%}</th>
+        <th>{% trans '9 years'%}</th>
+        <th>{% trans '10 years'%}</th>
+        <th>{% trans '11 to 19 years'%}</th>
+        <th>{% trans '20 to 59 years'%}</th>
+        <th>{% trans 'From 60 years old'%}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">{% trans 'BCG ID'%}</th>
+        <td>{% trans 'One dose'%}</td>
+        <td colspan="14">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td colspan="7">{% trans 'Vaccinate people who contacted leprosy'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Hepatitis B'%}</th>
+        <td colspan="7">{% trans 'Three or four doses from birth'%}</td>
+        <td colspan="15">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Rotavirus'%}</th>
+        <td></td>
+        <td></td>
+        <td colspan="6">{% trans 'Two or three doses. Initiate vaccination before 15 weeks of age'%}</td>
+        <td colspan="14">{% trans 'CONTRAINDICATED'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Bacterial triple (DTPw, DTPa, ou dTpa)'%}</th>
+        <td></td>
+        <td></td>
+        <td colspan="11">{% trans 'Four doses of DTPa or DTPw starting at 2 months of age'%}</td>
+        <td></td>
+        <td colspan="2">{% trans 'Reinforcement with DTPa, DTPw or dTpa'%}</td>
+        <td colspan="2"></td>
+        <td colspan="4">{% trans 'Reinforcement with dTpa from 9 years of age and every 10 years (or, in the case of dTpa, do dT)'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans '<i>Haemophilus influenzae</i> type b'%}</th>
+        <td></td>
+        <td></td>
+        <td colspan="11">{% trans 'Four doses starting at 2 months of age'%}</td>
+        <td colspan="3">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Poliomyelitis (inactivated virus)'%}</th>
+        <td></td>
+        <td></td>
+        <td colspan="14">{% trans 'Five doses starting at 2 months of age'%}</td>
+        <td colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Pneumococcal conjugate'%}</th>
+        <td></td>
+        <td></td>
+        <td colspan="10">{% trans 'Four doses starting at 2 months of age - VPC10 or VPC13'%}</td>
+        <td colspan="4">{% trans 'VPC10 or VPC13 - Vaccinate the previously unvaccinated'%}</td>
+        <td colspan="5">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
+        <td>{% trans 'VPC13: one dose'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Meningococcal conjugate C or ACWY'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="7">{% trans 'With menACWY: three doses beginning at 3 months of age. Or with menC: two doses beginning at 3 months of age'%}</td>
+        <td colspan="2">{% trans 'REINFORCEMENT'%}</td>
+        <td colspan="3"></td>
+        <td colspan="2">{% trans 'REINFORCEMENT'%}</td>
+        <td colspan="2"></td>
+        <td>{% trans 'REINFORCED at age 11. For those not previously vaccinated: two doses'%}</td>
+        <td colspan="2">{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Meningococcal B'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="7">{% trans 'Three doses beginning at 3 months of age'%}</td>
+        <td colspan="2">{% trans 'REINFORCEMENT'%}</td>
+        <td colspan="8">{% trans 'For those not previously vaccinated: two doses'%}</td>
+        <td colspan="2">{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Oral poliomyelitis (live attenuated virus)'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="9">{% trans 'NATIONAL VACCINATION CAMPAIGNS'%}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Influenza (flu)'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="16">{% trans 'ANNUAL VACCINATION'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Yellow fever'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="13">{% trans 'IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION OF MS) - single dose at 9 months of age. Not previously vaccinated: single dose'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Viral triple (measles, mumps and rubella)'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="4">{% trans 'Two doses after 12 months'%}</td>
+        <td colspan="7">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td>{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Varicella (chickenpox)'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="4">{% trans 'Two doses after 12 months'%}</td>
+        <td colspan="7">{% trans 'Vaccinate previously unvaccinated susceptibles'%}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Hepatitis A'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="4">{% trans 'Two doses after 12 months'%}</td>
+        <td colspan="7">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td>{% trans 'Vaccinate people in special risk situations'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'HPV'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="2">{% trans 'Three doses for girls and boys'%}</td>
+        <td>{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td>{% trans 'Vaccinate the non-vaccinated formerly: at the discretion of the physician'%}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Pneumococcal 23 courageous'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="8">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td>{% trans 'Two doses at five-year intervals'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Herpes zoster'%}</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{% trans 'From 50 to 59 years old: at medical discretion'%}</td>
+        <td>{% trans 'One dose'%}</td>
+      </tr>
+      <tr>
+        <th scope="row">{% trans 'Dengue'%}</th>
+        <td colspan="17">{% trans 'CONTRAINDICATED'%}</td>
+        <td colspan="4">{% trans 'To vaccinate people aged 9 to 45 years previously infected with the virus (seropositive) with three doses: 0 - 6 - 12 months'%}</td>
+        <td>{% trans 'CONTRAINDICATED'%}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/><br/>
+
+{% endblock content %}
