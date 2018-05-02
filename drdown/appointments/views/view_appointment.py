@@ -28,49 +28,26 @@ class AppointmentListView(SearchListView):
     filter_class = AppointmentFilter
 
     @staticmethod
-    def get_year_range_of_appointment():
-        first = 3000
-        last = 0
-        for appointment in Appointment.objects.all():
-            year = appointment.date.year
-            if year < first:
-                first = year
-            if year > last:
-                last = year
-
-        return [first, last]
-
-    @staticmethod
-    def get_list_of_years(range_years):
+    def get_list_of_years():
         years = []
-        first = range_years[0]
-        last = range_years[1]
-        if first == last:
-            years.append(first)
-        else:
-            for year in range(last + 1, first, -1):
-                years.append(year)
+        for appointment in Appointment.objects.all():
+            if appointment.date.year not in years:
+                years.append(appointment.date.year)
+        years.sort(reverse=True)
         return years
 
     @staticmethod
+    def get_list_of_months():
+        months = []
+        for appointment in Appointment.objects.all():
+            if appointment.date.strftime("%B") not in months:
+                months.append(appointment.date.strftime("%B"))
+        return months
+
+    @staticmethod
     def prepare_context(context):
-        months = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December'
-        ]
-        range_years = AppointmentListView.get_year_range_of_appointment()
-        context['years'] = AppointmentListView.get_list_of_years(range_years)
-        context['months'] = months
+        context['years'] = AppointmentListView.get_list_of_years()
+        context['months'] = AppointmentListView.get_list_of_months()
         context['current_year'] = timezone.now().year
         return context
 
