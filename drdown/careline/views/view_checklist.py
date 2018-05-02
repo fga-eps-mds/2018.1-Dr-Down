@@ -3,7 +3,8 @@ from django.http import (
     HttpResponseRedirect,
     HttpResponse,
     HttpResponseForbidden,
-    HttpResponseServerError
+    HttpResponseServerError,
+    HttpResponsePermanentRedirect
 )
 from django.urls import reverse
 
@@ -23,60 +24,15 @@ from django.views.generic import (
 from drdown.users.models import User, Patient
 
 
-class ChecklistListView(ListView):
+class ChecklistRedirectView(RedirectView):
 
-    # the List View for Checklists will list the patients that belong to the
-    # current user (specialized as a responsible), only responsibles will
-    # access this view
-    model = Checklist
-    template_name = 'careline/checklist_list.html'
+    # redirect this page to user list of
+    # medical follow-up sheet page
+    url = 'users:patient_list'
+    permanent = True
 
     def get(self, request, *args, **kwargs):
-
-        if not request.user.is_authenticated:
-            # redirect not not authenticated to login screen
-            url = reverse(
-                viewname='account_login',
-            )
-            return redirect(url)
-
-        if hasattr(request.user, 'patient'):
-            # redirect user_patient to the checklist detail view
-            url = reverse(
-                viewname='careline:checklist_detail',
-                kwargs={'username': request.user.username}
-            )
-            return redirect(url)
-
-        if not hasattr(request.user, 'responsible'):
-            url = reverse(
-                viewname='users:detail',
-                kwargs={'username': request.user.username}
-            )
-            return redirect(url)
-
-        return super().get(request, *args, **kwargs)
-
-    def get_queryset(self, *args, **kwargs):
-
-        user = self.request.user
-
-        queryset = None
-
-        if hasattr(user, "responsible"):
-            queryset = Patient.objects.filter(responsible=user.responsible)
-
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        user = self.request.user
-        patients = Patient.objects.filter(responsible=user.responsible)
-
-        context['patient_list'] = patients
-
-        return context
+        return HttpResponsePermanentRedirect(reverse(self.url), request)
 
 
 class ChecklistDetailView(DetailView):
