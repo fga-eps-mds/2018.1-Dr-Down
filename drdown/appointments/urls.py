@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from drdown.appointments.views.view_appointment import AppointmentListView
 from drdown.appointments.views.view_appointment import AppointmentCreateView
+from drdown.appointments.views.view_appointment import AppointmentUpdateView
 from drdown.appointments.views.view_appointment import AppointmentMonthArchiveView
 
 
@@ -17,9 +18,13 @@ urlpatterns = [
         name='create_appointment'
     ),
     url(
-         regex=r'^(?P<year>\d{4})/(?P<month>\d+)/$',
-         view=AppointmentMonthArchiveView.as_view(month_format='%m'),
-         name="archive_month"
+        regex=r'^(?P<year>\d{4})/(?P<month>\d+)/$',
+        view=AppointmentMonthArchiveView.as_view(month_format='%m'),
+        name="archive_month"
     ),
-
+    url(
+        regex=r'^update/(?P<appointment_pk>\d+)/$',
+        view=AppointmentUpdateView.as_view(),
+        name='update_appointment'
+    )
 ]

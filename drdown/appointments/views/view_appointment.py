@@ -33,9 +33,9 @@ class AppointmentListView(SearchListView):
         for appointment in Appointment.objects.all():
             year = appointment.date.year
             if year < first:
-                first = date
+                first = year
             if year > last:
-                last = date
+                last = year
 
         return [first, last]
 
@@ -128,6 +128,7 @@ class AppointmentCreateView(CreateView):
         form.save()
         return super(AppointmentCreateView, self).form_valid(form)
 
+    @staticmethod
     def get_health_team(self):
         health_team = []
 
@@ -136,6 +137,7 @@ class AppointmentCreateView(CreateView):
 
         return health_team
 
+    @staticmethod
     def get_patients(self):
         patients = []
 
@@ -165,3 +167,27 @@ class AppointmentMonthArchiveView(MonthArchiveView):
 
     def get_queryset(self):
         return AppointmentListView.prepare_queryset(self.request)
+
+
+class AppointmentUpdateView(UpdateView):
+    model = Appointment
+    template_name = 'appointments/appointment_form.html'
+    fields = ['speciality',
+              'shift',
+              'doctor',
+              'patient',
+              'date_time',
+              'motive', ]
+
+    def get_object(self):
+        appointment = Appointment.objects.get(
+            pk=self.kwargs.get('appointment_pk')
+        )
+        return appointment
+
+    def get_context_data(self, **kwargs):
+        context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
+
+        context['health_team'] = self.get_health_team()
+        context['patients'] = self.get_patients()
+        return context
