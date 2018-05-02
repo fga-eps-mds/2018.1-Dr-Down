@@ -5,7 +5,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 from django.shortcuts import redirect
 from django.views.generic import (DetailView, ListView, RedirectView,
-                                  UpdateView, DeleteView)
+                                  UpdateView, DeleteView, View)
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from django.urls import reverse_lazy
@@ -15,7 +15,7 @@ from ..forms.users_forms import PatientSearchForm
 
 class PatientFilter(BaseFilter):
     search_fields = {
-        'patient': ['patient__id'],
+       'list_patient': ['id'],
     }
 
 
@@ -133,22 +133,13 @@ class UserListView(LoginRequiredMixin, ListView):
     slug_url_kwarg = 'username'
 
 
-class PatientListView(SearchListView):
-
-    # the List View for Checklists will list the patients that belong to the
-    # current user (specialized as a responsible), only responsibles will
-    # access this view
-    model = Patient
-    template_name = 'users/patient_list.html'
-    paginate_by = 20
-    form_class = PatientSearchForm
-    filter_class = PatientFilter
+class PatientListViewSelector(RedirectView):
 
     def get(self, request, *args, **kwargs):
 
         if not request.user.is_authenticated:
             # redirect not not authenticated to login screen
-            url = reverse(
+            self.url = reverse(
                 viewname='account_login',
             )
             return redirect(url)
@@ -161,31 +152,69 @@ class PatientListView(SearchListView):
             )
             return redirect(url)
 
+        if hasattr(request.user, 'responsible'):
+            url = reverse(
+                viewname='users:responsible_patient_list',
+            )
+            return redirect(url)
+
+        if hasattr(request.user, 'healthteam'):
+            url = reverse(
+                viewname='users:responsible_patient_list',
+            )
+            return redirect(url)
+
+
+class ResponsiblePatientListView(ListView):
+
+    # the List View will list the patients that belong to the
+    # current user (specialized as a responsible), only responsibles will
+    # access this view
+    model = Patient
+    template_name = 'users/responsible_patient_list.html'
+    paginate_by = 10
+
+    def get(self, request, *args, **kwargs):
+
+        if not hasattr(request.user, 'responsible'):
+            # redirect user_patient to the its medical sheet view
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self, *args, **kwargs):
 
         user = self.request.user
-
-        queryset = super().get_queryset(*args, **kwargs)
-
-        if hasattr(user, "responsible"):
-            queryset.filter(responsible=user.responsible)
-
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        user = self.request.user
-        context['user'] = user
+        return super().get_queryset(*args, **kwargs).filter(
+            responsible=user.responsible
+        )
 
 
-        if hasattr(user, 'responsible'):
-            patients = Patient.objects.filter(responsible=user.responsible)
-            context['patient_list'] = patients
+class HealthTeamPatientListView(SearchListView):
 
-        return context
+    # the List View will list patients and will allow
+    # for the current user (specialized as a healthteam),
+    # to search them
+
+    model = Patient
+    template_name = 'users/healthteam_patient_list.html'
+    form_class = PatientSearchForm
+    filter_class = PatientFilter
+    paginate_by = 20
+
+    def get(self, request, *args, **kwargs):
+
+        if not hasattr(request.user, 'healthteam'):
+            # redirect user_patient to the its medical sheet view
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
+        return super().get(request, *args, **kwargs)
 
 
 class PatientDetailView(DetailView):

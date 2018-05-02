@@ -6,21 +6,17 @@
 <div class="container">
     <h2 class="text-tertiary">{% trans "Select a patient" %}</h2>
     
-    <div class="mb-4" style="margin:right;">
-        {% if user.is_authenticated %}
-        
-        <form class="form-inline" action="" method="GET">
-            <div class="search"><label>{% trans 'Patient' %} :</label>{{form.list_patient}}</div >
-                <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
-
-        </form>
-        
-        {% endif %}
-    </div>
+    <form class="form-inline" action="" method="GET">
+            <div class="search"><label>{% trans 'Patient:'%}:</label> {{ form.list_patient }}</div>
+    
+              <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+              <a href="{% url 'users:detail' request.user %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+              </fieldset>
+          </form>
 
     <div class="list-group">
 
-        {% for patient in patient_list %}
+        {% for patient in object_list %}
             <a href= "{% url 'users:patient_medical_sheet' patient.user.username  %}" class=" h-blue list-group-item" >
             
                 <div class="d-flex w-10 justify-content-start">

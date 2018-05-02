@@ -1,6 +1,7 @@
 from .view_user import (
     UserDetailView, UserRedirectView,
     UserUpdateView, UserListView,
-    UserDeleteView, PatientListView,
-    PatientDetailView
+    UserDeleteView, ResponsiblePatientListView,
+    PatientDetailView, PatientListViewSelector,
+    HealthTeamPatientListView
 )
