@@ -102,6 +102,7 @@
   <center><h2 class="text-tertiary">{% trans "Care Line" %}</h2></center>
   <hr class="star-dark bg-star-blue">
   <h5 class="list-group-item-heading ">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h5>
+  <a class="btn btn-secondary pull-right" href="{% url 'core:vaccine' %}" role="button">{% trans 'Vaccine Schedule' %}</a>
 
     {% if age == 0 %}
         <h5 class="list-group-item-heading h-blue">{% trans 'Age: ' %} {% trans "Newborn" %}</h5>
@@ -113,6 +114,7 @@
 
   <h5 class="list-group-item-heading h-blue">{% trans 'SES: ' %} {{ checklist.patient.ses}}</h5>
   <input id="checklist_username" value="{{checklist.patient.user.username}}" hidden />
+
 
   <table class="table table-bordered" style="height: 100px;">
     <thead>
