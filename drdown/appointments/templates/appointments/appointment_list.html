@@ -39,8 +39,10 @@
               <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
               <font size="2" >{% trans 'Status'%}: {{ appointment.status}}</font><br>
               <p> {{appointment.motive}}</p>
-              <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm">{% trans "Edit" %}</a>
-              <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm">{% trans "Cancel" %}</a><br/><br/>
+              {% if request.user.employee %}
+                <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm">{% trans "Edit" %}</a>
+                <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm">{% trans "Cancel" %}</a><br/><br/>
+              {% endif %}
             </div>
           </div>
         {% empty %}
