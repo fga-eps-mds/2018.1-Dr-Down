@@ -6,6 +6,18 @@
 <div class="container">
     <h2 class="text-tertiary">{% trans "Select a patient" %}</h2>
     
+    <div class="mb-4" style="margin:right;">
+        {% if user.is_authenticated %}
+        
+        <form class="form-inline" action="" method="GET">
+            <div class="search"><label>{% trans 'Patient' %} :</label>{{form.list_patient}}</div >
+                <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+
+        </form>
+        
+        {% endif %}
+    </div>
+
     <div class="list-group">
 
         {% for patient in patient_list %}
@@ -20,17 +32,17 @@
                     {% endif %}
 
                     <div class="list-group">
-            <h4 class="list-group-item-heading text-tertiary h-blue" >{{ patient.user.name }}</h4>
-            <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
-          </div>
-        </div>
+                        <h4 class="list-group-item-heading text-tertiary h-blue" >{{ patient.user.name }}</h4>
+                        <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
+                    </div>
+                </div>
 
-      </a>
-    {% empty %}
-        <h4>{% trans 'There are no patients for this user.'%}</h4>
-    {% endfor %}
+            </a>
+            {% empty %}
+                <h4>{% trans 'There are no patients for this user.'%}</h4>
+            {% endfor %}
 
         
-  </div>
+    </div>
 </div>
 {% endblock content %}

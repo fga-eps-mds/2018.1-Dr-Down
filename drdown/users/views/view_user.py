@@ -6,8 +6,17 @@ from django.urls import reverse
 from django.shortcuts import redirect
 from django.views.generic import (DetailView, ListView, RedirectView,
                                   UpdateView, DeleteView)
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
 from django.urls import reverse_lazy
 from ..models import User, Patient, Employee, HealthTeam, Responsible
+from ..forms.users_forms import PatientSearchForm
+
+
+class PatientFilter(BaseFilter):
+    search_fields = {
+        'patient': ['patient__id'],
+    }
 
 
 class UserDeleteView (LoginRequiredMixin, DeleteView):
@@ -124,13 +133,16 @@ class UserListView(LoginRequiredMixin, ListView):
     slug_url_kwarg = 'username'
 
 
-class PatientListView(ListView):
+class PatientListView(SearchListView):
 
     # the List View for Checklists will list the patients that belong to the
     # current user (specialized as a responsible), only responsibles will
     # access this view
-    model = User
+    model = Patient
     template_name = 'users/patient_list.html'
+    paginate_by = 20
+    form_class = PatientSearchForm
+    filter_class = PatientFilter
 
     def get(self, request, *args, **kwargs):
 
@@ -155,10 +167,10 @@ class PatientListView(ListView):
 
         user = self.request.user
 
-        queryset = None
+        queryset = super().get_queryset(*args, **kwargs)
 
         if hasattr(user, "responsible"):
-            queryset = Patient.objects.filter(responsible=user.responsible)
+            queryset.filter(responsible=user.responsible)
 
         return queryset
 
