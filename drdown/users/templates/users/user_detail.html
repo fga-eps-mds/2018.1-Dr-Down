@@ -154,7 +154,7 @@
   {% endif %}
 
   {% if user.patient %}
-  <div class="row">
+
     <div class="col-sm-12">
       <form>
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Patient' %} </h3>
@@ -235,7 +235,7 @@
   {% endif %}
 
   {% if user.responsible %}
-  <div class="row">
+
     <div class="col-sm-12">
       <form>
         <h3 class="text-secondary mb-2 mt-2"> {% trans 'Responsible' %} </h3>
@@ -247,19 +247,22 @@
           </div>
         </div>
         {% endif %}
+
         {% for patient in responsible_patient %}
-          {% if patient %}
+
           <div class="form-group row mb-1">
             <label for="inputName" class=" col-form-label float-left mr-2 col-1"><strong>{% trans 'Patient: '%}</strong></label>
             <div>
               <input class="form-control col-sm-3" id="inputName" placeholder="{{ patient }}" disabled>
             </div>
           </div>
-          {% endif %}
+
         {% endfor %}
+
       </form>
     </div>
   </div>
+
   {% endif %}
 
 {% if object == request.user %}

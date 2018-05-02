@@ -133,6 +133,22 @@ class User(AbstractUser):
         else:
             self.has_specialization = (self.count_user_specialization() is 1)
 
+        if isinstance(self.birthday, timezone.datetime):
+            self.birthday = self.birthday.date()
+
+        if self.birthday:
+            if timezone.localdate().isoformat() < str(self.birthday):
+                raise ValidationError(
+                    {'birthday': _("The birthday cannot be in the future!")}
+                )
+            elif (
+                timezone.datetime.strptime(str(self.birthday), "%Y-%m-%d") <
+                timezone.datetime.strptime("1900-01-01", "%Y-%m-%d")
+            ):
+                raise ValidationError(
+                    {'birthday': _("This birthday is too old.")}
+                )
+
         return data
 
     def save(self, *args, **kwargs):

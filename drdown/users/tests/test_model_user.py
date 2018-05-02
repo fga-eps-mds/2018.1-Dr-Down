@@ -3,6 +3,7 @@ from drdown.users.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from dateutil.relativedelta import relativedelta
+from datetime import date
 
 from ..models import Employee, HealthTeam, Patient, Responsible
 
@@ -110,6 +111,21 @@ class TestUser(TestCase):
                         self.user.age(),
                         1
                     )
+
+    def test_invalid_birthday(self):
+        today = timezone.localdate()
+        tomorrow = today + relativedelta(days=1)
+        past = date(1800, 1, 1)
+
+        with self.assertRaises(ValidationError):
+            self.user.birthday = tomorrow
+            self.user.save()
+            self.user.clean()
+
+        with self.assertRaises(ValidationError):
+            self.user.birthday = past
+            self.user.save()
+            self.user.clean()
 
 
 class TestField(TestCase):
