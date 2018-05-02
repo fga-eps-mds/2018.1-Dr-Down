@@ -142,16 +142,9 @@ class PatientListView(ListView):
             return redirect(url)
 
         if hasattr(request.user, 'patient'):
-            # redirect user_patient to the checklist detail view
+            # redirect user_patient to the its medical sheet view
             url = reverse(
                 viewname='users:patient_medical_sheet',
-                kwargs={'username': request.user.username}
-            )
-            return redirect(url)
-
-        if not hasattr(request.user, 'responsible'):
-            url = reverse(
-                viewname='users:detail',
                 kwargs={'username': request.user.username}
             )
             return redirect(url)
@@ -173,9 +166,12 @@ class PatientListView(ListView):
         context = super().get_context_data(**kwargs)
 
         user = self.request.user
-        patients = Patient.objects.filter(responsible=user.responsible)
+        context['user'] = user
 
-        context['patient_list'] = patients
+
+        if hasattr(user, 'responsible'):
+            patients = Patient.objects.filter(responsible=user.responsible)
+            context['patient_list'] = patients
 
         return context
 
