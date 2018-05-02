@@ -18,8 +18,8 @@
   <br/><br/><br/><br/><br/><br/><br/>
   <center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
   <hr class="star-dark bg-star-white">
-  
-  <table class="table table-bordered">
+
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th scope="row" rowspan="2">{% trans 'Vaccines'%}</th>
@@ -59,7 +59,7 @@
         <th scope="row">{% trans 'BCG ID'%}</th>
         <td class="bg-success">{% trans 'One dose'%}</td>
         <td colspan="14">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td colspan="7">{% trans 'Vaccinate people who contacted leprosy'%}</td>
+        <td class="bg-warning" colspan="7">{% trans 'Vaccinate people who contacted leprosy'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Hepatitis B'%}</th>
@@ -89,14 +89,14 @@
         <td></td>
         <td class="bg-success" colspan="11">{% trans 'Four doses starting at 2 months of age'%}</td>
         <td colspan="3">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Poliomyelitis (inactivated virus)'%}</th>
         <td></td>
         <td></td>
         <td class="bg-success" colspan="14">{% trans 'Five doses starting at 2 months of age'%}</td>
-        <td colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="6">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Pneumococcal conjugate'%}</th>
@@ -104,7 +104,7 @@
         <td></td>
         <td class="bg-success" colspan="10">{% trans 'Four doses starting at 2 months of age - VPC10 or VPC13'%}</td>
         <td colspan="4">{% trans 'VPC10 or VPC13 - Vaccinate the previously unvaccinated'%}</td>
-        <td colspan="5">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="5">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
         <td class="bg-success">{% trans 'VPC13: one dose'%}</td>
       </tr>
       <tr>
@@ -118,7 +118,7 @@
         <td class="bg-success" colspan="2">{% trans 'REINFORCEMENT'%}</td>
         <td colspan="2"></td>
         <td class="bg-success">{% trans 'REINFORCED at age 11. For those not previously vaccinated: two doses'%}</td>
-        <td colspan="2">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="2">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Meningococcal B'%}</th>
@@ -184,7 +184,7 @@
         <td></td>
         <td class="bg-success" colspan="4">{% trans 'Two doses after 12 months'%}</td>
         <td colspan="7">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td>{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Varicella (chickenpox)'%}</th>
@@ -216,7 +216,7 @@
         <td></td>
         <td class="bg-success" colspan="4">{% trans 'Two doses after 12 months'%}</td>
         <td colspan="7">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td>{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'HPV'%}</th>
@@ -257,7 +257,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td colspan="8">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="8">{% trans 'Vaccinate people in special risk situations'%}</td>
         <td class="bg-success">{% trans 'Two doses at five-year intervals'%}</td>
       </tr>
       <tr>
@@ -282,7 +282,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td>{% trans 'From 50 to 59 years old: at medical discretion'%}</td>
+        <td class="bg-warning">{% trans 'From 50 to 59 years old: at medical discretion'%}</td>
         <td class="bg-success">{% trans 'One dose'%}</td>
       </tr>
       <tr>
