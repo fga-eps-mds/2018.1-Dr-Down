@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import user_passes_test
 from django.utils.decorators import method_decorator
 from django.urls import reverse
+from django.shortcuts import redirect
 from django.views.generic import (DetailView, ListView, RedirectView,
                                   UpdateView, DeleteView)
 from django.urls import reverse_lazy
@@ -143,7 +144,7 @@ class PatientListView(ListView):
         if hasattr(request.user, 'patient'):
             # redirect user_patient to the checklist detail view
             url = reverse(
-                viewname='careline:checklist_detail',
+                viewname='users:patient_medical_sheet',
                 kwargs={'username': request.user.username}
             )
             return redirect(url)
@@ -178,3 +179,6 @@ class PatientListView(ListView):
 
         return context
 
+
+class PatientDetailView(DetailView):
+    model = Patient

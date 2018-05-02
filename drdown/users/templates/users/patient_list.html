@@ -9,7 +9,7 @@
   <div class="list-group">
 
     {% for patient in patient_list %}
-      <a href= "{% url 'careline:checklist_detail' patient.user.username  %}" class=" h-blue list-group-item" >
+      <a href= "{% url 'users:patient_medical_sheet' patient.user.username  %}" class=" h-blue list-group-item" >
         <div class="d-flex w-10 justify-content-start">
          
           {% if patient.user.photo %}

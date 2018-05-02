@@ -30,10 +30,16 @@ urlpatterns = [
         regex=r'^~delete/',
         view=views.UserDeleteView.as_view(),
         name='delete'
-    ), 
+    ),
     url(
         regex=r'^~patients/$',
         view=views.PatientListView.as_view(),
         name='patient_list'
     ),
+    url(
+        regex=r'^~patients/(?P<username>[\w.@+-]+)$',
+        view=views.PatientDetailView.as_view(),
+        name='patient_medical_sheet'
+    ),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
