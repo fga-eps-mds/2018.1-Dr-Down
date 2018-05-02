@@ -1,38 +1,27 @@
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.http import (
-    HttpResponseRedirect,
     HttpResponse,
     HttpResponseForbidden,
-    HttpResponseServerError,
-    HttpResponsePermanentRedirect
 )
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from django.utils.translation import ugettext_lazy as _
 
 from drdown.careline.models import (
     Checklist,
-    Procedure,
-    CheckItem
 )
 from django.views.generic import (
     DetailView,
-    ListView,
-    TemplateView,
     RedirectView
 )
-from drdown.users.models import User, Patient
+from drdown.users.models import User
 
 
 class ChecklistRedirectView(RedirectView):
 
     # redirect this page to user list of
     # medical follow-up sheet page
-    url = 'users:patient_list'
-    permanent = True
-
-    def get(self, request, *args, **kwargs):
-        return HttpResponsePermanentRedirect(reverse(self.url), request)
+    url = reverse_lazy('users:patient_list')
 
 
 class ChecklistDetailView(DetailView):

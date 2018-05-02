@@ -137,13 +137,6 @@ class PatientListViewSelector(RedirectView):
 
     def get(self, request, *args, **kwargs):
 
-        if not request.user.is_authenticated:
-            # redirect not not authenticated to login screen
-            self.url = reverse(
-                viewname='account_login',
-            )
-            return redirect(url)
-
         if hasattr(request.user, 'patient'):
             # redirect user_patient to the its medical sheet view
             url = reverse(
@@ -160,9 +153,16 @@ class PatientListViewSelector(RedirectView):
 
         if hasattr(request.user, 'healthteam'):
             url = reverse(
-                viewname='users:responsible_patient_list',
+                viewname='users:healthteam_patient_list',
             )
             return redirect(url)
+
+        # redirect not not authenticated or not specialized
+        # to login screen
+        url = reverse(
+            viewname='account_login',
+        )
+        return redirect(url)
 
 
 class ResponsiblePatientListView(ListView):
@@ -172,7 +172,7 @@ class ResponsiblePatientListView(ListView):
     # access this view
     model = Patient
     template_name = 'users/responsible_patient_list.html'
-    paginate_by = 10
+
 
     def get(self, request, *args, **kwargs):
 
@@ -204,6 +204,7 @@ class HealthTeamPatientListView(SearchListView):
     form_class = PatientSearchForm
     filter_class = PatientFilter
     paginate_by = 20
+    ordering = ['user_id']
 
     def get(self, request, *args, **kwargs):
 
@@ -219,3 +220,4 @@ class HealthTeamPatientListView(SearchListView):
 
 class PatientDetailView(DetailView):
     model = Patient
+    slug = 'username'
