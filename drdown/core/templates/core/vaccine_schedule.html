@@ -18,6 +18,7 @@
   <br/><br/><br/><br/><br/><br/><br/>
   <center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
   <hr class="star-dark bg-star-white">
+  
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -70,7 +71,7 @@
         <td></td>
         <td></td>
         <td class="bg-success" colspan="6">{% trans 'Two or three doses. Initiate vaccination before 15 weeks of age'%}</td>
-        <td colspan="14">{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-danger" colspan="14">{% trans 'CONTRAINDICATED'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Bacterial triple (DTPw, DTPa, ou dTpa)'%}</th>
@@ -286,9 +287,9 @@
       </tr>
       <tr>
         <th scope="row">{% trans 'Dengue'%}</th>
-        <td colspan="17">{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-danger" colspan="17">{% trans 'CONTRAINDICATED'%}</td>
         <td class="bg-success" colspan="4">{% trans 'To vaccinate people aged 9 to 45 years previously infected with the virus (seropositive) with three doses: 0 - 6 - 12 months'%}</td>
-        <td>{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-danger">{% trans 'CONTRAINDICATED'%}</td>
       </tr>
     </tbody>
   </table>
