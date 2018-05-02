@@ -269,8 +269,14 @@
 <!-- Action buttons -->
 <div class="row mt-4">
   <div class="col-sm-12">
+    
+    {% if user.responsible %}
+        <a class="btn btn-secondary" href="{% url 'users:patient_list' %}" role="button">{% trans 'My Patients' %}</a>
+    {% endif %}
+    
     <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
     <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+
     {% if user.patient %}
     <a class="btn btn-secondary" href="{% url 'medicalrecords:list_medicalrecords' user.username %}" role="button">{% trans 'My Medical Records' %}</a>
     {% endif %}
