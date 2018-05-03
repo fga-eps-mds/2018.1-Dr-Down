@@ -90,7 +90,6 @@ class Appointment(models.Model):
     STATUS_CHOICES = (
         (SCHEDULED, _('Scheduled')),
         (CANCELED, _('Canceled')),
-        (DONE, _('Done'))
     )
 
     status = models.CharField(

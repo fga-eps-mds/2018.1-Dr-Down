@@ -62,6 +62,7 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
         context['years'] = AppointmentListView.get_list_of_years(request)
         context['months'] = AppointmentListView.get_list_of_months(request)
         context['current_year'] = timezone.now().year
+        context['canceled'] = Appointment.CANCELED
         return context
 
     @staticmethod
@@ -206,6 +207,6 @@ class AppointmentUpdateStatusView(LoginRequiredMixin, UpdateView):
         return appointment
 
     def form_valid(self, form):
-        form.instance.status = _('Canceled')
+        form.instance.status = Appointment.CANCELED
         form.save()
         return super(AppointmentUpdateStatusView, self).form_valid(form)
