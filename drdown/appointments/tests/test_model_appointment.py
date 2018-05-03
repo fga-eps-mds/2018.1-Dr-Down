@@ -3,8 +3,6 @@ from ..models.model_appointment import Appointment
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
-import datetime
 
 
 class TestModelAppointment(TestCase):
