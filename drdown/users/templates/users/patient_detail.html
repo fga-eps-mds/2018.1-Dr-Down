@@ -5,34 +5,39 @@
 {% block css %}
 {{block.super}}
   <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+  <link href="{% static 'users/css/user_detail.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
     <div class="container mb-5">
-    <h2 class="text-tertiary">{% trans 'Patient: ' %} {{ view.related_patient.user.name }}</h2>
-    <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+    <h2 class="text-tertiary" style="margin-left: 5%;">{% trans 'Patient: ' %} {{ view.object.user.name }}</h2>
+      <div style="margin-left: 58%;"><a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a></div>
   </div>
 
     <div class="container">
-    {% if view.related_patient.user.patient  %}
-      {% if view.related_patient.user.photo %}
-        <img src="{{ view.related_patient.user.photo.url }}" width="20px" class="align-photo">
+     <div>
+    {% if view.object.user.patient  %}
+      {% if view.object.user.photo %}
+        <img src="{{ view.object.user.photo.url }}"  class="rounded-circle" height="170px" width="170px">
       {% else %}
-        <img src="{% static 'users/img/user.png' %}" class="align-photo">
+        <img src="{% static 'users/img/user.png' %}" class="align-photo rounded-circle" height="80px" width="80px">
       {% endif %}
-      <div class="margintoleft">
-        <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ view.related_patient.user.name }}</div>
-        <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.sus_number }}</div>
-        <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.user.birthday }}</div>
-        <div><label><strong>{% trans 'SES: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.ses }}</div>
-        <div><label><strong>{% trans 'Civil registry of birth: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.civil_registry_of_birth }}</div>
-        <div><label><strong>{% trans 'Declaration of live birth '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.related_patient.declaration_of_live_birth }}</div>
+       <div style="padding-left: 17px;" ><a href="{% url 'careline:checklist_detail' view.object.user.username %}" class="btn btn-secondary align-btn ml-3">{% trans "Checklist" %}</a></div>
+       <div style="padding-left: 8px;"><a href="{% url 'medicalrecords:list_medicalrecords' view.object.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a></div>
+     </div>
+       <div class="border-left margintoleft move-div">
+        <div>
+          <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ view.object.user.name }}</div>
+          <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.object.user.birthday }}</div>
+          <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.object.sus_number }}</div>
+          <div><label><strong>{% trans 'SES: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.object.ses }}</div>
+          <div><label><strong>{% trans 'Civil registry of birth: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.object.civil_registry_of_birth }}</div>
+          <div><label><strong>{% trans 'Declaration of live birth '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ view.object.declaration_of_live_birth }}</div>
 
+        </div>
       </div>
     {% endif %}
-      <a href="{% url 'medicalrecords:list_medicalrecords' view.related_patient.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a>
-      <a href="{% url 'careline:checklist_detail' view.related_patient.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Checklist" %}</a>
   </div>
 
 {% endblock content %}

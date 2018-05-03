@@ -220,22 +220,8 @@ class HealthTeamPatientListView(SearchListView):
 
 class PatientDetailView(DetailView):
     model = Patient
-    slug = 'username'
     template_name = 'users/patient_detail.html'
-
     slug_url_kwarg = 'username'
-
-    def get_object(self):
-        # Only get the User record for the user making the request
-        return User.objects.get(username=self.request.user.username)
-
-    def related_patient(self):
-        user = User.objects.get(
-            username=self.kwargs.get('username')
-        )
-        patient = Patient.objects.get(
-            user=user
-        )
-        return patient
+    slug_field = 'user__username'
 
 
