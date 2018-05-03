@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 21:17+0000\n"
+"POT-Creation-Date: 2018-05-03 23:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -434,6 +434,7 @@ msgid "Name: "
 msgstr "Nome: "
 
 #: drdown/users/templates/users/patient_detail.html:38
+#: drdown/users/templates/users/user_detail.html:74
 msgid "Birthday: "
 msgstr "Data de nascimento: "
 
@@ -448,6 +449,7 @@ msgid "Civil registry of birth: "
 msgstr "Registro civil de nascimento: "
 
 #: drdown/users/templates/users/patient_detail.html:42
+#: drdown/users/templates/users/user_detail.html:231
 msgid "Declaration of live birth: "
 msgstr "Declaração de nascido vivo: "
 
@@ -487,8 +489,8 @@ msgid ""
 "One or more of your patients needs attention. Some procedures may be behind "
 "schedule."
 msgstr ""
-"Um, ou mais, de seus pacientes precisa de atenção. Alguns procedimentos podem "
-"estar atrasados."
+"Um, ou mais, de seus pacientes precisa de atenção. Alguns procedimentos "
+"podem estar atrasados."
 
 #: drdown/users/templates/users/user_detail.html:57
 msgid "Gender: "
@@ -497,10 +499,6 @@ msgstr "Gênero: "
 #: drdown/users/templates/users/user_detail.html:65
 msgid "Telephone: "
 msgstr "Telefone: "
-
-#: drdown/users/templates/users/user_detail.html:74
-msgid "Birthday: "
-msgstr "Data de nascimento: "
 
 #: drdown/users/templates/users/user_detail.html:93
 #: drdown/users/templates/users/user_detail.html:122
@@ -535,10 +533,6 @@ msgstr "Nome do Pai: "
 #: drdown/users/templates/users/user_detail.html:204
 msgid "Ethnicity: "
 msgstr "Etnia: "
-
-#: drdown/users/templates/users/user_detail.html:231
-msgid "Declaration of live birth: "
-msgstr "Declaração de nascido vivo: "
 
 #: drdown/users/templates/users/user_detail.html:278
 msgid "My Patients"
