@@ -83,9 +83,9 @@ class Appointment(models.Model):
         related_name='appointments',
     )
 
-    SCHEDULED = 'Scheduled'
-    CANCELED = 'Canceled'
-    DONE = 'Done'
+    SCHEDULED = _('Scheduled')
+    CANCELED = _('Canceled')
+    DONE = _('Done')
 
     STATUS_CHOICES = (
         (SCHEDULED, _('Scheduled')),
