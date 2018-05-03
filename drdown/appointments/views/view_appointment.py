@@ -28,26 +28,26 @@ class AppointmentListView(SearchListView):
     filter_class = AppointmentFilter
 
     @staticmethod
-    def get_list_of_years():
+    def get_list_of_years(request):
         years = []
-        for appointment in Appointment.objects.all():
+        for appointment in AppointmentListView.prepare_queryset(request):
             if appointment.date.year not in years:
                 years.append(appointment.date.year)
         years.sort(reverse=True)
         return years
 
     @staticmethod
-    def get_list_of_months():
+    def get_list_of_months(request):
         months = []
-        for appointment in Appointment.objects.all():
+        for appointment in AppointmentListView.prepare_queryset(request):
             if appointment.date.strftime("%B") not in months:
                 months.append(appointment.date.strftime("%B"))
         return months
 
     @staticmethod
-    def prepare_context(context):
-        context['years'] = AppointmentListView.get_list_of_years()
-        context['months'] = AppointmentListView.get_list_of_months()
+    def prepare_context(context, request):
+        context['years'] = AppointmentListView.get_list_of_years(request)
+        context['months'] = AppointmentListView.get_list_of_months(request)
         context['current_year'] = timezone.now().year
         return context
 
@@ -74,7 +74,7 @@ class AppointmentListView(SearchListView):
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentListView, self).get_context_data(**kwargs)
-        return self.prepare_context(context)
+        return self.prepare_context(context, self.request)
 
     def get_queryset(self):
         return self.prepare_queryset(self.request)
@@ -136,7 +136,7 @@ class AppointmentMonthArchiveView(MonthArchiveView):
     def get_context_data(self, **kwargs):
         context = super(AppointmentMonthArchiveView,
                         self).get_context_data(**kwargs)
-        return AppointmentListView.prepare_context(context)
+        return AppointmentListView.prepare_context(context, self.request)
 
     def get_queryset(self):
         return AppointmentListView.prepare_queryset(self.request)
