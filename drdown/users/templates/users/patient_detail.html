@@ -12,8 +12,12 @@
 
     <div class="container mb-5">
     <h2 class="text-tertiary" style="margin-left: 5%;">{% trans 'Patient: ' %} {{ view.object.user.name }}</h2>
+      {% if user.patient %}
+       <div style="margin-left: 58%;"><a href="{% url 'users:detail' user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a></div>
+      {% else %}
       <div style="margin-left: 58%;"><a href="{% url 'users:patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a></div>
-  </div>
+      {% endif %}
+    </div>
 
     <div class="container">
      <div>
