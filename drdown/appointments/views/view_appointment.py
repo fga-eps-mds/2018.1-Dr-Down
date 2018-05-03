@@ -39,10 +39,21 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
 
     @staticmethod
     def get_list_of_months(request):
-        months = []
-        for appointment in AppointmentListView.prepare_queryset(request):
-            if appointment.date.strftime("%B") not in months:
-                months.append(appointment.date.strftime("%B"))
+        months = [
+            _('January'),
+            _('February'),
+            _('March'),
+            _('April'),
+            _('May'),
+            _('June'),
+            _('July'),
+            _('August'),
+            _('September'),
+            _('October'),
+            _('November'),
+            _('December'),
+        ]
+
         return months
 
     @staticmethod
@@ -95,7 +106,6 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     ]
 
     def get_success_url(self, **kwargs):
-        print("Entra em get_success_url")
         success_create_url = reverse(
             viewname='appointments:list_appointments',
         )
