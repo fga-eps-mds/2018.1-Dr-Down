@@ -246,9 +246,8 @@ class TestPatientListViewSelector(TestCase):
         )
 
         url = reverse(
-            viewname='careline:patient_medical_sheet',
-            kwargs={'username': self.user_patient1.username},
-            follow=True
+            viewname='users:patient_medical_sheet',
+            kwargs={'username': self.user_patient1.username}
         )
 
         self.assertRedirects(response=response, expected_url=url)
