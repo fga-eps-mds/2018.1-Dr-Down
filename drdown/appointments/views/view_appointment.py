@@ -1,18 +1,19 @@
 from django.utils.translation import ugettext_lazy as _
-from search_views.search import SearchListView
-from search_views.filters import BaseFilter
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic.dates import MonthArchiveView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils import timezone
+from django.urls import reverse
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
 from drdown.appointments.models import Appointment
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from ..forms.appointments_form import AppointmentSearchForm
-from django.utils import timezone
-from django.urls import reverse
 
 
-class AppointmentFilter(BaseFilter):
+class AppointmentFilter(LoginRequiredMixin, BaseFilter):
     search_fields = {
         'search_date': ['date'],
         'search_speciality': ['speciality'],
@@ -21,7 +22,7 @@ class AppointmentFilter(BaseFilter):
     }
 
 
-class AppointmentListView(SearchListView):
+class AppointmentListView(LoginRequiredMixin, SearchListView):
     model = Appointment
     template_name = 'appointments/appointment_list.html'
     form_class = AppointmentSearchForm
@@ -80,7 +81,7 @@ class AppointmentListView(SearchListView):
         return self.prepare_queryset(self.request)
 
 
-class AppointmentCreateView(CreateView):
+class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
     fields = [
@@ -127,7 +128,7 @@ class AppointmentCreateView(CreateView):
         return context
 
 
-class AppointmentMonthArchiveView(MonthArchiveView):
+class AppointmentMonthArchiveView(LoginRequiredMixin, MonthArchiveView):
     date_field = "date"
     allow_future = True
     template_name = 'appointments/appointment_list.html'
@@ -142,7 +143,7 @@ class AppointmentMonthArchiveView(MonthArchiveView):
         return AppointmentListView.prepare_queryset(self.request)
 
 
-class AppointmentUpdateView(UpdateView):
+class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
     fields = ['speciality',
@@ -174,7 +175,7 @@ class AppointmentUpdateView(UpdateView):
         return context
 
 
-class AppointmentUpdateStatusView(UpdateView):
+class AppointmentUpdateStatusView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_confirm_cancel.html'
     fields = []
@@ -196,6 +197,3 @@ class AppointmentUpdateStatusView(UpdateView):
         form.instance.status = _('Canceled')
         form.save()
         return super(AppointmentUpdateStatusView, self).form_valid(form)
-
-
-
