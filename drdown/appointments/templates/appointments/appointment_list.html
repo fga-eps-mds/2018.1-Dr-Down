@@ -26,7 +26,7 @@
       </div>
     {% endif %}
 
-    <div class="row mt-4">
+    <div class="row mt-4 mb-4">
       <div class="float-left col-md-auto w-82" id="appointment_list">
         {% for appointment in appointment_list %}
          <!-- Single Comment -->
@@ -87,7 +87,9 @@
         {% endfor %}
       </div>
     </div>
+    {% include "core/pagination.html" %}
   </div>
+
 {% endblock %}
 
 

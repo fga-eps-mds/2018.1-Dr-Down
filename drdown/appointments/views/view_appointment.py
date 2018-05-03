@@ -27,6 +27,7 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
     template_name = 'appointments/appointment_list.html'
     form_class = AppointmentSearchForm
     filter_class = AppointmentFilter
+    paginate_by = 10
 
     @staticmethod
     def get_list_of_years(request):
@@ -143,6 +144,7 @@ class AppointmentMonthArchiveView(LoginRequiredMixin, MonthArchiveView):
     allow_future = True
     template_name = 'appointments/appointment_list.html'
     allow_empty = True
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentMonthArchiveView,
