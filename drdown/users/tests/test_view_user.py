@@ -184,6 +184,9 @@ class TestPatientListViewSelector(TestCase):
 
         self.user_patient1.birthday = timezone.datetime(2000, 1, 1)
 
+        self.user_patient1.save()
+        self.user_patient1.refresh_from_db()
+
         Patient.objects.create(
             ses="1234567",
             user=self.user_patient1,
@@ -203,6 +206,9 @@ class TestPatientListViewSelector(TestCase):
 
         self.user_patient2.birthday = timezone.datetime(2000, 1, 1)
 
+        self.user_patient2.save()
+        self.user_patient2.refresh_from_db()
+
         Patient.objects.create(
             ses="1234213",
             user=self.user_patient2,
@@ -219,6 +225,9 @@ class TestPatientListViewSelector(TestCase):
         self.user_health_team = self.make_user()
         self.user_health_team.birthday = timezone.datetime(2000, 1, 1)
 
+        self.user_health_team.save()
+        self.user_health_team.refresh_from_db()
+
         self.health_team = HealthTeam.objects.create(
             cpf="057.641.271-65",
             user=self.user_health_team,
@@ -226,8 +235,18 @@ class TestPatientListViewSelector(TestCase):
             council_acronym=HealthTeam.CRM,
             register_number="1234567",
             registration_state=HealthTeam.DF,
-            )
+        )
 
+        self.user_employee = self.make_user(username="empl")
+        self.user_employee.birthday = timezone.datetime(2000, 1, 1)
+
+        self.user_employee.save()
+        self.user_employee.refresh_from_db()
+
+        self.employee = Employee.objects.create(
+            cpf="057.641.271-65",
+            user=self.user_employee
+        )
 
         self.client = Client()
 
@@ -270,7 +289,7 @@ class TestPatientListViewSelector(TestCase):
 
     def test_get_redirect_for_other_specializations_or_no_specialization(self):
         """
-            Test if a user that is not specialized or employee it is redirected for its profile
+            Test if a user that is not specialized is redirected for its profile
             when accessing Checklist List View
         """
 
@@ -291,15 +310,8 @@ class TestPatientListViewSelector(TestCase):
             expected_status_codes
         )
 
-        Employee.objects.create(
-            cpf="306.585.340-09",
-            user=user
-        )
-
-        user.refresh_from_db()
-
         response = self.client.get(
-            path=reverse(viewname='careline:checklist_list')
+            path=reverse(viewname='users:healthteam_patient_list')
         )
 
         expected_status_codes = [301, 302]
@@ -309,9 +321,22 @@ class TestPatientListViewSelector(TestCase):
             expected_status_codes
         )
 
+        response = self.client.get(
+            path=reverse(viewname='users:responsible_patient_list')
+        )
+
+        expected_status_codes = [301, 302]
+
+        self.assertIn(
+            response.status_code,
+            expected_status_codes
+        )
+
+
     def test_get_redirect_for_healthteam(self):
         """
-            Test if the page loads when a health team is the current user
+            Test if the page loads when a health team
+            is the current user
         """
 
         self.client.force_login(self.user_health_team)
@@ -326,6 +351,27 @@ class TestPatientListViewSelector(TestCase):
         url = reverse(viewname='users:healthteam_patient_list')
 
         self.assertRedirects(response=response, expected_url=url)
+
+
+    def test_get_redirect_for_employee(self):
+        """
+            Test if the page loads when a employee
+            is the current user
+        """
+
+        self.client.force_login(self.user_employee)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='users:patient_list',
+            ),
+            follow=True
+        )
+
+        url = reverse(viewname='users:healthteam_patient_list')
+
+        self.assertRedirects(response=response, expected_url=url)
+
 
     def test_get_redirect_for_responsible(self):
         """
