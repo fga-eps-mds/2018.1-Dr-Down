@@ -9,10 +9,15 @@
 
 {% block content %}
 
+    <div class="container mb-5">
+    <h2 class="text-tertiary">{% trans 'Patient: ' %} {{ view.related_patient.user.name }}</h2>
+    <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+  </div>
+
     <div class="container">
     {% if view.related_patient.user.patient  %}
       {% if view.related_patient.user.photo %}
-        <img src="{{ view.related_patient.user.photo }}" width="20px" class="align-photo">
+        <img src="{{ view.related_patient.user.photo.url }}" width="20px" class="align-photo">
       {% else %}
         <img src="{% static 'users/img/user.png' %}" class="align-photo">
       {% endif %}
@@ -26,6 +31,8 @@
 
       </div>
     {% endif %}
+      <a href="{% url 'medicalrecords:list_medicalrecords' view.related_patient.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a>
+      <a href="{% url 'careline:checklist_detail' view.related_patient.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Checklist" %}</a>
   </div>
 
 {% endblock content %}
