@@ -88,10 +88,104 @@ class TestViewAppointment(TestCase):
         """
         response = self.client.get(
             path=reverse(
-                viewname='appointments:update_status_appointment',
-                args=(self.appointment.pk,)
+            viewname='appointments:update_status_appointment',
+            args=(self.appointment.pk,)
             )
         )
+        self.assertEquals(response.status_code, 200)
+
+    def test_appointment_form_valid_create_view(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+        'speciality': Appointment.SPEECH_THERAPHY,
+        'shift': 'A',
+        'doctor': self.doctor.pk,
+        'patient': self.patient.pk,
+        'date': '2018-05-12',
+        'time': '20:00',
+        }
+        response = self.client.post(
+            path=reverse('appointments:create_appointment'),
+            data=data,
+            follow=True)
+        list_appointments = reverse('appointments:list_appointments')
+        self.assertEquals(response.status_code, 200)
+        self.assertRedirects(response, list_appointments)
+
+    def test_appointment_form_valid_update_view(self):
+        """
+        Test if update form is valid with all required fields
+        """
+        self.client.force_login(user=self.user)
+        data = {
+            'speciality': Appointment.SPEECH_THERAPHY,
+            'shift': 'A',
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'date': '2018-05-12',
+            'time': '20:00',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:update_appointment',
+                args=(self.appointment.pk,)
+            ),
+            data=data,
+            follow=True)
+        list_appointments = reverse('appointments:list_appointments')
+        self.assertEquals(response.status_code, 200)
+        self.assertRedirects(response, list_appointments)
+
+    def test_redirect_delete_ok(self):
+        """
+        Test the page url status code.
+        """
+    
+        self.client.force_login(user=self.user)
+        data = {
+            'speciality': Appointment.SPEECH_THERAPHY,
+            'shift': 'A',
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'date': '2018-05-12',
+            'time': '20:00',
+        }
+    
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:update_status_appointment',
+                args=(self.appointment.pk,)
+            ),
+            data=data,
+            follow=True
+        )
+        list_appointments = reverse('appointments:list_appointments')
+        self.assertEquals(response.status_code, 200)
+        self.assertRedirects(response, list_appointments)
+
+    def test_list_view_appointments_patient(self):
+        self.client.force_login(user=self.user)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:archive_month',
+                args=('2040', '08'),
+                )
+            )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_appointments_health_team(self):
+        self.client.force_login(user=self.user2)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:archive_month',
+                args=('2040', '08'),
+                )
+            )
         self.assertEquals(response.status_code, 200)
 
     # def test_form_invalid(self):
@@ -112,72 +206,5 @@ class TestViewAppointment(TestCase):
     #     self.assertFormError(response, 'form', 'title', _('This field is required.'))
     #     self.assertEquals(response.status_code, 200)
 
-    # def test_post_form_valid_create_view(self):
-    #     """
-    #     Test if create form is valid with all required fields
-    #     """
-    #     self.client.force_login(user=self.user)
-    #     data = {
-    #         'title': 'Test',
-    #         'message': 'hello test',
-    #         'category': 'self.category',
-    #         'created_at': timezone.now(),
-    #     }
-    #     response = self.client.post(
-    #         path=reverse(
-    #             viewname='forum:create_post',
-    #             args=(self.category.slug, self.category.pk)
-    #         ),
-    #         data=data,
-    #         follow=True)
-    #     self.assertEquals(response.status_code, 200)
     #
-    # def test_post_form_valid_update_view(self):
-    #     """
-    #     Test if update form is valid with all required fields
-    #     """
-    #     self.client.force_login(user=self.user)
-    #     data = {
-    #         'title': 'Test',
-    #         'message': 'hello test',
-    #         'category': 'self.category',
-    #         'created_at': timezone.now(),
-    #     }
-    #     response = self.client.post(
-    #         path=reverse(
-    #             viewname='forum:update_post',
-    #             args=(self.category.slug, self.category.pk, self.post.pk)
-    #         ),
-    #         data=data,
-    #         follow=True)
-    #     self.assertEquals(response.status_code, 200)
-    #
-    # def test_redirect_delete_ok(self):
-    #         """
-    #         Test the home page url status code.
-    #         """
-    #
-    #         self.client.force_login(user=self.user)
-    #         data = {
-    #             'message': 'hello test',
-    #             'post': 'self.post',
-    #             'created_at': timezone.now(),
-    #         }
-    #
-    #         response = self.client.post(
-    #             path=reverse(
-    #                 viewname='forum:delete_post',
-    #                 args=(self.category.slug, self.category.pk, self.post.pk)
-    #             ),
-    #             data=data,
-    #             follow=True
-    #         )
-    #         self.assertRedirects(
-    #             response,
-    #             reverse(
-    #                 viewname='forum:list_posts',
-    #                 args=(self.category.slug, self.category.pk)
-    #             ),
-    #             status_code=302,
-    #             target_status_code=200
-    #         )
+
