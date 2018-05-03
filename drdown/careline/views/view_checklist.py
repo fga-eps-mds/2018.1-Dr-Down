@@ -80,6 +80,8 @@ class ChecklistDetailView(DetailView):
             for patient in current_user.responsible.patient_set.all():
                 if patient.user == target_user:
                     allowed = True
+        elif hasattr(current_user, 'healthteam'):
+            allowed = True
 
         return allowed
 
