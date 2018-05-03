@@ -40,15 +40,15 @@ class Appointment(models.Model):
         blank=True,
     )
 
-    SPEECH_THERAPHY = "Speech Therapy"
-    PSYCHOLOGY = "Psychology"
-    PHYSIOTHERAPY = "Physiotherapy"
-    OCCUPATIONAL_THERAPY = "Occupational Therapy"
-    DOCTOR = "Doctor"
-    CARDIOLOGY = "Cardiology"
-    NEUROLOGY = "Neurology"
-    PEDIATRICS = "Pediatrics"
-    NURSING = "Nursing"
+    SPEECH_THERAPHY = _("Speech Therapy")
+    PSYCHOLOGY = _("Psychology")
+    PHYSIOTHERAPY = _("Physiotherapy")
+    OCCUPATIONAL_THERAPY = _("Occupational Therapy")
+    DOCTOR = _("Doctor")
+    CARDIOLOGY = _("Cardiology")
+    NEUROLOGY = _("Neurology")
+    PEDIATRICS = _("Pediatrics")
+    NURSING = _("Nursing")
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),

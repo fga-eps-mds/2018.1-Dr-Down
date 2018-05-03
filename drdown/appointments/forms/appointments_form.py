@@ -10,7 +10,7 @@ class AppointmentSearchForm(forms.Form):
         required=False,
         label=_('Speciality'),
         widget=forms.TextInput(
-            attrs={'placeholder': _('search here!')}
+            attrs={'placeholder': _('Speciality')}
         )
     )
 
