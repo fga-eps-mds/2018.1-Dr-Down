@@ -23,7 +23,7 @@ import sys
 # If your documentation needs a minimal Sphinx version, state it here.
 # needs_sphinx = '1.0'
 
-# Add any Sphinx extension module names here, as strings. They can be 
+# Add any Sphinx extension module names here, as strings. They can be
 #extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = []
@@ -67,7 +67,7 @@ release = '0.1'
 # directories to ignore when looking for source files.
 exclude_patterns = ['_build', 'pycharm']
 
-# The reST default role (used for this markup: `text`) to use for all 
+# The reST default role (used for this markup: `text`) to use for all
 #documents.
 # default_role = None
 
@@ -183,16 +183,16 @@ latex_elements = {
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass 
+# (source start file, target name, title, author, documentclass
 #[howto/manual])
 latex_documents = [
     ('index',
      'drdown.tex',
-     'Dr. Down Documentation',
+     'Documentacao Dr. Down',
      """EPS/MDS""", 'manual'),
 ]
 
-# The name of an image file (relative to this directory) to place at the top 
+# The name of an image file (relative to this directory) to place at the top
 #of the title page.
 # latex_logo = None
 
@@ -218,7 +218,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'drdown', 'Dr. Down Documentation',
+    ('index', 'drdown', 'Documentacao Dr. Down',
      ["""EPS/MDS"""], 1)
 ]
 
@@ -232,7 +232,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'drdown', 'Dr. Down Documentation',
+    ('index', 'drdown', 'Documentacao Dr. Down',
      """EPS/MDS""", 'Dr. Down',
      """Ferramenta de informação e união de pessoas que convivem com a Síndrome de Down.""", 'Miscellaneous'),
 ]

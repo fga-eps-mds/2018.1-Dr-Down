@@ -424,8 +424,20 @@
 <tr>
 <td>22/04/2018</td>
 <td>2.0.0</td>
-<td>Versão 2.0 do Arquitetura</td>
+<td>Versão 2.0 do Arquitetura e componentes da sprint 07</td>
 <td>Victor Arnaud, Geovana Ramos e Gabriela Medeiros</td>
+</tr>
+<tr>
+<td>26/04/2018</td>
+<td>2.1.0</td>
+<td>Inserindo componentes da sprint 08</td>
+<td>Victor Arnaud</td>
+</tr>
+<tr>
+<td>01/05/2018</td>
+<td>2.2.0</td>
+<td>Inserindo componentes para as sprints 09 a 12</td>
+<td>Victor Arnaud</td>
 </tr>
 </tbody>
 </table>
@@ -518,10 +530,10 @@
 <li><strong>Extensibilidade</strong>: Um componente pode ser estendido a partir de outro componente para fornecer um novo comportamento.</li>
 <li><strong>Encapsulamento</strong>: O componente deve expor uma interface para os invocadores utilizarem suas funcionalidades e não revelar detalhes do seu processo interno, das variáveis internas e de seu estado.</li>
 <li><strong>Externo ao projeto</strong>: O componente deve estar disponibilizado no <strong>pypi</strong>.</li>
-<li><strong>Qualidade</strong>: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.</li>
+<li><strong>Qualidade</strong>: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável, ou seja, o componente deve funcionar na nova versão 2.0 do Django.</li>
 </ol>
-<p>A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo.</p>
-<h4 id="manter-usuario-equipe-de-saude-paciente-responsavel-funcionario">Manter usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):</h4>
+<p>A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo. As tabelas abaixo está mapeada com a EAP do projeto.</p>
+<h4 id="cadastro-de-usuario-equipe-de-saude-paciente-responsavel-funcionario">Cadastro de usuário (Equipe de Saúde, Paciente, Responsável, Funcionário):</h4>
 <table>
 <thead>
 <tr>
@@ -540,7 +552,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="pagina-de-informacoes-e-noticias">Página de informações e notícias</h4>
+<h4 id="informacoes-gerais">Informações gerais</h4>
 <table>
 <thead>
 <tr>
@@ -554,8 +566,8 @@
 <tr>
 <td><a href="https://newsapi.org/s/google-news-api">NewsAPI</a></td>
 <td>API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.</td>
-<td align="center">A decidir</td>
-<td>A API ainda está sendo avaliada pela equipe.</td>
+<td align="center">Não</td>
+<td>Essa API é complexa e não pega informações especificas que precisamos.</td>
 </tr>
 </tbody>
 </table>
@@ -578,7 +590,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="ficha-medica">Ficha Médica</h4>
+<h4 id="consultas-e-eventos">Consultas e Eventos</h4>
 <table>
 <thead>
 <tr>
@@ -590,14 +602,26 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
+<td><a href="https://github.com/pinax/pinax-calendars/">pinax-calendars</a></td>
+<td>Aplicação django para publicar eventos como um calendario</td>
+<td align="center">A decidir</td>
+<td>A aplicação ainda está sendo avaliada pela equipe.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/llazzaro/django-scheduler">django-scheduler</a></td>
+<td>Uma aplicação de calendario do django</td>
+<td align="center">A decidir</td>
+<td>A aplicação ainda está sendo avaliada pela equipe.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pinax/pinax-notifications/">pinax-notifications</a></td>
+<td>Gerenciamento de notificação de usuário para o framework web Django</td>
+<td align="center">A decidir</td>
+<td>A aplicação ainda está sendo avaliada</td>
 </tr>
 </tbody>
 </table>
-<h4 id="fila-de-espera">Fila de espera</h4>
+<h4 id="ficha-de-acompanhamento-e-relatorios">Ficha de acompanhamento e Relatórios</h4>
 <table>
 <thead>
 <tr>
@@ -609,85 +633,34 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
+<td><a href="https://github.com/timmyomahony/django-pagedown">django-pagedown</a></td>
+<td>Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.</td>
+<td align="center">Sim</td>
+<td>O componente está sendo usado no prontuário</td>
 </tr>
-</tbody>
-</table>
-<h4 id="comunicacao-entre-usuarios">Comunicação entre usuários</h4>
-<table>
-<thead>
 <tr>
-<th>Aplicação</th>
-<th>Descrição da aplicação</th>
-<th align="center">Foi utilizado?</th>
-<th>Motivo da utilização ou não</th>
+<td><a href="https://github.com/trentm/django-markdown-deux">django-markdown-deux</a></td>
+<td>Componente para evitar a inserção de código malicioso no markdown</td>
+<td align="center">Sim</td>
+<td>O componente está sendo usado no prontuário</td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td><a href="https://github.com/jadolg/rocketchat_API">Rocket.Chat</a></td>
-<td>É um microserviço de chat open source baseado no Slack e construído em Meteor</td>
+<td><a href="https://github.com/Edinburgh-Genome-Foundry/pdf_reports">pdf-report</a></td>
+<td>Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug</td>
 <td align="center">Não</td>
-<td>O chat foi removido do escopo do projeto.</td>
+<td>A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizat esse component.</td>
 </tr>
 <tr>
-<td><a href="https://github.com/fga-gpp-mds/2017.2-Receita-Mais">Receita-Mais</a></td>
-<td>Software responsável por auxiliar na prescrição de medicamentos</td>
+<td><a href="https://pypi.org/project/reportlab/">reportlab</a></td>
+<td>O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.</td>
+<td align="center">Sim</td>
+<td>Recomendação da documentação do <a href="https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/">django</a>, será utilizado para gerar os PDFs e gráficos do projeto</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nigma/django-easy-pdf">django-easy-pdf</a></td>
+<td>Visualização de PDF de uma maneira fácil</td>
 <td align="center">Não</td>
-<td>Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Bearle/django-private-chat">django-private-chat</a></td>
-<td>Chat assíncrono baseado em WebSocket</td>
-<td align="center">Não</td>
-<td>O chat foi removido do escopo do projeto.</td>
-</tr>
-<tr>
-<td><a href="https://github.com/CleitonDeLima/django-tawkto">django-tawkto</a></td>
-<td>Projeto simples integrado com o chat <a href="https://www.tawk.to/">tawk.to</a></td>
-<td align="center">Não</td>
-<td>O chat foi removido do escopo do projeto.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="procedimento-medico-por-faixa-etaria">Procedimento médico por faixa etária</h4>
-<table>
-<thead>
-<tr>
-<th>Aplicação</th>
-<th>Descrição da aplicação</th>
-<th align="center">Foi utilizado?</th>
-<th>Motivo da utilização ou não</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="agenda-com-eventos">Agenda com eventos</h4>
-<table>
-<thead>
-<tr>
-<th>Aplicação</th>
-<th>Descrição da aplicação</th>
-<th align="center">Foi utilizado?</th>
-<th>Motivo da utilização ou não</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td></td>
+<td>A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizar esse component.</td>
 </tr>
 </tbody>
 </table>
@@ -707,6 +680,12 @@
 <td>API do Google Maps com informações sobre milhões de locais</td>
 <td align="center">A decidir</td>
 <td>A API ainda está sendo avaliada pela equipe.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/googlemaps/google-maps-services-python">google-maps-services-python</a></td>
+<td>Componente python para utilização da API do google maps</td>
+<td align="center">A decidir</td>
+<td>O componente está sendo avaliado pela equipe.</td>
 </tr>
 </tbody>
 </table>
@@ -732,6 +711,24 @@
 <td>É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.</td>
 <td align="center">Sim</td>
 <td>Foi utilizado para facilitar a criação de formulários</td>
+</tr>
+<tr>
+<td><a href="https://github.com/gregplaysguitar/django-simple-search">django-simple-search</a></td>
+<td>A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.</td>
+<td align="center">Não</td>
+<td>Foi decidido a utilização do django-search-view pelo fato de utilizar CBV.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/inmagik/django-search-views">django-search-view</a></td>
+<td>Componente para pesquisa e filtros usando Class Based Views</td>
+<td align="center">Sim</td>
+<td>O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/anymail/django-anymail">django-anymail</a></td>
+<td>Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais</td>
+<td align="center">A decidir</td>
+<td>A equipe está avaliando a possibilidade de utiliza-lo.</td>
 </tr>
 </tbody>
 </table>
