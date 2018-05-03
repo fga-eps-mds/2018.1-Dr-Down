@@ -176,7 +176,6 @@ class ResponsiblePatientListView(ListView):
     model = Patient
     template_name = 'users/responsible_patient_list.html'
 
-
     def get(self, request, *args, **kwargs):
 
         if not hasattr(request.user, 'responsible'):
@@ -212,8 +211,8 @@ class HealthTeamPatientListView(SearchListView):
     def get(self, request, *args, **kwargs):
 
         if (
-            not hasattr(request.user, 'healthteam')
-            and not hasattr(request.user, 'employee')
+            not hasattr(request.user, 'healthteam') and
+            not hasattr(request.user, 'employee')
         ):
             # redirect user_patient to the its medical sheet view
             url = reverse(
@@ -229,5 +228,3 @@ class PatientDetailView(DetailView):
     template_name = 'users/patient_detail.html'
     slug_url_kwarg = 'username'
     slug_field = 'user__username'
-
-

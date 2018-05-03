@@ -51,5 +51,4 @@ urlpatterns = [
         view=views.PatientDetailView.as_view(),
         name='patient_medical_sheet'
     ),
-    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
