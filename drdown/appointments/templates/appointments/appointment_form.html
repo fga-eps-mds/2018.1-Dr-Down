@@ -35,8 +35,7 @@
 
     <div class="fieldWrapper form-group">
       <label for="id_doctor" class="col-form-label">{% trans 'Doctor' %}:</label><br>
-      <select name="doctor" class= "select form-control" required id="id_doctor">
-        <option value="" selected>---------</option>
+      <select name="doctor" class= "select form-control" required id="id_doctor" size="5">
         {% for doctor in health_team %}
           <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
         {% endfor %}
@@ -45,8 +44,7 @@
 
     <div class="fieldWrapper form-group">
       <label for="id_patient" class="col-form-label">{% trans 'Patient' %}:</label><br>
-      <select name="patient" class= "select form-control" required id="id_patient">
-        <option value="" selected>---------</option>
+      <select name="patient" class= "select form-control" required id="id_patient" size="5">
         {% for patient in patients %}
           <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
         {% endfor %}
