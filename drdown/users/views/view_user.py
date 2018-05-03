@@ -151,7 +151,10 @@ class PatientListViewSelector(RedirectView):
             )
             return redirect(url)
 
-        if hasattr(request.user, 'healthteam'):
+        if (
+            hasattr(request.user, 'healthteam') or
+            hasattr(request.user, 'employee')
+        ):
             url = reverse(
                 viewname='users:healthteam_patient_list',
             )
@@ -208,7 +211,10 @@ class HealthTeamPatientListView(SearchListView):
 
     def get(self, request, *args, **kwargs):
 
-        if not hasattr(request.user, 'healthteam'):
+        if (
+            not hasattr(request.user, 'healthteam')
+            and not hasattr(request.user, 'employee')
+        ):
             # redirect user_patient to the its medical sheet view
             url = reverse(
                 viewname='account_login',
