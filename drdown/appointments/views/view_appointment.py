@@ -71,17 +71,18 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
         if hasattr(user, 'patient'):
             queryset = Appointment.objects.filter(
                 patient=user.patient
-            )
+            ).order_by('-date', '-time')
         elif hasattr(user, 'responsible'):
             queryset = Appointment.objects.filter(
                 patient=user.responsible.patient
-            )
+            ).order_by('-date', '-time')
         elif hasattr(user, 'employee'):
-            queryset = Appointment.objects.all()
+            queryset = Appointment.objects.all(
+            ).order_by('-date', '-time')
         elif hasattr(user, 'healthteam'):
             queryset = Appointment.objects.filter(
                 doctor=user.healthteam
-            )
+            ).order_by('-date', '-time')
         else:
             queryset = Appointment.objects.none()
         return queryset
