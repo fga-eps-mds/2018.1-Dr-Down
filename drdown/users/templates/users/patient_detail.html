@@ -12,7 +12,7 @@
 
     <div class="container mb-5">
     <h2 class="text-tertiary" style="margin-left: 5%;">{% trans 'Patient: ' %} {{ view.object.user.name }}</h2>
-      <div style="margin-left: 58%;"><a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a></div>
+      <div style="margin-left: 58%;"><a href="{% url 'users:patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a></div>
   </div>
 
     <div class="container">
@@ -24,7 +24,9 @@
         <img src="{% static 'users/img/user.png' %}" class="align-photo rounded-circle" height="80px" width="80px">
       {% endif %}
        <div style="padding-left: 17px;" ><a href="{% url 'careline:checklist_detail' view.object.user.username %}" class="btn btn-secondary align-btn ml-3">{% trans "Checklist" %}</a></div>
-       <div style="padding-left: 8px;"><a href="{% url 'medicalrecords:list_medicalrecords' view.object.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a></div>
+       {% if user.healthteam%}
+        <div style="padding-left: 8px;"><a href="{% url 'medicalrecords:list_medicalrecords' view.object.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a></div>
+       {% endif %}
      </div>
        <div class="border-left margintoleft move-div">
         <div>
