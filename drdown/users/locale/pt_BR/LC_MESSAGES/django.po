@@ -471,7 +471,7 @@ msgstr "Confirmar dados"
 
 #: drdown/users/templates/users/user_detail.html:272
 msgid "My Medical Records"
-msgstr "Minhas Consultas"
+msgstr "Meu Prontuário"
 
 #: drdown/users/templates/users/user_form.html:113
 msgid "Photo of user"
