@@ -16,7 +16,7 @@ rev=$(git rev-parse --short HEAD)
 (
   git add docs/drdown.pdf
   git commit -m "Rebuild sphinx documentation at ${rev} "
-  git push --force origin develop
+  git push origin develop
 )
 
 # Running mkdocs build to gh-pages

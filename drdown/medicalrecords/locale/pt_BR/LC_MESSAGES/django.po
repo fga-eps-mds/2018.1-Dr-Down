@@ -75,12 +75,6 @@ msgstr "Não há prontuários.Mensagem do prontuário"
 msgid "Author"
 msgstr "Autor"
 
-#: drdown/medicalrecords/models/model_medical_record.py:38
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:14
-msgid "Medical Record"
-msgstr "Prontuário"
-
 #: drdown/medicalrecords/models/model_medical_record.py:39
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:13
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:12
@@ -200,6 +194,16 @@ msgstr "Buscar um prontuário:"
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:18
 msgid "paciente"
 msgstr "paciente"
+
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:8
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:30
+#: drdown/medicalrecords/templates/medicalrecords/pagination.html:34
+msgid "Next"
+msgstr "Proximo"
 
 #: drdown/medicalrecords/tests/test_medical_records_view.py:85
 msgid "This field is required."

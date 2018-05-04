@@ -18,6 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: drdown/users/apps.py:7 drdown/users/templates/users/user_list.html:7
+msgid "Users"
+msgstr "Usuários"
+
 #: drdown/users/models/model_employee.py:21
 #: drdown/users/models/model_health_team.py:20
 #: drdown/users/models/model_patient.py:25
@@ -354,6 +358,14 @@ msgstr "Atualizado em"
 msgid "This user is already specialized!"
 msgstr "Esse usuário já é éspecializado!"
 
+#: drdown/users/models/model_user.py:142
+msgid "The birthday cannot be in the future!"
+msgstr "A data de nascimento não pode estar no futuro!"
+
+#: drdown/users/models/model_user.py:149
+msgid "This birthday is too old."
+msgstr "Essa data de nascimento é muito antiga."
+
 #: drdown/users/templates/admin/users/change_form.html:5
 msgid "Make sure user is confirmed before adding a specialization."
 msgstr "Tenha certeza de ter um usuário criado antes de especializá-lo."
@@ -484,10 +496,6 @@ msgstr "Atualizar"
 #: drdown/users/templates/users/user_list.html:3
 msgid "Members"
 msgstr "Membros"
-
-#: drdown/users/templates/users/user_list.html:7
-msgid "Users"
-msgstr "Usuários"
 
 #: drdown/users/utils/validators.py:19
 msgid "Wrong CPF format"
