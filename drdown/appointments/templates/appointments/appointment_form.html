@@ -1,11 +1,23 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans "New Appointment" %}{% endblock %}
+{% block title %}
+  {% url 'appointments:create_appointment' as url %}
+  {% if request.path == url %}
+    {% trans "New Appointment" %}
+  {% else %}
+    {% trans "Edit Appointment" %}
+  {% endif %}
+{% endblock %}
 
 {% block content %}
 <div class="col-md-6 offset-md-3">
-  <h1>{% trans "New Appointment" %}</h1>
+  {% url 'appointments:create_appointment' as url %}
+  {% if request.path == url %}
+    <h1>{% trans "New Appointment" %}</h1>
+  {% else %}
+    <h1>{% trans "Edit Appointment" %}</h1>
+  {% endif %}
   <form method="post">
     {% csrf_token %}
     <div class="fieldWrapper form-group">
