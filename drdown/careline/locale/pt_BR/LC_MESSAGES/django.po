@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 17:50+0000\n"
+"POT-Creation-Date: 2018-05-03 23:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,8 +92,6 @@ msgstr "Pesquisa para Doença Celíaca (anticorpo antigliadina)"
 
 #: drdown/careline/templates/careline/checklist_detail.html:5
 #: drdown/careline/templates/careline/checklist_detail.html:102
-#: drdown/careline/templates/careline/checklist_list.html:3
-#: drdown/careline/templates/careline/checklist_list.html:7
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
@@ -185,11 +183,7 @@ msgstr "Quando Necessário"
 msgid "Done"
 msgstr "Feito"
 
-#: drdown/careline/templates/careline/checklist_list.html:25
-msgid "There are no patients for this user."
-msgstr "Não há pacientes para este usuário."
-
-#: drdown/careline/views/view_checklist.py:184
+#: drdown/careline/views/view_checklist.py:131
 msgid ""
 "Error: You cannot change data on this form. You need to be at least 13 years "
 "old."
@@ -197,6 +191,9 @@ msgstr ""
 "Erro: Você não pode mudar os dados neste formulário. Você deve ter pelo "
 "menos 13 anos de idade."
 
-#: drdown/careline/views/view_checklist.py:199
+#: drdown/careline/views/view_checklist.py:146
 msgid "Success! Your changes were saved."
 msgstr "Sucesso! Suas mudanças foram salvas."
+
+msgid "There are no patients for this user."
+msgstr "Não há pacientes para este usuário."

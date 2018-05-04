@@ -1,82 +1,27 @@
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.http import (
-    HttpResponseRedirect,
     HttpResponse,
     HttpResponseForbidden,
-    HttpResponseServerError
 )
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from django.utils.translation import ugettext_lazy as _
 
 from drdown.careline.models import (
     Checklist,
-    Procedure,
-    CheckItem
 )
 from django.views.generic import (
     DetailView,
-    ListView,
-    TemplateView,
     RedirectView
 )
-from drdown.users.models import User, Patient
+from drdown.users.models import User
 
 
-class ChecklistListView(ListView):
+class ChecklistRedirectView(RedirectView):
 
-    # the List View for Checklists will list the patients that belong to the
-    # current user (specialized as a responsible), only responsibles will
-    # access this view
-    model = Checklist
-    template_name = 'careline/checklist_list.html'
-
-    def get(self, request, *args, **kwargs):
-
-        if not request.user.is_authenticated:
-            # redirect not not authenticated to login screen
-            url = reverse(
-                viewname='account_login',
-            )
-            return redirect(url)
-
-        if hasattr(request.user, 'patient'):
-            # redirect user_patient to the checklist detail view
-            url = reverse(
-                viewname='careline:checklist_detail',
-                kwargs={'username': request.user.username}
-            )
-            return redirect(url)
-
-        if not hasattr(request.user, 'responsible'):
-            url = reverse(
-                viewname='users:detail',
-                kwargs={'username': request.user.username}
-            )
-            return redirect(url)
-
-        return super().get(request, *args, **kwargs)
-
-    def get_queryset(self, *args, **kwargs):
-
-        user = self.request.user
-
-        queryset = None
-
-        if hasattr(user, "responsible"):
-            queryset = Patient.objects.filter(responsible=user.responsible)
-
-        return queryset
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        user = self.request.user
-        patients = Patient.objects.filter(responsible=user.responsible)
-
-        context['patient_list'] = patients
-
-        return context
+    # redirect this page to user list of
+    # medical follow-up sheet page
+    url = reverse_lazy('users:patient_list')
 
 
 class ChecklistDetailView(DetailView):
@@ -135,6 +80,8 @@ class ChecklistDetailView(DetailView):
             for patient in current_user.responsible.patient_set.all():
                 if patient.user == target_user:
                     allowed = True
+        elif hasattr(current_user, 'healthteam'):
+            allowed = True
 
         return allowed
 

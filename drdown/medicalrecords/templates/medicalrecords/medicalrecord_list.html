@@ -34,7 +34,7 @@
   <div class="container">
     {% if view.related_patient.user.patient  %}
       {% if view.related_patient.user.photo %}
-        <img src="{{ view.related_patient.user.photo }}" width="20px" class="align-photo">
+        <img src="{{ view.related_patient.user.photo.url }}" width="20px" class="align-photo">
       {% else %}
         <img src="{% static 'users/img/user.png' %}" class="align-photo">
       {% endif %}
