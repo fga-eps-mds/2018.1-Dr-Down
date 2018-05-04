@@ -74,7 +74,7 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
             ).order_by('-date', '-time')
         elif hasattr(user, 'responsible'):
             queryset = Appointment.objects.filter(
-                patient=user.responsible.patient
+                patient__in=user.responsible.patient_set.all()
             ).order_by('-date', '-time')
         elif hasattr(user, 'employee'):
             queryset = Appointment.objects.all(

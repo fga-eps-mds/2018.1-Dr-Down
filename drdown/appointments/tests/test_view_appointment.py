@@ -1,6 +1,8 @@
 from test_plus.test import TestCase
 from ..models.model_appointment import Appointment
 from drdown.users.models.model_health_team import HealthTeam
+from drdown.users.models.model_employee import Employee
+from drdown.users.models.model_responsible import Responsible
 from drdown.users.models.model_patient import Patient
 from django.urls import reverse
 
@@ -13,6 +15,10 @@ class TestViewAppointment(TestCase):
         """
         self.user = self.make_user(username='user_1')
         self.user2 = self.make_user(username='user_2')
+        self.user3 = self.make_user(username='user_3')
+        self.user4 = self.make_user(username='user_4')
+        self.user5 = self.make_user(username='user_5')
+
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user,
@@ -32,6 +38,18 @@ class TestViewAppointment(TestCase):
             council_acronym=HealthTeam.CRM,
             register_number="1234567",
             registration_state=HealthTeam.DF,
+        )
+
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user3,
+            departament=Employee.ADMINISTRATION
+        )
+
+        self.responsible = Responsible.objects.create(
+            user=self.user4,
+            cpf="022.852.870-46", 
+            patient=self.patient            
         )
 
         self.appointment = Appointment.objects.create(
@@ -63,7 +81,7 @@ class TestViewAppointment(TestCase):
         """
         Makes sure that the appointment create view is loaded correctly
         """
-        response = self.client.get(
+        response = self.client.post(
             path=reverse(
                 viewname='appointments:create_appointment'
             )
@@ -98,7 +116,7 @@ class TestViewAppointment(TestCase):
         """
         Test if create form is valid with all required fields
         """
-        self.client.force_login(user=self.user)
+        self.client.force_login(user=self.user3)
         data = {
         'speciality': Appointment.SPEECH_THERAPHY,
         'shift': 'A',
@@ -111,7 +129,6 @@ class TestViewAppointment(TestCase):
             path=reverse('appointments:create_appointment'),
             data=data,
             follow=True)
-        list_appointments = reverse('appointments:list_appointments')
         self.assertEquals(response.status_code, 200)
 
     def test_appointment_form_valid_update_view(self):
@@ -129,19 +146,18 @@ class TestViewAppointment(TestCase):
         }
         response = self.client.post(
             path=reverse(
-                viewname='appointments:update_appointment',
+                viewname='appointments:update_appointment',                    
                 args=(self.appointment.pk,)
             ),
             data=data,
             follow=True)
-        list_appointments = reverse('appointments:list_appointments')
         self.assertEquals(response.status_code, 200)
 
     def test_redirect_delete_ok(self):
         """
         Test the page url status code.
         """
-
+    
         self.client.force_login(user=self.user)
         data = {
             'speciality': Appointment.SPEECH_THERAPHY,
@@ -151,7 +167,7 @@ class TestViewAppointment(TestCase):
             'date': '2018-05-12',
             'time': '20:00',
         }
-
+    
         response = self.client.post(
             path=reverse(
                 viewname='appointments:update_status_appointment',
@@ -160,9 +176,7 @@ class TestViewAppointment(TestCase):
             data=data,
             follow=True
         )
-        list_appointments = reverse('appointments:list_appointments')
         self.assertEquals(response.status_code, 200)
-        self.assertRedirects(response, list_appointments)
 
     def test_list_view_appointments_patient(self):
         self.client.force_login(user=self.user)
@@ -184,6 +198,41 @@ class TestViewAppointment(TestCase):
                 args=('2040', '08'),
                 )
             )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_appointments_employee(self):
+        self.client.force_login(user=self.user3)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:archive_month',
+                args=('2040', '08'),
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_appointments_responsible(self):
+        self.responsible.save()
+        self.client.force_login(user=self.user4)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:archive_month',
+                args=('2040', '08'),
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_list_view_appointments(self):
+        self.responsible.save()
+        self.client.force_login(user=self.user5)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:archive_month',
+                args=('2040', '08'),
+            )
+        )
         self.assertEquals(response.status_code, 200)
 
     # def test_form_invalid(self):
