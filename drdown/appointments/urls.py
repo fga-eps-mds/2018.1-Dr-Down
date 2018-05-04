@@ -1,9 +1,11 @@
 from django.conf.urls import url
-from drdown.appointments.views.view_appointment import AppointmentListView
-from drdown.appointments.views.view_appointment import AppointmentCreateView
-from drdown.appointments.views.view_appointment import AppointmentUpdateView
-from drdown.appointments.views.view_appointment import AppointmentMonthArchiveView
-from drdown.appointments.views.view_appointment import AppointmentUpdateStatusView
+from drdown.appointments.views.view_appointment import (
+    AppointmentListView,
+    AppointmentCreateView,
+    AppointmentUpdateView,
+    AppointmentMonthArchiveView,
+    AppointmentUpdateStatusView,
+)
 
 
 app_name = 'appointments'
