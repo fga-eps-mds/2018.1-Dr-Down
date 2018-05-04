@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from .views import (
     ChecklistDetailView,
-    ChecklistListView,
+    ChecklistRedirectView,
     ChecklistUpdateView
 )
 
@@ -10,7 +10,7 @@ app_name = 'careline'
 urlpatterns = [
     url(
         regex=r'^$',
-        view=ChecklistListView.as_view(),
+        view=ChecklistRedirectView.as_view(),
         name='checklist_list'
     ),
     url(
