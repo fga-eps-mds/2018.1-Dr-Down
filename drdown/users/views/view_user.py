@@ -3,10 +3,20 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import user_passes_test
 from django.utils.decorators import method_decorator
 from django.urls import reverse
+from django.shortcuts import redirect
 from django.views.generic import (DetailView, ListView, RedirectView,
-                                  UpdateView, DeleteView)
+                                  UpdateView, DeleteView, View)
+from search_views.search import SearchListView
+from search_views.filters import BaseFilter
 from django.urls import reverse_lazy
-from ..models import User
+from ..models import User, Patient, Employee, HealthTeam, Responsible
+from ..forms.users_forms import PatientSearchForm
+
+
+class PatientFilter(BaseFilter):
+    search_fields = {
+       'list_patient': ['id'],
+    }
 
 
 class UserDeleteView (LoginRequiredMixin, DeleteView):
@@ -121,3 +131,100 @@ class UserListView(LoginRequiredMixin, ListView):
     # These next two lines tell the view to index lookups by username
     slug_field = 'username'
     slug_url_kwarg = 'username'
+
+
+class PatientListViewSelector(RedirectView):
+
+    def get(self, request, *args, **kwargs):
+
+        if hasattr(request.user, 'patient'):
+            # redirect user_patient to the its medical sheet view
+            url = reverse(
+                viewname='users:patient_medical_sheet',
+                kwargs={'username': request.user.username}
+            )
+            return redirect(url)
+
+        if hasattr(request.user, 'responsible'):
+            url = reverse(
+                viewname='users:responsible_patient_list',
+            )
+            return redirect(url)
+
+        if (
+            hasattr(request.user, 'healthteam') or
+            hasattr(request.user, 'employee')
+        ):
+            url = reverse(
+                viewname='users:healthteam_patient_list',
+            )
+            return redirect(url)
+
+        # redirect not not authenticated or not specialized
+        # to login screen
+        url = reverse(
+            viewname='account_login',
+        )
+        return redirect(url)
+
+
+class ResponsiblePatientListView(ListView):
+
+    # the List View will list the patients that belong to the
+    # current user (specialized as a responsible), only responsibles will
+    # access this view
+    model = Patient
+    template_name = 'users/responsible_patient_list.html'
+
+    def get(self, request, *args, **kwargs):
+
+        if not hasattr(request.user, 'responsible'):
+            # redirect user_patient to the its medical sheet view
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
+        return super().get(request, *args, **kwargs)
+
+    def get_queryset(self, *args, **kwargs):
+
+        user = self.request.user
+        return super().get_queryset(*args, **kwargs).filter(
+            responsible=user.responsible
+        )
+
+
+class HealthTeamPatientListView(SearchListView):
+
+    # the List View will list patients and will allow
+    # for the current user (specialized as a healthteam),
+    # to search them
+
+    model = Patient
+    template_name = 'users/healthteam_patient_list.html'
+    form_class = PatientSearchForm
+    filter_class = PatientFilter
+    paginate_by = 20
+    ordering = ['user_id']
+
+    def get(self, request, *args, **kwargs):
+
+        if (
+            not hasattr(request.user, 'healthteam') and
+            not hasattr(request.user, 'employee')
+        ):
+            # redirect user_patient to the its medical sheet view
+            url = reverse(
+                viewname='account_login',
+            )
+            return redirect(url)
+
+        return super().get(request, *args, **kwargs)
+
+
+class PatientDetailView(DetailView):
+    model = Patient
+    template_name = 'users/patient_detail.html'
+    slug_url_kwarg = 'username'
+    slug_field = 'user__username'

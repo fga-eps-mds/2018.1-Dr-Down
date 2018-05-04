@@ -47,3 +47,14 @@
 .pr-13 {
 	padding-right: 13rem;
 }
+
+.move-div{
+  padding-left: 70px;
+  margin-top: 45px;
+  margin-top: -120px;
+}
+
+.content-margin {
+  margin-top: 10rem;
+  margin-bottom: 0rem;
+}
