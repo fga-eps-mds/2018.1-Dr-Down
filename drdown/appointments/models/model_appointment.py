@@ -44,27 +44,23 @@ class Appointment(models.Model):
     PSYCHOLOGY = "Psychology"
     PHYSIOTHERAPY = "Physiotherapy"
     OCCUPATIONAL_THERAPY = "Occupational Therapy"
-    DOCTOR = "Doctor"
     CARDIOLOGY = "Cardiology"
     NEUROLOGY = "Neurology"
     PEDIATRICS = "Pediatrics"
-    NURSING = "Nursing"
 
-    SPECIALITY_CHOICES = (
+    SPECIALITY_APPOINTMENT_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
         (PSYCHOLOGY, _('Psychology')),
         (PHYSIOTHERAPY, _('Physiotherapy')),
         (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
-        (DOCTOR, _('Doctor')),
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
-        (NURSING, _('Nursing')),
     )
 
     speciality = models.CharField(
         _('Speciality'),
-        choices=SPECIALITY_CHOICES,
+        choices=SPECIALITY_APPOINTMENT_CHOICES,
         help_text=_("Speciality of appointment"),
         max_length=30
     )
@@ -83,9 +79,9 @@ class Appointment(models.Model):
         related_name='appointments',
     )
 
-    SCHEDULED = _('Scheduled')
-    CANCELED = _('Canceled')
-    DONE = _('Done')
+    SCHEDULED = 'Scheduled'
+    CANCELED = 'Canceled'
+    DONE = 'Done'
 
     STATUS_CHOICES = (
         (SCHEDULED, _('Scheduled')),

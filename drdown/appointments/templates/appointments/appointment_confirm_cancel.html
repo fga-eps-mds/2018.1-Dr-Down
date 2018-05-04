@@ -8,8 +8,8 @@
 <form method="post" action="">
   {% csrf_token %}
   <p>{% trans 'Are you sure you want to cancel this appointment?' %} </p>
-  <a href="{% url 'appointments:list_appointments' %}" class="btn btn-secondary">{% trans 'No' %}</a>
-  <button class="btn btn-danger" type="submit">{% trans 'Yes' %}</button>
+  <button class="btn btn-danger float-right ml-1" type="submit">{% trans 'Yes' %}</button>
+  <a href="{% url 'appointments:list_appointments' %}" class="btn btn-secondary float-right">{% trans 'No' %}</a>
 </form>
 
 

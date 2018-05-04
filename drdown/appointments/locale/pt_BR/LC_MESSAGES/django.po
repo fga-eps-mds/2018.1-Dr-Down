@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-04 02:08+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 
 #: drdown/appointments/forms/appointments_form.py:11
 #: drdown/appointments/forms/appointments_form.py:13
-#: drdown/appointments/models/model_appointment.py:66
+#: drdown/appointments/models/model_appointment.py:62
 #: drdown/appointments/templates/appointments/appointment_form.html:24
 msgid "Speciality"
 msgstr "Especialidade"
 
 #: drdown/appointments/forms/appointments_form.py:19
 #: drdown/appointments/models/model_appointment.py:25
-#: drdown/appointments/templates/appointments/appointment_form.html:110
+#: drdown/appointments/templates/appointments/appointment_form.html:106
 #: drdown/appointments/templates/appointments/appointment_list.html:38
 msgid "Date"
 msgstr "Data"
@@ -37,38 +37,35 @@ msgid "(Year)-(Month)-(Day)"
 msgstr "(Ano)-(Mês)-(Dia)"
 
 #: drdown/appointments/forms/appointments_form.py:28
-#: drdown/appointments/models/model_appointment.py:58
-#: drdown/appointments/models/model_appointment.py:75
-#: drdown/appointments/templates/appointments/appointment_form.html:32
-#: drdown/appointments/templates/appointments/appointment_form.html:43
-#: drdown/appointments/templates/appointments/appointment_form.html:73
+#: drdown/appointments/models/model_appointment.py:71
+#: drdown/appointments/templates/appointments/appointment_form.html:69
 #: drdown/appointments/templates/appointments/appointment_list.html:36
 msgid "Doctor"
 msgstr "Médico"
 
 #: drdown/appointments/forms/appointments_form.py:34
-#: drdown/appointments/models/model_appointment.py:82
-#: drdown/appointments/templates/appointments/appointment_form.html:92
+#: drdown/appointments/models/model_appointment.py:78
+#: drdown/appointments/templates/appointments/appointment_form.html:88
 #: drdown/appointments/templates/appointments/appointment_list.html:35
 msgid "Patient"
 msgstr "Paciente"
 
 #: drdown/appointments/models/model_appointment.py:13
-#: drdown/appointments/templates/appointments/appointment_form.html:58
-#: drdown/appointments/templates/appointments/appointment_form.html:60
-#: drdown/appointments/templates/appointments/appointment_form.html:65
+#: drdown/appointments/templates/appointments/appointment_form.html:54
+#: drdown/appointments/templates/appointments/appointment_form.html:56
+#: drdown/appointments/templates/appointments/appointment_form.html:61
 msgid "Morning"
 msgstr "Manhã"
 
 #: drdown/appointments/models/model_appointment.py:14
+#: drdown/appointments/templates/appointments/appointment_form.html:53
 #: drdown/appointments/templates/appointments/appointment_form.html:57
-#: drdown/appointments/templates/appointments/appointment_form.html:61
-#: drdown/appointments/templates/appointments/appointment_form.html:66
+#: drdown/appointments/templates/appointments/appointment_form.html:62
 msgid "Afternoon"
 msgstr "Tarde"
 
 #: drdown/appointments/models/model_appointment.py:18
-#: drdown/appointments/templates/appointments/appointment_form.html:53
+#: drdown/appointments/templates/appointments/appointment_form.html:49
 msgid "Shift"
 msgstr "Turno"
 
@@ -81,7 +78,7 @@ msgid "Date of appointment"
 msgstr "Dia da consulta"
 
 #: drdown/appointments/models/model_appointment.py:31
-#: drdown/appointments/templates/appointments/appointment_form.html:122
+#: drdown/appointments/templates/appointments/appointment_form.html:118
 #: drdown/appointments/templates/appointments/appointment_list.html:39
 msgid "Time"
 msgstr "Hora"
@@ -91,7 +88,7 @@ msgid "Time of appointment"
 msgstr "Hora da consulta"
 
 #: drdown/appointments/models/model_appointment.py:37
-#: drdown/appointments/templates/appointments/appointment_form.html:132
+#: drdown/appointments/templates/appointments/appointment_form.html:128
 msgid "Motive"
 msgstr "Motivo"
 
@@ -99,94 +96,81 @@ msgstr "Motivo"
 msgid "Why are you requesting an appointment?"
 msgstr "Porquê você está marcando esta consulta?"
 
-#: drdown/appointments/models/model_appointment.py:54
+#: drdown/appointments/models/model_appointment.py:52
 #: drdown/appointments/templates/appointments/appointment_form.html:28
-#: drdown/appointments/templates/appointments/appointment_form.html:39
+#: drdown/appointments/templates/appointments/appointment_form.html:37
 msgid "Speech Therapy"
 msgstr "Fonoaudiologia"
 
-#: drdown/appointments/models/model_appointment.py:55
+#: drdown/appointments/models/model_appointment.py:53
 #: drdown/appointments/templates/appointments/appointment_form.html:29
-#: drdown/appointments/templates/appointments/appointment_form.html:40
+#: drdown/appointments/templates/appointments/appointment_form.html:38
 msgid "Psychology"
 msgstr "Psicologia"
 
-#: drdown/appointments/models/model_appointment.py:56
+#: drdown/appointments/models/model_appointment.py:54
 #: drdown/appointments/templates/appointments/appointment_form.html:30
-#: drdown/appointments/templates/appointments/appointment_form.html:41
+#: drdown/appointments/templates/appointments/appointment_form.html:39
 msgid "Physiotherapy"
 msgstr "Fisioterapia"
 
-#: drdown/appointments/models/model_appointment.py:57
+#: drdown/appointments/models/model_appointment.py:55
 #: drdown/appointments/templates/appointments/appointment_form.html:31
-#: drdown/appointments/templates/appointments/appointment_form.html:42
+#: drdown/appointments/templates/appointments/appointment_form.html:40
 msgid "Occupational Therapy"
 msgstr "Terapia Ocupacional"
 
-#: drdown/appointments/models/model_appointment.py:59
-#: drdown/appointments/templates/appointments/appointment_form.html:33
-#: drdown/appointments/templates/appointments/appointment_form.html:44
+#: drdown/appointments/models/model_appointment.py:56
+#: drdown/appointments/templates/appointments/appointment_form.html:32
+#: drdown/appointments/templates/appointments/appointment_form.html:41
 msgid "Cardiology"
 msgstr "Cardiologia"
 
-#: drdown/appointments/models/model_appointment.py:60
-#: drdown/appointments/templates/appointments/appointment_form.html:34
-#: drdown/appointments/templates/appointments/appointment_form.html:45
+#: drdown/appointments/models/model_appointment.py:57
+#: drdown/appointments/templates/appointments/appointment_form.html:33
+#: drdown/appointments/templates/appointments/appointment_form.html:42
 msgid "Neurology"
 msgstr "Neurologia"
 
-#: drdown/appointments/models/model_appointment.py:61
-#: drdown/appointments/templates/appointments/appointment_form.html:35
-#: drdown/appointments/templates/appointments/appointment_form.html:46
+#: drdown/appointments/models/model_appointment.py:58
+#: drdown/appointments/templates/appointments/appointment_form.html:34
+#: drdown/appointments/templates/appointments/appointment_form.html:43
 msgid "Pediatrics"
 msgstr "Pediatria"
 
-#: drdown/appointments/models/model_appointment.py:62
-#: drdown/appointments/templates/appointments/appointment_form.html:36
-#: drdown/appointments/templates/appointments/appointment_form.html:47
-msgid "Nursing"
-msgstr "Enfermaria"
-
-#: drdown/appointments/models/model_appointment.py:68
+#: drdown/appointments/models/model_appointment.py:64
 msgid "Speciality of appointment"
 msgstr "Especialidade da consulta"
 
-#: drdown/appointments/models/model_appointment.py:86
-#: drdown/appointments/models/model_appointment.py:91
+#: drdown/appointments/models/model_appointment.py:87
 msgid "Scheduled"
 msgstr "Marcada"
 
-#: drdown/appointments/models/model_appointment.py:87
-#: drdown/appointments/models/model_appointment.py:92
+#: drdown/appointments/models/model_appointment.py:88
 msgid "Canceled"
 msgstr "Cancelada"
 
-#: drdown/appointments/models/model_appointment.py:88
-#: drdown/appointments/templates/appointments/appointment_list.html:47
-msgid "Done"
-msgstr "Concluído"
-
-#: drdown/appointments/models/model_appointment.py:96
+#: drdown/appointments/models/model_appointment.py:92
 #: drdown/appointments/templates/appointments/appointment_list.html:43
 #: drdown/appointments/templates/appointments/appointment_list.html:45
 #: drdown/appointments/templates/appointments/appointment_list.html:47
 msgid "Status"
 msgstr "Status"
 
-#: drdown/appointments/models/model_appointment.py:98
+#: drdown/appointments/models/model_appointment.py:94
 msgid "Is this appointment still scheduled?"
 msgstr "Esta consulta ainda está marcada?"
 
-#: drdown/appointments/models/model_appointment.py:105
+#: drdown/appointments/models/model_appointment.py:101
 #: drdown/appointments/tests/test_model_appointment.py:141
 msgid "Appointment of "
 msgstr "Consulta de"
 
-#: drdown/appointments/models/model_appointment.py:108
+#: drdown/appointments/models/model_appointment.py:104
 msgid "Appointment"
 msgstr "Consulta"
 
-#: drdown/appointments/models/model_appointment.py:109
+#: drdown/appointments/models/model_appointment.py:105
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:3
 #: drdown/appointments/templates/appointments/appointment_list.html:9
 #: drdown/appointments/templates/appointments/appointment_list.html:16
@@ -220,13 +204,17 @@ msgstr "Nova Consulta"
 msgid "Edit Appointment"
 msgstr "Editar Consulta"
 
-#: drdown/appointments/templates/appointments/appointment_form.html:141
+#: drdown/appointments/templates/appointments/appointment_form.html:137
 msgid "Schedule"
 msgstr "Marcar"
 
 #: drdown/appointments/templates/appointments/appointment_list.html:37
 msgid "Especiality"
 msgstr "Especialidade"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:47
+msgid "Done"
+msgstr "Concluído"
 
 #: drdown/appointments/templates/appointments/appointment_list.html:52
 msgid "Edit"
@@ -291,3 +279,6 @@ msgstr "Novembro"
 #: drdown/appointments/views/view_appointment.py:55
 msgid "December"
 msgstr "Dezembro"
+
+#~ msgid "Nursing"
+#~ msgstr "Enfermaria"

@@ -33,4 +33,3 @@ class AppointmentSearchForm(forms.Form):
         required=False,
         label=_('Patient')
     )
-
