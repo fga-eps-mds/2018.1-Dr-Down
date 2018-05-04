@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-04 10:24+0000\n"
+"POT-Creation-Date: 2018-05-04 14:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Especialidade"
 #: drdown/appointments/forms/appointments_form.py:19
 #: drdown/appointments/models/model_appointment.py:25
 #: drdown/appointments/templates/appointments/appointment_form.html:106
-#: drdown/appointments/templates/appointments/appointment_list.html:38
+#: drdown/appointments/templates/appointments/appointment_list.html:45
 msgid "Date"
 msgstr "Data"
 
@@ -39,14 +39,14 @@ msgstr "(Ano)-(Mês)-(Dia)"
 #: drdown/appointments/forms/appointments_form.py:28
 #: drdown/appointments/models/model_appointment.py:71
 #: drdown/appointments/templates/appointments/appointment_form.html:69
-#: drdown/appointments/templates/appointments/appointment_list.html:36
+#: drdown/appointments/templates/appointments/appointment_list.html:43
 msgid "Doctor"
 msgstr "Médico"
 
 #: drdown/appointments/forms/appointments_form.py:34
 #: drdown/appointments/models/model_appointment.py:78
 #: drdown/appointments/templates/appointments/appointment_form.html:88
-#: drdown/appointments/templates/appointments/appointment_list.html:35
+#: drdown/appointments/templates/appointments/appointment_list.html:42
 msgid "Patient"
 msgstr "Paciente"
 
@@ -79,7 +79,7 @@ msgstr "Dia da consulta"
 
 #: drdown/appointments/models/model_appointment.py:31
 #: drdown/appointments/templates/appointments/appointment_form.html:118
-#: drdown/appointments/templates/appointments/appointment_list.html:39
+#: drdown/appointments/templates/appointments/appointment_list.html:46
 msgid "Time"
 msgstr "Hora"
 
@@ -151,9 +151,9 @@ msgid "Canceled"
 msgstr "Cancelada"
 
 #: drdown/appointments/models/model_appointment.py:92
-#: drdown/appointments/templates/appointments/appointment_list.html:43
-#: drdown/appointments/templates/appointments/appointment_list.html:45
-#: drdown/appointments/templates/appointments/appointment_list.html:47
+#: drdown/appointments/templates/appointments/appointment_list.html:48
+#: drdown/appointments/templates/appointments/appointment_list.html:50
+#: drdown/appointments/templates/appointments/appointment_list.html:52
 msgid "Status"
 msgstr "Status"
 
@@ -186,12 +186,12 @@ msgid "Are you sure you want to cancel this appointment?"
 msgstr "Tem certeza que deseja cancelar esta consulta?"
 
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:11
-msgid "No"
-msgstr "Não"
-
-#: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:12
 msgid "Yes"
 msgstr "Sim"
+
+#: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:12
+msgid "No"
+msgstr "Não"
 
 #: drdown/appointments/templates/appointments/appointment_form.html:7
 #: drdown/appointments/templates/appointments/appointment_form.html:17
@@ -208,27 +208,31 @@ msgstr "Editar Consulta"
 msgid "Schedule"
 msgstr "Marcar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:37
-msgid "Especiality"
-msgstr "Especialidade"
+#: drdown/appointments/templates/appointments/appointment_list.html:23
+msgid "Search"
+msgstr "Pesquisar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:47
-msgid "Done"
-msgstr "Concluído"
-
-#: drdown/appointments/templates/appointments/appointment_list.html:52
-msgid "Edit"
-msgstr "Editar"
-
-#: drdown/appointments/templates/appointments/appointment_list.html:53
+#: drdown/appointments/templates/appointments/appointment_list.html:38
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:59
+#: drdown/appointments/templates/appointments/appointment_list.html:39
+msgid "Edit"
+msgstr "Editar"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:44
+msgid "Especiality"
+msgstr "Especialidade"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:52
+msgid "Done"
+msgstr "Concluído"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:58
 msgid "There are no appointments scheduled"
 msgstr "Não há consultas marcadas"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:65
+#: drdown/appointments/templates/appointments/appointment_list.html:64
 msgid "Search All"
 msgstr "Pesquisar tudo"
 
