@@ -9,41 +9,53 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-tertiary">{% trans "Select a patient" %}</h2>
+    <div class="row justify-content-between mb-1">
+        <h2 class="col-7 col-md-10 text-tertiary">{% trans "Select a patient" %}</h2>
 
-    <form class="form-inline float-right" action="" method="GET">
-            <div class="search"><label>{% trans 'Patient:'%}</label> {{ form.list_patient }}</div>
+        <div class="col float-right mr-0">
+                <a href="{% url 'users:detail' request.user %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+        </div>
+    </div>
 
-              <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
-              <a href="{% url 'users:detail' request.user %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+    <div class="row">
+        <div class="col">
+            <form class="form-inline float-right" action="" method="GET">
+                <div class="search"><label>{% trans 'Patient:'%}</label> {{ form.list_patient }}</div>
+                
+                <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
+            </form>
+        </div>
+    </div>
 
-    </form>
+    <div class="row">
+        <div class="col">
+            <div class="list-group">
 
-    <div class="list-group">
+                {% for patient in object_list %}
+                    <a href= "{% url 'users:patient_medical_sheet' patient.user.username  %}" class=" h-blue list-group-item" >
 
-        {% for patient in object_list %}
-            <a href= "{% url 'users:patient_medical_sheet' patient.user.username  %}" class=" h-blue list-group-item" >
+                        <div class="d-flex w-10 justify-content-start">
 
-                <div class="d-flex w-10 justify-content-start">
+                            {% if patient.user.photo %}
+                                <img class="d-flex mr-3 rounded-circle" src="{{patient.user.photo.url}}" height="80px" width="80px">
+                            {% else %}
+                                <img class="d-flex mr-3 rounded-circle" src="{% static 'users/img/user.png' %}" height  ="80px" width="80px">
+                            {% endif %}
 
-                    {% if patient.user.photo %}
-                        <img class="d-flex mr-3 rounded-circle" src="{{patient.user.photo.url}}" height="80px" width="80px">
-                    {% else %}
-                        <img class="d-flex mr-3 rounded-circle" src="{% static 'users/img/user.png' %}" height  ="80px" width="80px">
-                    {% endif %}
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading text-tertiary h-blue" >{{ patient.user.name }}</h4>
+                                <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
+                            </div>
+                        </div>
 
-                    <div class="list-group">
-                        <h4 class="list-group-item-heading text-tertiary h-blue" >{{ patient.user.name }}</h4>
-                        <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
-                    </div>
-                </div>
-
-            </a>
-            {% empty %}
-                <h4>{% trans 'There are no patients for this user.'%}</h4>
-            {% endfor %}
+                    </a>
+                    {% empty %}
+                        <h4>{% trans 'There are no patients for this user.'%}</h4>
+                    {% endfor %}
 
 
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
