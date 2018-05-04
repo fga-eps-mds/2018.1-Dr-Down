@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 23:11+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -301,7 +301,7 @@ msgid "Photo of user."
 msgstr "Foto do usuário."
 
 #: drdown/users/models/model_user.py:19
-#: drdown/users/templates/users/user_form.html:123
+#: drdown/users/templates/users/user_form.html:109
 msgid "Photo"
 msgstr "Foto"
 
@@ -342,7 +342,7 @@ msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
 msgstr "(xx)xxxxx-xxxx ou (xx)xxxx-xxxx"
 
 #: drdown/users/models/model_user.py:54
-#: drdown/users/templates/users/user_form.html:105
+#: drdown/users/templates/users/user_form.html:98
 msgid "Birthday"
 msgstr "Data de aniversário"
 
@@ -550,11 +550,15 @@ msgstr "Ficha de Acompanhamento"
 msgid "Confirm data"
 msgstr "Confirmar dados"
 
-#: drdown/users/templates/users/user_form.html:127
+#: drdown/users/templates/users/user_detail.html:272
+msgid "My Medical Records"
+msgstr "Meu Prontuário"
+
+#: drdown/users/templates/users/user_form.html:113
 msgid "Photo of user"
 msgstr "Foto do usuário"
 
-#: drdown/users/templates/users/user_form.html:133
+#: drdown/users/templates/users/user_form.html:119
 msgid "Update"
 msgstr "Atualizar"
 

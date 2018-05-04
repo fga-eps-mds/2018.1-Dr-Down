@@ -1,0 +1,140 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% url 'appointments:create_appointment' as url %}
+  {% if request.path == url %}
+    {% trans "New Appointment" %}
+  {% else %}
+    {% trans "Edit Appointment" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  {% url 'appointments:create_appointment' as url %}
+  {% if request.path == url %}
+    <h1>{% trans "New Appointment" %}</h1>
+  {% else %}
+    <h1>{% trans "Edit Appointment" %}</h1>
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="fieldWrapper form-group">
+      <label for="id_speciality" class="col-form-label">{% trans 'Speciality' %}:</label>
+      <select class= "select form-control" name="speciality" required id="id_speciality">
+        {% if object.speciality %}
+          <option value="{{object.speciality}}" selected>{{object.get_speciality_display}}</option>
+          <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
+          <option value="Psychology">{% trans 'Psychology' %}</option>
+          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
+          <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
+          <option value="Cardiology">{% trans 'Cardiology' %}</option>
+          <option value="Neurology">{% trans 'Neurology' %}</option>
+          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+        {% else %}
+          <option value="" selected>---------</option>
+          <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
+          <option value="Psychology">{% trans 'Psychology' %}</option>
+          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
+          <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
+          <option value="Cardiology">{% trans 'Cardiology' %}</option>
+          <option value="Neurology">{% trans 'Neurology' %}</option>
+          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+        {% endif %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_shift" class="col-form-label">{% trans 'Shift' %}:</label>
+      <select name="shift" class= "select form-control" required id="id_shift">
+        {% if object.shift %}
+          {% if object.shift == 'A' %}
+            <option value="{{ object.shift }}" selected>{% trans 'Afternoon' %}</option>
+            <option value="M">{% trans 'Morning' %}</option>
+          {% else %}
+            <option value="{{ object.shift }}" selected>{% trans 'Morning' %}</option>
+            <option value="A">{% trans 'Afternoon' %}</option>
+          {% endif %}
+        {% else %}
+          <option value="" selected>---------</option>
+          <option value="M">{% trans 'Morning' %}</option>
+          <option value="A">{% trans 'Afternoon' %}</option>
+        {% endif %}
+
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_doctor" class="col-form-label">{% trans 'Doctor' %}:</label><br>
+      <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
+        {% if object.doctor %}
+          <option value="{{ object.doctor.pk }}" selected>{{ object.doctor.user.name }}</option>
+            {% for doctor in health_team %}
+              {% if doctor.pk != object.doctor.pk %}
+              <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
+              {% endif %}
+            {% endfor %}
+        {% else %}
+          {% for doctor in health_team %}
+            <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
+          {% endfor %}
+        {% endif %}
+
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_patient" class="col-form-label">{% trans 'Patient' %}:</label><br>
+      <select name="patient" class= "select form-control" required id="id_patient" size="6">
+        {% if object.patient %}
+          <option value="{{ object.patient.pk }}" selected>{{ object.patient.user.name }}</option>
+            {% for patient in patients %}
+              {% if patient.pk != object.patient.pk %}
+              <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+              {% endif %}
+            {% endfor %}
+        {% else %}
+          {% for patient in patients %}
+            <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+          {% endfor %}
+        {% endif %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_date" class="col-form-label">{% trans 'Date' %}:</label>
+      {% if object.date %}
+        <input type="date" name="date" id="id_date" class="form-control" min="{% now 'Y-m-d' %}" value="{{ object.date | date:'Y-m-d' }}" required>
+      {% else %}
+        <input type="date" name="date" id="id_date" class="form-control" min="{% now 'Y-m-d' %}" required>
+      {% endif %}
+      <span class="validity"></span>
+    </div>
+
+
+
+    <div class="fieldWrapper form-group">
+      <label for="id_time" class="col-form-label">{% trans 'Time' %}:</label>
+      {% if object.time %}
+        <input type="time" name="time" id="id_time" value="{{ object.time }}" class="form-control" required>
+      {% else %}
+        <input type="time" name="time" id="id_time" class="form-control" required>
+      {% endif %}
+      <span class="validity"></span>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_motive" class="col-form-label">{% trans 'Motive' %}:</label>
+      {% if object.motive %}
+        <textarea name="motive" cols="40" rows="10" maxlength="500" id="id_motive" class="form-control" value="{{ object.motive }}"> {{object.motive}}
+        </textarea>
+      {% else %}
+        <textarea name="motive" cols="40" rows="10" maxlength="500" id="id_motive" class="form-control">
+        </textarea>
+      {% endif %}
+    </div>
+    <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
+  </form>
+</div>
+{% endblock %}

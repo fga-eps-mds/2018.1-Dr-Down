@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-01 01:13+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: drdown/medicalrecords/apps.py:6
-#: drdown/medicalrecords/models/model_medical_record.py:38
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:14
-msgid "Medical Record"
-msgstr "Prontuário"
 
 #: drdown/medicalrecords/forms/medicalrecords_forms.py:23
 #: drdown/medicalrecords/forms/medicalrecords_forms.py:47
@@ -218,6 +211,12 @@ msgstr "Este campo é obrigatório."
 
 #~ msgid "message"
 #~ msgstr "mensagem"
+
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Next"
+#~ msgstr "Próximo"
 
 #, fuzzy
 #~| msgid "Attachments"
