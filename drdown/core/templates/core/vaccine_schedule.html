@@ -18,12 +18,12 @@
   <br/><br/><br/><br/><br/><br/><br/>
   <center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
   <hr class="star-dark bg-star-white">
-
+<div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th class="text-light bg-secondary" scope="row" rowspan="2" style="text-align: center;"><h3>{% trans 'Vaccines'%}</h3></th>
-        <th class="text-light bg-secondary" scope="col" colspan="19" style="text-align: center;">{% trans 'OF BIRTH TO THE 10 YEARS OF AGE'%}</th>
+        <th class="text-light bg-secondary" scope="col" colspan="17" style="text-align: center;">{% trans 'OF BIRTH TO THE 10 YEARS OF AGE'%}</th>
       </tr>
 
       <tr>
@@ -44,8 +44,7 @@
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '4 Y'%}</font></th>
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '5 Y'%}</font></th>
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '6 Y'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '9 Y'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '10 Y'%}</font></th>
+
       </tr>
       </thead>
       <tbody>
@@ -53,19 +52,19 @@
         <th scope="row">{% trans 'BCG ID'%}</th>
         <td class="bg-success" style="text-align: center;">{% trans 'One dose'%}</td>
         <td class="bg-info" colspan="14" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-warning" colspan="4" style="text-align: center;">{% trans 'Vaccinate people who contacted leprosy'%}</td>
+        <td class="bg-warning" colspan="2" style="text-align: center;">{% trans 'Vaccinate people who contacted leprosy'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Hepatitis B'%}</th>
         <td class="bg-success" colspan="7" style="text-align: center;">{% trans 'Three or four doses from birth'%}</td>
-        <td class="bg-info" colspan="12" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-info" colspan="10" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Rotavirus'%}</th>
         <td></td>
         <td></td>
         <td class="bg-success" colspan="6" style="text-align: center;">{% trans 'Two or three doses. Initiate vaccination before 15 weeks of age'%}</td>
-        <td class="bg-danger" colspan="11" style="text-align: center;">{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-danger" colspan="9" style="text-align: center;">{% trans 'CONTRAINDICATED'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Bacterial triple (DTPw, DTPa, ou dTpa)'%}</th>
@@ -74,8 +73,7 @@
         <td class="bg-success" colspan="11" style="text-align: center;">{% trans 'Four doses of DTPa or DTPw starting at 2 months of age'%}</td>
         <td class="bg-info"></td>
         <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'Reinforcement with DTPa, DTPw or dTpa'%}</td>
-        <td class="bg-info" colspan="2" style="text-align: center;"></td>
-        <td class="bg-success" colspan="1" style="text-align: center;">{% trans 'Reinforcement with dTpa from 9 years of age and every 10 years (or, in the case of dTpa, do dT)'%}</td>
+        <td class="bg-info" colspan="1" style="text-align: center;"></td>
       </tr>
       <tr>
         <th scope="row">{% trans '<i>Haemophilus influenzae</i> type b'%}</th>
@@ -83,14 +81,14 @@
         <td></td>
         <td class="bg-success" colspan="11" style="text-align: center;">{% trans 'Four doses starting at 2 months of age'%}</td>
         <td class="bg-info" colspan="3" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-warning" colspan="3" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="1" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Poliomyelitis (inactivated virus)'%}</th>
         <td></td>
         <td></td>
         <td class="bg-success" colspan="14" style="text-align: center;">{% trans 'Five doses starting at 2 months of age'%}</td>
-        <td class="bg-warning" colspan="3" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="1" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Pneumococcal conjugate'%}</th>
@@ -98,7 +96,7 @@
         <td></td>
         <td class="bg-success" colspan="10" style="text-align: center;">{% trans 'Four doses starting at 2 months of age - VPC10 or VPC13'%}</td>
         <td class="bg-info" colspan="4" style="text-align: center;">{% trans 'VPC10 or VPC13 - Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-warning" colspan="3" style="text-align: center;">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="1" style="text-align: center;">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Meningococcal conjugate C or ACWY'%}</th>
@@ -109,7 +107,6 @@
         <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'REINFORCEMENT'%}</td>
         <td class="bg-info" colspan="3"></td>
         <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'REINFORCEMENT'%}</td>
-        <td class="bg-info" colspan="2"></td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Meningococcal B'%}</th>
@@ -118,7 +115,7 @@
         <td></td>
         <td class="bg-success" colspan="7" style="text-align: center;">{% trans 'Three doses beginning at 3 months of age'%}</td>
         <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'REINFORCEMENT'%}</td>
-        <td class="bg-success" colspan="7" style="text-align: center;">{% trans 'For those not previously vaccinated: two doses'%}</td>
+        <td class="bg-success" colspan="5" style="text-align: center;">{% trans 'For those not previously vaccinated: two doses'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Oral poliomyelitis (live attenuated virus)'%}</th>
@@ -131,8 +128,6 @@
         <td></td>
         <td class="bg-success" colspan="9" style="text-align: center;">{% trans 'NATIONAL VACCINATION CAMPAIGNS'%}</td>
         <td></td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Influenza (flu)'%}</th>
@@ -142,7 +137,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="bg-success" colspan="13" style="text-align: center;">{% trans 'ANNUAL VACCINATION'%}</td>
+        <td class="bg-success" colspan="11" style="text-align: center;">{% trans 'ANNUAL VACCINATION'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Yellow fever'%}</th>
@@ -155,7 +150,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="bg-success" colspan="10" style="text-align: center;">{% trans 'IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION OF MS) - single dose at 9 months of age. Not previously vaccinated: single dose'%}</td>
+        <td class="bg-success" colspan="8" style="text-align: center;">{% trans 'IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION OF MS) - single dose at 9 months of age. Not previously vaccinated: single dose'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Viral triple (measles, mumps and rubella)'%}</th>
@@ -170,7 +165,7 @@
         <td></td>
         <td></td>
         <td class="bg-success" colspan="4" style="text-align: center;">{% trans 'Two doses after 12 months'%}</td>
-        <td class="bg-info" colspan="5" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-info" colspan="3" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Varicella (chickenpox)'%}</th>
@@ -185,7 +180,7 @@
         <td></td>
         <td></td>
         <td class="bg-success" colspan="4" style="text-align: center;">{% trans 'Two doses after 12 months'%}</td>
-        <td class="bg-info" colspan="5" style="text-align: center;">{% trans 'Vaccinate previously unvaccinated susceptibles'%}</td>
+        <td class="bg-info" colspan="3" style="text-align: center;">{% trans 'Vaccinate previously unvaccinated susceptibles'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Hepatitis A'%}</th>
@@ -200,28 +195,7 @@
         <td></td>
         <td></td>
         <td class="bg-success" colspan="4" style="text-align: center;">{% trans 'Two doses after 12 months'%}</td>
-        <td class="bg-info" colspan="5" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-      </tr>
-      <tr>
-        <th scope="row">{% trans 'HPV'%}</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'Three doses for girls and boys'%}</td>
+        <td class="bg-info" colspan="3" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Pneumococcal 23 courageous'%}</th>
@@ -238,12 +212,11 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="bg-warning" colspan="6" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="4" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row" >{% trans 'Dengue'%}</th>
         <td class="bg-danger" colspan="17" style="text-align: center;">{% trans 'CONTRAINDICATED'%}</td>
-        <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'To vaccinate people aged 9 to 45 years previously infected with the virus (seropositive) with three doses: 0 - 6 - 12 months'%}</td>
       </tr>
     </tbody>
     <thead>
@@ -266,8 +239,6 @@
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '4 Years'%}</font></th>
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '5 Years'%}</font></th>
         <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '6 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '9 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;"><font size="2">{% trans '10 Years'%}</font></th>
       </tr>
       <tr>
         <th class="text-light bg-secondary" scope="col" colspan="19" style="text-align: center;">{% trans 'OF BIRTH TO THE 10 YEARS OF AGE'%}</th>
@@ -285,121 +256,132 @@
         <th scope="col" colspan="3" style="text-align: center;"><h6>{% trans 'Contraindicated'%}</h6></th>
       </tr>
   </table>
-
+</div>
   <br/><br/>
 <!-- Tabela secundária -->
+<div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th class="text-light bg-secondary" scope="row" rowspan="2" style="text-align: center;"><h3>{% trans 'Vaccines'%}</h3></th>
-        <th class="text-light bg-secondary" scope="col" colspan="3" style="text-align: center;">{% trans 'ADOLESCENT'%}</th>
-        <th class="text-light bg-secondary" scope="col" colspan="3" style="text-align: center;">{% trans 'ADULT'%}</th>
-        <th class="text-light bg-secondary" scope="col" colspan="3" style="text-align: center;">{% trans 'OLD MAN'%}</th>
+        <th class="text-light bg-secondary" style="text-align: center;" scope="row" rowspan="2" colspan="2"><font size="2" >{% trans '9 Y'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" scope="row" rowspan="2" colspan="2"><font size="2">{% trans '10 Y'%}</font></th>
+        <th class="text-light bg-secondary" scope="col" colspan="2" style="text-align: center;">{% trans 'ADOLESCENT'%}</th>
+        <th class="text-light bg-secondary" scope="col" colspan="2" style="text-align: center;">{% trans 'ADULT'%}</th>
+        <th class="text-light bg-secondary" scope="col" colspan="2" style="text-align: center;">{% trans 'OLD MAN'%}</th>
       </tr>
 
       <tr>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '11-19 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '20-59 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '60+ Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '11-19 Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '20-59 Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '60+ Years'%}</font></th>
       </tr>
       </thead>
       <tbody>
       <tr>
         <th scope="row">{% trans 'BCG ID'%}</th>
-        <td class="bg-warning" colspan="9" style="text-align: center;">{% trans 'Vaccinate people who contacted leprosy'%}</td>
+        <td class="bg-warning" colspan="10" style="text-align: center;">{% trans 'Vaccinate people who contacted leprosy'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Hepatitis B'%}</th>
-        <td class="bg-info" colspan="9" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-info" colspan="10" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Rotavirus'%}</th>
-        <td class="bg-danger" colspan="9" style="text-align: center;">{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-danger" colspan="10" style="text-align: center;">{% trans 'CONTRAINDICATED'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Bacterial triple (DTPw, DTPa, ou dTpa)'%}</th>
-        <td class="bg-success" colspan="9" style="text-align: center;">{% trans 'Reinforcement with dTpa from 9 years of age and every 10 years (or, in the case of dTpa, do dT)'%}</td>
+        <td class="bg-info" colspan="2" style="text-align: center;"></td>
+        <td class="bg-success" colspan="2" style="text-align: center;">{% trans 'Reinforcement with dTpa from 9 years of age and every 10 years (or, in the case of dTpa, do dT)'%}</td>
+        <td class="bg-success" colspan="6" style="text-align: center;">{% trans 'Reinforcement with dTpa from 9 years of age and every 10 years (or, in the case of dTpa, do dT)'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans '<i>Haemophilus influenzae</i> type b'%}</th>
-        <td class="bg-warning" colspan="9" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="10" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Poliomyelitis (inactivated virus)'%}</th>
-        <td class="bg-warning" colspan="9" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-warning" colspan="10" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Pneumococcal conjugate'%}</th>
-        <td class="bg-warning" colspan="6" style="text-align: center;">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
-        <td class="bg-success" style="text-align: center;" colspan="3">{% trans 'VPC13: one dose'%}</td>
+        <td class="bg-warning" colspan="8" style="text-align: center;">{% trans 'PCV13: vaccinating people in special risk situations'%}</td>
+        <td class="bg-success" style="text-align: center;" colspan="2">{% trans 'VPC13: one dose'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Meningococcal conjugate C or ACWY'%}</th>
-        <td class="bg-success" style="text-align: center;" colspan="3">{% trans 'REINFORCED at age 11. For those not previously vaccinated: two doses'%}</td>
-        <td class="bg-warning" colspan="6" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-info" colspan="4"></td>
+        <td class="bg-success" style="text-align: center;" colspan="2">{% trans 'REINFORCED at age 11. For those not previously vaccinated: two doses'%}</td>
+        <td class="bg-warning" colspan="4" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Meningococcal B'%}</th>
-        <td class="bg-success" colspan="3" style="text-align: center;">{% trans 'For those not previously vaccinated: two doses'%}</td>
-        <td class="bg-warning" colspan="6" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-success" colspan="6" style="text-align: center;">{% trans 'For those not previously vaccinated: two doses'%}</td>
+        <td class="bg-warning" colspan="4" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Influenza (flu)'%}</th>
-        <td class="bg-success" colspan="9" style="text-align: center;">{% trans 'ANNUAL VACCINATION'%}</td>
+        <td class="bg-success" colspan="10" style="text-align: center;">{% trans 'ANNUAL VACCINATION'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Yellow fever'%}</th>
-        <td class="bg-success" colspan="9" style="text-align: center;">{% trans 'IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION OF MS) - single dose at 9 months of age. Not previously vaccinated: single dose'%}</td>
+        <td class="bg-success" colspan="10" style="text-align: center;">{% trans 'IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION OF MS) - single dose at 9 months of age. Not previously vaccinated: single dose'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Viral triple (measles, mumps and rubella)'%}</th>
-        <td class="bg-info" colspan="6" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-warning" style="text-align: center;" colspan="3">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-info" colspan="8" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-warning" style="text-align: center;" colspan="2">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Varicella (chickenpox)'%}</th>
-        <td class="bg-info" colspan="6" style="text-align: center;">{% trans 'Vaccinate previously unvaccinated susceptibles'%}</td>
-        <td colspan="3"></td>
+        <td class="bg-info" colspan="8" style="text-align: center;">{% trans 'Vaccinate previously unvaccinated susceptibles'%}</td>
+        <td colspan="2"></td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Hepatitis A'%}</th>
-        <td class="bg-info" colspan="6" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-warning" style="text-align: center;" colspan="3">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-info" colspan="8" style="text-align: center;">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-warning" style="text-align: center;" colspan  ="2">{% trans 'Vaccinate people in special risk situations'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'HPV'%}</th>
-        <td class="bg-info" style="text-align: center;" colspan="3">{% trans 'Vaccinate the previously unvaccinated'%}</td>
-        <td class="bg-info" style="text-align: center;" colspan="3">{% trans 'Vaccinate the non-vaccinated formerly: at the discretion of the physician'%}</td>
-        <td colspan="3"></td>
+        <td class="bg-success" colspan="4" style="text-align: center;">{% trans 'Three doses for girls and boys'%}</td>
+        <td class="bg-info" style="text-align: center;" colspan="2">{% trans 'Vaccinate the previously unvaccinated'%}</td>
+        <td class="bg-info" style="text-align: center;" colspan="2">{% trans 'Vaccinate the non-vaccinated formerly: at the discretion of the physician'%}</td>
+        <td colspan="2"></td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Pneumococcal 23 courageous'%}</th>
-        <td class="bg-warning" colspan="6" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
-        <td class="bg-success" style="text-align: center;" colspan="3">{% trans 'Two doses at five-year intervals'%}</td>
+        <td class="bg-warning" colspan="8" style="text-align: center;">{% trans 'Vaccinate people in special risk situations'%}</td>
+        <td class="bg-success" style="text-align: center;" colspan="2">{% trans 'Two doses at five-year intervals'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Herpes zoster'%}</th>
-        <td colspan="3"></td>
-        <td class="bg-warning" style="text-align: center;" colspan="3">{% trans 'From 50 to 59 years old: at medical discretion'%}</td>
-        <td class="bg-success" style="text-align: center;" colspan="3">{% trans 'One dose'%}</td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td class="bg-warning" style="text-align: center;" colspan="2">{% trans 'From 50 to 59 years old: at medical discretion'%}</td>
+        <td class="bg-success" style="text-align: center;" colspan="2">{% trans 'One dose'%}</td>
       </tr>
       <tr>
         <th scope="row">{% trans 'Dengue'%}</th>
-        <td class="bg-success" colspan="6" style="text-align: center;">{% trans 'To vaccinate people aged 9 to 45 years previously infected with the virus (seropositive) with three doses: 0 - 6 - 12 months'%}</td>
-        <td class="bg-danger" style="text-align: center;" colspan="3">{% trans 'CONTRAINDICATED'%}</td>
+        <td class="bg-success" colspan="8" style="text-align: center;">{% trans 'To vaccinate people aged 9 to 45 years previously infected with the virus (seropositive) with three doses: 0 - 6 - 12 months'%}</td>
+        <td class="bg-danger" style="text-align: center;" colspan="2">{% trans 'CONTRAINDICATED'%}</td>
       </tr>
     </tbody>
     <thead>
       <tr>
         <th class="text-light bg-secondary" scope="row" rowspan="2" style="text-align: center;"><h3>{% trans 'Vaccines'%}</h3></th>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '11-19 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '20-59 Years'%}</font></th>
-        <th class="text-light bg-secondary" style="text-align: center;" colspan="3"><font size="2">{% trans '60+ Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" scope="row" rowspan="2" colspan="2"><font size="2" >{% trans '9 Y'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" scope="row" rowspan="2" colspan="2"><font size="2">{% trans '10 Y'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '11-19 Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '20-59 Years'%}</font></th>
+        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '60+ Years'%}</font></th>
       </tr>
       <tr>
-        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="3">{% trans 'ADOLESCENT'%}</th>
-        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="3">{% trans 'ADULT'%}</th>
-        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="3">{% trans 'OLD MAN'%}</th>
+        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'ADOLESCENT'%}</th>
+        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'ADULT'%}</th>
+        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'OLD MAN'%}</th>
       </tr>
       </thead>
       <tr>
@@ -414,7 +396,7 @@
         <th scope="col" colspan="1" style="text-align: center;"><h6>{% trans 'Contraindicated'%}</h6></th>
       </tr>
   </table>
-
+</div>
   <br/><br/>
 
 {% endblock content %}
