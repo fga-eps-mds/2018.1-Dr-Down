@@ -29,7 +29,8 @@
     <div class="row mt-4 mb-4">
       <div class="float-left col-md-auto w-82" id="appointment_list">
         {% for appointment in appointment_list %}
-         <!-- Single Comment -->
+          {% now 'd-m-Y' as today %}
+          {% now 'H:i' as time %}
           <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="appointment">
             <div class="message" style="width:98%">
               {% if request.user.employee and appointment.status != canceled %}
@@ -43,8 +44,6 @@
               <font size="2" >{% trans 'Especiality'%}: {{appointment.get_speciality_display}}</font><br>
               <font size="2" >{% trans 'Date'%}: {{ appointment.date}}</font><br>
               <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
-              {% now 'd-m-Y' as today %}
-              {% now 'H:i' as time %}
               {% if appointment.date|date:"d-m-Y" > today %}
                 <font size="2" >{% trans 'Status'%}: {{ appointment.get_status_display}}</font><br>
               {% elif appointment.date|date:"d-m-Y" == today and appointment.time|time:'H:i' > time %}
