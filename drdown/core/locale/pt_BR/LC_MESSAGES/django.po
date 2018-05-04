@@ -1090,6 +1090,16 @@ msgstr ""
 "Vacinar pessoas de 9 a 45 anos previamente infectadas pelo vírus "
 "(soropositivas) com três doses: 0 - 6 - 12 meses"
 
+#: drdown/core/templates/core/pagination.html:8
+#: drdown/core/templates/core/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/core/templates/core/pagination.html:30
+#: drdown/core/templates/core/pagination.html:34
+msgid "Next"
+msgstr "Próximo"
+
 #~ msgid "Hey! You have procedures to be made."
 #~ msgstr "Oi! Você tem procedimentos que precisam ser feitos."
 

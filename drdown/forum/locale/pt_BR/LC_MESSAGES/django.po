@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 12:47+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,6 @@ msgid "Category"
 msgstr "Categoria"
 
 #: drdown/forum/models/model_category.py:28
-#: drdown/forum/templates/forum/category_list.html:3
 #: drdown/forum/templates/forum/category_list.html:7
 #: drdown/forum/templates/forum/commentary_list.html:16
 #: drdown/forum/templates/forum/form_commentary.html:9
@@ -128,6 +127,10 @@ msgstr "Mensagem do post"
 msgid "Posts"
 msgstr "Posts"
 
+#: drdown/forum/templates/forum/category_list.html:3
+msgid "Care ine"
+msgstr ""
+
 #: drdown/forum/templates/forum/category_list.html:16
 msgid "There are no categories."
 msgstr "Não há categorias"
@@ -194,16 +197,6 @@ msgstr "Novo Comentário"
 msgid "New Post"
 msgstr "Nova Postagem"
 
-#: drdown/forum/templates/forum/pagination.html:8
-#: drdown/forum/templates/forum/pagination.html:12
-msgid "Previous"
-msgstr "Anterior"
-
-#: drdown/forum/templates/forum/pagination.html:30
-#: drdown/forum/templates/forum/pagination.html:34
-msgid "Next"
-msgstr "Próximo"
-
 #: drdown/forum/templates/forum/post_confirm_delete.html:12
 msgid "Are you sure you want to delete "
 msgstr "Você tem certeza que deseja deletar "
@@ -228,3 +221,9 @@ msgstr "Não há posts nessa categoria"
 #: drdown/forum/tests/test_view_post.py:94
 msgid "This field is required."
 msgstr "Esse campo é obrigatório."
+
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Next"
+#~ msgstr "Próximo"
