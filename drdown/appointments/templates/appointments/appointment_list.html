@@ -34,7 +34,7 @@
             <div class="message">
               <h5 class="mt-2">{% trans 'Patient'%}: {{appointment.patient.user.name}}</h5>
               <font size="4" >{% trans 'Doctor'%}: {{ appointment.doctor.user.name}}</font><br>
-              <font size="2" >{% trans 'Especiality'%}: {{ appointment.speciality}}</font><br>
+              <font size="2" >{% trans 'Especiality'%}: {{appointment.get_speciality_display}}</font><br>
               <font size="2" >{% trans 'Date'%}: {{ appointment.date}}</font><br>
               <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
               {% now 'd-m-Y' as today %}

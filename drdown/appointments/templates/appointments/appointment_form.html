@@ -12,7 +12,7 @@
       <label for="id_speciality" class="col-form-label">{% trans 'Speciality' %}:</label>
       <select class= "select form-control" name="speciality" required id="id_speciality">
         {% if object.speciality %}
-          <option value="{{object.speciality}}" selected>{{object.speciality}}</option>
+          <option value="{{object.speciality}}" selected>{{object.get_speciality_display}}</option>
           <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
           <option value="Psychology">{% trans 'Psychology' %}</option>
           <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
