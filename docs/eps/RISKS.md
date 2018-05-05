@@ -62,6 +62,10 @@
 |:--------------:|:-------------------|:-------------------|
 | Aceitação do software pelo cliente | - levantar o que o cliente o que ele acha do planejamento das features a serem implementadas, antes de elas serem incluídas em uma sprint;<br>-arrumar o que for necessário a partir do feedback do cliente | - levantar com o cliente o que está errado no que foi feito;<br>- elencar possíveis soluções para os problemas apontados e apresentá-las ao cliente, até que ele esteja de acordo;<br>- corrigir os erros nas sprints seguintes, o mais rápido possível
 
+## Sprint 8
+
+### Score: 45
+
 ## Burndown de Riscos
 
 Essa escala deve ser usada para pontuar o impacto (usando como referência uma estimativa do número de dias necessários para mitigar os efeitos da ocorrência do risco):
