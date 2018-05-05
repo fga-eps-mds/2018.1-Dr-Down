@@ -50,6 +50,22 @@
 |:--------------:|:-------------------|:-------------------|
 | Atraso na implementação da arquitetura do projeto | - apresentar as features com antecedência para o arquiteto do software para que ele possa planejar como implementá-las com antecedência;<br>- checar o andamento do planejamento e implementação da arquitetura constantemente com o arquiteto | - analisar o que houve de errado na implementação para remediar;<br>- incluir no planejamento das sprints seguintes histórias para tirar o atraso da implementação da arquitetura
 
+## Sprint 6
+
+### Score: 51
+
+## Sprint 7
+
+### Score: 45
+
+| **Risco** | **Ações para prevení-lo** | **Ações para mitigá-lo** |
+|:--------------:|:-------------------|:-------------------|
+| Aceitação do software pelo cliente | - levantar o que o cliente o que ele acha do planejamento das features a serem implementadas, antes de elas serem incluídas em uma sprint;<br>-arrumar o que for necessário a partir do feedback do cliente | - levantar com o cliente o que está errado no que foi feito;<br>- elencar possíveis soluções para os problemas apontados e apresentá-las ao cliente, até que ele esteja de acordo;<br>- corrigir os erros nas sprints seguintes, o mais rápido possível
+
+## Sprint 8
+
+### Score: 45
+
 ## Burndown de Riscos
 
 Essa escala deve ser usada para pontuar o impacto (usando como referência uma estimativa do número de dias necessários para mitigar os efeitos da ocorrência do risco):
