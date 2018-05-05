@@ -12,12 +12,7 @@
 
   <div class="container mb-5">
     <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ view.related_patient.user.name }}</h2>
-    {% if  elect_count == 0 %}
-      <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
-      {% if user.healthteam %}
-          <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
-      {% endif %}
-    {% else %}
+    {% if medicalrecordlist is not None %}
       <form class="form-inline" action="" method="GET">
         <div class="search"><label>{% trans 'author'%}:</label> {{ form.author }}</div>
         <div class="search"><label>{% trans 'date'%}:</label>{{ form.search_date }}</div>
@@ -53,8 +48,7 @@
 
     <div class="container size-text">
       <div class="list-group">
-        {% for medicalrecord in medicalrecord_list %}
-          {% if view.kwargs.username == medicalrecord.patient.user.username %}
+        {% for medicalrecord in medicalrecordlist %}
             <div class="h-blue list-group-item">
               <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
               <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.user.name }} </p>
@@ -67,7 +61,8 @@
                 <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
               {% endif %}
             </div>
-          {% endif %}
+        {% empty %}
+          <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
         {% endfor %}
       </div>
     </div>

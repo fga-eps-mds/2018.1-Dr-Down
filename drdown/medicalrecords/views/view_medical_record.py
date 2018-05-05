@@ -74,11 +74,11 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
 
     def get_context_data(self, **kwargs):
         context = super(MedicalRecordsList, self).get_context_data(**kwargs)
-        elect_count = 0
-        for device in MedicalRecord.objects.all():
-            if device.patient.user.username == self.kwargs.get('username'):
-                elect_count += 1
-        context['elect_count'] = elect_count
+        patient = Patient.objects.get(
+            user__username=self.kwargs.get('username')
+        )
+        medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
+        context['medicalrecordlist'] = medicalrecordlist
         return context
 
 
