@@ -18,7 +18,8 @@ class MedicalRecordsFilter(BaseFilter):
 
 class CheckPermissions(UserPassesTestMixin):
     def test_func(self):
-        return hasattr(self.request.user, 'healthteam')
+        return hasattr(self.request.user, 'healthteam') or \
+               hasattr(self.request.user, 'employee')
 
     def get_login_url(self):
         if self.request.user.is_authenticated:
@@ -38,7 +39,11 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
 
     def test_func(self):
         return hasattr(self.request.user, 'healthteam') or \
-               self.request.user.username == self.kwargs.get('username')
+               hasattr(self.request.user, 'employee') or \
+               self.request.user.username == self.kwargs.get('username') or \
+               (hasattr(self.request.user, 'responsible') and
+                self.request.user.responsible.patient_set.filter(
+                    user__username=self.kwargs.get('username')))
 
     def get_login_url(self):
         if self.request.user.is_authenticated:
