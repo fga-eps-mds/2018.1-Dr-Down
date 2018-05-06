@@ -25,7 +25,11 @@ __Histórias que viraram débitos:__
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
-| - | - | - |
+| Tudo foi entregue | Trabalhos de outros materias | Nas dailys não presenciais, tentar responder os mais rápidó possível |
+| A troca de conhecimento está funcionando. | A história de marcar consulta foi meio cansativa, mas deu certo. A dupla conseguiu entregar | Tentar criar um horário de trabalho |
+| As pontuações de histórias foram coerentes | Membro sem notebook temporariamente | - |
+| O time de mds está cada vez mais nivelado | - | - |
+
 
 ## 3. Quadro de Conhecimento
 
