@@ -540,7 +540,7 @@ msgstr "Meus Pacientes"
 
 #: drdown/users/templates/users/user_detail.html:282
 msgid "My Medical Records"
-msgstr "Minhas Consultas"
+msgstr "Meu Histórico Médico"
 
 #: drdown/users/templates/users/user_detail.html:283
 msgid "My Medical Follow-up Sheet"
@@ -549,10 +549,6 @@ msgstr "Ficha de Acompanhamento"
 #: drdown/users/templates/users/user_detail.html:286
 msgid "Confirm data"
 msgstr "Confirmar dados"
-
-#: drdown/users/templates/users/user_detail.html:272
-msgid "My Medical Records"
-msgstr "Meu Prontuário"
 
 #: drdown/users/templates/users/user_form.html:113
 msgid "Photo of user"
