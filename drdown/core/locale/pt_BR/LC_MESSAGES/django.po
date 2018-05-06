@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-28 01:16+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -407,7 +407,7 @@ msgstr "Eventos"
 #: drdown/core/templates/core/base.html:84
 #: drdown/core/templates/core/base.html:92
 msgid "Care Line"
-msgstr ""
+msgstr "Linha de Cuidado"
 
 #: drdown/core/templates/core/base.html:87
 msgid "My Patient"
@@ -473,8 +473,8 @@ msgid ""
 "communicate with the doctor and visualize general information."
 msgstr ""
 "Dr. Down é uma ferramenta de gerenciamento para o CRIS DOWN (Centro de "
-"Referência em Síndrome de Down) que possibilita agendar consultas, "
-"comunicar-se com o médico e visualizar informações."
+"Referência em Síndrome de Down) que possibilita agendar consultas, comunicar-"
+"se com o médico e visualizar informações."
 
 #: drdown/core/templates/core/home.html:39
 msgid ""
@@ -503,24 +503,24 @@ msgid "Frequently Asked Questions (FAQ)"
 msgstr "Dúvidas Frequentes"
 
 #: drdown/core/templates/core/info.html:37
-#: drdown/core/templates/core/info.html:96
+#: drdown/core/templates/core/info.html:98
 msgid "What can be done to prevent Down's Syndrome?"
 msgstr "Como prevenir a Síndrome de Down?"
 
 #: drdown/core/templates/core/info.html:40
-#: drdown/core/templates/core/info.html:105
+#: drdown/core/templates/core/info.html:107
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
 msgstr ""
 "A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
 "minha vida?"
 
 #: drdown/core/templates/core/info.html:41
-#: drdown/core/templates/core/info.html:115
+#: drdown/core/templates/core/info.html:117
 msgid "How can I identify Down Syndrome?"
 msgstr "Como posso identificar a Síndrome de Down?"
 
 #: drdown/core/templates/core/info.html:42
-#: drdown/core/templates/core/info.html:125
+#: drdown/core/templates/core/info.html:127
 msgid "How far does the autonomy of a child with Down syndrome develop?"
 msgstr ""
 "Até onde se desenvolve a autonomia de uma criança com Síndrome de Down?"
@@ -606,7 +606,7 @@ msgstr ""
 msgid "Frequently Asked Questions"
 msgstr "Dúvidas Frequentes"
 
-#: drdown/core/templates/core/info.html:99
+#: drdown/core/templates/core/info.html:101
 msgid ""
 "Even though the chance of Down's syndrome increases according to the age "
 "range of the child's parents, Down's syndrome is not caused by the parents, "
@@ -620,7 +620,7 @@ msgstr ""
 "Essa síndrome afeta pessoas de todas as raças, níveis de estudo, classes "
 "sociais e outros."
 
-#: drdown/core/templates/core/info.html:108
+#: drdown/core/templates/core/info.html:110
 msgid ""
 "Down Syndrome is not a disease, just a condition that affects the life of an "
 "individual since birth and requires greater attention and care from the "
@@ -630,7 +630,7 @@ msgstr ""
 "um indivíduo desde o seu nascimento, o que exige uma maior atenção e cuidado "
 "por parte dos pais e familiares."
 
-#: drdown/core/templates/core/info.html:118
+#: drdown/core/templates/core/info.html:120
 msgid ""
 "Down Syndrome can be detected during pregnancy. You should see a doctor for "
 "the diagnosis."
@@ -638,7 +638,7 @@ msgstr ""
 "A Síndrome de Down pode ser detectada durante a gestação. Deve-se procurar "
 "um médico para que o diagnóstico seja feito."
 
-#: drdown/core/templates/core/info.html:128
+#: drdown/core/templates/core/info.html:130
 msgid ""
 "There is no fixed limit that represents a developmental apex of a child with "
 "Down Syndrome. It is common for medical monitoring and the help of family "
@@ -649,19 +649,466 @@ msgstr ""
 "a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
 "criança."
 
-#: drdown/core/templates/core/info.html:137
+#: drdown/core/templates/core/info.html:139
 msgid "Further reading"
 msgstr "Leituras complementares"
 
-msgid "Hey! You have procedures to be made."
-msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+#: drdown/core/templates/core/info.html:144
+#: drdown/core/templates/core/vaccine_schedule.html:19
+#, fuzzy
+#| msgid "My Schedule"
+msgid "Vaccine Schedule"
+msgstr "Calendário de Vacinas"
 
-msgid "Click here to check it"
-msgstr "Clique aqui para conferir"
+#: drdown/core/templates/core/vaccine_schedule.html:25
+#: drdown/core/templates/core/vaccine_schedule.html:224
+#: drdown/core/templates/core/vaccine_schedule.html:266
+#: drdown/core/templates/core/vaccine_schedule.html:375
+msgid "Vaccines"
+msgstr "Vacinas"
 
-msgid ""
-"One or more of your patients needs attention. Some procedures may be "
-"behind schedule."
+#: drdown/core/templates/core/vaccine_schedule.html:26
+#: drdown/core/templates/core/vaccine_schedule.html:244
+#| msgid "OF BIRTH TO THE 10 YEARS OF AGE"
+msgid "OF BIRTH TO THE 6 YEARS OF AGE"
+msgstr "DO NASCIMENTO AOS 6 ANOS DE IDADE"
+
+#: drdown/core/templates/core/vaccine_schedule.html:30
+#: drdown/core/templates/core/vaccine_schedule.html:225
+msgid "At Birth"
+msgstr "Ao Nascer"
+
+#: drdown/core/templates/core/vaccine_schedule.html:31
+#: drdown/core/templates/core/vaccine_schedule.html:226
+msgid "1 Month"
+msgstr "1 Mês"
+
+#: drdown/core/templates/core/vaccine_schedule.html:32
+#: drdown/core/templates/core/vaccine_schedule.html:227
+msgid "2 Months"
+msgstr "2 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:33
+#: drdown/core/templates/core/vaccine_schedule.html:228
+msgid "3 Months"
+msgstr "3 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:34
+#: drdown/core/templates/core/vaccine_schedule.html:229
+msgid "4 Months"
+msgstr "4 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:35
+#: drdown/core/templates/core/vaccine_schedule.html:230
+msgid "5 Months"
+msgstr "5 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:36
+#: drdown/core/templates/core/vaccine_schedule.html:231
+msgid "6 Months"
+msgstr "6 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:37
+#: drdown/core/templates/core/vaccine_schedule.html:232
+msgid "7 Months"
+msgstr "7 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:38
+#: drdown/core/templates/core/vaccine_schedule.html:233
+msgid "8 Months"
+msgstr "8 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:39
+#: drdown/core/templates/core/vaccine_schedule.html:234
+msgid "9 Months"
+msgstr "9 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:40
+#: drdown/core/templates/core/vaccine_schedule.html:235
+msgid "12 Months"
+msgstr "12 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:41
+#: drdown/core/templates/core/vaccine_schedule.html:236
+msgid "15 Months"
+msgstr "15 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:42
+#: drdown/core/templates/core/vaccine_schedule.html:237
+msgid "18 Months"
+msgstr "18 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:43
+#: drdown/core/templates/core/vaccine_schedule.html:238
+msgid "24 Months"
+msgstr "24 Meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:44
+#: drdown/core/templates/core/vaccine_schedule.html:239
+msgid "4 Years"
+msgstr "4 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:45
+#: drdown/core/templates/core/vaccine_schedule.html:240
+msgid "5 Years"
+msgstr "5 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:46
+#: drdown/core/templates/core/vaccine_schedule.html:241
+msgid "6 Years"
+msgstr "6 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:52
+#: drdown/core/templates/core/vaccine_schedule.html:283
+msgid "BCG ID"
+msgstr "BCG ID"
+
+#: drdown/core/templates/core/vaccine_schedule.html:53
+#: drdown/core/templates/core/vaccine_schedule.html:365
+msgid "One dose"
+msgstr "Uma dose"
+
+#: drdown/core/templates/core/vaccine_schedule.html:54
+#: drdown/core/templates/core/vaccine_schedule.html:60
+#: drdown/core/templates/core/vaccine_schedule.html:83
+#: drdown/core/templates/core/vaccine_schedule.html:168
+#: drdown/core/templates/core/vaccine_schedule.html:198
+#: drdown/core/templates/core/vaccine_schedule.html:288
+#: drdown/core/templates/core/vaccine_schedule.html:334
+#: drdown/core/templates/core/vaccine_schedule.html:344
+#: drdown/core/templates/core/vaccine_schedule.html:350
+msgid "Vaccinate the previously unvaccinated"
+msgstr "Vacinar os não vacinados anteriormente"
+
+#: drdown/core/templates/core/vaccine_schedule.html:55
+#: drdown/core/templates/core/vaccine_schedule.html:284
+msgid "Vaccinate people who contacted leprosy"
+msgstr "Vacinar pessoas contactantes de hanseníase"
+
+#: drdown/core/templates/core/vaccine_schedule.html:58
+#: drdown/core/templates/core/vaccine_schedule.html:287
+msgid "Hepatitis B"
+msgstr "Hepatite B"
+
+#: drdown/core/templates/core/vaccine_schedule.html:59
+msgid "Three or four doses from birth"
+msgstr "Três ou quatro doses a partir do nascimento"
+
+#: drdown/core/templates/core/vaccine_schedule.html:63
+#: drdown/core/templates/core/vaccine_schedule.html:291
+msgid "Rotavirus"
+msgstr "Rotavírus"
+
+#: drdown/core/templates/core/vaccine_schedule.html:66
+msgid "Two or three doses. Initiate vaccination before 15 weeks of age"
+msgstr "Duas ou três doses. Iniciar vacinação antes das 15 semanas de vida"
+
+#: drdown/core/templates/core/vaccine_schedule.html:67
+#: drdown/core/templates/core/vaccine_schedule.html:219
+#: drdown/core/templates/core/vaccine_schedule.html:292
+#: drdown/core/templates/core/vaccine_schedule.html:370
+msgid "CONTRAINDICATED"
+msgstr "CONTRAINDICADA"
+
+#: drdown/core/templates/core/vaccine_schedule.html:70
+#: drdown/core/templates/core/vaccine_schedule.html:295
+msgid "Bacterial triple (DTPw, DTPa, ou dTpa)"
+msgstr "Tríplice bacteriana (DTPw, DTPa, ou dTpa)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:73
+msgid "Four doses of DTPa or DTPw starting at 2 months of age"
+msgstr "Quatro doses DTPa ou DTPw iniciando aos 2 meses de idade"
+
+#: drdown/core/templates/core/vaccine_schedule.html:75
+msgid "Reinforcement with DTPa, DTPw or dTpa"
+msgstr "Reforço com DTPa, DTPw ou dTpa"
+
+#: drdown/core/templates/core/vaccine_schedule.html:79
+#: drdown/core/templates/core/vaccine_schedule.html:301
+msgid "<i>Haemophilus influenzae</i> type b"
+msgstr "<i>Haemophilus influenzae</i> tipo b"
+
+#: drdown/core/templates/core/vaccine_schedule.html:82
+msgid "Four doses starting at 2 months of age"
+msgstr "Quatro doses iniciando aos 2 meses de idade"
+
+#: drdown/core/templates/core/vaccine_schedule.html:84
+#: drdown/core/templates/core/vaccine_schedule.html:91
+#: drdown/core/templates/core/vaccine_schedule.html:215
+#: drdown/core/templates/core/vaccine_schedule.html:302
+#: drdown/core/templates/core/vaccine_schedule.html:306
+#: drdown/core/templates/core/vaccine_schedule.html:317
+#: drdown/core/templates/core/vaccine_schedule.html:322
+#: drdown/core/templates/core/vaccine_schedule.html:335
+#: drdown/core/templates/core/vaccine_schedule.html:345
+#: drdown/core/templates/core/vaccine_schedule.html:356
+msgid "Vaccinate people in special risk situations"
+msgstr "Vacinar pessoas em situações especiais de risco"
+
+#: drdown/core/templates/core/vaccine_schedule.html:87
+#: drdown/core/templates/core/vaccine_schedule.html:305
+msgid "Poliomyelitis (inactivated virus)"
+msgstr "Poliomielite (vírus inativados)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:90
+msgid "Five doses starting at 2 months of age"
+msgstr "Cinco doses iniciando aos 2 meses de idade"
+
+#: drdown/core/templates/core/vaccine_schedule.html:94
+#: drdown/core/templates/core/vaccine_schedule.html:309
+msgid "Pneumococcal conjugate"
+msgstr "Pneumocócica conjugada"
+
+#: drdown/core/templates/core/vaccine_schedule.html:97
+msgid "Four doses starting at 2 months of age - VPC10 or VPC13"
 msgstr ""
-"Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
-"podem estar atrasados."
+
+#: drdown/core/templates/core/vaccine_schedule.html:98
+msgid "VPC10 or VPC13 - Vaccinate the previously unvaccinated"
+msgstr "Quatro doses iniciando aos 2 meses de idade - VPC10 ou VPC13"
+
+#: drdown/core/templates/core/vaccine_schedule.html:99
+#: drdown/core/templates/core/vaccine_schedule.html:310
+msgid "PCV13: vaccinating people in special risk situations"
+msgstr "PCV13: vacinar pessoas em situações especiais de risco"
+
+#: drdown/core/templates/core/vaccine_schedule.html:102
+#: drdown/core/templates/core/vaccine_schedule.html:314
+msgid "Meningococcal conjugate C or ACWY"
+msgstr "Meningocócica conjugada C ou ACWY"
+
+#: drdown/core/templates/core/vaccine_schedule.html:106
+msgid ""
+"With menACWY: three doses beginning at 3 months of age. Or with menC: two "
+"doses beginning at 3 months of age"
+msgstr ""
+"Com menACWY: três doses iniciando aos 3 meses de idade. Ou com menC: duas "
+"doses iniciando aos 3 meses de idade"
+
+#: drdown/core/templates/core/vaccine_schedule.html:107
+#: drdown/core/templates/core/vaccine_schedule.html:109
+#: drdown/core/templates/core/vaccine_schedule.html:117
+msgid "REINFORCEMENT"
+msgstr "REFORÇO"
+
+#: drdown/core/templates/core/vaccine_schedule.html:112
+#: drdown/core/templates/core/vaccine_schedule.html:320
+msgid "Meningococcal B"
+msgstr "Meningocócica B"
+
+#: drdown/core/templates/core/vaccine_schedule.html:116
+msgid "Three doses beginning at 3 months of age"
+msgstr "Três doses iniciando aos 3 meses de idade"
+
+#: drdown/core/templates/core/vaccine_schedule.html:118
+#: drdown/core/templates/core/vaccine_schedule.html:321
+msgid "For those not previously vaccinated: two doses"
+msgstr "Para os não vacinados anteriormente: duas doses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:121
+msgid "Oral poliomyelitis (live attenuated virus)"
+msgstr "Poliomielite oral (vírus vivos atenuados)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:129
+msgid "NATIONAL VACCINATION CAMPAIGNS"
+msgstr "CAMPANHAS NACIONAIS DE VACINAÇÃO"
+
+#: drdown/core/templates/core/vaccine_schedule.html:133
+#: drdown/core/templates/core/vaccine_schedule.html:325
+msgid "Influenza (flu)"
+msgstr "Influenza (gripe)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:140
+#: drdown/core/templates/core/vaccine_schedule.html:326
+msgid "ANNUAL VACCINATION"
+msgstr "VACINAÇÃO ANUAL"
+
+#: drdown/core/templates/core/vaccine_schedule.html:143
+#: drdown/core/templates/core/vaccine_schedule.html:329
+msgid "Yellow fever"
+msgstr "Febre amarela"
+
+#: drdown/core/templates/core/vaccine_schedule.html:153
+#: drdown/core/templates/core/vaccine_schedule.html:330
+msgid ""
+"IN REGIONS WITH RECOMMENDATION OF VACCINATION (ACCORDING TO CLASSIFICATION "
+"OF MS) - single dose at 9 months of age. Not previously vaccinated: single "
+"dose"
+msgstr ""
+"EM REGIÕES COM RECOMENDAÇÃO DE VACINAÇÃO (DE ACORDO COM CLASSIFICAÇÃO DO MS) "
+"- dose única aos 9 meses de idade. Para não vacinados anteriormente: dose "
+"única"
+
+#: drdown/core/templates/core/vaccine_schedule.html:156
+#: drdown/core/templates/core/vaccine_schedule.html:333
+msgid "Viral triple (measles, mumps and rubella)"
+msgstr "Tríplice viral (sarampo,caxumba e rubéola)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:167
+#: drdown/core/templates/core/vaccine_schedule.html:182
+#: drdown/core/templates/core/vaccine_schedule.html:197
+msgid "Two doses after 12 months"
+msgstr "Duas doses a partir dos 12 meses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:171
+#: drdown/core/templates/core/vaccine_schedule.html:338
+msgid "Varicella (chickenpox)"
+msgstr "Varicela (catapora)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:183
+#: drdown/core/templates/core/vaccine_schedule.html:339
+msgid "Vaccinate previously unvaccinated susceptibles"
+msgstr "Vacinar os suscetíveis não vacinados anteriormente"
+
+#: drdown/core/templates/core/vaccine_schedule.html:186
+#: drdown/core/templates/core/vaccine_schedule.html:343
+msgid "Hepatitis A"
+msgstr "Hepatite A"
+
+#: drdown/core/templates/core/vaccine_schedule.html:201
+#: drdown/core/templates/core/vaccine_schedule.html:355
+msgid "Pneumococcal 23 courageous"
+msgstr "Pneumocócica 23 valente"
+
+#: drdown/core/templates/core/vaccine_schedule.html:218
+#: drdown/core/templates/core/vaccine_schedule.html:368
+msgid "Dengue"
+msgstr "Dengue"
+
+#: drdown/core/templates/core/vaccine_schedule.html:248
+msgid "Subtitle: "
+msgstr "Legenda: "
+
+#: drdown/core/templates/core/vaccine_schedule.html:250
+msgid "Routine"
+msgstr "Rotina"
+
+#: drdown/core/templates/core/vaccine_schedule.html:252
+msgid "Vaccinate Unvaccinated"
+msgstr "Vacinar não vacinados"
+
+#: drdown/core/templates/core/vaccine_schedule.html:254
+msgid "Special Situations"
+msgstr "Situações especiais"
+
+#: drdown/core/templates/core/vaccine_schedule.html:256
+msgid "Contraindicated"
+msgstr "Contraindicada"
+
+#: drdown/core/templates/core/vaccine_schedule.html:267
+#: drdown/core/templates/core/vaccine_schedule.html:383
+msgid "9 TO 10 YEARS OLD"
+msgstr "9 ATÉ 10 ANOS DE IDADE"
+
+#: drdown/core/templates/core/vaccine_schedule.html:268
+#: drdown/core/templates/core/vaccine_schedule.html:384
+msgid "ADOLESCENT"
+msgstr "ADOLESCENTE"
+
+#: drdown/core/templates/core/vaccine_schedule.html:269
+#: drdown/core/templates/core/vaccine_schedule.html:385
+msgid "ADULT"
+msgstr "ADULTO"
+
+#: drdown/core/templates/core/vaccine_schedule.html:270
+#: drdown/core/templates/core/vaccine_schedule.html:386
+msgid "OLD MAN"
+msgstr "IDOSO"
+
+#: drdown/core/templates/core/vaccine_schedule.html:274
+#: drdown/core/templates/core/vaccine_schedule.html:376
+msgid "9 Years"
+msgstr "9 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:275
+#: drdown/core/templates/core/vaccine_schedule.html:377
+msgid "10 Years"
+msgstr "10 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:276
+#: drdown/core/templates/core/vaccine_schedule.html:378
+msgid "11-19 Years"
+msgstr "11-19 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:277
+#: drdown/core/templates/core/vaccine_schedule.html:379
+msgid "20-59 Years"
+msgstr "20-59 Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:278
+#: drdown/core/templates/core/vaccine_schedule.html:380
+msgid "60+ Years"
+msgstr "60+ Anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:297
+#: drdown/core/templates/core/vaccine_schedule.html:298
+msgid ""
+"Reinforcement with dTpa from 9 years of age and every 10 years (or, in the "
+"case of dTpa, do dT)"
+msgstr ""
+"Reforço com dTpa a partir dos 9 anos de idade e a cada dez anos (ou, na "
+"impossibilidade de dTpa, fazer dT)"
+
+#: drdown/core/templates/core/vaccine_schedule.html:311
+msgid "VPC13: one dose"
+msgstr "VPC13: uma dose"
+
+#: drdown/core/templates/core/vaccine_schedule.html:316
+msgid "REINFORCED at age 11. For those not previously vaccinated: two doses"
+msgstr "REFORÇO aos 11 anos. Para os não vacinados anteriormente: duas doses"
+
+#: drdown/core/templates/core/vaccine_schedule.html:348
+msgid "HPV"
+msgstr "HPV"
+
+#: drdown/core/templates/core/vaccine_schedule.html:349
+msgid "Three doses for girls and boys"
+msgstr "Três doses para meninas e meninos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:351
+msgid ""
+"Vaccinate the non-vaccinated formerly: at the discretion of the physician"
+msgstr "Vacinar os não vacinados anteriormente: a critério do médico"
+
+#: drdown/core/templates/core/vaccine_schedule.html:357
+msgid "Two doses at five-year intervals"
+msgstr "Duas doses com intervalo de cinco anos"
+
+#: drdown/core/templates/core/vaccine_schedule.html:360
+msgid "Herpes zoster"
+msgstr "Herpes zóster"
+
+#: drdown/core/templates/core/vaccine_schedule.html:364
+msgid "From 50 to 59 years old: at medical discretion"
+msgstr "De 50 a 59 anos: a critério médico"
+
+#: drdown/core/templates/core/vaccine_schedule.html:369
+msgid ""
+"To vaccinate people aged 9 to 45 years previously infected with the virus "
+"(seropositive) with three doses: 0 - 6 - 12 months"
+msgstr ""
+"Vacinar pessoas de 9 a 45 anos previamente infectadas pelo vírus "
+"(soropositivas) com três doses: 0 - 6 - 12 meses"
+
+#: drdown/core/templates/core/pagination.html:8
+#: drdown/core/templates/core/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/core/templates/core/pagination.html:30
+#: drdown/core/templates/core/pagination.html:34
+msgid "Next"
+msgstr "Próximo"
+
+#~ msgid "Hey! You have procedures to be made."
+#~ msgstr "Oi! Você tem procedimentos que precisam ser feitos."
+
+#~ msgid "Click here to check it"
+#~ msgstr "Clique aqui para conferir"
+
+#~ msgid ""
+#~ "One or more of your patients needs attention. Some procedures may be "
+#~ "behind schedule."
+#~ msgstr ""
+#~ "Um ou mais de seus pacientes precisa de atenção. Alguns procedimentos "
+#~ "podem estar atrasados."

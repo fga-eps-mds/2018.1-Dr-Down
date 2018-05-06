@@ -1,0 +1,42 @@
+.panel-heading.collapsed .fa-chevron-down,
+.panel-heading .fa-chevron-right {
+  display: none;
+}
+
+.panel-heading.collapsed .fa-chevron-right,
+.panel-heading .fa-chevron-down {
+  display: inline-block;
+}
+
+i.fa {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.collapsed ~ .panel-body {
+  padding: 0;
+}
+
+.h-100{
+	height: 100%;
+}
+
+.w-100{
+	width: 100%;
+}
+
+.w-82{
+	width: 82%;
+}
+
+.w-70{
+	width: 70%;
+}
+
+.w-18{
+	width: 18%;
+}
+
+.clear-right{
+	clear:right;
+}
