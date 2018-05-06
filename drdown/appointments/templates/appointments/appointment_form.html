@@ -46,26 +46,6 @@
     </div>
 
     <div class="fieldWrapper form-group">
-      <label for="id_shift" class="col-form-label">{% trans 'Shift' %}:</label>
-      <select name="shift" class= "select form-control" required id="id_shift">
-        {% if object.shift %}
-          {% if object.shift == 'A' %}
-            <option value="{{ object.shift }}" selected>{% trans 'Afternoon' %}</option>
-            <option value="M">{% trans 'Morning' %}</option>
-          {% else %}
-            <option value="{{ object.shift }}" selected>{% trans 'Morning' %}</option>
-            <option value="A">{% trans 'Afternoon' %}</option>
-          {% endif %}
-        {% else %}
-          <option value="" selected>---------</option>
-          <option value="M">{% trans 'Morning' %}</option>
-          <option value="A">{% trans 'Afternoon' %}</option>
-        {% endif %}
-
-      </select>
-    </div>
-
-    <div class="fieldWrapper form-group">
       <label for="id_doctor" class="col-form-label">{% trans 'Doctor' %}:</label><br>
       <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
         {% if object.doctor %}
@@ -124,16 +104,6 @@
       <span class="validity"></span>
     </div>
 
-    <div class="fieldWrapper form-group">
-      <label for="id_motive" class="col-form-label">{% trans 'Motive' %}:</label>
-      {% if object.motive %}
-        <textarea name="motive" cols="40" rows="10" maxlength="500" id="id_motive" class="form-control" value="{{ object.motive }}"> {{object.motive}}
-        </textarea>
-      {% else %}
-        <textarea name="motive" cols="40" rows="10" maxlength="500" id="id_motive" class="form-control">
-        </textarea>
-      {% endif %}
-    </div>
     <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
   </form>
 </div>

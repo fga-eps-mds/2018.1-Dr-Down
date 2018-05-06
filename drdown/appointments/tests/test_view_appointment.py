@@ -48,15 +48,13 @@ class TestViewAppointment(TestCase):
 
         self.responsible = Responsible.objects.create(
             user=self.user4,
-            cpf="022.852.870-46", 
-            patient=self.patient            
+            cpf="022.852.870-46",
+            patient=self.patient
         )
 
         self.appointment = Appointment.objects.create(
-            shift=Appointment.MORNING,
             date="2040-08-10",
             time="15:45",
-            motive='Some motive',
             speciality=Appointment.SPEECH_THERAPHY,
             doctor=self.doctor,
             patient=self.patient,
@@ -119,7 +117,6 @@ class TestViewAppointment(TestCase):
         self.client.force_login(user=self.user3)
         data = {
         'speciality': Appointment.SPEECH_THERAPHY,
-        'shift': 'A',
         'doctor': self.doctor.pk,
         'patient': self.patient.pk,
         'date': '2018-05-12',
@@ -138,7 +135,6 @@ class TestViewAppointment(TestCase):
         self.client.force_login(user=self.user)
         data = {
             'speciality': Appointment.SPEECH_THERAPHY,
-            'shift': 'A',
             'doctor': self.doctor.pk,
             'patient': self.patient.pk,
             'date': '2018-05-12',
@@ -146,7 +142,7 @@ class TestViewAppointment(TestCase):
         }
         response = self.client.post(
             path=reverse(
-                viewname='appointments:update_appointment',                    
+                viewname='appointments:update_appointment',
                 args=(self.appointment.pk,)
             ),
             data=data,
@@ -157,17 +153,16 @@ class TestViewAppointment(TestCase):
         """
         Test the page url status code.
         """
-    
+
         self.client.force_login(user=self.user)
         data = {
             'speciality': Appointment.SPEECH_THERAPHY,
-            'shift': 'A',
             'doctor': self.doctor.pk,
             'patient': self.patient.pk,
             'date': '2018-05-12',
             'time': '20:00',
         }
-    
+
         response = self.client.post(
             path=reverse(
                 viewname='appointments:update_status_appointment',

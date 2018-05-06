@@ -36,10 +36,8 @@ class TestModelAppointment(TestCase):
         )
 
         self.appointment = Appointment.objects.create(
-            shift=Appointment.MORNING,
             date="2040-08-10",
             time="15:45",
-            motive='Some motive',
             speciality=Appointment.SPEECH_THERAPHY,
             doctor=self.doctor,
             patient=self.patient,
@@ -72,13 +70,6 @@ class TestModelAppointment(TestCase):
         with self.assertRaises(Appointment.DoesNotExist):
             Appointment.objects.get()
 
-    def test_save_shift_ok(self):
-        """
-        Test to verify if shift is correctly passed
-        """
-
-        self.assertEquals(self.appointment.shift, Appointment.MORNING)
-
     def test_save_date_ok(self):
         """
         Test to verify if date is correctly passed
@@ -92,13 +83,6 @@ class TestModelAppointment(TestCase):
         """
 
         self.assertEquals(self.appointment.time, "15:45")
-
-    def test_save_motive_ok(self):
-        """
-        Test to verify if motive is correctly passed
-        """
-
-        self.assertEquals(self.appointment.motive, 'Some motive')
 
     def test_save_patient_ok(self):
         """

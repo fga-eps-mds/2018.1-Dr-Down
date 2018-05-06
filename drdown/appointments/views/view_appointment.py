@@ -100,12 +100,10 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     template_name = 'appointments/appointment_form.html'
     fields = [
         'speciality',
-        'shift',
         'doctor',
         'patient',
         'date',
         'time',
-        'motive',
     ]
 
     def get_success_url(self, **kwargs):
@@ -161,12 +159,11 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
     fields = ['speciality',
-              'shift',
               'doctor',
               'patient',
               'date',
               'time',
-              'motive', ]
+    ]
 
     def get_success_url(self, **kwargs):
         success_update_url = reverse(
