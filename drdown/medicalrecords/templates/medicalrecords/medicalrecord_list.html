@@ -10,35 +10,43 @@
 
 {% block content %}
 
-  <div class="container mb-5">
-    <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h2>
-    {% if medicalrecordlist is not None %}
-        {% if user.healthteam %}
-          <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
-        {% endif %}
-    {% endif %}
-    <a href="{% url 'users:healthteam_patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
-  </div>
+<div class="container">
 
-  <div class="container">
-    {% if related_patient.user.patient  %}
-      {% if related_patient.user.photo %}
-        <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
-      {% else %}
-        <img src="{% static 'users/img/user.png' %}" class="align-photo">
-      {% endif %}
-      <div class="margintoleft">
-        <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ related_patient.user.name }}</div>
-        <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.sus_number }}</div>
-        <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.user.birthday }}</div>
-        {% if related_patient.user.cpf %}
-            <label ><strong>{% trans 'cpf: '%}</strong></label>{{ related_patient.cpf }}
+  <center><h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h2></center>
+  <hr class="star-dark bg-star-white">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a class="nav-link py-3 px-2 rounded " data-toggle="tab" href="#home">{% trans "Patient data" %}</a></li>
+    <li><a class="nav-link py-3 px-2 rounded " data-toggle="tab" href="#menu1">{% trans "Medical Records" %}</a></li>
+  </ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane active">
+    <h3 class="text-tertiary">{{ related_patient.user.name }} {% trans 'data' %}</h3>
+      <div class="container">
+      </br>
+        {% if related_patient.user.patient  %}
+          {% if related_patient.user.photo %}
+            <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
+          {% else %}
+            <img src="{% static 'users/img/user.png' %}" class="align-photo">
+          {% endif %}
+          <div class="margintoleft">
+            <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ related_patient.user.name }}</div>
+            <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.sus_number }}</div>
+            <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.user.birthday }}</div>
+            {% if related_patient.user.cpf %}
+                <label ><strong>{% trans 'cpf: '%}</strong></label>{{ related_patient.cpf }}
+            {% endif %}
+          </div>
         {% endif %}
       </div>
-    {% endif %}
   </div>
-
-  <div class="container size-text">
+  <div id="menu1" class="tab-pane fade">
+    {% if user.healthteam %}
+          <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary  float-right" >{% trans "New" %}</a>
+    {% endif %}
+    <h3 class="mb-5">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h3>
     <div class="list-group">
       {% for medicalrecord in medicalrecordlist %}
           <div class="h-blue list-group-item">
@@ -58,5 +66,8 @@
       {% endfor %}
     </div>
   </div>
+</div>
 
+
+</div>
 {% endblock content %}
