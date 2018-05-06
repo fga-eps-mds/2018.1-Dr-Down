@@ -7,16 +7,11 @@ from django.urls import reverse_lazy
 from search_views.search import SearchListView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from search_views.filters import BaseFilter
-from ..forms.medicalrecords_forms import MedicalRecordCompleteSearchForm, \
-    PatientSearchForm, MedicalRecordForm
+from ..forms.medicalrecords_forms import PatientSearchForm, MedicalRecordForm
 
 
 class MedicalRecordsFilter(BaseFilter):
     search_fields = {
-        'search_text': ['message'],
-        'search_date': ['day'],
-        'author': ['author_id__id'],
-        'patient': ['patient__id'],
         'list_patient': ['id']
     }
 
@@ -69,18 +64,6 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
         return context
-
-
-class MedicalRecordsSearchList(CheckPermissions, SearchListView):
-    model = MedicalRecord
-    template_name = "medicalrecords/medicalrecord_search_list.html"
-    form_class = MedicalRecordCompleteSearchForm
-    filter_class = MedicalRecordsFilter
-    paginate_by = 10
-
-    def get_queryset(self):
-        queryset = MedicalRecord.objects.all().order_by('-day')
-        return queryset
 
 
 class PatientSearchList(CheckPermissions, SearchListView):

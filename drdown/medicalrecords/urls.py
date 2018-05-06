@@ -19,13 +19,6 @@ urlpatterns = [
         name='list_users_medicalrecords'
     ),
 
-    url(
-        regex=r'search/$',
-        view=view_medical_record.MedicalRecordsSearchList.as_view(
-            template_name='medicalrecords/medicalrecord_search_list.html'),
-        name='list_search_medicalrecords'
-    ),
-
 
     url(
         regex=r'^(?P<username>[\w.@+-]+)/new',

@@ -15,36 +15,6 @@ class MedicalRecordForm(forms.ModelForm):
         fields = ["message", "document"]
 
 
-class MedicalRecordCompleteSearchForm(forms.Form):
-    search_text = forms.CharField(
-        required=False,
-        label=_('Search patient!'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('search here!')}
-        )
-    )
-
-    search_date = forms.DateField(
-        required=False,
-        label=_('Search date!'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('(Year)-(Month)-(Day)')}
-        )
-    )
-
-    author = forms.ModelChoiceField(
-        queryset=HealthTeam.objects.all(),
-        required=False,
-        label=_('Search author!')
-    )
-
-    patient = forms.ModelChoiceField(
-        queryset=Patient.objects.all(),
-        required=False,
-        label=_('Search patient!')
-    )
-
-
 class PatientSearchForm(forms.Form):
 
     list_patient = forms.ModelChoiceField(

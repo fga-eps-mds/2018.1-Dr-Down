@@ -1,7 +1,5 @@
 from test_plus.test import TestCase
 from ..models.model_medical_record import MedicalRecord
-from ..views.view_medical_record import MedicalRecordsSearchList
-from ..views.view_medical_record import MedicalRecordCompleteSearchForm
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from drdown.users.models.model_user import User
@@ -131,50 +129,6 @@ class TestViewMedicalRecords(TestCase):
         )
 
         self.assertEquals(response.status_code,200)
-
-    def test_search_list_view(self):
-        """
-        Makes sure that the medicalrecord search view is loaded correctly
-        """
-
-        self.client.force_login(user=self.user_1)
-        self.url = ()
-        response = self.client.get(
-            path=reverse(
-                viewname='medicalrecords:list_search_medicalrecords',
-            )
-        )
-        self.assertEquals(response.status_code, 200)
-
-    def test_search_list_view_logout(self):
-        """
-        Makes sure that the medicalrecord search view gives 302 on a logout
-        """
-
-        self.client.force_login(user=self.user_1)
-        self.client.logout()
-        self.url = ()
-        response = self.client.get(
-            path=reverse(
-                viewname='medicalrecords:list_search_medicalrecords',
-            )
-        )
-        self.assertEquals(response.status_code, 302)
-
-    def test_search_list_view_no_permissions(self):
-        """
-        Makes sure that the medicalrecord gives 302 on a user without
-        permissions
-        """
-
-        self.client.force_login(user=self.user_2)
-        self.url = ()
-        response = self.client.get(
-            path=reverse(
-                viewname='medicalrecords:list_search_medicalrecords',
-            )
-        )
-        self.assertEquals(response.status_code, 302)
 
     def test_list_view(self):
         """
