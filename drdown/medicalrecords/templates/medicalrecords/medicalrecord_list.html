@@ -17,7 +17,7 @@
           <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
         {% endif %}
     {% endif %}
-    <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+    <a href="{% url 'users:healthteam_patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
   </div>
 
   <div class="container">

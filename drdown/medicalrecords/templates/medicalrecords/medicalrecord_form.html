@@ -14,7 +14,7 @@
       <label>{% trans 'Message'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
       <div><label>{% trans 'Attachments'%} : </label> {{ form.document }}</div><br/>
       <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
-      <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
+      <a href="{% url 'users:healthteam_patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
     </form>
   </div><br/><br/>
 {% endblock %}
