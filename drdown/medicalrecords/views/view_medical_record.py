@@ -2,13 +2,13 @@ from drdown.users.models.model_health_team import HealthTeam
 from ..models.model_medical_record import MedicalRecord
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
-from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
 from search_views.search import SearchListView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from search_views.filters import BaseFilter
-from ..forms.medicalrecords_forms import MedicalRecordSearchForm,\
-    MedicalRecordCompleteSearchForm, PatientSearchForm, MedicalRecordForm
+from ..forms.medicalrecords_forms import MedicalRecordCompleteSearchForm, \
+    PatientSearchForm, MedicalRecordForm
 
 
 class MedicalRecordsFilter(BaseFilter):
@@ -17,7 +17,6 @@ class MedicalRecordsFilter(BaseFilter):
         'search_date': ['day'],
         'author': ['author_id__id'],
         'patient': ['patient__id'],
-        'message': ['message'],
         'list_patient': ['id']
     }
 
@@ -38,11 +37,9 @@ class CheckPermissions(UserPassesTestMixin):
         return login_MedicalRecordsList_url
 
 
-class MedicalRecordsList(UserPassesTestMixin, SearchListView):
+class MedicalRecordsList(UserPassesTestMixin, ListView):
     model = MedicalRecord
     template_name = "medicalrecords/medicalrecord_list.html"
-    form_class = MedicalRecordSearchForm
-    filter_class = MedicalRecordsFilter
 
     def test_func(self):
         return hasattr(self.request.user, 'healthteam') or \
@@ -59,15 +56,6 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
         login_MedicalRecordsList_url = reverse_lazy('account_login')
         return login_MedicalRecordsList_url
 
-    def related_patient(self):
-        user = User.objects.get(
-            username=self.kwargs.get('username')
-        )
-        patient = Patient.objects.get(
-            user=user
-        )
-        return patient
-
     def get_queryset(self):
         queryset = MedicalRecord.objects.all().order_by('-day')
         return queryset
@@ -79,6 +67,7 @@ class MedicalRecordsList(UserPassesTestMixin, SearchListView):
         )
         medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
         context['medicalrecordlist'] = medicalrecordlist
+        context['related_patient'] = patient
         return context
 
 
