@@ -212,12 +212,6 @@ msgstr "Este campo é obrigatório."
 #~ msgid "message"
 #~ msgstr "mensagem"
 
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Next"
-#~ msgstr "Próximo"
-
 #, fuzzy
 #~| msgid "Attachments"
 #~ msgid "Documents"
