@@ -43,7 +43,7 @@ class Request(models.Model):
     NEUROLOGY = "Neurology"
     PEDIATRICS = "Pediatrics"
 
-    SPECIALITY_APPOINTMENT_CHOICES = (
+    SPECIALITY_REQUEST_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
         (PSYCHOLOGY, _('Psychology')),
         (PHYSIOTHERAPY, _('Physiotherapy')),
@@ -55,7 +55,7 @@ class Request(models.Model):
 
     speciality = models.CharField(
         _('Speciality'),
-        choices=SPECIALITY_APPOINTMENT_CHOICES,
+        choices=SPECIALITY_REQUEST_CHOICES,
         help_text=_("Speciality of appointment"),
         max_length=30
     )

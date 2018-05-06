@@ -121,7 +121,6 @@ class TestModelRequest(TestCase):
             'Some obs'
         )
 
-
     def test_str_is_equal_to_title(self):
         """
         Test if method `__str__` is returning "Request of <patient>"

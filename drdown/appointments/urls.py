@@ -6,6 +6,9 @@ from drdown.appointments.views.view_appointment import (
     AppointmentMonthArchiveView,
     AppointmentUpdateStatusView,
 )
+from drdown.appointments.views.view_request import (
+    RequestListView,
+)
 
 
 app_name = 'appointments'
@@ -14,6 +17,11 @@ urlpatterns = [
         regex=r'^$',
         view=AppointmentListView.as_view(),
         name='list_appointments'
+    ),
+    url(
+        regex=r'^requests/',
+        view=RequestListView.as_view(),
+        name='list_requests'
     ),
     url(
         regex=r'^new/$',

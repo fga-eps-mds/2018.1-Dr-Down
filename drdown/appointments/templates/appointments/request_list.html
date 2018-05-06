@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block css %}
+  {{block.super}}
+  <link href="{% static 'appointments/css/appointment.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}{% trans "Requests" %}{% endblock %}
+
+{% block content %}
+  <div class="container" >
+    <h2>{% trans 'Requests' %}</h2><hr>
+    {% for request in request_list %}
+      <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
+        <div class="message" style="width:98%">
+          <h5 class="mt-2">{% trans 'Patient'%}: {{request.patient.user.name}}</h5>
+          <font size="4" >{% trans 'Doctor'%}: {{ request.doctor.user.name}}</font><br>
+          <font size="2" >{% trans 'Especiality'%}: {{request.get_speciality_display}}</font><br>
+        </div>
+      </div>
+    {% empty %}
+      <h4 class="lead text-secondary" align="center">{% trans 'There are no requests'%}</h4>
+    {% endfor %}
+  </div>
+
+  {% include "core/pagination.html" %}
+
+
+{% endblock %}
+
+
