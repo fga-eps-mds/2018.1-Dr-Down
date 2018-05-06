@@ -4,9 +4,8 @@ from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from drdown.users.models.model_user import User
 from django.test.client import Client
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
 
 
 class TestViewMedicalRecords(TestCase):

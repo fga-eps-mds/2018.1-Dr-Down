@@ -4,10 +4,9 @@ from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
-from search_views.search import SearchListView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from search_views.filters import BaseFilter
-from ..forms.medicalrecords_forms import PatientSearchForm, MedicalRecordForm
+from ..forms.medicalrecords_forms import MedicalRecordForm
 
 
 class MedicalRecordsFilter(BaseFilter):
@@ -69,14 +68,6 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
         return context
-
-
-class PatientSearchList(CheckPermissions, SearchListView):
-    model = Patient
-    template_name = "medicalrecords/medicalrecord_patient_list.html"
-    form_class = PatientSearchForm
-    filter_class = MedicalRecordsFilter
-    paginate_by = 20
 
 
 class MedicalRecordsCreateView(CreateView):
