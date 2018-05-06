@@ -4,18 +4,35 @@ from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 
 
-class Appointment(models.Model):
+class Request(models.Model):
 
-    date = models.DateField(
-        _('Date'),
-        help_text=_('Date of appointment'),
-        max_length=50
+    MORNING = 'M'
+    AFTERNOON = 'A'
+
+    SHIFT_CHOICES = (
+        (MORNING, _('Morning')),
+        (AFTERNOON, _('Afternoon')),
     )
 
-    time = models.TimeField(
-        _('Time'),
-        help_text=_('Time of appointment'),
-        max_length=50
+    shift = models.CharField(
+        _('Shift'),
+        choices=SHIFT_CHOICES,
+        help_text=_('Shift of appointment'),
+        max_length=10
+    )
+
+    motive = models.TextField(
+        _('Motive'),
+        help_text=_('Why are you requesting an appointment?'),
+        max_length=500,
+        blank=True,
+    )
+
+    observation = models.TextField(
+        _('Observation'),
+        help_text=_('Why was it scheduled/declined?'),
+        max_length=500,
+        blank=True,
     )
 
     SPEECH_THERAPHY = "Speech Therapy"
@@ -47,36 +64,37 @@ class Appointment(models.Model):
         HealthTeam,
         on_delete=models.CASCADE,
         verbose_name=_('Doctor'),
-        related_name='appointments',
+        related_name='requests',
+        blank=True,
     )
 
     patient = models.ForeignKey(
         Patient,
         on_delete=models.CASCADE,
         verbose_name=_('Patient'),
-        related_name='appointments',
+        related_name='requests',
     )
 
     SCHEDULED = 'Scheduled'
-    CANCELED = 'Canceled'
+    PENDING = 'Pending'
+    DECLINED = 'Declined'
 
     STATUS_CHOICES = (
         (SCHEDULED, _('Scheduled')),
-        (CANCELED, _('Canceled')),
+        (DECLINED, _('Declined')),
     )
 
     status = models.CharField(
         _('Status'),
-        choices=STATUS_CHOICES,
-        help_text=_("Is this appointment still scheduled?"),
-        default=SCHEDULED,
+        help_text=_("Was the request accepted?"),
+        default=PENDING,
         max_length=20,
         editable=False,
     )
 
     def __str__(self):
-        return _('Appointment of ') + self.patient.user.name
+        return _('Appointment request of ') + self.patient.user.name
 
     class Meta:
-        verbose_name = _("Appointment")
-        verbose_name_plural = _("Appointments")
+        verbose_name = _("Request")
+        verbose_name_plural = _("Requests")
