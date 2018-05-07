@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError
 
 class StaticData(models.Model):
 
-    patient = models.ForeignKey(
+    patient = models.OneToOneField(
         Patient,
         on_delete=models.CASCADE,
         verbose_name=_('Patient')
@@ -16,8 +16,8 @@ class StaticData(models.Model):
 
     weight = models.IntegerField(
         max_length=4,
-        verbose_name = _('Weight at birth'),
-        help_text = _('In grams')
+        verbose_name=_('Weight at birth'),
+        help_text=_('In grams')
     )
 
     APGAR = models.IntegerField(
@@ -27,13 +27,13 @@ class StaticData(models.Model):
     heart_test = models.FileField(
         upload_to='media/medicalrecords',
         blank=True,
-        verbose_name = _('Heart Test')
+        verbose_name=_('Heart Test')
     )
 
     ear_test = models.FileField(
         upload_to='media/medicalrecords',
         blank=True,
-        verbose_name = _('Test of the Ear')
+        verbose_name=_('Test of the Ear')
     )
 
     author = models.ForeignKey(
