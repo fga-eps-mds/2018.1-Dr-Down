@@ -15,7 +15,6 @@ class StaticData(models.Model):
     )
 
     weight = models.IntegerField(
-        max_length=4,
         verbose_name=_('Weight at birth'),
         help_text=_('In grams')
     )
