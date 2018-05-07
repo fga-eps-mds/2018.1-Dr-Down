@@ -1,5 +1,6 @@
 from drdown.users.models.model_health_team import HealthTeam
 from ..models.model_medical_record import MedicalRecord
+from ..models.model_static_data import StaticData
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
@@ -65,8 +66,10 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
             user__username=self.kwargs.get('username')
         )
         medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
+        staticdata = StaticData.objects.get(patient=patient)
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
+        context['staticdata'] = staticdata
         return context
 
 
