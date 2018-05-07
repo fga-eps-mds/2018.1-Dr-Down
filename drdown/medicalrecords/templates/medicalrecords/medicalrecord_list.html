@@ -1,12 +1,33 @@
 {% extends "core/base.html" %}
 {% load markdown_deux_tags %}
 {% load static i18n %}
-{% block title %}{% trans "Medical Records:" %}{% endblock %}
+{% block title %}{% trans "Medical Records:" %} {{ related_patient.user.name }}{% endblock %}
 
 {% block css %}
 {{block.super}}
   <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
 {% endblock %}
+
+{% block script %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            
+            $('#home').addClass("active").addClass("show");
+            var obj = $('.nav > li > a[href="#home"]');
+            obj.parent().addClass('active');
+            obj.addClass("show");
+            obj.addClass("active");
+
+        })
+
+    </script>
+    
+{%endblock script%}
+
 
 {% block content %}
 
@@ -25,15 +46,23 @@
 
     <div class="row justify-content-center mb-3">
         <div class="col">
-            <ul class="nav nav-tabs">
-                <li class="active"><a class="nav-link py-3 px-2 rounded " data-toggle="tab" href="#home">{% trans "Patient data" %}</a></li>
-                <li><a class="nav-link py-3 px-2 rounded " data-toggle="tab" href="#menu1">{% trans "Medical Records" %}</a></li>
-                <li><a class="nav-link py-3 px-2 rounded " data-toggle="tab" href="#menu2">{% trans "Static Data" %}</a></li>
+            <ul class="nav nav-tabs nav-tabs-extension nav-fill">
+                <li class="nav-item active">
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#home">{% trans "Patient data" %}</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu1">{% trans "Medical Records" %}</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu2">{% trans "Static Data" %}</a>
+                </li>
             </ul>
 
             <div class="tab-content">
 
-                <div id="home" class="tab-pane active">
+                <div id="home" class="tab-pane fade">
 
                     <h3 class="text-tertiary">{{ related_patient.user.name }} {% trans 'data' %}</h3>
 
