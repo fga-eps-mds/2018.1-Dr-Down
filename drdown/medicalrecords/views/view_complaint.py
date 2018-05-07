@@ -4,7 +4,7 @@ from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView
 from django.urls import reverse_lazy
-from ..forms.comlaint_forms import ComplaintForm
+from ..forms.complaint_forms import ComplaintForm
 
 
 class ComplaintCreateView(CreateView):
