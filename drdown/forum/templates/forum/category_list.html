@@ -4,8 +4,14 @@
 
 {% block content %}
 <div class="container">
-  <h2 class="text-tertiary">{% trans "Categories" %}</h2>
-
+  <div class="row">
+    <div class="col">
+      <h2 class="text-tertiary">{% trans "Categories" %}</h2>
+    </div>
+    <div class="col">
+      <a href= "{% url 'users:detail' user.username  %}" class="btn btn-secondary float-right btn-sm">{% trans 'Return' %}</a>
+    </div>
+  </div>
   <div class="list-group">
     {% for category in category_list %}
       <a href= "{% url 'forum:list_posts' category.slug category.pk  %}" class=" h-blue list-group-item">
