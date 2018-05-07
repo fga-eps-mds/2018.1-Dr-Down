@@ -64,66 +64,121 @@
 
                 <div id="home" class="tab-pane fade">
 
-                    <h3 class="text-tertiary">{{ related_patient.user.name }} {% trans 'data' %}</h3>
 
-                    <div class="container">
-                        </br>
-                        {% if related_patient.user.patient  %}
+                    <div class="row">
+                    
+                        <h3 class="col text-tertiary">{{ related_patient.user.name }} {% trans 'data' %}</h3>
 
+                    </div>
+
+                    <div class="row justify-content-center">
+                    
+                        <div class="col-auto">
                             {% if related_patient.user.photo %}
                                 <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
                             {% else %}
                                 <img src="{% static 'users/img/user.png' %}" class="align-photo">
                             {% endif %}
+                        </div>
 
-                            <div class="margintoleft">
+                        <div class="col border-left">
 
-                                <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ related_patient.user.name }}</div>
-
-                                <div><label><strong>{% trans 'SUS: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.sus_number }}</div>
-
-                                <div><label><strong>{% trans 'birthday: '%}</strong></label></div><div class="alert alert-dark" role="alert">{{ related_patient.user.birthday }}</div>
-
-                                {% if related_patient.user.cpf %}
-                                    <label ><strong>{% trans 'cpf: '%}</strong></label>{{ related_patient.cpf }}
-                                {% endif %}
-
+                            <div class="row">
+                                <label class="col"> <strong>{% trans 'Name: '%} </strong> </label>
+                                <div class="w-100"></div>
+                                <div class="col alert alert-dark mx-3" role="alert"> {{ related_patient.user.name }} </div>
                             </div>
 
-                        {% endif %}
+                            <div class="row">
+                                <label class="col"><strong>{% trans 'SUS: '%}</strong></label>
+                                <div class="w-100"></div>
+                                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.sus_number }} </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col"><strong>{% trans 'Birthday: '%}</strong></label>
+                                <div class="w-100"></div>
+                                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.user.birthday }}</div>
+                            </div>
+
+                            {% if related_patient.user.cpf %}
+
+                                <div class="row">
+                                    <label ><strong>{% trans 'cpf: '%}</strong></label>{{ related_patient.cpf }}
+                                </div>
+
+                            {% endif %}
+
+                        </div>
+                
                     </div>
                 </div>
 
                 <div id="menu1" class="tab-pane fade">
 
-                    {% if user.healthteam %}
-                        <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary  float-right" >{% trans "New" %}</a>
-                    {% endif %}
+                    <div class="row">
+                        
+                        <h3 class="col mb-5">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h3>
 
-                    <h3 class="mb-5">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h3>
+                        {% if user.healthteam %}
+                            <div class="col">
+                                <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
+                            </div>
+                        {% endif %}
+                    
+                    </div>
 
                     <div class="list-group">
 
                         {% for medicalrecord in medicalrecordlist %}
 
-                            <div class="h-blue list-group-item">
+                            <div class="h-blue list-group-item mb-5">
 
-                                <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
+                                <div class="row">
+                                    <div class="col alert alert-dark mx-2 my-2">
 
-                                <p class="text-tertiary h-blue"><label>{% trans 'author'%}: </label> {{ medicalrecord.author.user.name }} </p>
+                                        <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>    
+                                    
+                                    </div>
+                                </div>
 
-                                {% if medicalrecord.document %}
+                                <div class="row">
+                                    <div class="col border-right border-top">
 
-                                    <p>{% trans 'Anexo:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+                                        <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ medicalrecord.author.user.name }} </p>
+                                    </div>
 
+                                    <div class="col border-top">
+
+                                        <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ medicalrecord.day }} </p>
+
+                                    </div>
+                                </div>
+
+                                {% if medicalrecord.document %}             
+                                    <div class="row">
+                                        <div class="col">     
+                                            
+                                            <p>{% trans 'Attachment:' %} <a  href="{{ medicalrecord.document.url }}" style="color: #F00">{{ medicalrecord.document.name }}</a></p>
+                                        </div>
+                                    </div>
                                 {% endif %}
 
-                                <p class="text-tertiary h-blue"><label>{% trans 'care day'%}: </label> {{ medicalrecord.day }} </p>
 
                                 {% if request.user.username == medicalrecord.author.user.username %}
+                                    <div class="row">
+                                        
+                                        <div class="col"></div> 
 
-                                    <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary">{% trans "Edit" %}</a>
-                                    <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger">{% trans "Delete" %}</a><br/><br/>
+                                        <div class="col-auto">   
+                                            <a href="{% url 'medicalrecords:update_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-secondary float-right">{% trans "Edit" %}</a>
+                                        </div>
+                                            
+                                        <div class="col-auto">
+                                            <a href="{% url 'medicalrecords:delete_medicalrecords' view.kwargs.username medicalrecord.pk %}" class="btn btn-danger float-right">{% trans "Delete" %}</a>
+                                        </div>
+
+                                    </div>
                                 {% endif %}
 
                             </div>
@@ -137,12 +192,12 @@
 
                 </div>
 
-              <div id="menu2" class="tab-pane fade">
+                <div id="menu2" class="tab-pane fade">
                     {% if user.healthteam %}
                         {% if staticdata.weight %}
-                          <a href="{% url 'medicalrecords:update_static_data_medicalrecords'  view.kwargs.username staticdata.pk  %}" class="btn btn-secondary  float-right" >{% trans "Edit" %}</a>
+                          <a href="{% url 'medicalrecords:update_static_data_medicalrecords'  view.kwargs.username staticdata.pk  %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
                         {% else %}
-                          <a href="{% url 'medicalrecords:create_static_data_medicalrecords'  view.kwargs.username   %}" class="btn btn-secondary  float-right" >{% trans "New" %}</a>
+                          <a href="{% url 'medicalrecords:create_static_data_medicalrecords'  view.kwargs.username   %}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
                         {% endif %}
                     {% endif %}
 
