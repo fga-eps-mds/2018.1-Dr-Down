@@ -3,7 +3,8 @@ from django.conf import settings
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from drdown.medicalrecords.forms.medicalrecords_forms import MedicalRecordForm
-from drdown.medicalrecords.views import view_medical_record
+from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
+from drdown.medicalrecords.views import view_medical_record, view_static_data
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -14,10 +15,17 @@ urlpatterns = [
     ),
 
     url(
-        regex=r'^(?P<username>[\w.@+-]+)/new',
+        regex=r'^(?P<username>[\w.@+-]+)/new/$',
         view=view_medical_record.MedicalRecordsCreateView.as_view(
             form_class=MedicalRecordForm),
         name='create_medicalrecords'
+    ),
+
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/new-static-data/$',
+        view=view_static_data.StaticDataCreateView.as_view(
+            form_class=StaticDataForm),
+        name='create_static_data_medicalrecords'
     ),
 
     url(
@@ -31,5 +39,12 @@ urlpatterns = [
         view=view_medical_record.MedicalRecordsUpdateView.as_view(
             form_class=MedicalRecordForm),
         name='update_medicalrecords'
+    ),
+
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/update-static-data/$',
+        view=view_static_data.StaticDataUpdateView.as_view(
+            form_class=StaticDataForm),
+        name='update_static_data_medicalrecords'
     ),
 ]
