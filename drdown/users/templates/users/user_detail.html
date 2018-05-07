@@ -272,7 +272,7 @@
 {% if object == request.user %}
 <!-- Action buttons -->
   <div class="container">
-    <div class="float-left" style="margin-bottom: 60px; padding-top: 60px;">
+    <div class="float-right" style="margin-bottom: 60px; padding-top: 60px;">
         <div class="form-group row mb-1">
         {% if user.responsible or user.healthteam%}
             <a class="btn btn-secondary" href="{% url 'users:patient_list' %}" role="button">{% trans 'My Patients' %}</a>
@@ -283,8 +283,8 @@
             <a class="btn btn-secondary" href="{% url 'users:patient_list' %}" role="button">{% trans 'My Medical Follow-up Sheet' %}</a>
         {% endif %}
 
-        <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Confirm data' %}</a>
-        <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">E-Mail</a>
+        <a class="btn btn-secondary" href="{% url 'users:update' %}" role="button">{% trans 'Edit data' %}</a>
+        <a class="btn btn-secondary" href="{% url 'account_email' %}" role="button">{% trans 'Change E-Mail' %}</a>
 
 
           <a class=" btn btn-danger" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
