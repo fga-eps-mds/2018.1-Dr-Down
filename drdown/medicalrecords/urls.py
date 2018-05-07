@@ -1,10 +1,9 @@
 from django.conf.urls import url
-from django.conf import settings
-from django.views.generic import TemplateView
-from django.conf.urls.static import static
 from drdown.medicalrecords.forms.medicalrecords_forms import MedicalRecordForm
 from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
-from drdown.medicalrecords.views import view_medical_record, view_static_data
+from drdown.medicalrecords.forms.medicines_forms import MedicineForm
+from drdown.medicalrecords.views import view_medical_record, view_static_data, \
+    view_medicines
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -28,6 +27,13 @@ urlpatterns = [
         name='create_static_data_medicalrecords'
     ),
 
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/new-medicine/$',
+        view=view_medicines.MedicinesCreateView.as_view(
+            form_class=MedicineForm),
+        name='create_medicine_medicalrecords'
+    ),
+    
     url(
         regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/delete/$',
         view=view_medical_record.MedicalRecordsDeleteView.as_view(),
