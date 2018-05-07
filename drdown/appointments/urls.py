@@ -8,6 +8,8 @@ from drdown.appointments.views.view_appointment import (
 )
 from drdown.appointments.views.view_request import (
     RequestListView,
+    RequestCreateView,
+    RequestUpdateView,
 )
 
 
@@ -19,9 +21,19 @@ urlpatterns = [
         name='list_appointments'
     ),
     url(
-        regex=r'^requests/',
+        regex=r'^request/new/$',
+        view=RequestCreateView.as_view(),
+        name='create_request'
+    ),
+    url(
+        regex=r'^requests/$',
         view=RequestListView.as_view(),
         name='list_requests'
+    ),
+    url(
+        regex=r'^request/update/(?P<request_pk>\d+)/$',
+        view=RequestUpdateView.as_view(),
+        name='update_request'
     ),
     url(
         regex=r'^new/$',
