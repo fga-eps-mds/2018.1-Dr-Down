@@ -2,9 +2,10 @@ from django.conf.urls import url
 from drdown.medicalrecords.forms.medicalrecords_forms import MedicalRecordForm
 from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
 from drdown.medicalrecords.forms.medicines_forms import MedicineForm
+from drdown.medicalrecords.forms.comlaint_forms import ComplaintForm
 from drdown.medicalrecords.forms.specific_exams_forms import SpecificExamsForm
 from drdown.medicalrecords.views import view_medical_record, view_static_data, \
-    view_medicines, view_specific_exams
+    view_medicines, view_specific_exams, view_complaint
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -39,7 +40,14 @@ urlpatterns = [
         regex=r'^(?P<username>[\w.@+-]+)/new-specific-exam/$',
         view=view_specific_exams.SpecificExamCreateView.as_view(
             form_class=SpecificExamsForm),
-        name='create_specific_emax_medicalrecords'
+        name='create_specific_exam_medicalrecords'
+    ),
+
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/new-complaint/$',
+        view=view_complaint.ComplaintCreateView.as_view(
+            form_class=ComplaintForm),
+        name='create_complaint_medicalrecords'
     ),
 
     url(
