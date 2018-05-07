@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'New Medical Record' %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h2>{% trans 'Add new Complaint' %}</h2>
+
+        {{ form.media }}
+
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.description.errors }}
+            <label>{% trans 'Description'%} : </label> <div style="margin-right: 90%;">{{ form.description }}</div>
+
+            <br/>
+
+            {{ form.complaint_day.errors }}
+            <div><label>{% trans 'Day and Time of complaint'%} : </label> <input type="datetime-local" name="birthday" required=true class="form-control"></div>
+
+            <br/>
+
+            <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
+
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
+
+        </form>
+
+    </div>
+
+    <br/>
+    <br/>
+
+{% endblock %}
