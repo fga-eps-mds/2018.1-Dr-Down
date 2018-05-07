@@ -9,23 +9,6 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from ..forms.static_data_forms import StaticDataForm
 
 
-class CheckPermissions(UserPassesTestMixin):
-    def test_func(self):
-        return hasattr(self.request.user, 'healthteam') or \
-               hasattr(self.request.user, 'employee')
-
-    def get_login_url(self):
-        if self.request.user.is_authenticated:
-            # redirect if user is not a HealthTeam
-            login_url = reverse_lazy(
-                viewname='users:detail',
-                kwargs={'username': self.request.user.username}
-            )
-            return login_url
-        login_static_data_url = reverse_lazy('account_login')
-        return login_static_data_url
-
-
 class StaticDataCreateView(CreateView):
     model = StaticData
     form_class = StaticDataForm
@@ -53,19 +36,6 @@ class StaticDataCreateView(CreateView):
         form.instance.author = healthteam
         form.save()
         return super(StaticDataCreateView, self).form_valid(form)
-
-
-class StaticDataDeleteView(DeleteView):
-    model = StaticData
-
-    def get_success_url(self, **kwargs):
-        success_delete_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username'),
-            }
-        )
-        return success_delete_url
 
 
 class StaticDataUpdateView(UpdateView):
