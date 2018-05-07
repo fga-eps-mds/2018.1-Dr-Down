@@ -21,6 +21,31 @@ class Request(models.Model):
         max_length=10
     )
 
+    SUNDAY = 'Sunday'
+    MONDAY = 'Monday'
+    TUESDAY = 'Tuesday'
+    WEDNESDAY = 'Wednesday'
+    THURSDAY = 'Thursday'
+    FRIDAY = 'Friday'
+    SATURDAY = 'Saturday'
+
+    DAYS_CHOICES = (
+        (SUNDAY, _('Sunday')),
+        (MONDAY, _('Monday')),
+        (TUESDAY, _('Tuesday')),
+        (WEDNESDAY, _('Wednesday')),
+        (THURSDAY, _('Thursday')),
+        (FRIDAY, _('Friday')),
+        (SATURDAY, _('Saturday')),
+    )
+
+    day = models.CharField(
+        _('Day of the week'),
+        choices=DAYS_CHOICES,
+        help_text=_('Day of the week'),
+        max_length=10
+    )
+
     motive = models.TextField(
         _('Motive'),
         help_text=_('Why are you requesting an appointment?'),
