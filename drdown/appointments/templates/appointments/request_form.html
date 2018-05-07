@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "New Request" %}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>{% trans "New Request" %}</h2><hr>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p class="lead">
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-secondary">{% trans "Submit" %}</button>
+    </form>
+  </div>
+
+{% endblock %}
