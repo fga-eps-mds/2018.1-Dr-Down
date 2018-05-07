@@ -9,4 +9,4 @@ class ComplaintForm(forms.ModelForm):
 
     class Meta:
         model = Complaint
-        fields = ["description", "complaint_day"]
+        fields = ["description", "complaint_day", "complaint_time"]

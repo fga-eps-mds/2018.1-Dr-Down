@@ -25,7 +25,12 @@
             <br/>
 
             {{ form.complaint_day.errors }}
-            <div><label>{% trans 'Day and Time of complaint'%} : </label> <input type="datetime-local" name="birthday" required=true class="form-control"></div>
+            <div><label>{% trans 'Day of complaint'%} : </label> <input type="date" name="complaint_day" required=true class="form-control"></div>
+
+            <br/>
+
+            {{ form.complaint_time.errors }}
+            <div><label>{% trans 'Time of complaint'%} : </label> <input type="time" name="complaint_time" required=true class="form-control"></div>
 
             <br/>
 

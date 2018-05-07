@@ -13,8 +13,12 @@ class Complaint(models.Model):
         auto_now_add=True
     )
 
-    complaint_day = models.DateTimeField(
-        _('Day and time of complaint'),
+    complaint_day = models.DateField(
+        _('Day of complaint'),
+    )
+
+    complaint_time = models.TimeField(
+        _('Time of complaint'),
     )
 
     patient = models.ForeignKey(
