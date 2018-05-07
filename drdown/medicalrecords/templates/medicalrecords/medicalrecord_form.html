@@ -55,10 +55,24 @@
                         </div>
                     </div>
                 
-                    <button type="submit" class="btn btn-secondary  my-3 mx-2" style="margin-left: 0%;">{% trans 'Save' %}</button>
-                    
-                    <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-secondary my-3 mx-2" >{% trans "Cancel" %}</a>
+                    <div class="row">
+                        
+                        <div class="col"></div>
 
+                        <div class="col-auto">
+
+                            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+                                            
+                        </div>
+                        
+                        <div class="col-auto">
+
+                            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+
+                        </div>
+                    </div>
+
+                    
                 </form>
             </div>
         </div>
