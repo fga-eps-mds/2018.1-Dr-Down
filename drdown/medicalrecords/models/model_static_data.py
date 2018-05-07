@@ -21,7 +21,7 @@ class StaticData(models.Model):
     )
 
     APGAR = models.IntegerField(
-        choices=list(zip(range(1, 10), range(1, 10))),
+        choices=list(zip(range(1, 11), range(1, 11))),
     )
 
     heart_test = models.FileField(
