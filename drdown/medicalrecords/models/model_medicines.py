@@ -33,5 +33,8 @@ class Medicine(models.Model):
         verbose_name=_("Author")
     )
 
+    def __str__(self):
+        return self.patient.user.get_username() + " - " + self.medicine_name
+
     class Meta:
         verbose_name = _("Patient Medicine")

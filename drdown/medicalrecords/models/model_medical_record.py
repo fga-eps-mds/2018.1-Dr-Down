@@ -34,6 +34,9 @@ class MedicalRecord(models.Model):
         verbose_name=_("Author")
     )
 
+    def __str__(self):
+        return self.patient.user.get_username()
+
     class Meta:
         verbose_name = _("Medical Record")
         verbose_name_plural = _("Medical Records")

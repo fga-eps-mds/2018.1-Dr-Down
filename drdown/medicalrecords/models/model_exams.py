@@ -45,6 +45,9 @@ class Exam(models.Model):
         verbose_name=_("Author")
     )
 
+    def __str__(self):
+        return self.patient.user.get_username() + " - " + self.name
+
     class Meta:
         verbose_name = _("Exam")
         verbose_name_plural = _("Exams")

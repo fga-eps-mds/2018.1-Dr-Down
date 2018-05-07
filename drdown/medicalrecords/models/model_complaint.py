@@ -38,3 +38,7 @@ class Complaint(models.Model):
     class Meta:
         verbose_name = _("Complaint")
         verbose_name_plural = _("Complaints")
+
+    def __str__(self):
+        return self.patient.user.get_username() + " -  Comptaint ID: " + \
+               str(self.id)
