@@ -2,8 +2,7 @@ from django.db import models
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
-from datetime import datetime
-from django.core.exceptions import ValidationError
+from django.core.validators import MaxValueValidator
 
 
 class StaticData(models.Model):
@@ -14,9 +13,10 @@ class StaticData(models.Model):
         verbose_name=_('Patient')
     )
 
-    weight = models.IntegerField(
+    weight = models.PositiveIntegerField(
         verbose_name=_('Weight at birth'),
-        help_text=_('In grams')
+        help_text=_('In grams'),
+        validators=[MaxValueValidator(9999)]
     )
 
     APGAR = models.IntegerField(
