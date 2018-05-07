@@ -66,10 +66,13 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
             user__username=self.kwargs.get('username')
         )
         medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
-        staticdata = StaticData.objects.get(patient=patient)
+        try:
+            staticdata = StaticData.objects.get(patient=patient)
+        except StaticData.DoesNotExist:
+            staticdata = None
+        context['staticdata'] = staticdata
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
-        context['staticdata'] = staticdata
         return context
 
 
