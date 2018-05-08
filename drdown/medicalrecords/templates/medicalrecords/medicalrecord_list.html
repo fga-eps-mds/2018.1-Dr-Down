@@ -11,9 +11,16 @@
 {% block content %}
 
   <div class="container mb-5">
-    <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ view.related_patient.user.name }}</h2>
+    <div class='row'>
+      <div class='col'>
+        <h3 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ view.related_patient.user.name }}</h3>
+      </div>
+      <div class='col-2'>
+        <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn-sm btn-secondary float-right align-btn ml-3" >{% trans "Return" %}</a>
+      </div>
+    </div>
     {% if  elect_count == 0 %}
-      <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
+      <p class='lead'>{% trans 'There are no Medical Records for this patient.'%}</p>
       {% if user.healthteam %}
           <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
       {% endif %}
@@ -25,10 +32,8 @@
         {% if user.healthteam %}
           <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "New" %}</a>
         {% endif %}
-
       </form>
     {% endif %}
-    <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
   </div>
 
   <div class="container">

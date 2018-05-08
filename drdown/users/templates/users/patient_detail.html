@@ -18,7 +18,7 @@
             <div class="col float-right mr-0">
                 
                 {% if user.patient %}
-                    <a href="{% url 'users:detail' user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+                    <a href="{% url 'users:detail' user.username %}" class="btn-sm btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
                 {% else %}
                     <a href="{% url 'users:patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
                 {% endif %}
