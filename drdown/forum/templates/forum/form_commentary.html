@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
+{}
 
 {% block title %}{% trans "New Commentary" %}{% endblock %}
 
@@ -14,6 +15,7 @@
   </div>
   <div class="container">
     <h2>{% trans "New Commentary" %}</h2><hr>
+    {{ form.media }}
     <form method="post">
       {% csrf_token %}
       {% for field in form %}
