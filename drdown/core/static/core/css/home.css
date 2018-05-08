@@ -5,3 +5,17 @@
 hr.bg-star-blue:after{
   background-color: #CAE1FF;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+ }
+
+#move-map{
+    padding-left: 25px;
+}
+
+#location{
+  width: 100%;
+}

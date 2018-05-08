@@ -13,6 +13,26 @@
 
 {% endblock css %}
 
+{% block script %}
+  <script>
+    function initMap() {
+      var uluru = {lat: -15.785001, lng: -47.882911};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c-qw8WsuG-d49Vrwh4lMEpx291RU4r4&callback=initMap">
+  </script>
+{% endblock %}
+
 {% block content %}
 	<header class="masthead bg-blue text-center">
 	  <div class="container">
@@ -42,5 +62,14 @@
 	  </div>
 	</section>
 
+	<section class="mb-0 text-secondary border-top" id="location">
+	  <div class="container">
+	    <h2 class="text-center text-uppercase">{% trans "CRIS Down " %}</h2>
+	    <hr class="star-dark mb-5">
+      <div id="move-map">
+        <div id="map"></div>
+      </div>
+	  </div>
+	</section>
 
 {% endblock content %}
