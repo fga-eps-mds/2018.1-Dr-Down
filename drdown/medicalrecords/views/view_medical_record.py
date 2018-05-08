@@ -1,6 +1,10 @@
 from drdown.users.models.model_health_team import HealthTeam
 from ..models.model_medical_record import MedicalRecord
 from ..models.model_static_data import StaticData
+from ..models.model_specific_exams import SpecificExam
+from ..models.model_medicines import Medicine
+from ..models.model_exams import Exam
+from ..models.model_complaint import Complaint
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView
@@ -66,10 +70,16 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
             user__username=self.kwargs.get('username')
         )
         medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
-        try:
-            staticdata = StaticData.objects.get(patient=patient)
-        except StaticData.DoesNotExist:
-            staticdata = None
+
+        staticdata = StaticData.objects.filter(patient=patient)
+        specificexams = SpecificExam.objects.filter(patient=patient)
+        medicines = Medicine.objects.filter(patient=patient)
+        exams = Exam.objects.filter(patient=patient)
+        complaints = Complaint.objects.filter(patient=patient)
+        context['complaints'] = complaints
+        context['exams'] = exams
+        context['medicines'] = medicines
+        context['specificexams'] = specificexams
         context['staticdata'] = staticdata
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
