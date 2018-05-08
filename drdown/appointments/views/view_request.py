@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
+from django.views.generic import DeleteView
 from django.views.generic.dates import MonthArchiveView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
@@ -73,11 +74,12 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
     model = AppointmentRequest
     template_name = 'appointments/request_form.html'
-    fields = ['speciality',
-              'doctor',
-              'patient',
-              'shift',
-              'day',
+    fields = [
+        'speciality',
+        'doctor',
+        'patient',
+        'shift',
+        'day',
     ]
 
     def get_success_url(self, **kwargs):
@@ -86,6 +88,30 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
         )
 
         return success_update_url
+
+    def get_object(self):
+        request = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        return request
+
+
+class RequestDeleteView(LoginRequiredMixin, DeleteView):
+    model = AppointmentRequest
+    template_name = 'appointments/request_form.html'
+    fields = ['speciality',
+              'doctor',
+              'patient',
+              'shift',
+              'day',
+    ]
+
+    def get_success_url(self, **kwargs):
+        success_delete_url = reverse(
+            viewname='appointments:list_requests',
+        )
+
+        return success_delete_url
 
     def get_object(self):
         request = AppointmentRequest.objects.get(
