@@ -66,13 +66,11 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
 
     def get_context_data(self, **kwargs):
 
-        context = super(MedicalRecordsList, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
 
         patient = Patient.objects.get(
             user__username=self.kwargs.get('username')
         )
-
-        medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
 
         staticdata = StaticData.objects.filter(patient=patient)
         specificexams = SpecificExam.objects.filter(patient=patient)
@@ -85,7 +83,7 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['medicines'] = medicines
         context['specificexams'] = specificexams
         context['staticdata'] = staticdata
-        context['medicalrecordlist'] = medicalrecordlist
+        context['medicalrecordlist'] = context['object_list']
         context['related_patient'] = patient
 
         return context
