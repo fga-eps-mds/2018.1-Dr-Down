@@ -1,14 +1,26 @@
 # Pipeline CI/CD
 
-| Data | Versão | Descrição | Autor |
-|:----:|:------:|:---------:|:-----:|
+## Histórico de Revisões
+|Data|Versão|Descrição|Autor|
+| --- | --- | --- | --- |
 |06/05/2018|0.0.1|Versão inicial do documento do pipeline|João Pedro Sconetto e Mariana Mendes|
 
 ## Processos de DevOps
+O presente documento visa esclarecer e registrar todos os processos, a cultura implementada e os padrões que foram utilizados no projeto __Dr. Down__ no viés das práticas de DevOps a fim de unificar o desenvolvimento e as operações inerentes do projeto supracitado.
 
-### Padrão de _Commit_
+O documento se divide em duas partes:
 
-#### Por questões de padronização recomendamos que sigam nosso estilo de _commit_:
+* Integração Contínua (CI - _Continuous Integration_)
+
+* Deploy Contínuo (CD - _Continuous Deploy_)
+
+Onde a primeira parte irá mostrar as técnicas e itens aplicados ao projeto no propósito, como o nome da técnica diz, integrar continuamente o trabalho desenvolvido pela equipe. A segunda parte irá mostrar as técnincas e itens aplicados ao projeto com o objetivo de fazer a implantação contínua do projeto na infraestrutura utilizada pela equipe, de forma automatizada.
+
+### Integração Contínua:
+
+#### Padrão de _Commit_
+
+##### Por questões de padronização documentamos o seguinte estilo de _commit_:
 
 * Os _commits_ devem ser todos em __inglês__;
 
@@ -34,15 +46,16 @@ __Exemplo:__
 
     Co-authored-by: John Doe <john@email.com> (Assinatura de parceria)
 
-### Política de _Branchs_
+#### Política de _Branchs_
 
 Tendo como meta manter a integralidade e confiabilidade do código do projeto foi proposta a utilização de política de branches.
-Essa Política de Branches deverá guiar os desenvolvedores na forma de organização de suas contribuições ao repositório.
+Essa Política de Branches deverá guiar os desenvolvedores na forma de organização de suas contribuições ao projeto.
+
 __OBS__: A política de _branchs_ foi idealizada para trabalhar em conjunto com a ferramenta do _git flow_, sua documentação e mais informações podem ser acessadas [aqui](https://github.com/nvie/gitflow).
 
 * __master__ - Branch principal do repositório onde será permitida somente a integração de software consolidado e testado. Essa branch será exclusiva para a entrega de Realeases, ou seja, um conjunto maior de funcionalidades que integram o software, aqui estará a versão _**stable**_ do software.
 
-* __develop__ - Branch para integração de novas funcionalidades, onde será permitido a entrega das features desenvolvidas e que estão em um estágio avançado de completude. Será o branch base para o início do desenvolvimento das features e da correção de bugs. Aqui também serão _mergeadas_ as releases.
+* __develop__ - Branch para integração de novas funcionalidades, onde será permitido a entrega das features desenvolvidas e que estão em um estágio avançado de completude. Será o branch base para o início do desenvolvimento das features e da correção de bugs. Aqui também serão _mergeadas_ as releases.  
 
 * __feature/<nome-da-feature>__ - Branch utilizada para o desenvolvimento de novas features do _backlog_. Caso a feature tenha sida proposta por uma _issue_ do repositório e aceita no _backlog_ o nome deverá conter o número da _issue_.
 Ex: feature/1-<nome-da-nova-feature> (Considerando que a feature tenha sido solicitada na _issue_ #1)
@@ -56,3 +69,21 @@ Ex: feature/1-<nome-da-nova-feature> (Considerando que a feature tenha sido soli
 * __release/<versão-da-release>__ - Branch onde será feito os ajustes finais/build antes da entrega de uma versão do produto de software. Constará no nome da branch a versão da release a ser entregue.
 
 * __support/<tema-ou-natureza>__ - Branch onde serão executadas tarefas de suporte relacionadas ao software, como elaboração de documentações, correções de natureza de gerência de configuração e etc.
+
+#### Testes e Estilo de Código
+
+Com o objetivo de garantir a qualidade de código, assim como a sua manutenibilidade, a equipe definiu técnicas e padrões a serem seguidos, enquanto ao estilo de código foi definido uma folha de estilo que é considerada a padrão por programadores Python, se trata da [PEP8](https://www.python.org/dev/peps/pep-0008/). Com isto é possível verificar, com o auxílio da ferramenta Code Climate o quão manutenível é o código que está sendo feito.
+
+Em complemento ao estilo do código a equipe acordou em manter todo o código testado, pois com a união das duas técnicas é possível assegurar uma maior qualidade de código, para isso foram usados técnicas padrões de teste do Python/Django, com o auxílio do [Coverage.py](https://coverage.readthedocs.io/en/coverage-4.5.1/) e do [pytest](https://docs.pytest.org/en/latest/), estes que, também, servem de _input_ para o Code Climante analisar a manutenibilidade do software.
+
+Ficou acordado entre os membros da equipe que a cobertura de teste deveria ser igual ou superior a 90% em todos os momentos do projeto.
+
+#### _Pull Requests_
+
+Ao término da execução da codificação é necessário a abertura de um _Pull Request_ no repositório oficial do software para que possa ser apreciado o código solução. Com isso as ferramentas de CI/CD automático irão executar a fase de _build_ e teste para verificar se etapa de teste e estilo de código foram implementadas corretamente, caso não tenha dívidas nessa fase, cabe a dois membros da equipe de EPS (com foco no P.O. na análise) analisar o produto para verificar se atende os critérios de aceitação e se está de acordo com o que foi definido para ser entregue. Com todas as técnicas e fases entregues em conformidade, cabe aos membros aprovarem o _pull request_ para que o mesmo possa ser _mergeado_ em branchs de entregue de _feature_.
+
+#### _Build_ e Testes
+
+Com o auxílio de ferramentas de automatização essa fase é executada, via [Travis-CI](https://travis-ci.org/), a fim de garantir a fase de Teste e Estilo de Código. Com isso a ferramenta vai verificar o código, executar todos os testes para procurar erros na lógica do software e após tentar construir (_build_) os _containers_ da aplicação. Caso qualquer passo dessa fase tenha algum problema a ferramenta irá informar (via e-mail e via repositório) de que algo está errado e é preciso correções antes de avançar no pipeline.
+
+### Deploy Contínuo:
