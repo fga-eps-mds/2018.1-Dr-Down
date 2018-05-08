@@ -79,8 +79,8 @@ class PostDeleteView (DeleteView):
 
 class PostUpdateView(UpdateView):
     model = Post
+    form_class = PostForm
     template_name = 'forum/form_post.html'
-    fields = ['message']
 
     def get_success_url(self, **kwargs):
         success_update_url = reverse_lazy(

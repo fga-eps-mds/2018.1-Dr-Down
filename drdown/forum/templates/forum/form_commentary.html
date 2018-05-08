@@ -1,34 +1,20 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
-{}
-
-{% block title %}{% trans "New Commentary" %}{% endblock %}
-
+{% block title %}{% trans 'New Medical Record' %}{% endblock %}
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
   <div class="container">
-    <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_categories' %}">{% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_posts' post.category.slug post.category.pk %}">{% trans "Posts" %}</a></li>
-      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}">{{post.title}}</a></li>
-      <li class="breadcrumb-item active">{% trans "New Commentary" %}</li>
-    </ol>
-  </div>
-  <div class="container">
-    <h2>{% trans "New Commentary" %}</h2><hr>
+    <h2>{% trans 'New Commentary' %}</h2>
     {{ form.media }}
     <form method="post">
       {% csrf_token %}
-      {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-          <p>
-            {{ field.label_tag }}<br>
-            {{ field }}
-          </p>
-        </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-success float-right mt-5">{% trans "Post" %}</button>
+      <label>{% trans 'Message'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
+      <button type="submit" class="btn btn-success ml-3 mt-5 float-right" style="margin-left: 0%;">{% trans 'Post' %}</button>
     </form>
-  </div>
 
+    <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}"><button type="submit" class="btn btn-danger ml-3 mt-5 float-right" style="margin-left: 0%;">{% trans 'Cancel' %}</button>
+  </div>
 {% endblock %}
