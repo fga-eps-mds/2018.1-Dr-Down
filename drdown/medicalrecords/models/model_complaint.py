@@ -2,7 +2,8 @@ from django.db import models
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
-from datetime import datetime
+from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 
 class Complaint(models.Model):
@@ -42,6 +43,29 @@ class Complaint(models.Model):
     class Meta:
         verbose_name = _("Complaint")
         verbose_name_plural = _("Complaints")
+
+    def clean(self, *args, **kwargs):
+        data = super(Complaint, self).clean()
+
+        if isinstance(self.complaint_day, timezone.datetime):
+            self.complaint_day = self.complaint_day.date()
+
+        if self.complaint_day:
+            if timezone.localdate().isoformat() < str(self.complaint_day):
+                raise ValidationError(
+                    {'complaint_day':
+                         _("The complaint cannot be in the future!")}
+                )
+            elif (
+                timezone.datetime.strptime(str(self.complaint_day),
+                                           "%Y-%m-%d") <
+                timezone.datetime.strptime("2000-01-01", "%Y-%m-%d")
+            ):
+                raise ValidationError(
+                    {'complaint_day': _("This complaint is too old.")}
+                )
+
+        return data
 
     def __str__(self):
         return self.patient.user.get_username() + " -  Comptaint ID: " + \
