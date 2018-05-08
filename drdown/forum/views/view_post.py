@@ -6,6 +6,7 @@ from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from django.utils import timezone
+from drdown.forum.form.forum_forms import PostForm
 
 
 class PostListView(ListView):
@@ -28,8 +29,8 @@ class PostListView(ListView):
 
 class PostCreateView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'forum/form_post.html'
-    fields = ['title', 'message']
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse_lazy(
