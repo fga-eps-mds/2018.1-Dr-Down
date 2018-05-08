@@ -12,6 +12,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin
 from search_views.filters import BaseFilter
 from ..forms.medicalrecords_forms import MedicalRecordForm
+from ..views.views_base import BaseViewForm, BaseViewUrl
 
 
 class MedicalRecordsFilter(BaseFilter):
@@ -40,6 +41,9 @@ class CheckPermissions(UserPassesTestMixin):
 class MedicalRecordsList(UserPassesTestMixin, ListView):
     model = MedicalRecord
     template_name = "medicalrecords/medicalrecord_list.html"
+    slug_url_kwarg = 'username'
+    slug_field = 'patient__user__username'
+    ordering = ['-day']
 
     def test_func(self):
         return hasattr(self.request.user, 'healthteam') or \
@@ -60,15 +64,14 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         login_MedicalRecordsList_url = reverse_lazy('account_login')
         return login_MedicalRecordsList_url
 
-    def get_queryset(self):
-        queryset = MedicalRecord.objects.all().order_by('-day')
-        return queryset
-
     def get_context_data(self, **kwargs):
+
         context = super(MedicalRecordsList, self).get_context_data(**kwargs)
+
         patient = Patient.objects.get(
             user__username=self.kwargs.get('username')
         )
+
         medicalrecordlist = MedicalRecord.objects.filter(patient=patient)
 
         staticdata = StaticData.objects.filter(patient=patient)
@@ -76,6 +79,7 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         medicines = Medicine.objects.filter(patient=patient)
         exams = Exam.objects.filter(patient=patient)
         complaints = Complaint.objects.filter(patient=patient)
+
         context['complaints'] = complaints
         context['exams'] = exams
         context['medicines'] = medicines
@@ -83,61 +87,11 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['staticdata'] = staticdata
         context['medicalrecordlist'] = medicalrecordlist
         context['related_patient'] = patient
+
         return context
 
 
-class MedicalRecordsCreateView(CreateView):
+class MedicalRecordsCreateView(BaseViewUrl, BaseViewForm, CreateView):
     model = MedicalRecord
     form_class = MedicalRecordForm
     template_name = 'medicalrecords/medicalrecord_form.html'
-
-    def get_success_url(self, **kwargs):
-        success_create_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username')
-            }
-        )
-        return success_create_url
-
-    def form_valid(self, form):
-        for patient in Patient.objects.all():
-            if patient.user.username == self.kwargs.get('username'):
-                form.instance.patient = patient
-        user = User.objects.get(
-            username=self.request.user
-        )
-        healthteam = HealthTeam.objects.get(
-            user=user
-        )
-        form.instance.author = healthteam
-        form.save()
-        return super(MedicalRecordsCreateView, self).form_valid(form)
-
-
-class MedicalRecordsDeleteView(DeleteView):
-    model = MedicalRecord
-
-    def get_success_url(self, **kwargs):
-        success_delete_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username'),
-            }
-        )
-        return success_delete_url
-
-
-class MedicalRecordsUpdateView(UpdateView):
-    model = MedicalRecord
-    form_class = MedicalRecordForm
-    template_name = 'medicalrecords/medicalrecord_form.html'
-
-    def get_success_url(self, **kwargs):
-        success_update_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username'),
-            }
-        )
-        return success_update_url

@@ -59,20 +59,7 @@ urlpatterns = [
     ),
 
     url(
-        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/delete/$',
-        view=view_medical_record.MedicalRecordsDeleteView.as_view(),
-        name='delete_medicalrecords'
-    ),
-
-    url(
-        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/update/$',
-        view=view_medical_record.MedicalRecordsUpdateView.as_view(
-            form_class=MedicalRecordForm),
-        name='update_medicalrecords'
-    ),
-
-    url(
-        regex=r'^(?P<username>[\w.@+-]+)/(?P<pk>\d+)/update-static-data/$',
+        regex=r'^(?P<username>[\w.@+-]+)/update-static-data/$',
         view=view_static_data.StaticDataUpdateView.as_view(
             form_class=StaticDataForm),
         name='update_static_data_medicalrecords'

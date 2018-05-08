@@ -7,47 +7,18 @@ from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin
 from ..forms.static_data_forms import StaticDataForm
+from ..views.views_base import BaseViewForm, BaseViewUrl
 
 
-class StaticDataCreateView(CreateView):
+class StaticDataCreateView(BaseViewUrl, BaseViewForm, CreateView):
     model = StaticData
     form_class = StaticDataForm
     template_name = 'medicalrecords/medicalrecord_static_data_form.html'
 
-    def get_success_url(self, **kwargs):
-        success_create_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username')
-            }
-        )
-        return success_create_url
 
-    def form_valid(self, form):
-        for patient in Patient.objects.all():
-            if patient.user.username == self.kwargs.get('username'):
-                form.instance.patient = patient
-        user = User.objects.get(
-            username=self.request.user
-        )
-        healthteam = HealthTeam.objects.get(
-            user=user
-        )
-        form.instance.author = healthteam
-        form.save()
-        return super(StaticDataCreateView, self).form_valid(form)
-
-
-class StaticDataUpdateView(UpdateView):
+class StaticDataUpdateView(BaseViewUrl, UpdateView):
     model = StaticData
     form_class = StaticDataForm
     template_name = 'medicalrecords/medicalrecord_static_data_form.html'
-
-    def get_success_url(self, **kwargs):
-        success_update_url = reverse_lazy(
-            viewname='medicalrecords:list_medicalrecords',
-            kwargs={
-                'username': self.kwargs.get('username'),
-            }
-        )
-        return success_update_url
+    slug_url_kwarg = 'username'
+    slug_field = 'patient__user__username'

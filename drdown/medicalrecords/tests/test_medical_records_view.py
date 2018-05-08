@@ -82,53 +82,6 @@ class TestViewMedicalRecords(TestCase):
         self.assertFormError(response, 'form', 'message', _('This field is required.'))
         self.assertEquals(response.status_code, 200)
 
-    def test_delete_medical_records_ok(self):
-        """
-        Test is medical records is being correcty updated.
-        """
-
-        self.client.force_login(user=self.user_1)
-
-
-
-        response = self.client.post(
-            path=reverse(
-                viewname='medicalrecords:delete_medicalrecords',
-                args=(self.patient.user.username,self.medicalrecord.pk,)
-            ),
-            follow=True
-        )
-
-        self.assertEquals(
-            response.status_code,
-           200
-        )
-
-    def test_updated_medical_records_ok(self):
-        """
-        Test is medical records is being correcty updated.
-        """
-
-        self.client.force_login(user=self.user_1)
-
-        data = {
-            'message': 'test',
-            'patient': 'self.patient',
-            'author': 'self.user_1',
-            'document': 'test.txt',
-        }
-
-        response = self.client.post(
-            path=reverse(
-                viewname='medicalrecords:update_medicalrecords',
-                args=(self.patient.user.username,self.medicalrecord.pk,)
-            ),
-            follow=True,
-            data=data
-        )
-
-        self.assertEquals(response.status_code,200)
-
     def test_list_view(self):
         """
         Makes sure that the medicalrecord search view is loaded correctly
