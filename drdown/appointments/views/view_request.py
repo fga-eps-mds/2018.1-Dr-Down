@@ -101,13 +101,6 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
 class RequestDeleteView(LoginRequiredMixin, DeleteView):
     model = AppointmentRequest
     template_name = 'appointments/request_confirm_delete.html'
-    fields = ['speciality',
-              'doctor',
-              'patient',
-              'shift',
-              'day',
-              'motive',
-    ]
 
     def get_success_url(self, **kwargs):
         success_delete_url = reverse(
