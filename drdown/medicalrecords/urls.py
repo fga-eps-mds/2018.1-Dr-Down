@@ -59,6 +59,13 @@ urlpatterns = [
     ),
 
     url(
+        regex=r'^(?P<username>[\w.@+-]+)/update-exams/$',
+        view=view_specific_exams.SpecificExamUpdateView.as_view(
+            form_class=SpecificExamsForm),
+        name='update_exams_medicalrecords'
+    ),
+
+    url(
         regex=r'^(?P<username>[\w.@+-]+)/update-static-data/$',
         view=view_static_data.StaticDataUpdateView.as_view(
             form_class=StaticDataForm),

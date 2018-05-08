@@ -73,7 +73,7 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         )
 
         staticdata = StaticData.objects.filter(patient=patient)
-        specificexams = SpecificExam.objects.filter(patient=patient)
+        specificexams = SpecificExam.objects.filter(patient=patient).first()
         medicines = Medicine.objects.filter(patient=patient)
         exams = Exam.objects.filter(patient=patient)
         complaints = Complaint.objects.filter(patient=patient)
