@@ -61,6 +61,7 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
         'patient',
         'shift',
         'day',
+        'motive',
     ]
 
     def get_success_url(self, **kwargs):
@@ -80,6 +81,7 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
         'patient',
         'shift',
         'day',
+        'motive',
     ]
 
     def get_success_url(self, **kwargs):
@@ -104,6 +106,7 @@ class RequestDeleteView(LoginRequiredMixin, DeleteView):
               'patient',
               'shift',
               'day',
+              'motive',
     ]
 
     def get_success_url(self, **kwargs):
