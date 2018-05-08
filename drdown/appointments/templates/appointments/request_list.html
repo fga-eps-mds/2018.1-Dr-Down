@@ -10,7 +10,7 @@
 
 {% block content %}
   <div class="container" >
-    {% if request.user.patient %}
+    {% if request.user.patient and request.user.age >= 13 or request.user.responsible %}
       <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary btn-sm float-right mr-3">{% trans "New Request" %}</a>
     {% endif %}
     <h2>{% trans 'Requests' %}</h2><hr>
