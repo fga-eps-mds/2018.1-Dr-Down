@@ -25,13 +25,11 @@ class StaticData(models.Model):
 
     heart_test = models.FileField(
         upload_to='media/medicalrecords',
-        blank=True,
         verbose_name=_('Heart Test')
     )
 
     ear_test = models.FileField(
         upload_to='media/medicalrecords',
-        blank=True,
         verbose_name=_('Test of the Ear')
     )
 
