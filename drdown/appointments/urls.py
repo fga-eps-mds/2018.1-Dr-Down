@@ -11,6 +11,7 @@ from drdown.appointments.views.view_request import (
     RequestCreateView,
     RequestUpdateView,
     RequestDeleteView,
+    RequestUpdateStatusView,
 )
 
 
@@ -60,5 +61,10 @@ urlpatterns = [
         regex=r'^cancel/(?P<appointment_pk>\d+)/$',
         view=AppointmentUpdateStatusView.as_view(),
         name='update_status_appointment'
+    ),
+    url(
+        regex=r'^request/cancel/(?P<request_pk>\d+)/$',
+        view=RequestUpdateStatusView.as_view(),
+        name='update_status_request'
     ),
 ]

@@ -121,3 +121,27 @@ class RequestDeleteView(LoginRequiredMixin, DeleteView):
             pk=self.kwargs.get('request_pk')
         )
         return request
+
+
+class RequestUpdateStatusView(LoginRequiredMixin, UpdateView):
+    model = AppointmentRequest
+    template_name = 'appointments/request_confirm_cancel.html'
+    fields = []
+
+    def get_success_url(self, **kwargs):
+        success_update_status_url = reverse(
+            viewname='appointments:list_appointments',
+        )
+
+        return success_update_status_url
+
+    def get_object(self):
+        request = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        return request
+
+    def form_valid(self, form):
+        form.instance.status = AppointmentRequest.DECLINED
+        form.save()
+        return super(RequestUpdateStatusView, self).form_valid(form)
