@@ -87,3 +87,36 @@ Ao término da execução da codificação é necessário a abertura de um _Pull
 Com o auxílio de ferramentas de automatização essa fase é executada, via [Travis-CI](https://travis-ci.org/), a fim de garantir a fase de Teste e Estilo de Código. Com isso a ferramenta vai verificar o código, executar todos os testes para procurar erros na lógica do software e após tentar construir (_build_) os _containers_ da aplicação. Caso qualquer passo dessa fase tenha algum problema a ferramenta irá informar (via e-mail e via repositório) de que algo está errado e é preciso correções antes de avançar no pipeline.
 
 ### Deploy Contínuo:
+
+Com a execução de todos os passos da integração contínua a ferramenta de automatização irá executar os passos de deploy, caso não tenho encontrado nenhum erro, que seguem com o deploy/entrega da aplicação no ambiente de homologação e produção. Os passos executados são:
+
+* Publica a última versão integrada na _branch_ no docker hub da aplicação;
+
+* Acessa as máquinas de deploy (Hosts no Digital Ocean);
+
+* Baixa a última versão do docker hub no host;
+
+* Executa atualizações necessárias com as novas funcionalidades (migrações, modificações no banco, traduções e etc);
+
+* Caso tenha algum problema a máquina envia um log para a ferramenta de logs (sentry.io), caso não, o sistema mantém o funcionamento contínuamente.
+
+### Pipeline v0.0.1
+
+![pipeline](https://i.imgur.com/v3m6lQr.png)
+
+#### Legenda
+
+Primeiro Estágio:
+* No primeiro estágio estão as culturas de política de _branches_, padrão de _commits_, estilo de código e testes, onde durante o desenvolvimento a equipe segue as culturas propostas até a publicação do código com as novas adições.
+
+Segundo Estágio:
+* Aqui o código publicado com as adições, chamada de versão, é alcançada pela ferramenta de CI, executado os testes (todos os implementados e os novos adicionados) e é feito a build, caso haja erro nesse estágio retorna-se ao primeiro fazendo as adições necessárias.
+
+Terceiro Estágio:
+* Aqui a nova versão está em um estágio estável do seu ciclo de vida, se todas as adições esperadas para esta versão estiver pronta a equipe espera uma abertura de um novo _pull request_ solicitando a junção dessa versão com a versão atual do software. Nesta fase é feito a verificação manual da concordância das adições, tanto com os estágios anteriores quanto com as especificações de produto levantado pelo _Product Owner_, caso positivo o pipeline avança, do contrário retorna a estágios anteriores.
+
+Quarto Estágio:
+* Aqui com a nova versão aprovada e consolidada ela é direcionada para o ambiente o qual deve integrar (homologação ou produção) e a ferramenta de CI/CD faz o deploy e entrega automática dessas novas adições.
+
+
+__OBS__: Os principais artefatos que estão inclusos no, e participam do, pipeline são: ```.travis.yml```, ```codeclimate.yml```, ```mkdocs-build.sh```, ```production-deploy.sh``` e ```staging-deploy.sh```, todos estão disponíveis no repositório da aplicação no [GitHub](https://github.com/fga-gpp-mds/2018.1-Dr-Down).
