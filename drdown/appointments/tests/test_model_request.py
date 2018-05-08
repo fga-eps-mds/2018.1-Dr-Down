@@ -1,5 +1,5 @@
 from test_plus.test import TestCase
-from ..models.model_request import Request
+from ..models.model_request import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
@@ -35,13 +35,13 @@ class TestModelRequest(TestCase):
             registration_state=HealthTeam.DF,
         )
 
-        self.request = Request.objects.create(
+        self.request = AppointmentRequest.objects.create(
             motive='Some motive',
             observation='Some obs',
-            speciality=Request.SPEECH_THERAPHY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
             doctor=self.doctor,
             patient=self.patient,
-            status=Request.SCHEDULED
+            status=AppointmentRequest.SCHEDULED
         )
 
     def test_one_to_one_relation(self):
@@ -58,8 +58,8 @@ class TestModelRequest(TestCase):
         """
 
         self.patient.delete()
-        with self.assertRaises(Request.DoesNotExist):
-            Request.objects.get()
+        with self.assertRaises(AppointmentRequest.DoesNotExist):
+            AppointmentRequest.objects.get()
 
     def test_delete_cascade_doctor(self):
         """
@@ -67,8 +67,8 @@ class TestModelRequest(TestCase):
         """
 
         self.doctor.delete()
-        with self.assertRaises(Request.DoesNotExist):
-            Request.objects.get()
+        with self.assertRaises(AppointmentRequest.DoesNotExist):
+            AppointmentRequest.objects.get()
 
     def test_save_patient_ok(self):
         """
@@ -89,7 +89,7 @@ class TestModelRequest(TestCase):
         Test to verify if status is correctly passed
         """
 
-        self.assertEquals(self.request.status, Request.SCHEDULED)
+        self.assertEquals(self.request.status, AppointmentRequest.SCHEDULED)
 
     def test_save_speciality_ok(self):
         """
@@ -98,7 +98,7 @@ class TestModelRequest(TestCase):
 
         self.assertEquals(
             self.request.speciality,
-            Request.SPEECH_THERAPHY
+            AppointmentRequest.SPEECH_THERAPHY
         )
 
     def test_save_motive_ok(self):
