@@ -98,7 +98,7 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
 
 class RequestDeleteView(LoginRequiredMixin, DeleteView):
     model = AppointmentRequest
-    template_name = 'appointments/request_form.html'
+    template_name = 'appointments/request_confirm_delete.html'
     fields = ['speciality',
               'doctor',
               'patient',
