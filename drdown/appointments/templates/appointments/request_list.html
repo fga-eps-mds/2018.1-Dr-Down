@@ -21,7 +21,7 @@
             <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
             <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
           {% elif request.user.employee and appointmentrequest.status != 'Declined' %}
-            <a href="{% url 'appointments:create_appointment' %}" class="btn btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
+            <a href="{% url 'appointments:create_from_request' appointmentrequest.pk %}" class="btn btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
             <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
           {% endif %}
           <h5 class="mt-2">{% trans 'Patient'%}: {{appointmentrequest.patient.user.name}}</h5>

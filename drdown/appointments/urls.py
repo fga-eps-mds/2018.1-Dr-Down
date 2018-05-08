@@ -5,6 +5,7 @@ from drdown.appointments.views.view_appointment import (
     AppointmentUpdateView,
     AppointmentMonthArchiveView,
     AppointmentUpdateStatusView,
+    AppointmentFromRequestCreateView,
 )
 from drdown.appointments.views.view_request import (
     RequestListView,
@@ -46,6 +47,11 @@ urlpatterns = [
         regex=r'^new/$',
         view=AppointmentCreateView.as_view(),
         name='create_appointment'
+    ),
+    url(
+        regex=r'^new/(?P<request_pk>\d+)/$',
+        view=AppointmentFromRequestCreateView.as_view(),
+        name='create_from_request'
     ),
     url(
         regex=r'^(?P<year>\d{4})/(?P<month>\d+)/$',
