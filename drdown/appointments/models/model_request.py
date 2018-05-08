@@ -4,7 +4,7 @@ from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 
 
-class Request(models.Model):
+class AppointmentRequest(models.Model):
 
     MORNING = 'M'
     AFTERNOON = 'A'

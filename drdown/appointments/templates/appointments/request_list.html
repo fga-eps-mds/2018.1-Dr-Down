@@ -14,13 +14,13 @@
       <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary btn-sm float-right mr-3">{% trans "New Request" %}</a>
     {% endif %}
     <h2>{% trans 'Requests' %}</h2><hr>
-    {% for request in request_list %}
+    {% for appointmentrequest in appointmentrequest_list %}
       <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
         <div class="message" style="width:98%">
-          <h5 class="mt-2">{% trans 'Patient'%}: {{request.patient.user.name}}</h5>
-          <font size="4" >{% trans 'Doctor'%}: {{ request.doctor.user.name}}</font><br>
-          <font size="2" >{% trans 'Especiality'%}: {{request.get_speciality_display}}</font><br>
-          <a href="{% url 'appointments:update_request' request.pk %}" class="btn btn-secondary btn-sm float-right mr-3">{% trans "Edit" %}</a>
+          <h5 class="mt-2">{% trans 'Patient'%}: {{appointmentrequest.patient.user.name}}</h5>
+          <font size="4" >{% trans 'Doctor'%}: {{ appointmentrequest.doctor.user.name}}</font><br>
+          <font size="2" >{% trans 'Especiality'%}: {{appointmentrequest.get_speciality_display}}</font><br>
+          <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn btn-secondary btn-sm float-right mr-3">{% trans "Edit" %}</a>
         </div>
       </div>
     {% empty %}

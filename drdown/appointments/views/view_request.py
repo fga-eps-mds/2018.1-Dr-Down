@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.urls import reverse
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
-from drdown.appointments.models import Request
+from drdown.appointments.models import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from ..forms.requests_form import RequestSearchForm
@@ -23,7 +23,7 @@ class RequestFilter(LoginRequiredMixin, BaseFilter):
 
 
 class RequestListView(LoginRequiredMixin, SearchListView):
-    model = Request
+    model = AppointmentRequest
     template_name = 'appointments/request_list.html'
     form_class = RequestSearchForm
     filter_class = RequestFilter
@@ -33,18 +33,18 @@ class RequestListView(LoginRequiredMixin, SearchListView):
     def prepare_queryset(request):
         user = request.user
         if hasattr(user, 'patient'):
-            queryset = Request.objects.filter(
+            queryset = AppointmentRequest.objects.filter(
                 patient=user.patient
             ).order_by('id')
         elif hasattr(user, 'responsible'):
-            queryset = Request.objects.filter(
+            queryset = AppointmentRequest.objects.filter(
                 patient__in=user.responsible.patient_set.all()
             ).order_by('id')
         elif hasattr(user, 'employee'):
-            queryset = Request.objects.all(
+            queryset = AppointmentRequest.objects.all(
             ).order_by('id')
         else:
-            queryset = Request.objects.none()
+            queryset = AppointmentRequest.objects.none()
         return queryset
 
     def get_queryset(self):
@@ -52,7 +52,7 @@ class RequestListView(LoginRequiredMixin, SearchListView):
 
 
 class RequestCreateView(LoginRequiredMixin, CreateView):
-    model = Request
+    model = AppointmentRequest
     template_name = 'appointments/request_form.html'
     fields = [
         'speciality',
@@ -71,7 +71,7 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
 
 
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
-    model = Request
+    model = AppointmentRequest
     template_name = 'appointments/request_form.html'
     fields = ['speciality',
               'doctor',
@@ -88,7 +88,7 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
         return success_update_url
 
     def get_object(self):
-        request = Request.objects.get(
+        request = AppointmentRequest.objects.get(
             pk=self.kwargs.get('request_pk')
         )
         return request
