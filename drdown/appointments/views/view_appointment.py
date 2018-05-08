@@ -195,7 +195,7 @@ class AppointmentUpdateStatusView(LoginRequiredMixin, UpdateView):
 
 class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
-    template_name = 'appointments/appointment_form.html'
+    template_name = 'appointments/appointment_request_form.html'
     fields = [
         'speciality',
         'doctor',
@@ -203,15 +203,6 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
         'date',
         'time',
     ]
-
-    def get_initial(self):
-        initial = super(AppointmentFromRequestCreateView, self).get_initial()
-        request = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
-        initial['speciality'] = request.speciality
-        initial['patient'] = request.patient
-        return initial
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse(
@@ -224,4 +215,7 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
         context = super(AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
         context['health_team'] = HealthTeam.objects.all()
         context['patients'] = Patient.objects.all()
+        context['appointment_request'] = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
         return context

@@ -1,0 +1,99 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% trans "New Appointment" %}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  <h1>{% trans "New Appointment" %}</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="fieldWrapper form-group">
+      <label for="id_speciality" class="col-form-label">{% trans 'Speciality' %}:</label>
+      <select class= "select form-control" name="speciality" required id="id_speciality">
+        {% if appointment_request.speciality %}
+          <option value="{{appointment_request.speciality}}" selected>{{appointment_request.get_speciality_display}}</option>
+          <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
+          <option value="Psychology">{% trans 'Psychology' %}</option>
+          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
+          <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
+          <option value="Cardiology">{% trans 'Cardiology' %}</option>
+          <option value="Neurology">{% trans 'Neurology' %}</option>
+          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+        {% else %}
+          <option value="" selected>---------</option>
+          <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
+          <option value="Psychology">{% trans 'Psychology' %}</option>
+          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
+          <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
+          <option value="Cardiology">{% trans 'Cardiology' %}</option>
+          <option value="Neurology">{% trans 'Neurology' %}</option>
+          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+        {% endif %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_doctor" class="col-form-label">{% trans 'Doctor' %}:</label><br>
+      <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
+        {% if appointment_request.doctor %}
+          <option value="{{ appointment_request.doctor.pk }}" selected>{{ appointment_request.doctor.user.name }}</option>
+            {% for doctor in health_team %}
+              {% if doctor.pk != appointment_request.doctor.pk %}
+              <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
+              {% endif %}
+            {% endfor %}
+        {% else %}
+          {% for doctor in health_team %}
+            <option value="{{ doctor.pk }}">{{ doctor.user.name }}</option>
+          {% endfor %}
+        {% endif %}
+
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <label for="id_patient" class="col-form-label">{% trans 'Patient' %}:</label><br>
+      <select name="patient" class= "select form-control" required id="id_patient" size="6">
+        {% if appointment_request.patient %}
+          <option value="{{ appointment_request.patient.pk }}" selected>{{ appointment_request.patient.user.name }}</option>
+            {% for patient in patients %}
+              {% if patient.pk != appointment_request.patient.pk %}
+              <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+              {% endif %}
+            {% endfor %}
+        {% else %}
+          {% for patient in patients %}
+            <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+          {% endfor %}
+        {% endif %}
+      </select>
+    </div>
+
+    <div class="fieldWrapper form-group">
+      <div class="row">
+        <label for="id_date" class="col-form-label col col-sm-7 mr-5">{% trans 'Date' %}:
+          <strong class="col ml-5">({% trans 'Requested day of the week' %}: {{ appointment_request.get_day_display }})</strong>
+        </label>
+      </div>
+      <input type="date" name="date" id="id_date" class="form-control" min="{% now 'Y-m-d' %}" required>
+      <span class="validity"></span>
+    </div>
+
+
+    <div class="fieldWrapper form-group">
+      <div class="row">
+        <label for="id_time" class="col-form-label col-sm-7 mr-5">{% trans 'Time' %}:
+          <strong class="col ml-5">({% trans 'Requested shift' %}: {{ appointment_request.get_shift_display }})</strong>
+        </label>
+      </div>
+        <input type="time" name="time" id="id_time" class="form-control" required>
+      <span class="validity"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
+  </form>
+</div>
+{% endblock %}
