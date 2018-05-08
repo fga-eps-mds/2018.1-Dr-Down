@@ -14,49 +14,49 @@
 
         <div class="row justify-content-between mb-5">
             <h2 class="col-7 col-md-10 text-tertiary">{% trans 'Patient: ' %} {{ view.object.user.name }}</h2>
-            
-            <div class="col float-right mr-0">
-                
+
+            <div class="col-auto float-right mr-0">
+
                 {% if user.patient %}
-                    <a href="{% url 'users:detail' user.username %}" class="btn-sm btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+                    <a href="{% url 'users:detail' user.username %}" class="btn-sm btn-secondary ml-3" >{% trans "Return" %}</a>
                 {% else %}
-                    <a href="{% url 'users:patient_list' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+                    <a href="{% url 'users:patient_list' %}" class="btn btn-secondary ml-3" >{% trans "Return" %}</a>
                 {% endif %}
 
             </div>
         </div>
 
         <div class="row justify-content-center">
-            
+
             {% if view.object.user.patient  %}
                 <div class="col">
 
                     <div class="row align-items-center justify-content-center">
 
                         {% if view.object.user.photo %}
-                            <img src="{{ view.object.user.photo.url }}"  class="col my-1 rounded-circle img-fluid" height=50% width=50%>
+                            <img src="{{ view.object.user.photo.url }}"  class="col my-1 img-fluid" height=50% width=50%>
                         {% else %}
-                            <img src="{% static 'users/img/user.png' %}" class="col my-1 rounded-circle img-fluid" height=50    % width=50%>
+                            <img src="{% static 'users/img/user.png' %}" class="col my-1 img-fluid" height=50% width=50%>
                         {% endif %}
-                 
+
 
                         <div class="w-100"></div>
 
-                        <div class="col my-1 mx-auto">
-                            <div><a href="{% url 'careline:checklist_detail' view.object.user.username %}" class="btn btn-secondary align-btn ml-3">{% trans "Checklist" %}</a></div>
+                        <div class="mx-auto">
+                            <div><a href="{% url 'careline:checklist_detail' view.object.user.username %}" class="btn btn-secondary mt-3">{% trans "Checklist" %}</a></div>
                         </div>
-                        
+
                         {% if user.healthteam %}
-                            
+
                         <div class="w-100 d-none d-md-block"></div>
-                            <div class="col my-1 mx-auto"   >
-                                <div><a href="{% url 'medicalrecords:list_medicalrecords' view.object.user.username %}" class="btn btn-secondary align-btn ml-3" >{% trans "Medical Records" %}</a></div>
+                            <div class="mx-auto"   >
+                                <div><a href="{% url 'medicalrecords:list_medicalrecords' view.object.user.username %}" class="btn btn-secondary mt-3" >{% trans "Medical Records" %}</a></div>
                             </div>
                         {% endif %}
-                        
+
                     </div>
                 </div>
-                    
+
                 <div class="col-12 col-md-8 border-left my-4">
                     <div>
                         <div><label><strong>{% trans 'Name: '%} </strong></label></div><div class="alert alert-dark" role="alert"> {{ view.object.user.name }}</div>

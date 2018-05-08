@@ -10,10 +10,10 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-between mb-1">
-        <h2 class="col-7 col-md-10 text-tertiary">{% trans "Select a patient" %}</h2>
+        <h2 class="col-7 col-md text-tertiary">{% trans "Select a patient" %}</h2>
 
-        <div class="col float-right mr-0">
-                <a href="{% url 'users:detail' request.user %}" class="btn btn-secondary align-btn ml-3" >{% trans "Return" %}</a>
+        <div class="col-auto float-right">
+                <a href="{% url 'users:detail' request.user %}" class="btn btn-secondary ml-3" >{% trans "Return" %}</a>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
         <div class="col">
             <form class="form-inline float-right" action="" method="GET">
                 <div class="search"><label>{% trans 'Patient:'%}</label> {{ form.list_patient }}</div>
-                
+
                 <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
             </form>
         </div>
