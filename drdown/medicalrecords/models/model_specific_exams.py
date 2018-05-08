@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class SpecificExam(models.Model):
 
-    patient = models.ForeignKey(
+    patient = models.OneToOneField(
         Patient,
         on_delete=models.CASCADE,
         verbose_name=_('Patient')
