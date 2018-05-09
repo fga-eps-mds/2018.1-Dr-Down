@@ -49,11 +49,10 @@ class Complaint(models.Model):
             if timezone.localdate().isoformat() < str(self.complaint_day):
                 raise ValidationError(
                     {'complaint_day':
-                         _("The complaint cannot be in the future!")}
+                        _("The complaint cannot be in the future!")}
                 )
 
         return super(Complaint, self).clean()
-
 
     def __str__(self):
         return self.patient.user.get_username() + " -  Comptaint ID: " + \
