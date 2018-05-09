@@ -51,7 +51,7 @@ A Sprint 8 foi planejada para dar continuidade às histórias relacionadas à fi
 
 ## 5. Mudanças
 
-Para esta sprint, devido ao problema que houve na passada relacionado à pontuação de histórias não correspondendo ao esforço para entregá-las, na reunião de planejamento houve um maior cuidado com isso. Para isso, cada história foi discutida por mais tempo, e as possíveis questões técnicas relacionadas à elas foram mais esmiuçadas antes do início da pontuação.
+Para esta sprint, devido ao problema que houve na passada relacionado à pontuação de histórias não correspondendo ao esforço para entregá-las, na reunião de planejamento tivemos um maior cuidado com isso. Desta forma, cada história foi discutida por mais tempo, e as possíveis questões técnicas relacionadas à elas foram mais esmiuçadas antes que começássemos pontuação.
 
 ## 6. Backlog da Sprint
 
@@ -65,4 +65,4 @@ Para esta sprint, devido ao problema que houve na passada relacionado à pontua�
 
 ## 7. Risk Burndown
 
-![Risk Burndown da Sprint 8](https://uploaddeimagens.com.br/images/001/403/364/full/riscos_S8.png?1525481031)
+![Risk Burndown da Sprint 8](https://uploaddeimagens.com.br/images/001/409/241/full/riscos_S8.png?1525865981)

@@ -10,30 +10,30 @@ __Dívidas técnicas__: 1 pontos
 
 __Histórias entregues:__
 
-- [TS75 - Atualizar a documentação dos riscos para a Sprint 7](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/167)
 - [TS77 - Elaborar a segunda versão da EVM](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/185)
 - [US78 - Consulta](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/186)
 - [TS79 - Correção de bugs](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/187)
 - [US80 - Ficha de acompanhamento](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/188)
 - [US81 - Calendário de vacina](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/189)
+- [TS82 - Documentar a Sprint 7](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/191)
 
 __Histórias que viraram débitos:__
 
-- [TS82 - Documentar a Sprint 7](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/191)
+- [TS75 - Atualizar a documentação dos riscos para a Sprint 7](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/167)
 
 ## 2. Retrospectiva da Sprint
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
-| Tudo foi entregue | Trabalhos de outros materias | Nas dailys não presenciais, tentar responder os mais rápidó possível |
-| A troca de conhecimento está funcionando. | A história de marcar consulta foi meio cansativa, mas deu certo. A dupla conseguiu entregar | Tentar criar um horário de trabalho |
+| Tudo foi entregue | Trabalhos de outros matérias | Nas dailys não presenciais, tentar responder o mais cedo possível |
+| A troca de conhecimento está funcionando. | A história de marcar consulta foi cansativa, mas a dupla conseguiu entregar | Tentar criar um horário de trabalho |
 | As pontuações de histórias foram coerentes | Membro sem notebook temporariamente | - |
-| O time de mds está cada vez mais nivelado | - | - |
+| O time de MDS está cada vez mais nivelado | - | - |
 
 
 ## 3. Quadro de Conhecimento
 
-![Quadro de conhecimento da Sprint 8]()
+![Quadro de conhecimento da Sprint 8](https://uploaddeimagens.com.br/images/001/409/436/full/quadro_conhecimento_S8.png?1525874883)
 
 ## 5. Gráfico do Burndown
 
@@ -53,3 +53,6 @@ __Histórias que viraram débitos:__
 
 ## 9. Análise do Scrum Master
 
+Nesta sprint, continuamos mantendo nossas entregas, com apenas uma dívida técnica. Apesar da semana complicada por causa de outras matérias, os membros de MDS mantiveram as entregas deles dentro do prazo.
+
+Como os membros de MDS adiantaram que a semana da Sprint 10 será complicada, teremos que nos planejar para que essa sprint tenha histórias menos complexas. Por isso, provavelmente para a próxima semana adiantaremos histórias que consideramos mais complexas e que possam já serem feitas.
