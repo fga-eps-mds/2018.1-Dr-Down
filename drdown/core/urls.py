@@ -19,4 +19,10 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='core/vaccine_schedule.html'),
         name='vaccine'
     ),
+    url(
+       regex=r'^vaccine/location$',
+       view=TemplateView.as_view(template_name='core/vaccination_sites.html'),
+       name='locations'
+    ),
+
 ]
