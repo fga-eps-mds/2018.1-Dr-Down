@@ -21,23 +21,6 @@ class MedicalRecordsFilter(BaseFilter):
     }
 
 
-class CheckPermissions(UserPassesTestMixin):
-    def test_func(self):
-        return hasattr(self.request.user, 'healthteam') or \
-               hasattr(self.request.user, 'employee')
-
-    def get_login_url(self):
-        if self.request.user.is_authenticated:
-            # redirect if user is not a HealthTeam
-            login_url = reverse_lazy(
-                viewname='users:detail',
-                kwargs={'username': self.request.user.username}
-            )
-            return login_url
-        login_MedicalRecordsList_url = reverse_lazy('account_login')
-        return login_MedicalRecordsList_url
-
-
 class MedicalRecordsList(UserPassesTestMixin, ListView):
     model = MedicalRecord
     template_name = "medicalrecords/medicalrecord_list.html"

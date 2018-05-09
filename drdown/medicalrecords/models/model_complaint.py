@@ -45,27 +45,15 @@ class Complaint(models.Model):
         verbose_name_plural = _("Complaints")
 
     def clean(self, *args, **kwargs):
-        data = super(Complaint, self).clean()
-
-        if isinstance(self.complaint_day, timezone.datetime):
-            self.complaint_day = self.complaint_day.date()
-
         if self.complaint_day:
             if timezone.localdate().isoformat() < str(self.complaint_day):
                 raise ValidationError(
                     {'complaint_day':
                          _("The complaint cannot be in the future!")}
                 )
-            elif (
-                timezone.datetime.strptime(str(self.complaint_day),
-                                           "%Y-%m-%d") <
-                timezone.datetime.strptime("2000-01-01", "%Y-%m-%d")
-            ):
-                raise ValidationError(
-                    {'complaint_day': _("This complaint is too old.")}
-                )
 
-        return data
+        return super(Complaint, self).clean()
+
 
     def __str__(self):
         return self.patient.user.get_username() + " -  Comptaint ID: " + \
