@@ -1,0 +1,266 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block css %}
+	{{block.super}}
+	<link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+	}
+{% endblock %}
+
+{% block script %}
+<script>
+	function aparece(elem){
+		if(document.getElementById(elem).style.display== "none"){
+			document.getElementById(elem).style.display = "block";
+		}
+		else {
+			document.getElementById(elem).style.display = "none"
+		}
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+	<center><h2 class="text-tertiary">{% trans "Vaccination Sites" %}</h2></center>
+	<hr class="star-dark bg-star-white">
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_asa_norte');">Asa Norte</a>
+	</ul>
+	<table class="ml-3 table" id="local_asa_norte" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>CSB 11 (SGAN 905)</td>
+				<td>3274-3155 /3273-3962</td>
+			</tr>
+			<tr>
+				<td>CSB 12 (EQN 208/408)</td>
+				<td>3274-3455 /3274-9158</td>
+			</tr>
+			<tr>
+				<td>CSB 15 ( Vila Planalto)</td>
+				<td>3306-2182</td>
+			</tr>	
+			<tr>
+				<td>HUB (Av. L2 Norte Q. 605)</td>
+				<td>3307-3223</td>
+			</tr>
+			<tr>
+				<td>CSB 13 (SQN 114/115)</td>
+				<td>3272-2948/3273-9233</td>
+			</tr>
+			<tr>
+				<td>Ambulatório do HRAN (SMHN, Área Especial)</td>
+				<td>3325-4300 </td>
+			</tr>	
+			<tr>
+				<td>HGB</td>
+				<td> ---------------- </td>
+			</tr>
+			<tr>
+				<td>Hospital das Forças Armadas (HFA)</td>
+				<td> ---------------- </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_lago_norte');">Lago Norte</a>
+	</ul>
+	<table class="ml-3 table" id="local_lago_norte" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde n° 10 (SHIN QI 01/03)</td>
+				<td>3577-2092 /3577-3181</td>
+			</tr>
+			<tr>
+				<td>Centro de Saúde nº 2 Varjão </td>
+				<td>3368-1555</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_esplanada');">Esplanada dos Ministérios</a>
+	</ul>
+	<table class="ml-3 table" id="local_esplanada" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Presidência da República</td>
+				<td> ---------------- </td>
+			</tr>
+			<tr>
+				<td>Senado Federal</td>
+				<td> ---------------- </td>
+			</tr>
+			<tr>
+				<td>Câmara Federal</td>
+				<td> ---------------- </td>
+			</tr>	
+			<tr>
+				<td>Ministério das Relações Exteriores</td>
+				<td> ---------------- </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_novo');">Cruzeiro Novo</a>
+	</ul>
+	<table class="ml-3 table" id="local_cruzeiro_novo" style="display: none;">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde nº 9 (Q. 611 Lote 1)</td>
+				<td>3233-0040 /3233-0064</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_velho');">Cruzeiro Velho</a>
+	</ul>
+	<table class="ml-3 table" id="local_cruzeiro_velho" style="display: none;">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde n° 14 (Área Especial)</td>
+				<td>3234-1666 /3234-1485</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_asa_sul');">Asa Sul</a>
+	</ul>
+	<table class="ml-3 table" id="local_asa_sul" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde de Brasília nº 01 Hospital Dia
+(Av. W3 Sul Q.508)</td>
+				<td>3242-9399/3242-5229</td>
+			</tr>
+			<tr>
+				<td>Centro de Saúde n° 06 (Av. L/2 Sul, Quadra 605)</td>
+				<td>3443-1855/3443-1357</td>
+			</tr>
+			<tr>
+				<td>Centro de Saúde n° 07 (Av. L/2 Sul, Quadra 612) </td>
+				<td>3345-2874/3345-2873</td>
+			</tr>	
+			<tr>
+				<td>Hospital Regional da Asa Sul (Av. L2 Sul Q. 608) </td>
+				<td> ---------------- </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_lago_sul');">Lago Sul</a>
+	</ul>
+	<table class="ml-3 table" id="local_lago_sul" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde n° 05 (QI 21, Área Especial)</td>
+				<td>3366-2530 /3366-2660</td>
+			</tr>
+			<tr>
+				<td>Hospital de Força Aérea de Brasília (Área Militar do Aeroporto)</td>
+				<td> ---------------- </td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_guara_I');">Guará I</a>
+	</ul>
+	<table class="ml-3 table" id="local_guara_I" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde nº 01 (QE 06, Área Especial B)</td>
+				<td>3567-0510</td>
+			</tr>
+			<tr>
+				<td>Posto Urbano Lúcio Costa (QELC 2/3 Lúcio Costa)</td>
+				<td>3382-6586</td>
+			</tr>
+			<tr>
+				<td>Posto de Saúde (Estrutural)</td>
+				<td>3036-5449/3036-1993</td>
+			</tr>	
+			<tr>
+				<td>HRGu - VE (QI 06, Área Especial C)</td>
+				<td>3567-4198/3353-1445</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul class="list-group list-group-flush">
+		<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_guara_II');">Guará II</a>
+	</ul>
+	<table class="ml-3 table" id="local_guara_II" style="display: none; ">
+		<thead>
+			<tr>
+				<th scope="col">{% trans 'Local' %}</th>
+				<th scope="col">{% trans 'Phone' %}</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<tr>
+				<td>Centro de Saúde n° 02 (QE 23, Área Especial, Lote “C”)</td>
+				<td>3568-3476/3381-4555</td>
+			</tr>
+			<tr>
+				<td>Centro de Saúde n° 03 (QE 38, Área Especial)</td>
+				<td>3301-8398/3301-1995</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}
