@@ -119,11 +119,11 @@ class RequestDeleteView(LoginRequiredMixin, DeleteView):
 class RequestUpdateStatusView(LoginRequiredMixin, UpdateView):
     model = AppointmentRequest
     template_name = 'appointments/request_confirm_cancel.html'
-    fields = []
+    fields = ['observation']
 
     def get_success_url(self, **kwargs):
         success_update_status_url = reverse(
-            viewname='appointments:list_appointments',
+            viewname='appointments:list_requests',
         )
 
         return success_update_status_url

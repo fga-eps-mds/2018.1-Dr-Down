@@ -11,7 +11,7 @@
 {% block content %}
   <div class="container" >
     {% if request.user.patient and request.user.age >= 13 or request.user.responsible %}
-      <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary btn-sm float-right mr-3">{% trans "New Request" %}</a>
+      <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary btn-sm mt-1 float-right mr-3">{% trans "New Request" %}</a>
     {% endif %}
     <h2>{% trans 'Requests' %}</h2><hr>
     {% for appointmentrequest in appointmentrequest_list %}
@@ -19,12 +19,14 @@
         <div class="message" style="width:98%">
           {% if request.user.patient or request.user.responsible %}
             {% if appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
-              <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
-              <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
+              <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn mt-1 btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
+              <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn mt-1 btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
+            {% else %}
+              <a href="#" class="btn mt-1 btn-success btn-sm float-right mr-2 mt-1">{% trans "OK" %}!</a>
             {% endif %}
           {% elif request.user.employee and appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
-            <a href="{% url 'appointments:create_from_request' appointmentrequest.pk %}" class="btn btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
-            <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
+            <a href="{% url 'appointments:create_from_request' appointmentrequest.pk %}" class="btn mt-1 btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
+            <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn mt-1 btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
           {% endif %}
           <h5 class="mt-2">{% trans 'Patient'%}: {{appointmentrequest.patient.user.name}}</h5>
           <font size="4" >{% trans 'Doctor'%}: {{ appointmentrequest.doctor.user.name}}</font><br>
@@ -35,6 +37,9 @@
             <font size="2" >{% trans 'Motive'%}: {{appointmentrequest.motive}}</font><br>
           {% endif %}
           <font size="2" >{% trans 'Status'%}: {{appointmentrequest.status}}</font><br>
+          {% if appointmentrequest.observation %}
+            <font size="2" >{% trans 'Observation'%}: {{appointmentrequest.observation}}</font><br>
+          {% endif %}
         </div>
       </div>
     {% empty %}
