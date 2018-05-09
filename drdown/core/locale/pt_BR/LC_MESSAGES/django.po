@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-04 10:24+0000\n"
+"POT-Creation-Date: 2018-05-09 17:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -417,40 +417,44 @@ msgstr "Meu paciente"
 msgid "Schedules"
 msgstr "Agenda"
 
-#: drdown/core/templates/core/base.html:103
+#: drdown/core/templates/core/base.html:101
+msgid "Appointments"
+msgstr "Consultas"
+
+#: drdown/core/templates/core/base.html:104
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: drdown/core/templates/core/base.html:104
+#: drdown/core/templates/core/base.html:105
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:105
+#: drdown/core/templates/core/base.html:106
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:110
+#: drdown/core/templates/core/base.html:111
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base.html:113
+#: drdown/core/templates/core/base.html:114
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base.html:141
+#: drdown/core/templates/core/base.html:142
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base.html:142
+#: drdown/core/templates/core/base.html:143
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base.html:143
+#: drdown/core/templates/core/base.html:144
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base.html:151
+#: drdown/core/templates/core/base.html:152
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -660,6 +664,16 @@ msgstr "Leituras complementares"
 msgid "Vaccine Schedule"
 msgstr "Calendário de Vacinas"
 
+#: drdown/core/templates/core/pagination.html:8
+#: drdown/core/templates/core/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/core/templates/core/pagination.html:30
+#: drdown/core/templates/core/pagination.html:34
+msgid "Next"
+msgstr "Próximo"
+
 #: drdown/core/templates/core/vaccine_schedule.html:25
 #: drdown/core/templates/core/vaccine_schedule.html:224
 #: drdown/core/templates/core/vaccine_schedule.html:266
@@ -669,7 +683,6 @@ msgstr "Vacinas"
 
 #: drdown/core/templates/core/vaccine_schedule.html:26
 #: drdown/core/templates/core/vaccine_schedule.html:244
-#| msgid "OF BIRTH TO THE 10 YEARS OF AGE"
 msgid "OF BIRTH TO THE 6 YEARS OF AGE"
 msgstr "DO NASCIMENTO AOS 6 ANOS DE IDADE"
 
@@ -1089,16 +1102,6 @@ msgid ""
 msgstr ""
 "Vacinar pessoas de 9 a 45 anos previamente infectadas pelo vírus "
 "(soropositivas) com três doses: 0 - 6 - 12 meses"
-
-#: drdown/core/templates/core/pagination.html:8
-#: drdown/core/templates/core/pagination.html:12
-msgid "Previous"
-msgstr "Anterior"
-
-#: drdown/core/templates/core/pagination.html:30
-#: drdown/core/templates/core/pagination.html:34
-msgid "Next"
-msgstr "Próximo"
 
 #~ msgid "Hey! You have procedures to be made."
 #~ msgstr "Oi! Você tem procedimentos que precisam ser feitos."

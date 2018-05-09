@@ -23,8 +23,6 @@ msgstr ""
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:38
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:126
-#, fuzzy
-#| msgid "Medical Records"
 msgid "Medical Record"
 msgstr "Prontuários"
 
@@ -94,8 +92,6 @@ msgid "Exam"
 msgstr "Exame"
 
 #: drdown/medicalrecords/models/model_exams.py:21
-#, fuzzy
-#| msgid "care day"
 msgid "Exam day"
 msgstr "Dia de atendimento"
 
@@ -141,10 +137,8 @@ msgid "Message"
 msgstr "Mensagem"
 
 #: drdown/medicalrecords/models/model_medical_record.py:27
-#, fuzzy
-#| msgid "There are no Medical Records."
 msgid "Message of medical records"
-msgstr "Não há prontuários.Mensagem do prontuário"
+msgstr "Mensagem do prontuário"
 
 #: drdown/medicalrecords/models/model_medical_record.py:42
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:55
@@ -168,10 +162,8 @@ msgid "Does the patient still use this medication?"
 msgstr "O paciente ainda usa esse medicamento?"
 
 #: drdown/medicalrecords/models/model_medicines.py:40
-#, fuzzy
-#| msgid "Patient"
 msgid "Patient Medicine"
-msgstr "Paciente"
+msgstr "Remédio do Paciente"
 
 #: drdown/medicalrecords/models/model_specific_exams.py:18
 msgid "Structured Physical Exam"
@@ -222,10 +214,8 @@ msgid "Test of the Ear"
 msgstr "Teste da orelinha"
 
 #: drdown/medicalrecords/models/model_static_data.py:46
-#, fuzzy
-#| msgid "Medical Records"
 msgid "Medical Record Static Data"
-msgstr "Prontuários"
+msgstr "Prontuário - Dados Estáticos"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:4
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:4
@@ -291,10 +281,8 @@ msgid "Return"
 msgstr "Retornar"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:51
-#, fuzzy
-#| msgid "Patient"
 msgid "Patient data"
-msgstr "Paciente"
+msgstr "Dados do paciente"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:59
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:188
@@ -303,10 +291,8 @@ msgstr "Dados estáticos"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:63
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:275
-#, fuzzy
-#| msgid "Medical Records"
 msgid "Medical Exams"
-msgstr "Prontuários"
+msgstr "Exames Médicos"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:75
 msgid "data"
@@ -321,8 +307,6 @@ msgid "SUS: "
 msgstr "SUS: "
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:104
-#, fuzzy
-#| msgid "birthday: "
 msgid "Birthday: "
 msgstr "Data de nascimento: "
 
@@ -337,10 +321,8 @@ msgid "New"
 msgstr "Novo"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:167
-#, fuzzy
-#| msgid "Attachments"
 msgid "Attachment:"
-msgstr "Anexos"
+msgstr "Anexos:"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:176
 msgid "There are no Medical Records for this patient."
@@ -368,10 +350,8 @@ msgid "Ear Test:"
 msgstr "Teste da orelinha:"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:258
-#, fuzzy
-#| msgid "There are no Medical Records for this patient."
 msgid "No static data for this patient."
-msgstr "Não prontuário para este paciente."
+msgstr "Não há dados estáticos para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:298
 msgid "Structured Physical:"
@@ -407,10 +387,8 @@ msgid "Nervous System:"
 msgstr "Sistema nervoso:"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:14
-#, fuzzy
-#| msgid "New Medical Record"
 msgid "New Medicine"
-msgstr "Novo prontuário"
+msgstr "Novo Remédio"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:16
 msgid "Update Static Data"
@@ -420,68 +398,62 @@ msgstr "Atualizar dados estáticos"
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#~ msgid "search here!"
-#~ msgstr "busque aqui!"
+msgid "search here!"
+msgstr "busque aqui!"
 
-#~ msgid "(Year)-(Month)-(Day)"
-#~ msgstr "(Ano)-(Mês)-(Dia)"
+msgid "(Year)-(Month)-(Day)"
+msgstr "(Ano)-(Mês)-(Dia)"
 
-#, fuzzy
-#~| msgid "author"
-#~ msgid "Search author!"
-#~ msgstr "Buscar autor"
+msgid "Search author!"
+msgstr "Buscar autor!"
 
-#~ msgid "Search patient!"
-#~ msgstr "Buscar paciente"
+msgid "Search patient!"
+msgstr "Buscar paciente!"
 
-#, fuzzy
-#~| msgid "Search"
-#~ msgid "Search date!"
-#~ msgstr "Buscar data"
+msgid "Search date!"
+msgstr "Buscar data!"
 
-#~ msgid "author"
-#~ msgstr "autor"
+msgid "author"
+msgstr "autor"
 
-#~ msgid "date"
-#~ msgstr "data"
+msgid "date"
+msgstr "data"
 
-#~ msgid "Search"
-#~ msgstr "Buscar"
+msgid "Search"
+msgstr "Buscar"
 
-#~ msgid "Anexo:"
-#~ msgstr "Anexo:"
+msgid "Anexo:"
+msgstr "Anexo:"
 
-#~ msgid "Advanced Search"
-#~ msgstr "Busca avançada"
+msgid "Advanced Search"
+msgstr "Busca avançada"
 
-#~ msgid "There are no Medical Records."
-#~ msgstr "Não há prontuários."
+msgid "There are no Medical Records."
+msgstr "Não há prontuários."
 
-#~ msgid "Search a Medical Records:"
-#~ msgstr "Buscar um prontuário:"
+msgid "Search a Medical Records:"
+msgstr "Buscar um prontuário:"
 
-#~ msgid "paciente"
-#~ msgstr "paciente"
+msgid "paciente"
+msgstr "paciente"
 
-#~ msgid "Previous"
-#~ msgstr "Anterior"
+msgid "Previous"
+msgstr "Anterior"
 
-#~ msgid "Next"
-#~ msgstr "Proximo"
+msgid "Next"
+msgstr "Proximo"
 
-#~ msgid "message"
-#~ msgstr "mensagem"
+msgid "message"
+msgstr "mensagem"
 
-#, fuzzy
-#~| msgid "Attachments"
-#~ msgid "Documents"
-#~ msgstr "Anexos"
+msgid "Documents"
+msgstr "Documentos"
 
-#~ msgid "Create"
-#~ msgstr "Criar"
+msgid "Create"
+msgstr "Criar"
 
-#~ msgid "This user is not a patient!!!"
-#~ msgstr "Este usuário não é um paciente!"
+msgid "This user is not a patient!!!"
+msgstr "Este usuário não é um paciente!"
 
-#~ msgid "Message of post"
-#~ msgstr "Mensagem do post"
+msgid "Message of post"
+msgstr "Mensagem do post"
