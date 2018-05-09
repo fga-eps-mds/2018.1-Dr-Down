@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container">
+  <div class="container ">
 
     {% url 'appointments:create_request' as url %}
     {% if request.path == url %}
@@ -31,7 +31,9 @@
           </p>
         </div>
       {% endfor %}
-      <button type="submit" class="btn btn-secondary">{% trans "Submit" %}</button>
+      <div class="row align-items-center justify-content-center">
+        <button type="submit" class="btn btn-success mr-4" align="center">{% trans "Submit" %}</button>
+      </div>
     </form>
   </div>
 
