@@ -21,7 +21,7 @@ urlpatterns = [
     ),
     url(
        regex=r'^vaccine/location$',
-       view=TemplateView.as_view(template_name='core/vaccination_sites.html'),
+       view=TemplateView.as_view(template_name='core/vaccination_locations.html'),
        name='locations'
     ),
 
