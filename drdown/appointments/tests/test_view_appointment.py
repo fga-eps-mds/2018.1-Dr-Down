@@ -1,5 +1,6 @@
 from test_plus.test import TestCase
 from ..models.model_appointment import Appointment
+from ..models.model_request import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_employee import Employee
 from drdown.users.models.model_responsible import Responsible
@@ -116,11 +117,11 @@ class TestViewAppointment(TestCase):
         """
         self.client.force_login(user=self.user3)
         data = {
-        'speciality': Appointment.SPEECH_THERAPHY,
-        'doctor': self.doctor.pk,
-        'patient': self.patient.pk,
-        'date': '2018-05-12',
-        'time': '20:00',
+            'speciality': Appointment.SPEECH_THERAPHY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'date': '2050-05-12',
+            'time': '20:00',
         }
         response = self.client.post(
             path=reverse('appointments:create_appointment'),
@@ -137,7 +138,7 @@ class TestViewAppointment(TestCase):
             'speciality': Appointment.SPEECH_THERAPHY,
             'doctor': self.doctor.pk,
             'patient': self.patient.pk,
-            'date': '2018-05-12',
+            'date': '2050-05-12',
             'time': '20:00',
         }
         response = self.client.post(
@@ -159,7 +160,7 @@ class TestViewAppointment(TestCase):
             'speciality': Appointment.SPEECH_THERAPHY,
             'doctor': self.doctor.pk,
             'patient': self.patient.pk,
-            'date': '2018-05-12',
+            'date': '2050-05-12',
             'time': '20:00',
         }
 
@@ -230,23 +231,57 @@ class TestViewAppointment(TestCase):
         )
         self.assertEquals(response.status_code, 200)
 
-    # def test_form_invalid(self):
-    #     """
-    #     Test if form is valid with blank fields
-    #     """
-    #     response = self.client.post(
-    #         path=reverse(
-    #             viewname='forum:create_post',
-    #             args=(self.category.slug, self.category.pk)
-    #         ),
-    #         data={'form':
-    #                   {'title': "",
-    #                   'message': "Making a post test case",
-    #                   'user':'self.user'}
-    #         },
-    #     )
-    #     self.assertFormError(response, 'form', 'title', _('This field is required.'))
-    #     self.assertEquals(response.status_code, 200)
+    def test_appointment_from_request_context_data_create_view(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        response = self.client.get(
+            path=reverse(
+                viewname='appointments:create_from_request',
+                args=(request.pk,),
+            ),
+            follow=True
+        )
+        self.assertEquals(response.status_code, 200)
+        self.assertContains(response, text=request.speciality)
+        self.assertContains(response, text=request.shift)
+        self.assertContains(response, text=request.get_day_display())
 
-    #
+    def test_appointment_from_request_form_valid_create_view(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.SPEECH_THERAPHY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'date': '2050-05-12',
+            'time': '20:00',
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_from_request',
+                args=(request.pk,),
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
 
