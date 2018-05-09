@@ -75,7 +75,7 @@
     <div class="fieldWrapper form-group">
       <div class="row">
         <label for="id_date" class="col-form-label col col-sm-7 mr-5">{% trans 'Date' %}:
-          <strong class="col ml-5">({% trans 'Requested day of the week' %}: {{ appointment_request.get_day_display }})</strong>
+          <strong class="col ml-3">({% trans 'Requested day of the week' %}: {{ appointment_request.get_day_display }})</strong>
         </label>
       </div>
       <input type="date" name="date" id="id_date" class="form-control" min="{% now 'Y-m-d' %}" required>
@@ -86,7 +86,7 @@
     <div class="fieldWrapper form-group">
       <div class="row">
         <label for="id_time" class="col-form-label col-sm-7 mr-5">{% trans 'Time' %}:
-          <strong class="col ml-5">({% trans 'Requested shift' %}: {{ appointment_request.get_shift_display }})</strong>
+          <strong class="col ml-3">({% trans 'Requested shift' %}: {{ appointment_request.get_shift_display }})</strong>
         </label>
       </div>
         <input type="time" name="time" id="id_time" class="form-control" required>
