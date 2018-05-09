@@ -19,3 +19,11 @@ hr.bg-star-blue:after{
 #location{
   width: 100%;
 }
+
+.text-blue-1{
+	color: #2C3E50;
+}
+
+a.hover-yellow:hover {
+	color: #0A0A2A;
+}
