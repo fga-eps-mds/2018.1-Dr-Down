@@ -138,3 +138,21 @@ class RequestUpdateStatusView(LoginRequiredMixin, UpdateView):
         form.instance.status = AppointmentRequest.DECLINED
         form.save()
         return super(RequestUpdateStatusView, self).form_valid(form)
+
+
+class RequestAfterResultDeleteView(LoginRequiredMixin, DeleteView):
+    model = AppointmentRequest
+    template_name = 'appointments/request_after_result_confirm_delete.html'
+
+    def get_success_url(self, **kwargs):
+        success_after_result_delete_url = reverse(
+            viewname='appointments:list_requests',
+        )
+
+        return success_after_result_delete_url
+
+    def get_object(self):
+        request = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        return request

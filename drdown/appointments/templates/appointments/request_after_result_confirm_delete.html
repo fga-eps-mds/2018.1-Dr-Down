@@ -1,0 +1,21 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Delete Request" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans "Confirm" %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>
+    {% trans 'Your request was' %}: {{appointmentrequest.get_status_display}}. {% trans 'Are you aware' %}?<br>
+    <font size="2" >{% trans 'This request will be deleted'%}.</font>
+  </p>
+  <button class="btn btn-success float-right" type="submit">{% trans 'Yes' %}</button>
+  <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right mr-3">{% trans "No" %}</a>
+</form>
+
+
+{% endblock %}

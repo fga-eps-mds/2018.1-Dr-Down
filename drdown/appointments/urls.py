@@ -13,6 +13,7 @@ from drdown.appointments.views.view_request import (
     RequestUpdateView,
     RequestDeleteView,
     RequestUpdateStatusView,
+    RequestAfterResultDeleteView
 )
 
 
@@ -42,6 +43,11 @@ urlpatterns = [
         regex=r'^request/delete/(?P<request_pk>\d+)/$',
         view=RequestDeleteView.as_view(),
         name='delete_request'
+    ),
+    url(
+        regex=r'^request/result/delete/(?P<request_pk>\d+)/$',
+        view=RequestAfterResultDeleteView.as_view(),
+        name='delete_request_after_result'
     ),
     url(
         regex=r'^new/$',

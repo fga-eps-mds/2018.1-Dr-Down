@@ -112,6 +112,7 @@ class AppointmentRequest(models.Model):
     status = models.CharField(
         _('Status'),
         help_text=_("Was the request accepted?"),
+        choices=STATUS_CHOICES,
         default=PENDING,
         max_length=20,
         editable=False,
