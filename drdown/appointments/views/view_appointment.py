@@ -141,11 +141,12 @@ class AppointmentMonthArchiveView(LoginRequiredMixin, MonthArchiveView):
 class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
-    fields = ['speciality',
-              'doctor',
-              'patient',
-              'date',
-              'time',
+    fields = [
+        'speciality',
+        'doctor',
+        'patient',
+        'date',
+        'time',
     ]
 
     def get_success_url(self, **kwargs):
@@ -208,7 +209,8 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
     )
 
     def get_context_data(self, **kwargs):
-        context = super(AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
+        context = super(
+            AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
         context['health_team'] = HealthTeam.objects.all()
         context['patients'] = Patient.objects.all()
         context['appointment_request'] = AppointmentRequest.objects.get(
