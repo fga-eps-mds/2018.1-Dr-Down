@@ -2,15 +2,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
-from django.views.generic.dates import MonthArchiveView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.utils import timezone
-from django.urls import reverse
+from django.urls import reverse_lazy
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from drdown.appointments.models import AppointmentRequest
-from drdown.users.models.model_health_team import HealthTeam
-from drdown.users.models.model_patient import Patient
 from ..forms.requests_form import RequestSearchForm
 
 
@@ -30,8 +26,7 @@ class RequestListView(LoginRequiredMixin, SearchListView):
     filter_class = RequestFilter
     paginate_by = 10
 
-    @staticmethod
-    def prepare_queryset(request):
+    def prepare_queryset(self, request):
         user = request.user
         if hasattr(user, 'patient'):
             queryset = AppointmentRequest.objects.filter(
@@ -63,13 +58,9 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
         'day',
         'motive',
     ]
-
-    def get_success_url(self, **kwargs):
-        success_create_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_requests',
-        )
-
-        return success_create_url
+    )
 
 
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
@@ -83,56 +74,29 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
         'day',
         'motive',
     ]
-
-    def get_success_url(self, **kwargs):
-        success_update_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_requests',
-        )
-
-        return success_update_url
-
-    def get_object(self):
-        request = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
-        return request
+    )
+    pk_url_kwarg = 'request_pk'
 
 
 class RequestDeleteView(LoginRequiredMixin, DeleteView):
     model = AppointmentRequest
     template_name = 'appointments/request_confirm_delete.html'
-
-    def get_success_url(self, **kwargs):
-        success_delete_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_requests',
-        )
-
-        return success_delete_url
-
-    def get_object(self):
-        request = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
-        return request
+    )
+    pk_url_kwarg = 'request_pk'
 
 
 class RequestUpdateStatusView(LoginRequiredMixin, UpdateView):
     model = AppointmentRequest
     template_name = 'appointments/request_confirm_cancel.html'
     fields = ['observation']
-
-    def get_success_url(self, **kwargs):
-        success_update_status_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_requests',
-        )
-
-        return success_update_status_url
-
-    def get_object(self):
-        request = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
-        return request
+    )
+    pk_url_kwarg = 'request_pk'
 
     def form_valid(self, form):
         form.instance.status = AppointmentRequest.DECLINED
@@ -143,16 +107,7 @@ class RequestUpdateStatusView(LoginRequiredMixin, UpdateView):
 class RequestAfterResultDeleteView(LoginRequiredMixin, DeleteView):
     model = AppointmentRequest
     template_name = 'appointments/request_after_result_confirm_delete.html'
-
-    def get_success_url(self, **kwargs):
-        success_after_result_delete_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_requests',
-        )
-
-        return success_after_result_delete_url
-
-    def get_object(self):
-        request = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
-        return request
+    )
+    pk_url_kwarg = 'request_pk'

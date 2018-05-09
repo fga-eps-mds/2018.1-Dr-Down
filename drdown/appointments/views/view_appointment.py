@@ -4,7 +4,7 @@ from django.views.generic import UpdateView
 from django.views.generic.dates import MonthArchiveView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from drdown.appointments.models import Appointment
@@ -203,13 +203,9 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
         'date',
         'time',
     ]
-
-    def get_success_url(self, **kwargs):
-        success_create_url = reverse(
+    success_url = reverse_lazy(
             viewname='appointments:list_appointments',
-        )
-
-        return success_create_url
+    )
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
