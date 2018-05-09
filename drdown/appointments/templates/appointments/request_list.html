@@ -17,10 +17,12 @@
     {% for appointmentrequest in appointmentrequest_list %}
       <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
         <div class="message" style="width:98%">
-          {% if request.user.patient %}
-            <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
-            <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
-          {% elif request.user.employee and appointmentrequest.status != 'Declined' %}
+          {% if request.user.patient or request.user.responsible %}
+            {% if appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
+              <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
+              <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
+            {% endif %}
+          {% elif request.user.employee and appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
             <a href="{% url 'appointments:create_from_request' appointmentrequest.pk %}" class="btn btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
             <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
           {% endif %}

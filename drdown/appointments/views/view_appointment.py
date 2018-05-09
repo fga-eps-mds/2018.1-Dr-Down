@@ -219,3 +219,12 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
             pk=self.kwargs.get('request_pk')
         )
         return context
+
+    def form_valid(self, form):
+        request = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        request.status = AppointmentRequest.SCHEDULED
+        request.save()
+        form.save()
+        return super(AppointmentFromRequestCreateView, self).form_valid(form)
