@@ -14,7 +14,7 @@
   {% if user.is_authenticated %}
     {% if user.patient and user.patient.have_procedures_almost_late %}
       <div class="alert alert-warning" role="alert">
-          {% trans "Hey! You have procedures to be made."%} 
+          {% trans "Hey! You have procedures to be made."%}
           <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}.</a>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -23,7 +23,7 @@
     {% endif %}
     {% if user.responsible and user.responsible.have_patient_needing_atention %}
       <div class="alert alert-warning" role="alert">
-        {% trans "One or more of your patients needs attention. Some procedures may be behind schedule."%} 
+        {% trans "One or more of your patients needs attention. Some procedures may be behind schedule."%}
         <a href="{% url 'careline:checklist_list' %}" class="alert-link">{% trans "Click here to check it" %}.</a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -137,8 +137,8 @@
         {% endif %}
 
         {% if health_team_registration_state %}
-          <div class="form-group row mb-1">
-            <label for="inputName" class=" col-form-label float-left mr-2 pr-5 col-3"><strong>{% trans 'Registration State: '%}</strong></label>
+          <div class="form-group row mb-1 pt-1">
+            <label for="inputName" class="col-form-label float-left mr-2 col-3"><strong>{% trans 'Registration State: '%}</strong></label>
             <div>
               <input class="form-control col-sm-3" id="inputName" placeholder="{{ health_team_registration_state }}" disabled>
             </div>
