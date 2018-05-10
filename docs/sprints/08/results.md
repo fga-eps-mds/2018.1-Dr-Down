@@ -55,4 +55,8 @@ __Histórias que viraram débitos:__
 
 Nesta sprint, continuamos mantendo nossas entregas, com apenas uma dívida técnica. Apesar da semana complicada por causa de outras matérias, os membros de MDS mantiveram as entregas deles dentro do prazo.
 
-Como os membros de MDS adiantaram que a semana da Sprint 10 será complicada, teremos que nos planejar para que essa sprint tenha histórias menos complexas. Por isso, provavelmente para a próxima semana adiantaremos histórias que consideramos mais complexas e que possam já serem feitas.
+Como os membros de MDS adiantaram que a semana da Sprint 10 será complicada (mais do que foi a dessa sprint), teremos que nos planejar para que essa sprint tenha histórias menos complexas. Por isso, provavelmente para a próxima semana adiantaremos histórias que consideramos mais complexas e que possam já serem feitas.
+
+Quanto ao problema de um dos membros do grupo não ter um laptop temporariamente, isso já está sendo resolvido, já que ele comprou outro que deverá chegar na próxima semana.
+
+Por fim, a questão da história cansativa foi algo que nós todos não tínhamos previsto de antemão. Mas em outras sprints aproveitaremos a experiência adquirida nessa para evitar esse tipo de questão tomando providências como, por exemplo, quebrando a história em mais de uma.
