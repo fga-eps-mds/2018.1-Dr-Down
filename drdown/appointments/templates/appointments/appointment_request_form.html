@@ -75,7 +75,7 @@
     <div class="fieldWrapper form-group">
       <div class="row">
         <label for="id_date" class="col-form-label col col-sm-7 mr-5">{% trans 'Date' %}:
-          <strong class="col ml-3">({% trans 'Requested day of the week' %}: {{ appointment_request.get_day_display }})</strong>
+          <strong class="col">({% trans 'Requested day of the week' %}: {{ appointment_request.get_day_display }})</strong>
         </label>
       </div>
       <input type="date" name="date" id="id_date" class="form-control" min="{% now 'Y-m-d' %}" required>
@@ -86,14 +86,16 @@
     <div class="fieldWrapper form-group">
       <div class="row">
         <label for="id_time" class="col-form-label col-sm-7 mr-5">{% trans 'Time' %}:
-          <strong class="col ml-3">({% trans 'Requested shift' %}: {{ appointment_request.get_shift_display }})</strong>
+          <strong class="col">({% trans 'Requested shift' %}: {{ appointment_request.get_shift_display }})</strong>
         </label>
       </div>
         <input type="time" name="time" id="id_time" class="form-control" required>
       <span class="validity"></span>
     </div>
-
-    <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
+    <div class="float-right">
+      <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger">{% trans "Cancel" %}</a>
+      <button type="submit" class="btn btn-success">{% trans 'Schedule' %}</button>
+    </div>
   </form>
 </div>
 {% endblock %}
