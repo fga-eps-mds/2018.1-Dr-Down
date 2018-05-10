@@ -13,26 +13,6 @@
 
 {% endblock css %}
 
-{% block script %}
-  <script>
-    function initMap() {
-      var uluru = {lat: -15.785001, lng: -47.882911};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
-    }
-  </script>
-
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c-qw8WsuG-d49Vrwh4lMEpx291RU4r4&callback=initMap">
-  </script>
-{% endblock %}
-
 {% block content %}
 	<header class="masthead bg-blue text-center">
 	  <div class="container">
@@ -63,13 +43,19 @@
 	</section>
 
 	<section class="mb-0 text-secondary border-top" id="location">
-	  <div class="container">
-	    <h2 class="text-center text-uppercase">{% trans "CRIS Down " %}</h2>
-	    <hr class="star-dark mb-5">
-      <div id="move-map">
-        <div id="map"></div>
-      </div>
-	  </div>
+
+      <div class="col-12">
+        <h2 class="text-center text-uppercase">{% trans "CRIS Down " %}</h2>
+        <hr class="star-dark mb-5">
+       <iframe
+        width=100%;
+        height="550"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAh5TYmxl0UK0Pl1El_tZqVo3jeXg11lSo
+        &q=HRAN+-+Hospital+Regional+da+Asa+Norte" allowfullscreen>
+     </iframe>
+
+    </div>
 	</section>
 
 {% endblock content %}
