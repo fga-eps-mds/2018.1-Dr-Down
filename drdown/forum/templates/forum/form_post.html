@@ -1,31 +1,20 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
-
-{% block title %}{% trans "New Post" %}{% endblock %}
-
+{% block title %}{% trans 'New Medical Record' %}{% endblock %}
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
   <div class="container">
-    <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_categories' %}"> {% trans "Categories" %}</a></li>
-      <li class="breadcrumb-item"><a class="text-tertiary" href="{% url 'forum:list_posts' post_category.slug post_category.pk %}"> {% trans "Posts" %}</a></li>
-      <li class="breadcrumb-item active">{% trans "New Post" %}</li>
-    </ol>
-  </div>
-  <div class="container">
-    <h2>{% trans "New Post" %}</h2><hr>
+    <h2>{% trans 'New Post' %}</h2>
+    {{ form.media }}
     <form method="post">
       {% csrf_token %}
-      {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-          <p class="lead">
-            {{ field.label_tag }}<br>
-            {{ field }}
-          </p>
-        </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-secondary">{% trans "Post" %}</button>
+      <label>{% trans 'Title'%} : </label> <div style="margin-right: 90%;">{{ form.title }}</div><br/>
+      <label>{% trans 'Message'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
+      <button type="submit" class="btn btn-success ml-3 mt-5 float-right" style="margin-left: 0%;">{% trans 'Post' %}</button>
     </form>
-  </div>
-
+     <a href="{% url 'forum:list_categories' %}"><button type="submit" class="btn btn-danger ml-3 mt-5 float-right" style="margin-left: 0%;">{% trans 'Cancel' %}</button>
+  </div><br/><br/>
 {% endblock %}

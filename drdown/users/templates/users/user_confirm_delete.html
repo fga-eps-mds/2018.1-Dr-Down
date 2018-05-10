@@ -5,15 +5,13 @@
 {% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block inner %}
-<h1>{% trans "Delete" %}</h1>
+	<h1>{% trans "Delete" %}</h1>
 
-<form method="post" action="">
-  {% csrf_token %}
-  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
-  <button class="btn float-left btn-danger" type="submit">{% trans 'Delete' %}</button>
-</form>
-
-<a href="{% url 'users:detail' user.username %}"><button class="btn ml-3 btn-secondary" type="submit">{% trans 'Cancel' %}</button></a>
-
-
+	<form method="post" action="">
+	  {% csrf_token %}
+	  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
+	  <button class="btn float-right btn-danger" type="submit">{% trans 'Delete' %}</button>
+	</form>
+	
+	<a href="{% url 'users:detail' user.username %}"><button class="btn ml-3 btn-secondary mr-2 float-right" type="submit">{% trans 'Cancel' %}</button></a>
 {% endblock %}

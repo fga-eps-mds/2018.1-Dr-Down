@@ -6,6 +6,7 @@ from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 from django.utils import timezone
+from drdown.forum.form.forum_forms import ComentaryForm
 
 
 class CommentaryListView(ListView):
@@ -25,7 +26,7 @@ class CommentaryListView(ListView):
 class CommentaryCreateView(CreateView):
     model = Commentary
     template_name = 'forum/form_commentary.html'
-    fields = ['message']
+    form_class = ComentaryForm
 
     def get_success_url(self, **kwargs):
         success_create_url = reverse_lazy(
