@@ -16,8 +16,14 @@
 
         $(document).ready(function() {
 
-            $('#home').addClass("active").addClass("show");
-            var obj = $('.nav > li > a[href="#home"]');
+            var pathname = window.location.hash;
+
+            if (pathname === ""){
+                pathname = "#home";
+            }
+            
+            $(pathname).addClass("active").addClass("show");
+            var obj = $('.nav > li > a[href="' + pathname + '"]');
             obj.parent().addClass('active');
             obj.addClass("show");
             obj.addClass("active");
