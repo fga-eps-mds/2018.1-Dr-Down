@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 17:16+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -396,10 +396,13 @@ msgstr "Paciente:"
 msgid "Search"
 msgstr "Buscar"
 
+#: drdown/users/templates/users/healthteam_patient_list.html:37
+#: drdown/users/templates/users/patient_detail.html:40
 #: drdown/users/templates/users/healthteam_patient_list.html:56
+#: drdown/users/templates/users/healthteam_patient_list.html:47
 #: drdown/users/templates/users/patient_detail.html:65
 #: drdown/users/templates/users/responsible_patient_list.html:24
-#: drdown/users/templates/users/user_detail.html:168
+#: drdown/users/templates/users/user_detail.html:170
 msgid "SES: "
 msgstr "SES: "
 
@@ -415,6 +418,7 @@ msgid "Medical Sheet"
 msgstr "Ficha de Acompanhamento"
 
 #: drdown/users/templates/users/healthteam_patient_list.html:79
+#: drdown/users/templates/users/healthteam_patient_list.html:43
 #: drdown/users/templates/users/responsible_patient_list.html:30
 msgid "There are no patients for this user."
 msgstr "Não há pacientes para estes usuário."
@@ -423,7 +427,7 @@ msgstr "Não há pacientes para estes usuário."
 msgid "Detail patient"
 msgstr "Detalhes do paciente"
 
-#: drdown/users/templates/users/patient_detail.html:16
+#: drdown/users/templates/users/patient_detail.html:14
 #: drdown/users/templates/users/user_detail.html:260
 msgid "Patient: "
 msgstr "Paciente: "
@@ -432,27 +436,27 @@ msgstr "Paciente: "
 msgid "Checklist"
 msgstr "Checklist"
 
-#: drdown/users/templates/users/patient_detail.html:62
+#: drdown/users/templates/users/patient_detail.html:37
 #: drdown/users/templates/users/user_detail.html:48
 msgid "Name: "
 msgstr "Nome: "
 
-#: drdown/users/templates/users/patient_detail.html:63
+#: drdown/users/templates/users/patient_detail.html:38
 #: drdown/users/templates/users/user_detail.html:74
 msgid "Birthday: "
 msgstr "Data de nascimento: "
 
-#: drdown/users/templates/users/patient_detail.html:64
+#: drdown/users/templates/users/patient_detail.html:39
 #: drdown/users/templates/users/user_detail.html:213
 msgid "SUS: "
 msgstr "SUS: "
 
-#: drdown/users/templates/users/patient_detail.html:66
+#: drdown/users/templates/users/patient_detail.html:41
 #: drdown/users/templates/users/user_detail.html:222
 msgid "Civil registry of birth: "
 msgstr "Registro civil de nascimento: "
 
-#: drdown/users/templates/users/patient_detail.html:67
+#: drdown/users/templates/users/patient_detail.html:42
 #: drdown/users/templates/users/user_detail.html:231
 msgid "Declaration of live birth: "
 msgstr "Declaração de nascido vivo: "
@@ -542,10 +546,6 @@ msgstr "Etnia: "
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/users/templates/users/user_detail.html:282
-msgid "My Medical Records"
-msgstr "Meu Prontuário"
-
 #: drdown/users/templates/users/user_detail.html:283
 msgid "My Medical Follow-up Sheet"
 msgstr "Ficha de Acompanhamento"
@@ -554,7 +554,11 @@ msgstr "Ficha de Acompanhamento"
 msgid "Confirm data"
 msgstr "Confirmar dados"
 
-#: drdown/users/templates/users/user_form.html:127
+#: drdown/users/templates/users/user_detail.html:272
+msgid "My Medical Records"
+msgstr "Meu Prontuário"
+
+#: drdown/users/templates/users/user_form.html:113
 msgid "Photo of user"
 msgstr "Foto do usuário"
 

@@ -152,8 +152,8 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais|A decidir|A API ainda está sendo avaliada pela equipe.|
-|[google-maps-services-python](https://github.com/googlemaps/google-maps-services-python)|Componente python para utilização da API do google maps|A decidir|O componente está sendo avaliado pela equipe.|
+|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais| Sim |Facil aplicação e atende as necessidades.|
+|[google-maps-services-python](https://github.com/googlemaps/google-maps-services-python)|Componente python para utilização da API do google maps| Não | Não será ultilizado porque a API do google atendeu nossas necessidades e foi recomendada pela Gerência de projetos.|
 
 #### Outros
 

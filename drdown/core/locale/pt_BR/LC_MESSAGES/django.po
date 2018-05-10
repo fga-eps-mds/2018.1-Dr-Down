@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 17:16+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -425,36 +425,36 @@ msgstr "Consultas"
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: drdown/core/templates/core/base.html:105
+#: drdown/core/templates/core/base.html:104
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:106
+#: drdown/core/templates/core/base.html:105
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:111
+#: drdown/core/templates/core/base.html:110
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base.html:114
+#: drdown/core/templates/core/base.html:113
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base.html:142
+#: drdown/core/templates/core/base.html:141
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base.html:143
+#: drdown/core/templates/core/base.html:142
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base.html:144
+#: drdown/core/templates/core/base.html:143
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base.html:152
+#: drdown/core/templates/core/base.html:151
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -489,6 +489,11 @@ msgstr ""
 "CRIS DOWN foi inaugurado na Asa Norte, Brasília - DF em abril de 2013. É um "
 "lugar especializado no cuidado e acompanhamento de pacientes portadores de "
 "Síndrome de Down."
+
+#: drdown/core/templates/core/home.html:67
+#| msgid "CRIS DOWN"
+msgid "CRIS Down "
+msgstr "CRIS DOWN"
 
 #: drdown/core/templates/core/info.html:25
 msgid "Down's Syndrome infos"
@@ -674,15 +679,74 @@ msgstr "Anterior"
 msgid "Next"
 msgstr "Próximo"
 
-#: drdown/core/templates/core/vaccine_schedule.html:25
-#: drdown/core/templates/core/vaccine_schedule.html:224
-#: drdown/core/templates/core/vaccine_schedule.html:266
-#: drdown/core/templates/core/vaccine_schedule.html:375
+#: drdown/core/templates/core/vaccination_locations.html:25
+#: drdown/core/templates/core/vaccine_schedule.html:20
+#| msgid "Locations"
+msgid "Vaccination Locations"
+msgstr "Locais de Vacinação"
+
+#: drdown/core/templates/core/vaccination_locations.html:33
+#: drdown/core/templates/core/vaccination_locations.html:79
+#: drdown/core/templates/core/vaccination_locations.html:110
+#: drdown/core/templates/core/vaccination_locations.html:128
+#: drdown/core/templates/core/vaccination_locations.html:146
+#: drdown/core/templates/core/vaccination_locations.html:212
+#: drdown/core/templates/core/vaccination_locations.html:230
+#: drdown/core/templates/core/vaccination_locations.html:248
+#: drdown/core/templates/core/vaccination_locations.html:278
+#: drdown/core/templates/core/vaccination_locations.html:316
+#: drdown/core/templates/core/vaccination_locations.html:346
+#: drdown/core/templates/core/vaccination_locations.html:368
+#: drdown/core/templates/core/vaccination_locations.html:390
+#: drdown/core/templates/core/vaccination_locations.html:412
+#: drdown/core/templates/core/vaccination_locations.html:430
+#: drdown/core/templates/core/vaccination_locations.html:452
+#: drdown/core/templates/core/vaccination_locations.html:530
+#: drdown/core/templates/core/vaccination_locations.html:552
+#: drdown/core/templates/core/vaccination_locations.html:570
+#: drdown/core/templates/core/vaccination_locations.html:592
+#: drdown/core/templates/core/vaccination_locations.html:622
+#: drdown/core/templates/core/vaccination_locations.html:644
+#: drdown/core/templates/core/vaccination_locations.html:694
+msgid "Local"
+msgstr "Local"
+
+#: drdown/core/templates/core/vaccination_locations.html:34
+#: drdown/core/templates/core/vaccination_locations.html:80
+#: drdown/core/templates/core/vaccination_locations.html:111
+#: drdown/core/templates/core/vaccination_locations.html:129
+#: drdown/core/templates/core/vaccination_locations.html:147
+#: drdown/core/templates/core/vaccination_locations.html:213
+#: drdown/core/templates/core/vaccination_locations.html:231
+#: drdown/core/templates/core/vaccination_locations.html:249
+#: drdown/core/templates/core/vaccination_locations.html:279
+#: drdown/core/templates/core/vaccination_locations.html:317
+#: drdown/core/templates/core/vaccination_locations.html:347
+#: drdown/core/templates/core/vaccination_locations.html:369
+#: drdown/core/templates/core/vaccination_locations.html:391
+#: drdown/core/templates/core/vaccination_locations.html:413
+#: drdown/core/templates/core/vaccination_locations.html:431
+#: drdown/core/templates/core/vaccination_locations.html:453
+#: drdown/core/templates/core/vaccination_locations.html:531
+#: drdown/core/templates/core/vaccination_locations.html:553
+#: drdown/core/templates/core/vaccination_locations.html:571
+#: drdown/core/templates/core/vaccination_locations.html:593
+#: drdown/core/templates/core/vaccination_locations.html:623
+#: drdown/core/templates/core/vaccination_locations.html:645
+#: drdown/core/templates/core/vaccination_locations.html:695
+msgid "Phone"
+msgstr "Telefone"
+
+#: drdown/core/templates/core/vaccine_schedule.html:26
+#: drdown/core/templates/core/vaccine_schedule.html:225
+#: drdown/core/templates/core/vaccine_schedule.html:267
+#: drdown/core/templates/core/vaccine_schedule.html:376
 msgid "Vaccines"
 msgstr "Vacinas"
 
 #: drdown/core/templates/core/vaccine_schedule.html:26
 #: drdown/core/templates/core/vaccine_schedule.html:244
+#| msgid "OF BIRTH TO THE 10 YEARS OF AGE"
 msgid "OF BIRTH TO THE 6 YEARS OF AGE"
 msgstr "DO NASCIMENTO AOS 6 ANOS DE IDADE"
 
@@ -1055,6 +1119,7 @@ msgstr "60+ Anos"
 
 #: drdown/core/templates/core/vaccine_schedule.html:297
 #: drdown/core/templates/core/vaccine_schedule.html:298
+#: drdown/core/templates/core/vaccine_schedule.html:299
 msgid ""
 "Reinforcement with dTpa from 9 years of age and every 10 years (or, in the "
 "case of dTpa, do dT)"
