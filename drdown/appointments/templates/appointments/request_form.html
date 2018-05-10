@@ -32,6 +32,7 @@
         </div>
       {% endfor %}
       <div class="row align-items-center justify-content-center">
+        <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger float-right mr-3">{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success mr-4" align="center">{% trans "Submit" %}</button>
       </div>
     </form>
