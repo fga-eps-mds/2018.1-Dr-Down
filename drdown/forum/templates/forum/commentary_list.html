@@ -1,6 +1,8 @@
 {% extends "core/base.html" %}
 {% load i18n %}
 {% load static%}
+{% load markdown_deux_tags %}
+
 {% block title %}{% trans "Posts" %}{% endblock %}
 
 {% block css %}
@@ -49,7 +51,7 @@
           <hr>
         {% endif %}
         <!-- Post Content -->
-        <p class="lead"> {{ post.message }} </p>
+        <p class="lead"> {{ post.message|markdown }} </p>
         <hr>
       </div>
     </div>

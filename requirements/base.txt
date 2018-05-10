@@ -6,6 +6,7 @@ whitenoise==3.3.1  # https://github.com/evansd/whitenoise
 redis>=2.10.5  # https://github.com/antirez/redis
 celery==3.1.25  # pyup: <4.0  # https://github.com/celery/celery
 raven==6.6.0  # https://github.com/getsentry/raven-python
+python-dateutil==2.7.2 # https://github.com/dateutil/dateutil
 
 # Django
 # ------------------------------------------------------------------------------

@@ -76,14 +76,15 @@ class TestViewChecklistListView(TestCase):
 
         self.client.force_login(user=self.user_responsible)
 
-        expected_url = reverse(viewname='careline:checklist_list')
         response = self.client.get(
             reverse(viewname="careline:checklist_update")
         )
 
-        self.assertRedirects(
-            response=response,
-            expected_url=expected_url
+        expected_status_codes = [301, 302]
+
+        self.assertIn(
+            response.status_code,
+            expected_status_codes
         )
 
     def test_process_change(self):
