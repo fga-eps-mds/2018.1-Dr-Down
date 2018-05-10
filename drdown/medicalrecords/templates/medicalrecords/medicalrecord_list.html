@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% load markdown_deux_tags %}
 {% load static i18n %}
-{% block title %}{% trans "Medical Records:" %} {{ related_patient.user.name }}{% endblock %}
+{% block title %}{% trans "Medical Record:" %} {{ related_patient.user.name }}{% endblock %}
 
 {% block css %}
 {{block.super}}
@@ -15,7 +15,7 @@
     <script>
 
         $(document).ready(function() {
-            
+
             $('#home').addClass("active").addClass("show");
             var obj = $('.nav > li > a[href="#home"]');
             obj.parent().addClass('active');
@@ -25,7 +25,7 @@
         })
 
     </script>
-    
+
 {%endblock script%}
 
 
@@ -35,7 +35,7 @@
 
     <div class="row justify-content-between mb-3">
         <div class="col-7 col-md ">
-           <h2 class="text-tertiary">{% trans 'Medical Record' %} {% trans "'s"%} {{ related_patient.user.name }}</h2>
+           <h2 class="text-tertiary">{{ related_patient.user.name }} {% trans 'Medical Record' %}</h2>
         </div>
 
         <div class="col-auto float-right mr-0">
@@ -50,13 +50,13 @@
                 <li class="nav-item active">
                     <a class="nav-link nav-link-extension py-3 px-2 rounded-top" data-toggle="tab" href="#home">{% trans "Patient data" %}</a>
                 </li>
-                
+
                 <li class="nav-item">
-                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu1">{% trans "Medical Records" %}</a>
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu1">{% trans "Important notes" %}</a>
                 </li>
-                
+
                 <li class="nav-item">
-                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu2">{% trans "Static Data" %}</a>
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu2">{% trans "Postnatal data" %}</a>
                 </li>
 
                 <li class="nav-item">
@@ -71,13 +71,13 @@
 
 
                     <div class="row">
-                    
-                        <h3 class="col text-tertiary">{{ related_patient.user.name }} {% trans 'data' %}</h3>
+
+                        <h3 class="col text-tertiary">{{ related_patient.user.name }}</h3>
 
                     </div>
 
                     <div class="row justify-content-center">
-                    
+
                         <div class="col-auto">
                             {% if related_patient.user.photo %}
                                 <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
@@ -115,22 +115,22 @@
                             {% endif %}
 
                         </div>
-                
+
                     </div>
                 </div>
 
                 <div id="menu1" class="tab-pane fade">
 
                     <div class="row">
-                        
-                        <h3 class="col mb-5">{% trans 'Medical Record' %}</h3>
+
+                        <h3 class="col mb-5">{% trans 'Important Notes' %}</h3>
 
                         {% if user.healthteam %}
                             <div class="col">
                                 <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "New" %}</a>
                             </div>
                         {% endif %}
-                    
+
                     </div>
 
                     <div class="list-group">
@@ -142,8 +142,8 @@
                                 <div class="row">
                                     <div class="col alert alert-dark mx-2 my-2">
 
-                                        <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>    
-                                    
+                                        <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
+
                                     </div>
                                 </div>
 
@@ -160,10 +160,10 @@
                                     </div>
                                 </div>
 
-                                {% if medicalrecord.document %}             
+                                {% if medicalrecord.document %}
                                     <div class="row">
-                                        <div class="col">     
-                                            
+                                        <div class="col">
+
                                             <p>{% trans 'Attachment:' %} <a class="text-secondary" href="{{ medicalrecord.document.url }}">{{ medicalrecord.document.name }}</a></p>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
 
                         {% empty %}
 
-                            <h4>{% trans 'There are no Medical Records for this patient.'%}</h4>
+                            <h4>{% trans 'There are no Important notes for this patient.'%}</h4>
 
                         {% endfor %}
                     </div>
@@ -183,13 +183,13 @@
                 <div id="menu2" class="tab-pane fade">
 
                     <div class="row mb-5">
-                    
+
                         <div class="col">
-                            <h3 >{% trans 'Static Data' %}</h3>
+                            <h3 >{% trans 'Postnatal data' %}</h3>
                         </div>
 
                         {% if user.healthteam %}
-                            <div class="col-auto">                            
+                            <div class="col-auto">
                                 {% if related_patient.staticdata.weight %}
                                     <a href="{% url 'medicalrecords:update_static_data_medicalrecords'  view.kwargs.username %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
                                 {% else %}
@@ -197,31 +197,31 @@
                                 {% endif %}
 
                             </div>
-                        {% endif %}                    
+                        {% endif %}
                     </div>
 
-                   
+
                     <div class="row mb-5">
-                   
-                        
+
+
                         {% if related_patient.staticdata %}
-                                
+
                             <div class="col border-right">
-                        
+
                                 <div class="row">
-                                    
+
                                     <div class="col"><label><strong>{% trans 'Weight at birth: '%} </strong></label></div>
                                     <div class="w-100"></div>
                                     <div class="col mx-3 alert alert-dark" role="alert"> {{ related_patient.staticdata.weight }}</div>
-                                
+
                                 </div>
 
                                 <div class="row">
-                                
+
                                     <div class="col"><label><strong>{% trans 'APGAR: '%}</strong></label></div>
                                     <div class="w-100"></div>
                                     <div class="col mx-3 alert alert-dark" role="alert">{{  related_patient.staticdata.APGAR }}</div>
-                                
+
                                 </div>
 
 
@@ -230,7 +230,7 @@
                             <div class="col">
 
                                 <div class="row">
-                                    
+
                                     <div class="col"><label><strong>{% trans 'Heart Test:'%}</strong></label></div>
                                     <div class="w-100"></div>
                                     <div class="col mx-3 alert alert-dark" role="alert">
@@ -240,12 +240,12 @@
                                 </div>
 
                                 <div class="row">
-                                    
+
                                     <div class="col"><label><strong>{% trans 'Ear Test:'%}</strong></label></div>
                                     <div class="w-100"></div>
                                     <div class="col mx-3 alert alert-dark" role="alert">
                                         <a class="text-secondary" href="{{ related_patient.staticdata.ear_test.url }}"> {{  related_patient.staticdata.ear_test.name }} </a>
-                                    </div>                            
+                                    </div>
                                 </div>
 
                             </div>
@@ -253,30 +253,30 @@
                         {% else %}
 
                             <div class="row">
-                                    
+
                                 <h3 class="col mx-3">
-                                    <label><strong>{% trans 'No static data for this patient.'%} </strong></label>
+                                    <label><strong>{% trans 'No postnatal data for this patient.'%} </strong></label>
                                 </h3>
-                            
+
                             </div>
-                        
+
                         {% endif %}
 
                     </div>
                 </div>
-                
+
 
                 <div id="menu3" class="tab-pane fade">
 
 
                     <div class="row mb-5">
-                    
+
                         <div class="col">
                             <h3 >{% trans 'Medical Exams' %}</h3>
                         </div>
 
                         {% if user.healthteam %}
-                            <div class="col-auto">                            
+                            <div class="col-auto">
                                 {% if specificexams is None %}
                                     <a href="{% url 'medicalrecords:create_specific_exam_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "New" %}</a>
                                 {% else %}
@@ -284,75 +284,75 @@
                                 {% endif %}
 
                             </div>
-                        {% endif %}                    
+                        {% endif %}
                     </div>
 
-                   
+
                     <div class="row mb-5">
-                   
-                                
+
+
                         <div class="col border-right">
-                    
+
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Structured Physical:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
 
-                                    
+
                                     {% if specificexams.structured_physical_exam %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.structured_physical_exam.url }}"> {{  specificexams.structured_physical_exam.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
+
                                 </div>
 
                             </div>
 
 
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Vision:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
-                                         
+
                                     {% if specificexams.vision %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.vision.url }}"> {{  specificexams.vision.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
+
                                </div>
-                                
+
                             </div>
 
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Ear:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
- 
+
                                     {% if  specificexams.ear %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.ear.url }}"> {{  specificexams.ear.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
+
                                 </div>
-                                
+
                             </div>
 
 
@@ -361,63 +361,63 @@
                         <div class="col">
 
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Heart:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
-                                     
+
                                     {% if specificexams.hearth %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.hearth.url }}"> {{  specificexams.hearth.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
+
                                 </div>
 
                             </div>
 
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Muscle skeletal system:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
-                                     
+
                                     {% if specificexams.muscle_skeletal_system %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.muscle_skeletal_system.url }}"> {{  specificexams.muscle_skeletal_system.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
-                                </div>                            
+
+                                </div>
                             </div>
 
 
                             <div class="row">
-                                
+
                                 <div class="col"><label><strong>{% trans 'Nervous System:'%}</strong></label></div>
                                 <div class="w-100"></div>
                                 <div class="col mx-3 alert alert-dark" role="alert">
-                                     
+
                                     {% if  specificexams.nervous_system %}
-                                        
+
                                         <a class="text-secondary" href="{{ specificexams.nervous_system.url }}"> {{  specificexams.nervous_system.name }} </a>
-                                   
+
                                     {% else %}
-                                                                                
+
                                         <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-                                    
+
                                     {% endif %}
-                               
+
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -425,7 +425,7 @@
 
 
                     </div>
-                
+
                 </div>
 
             </div>
