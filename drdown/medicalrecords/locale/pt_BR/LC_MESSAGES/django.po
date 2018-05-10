@@ -23,7 +23,7 @@ msgstr ""
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:38
 msgid "Medical Record"
-msgstr "Prontuários"
+msgstr "Prontuário"
 
 #: drdown/medicalrecords/models/model_complaint.py:12
 #: drdown/medicalrecords/models/model_medical_record.py:14
