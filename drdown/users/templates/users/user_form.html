@@ -134,5 +134,8 @@
       </div>
     </div>
   </form>
+  {% if object.name %}
+    <a href="{% url 'users:detail' user.username%}"><button type="submit" class="btn btn-danger mr-2 float-right">{% trans 'Cancel' %}</button></a>
+  {% endif %}
 </div>
 {% endblock %}
