@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-04 10:24+0000\n"
+"POT-Creation-Date: 2018-05-10 00:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,204 +18,449 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:23
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:47
-msgid "search here!"
-msgstr "busque aqui!"
+#: drdown/medicalrecords/apps.py:7
+#: drdown/medicalrecords/models/model_medical_record.py:41
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:38
+msgid "Medical Record"
+msgstr "Prontuário"
 
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:31
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:55
-msgid "(Year)-(Month)-(Day)"
-msgstr "(Ano)-(Mês)-(Dia)"
-
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:38
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:62
-#, fuzzy
-#| msgid "author"
-msgid "Search author!"
-msgstr "Buscar autor"
-
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:45
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:68
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:77
-msgid "Search patient!"
-msgstr "Buscar paciente"
-
-#: drdown/medicalrecords/forms/medicalrecords_forms.py:53
-#, fuzzy
-#| msgid "Search"
-msgid "Search date!"
-msgstr "Buscar data"
-
+#: drdown/medicalrecords/models/model_complaint.py:12
 #: drdown/medicalrecords/models/model_medical_record.py:14
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:158
 msgid "Created at"
 msgstr "Criado em"
+
+#: drdown/medicalrecords/models/model_complaint.py:13
+msgid "Date of creation"
+msgstr "Data de criação"
+
+#: drdown/medicalrecords/models/model_complaint.py:18
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:28
+msgid "Day of complaint"
+msgstr "Dia da queixa"
+
+#: drdown/medicalrecords/models/model_complaint.py:22
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:33
+msgid "Time of complaint"
+msgstr "Hora da queixa"
+
+#: drdown/medicalrecords/models/model_complaint.py:28
+#: drdown/medicalrecords/models/model_exams.py:12
+#: drdown/medicalrecords/models/model_medical_record.py:22
+#: drdown/medicalrecords/models/model_medicines.py:12
+#: drdown/medicalrecords/models/model_specific_exams.py:12
+#: drdown/medicalrecords/models/model_static_data.py:13
+msgid "Patient"
+msgstr "Paciente"
+
+#: drdown/medicalrecords/models/model_complaint.py:32
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:23
+msgid "Description"
+msgstr "Descriçao"
+
+#: drdown/medicalrecords/models/model_complaint.py:33
+msgid "Description of the complaint"
+msgstr "Descrição da queixa"
+
+#: drdown/medicalrecords/models/model_complaint.py:40
+#: drdown/medicalrecords/models/model_exams.py:45
+#: drdown/medicalrecords/models/model_medical_record.py:34
+#: drdown/medicalrecords/models/model_medicines.py:33
+#: drdown/medicalrecords/models/model_specific_exams.py:54
+#: drdown/medicalrecords/models/model_static_data.py:39
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:153
+msgid "Author"
+msgstr "Autor"
+
+#: drdown/medicalrecords/models/model_complaint.py:44
+msgid "Complaint"
+msgstr "Queixa"
+
+#: drdown/medicalrecords/models/model_complaint.py:45
+msgid "Complaints"
+msgstr "Queixas"
+
+#: drdown/medicalrecords/models/model_complaint.py:52
+msgid "The complaint cannot be in the future!"
+msgstr "A queixa não pode ser no futuro!"
+
+#: drdown/medicalrecords/models/model_exams.py:17
+#: drdown/medicalrecords/models/model_exams.py:52
+msgid "Exam"
+msgstr "Exame"
+
+#: drdown/medicalrecords/models/model_exams.py:21
+msgid "Exam day"
+msgstr "Dia de atendimento"
+
+#: drdown/medicalrecords/models/model_exams.py:22
+msgid "Day the exam was performed"
+msgstr "Dia em que o exame foi realizado"
+
+#: drdown/medicalrecords/models/model_exams.py:26
+msgid "Executed"
+msgstr "Relizado"
+
+#: drdown/medicalrecords/models/model_exams.py:27
+msgid "Collected"
+msgstr "Coletado"
+
+#: drdown/medicalrecords/models/model_exams.py:28
+msgid "Marked examination"
+msgstr "Marcado"
+
+#: drdown/medicalrecords/models/model_exams.py:32
+msgid "Status"
+msgstr "Status"
+
+#: drdown/medicalrecords/models/model_exams.py:34
+msgid "Please, insert the status of the exam"
+msgstr "Por favor, insira o status do exame"
+
+#: drdown/medicalrecords/models/model_exams.py:38
+msgid "Exam Name"
+msgstr "Nome do exame"
+
+#: drdown/medicalrecords/models/model_exams.py:53
+msgid "Exams"
+msgstr "Exames"
 
 #: drdown/medicalrecords/models/model_medical_record.py:15
 msgid "Patient Care Day"
 msgstr "Dia de criação do prontuário"
 
-#: drdown/medicalrecords/models/model_medical_record.py:22
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:17
-msgid "Patient"
-msgstr "Paciente"
-
 #: drdown/medicalrecords/models/model_medical_record.py:26
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:14
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:38
 msgid "Message"
 msgstr "Mensagem"
 
 #: drdown/medicalrecords/models/model_medical_record.py:27
-#, fuzzy
-#| msgid "There are no Medical Records."
 msgid "Message of medical records"
-msgstr "Não há prontuários.Mensagem do prontuário"
+msgstr "Mensagem do prontuário"
 
-#: drdown/medicalrecords/models/model_medical_record.py:34
-msgid "Author"
-msgstr "Autor"
-
-#: drdown/medicalrecords/models/model_medical_record.py:39
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:13
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:12
+#: drdown/medicalrecords/models/model_medical_record.py:42
 msgid "Medical Records"
 msgstr "Prontuários"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:8
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:14
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:67
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:41
-msgid "Delete"
-msgstr "Apagar"
+#: drdown/medicalrecords/models/model_medicines.py:17
+msgid "Medicine Name"
+msgstr "Nome do remério"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:12
-msgid "Are you sure you want to delete this medical record?"
-msgstr "Você tem certeza que deseja apagar este prontuário?"
+#: drdown/medicalrecords/models/model_medicines.py:22
+msgid "Medicine dosage"
+msgstr "Dosagem do remédio"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:13
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:17
-msgid "Cancel"
-msgstr "Cancelar"
+#: drdown/medicalrecords/models/model_medicines.py:26
+msgid "In use?"
+msgstr "Em uso?"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:3
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:10
+#: drdown/medicalrecords/models/model_medicines.py:27
+msgid "Does the patient still use this medication?"
+msgstr "O paciente ainda usa esse medicamento?"
+
+#: drdown/medicalrecords/models/model_medicines.py:40
+msgid "Patient Medicine"
+msgstr "Remédio do Paciente"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:18
+msgid "Structured Physical Exam"
+msgstr "Exame Físico Estruturado"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:24
+msgid "Vision Exam"
+msgstr "Exame de vista"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:30
+msgid "Ear Exam"
+msgstr "Exame de audição"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:36
+msgid "Hearth Exam"
+msgstr "Exame do coração"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:42
+msgid "Muscle skeletal system Exam"
+msgstr "Sistema músculo esquelético"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:48
+msgid "Nervous system Exam"
+msgstr "Exame do sistema nervoso"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:61
+msgid "Specific Exam"
+msgstr "Exame específico"
+
+#: drdown/medicalrecords/models/model_specific_exams.py:62
+msgid "Specific Exams"
+msgstr "Exames específicos"
+
+#: drdown/medicalrecords/models/model_static_data.py:17
+msgid "Weight at birth"
+msgstr "Peso ao nascer"
+
+#: drdown/medicalrecords/models/model_static_data.py:18
+msgid "In grams"
+msgstr "Em gramas"
+
+#: drdown/medicalrecords/models/model_static_data.py:28
+msgid "Heart Test"
+msgstr "Teste do coraçãozinho"
+
+#: drdown/medicalrecords/models/model_static_data.py:33
+msgid "Test of the Ear"
+msgstr "Teste da orelinha"
+
+#: drdown/medicalrecords/models/model_static_data.py:46
+msgid "Medical Record Static Data"
+msgstr "Prontuário - Dados Estáticos"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:23
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:4
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:4
 msgid "New Medical Record"
 msgstr "Novo prontuário"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:15
-msgid "Attachments"
-msgstr "Anexos"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:15
+msgid "Add new Complaint"
+msgstr "Adicionar nova queixa"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:16
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:37
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:30
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:64
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:30
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:60
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:60
 msgid "Save"
 msgstr "Salvar"
 
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:39
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:32
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:70
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:32
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:64
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:64
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:8
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:18
+msgid "Delete"
+msgstr "Apagar"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:14
+msgid "Are you sure you want to delete this medical record?"
+msgstr "Você tem certeza que deseja apagar este prontuário?"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:14
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:16
+msgid "Add Specific Exams"
+msgstr "Adicionar exame específico"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:53
+msgid "Attachments"
+msgstr "Anexos"
+
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:4
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:4
-msgid "Medical Records:"
+msgid "Medical Record:"
 msgstr "Prontuários:"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:14
-msgid "'s"
-msgstr "do(a)"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:16
-msgid "There are no Medical Records for this patient."
-msgstr "Não prontuário para este paciente."
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:18
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:26
-msgid "New"
-msgstr "Novo"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:22
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:60
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:16
-msgid "author"
-msgstr "autor"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:23
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:17
-msgid "date"
-msgstr "data"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:24
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:18
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:20
-msgid "Search"
-msgstr "Buscar"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:31
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:21
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:42
 msgid "Return"
 msgstr "Retornar"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:42
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:51
+msgid "Patient data"
+msgstr "Dados do paciente"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:55
+msgid "Important notes"
+msgstr "Observações importantes"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:59
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:188
+msgid "Postnatal data"
+msgstr "Dados do pós-natal"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:63
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:275
+msgid "Medical Exams"
+msgstr "Exames Médicos"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:92
 msgid "Name: "
 msgstr "Nome: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:43
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:98
 msgid "SUS: "
 msgstr "SUS: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:44
-msgid "birthday: "
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:104
+msgid "Birthday: "
 msgstr "Data de nascimento: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:46
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:112
 msgid "cpf: "
 msgstr "CPF"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:62
-msgid "Anexo:"
-msgstr "Anexo:"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:126
+msgid "Important Notes"
+msgstr "Observações importantes"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:64
-msgid "care day"
-msgstr "Dia de atendimento"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:130
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:196
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:281
+msgid "New"
+msgstr "Novo"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:66
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:40
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:167
+msgid "Attachment:"
+msgstr "Anexos:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:176
+msgid "There are no Important notes for this patient."
+msgstr "Não há observações importantes para este paciente."
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:194
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:283
 msgid "Edit"
 msgstr "Editar"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:19
-msgid "Advanced Search"
-msgstr "Busca avançada"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:213
+msgid "Weight at birth: "
+msgstr "Peso ao nascer:"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_patient_list.html:30
-msgid "There are no Medical Records."
-msgstr "Não há prontuários."
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:215
+msgid "grams"
+msgstr "gramas"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:3
-msgid "Search a Medical Records:"
-msgstr "Buscar um prontuário:"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:221
+msgid "APGAR: "
+msgstr "APGAR:"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_search_list.html:18
-msgid "paciente"
-msgstr "paciente"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:234
+msgid "Heart Test:"
+msgstr "Teste do coraçãozinho:"
 
-#: drdown/medicalrecords/templates/medicalrecords/pagination.html:8
-#: drdown/medicalrecords/templates/medicalrecords/pagination.html:12
-msgid "Previous"
-msgstr "Anterior"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:244
+msgid "Ear Test:"
+msgstr "Teste da orelinha:"
 
-#: drdown/medicalrecords/templates/medicalrecords/pagination.html:30
-#: drdown/medicalrecords/templates/medicalrecords/pagination.html:34
-msgid "Next"
-msgstr "Proximo"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:258
+msgid "No postnatal data for this patient."
+msgstr "Não há dados de pós-natal para este paciente."
 
-#: drdown/medicalrecords/tests/test_medical_records_view.py:85
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:298
+msgid "Structured Physical:"
+msgstr "Físico Estruturado"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:309
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:330
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:350
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:375
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:395
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:415
+msgid "Not send"
+msgstr "Não enviado"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:320
+msgid "Vision:"
+msgstr "Visão"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:340
+msgid "Ear:"
+msgstr "Audição"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:365
+msgid "Heart:"
+msgstr "Coração"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:385
+msgid "Muscle skeletal system:"
+msgstr "Sistema músculo esquelético:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:405
+msgid "Nervous System:"
+msgstr "Sistema nervoso:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:14
+msgid "New Medicine"
+msgstr "Novo Remédio"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:16
+#, fuzzy
+#| msgid "Static Data"
+msgid "Update Static Data"
+msgstr "Dados estáticos"
+
+#: drdown/medicalrecords/tests/test_medical_records_view.py:136
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
+
+#~ msgid "data"
+#~ msgstr "dados"
+
+#~ msgid "Update Neonatal Data"
+#~ msgstr "Atualizar dados neonatais"
+
+#~ msgid "'s"
+#~ msgstr "do(a)"
+
+#~ msgid "search here!"
+#~ msgstr "busque aqui!"
+
+#~ msgid "(Year)-(Month)-(Day)"
+#~ msgstr "(Ano)-(Mês)-(Dia)"
+
+#~ msgid "Search author!"
+#~ msgstr "Buscar autor!"
+
+#~ msgid "Search patient!"
+#~ msgstr "Buscar paciente!"
+
+#~ msgid "Search date!"
+#~ msgstr "Buscar data!"
+
+#~ msgid "author"
+#~ msgstr "autor"
+
+#~ msgid "date"
+#~ msgstr "data"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Anexo:"
+#~ msgstr "Anexo:"
+
+#~ msgid "Advanced Search"
+#~ msgstr "Busca avançada"
+
+#~ msgid "There are no Medical Records."
+#~ msgstr "Não há prontuários."
+
+#~ msgid "Search a Medical Records:"
+#~ msgstr "Buscar um prontuário:"
+
+#~ msgid "paciente"
+#~ msgstr "paciente"
+
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Next"
+#~ msgstr "Próximo"
 
 #~ msgid "message"
 #~ msgstr "mensagem"
 
-#, fuzzy
-#~| msgid "Attachments"
 #~ msgid "Documents"
-#~ msgstr "Anexos"
+#~ msgstr "Documentos"
 
 #~ msgid "Create"
 #~ msgstr "Criar"

@@ -1,20 +1,81 @@
 {% extends 'core/base.html' %}
 {% load static i18n %}
+
 {% block title %}{% trans 'New Medical Record' %}{% endblock %}
+
 {% block css %}
 {{block.super}}
 <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
 {% endblock %}
-{% block content %}
-  <div class="container">
-    <h2>{% trans 'New Medical Record' %}</h2>
+
+{% block script %}
+
     {{ form.media }}
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <label>{% trans 'Message'%} : </label> <div style="margin-right: 90%;">{{ form.message }}</div><br/>
-      <div><label>{% trans 'Attachments'%} : </label> {{ form.document }}</div><br/>
-      <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
-      <a href="{% url 'medicalrecords:list_users_medicalrecords' %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
-    </form>
-  </div><br/><br/>
+
+{% endblock script %}
+
+{% block content %}
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col">
+                <h2>{% trans 'New Medical Record' %}</h2>
+            </div>
+        </div>
+
+        <div class="row">  
+            <div class="col">  
+                <form id="form_to_submit" method="post" enctype="multipart/form-data" action="#menu1">
+            
+                    {% csrf_token %}
+
+                    <div class="formgroup row my-2 border-top">
+                        
+                        <div class="col fieldWrapper my-2">  
+
+                            <label>
+                                <strong>{% trans 'Message'%} :</strong>
+                            </label> 
+
+
+                            <div style="margin-right: 90%;">
+                                {{ form.message }}
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="row my-2 border rounded">  
+                        <div class="col my-3">  
+                            
+                            <label>{% trans 'Attachments'%} : </label> {{ form.document }}
+                        
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        
+                        <div class="col"></div>
+
+                        <div class="col-auto">
+
+                            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+                                            
+                        </div>
+                        
+                        <div class="col-auto">
+
+                            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+
+                        </div>
+                    </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

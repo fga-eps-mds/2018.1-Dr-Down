@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 17:29+0000\n"
+"POT-Creation-Date: 2018-05-04 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,7 +69,7 @@ msgid "Don't change users"
 msgstr "Não alterar usuário"
 
 #: drdown/users/models/model_employee.py:123
-#: drdown/users/templates/users/user_detail.html:91
+#: drdown/users/templates/users/user_detail.html:89
 msgid "Employee"
 msgstr "Funcionário"
 
@@ -169,7 +169,7 @@ msgstr ""
 
 #: drdown/users/models/model_health_team.py:252
 #: drdown/users/models/model_health_team.py:253
-#: drdown/users/templates/users/user_detail.html:121
+#: drdown/users/templates/users/user_detail.html:119
 msgid "Health Team"
 msgstr "Equipe Médica"
 
@@ -179,7 +179,7 @@ msgstr "Por favor, insira um número de SES válido"
 
 #: drdown/users/models/model_patient.py:39
 #: drdown/users/models/model_responsible.py:70
-#: drdown/users/templates/users/user_detail.html:249
+#: drdown/users/templates/users/user_detail.html:247
 msgid "Responsible"
 msgstr "Responsável"
 
@@ -280,7 +280,7 @@ msgid "Please, enter the declaration of live birth number"
 msgstr "Por favor, insira o número da declaração de nascido vivo"
 
 #: drdown/users/models/model_patient.py:177
-#: drdown/users/templates/users/user_detail.html:167
+#: drdown/users/templates/users/user_detail.html:165
 msgid "Patient"
 msgstr "Paciente"
 
@@ -388,7 +388,6 @@ msgid "Return"
 msgstr "Retornar"
 
 #: drdown/users/templates/users/healthteam_patient_list.html:23
-#, fuzzy
 #| msgid "Patient: "
 msgid "Patient:"
 msgstr "Paciente:"
@@ -397,6 +396,9 @@ msgstr "Paciente:"
 msgid "Search"
 msgstr "Buscar"
 
+#: drdown/users/templates/users/healthteam_patient_list.html:37
+#: drdown/users/templates/users/patient_detail.html:40
+#: drdown/users/templates/users/healthteam_patient_list.html:56
 #: drdown/users/templates/users/healthteam_patient_list.html:47
 #: drdown/users/templates/users/patient_detail.html:65
 #: drdown/users/templates/users/responsible_patient_list.html:24
@@ -404,7 +406,19 @@ msgstr "Buscar"
 msgid "SES: "
 msgstr "SES: "
 
-#: drdown/users/templates/users/healthteam_patient_list.html:53
+#: drdown/users/templates/users/healthteam_patient_list.html:65
+#: drdown/users/templates/users/patient_detail.html:53
+#| msgid "My Medical Records"
+msgid "Medical Records"
+msgstr "Prontuário"
+
+#: drdown/users/templates/users/healthteam_patient_list.html:71
+#| msgid "My Medical Follow-up Sheet"
+msgid "Medical Sheet"
+msgstr "Ficha de Acompanhamento"
+
+#: drdown/users/templates/users/healthteam_patient_list.html:79
+#: drdown/users/templates/users/healthteam_patient_list.html:43
 #: drdown/users/templates/users/responsible_patient_list.html:30
 msgid "There are no patients for this user."
 msgstr "Não há pacientes para estes usuário."
@@ -413,8 +427,8 @@ msgstr "Não há pacientes para estes usuário."
 msgid "Detail patient"
 msgstr "Detalhes do paciente"
 
-#: drdown/users/templates/users/patient_detail.html:16
-#: drdown/users/templates/users/user_detail.html:262
+#: drdown/users/templates/users/patient_detail.html:14
+#: drdown/users/templates/users/user_detail.html:260
 msgid "Patient: "
 msgstr "Paciente: "
 
@@ -422,34 +436,28 @@ msgstr "Paciente: "
 msgid "Checklist"
 msgstr "Checklist"
 
-#: drdown/users/templates/users/patient_detail.html:53
-#, fuzzy
-#| msgid "My Medical Records"
-msgid "Medical Records"
-msgstr "Minhas Consultas"
-
-#: drdown/users/templates/users/patient_detail.html:62
-#: drdown/users/templates/users/user_detail.html:49
+#: drdown/users/templates/users/patient_detail.html:37
+#: drdown/users/templates/users/user_detail.html:48
 msgid "Name: "
 msgstr "Nome: "
 
-#: drdown/users/templates/users/patient_detail.html:63
-#: drdown/users/templates/users/user_detail.html:76
+#: drdown/users/templates/users/patient_detail.html:38
+#: drdown/users/templates/users/user_detail.html:74
 msgid "Birthday: "
 msgstr "Data de nascimento: "
 
-#: drdown/users/templates/users/patient_detail.html:64
-#: drdown/users/templates/users/user_detail.html:215
+#: drdown/users/templates/users/patient_detail.html:39
+#: drdown/users/templates/users/user_detail.html:213
 msgid "SUS: "
 msgstr "SUS: "
 
-#: drdown/users/templates/users/patient_detail.html:66
-#: drdown/users/templates/users/user_detail.html:224
+#: drdown/users/templates/users/patient_detail.html:41
+#: drdown/users/templates/users/user_detail.html:222
 msgid "Civil registry of birth: "
 msgstr "Registro civil de nascimento: "
 
-#: drdown/users/templates/users/patient_detail.html:67
-#: drdown/users/templates/users/user_detail.html:233
+#: drdown/users/templates/users/patient_detail.html:42
+#: drdown/users/templates/users/user_detail.html:231
 msgid "Declaration of live birth: "
 msgstr "Declaração de nascido vivo: "
 
@@ -459,7 +467,7 @@ msgstr "Sair"
 
 #: drdown/users/templates/users/user_confirm_delete.html:8
 #: drdown/users/templates/users/user_confirm_delete.html:13
-#: drdown/users/templates/users/user_detail.html:292
+#: drdown/users/templates/users/user_detail.html:290
 msgid "Delete"
 msgstr "Excluir"
 
@@ -479,8 +487,8 @@ msgstr "Usuário: "
 msgid "Hey! You have procedures to be made."
 msgstr "Oi! Você tem procedimentos a serem feitos."
 
-#: drdown/users/templates/users/user_detail.html:18
-#: drdown/users/templates/users/user_detail.html:27
+#: drdown/users/templates/users/user_detail.html:17
+#: drdown/users/templates/users/user_detail.html:26
 msgid "Click here to check it"
 msgstr "Clique aqui para conferir"
 
@@ -492,69 +500,65 @@ msgstr ""
 "Um, ou mais, de seus pacientes precisa de atenção. Alguns procedimentos "
 "podem estar atrasados."
 
-#: drdown/users/templates/users/user_detail.html:58
+#: drdown/users/templates/users/user_detail.html:57
 msgid "Gender: "
 msgstr "Gênero: "
 
-#: drdown/users/templates/users/user_detail.html:67
+#: drdown/users/templates/users/user_detail.html:65
 msgid "Telephone: "
 msgstr "Telefone: "
 
-#: drdown/users/templates/users/user_detail.html:95
-#: drdown/users/templates/users/user_detail.html:124
-#: drdown/users/templates/users/user_detail.html:252
+#: drdown/users/templates/users/user_detail.html:93
+#: drdown/users/templates/users/user_detail.html:122
+#: drdown/users/templates/users/user_detail.html:250
 msgid "CPF: "
 msgstr "CPF: "
 
-#: drdown/users/templates/users/user_detail.html:104
+#: drdown/users/templates/users/user_detail.html:102
 msgid "Department: "
 msgstr "Departamento: "
 
-#: drdown/users/templates/users/user_detail.html:141
+#: drdown/users/templates/users/user_detail.html:139
 msgid "Registration State: "
 msgstr "Estado do Registro: "
 
-#: drdown/users/templates/users/user_detail.html:150
+#: drdown/users/templates/users/user_detail.html:148
 msgid "Speciality: "
 msgstr "Especialidade: "
 
-#: drdown/users/templates/users/user_detail.html:179
+#: drdown/users/templates/users/user_detail.html:177
 msgid "Priority: "
 msgstr "Prioridade: "
 
-#: drdown/users/templates/users/user_detail.html:188
+#: drdown/users/templates/users/user_detail.html:186
 msgid "Mother Name: "
 msgstr "Nome da Mãe: "
 
-#: drdown/users/templates/users/user_detail.html:197
+#: drdown/users/templates/users/user_detail.html:195
 msgid "Father Name: "
 msgstr "Nome do Pai: "
 
-#: drdown/users/templates/users/user_detail.html:206
+#: drdown/users/templates/users/user_detail.html:204
 msgid "Ethnicity: "
 msgstr "Etnia: "
 
-#: drdown/users/templates/users/user_detail.html:280
+#: drdown/users/templates/users/user_detail.html:278
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/users/templates/users/user_detail.html:284
-msgid "My Medical Records"
-msgstr "Meu Histórico Médico"
-
-#: drdown/users/templates/users/user_detail.html:285
+#: drdown/users/templates/users/user_detail.html:283
 msgid "My Medical Follow-up Sheet"
 msgstr "Ficha de Acompanhamento"
 
-#: drdown/users/templates/users/user_detail.html:288
-msgid "Edit data"
-msgstr "Editar dados"
+#: drdown/users/templates/users/user_detail.html:286
+msgid "Confirm data"
+msgstr "Confirmar dados"
 
-#: drdown/users/templates/users/user_detail.html:289
-msgid "Change E-Mail"
-msgstr "Mudar E-mail"
+#: drdown/users/templates/users/user_detail.html:272
+msgid "My Medical Records"
+msgstr "Meu Prontuário"
 
-#: drdown/users/templates/users/user_form.html:127
+#: drdown/users/templates/users/user_form.html:113
 msgid "Photo of user"
 msgstr "Foto do usuário"
 
@@ -566,56 +570,52 @@ msgstr "Atualizar"
 msgid "Members"
 msgstr "Membros"
 
-#: drdown/users/utils/validators.py:18
+#: drdown/users/utils/validators.py:19
 msgid "Wrong CPF format"
 msgstr "CPF inválido"
 
-#: drdown/users/utils/validators.py:31
+#: drdown/users/utils/validators.py:32
 msgid "This CPF is not permitted"
 msgstr "Esse CPF não é permitido"
 
-#: drdown/users/utils/validators.py:70
-#, fuzzy, python-format
+#: drdown/users/utils/validators.py:71
 #| msgid "%(value)s is a invalid CPF, the verification digit is wrong"
 msgid "%(value)s is a invalid CPF, the verification digit is wrong"
 msgstr "%(value)s é um CPF inválido, o dígito de verificação está incorreto"
 
-#: drdown/users/utils/validators.py:84
+#: drdown/users/utils/validators.py:85
 msgid "Wrong SES format"
 msgstr "SES inválido"
 
-#: drdown/users/utils/validators.py:97 drdown/users/utils/validators.py:109
-#: drdown/users/utils/validators.py:137 drdown/users/utils/validators.py:180
+#: drdown/users/utils/validators.py:98 drdown/users/utils/validators.py:110
+#: drdown/users/utils/validators.py:138 drdown/users/utils/validators.py:181
 msgid "This SES is not permitted"
 msgstr "Esse SES não é permitido"
 
-#: drdown/users/utils/validators.py:124 drdown/users/utils/validators.py:167
+#: drdown/users/utils/validators.py:125 drdown/users/utils/validators.py:168
 msgid "Wrong NUMBER format"
 msgstr "Número inválido"
 
-#: drdown/users/utils/validators.py:152
+#: drdown/users/utils/validators.py:153
 msgid "Invalid name."
 msgstr "Nome inválido"
 
-#: drdown/users/utils/validators.py:201
+#: drdown/users/utils/validators.py:202
 msgid "Wrong phone format"
 msgstr "Telefone inválido"
 
-#: drdown/users/utils/validators.py:213
+#: drdown/users/utils/validators.py:214
 msgid "Wrong CRM format"
 msgstr "CRM inválido"
 
-#~ msgid "Confirm data"
-#~ msgstr "Confirmar dados"
+msgid "A %(speciality)s cannot have a %(register)s"
+msgstr "%(speciality)s não pode ter %(register)s"
 
-#~ msgid "A %(speciality)s cannot have a %(register)s"
-#~ msgstr "%(speciality)s não pode ter %(register)s"
+msgid "COFFITO"
+msgstr "COFFITO"
 
-#~ msgid "COFFITO"
-#~ msgstr "COFFITO"
+msgid "Council Acronym: "
+msgstr "Acrônimo do Conselho"
 
-#~ msgid "Council Acronym: "
-#~ msgstr "Acrônimo do Conselho"
-
-#~ msgid "This SES is not permited"
-#~ msgstr "Esse SES não é permitido"
+msgid "This SES is not permited"
+msgstr "Esse SES não é permitido"
