@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 22:43+0000\n"
+"POT-Creation-Date: 2018-05-10 03:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,11 +160,11 @@ msgstr "Especialidade da consulta"
 #: drdown/appointments/models/model_appointment.py:64
 #: drdown/appointments/models/model_request.py:108
 msgid "Scheduled"
-msgstr "Marcada"
+msgstr "Marcado"
 
 #: drdown/appointments/models/model_appointment.py:65
 msgid "Canceled"
-msgstr "Cancelada"
+msgstr "Cancelado"
 
 #: drdown/appointments/models/model_appointment.py:71
 msgid "Is this appointment still scheduled?"
@@ -267,10 +267,8 @@ msgstr "O pedido foi aceito?"
 
 #: drdown/appointments/models/model_request.py:122
 #: drdown/appointments/tests/test_model_request.py:131
-#, fuzzy
-#| msgid "Appointment of "
 msgid "Appointment request of "
-msgstr "Consulta de"
+msgstr "Pedido de consulta de"
 
 #: drdown/appointments/models/model_request.py:125
 msgid "Request"
@@ -384,8 +382,6 @@ msgid "This request will be deleted"
 msgstr "Este pedido será deletado"
 
 #: drdown/appointments/templates/appointments/request_confirm_cancel.html:10
-#, fuzzy
-#| msgid "Are you sure you want to cancel this appointment?"
 msgid "Are you sure you want to cancel this request?"
 msgstr "Tem certeza que deseja cancelar esta consulta?"
 
@@ -396,8 +392,6 @@ msgid "Delete"
 msgstr "Excluir"
 
 #: drdown/appointments/templates/appointments/request_confirm_delete.html:12
-#, fuzzy
-#| msgid "Are you sure you want to cancel this appointment?"
 msgid "Are you sure you want to delete this request?"
 msgstr "Tem certeza que deseja cancelar esta consulta?"
 
