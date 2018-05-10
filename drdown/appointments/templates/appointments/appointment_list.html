@@ -32,12 +32,15 @@
     <div class="row mt-4 mb-4">
       <div class="float-left col-md-auto w-82" id="appointment_list">
         {% for appointment in appointment_list %}
-          {% now 'd-m-Y' as today %}
+          {% now 'm-d-Y' as today %}
           {% now 'H:i' as time %}
           <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="appointment">
             <div class="message" style="width:98%">
               {% if request.user.employee and appointment.status != canceled %}
-                {% if appointment.date|date:"d-m-Y" > today or appointment.date|date:"d-m-Y" == today and appointment.time|time:'H:i' > time %}
+                {% if appointment.date|date:"m-d-Y" > today %}
+                    <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm mt-2 float-right">{% trans "Cancel" %}</a>
+                    <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm mt-2 mr-1 float-right">{% trans "Edit" %}</a>
+                {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' > time %}
                   <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm mt-2 float-right">{% trans "Cancel" %}</a>
                   <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm mt-2 mr-1 float-right">{% trans "Edit" %}</a>
                 {% endif %}
@@ -47,11 +50,11 @@
               <font size="2" >{% trans 'Especiality'%}: {{appointment.get_speciality_display}}</font><br>
               <font size="2" >{% trans 'Date'%}: {{ appointment.date}}</font><br>
               <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
-              {% if appointment.date|date:"d-m-Y" > today %}
+              {% if appointment.date|date:"m-d-Y" > today %}
                 <font size="2" >{% trans 'Status'%}: {{ appointment.get_status_display}}</font><br>
-              {% elif appointment.date|date:"d-m-Y" == today and appointment.time|time:'H:i' > time %}
+              {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' > time %}
                 <font size="2" >{% trans 'Status'%}: {{ appointment.get_status_display}}</font><br>
-              {% elif appointment.date|date:"d-m-Y" == today and appointment.time|time:'H:i' < time %}
+              {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' < time %}
                 <font size="2" >{% trans 'Status'%}: {% trans 'Done' %}</font><br>
               {% endif %}
             </div>
