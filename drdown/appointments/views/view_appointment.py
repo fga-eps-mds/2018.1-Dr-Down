@@ -4,10 +4,11 @@ from django.views.generic import UpdateView
 from django.views.generic.dates import MonthArchiveView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from search_views.search import SearchListView
 from search_views.filters import BaseFilter
 from drdown.appointments.models import Appointment
+from drdown.appointments.models import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from ..forms.appointments_form import AppointmentSearchForm
@@ -100,12 +101,10 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
     template_name = 'appointments/appointment_form.html'
     fields = [
         'speciality',
-        'shift',
         'doctor',
         'patient',
         'date',
         'time',
-        'motive',
     ]
 
     def get_success_url(self, **kwargs):
@@ -115,29 +114,11 @@ class AppointmentCreateView(LoginRequiredMixin, CreateView):
 
         return success_create_url
 
-    @staticmethod
-    def get_health_team():
-        health_team = []
-
-        for doctor in HealthTeam.objects.all():
-            health_team.append(doctor)
-
-        return health_team
-
-    @staticmethod
-    def get_patients():
-        patients = []
-
-        for patient in Patient.objects.all():
-            patients.append(patient)
-
-        return patients
-
     def get_context_data(self, **kwargs):
         context = super(AppointmentCreateView, self).get_context_data(**kwargs)
 
-        context['health_team'] = self.get_health_team()
-        context['patients'] = self.get_patients()
+        context['health_team'] = HealthTeam.objects.all()
+        context['patients'] = Patient.objects.all()
         return context
 
 
@@ -160,13 +141,13 @@ class AppointmentMonthArchiveView(LoginRequiredMixin, MonthArchiveView):
 class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
-    fields = ['speciality',
-              'shift',
-              'doctor',
-              'patient',
-              'date',
-              'time',
-              'motive', ]
+    fields = [
+        'speciality',
+        'doctor',
+        'patient',
+        'date',
+        'time',
+    ]
 
     def get_success_url(self, **kwargs):
         success_update_url = reverse(
@@ -184,8 +165,8 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
 
-        context['health_team'] = AppointmentCreateView.get_health_team()
-        context['patients'] = AppointmentCreateView.get_patients()
+        context['health_team'] = HealthTeam.objects.all()
+        context['patients'] = Patient.objects.all()
         return context
 
 
@@ -211,3 +192,37 @@ class AppointmentUpdateStatusView(LoginRequiredMixin, UpdateView):
         form.instance.status = Appointment.CANCELED
         form.save()
         return super(AppointmentUpdateStatusView, self).form_valid(form)
+
+
+class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
+    model = Appointment
+    template_name = 'appointments/appointment_request_form.html'
+    fields = [
+        'speciality',
+        'doctor',
+        'patient',
+        'date',
+        'time',
+    ]
+    success_url = reverse_lazy(
+            viewname='appointments:list_appointments',
+    )
+
+    def get_context_data(self, **kwargs):
+        context = super(
+            AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
+        context['health_team'] = HealthTeam.objects.all()
+        context['patients'] = Patient.objects.all()
+        context['appointment_request'] = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        return context
+
+    def form_valid(self, form):
+        request = AppointmentRequest.objects.get(
+            pk=self.kwargs.get('request_pk')
+        )
+        request.status = AppointmentRequest.SCHEDULED
+        request.save()
+        form.save()
+        return super(AppointmentFromRequestCreateView, self).form_valid(form)

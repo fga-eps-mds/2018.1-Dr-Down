@@ -1,0 +1,20 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans "Appointments" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans 'Cancel Appointment' %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>{% trans 'Are you sure you want to cancel this request?' %} </p>
+    <div class="fieldWrapper form-group">
+      <label for="id_observation" class="col-form-label col col-sm-7 mr-5">{% trans 'Observation' %}:</label>
+      <textarea name="observation" id="id_observation" class="form-control" ></textarea>
+    </div>
+  <button class="btn btn-success float-right ml-1" type="submit">{% trans 'Yes' %}</button>
+  <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger float-right">{% trans 'No' %}</a>
+</form>
+
+
+{% endblock %}

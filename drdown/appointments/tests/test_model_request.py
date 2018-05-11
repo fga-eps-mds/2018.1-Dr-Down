@@ -1,11 +1,11 @@
 from test_plus.test import TestCase
-from ..models.model_appointment import Appointment
+from ..models.model_request import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
 
 
-class TestModelAppointment(TestCase):
+class TestModelRequest(TestCase):
 
     def setUp(self):
         """
@@ -35,13 +35,13 @@ class TestModelAppointment(TestCase):
             registration_state=HealthTeam.DF,
         )
 
-        self.appointment = Appointment.objects.create(
-            date="2040-08-10",
-            time="15:45",
-            speciality=Appointment.SPEECH_THERAPHY,
+        self.request = AppointmentRequest.objects.create(
+            motive='Some motive',
+            observation='Some obs',
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
             doctor=self.doctor,
             patient=self.patient,
-            status=Appointment.SCHEDULED
+            status=AppointmentRequest.SCHEDULED
         )
 
     def test_one_to_one_relation(self):
@@ -49,8 +49,8 @@ class TestModelAppointment(TestCase):
             Test to verify if the relations work
         """
 
-        self.assertIs(self.patient, self.appointment.patient)
-        self.assertIs(self.doctor, self.appointment.doctor)
+        self.assertIs(self.patient, self.request.patient)
+        self.assertIs(self.doctor, self.request.doctor)
 
     def test_delete_cascade_patient(self):
         """
@@ -58,8 +58,8 @@ class TestModelAppointment(TestCase):
         """
 
         self.patient.delete()
-        with self.assertRaises(Appointment.DoesNotExist):
-            Appointment.objects.get()
+        with self.assertRaises(AppointmentRequest.DoesNotExist):
+            AppointmentRequest.objects.get()
 
     def test_delete_cascade_doctor(self):
         """
@@ -67,43 +67,29 @@ class TestModelAppointment(TestCase):
         """
 
         self.doctor.delete()
-        with self.assertRaises(Appointment.DoesNotExist):
-            Appointment.objects.get()
-
-    def test_save_date_ok(self):
-        """
-        Test to verify if date is correctly passed
-        """
-
-        self.assertEquals(self.appointment.date, '2040-08-10')
-
-    def test_save_time_ok(self):
-        """
-        Test to verify if time is correctly passed
-        """
-
-        self.assertEquals(self.appointment.time, "15:45")
+        with self.assertRaises(AppointmentRequest.DoesNotExist):
+            AppointmentRequest.objects.get()
 
     def test_save_patient_ok(self):
         """
         Test to verify if patient is correctly passed
         """
 
-        self.assertEquals(self.appointment.patient, self.patient)
+        self.assertEquals(self.request.patient, self.patient)
 
     def test_save_doctor_ok(self):
         """
         Test to verify if doctor is correctly passed
         """
 
-        self.assertEquals(self.appointment.doctor, self.doctor)
+        self.assertEquals(self.request.doctor, self.doctor)
 
     def test_save_status_ok(self):
         """
         Test to verify if status is correctly passed
         """
 
-        self.assertEquals(self.appointment.status, Appointment.SCHEDULED)
+        self.assertEquals(self.request.status, AppointmentRequest.SCHEDULED)
 
     def test_save_speciality_ok(self):
         """
@@ -111,16 +97,36 @@ class TestModelAppointment(TestCase):
         """
 
         self.assertEquals(
-            self.appointment.speciality,
-            Appointment.SPEECH_THERAPHY
+            self.request.speciality,
+            AppointmentRequest.SPEECH_THERAPHY
+        )
+
+    def test_save_motive_ok(self):
+        """
+        Test to verify if motive is correctly passed
+        """
+
+        self.assertEquals(
+            self.request.motive,
+            'Some motive'
+        )
+
+    def test_save_observation_ok(self):
+        """
+        Test to verify if observation is correctly passed
+        """
+
+        self.assertEquals(
+            self.request.observation,
+            'Some obs'
         )
 
     def test_str_is_equal_to_title(self):
         """
-        Test if method `__str__` is returning "Appointment of <patient>"
+        Test if method `__str__` is returning "Request of <patient>"
         """
         self.user.name = 'User'
         self.assertEqual(
-            str(self.appointment),
-            _('Appointment of ') + self.patient.user.name
+            str(self.request),
+            _('Appointment request of ') + self.patient.user.name
         )

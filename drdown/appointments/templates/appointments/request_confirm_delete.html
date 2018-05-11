@@ -1,0 +1,18 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Delete Request" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans "Delete" %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>{% trans 'Are you sure you want to delete this request?' %} </p>
+  <button class="btn btn-danger float-right" type="submit">{% trans 'Delete' %}</button>
+  <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right mr-3">{% trans "Cancel" %}</a>
+</form>
+
+
+{% endblock %}

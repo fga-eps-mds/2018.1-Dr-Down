@@ -6,21 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 
 class Appointment(models.Model):
 
-    MORNING = 'M'
-    AFTERNOON = 'A'
-
-    SHIFT_CHOICES = (
-        (MORNING, _('Morning')),
-        (AFTERNOON, _('Afternoon')),
-    )
-
-    shift = models.CharField(
-        _('Shift'),
-        choices=SHIFT_CHOICES,
-        help_text=_('Shift of appointment'),
-        max_length=10
-    )
-
     date = models.DateField(
         _('Date'),
         help_text=_('Date of appointment'),
@@ -31,13 +16,6 @@ class Appointment(models.Model):
         _('Time'),
         help_text=_('Time of appointment'),
         max_length=50
-    )
-
-    motive = models.TextField(
-        _('Motive'),
-        help_text=_('Why are you requesting an appointment?'),
-        max_length=500,
-        blank=True,
     )
 
     SPEECH_THERAPHY = "Speech Therapy"
@@ -81,7 +59,6 @@ class Appointment(models.Model):
 
     SCHEDULED = 'Scheduled'
     CANCELED = 'Canceled'
-    DONE = 'Done'
 
     STATUS_CHOICES = (
         (SCHEDULED, _('Scheduled')),

@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% url 'appointments:create_request' as url %}
+  {% if request.path == url %}
+    {% trans "New Request" %}
+  {% else %}
+    {% trans "Edit Request" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="col-md-6 offset-md-3">
+
+    {% url 'appointments:create_request' as url %}
+    {% if request.path == url %}
+      <h2>{% trans "New Request" %}</h2><hr>
+    {% else %}
+      <h2>{% trans "Edit Request" %}</h2><hr>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+          <div class="fieldWrapper">
+              {{ field.errors }}
+            <p class="lead">
+              {% if field != form.motive and field != form.doctor %}
+                *
+              {% endif %}
+              {{ field.label_tag }}<br>
+              {{ field }}
+            </p>
+          </div>
+      {% endfor %}
+      <div class="row float-right mr-5">
+        <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
+        <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
