@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Pipeline - Dr. Down</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pipeline";
+    var mkdocs_page_input_path = "eps/PIPELINE.md";
+    var mkdocs_page_url = "/eps/PIPELINE/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Dr. Down</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Abertura</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../TAP/">Termo de abertura</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../EAP/">EAP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../CODE_OF_CONDUCT/">Código de conduta</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../CANVAS/">Canvas</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Especificação</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../mds/VISION_DOCUMENT/">Documento de visão</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mds/ARCHITECTURE_DOCUMENT/">Documento de arquitetura</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mds/ADDITIONAL_SPECIFICATION/">Especificação Suplementar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../REQUIREMENTS_MAP/">Mapa de Requisitos</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../QUALITY_MANAGEMENT_PLAN/">Gerenciamento de Qualidade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ROADMAP/">ROADMAP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ROADMAP_ROLES/">ROADMAP dos Papéis</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../MINDMAP/">MINDMAP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mds/LOW_FIDELITY_PROTOTYPE/">Protótipo de baixa qualidade</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../mds/HIGH_FIDELITY_PROTOTYPE/">Protótipo de alta qualidade</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Viabilidade Técnica</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../SCRUM_METHODOLOGY_DRDOWN/">Metodologia</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../DONE_DEFINITION/">Definição de Pronto</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../EVM_AGILE/">EVM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../PROJECT_TOOLS/">Ferramentas</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../RISKS/">Riscos</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Pipeline</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#pipeline-cicd">Pipeline CI/CD</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#historico-de-revisoes">Histórico de Revisões</a></li>
+        
+            <li><a class="toctree-l4" href="#processos-de-devops">Processos de DevOps</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 0</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/00/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/01/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/02/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/03/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 4</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/04/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 5</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/05/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 6</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/06/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/06/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 7</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/07/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/07/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Sprint 8</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../sprints/08/planning/">Planejamento</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../sprints/08/results/">Resultado</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Dr. Down</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Viabilidade Técnica &raquo;</li>
+        
+      
+    
+    <li>Pipeline</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/edit/master/docs/eps/PIPELINE.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="pipeline-cicd">Pipeline CI/CD</h1>
+<h2 id="historico-de-revisoes">Histórico de Revisões</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06/05/2018</td>
+<td>0.0.1</td>
+<td>Versão inicial do documento do pipeline</td>
+<td>João Pedro Sconetto e Mariana Mendes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="processos-de-devops">Processos de DevOps</h2>
+<p>O presente documento visa esclarecer e registrar todos os processos, a cultura implementada e os padrões que foram utilizados no projeto <strong>Dr. Down</strong> no viés das práticas de DevOps, a fim de unificar o desenvolvimento e as operações inerentes do projeto supracitado.</p>
+<p>O documento se divide em duas partes:</p>
+<ul>
+<li>
+<p>Integração Contínua (CI - <em>Continuous Integration</em>)</p>
+</li>
+<li>
+<p>Deploy Contínuo (CD - <em>Continuous Deploy</em>)</p>
+</li>
+</ul>
+<p>No qual a primeira parte irá mostrar as técnicas e itens aplicados ao projeto no propósito de, como o nome da técnica diz, integrar continuamente o trabalho desenvolvido pela equipe. A segunda parte irá mostrar as técnicas e itens aplicados ao projeto com o objetivo de fazer a implantação contínua do projeto na infraestrutura utilizada pela equipe, de forma automatizada.</p>
+<h3 id="integracao-continua">Integração Contínua:</h3>
+<h4 id="padrao-de-commit">Padrão de <em>Commit</em></h4>
+<h5 id="por-questoes-de-padronizacao-documentamos-o-seguinte-estilo-de-commit">Por questões de padronização documentamos o seguinte estilo de <em>commit</em>:</h5>
+<ul>
+<li>
+<p>Os <em>commits</em> devem ser todos em <strong>inglês</strong>;</p>
+</li>
+<li>
+<p>Ele deve conter um título curto e objetivo do que foi feito naquele <em>commit</em>;</p>
+</li>
+<li>
+<p>Após esse título, deve-se descrever, com um pouco mais de detalhes, todas as atividades executadas.</p>
+</li>
+<li>
+<p>Caso esteja trabalhando com algum associado assine nos seus <em>commits</em> os seus parceiros</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<pre><code>Creating project community files (Título curto e objetivo)
+
+Adds project license (Descrição de uma das atividades)
+
+Adds project code of conduct file
+
+Adds project contributing file
+
+Adds project issue template file
+
+Adds projects pull request file
+
+Co-authored-by: John Doe &lt;john@email.com&gt; (Assinatura de parceria)
+</code></pre>
+<h4 id="politica-de-branchs">Política de <em>Branchs</em></h4>
+<p>Tendo como meta manter a integralidade e confiabilidade do código do projeto, foi proposta a utilização de política de branches.
+Essa Política de Branches deverá guiar os desenvolvedores na forma de organização de suas contribuições ao projeto.</p>
+<p><strong>OBS</strong>: A política de <em>branchs</em> foi idealizada para trabalhar em conjunto com a ferramenta do <em>git flow</em>, sua documentação e mais informações podem ser acessadas <a href="https://github.com/nvie/gitflow">aqui</a>.</p>
+<ul>
+<li>
+<p><strong>master</strong> - Branch principal do repositório, onde será permitida somente a integração de software consolidado e testado. Essa branch será exclusiva para a entrega de Releases, ou seja, um conjunto maior de funcionalidades que integram o software. Aqui estará a versão <em><strong>stable</strong></em> do software.</p>
+</li>
+<li>
+<p><strong>develop</strong> - Branch para integração de novas funcionalidades, onde será permitido a entrega das features desenvolvidas e que estão em um estágio avançado de completude. Será a branch base para o início do desenvolvimento das features e da correção de bugs. Aqui também serão <em>mergeadas</em> as releases.  </p>
+</li>
+<li>
+<p><strong>feature/<nome-da-feature></strong> - Branch utilizada para o desenvolvimento de novas features do <em>backlog</em>. Caso a feature tenha sida proposta por uma <em>issue</em> do repositório e aceita no <em>backlog</em> o nome deverá conter o número da <em>issue</em>.
+Ex: feature/1-<nome-da-nova-feature> (Considerando que a feature tenha sido solicitada na <em>issue</em> #1)</p>
+</li>
+<li>
+<p><strong>bugfix/<nome-do-bug></strong> - Branch utilizada para corrigir bugs de baixa/média urgência e que não estão presentes na branch <strong>master</strong>. Caso o bug tenha sido reportado por uma <em>issue</em> do repositório o nome deverá conter o número da <em>issue</em>.
+ Ex: bugfix/1-<descrição-do-bug> (Considerando que o bug tenha sido reportado na <em>issue</em> #1)</p>
+</li>
+<li>
+<p><strong>hotfix/<nome-do-bug></strong> - Branch utilizada para corrigir bugs de alta urgência e que estão presentes na branch <strong>master</strong>. Caso o bug tenha sido reportado por uma <em>issue</em> do repositório o nome deverá conter o número da <em>issue</em>.
+ Ex: bugfix/1-<descrição-do-bug> (Considerando que o bug tenha sido reportado na <em>issue</em> #1)</p>
+</li>
+<li>
+<p><strong>release/<versão-da-release></strong> - Branch onde será feito os ajustes finais/build antes da entrega de uma versão do produto de software. Constará no nome da branch a versão da release a ser entregue.</p>
+</li>
+<li>
+<p><strong>support/<tema-ou-natureza></strong> - Branch onde serão executadas tarefas de suporte relacionadas ao software, como elaboração de documentações, correções de natureza de gerência de configuração e etc.</p>
+</li>
+</ul>
+<h4 id="testes-e-estilo-de-codigo">Testes e Estilo de Código</h4>
+<p>Com o objetivo de garantir a qualidade de código, assim como a sua manutenibilidade, a equipe definiu técnicas e padrões a serem seguidos, quanto ao estilo de código foi definido uma folha de estilo que é considerada a padrão por programadores Python, se trata da <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>. Com isto é possível verificar, com o auxílio da ferramenta Code Climate o quão manutenível é o código que está sendo feito.</p>
+<p>Em complemento ao estilo do código a equipe acordou em manter todo o código testado, pois com a união das duas técnicas é possível assegurar uma maior qualidade de código. Para isso foram usados técnicas padrões de teste do Python/Django, com o auxílio do <a href="https://coverage.readthedocs.io/en/coverage-4.5.1/">Coverage.py</a> e do <a href="https://docs.pytest.org/en/latest/">pytest</a>, estes que, também, servem de <em>input</em> para o Code Climate analisar a manutenibilidade do software.</p>
+<p>Ficou acordado entre os membros da equipe que a cobertura de teste deveria ser igual ou superior a 90% em todos os momentos do projeto.</p>
+<h4 id="pull-requests"><em>Pull Requests</em></h4>
+<p>Ao término da execução da codificação é necessário a abertura de um <em>Pull Request</em> no repositório oficial do software para que possa ser apreciado o código solução. Com isso as ferramentas de CI/CD automático irão executar a fase de <em>build</em> e teste para verificar se etapa de teste e estilo de código foram implementadas corretamente. Caso não tenha dívidas nessa fase, cabe a dois membros da equipe de EPS (com foco no P.O. na análise) analisar o produto para verificar se atende os critérios de aceitação e se está de acordo com o que foi definido para ser entregue. Com todas as técnicas e fases entregues em conformidade, cabe aos membros aprovarem o <em>pull request</em> para que o mesmo possa ser <em>mergeado</em> em branchs de entregue de <em>feature</em>.</p>
+<h4 id="build-e-testes"><em>Build</em> e Testes</h4>
+<p>Com o auxílio de ferramentas de automatização essa fase é executada, via <a href="https://travis-ci.org/">Travis-CI</a>, a fim de garantir a fase de Teste e Estilo de Código. Com isso a ferramenta vai verificar o código, executar todos os testes para procurar erros na lógica do software e após tentar construir (<em>build</em>) os <em>containers</em> da aplicação. Caso qualquer passo dessa fase tenha algum problema a ferramenta irá informar (via e-mail e via repositório) que algo está errado e é preciso correções antes de avançar no pipeline.</p>
+<h3 id="deploy-continuo">Deploy Contínuo:</h3>
+<p>Com a execução de todos os passos da integração contínua a ferramenta de automatização irá executar os passos de deploy, caso não tenho encontrado nenhum erro, que seguem com o deploy/entrega da aplicação no ambiente de homologação e produção. Os passos executados são:</p>
+<ul>
+<li>
+<p>Publica a última versão integrada na <em>branch</em> no docker hub da aplicação;</p>
+</li>
+<li>
+<p>Acessa as máquinas de deploy (Hosts no Digital Ocean);</p>
+</li>
+<li>
+<p>Baixa a última versão do docker hub no host;</p>
+</li>
+<li>
+<p>Executa atualizações necessárias com as novas funcionalidades (migrações, modificações no banco, traduções e etc);</p>
+</li>
+<li>
+<p>Caso tenha algum problema a máquina envia um log para a ferramenta de logs (sentry.io). Caso contrário, o sistema mantém o funcionamento contínuamente.</p>
+</li>
+</ul>
+<h3 id="pipeline-v001">Pipeline v0.0.1</h3>
+<p><img alt="pipeline" src="https://i.imgur.com/v3m6lQr.png" /></p>
+<h4 id="legenda">Legenda</h4>
+<p>Primeiro Estágio:
+* No primeiro estágio estão as culturas de política de <em>branches</em>, padrão de <em>commits</em>, estilo de código e testes, onde durante o desenvolvimento a equipe segue as culturas propostas até a publicação do código com as novas adições.</p>
+<p>Segundo Estágio:
+* Aqui o código publicado com as adições, chamada de versão, é alcançada pela ferramenta de CI, executado os testes (todos os implementados e os novos adicionados) e é feito a build, caso haja erro nesse estágio retorna-se ao primeiro fazendo as adições necessárias.</p>
+<p>Terceiro Estágio:
+* Aqui a nova versão está em um estágio estável do seu ciclo de vida, se todas as adições esperadas para esta versão estiverem prontas a equipe espera uma abertura de um novo <em>pull request</em> solicitando a junção dessa versão com a versão atual do software. Nesta fase é feito a verificação manual da concordância das adições, tanto com os estágios anteriores quanto com as especificações de produto levantado pelo <em>Product Owner</em>, caso positivo o pipeline avança, do contrário retorna a estágios anteriores.</p>
+<p>Quarto Estágio:
+* Aqui com a nova versão aprovada e consolidada ela é direcionada para o ambiente o qual deve integrar (homologação ou produção) e a ferramenta de CI/CD faz o deploy e entrega automática dessas novas adições.</p>
+<p><strong>OBS</strong>: Os principais artefatos que estão inclusos no, e participam do, pipeline são: <code>.travis.yml</code>, <code>codeclimate.yml</code>, <code>mkdocs-build.sh</code>, <code>production-deploy.sh</code> e <code>staging-deploy.sh</code>, todos estão disponíveis no repositório da aplicação no <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down">GitHub</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../sprints/00/planning/" class="btn btn-neutral float-right" title="Planejamento">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../RISKS/" class="btn btn-neutral" title="Riscos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fga-gpp-mds/2018.1-Dr-Down/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../RISKS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../sprints/00/planning/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>
