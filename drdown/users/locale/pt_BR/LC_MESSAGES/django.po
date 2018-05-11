@@ -301,7 +301,7 @@ msgid "Photo of user."
 msgstr "Foto do usuário."
 
 #: drdown/users/models/model_user.py:19
-#: drdown/users/templates/users/user_form.html:109
+#: drdown/users/templates/users/user_form.html:123
 msgid "Photo"
 msgstr "Foto"
 
@@ -342,7 +342,7 @@ msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
 msgstr "(xx)xxxxx-xxxx ou (xx)xxxx-xxxx"
 
 #: drdown/users/models/model_user.py:54
-#: drdown/users/templates/users/user_form.html:98
+#: drdown/users/templates/users/user_form.html:105
 msgid "Birthday"
 msgstr "Data de aniversário"
 
@@ -375,35 +375,49 @@ msgid "Make sure user is confirmed before adding a specialization."
 msgstr "Tenha certeza de ter um usuário criado antes de especializá-lo."
 
 #: drdown/users/templates/users/healthteam_patient_list.html:3
-#: drdown/users/templates/users/healthteam_patient_list.html:12
+#: drdown/users/templates/users/healthteam_patient_list.html:13
 #: drdown/users/templates/users/responsible_patient_list.html:3
 #: drdown/users/templates/users/responsible_patient_list.html:7
 msgid "Select a patient"
 msgstr "Selecione um paciente"
 
-#: drdown/users/templates/users/healthteam_patient_list.html:15
-#, fuzzy
+#: drdown/users/templates/users/healthteam_patient_list.html:16
+#: drdown/users/templates/users/patient_detail.html:21
+#: drdown/users/templates/users/patient_detail.html:23
+msgid "Return"
+msgstr "Retornar"
+
+#: drdown/users/templates/users/healthteam_patient_list.html:23
 #| msgid "Patient: "
 msgid "Patient:"
 msgstr "Paciente:"
 
-#: drdown/users/templates/users/healthteam_patient_list.html:17
+#: drdown/users/templates/users/healthteam_patient_list.html:25
 msgid "Search"
 msgstr "Buscar"
 
-#: drdown/users/templates/users/healthteam_patient_list.html:18
-#: drdown/users/templates/users/patient_detail.html:16
-#: drdown/users/templates/users/patient_detail.html:18
-msgid "Return"
-msgstr "Retornar"
-
 #: drdown/users/templates/users/healthteam_patient_list.html:37
 #: drdown/users/templates/users/patient_detail.html:40
+#: drdown/users/templates/users/healthteam_patient_list.html:56
+#: drdown/users/templates/users/healthteam_patient_list.html:47
+#: drdown/users/templates/users/patient_detail.html:65
 #: drdown/users/templates/users/responsible_patient_list.html:24
-#: drdown/users/templates/users/user_detail.html:168
+#: drdown/users/templates/users/user_detail.html:170
 msgid "SES: "
 msgstr "SES: "
 
+#: drdown/users/templates/users/healthteam_patient_list.html:65
+#: drdown/users/templates/users/patient_detail.html:53
+#| msgid "My Medical Records"
+msgid "Medical Records"
+msgstr "Prontuário"
+
+#: drdown/users/templates/users/healthteam_patient_list.html:71
+#| msgid "My Medical Follow-up Sheet"
+msgid "Medical Sheet"
+msgstr "Ficha de Acompanhamento"
+
+#: drdown/users/templates/users/healthteam_patient_list.html:79
 #: drdown/users/templates/users/healthteam_patient_list.html:43
 #: drdown/users/templates/users/responsible_patient_list.html:30
 msgid "There are no patients for this user."
@@ -418,15 +432,9 @@ msgstr "Detalhes do paciente"
 msgid "Patient: "
 msgstr "Paciente: "
 
-#: drdown/users/templates/users/patient_detail.html:30
+#: drdown/users/templates/users/patient_detail.html:46
 msgid "Checklist"
 msgstr "Checklist"
-
-#: drdown/users/templates/users/patient_detail.html:32
-#, fuzzy
-#| msgid "My Medical Records"
-msgid "Medical Records"
-msgstr "Minhas Consultas"
 
 #: drdown/users/templates/users/patient_detail.html:37
 #: drdown/users/templates/users/user_detail.html:48
@@ -554,7 +562,7 @@ msgstr "Confirmar dados"
 msgid "Photo of user"
 msgstr "Foto do usuário"
 
-#: drdown/users/templates/users/user_form.html:119
+#: drdown/users/templates/users/user_form.html:133
 msgid "Update"
 msgstr "Atualizar"
 
@@ -571,7 +579,6 @@ msgid "This CPF is not permitted"
 msgstr "Esse CPF não é permitido"
 
 #: drdown/users/utils/validators.py:71
-#, fuzzy, python-format
 #| msgid "%(value)s is a invalid CPF, the verification digit is wrong"
 msgid "%(value)s is a invalid CPF, the verification digit is wrong"
 msgstr "%(value)s é um CPF inválido, o dígito de verificação está incorreto"

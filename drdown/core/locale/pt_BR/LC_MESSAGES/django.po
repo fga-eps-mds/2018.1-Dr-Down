@@ -417,7 +417,11 @@ msgstr "Meu paciente"
 msgid "Schedules"
 msgstr "Agenda"
 
-#: drdown/core/templates/core/base.html:103
+#: drdown/core/templates/core/base.html:101
+msgid "Appointments"
+msgstr "Consultas"
+
+#: drdown/core/templates/core/base.html:104
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
@@ -485,6 +489,11 @@ msgstr ""
 "CRIS DOWN foi inaugurado na Asa Norte, Brasília - DF em abril de 2013. É um "
 "lugar especializado no cuidado e acompanhamento de pacientes portadores de "
 "Síndrome de Down."
+
+#: drdown/core/templates/core/home.html:67
+#| msgid "CRIS DOWN"
+msgid "CRIS Down "
+msgstr "CRIS DOWN"
 
 #: drdown/core/templates/core/info.html:25
 msgid "Down's Syndrome infos"
@@ -660,10 +669,78 @@ msgstr "Leituras complementares"
 msgid "Vaccine Schedule"
 msgstr "Calendário de Vacinas"
 
-#: drdown/core/templates/core/vaccine_schedule.html:25
-#: drdown/core/templates/core/vaccine_schedule.html:224
-#: drdown/core/templates/core/vaccine_schedule.html:266
-#: drdown/core/templates/core/vaccine_schedule.html:375
+#: drdown/core/templates/core/pagination.html:8
+#: drdown/core/templates/core/pagination.html:12
+msgid "Previous"
+msgstr "Anterior"
+
+#: drdown/core/templates/core/pagination.html:30
+#: drdown/core/templates/core/pagination.html:34
+msgid "Next"
+msgstr "Próximo"
+
+#: drdown/core/templates/core/vaccination_locations.html:25
+#: drdown/core/templates/core/vaccine_schedule.html:20
+#| msgid "Locations"
+msgid "Vaccination Locations"
+msgstr "Locais de Vacinação"
+
+#: drdown/core/templates/core/vaccination_locations.html:33
+#: drdown/core/templates/core/vaccination_locations.html:79
+#: drdown/core/templates/core/vaccination_locations.html:110
+#: drdown/core/templates/core/vaccination_locations.html:128
+#: drdown/core/templates/core/vaccination_locations.html:146
+#: drdown/core/templates/core/vaccination_locations.html:212
+#: drdown/core/templates/core/vaccination_locations.html:230
+#: drdown/core/templates/core/vaccination_locations.html:248
+#: drdown/core/templates/core/vaccination_locations.html:278
+#: drdown/core/templates/core/vaccination_locations.html:316
+#: drdown/core/templates/core/vaccination_locations.html:346
+#: drdown/core/templates/core/vaccination_locations.html:368
+#: drdown/core/templates/core/vaccination_locations.html:390
+#: drdown/core/templates/core/vaccination_locations.html:412
+#: drdown/core/templates/core/vaccination_locations.html:430
+#: drdown/core/templates/core/vaccination_locations.html:452
+#: drdown/core/templates/core/vaccination_locations.html:530
+#: drdown/core/templates/core/vaccination_locations.html:552
+#: drdown/core/templates/core/vaccination_locations.html:570
+#: drdown/core/templates/core/vaccination_locations.html:592
+#: drdown/core/templates/core/vaccination_locations.html:622
+#: drdown/core/templates/core/vaccination_locations.html:644
+#: drdown/core/templates/core/vaccination_locations.html:694
+msgid "Local"
+msgstr "Local"
+
+#: drdown/core/templates/core/vaccination_locations.html:34
+#: drdown/core/templates/core/vaccination_locations.html:80
+#: drdown/core/templates/core/vaccination_locations.html:111
+#: drdown/core/templates/core/vaccination_locations.html:129
+#: drdown/core/templates/core/vaccination_locations.html:147
+#: drdown/core/templates/core/vaccination_locations.html:213
+#: drdown/core/templates/core/vaccination_locations.html:231
+#: drdown/core/templates/core/vaccination_locations.html:249
+#: drdown/core/templates/core/vaccination_locations.html:279
+#: drdown/core/templates/core/vaccination_locations.html:317
+#: drdown/core/templates/core/vaccination_locations.html:347
+#: drdown/core/templates/core/vaccination_locations.html:369
+#: drdown/core/templates/core/vaccination_locations.html:391
+#: drdown/core/templates/core/vaccination_locations.html:413
+#: drdown/core/templates/core/vaccination_locations.html:431
+#: drdown/core/templates/core/vaccination_locations.html:453
+#: drdown/core/templates/core/vaccination_locations.html:531
+#: drdown/core/templates/core/vaccination_locations.html:553
+#: drdown/core/templates/core/vaccination_locations.html:571
+#: drdown/core/templates/core/vaccination_locations.html:593
+#: drdown/core/templates/core/vaccination_locations.html:623
+#: drdown/core/templates/core/vaccination_locations.html:645
+#: drdown/core/templates/core/vaccination_locations.html:695
+msgid "Phone"
+msgstr "Telefone"
+
+#: drdown/core/templates/core/vaccine_schedule.html:26
+#: drdown/core/templates/core/vaccine_schedule.html:225
+#: drdown/core/templates/core/vaccine_schedule.html:267
+#: drdown/core/templates/core/vaccine_schedule.html:376
 msgid "Vaccines"
 msgstr "Vacinas"
 
@@ -1042,6 +1119,7 @@ msgstr "60+ Anos"
 
 #: drdown/core/templates/core/vaccine_schedule.html:297
 #: drdown/core/templates/core/vaccine_schedule.html:298
+#: drdown/core/templates/core/vaccine_schedule.html:299
 msgid ""
 "Reinforcement with dTpa from 9 years of age and every 10 years (or, in the "
 "case of dTpa, do dT)"
@@ -1089,16 +1167,6 @@ msgid ""
 msgstr ""
 "Vacinar pessoas de 9 a 45 anos previamente infectadas pelo vírus "
 "(soropositivas) com três doses: 0 - 6 - 12 meses"
-
-#: drdown/core/templates/core/pagination.html:8
-#: drdown/core/templates/core/pagination.html:12
-msgid "Previous"
-msgstr "Anterior"
-
-#: drdown/core/templates/core/pagination.html:30
-#: drdown/core/templates/core/pagination.html:34
-msgid "Next"
-msgstr "Próximo"
 
 #~ msgid "Hey! You have procedures to be made."
 #~ msgstr "Oi! Você tem procedimentos que precisam ser feitos."
