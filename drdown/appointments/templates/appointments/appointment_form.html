@@ -103,8 +103,10 @@
       {% endif %}
       <span class="validity"></span>
     </div>
-
-    <button type="submit" class="btn btn-success float-right mt-3">{% trans 'Schedule' %}</button>
+    <div class="float-right">
+      <a href="{% url 'appointments:list_appointments' %}" class="btn btn-danger">{% trans 'Cancelar' %}</a>
+      <button type="submit" class="btn btn-success">{% trans 'Schedule' %}</button>
+    </div>
   </form>
 </div>
 {% endblock %}
