@@ -1,30 +1,54 @@
 import os.path
 import sys
+import random
+import string
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 
-def create_super_user(username, email, password):
+def create_password():
     '''
-    o try/except é pra garantir que crie um super_user e no caso de erro você saiba
+    Generates random passwords for each user
     '''
+
+    password = ''.join(random.choice(string.ascii_uppercase +
+                                     string.ascii_lowercase +
+                                     string.digits) for _ in range(9)
+                       )
+    return password
+
+
+def create_super_user(username, email):
+    '''
+    Creates the superuser and ensures that if any error occurs the
+    script does not continue
+    '''
+
+    password = create_password()
     try:
-        u = User.objects.create_superuser(username, email, password,is_active = True)
+        u = User.objects.create_superuser(username,
+                                          email,
+                                          password,
+                                          is_active=True)
         EmailAddress.objects.create(
             user=u, email=email,
             primary=True, verified=True)
         u.set_password(password)
         u.save()
         print ('\nSuperUser:', User.objects.get(is_superuser=True).username)
+        print('username: {0} -- password: {1} \n'. format(username, password))
 
         return u
     except IntegrityError:
-        pass
+        raise ValidationError("An error occurred. Stopping the script")
 
 
-def create_user(first_name, last_name, name, username, email, password):
+def create_user(first_name, last_name, name, username, email, birthday):
     """
-    mesma ideia do de cima, mas aqui pro user.
+    Creates the user and ensures that if any error occurs the
+    script does not continue
     """
+    password = create_password()
     try:
         u = User.objects.create_user(
             first_name=first_name,
@@ -40,21 +64,21 @@ def create_user(first_name, last_name, name, username, email, password):
             updated_at='2018-04-05',
             is_active=True,
         )
-        """
-        O EmailAdress é pra poder confirmar o email aqui na criação. Sem isso
-        você precisa confimar o email manualmente
-        """
+
+        # EmailAdress is for validating email confirmation on user creation
         EmailAddress.objects.create(
             user=u, email=email,
             primary=True, verified=True)
-
-        u.set_password(password)
         u.save()
 
-        print ('Criando usuário - {0} {1}'.format(str(u.first_name), str(u.last_name)))
+        print('User: - {0} {1}'.
+              format(str(u.first_name), str(u.last_name)))
+        print('username: {0}  -- password: {1} \n'. format(username, password))
+
         return u
     except IntegrityError:
-        pass
+        raise ValidationError("An error occurred. Stopping the script")
+
 
 def populate():
 
@@ -62,7 +86,7 @@ def populate():
     print ('Populating Database...')
     print ('----------------------\n')
 
-    create_super_user('admin', 'admin@admin.com', 'senhafacil')
+    create_super_user('admin', 'admin@admin.com')
 
     user_employee = create_user(
         'Pedro',
@@ -70,7 +94,7 @@ def populate():
         'Pedro',
         'pedro',
         'pedro@gmail.com',
-        'pedro123456',
+        '1998-04-05',
     )
 
     user_patient = create_user(
@@ -79,8 +103,7 @@ def populate():
         'Enzo',
         'enzo',
         'enzo@gmail.com',
-        'enzo123456',
-
+        '1998-04-05',
     )
 
     user_responsible = create_user(
@@ -89,7 +112,7 @@ def populate():
         'Maria',
         'maria',
         'maria@gmail.com',
-        'maria123456',
+        '1998-04-05',
     )
 
     user_healthteam = create_user(
@@ -98,7 +121,7 @@ def populate():
         'Laura',
         'laura',
         'laura@gmail.com',
-        'laura123456',
+        '1998-04-05',
     )
 
     user_patient_with_responsible = create_user(
@@ -107,7 +130,7 @@ def populate():
         'Huiller',
         'huiller',
         'huiller@gmail.com',
-        'huiller123456',
+        '1998-04-05',
     )
 
     user_test = create_user(
@@ -116,7 +139,7 @@ def populate():
         'teste',
         'teste',
         'teste@gmail.com',
-        'teste123456',
+        '1998-04-05',
     )
 
     Employee.objects.create(
@@ -177,11 +200,9 @@ def populate():
         slug='event',
     )
 
-
     print ('------------------------------\n')
     print ('Database populated with sucess')
     print ('------------------------------\n')
-
 
 
 import django
@@ -194,8 +215,8 @@ from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from drdown.forum.models.model_category import Category
+from django.core.exceptions import ValidationError
 from django.db import IntegrityError
-import allauth.app_settings
 from allauth.account.models import EmailAddress
 
 populate()
