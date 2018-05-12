@@ -5,7 +5,7 @@ theme: readthedocs
 
 pages:
   - Home: index.md
-  - Abertura: 
+  - Abertura:
     - Termo de abertura: eps/TAP.md
     - EAP: eps/EAP.md
     - Código de conduta: CODE_OF_CONDUCT.md
@@ -15,9 +15,10 @@ pages:
     - Documento de arquitetura: mds/ARCHITECTURE_DOCUMENT.md
     - Especificação Suplementar: mds/ADDITIONAL_SPECIFICATION.md
     - Mapa de Requisitos: eps/REQUIREMENTS_MAP.md
-    - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md 
+    - Gerenciamento de Qualidade: eps/QUALITY_MANAGEMENT_PLAN.md
     - ROADMAP: eps/ROADMAP.md
     - ROADMAP dos Papéis: eps/ROADMAP_ROLES.md
+    - MINDMAP: eps/MINDMAP.md
     - Protótipo de baixa qualidade: mds/LOW_FIDELITY_PROTOTYPE.md
     - Protótipo de alta qualidade: mds/HIGH_FIDELITY_PROTOTYPE.md
   - Viabilidade Técnica:
@@ -26,6 +27,7 @@ pages:
     - EVM: eps/EVM_AGILE.md
     - Ferramentas: eps/PROJECT_TOOLS.md
     - Riscos: eps/RISKS.md
+    - Pipeline: eps/PIPELINE.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
@@ -47,4 +49,9 @@ pages:
   - Sprint 6:
     - Planejamento: sprints/06/planning.md
     - Resultado: sprints/06/results.md
-
+  - Sprint 7:
+    - Planejamento: sprints/07/planning.md
+    - Resultado: sprints/07/results.md  
+  - Sprint 8:
+    - Planejamento: sprints/08/planning.md
+    - Resultado: sprints/08/results.md

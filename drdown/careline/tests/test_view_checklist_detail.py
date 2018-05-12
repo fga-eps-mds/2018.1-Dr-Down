@@ -4,7 +4,7 @@ from django.shortcuts import reverse
 from django.utils import timezone
 
 from drdown.careline.models import Procedure
-from drdown.users.models import Patient, Responsible
+from drdown.users.models import Patient, Responsible, HealthTeam
 
 from drdown.careline.views import ChecklistDetailView
 
@@ -66,6 +66,22 @@ class TestViewChecklistDetailView(TestCase):
             responsible=self.user_responsible.responsible
         )
 
+        self.user_health_team = self.make_user()
+        self.user_health_team.birthday = timezone.datetime(2000, 1, 1)
+
+        self.user_health_team.save()
+        self.user_health_team.refresh_from_db()
+
+        self.health_team = HealthTeam.objects.create(
+            cpf="057.641.271-65",
+            user=self.user_health_team,
+            speciality=HealthTeam.NEUROLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234567",
+            registration_state=HealthTeam.DF,
+        )
+
+
         self.client = Client()
         self.view = ChecklistDetailView()
 
@@ -81,6 +97,21 @@ class TestViewChecklistDetailView(TestCase):
 
         self.assertEquals(
             self.view.has_permission(current_user=self.user_responsible, target_user=self.user_patient2),
+            True
+        )
+
+    def test_has_permission_for_healthteam(self):
+        """
+            Test if a healthteam have access to a patient
+        """
+
+        self.assertEquals(
+            self.view.has_permission(current_user=self.user_health_team, target_user=self.user_patient1),
+            True
+        )
+
+        self.assertEquals(
+            self.view.has_permission(current_user=self.user_health_team, target_user=self.user_patient2),
             True
         )
 

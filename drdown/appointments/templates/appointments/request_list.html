@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block css %}
+  {{block.super}}
+  <link href="{% static 'appointments/css/appointment.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}{% trans "Requests" %}{% endblock %}
+
+{% block content %}
+  <div class="container" >
+    <a href="{% url 'appointments:list_appointments' %}" class="btn btn-secondary float-right">{% trans 'Return' %}</a>
+    {% if request.user.patient and request.user.age >= 13 or request.user.responsible %}
+      <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary mt-1 float-right mr-3">{% trans "New Request" %}</a>
+    {% endif %}
+    <h2>{% trans 'Requests' %}</h2><hr>
+    {% for appointmentrequest in appointmentrequest_list %}
+      <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
+        <div class="message" style="width:98%">
+          {% if request.user.patient or request.user.responsible %}
+            {% if appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
+              <a href="{% url 'appointments:delete_request' appointmentrequest.pk %}" class="btn mt-1 btn-danger btn-sm float-right mr-2">{% trans "Delete" %}</a>
+              <a href="{% url 'appointments:update_request' appointmentrequest.pk %}" class="btn mt-1 btn-secondary btn-sm float-right mr-2">{% trans "Edit" %}</a>
+            {% else %}
+              <a href="{% url 'appointments:delete_request_after_result' appointmentrequest.pk  %}" class="btn mt-1 btn-success btn-sm float-right mr-2 mt-1">{% trans "OK" %}!</a>
+            {% endif %}
+          {% elif request.user.employee and appointmentrequest.status != 'Declined' and appointmentrequest.status != 'Scheduled' %}
+            <a href="{% url 'appointments:create_from_request' appointmentrequest.pk %}" class="btn mt-1 btn-success btn-sm float-right mr-2">{% trans "Accept" %}</a>
+            <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn mt-1 btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
+          {% endif %}
+          <h5 class="mt-2">{% trans 'Patient'%}: {{appointmentrequest.patient.user.name}}</h5>
+          <font size="4" >{% trans 'Doctor'%}: {{ appointmentrequest.doctor.user.name}}</font><br>
+          <font size="2" >{% trans 'Especiality'%}: {{appointmentrequest.get_speciality_display}}</font><br>
+          <font size="2" >{% trans 'Shift'%}: {{appointmentrequest.get_shift_display}}</font><br>
+          <font size="2" >{% trans 'Day of the week'%}: {{appointmentrequest.get_day_display}}</font><br>
+          {% if appointmentrequest.motive %}
+            <font size="2" >{% trans 'Motive'%}: {{appointmentrequest.motive}}</font><br>
+          {% endif %}
+          <font size="2" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}}</font><br>
+          {% if appointmentrequest.observation %}
+            <font size="2" >{% trans 'Observation'%}: {{appointmentrequest.observation}}</font><br>
+          {% endif %}
+        </div>
+      </div>
+    {% empty %}
+      <h4 class="lead text-secondary" align="center">{% trans 'There are no requests'%}</h4>
+    {% endfor %}
+  </div>
+
+  {% include "core/pagination.html" %}
+
+
+{% endblock %}

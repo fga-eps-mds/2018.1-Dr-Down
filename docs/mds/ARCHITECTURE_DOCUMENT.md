@@ -23,6 +23,7 @@
 | 15/04/2018 | 1.4.0 | Modificando imagem da arquitetura | Victor Arnaud e Geovana Ramos |
 | 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura e componentes da sprint 07 | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
 | 26/04/2018 | 2.1.0 | Inserindo componentes da sprint 08 | Victor Arnaud |
+| 01/05/2018 | 2.2.0 | Inserindo componentes para as sprints 09 a 12 | Victor Arnaud |
 
 ## 1: Introdução
 
@@ -107,7 +108,7 @@ Critérios de aceitação de um componente:
 5. **Extensibilidade**: Um componente pode ser estendido a partir de outro componente para fornecer um novo comportamento.
 6. **Encapsulamento**: O componente deve expor uma interface para os invocadores utilizarem suas funcionalidades e não revelar detalhes do seu processo interno, das variáveis internas e de seu estado.
 7. **Externo ao projeto**: O componente deve estar disponibilizado no **pypi**.
-8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável.
+8. **Qualidade**: O componente deve estar testado e ter build funcionando, além de ser completo e estar em uma versão estável, ou seja, o componente deve funcionar na nova versão 2.0 do Django.
 
 A cada sprint do projeto será definido a utilização ou não de cada componente disponibilizado nas tabelas abaixo. Os microsserviços e APIs consumidas também serão listados nas tabelas abaixo. As tabelas abaixo está mapeada com a EAP do projeto.
 
@@ -134,12 +135,8 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
 |[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação django para publicar eventos como um calendario|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
-|[django-calendarium](https://github.com/bitlabstudio/django-calendarium)|Um aplicativo Django reutilizável para gerenciar e exibir um calendário em seus modelos.|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
 |[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada pela equipe.|
-|[django-schedule-thauber](https://github.com/thauber/django-schedule)|Uma aplicação de calendario do django|A decidir|A aplicação ainda está sendo avaliada|
 |[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|A decidir|A aplicação ainda está sendo avaliada|
-|[django-frontend-notification](https://github.com/areski/django-frontend-notification)|Aplicativo Django para exibir no frontend a lista de notificações e executar algumas ações básicas como "visualizar todas as notificações", "excluir notificações", ele também fornece ajudantes para exibir notificações|A decidir|A aplicação ainda está sendo avaliada|
-|[django-webline-notifications](https://github.com/alireza-molaee/django-webline-notifications)|É uma biblioteca python, que permite notificar tudo para o(s) usuário(s)|A decidir|A aplicação ainda está sendo avaliada|
 
 #### Ficha de acompanhamento e Relatórios
 
@@ -147,14 +144,16 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
 |[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
-|[pdf-report](https://github.com/Edinburgh-Genome-Foundry/pdf_reports)|Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug|A decidir|A aplicação está sendo avaliada pela equipe|
-|[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|A decidir|A aplicação está sendo avaliada pela equipe|
+|[pdf-report](https://github.com/Edinburgh-Genome-Foundry/pdf_reports)|Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug|Não|A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizat esse component.|
+|[reportlab](https://pypi.org/project/reportlab/)|O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.|Sim|Recomendação da documentação do [django](https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/), será utilizado para gerar os PDFs e gráficos do projeto|
+|[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|Não|A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizar esse component.|
 
 #### Localização
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais|A decidir|A API ainda está sendo avaliada pela equipe.|
+|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais| Sim |Facil aplicação e atende as necessidades.|
+|[google-maps-services-python](https://github.com/googlemaps/google-maps-services-python)|Componente python para utilização da API do google maps| Não | Não será ultilizado porque a API do google atendeu nossas necessidades e foi recomendada pela Gerência de projetos.|
 
 #### Outros
 
@@ -162,17 +161,9 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[django-role-permissions](https://github.com/vintasoftware/django-role-permissions)|É um aplicativo de Django para permissões baseadas em função. Ele é construído sobre as funcionalidades Group e Permission do usuário do Django contrib.auth e não adiciona nenhum outro modelo ao seu projeto, ou seja, é totalmente independente.|Sim|Ele será utilizado no projeto para a criação de permissões de cada tipo de usuário do sistema e as permissões de acesso a determinadas páginas|
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
-|[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|A decidir|A aplicação ainda está sendo avaliada|
+|[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|Não|Foi decidido a utilização do django-search-view pelo fato de utilizar CBV.|
 |[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
-
-#### Comunicação entre usuários (Removido do escopo)
-
-|Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
-|---------|----------------------|:------------:|---------------------------|
-|[Rocket.Chat](https://github.com/jadolg/rocketchat_API)|É um microserviço de chat open source baseado no Slack e construído em Meteor|Não|O chat foi removido do escopo do projeto.|
-|[Receita-Mais](https://github.com/fga-gpp-mds/2017.2-Receita-Mais)|Software responsável por auxiliar na prescrição de medicamentos|Não|Não passou em quase todos os critérios definidos acima, a aplicação chat do projeto está bastante acoplada, ou seja, teria dificuldade de desacoplar e empacotar o mesmo, gastando tempo e esforço|
-|[django-private-chat](https://github.com/Bearle/django-private-chat)|Chat assíncrono baseado em WebSocket|Não|O chat foi removido do escopo do projeto.|
-|[django-tawkto](https://github.com/CleitonDeLima/django-tawkto)|Projeto simples integrado com o chat [tawk.to](https://www.tawk.to/)|Não|O chat foi removido do escopo do projeto.|
+|[django-anymail](https://github.com/anymail/django-anymail)|Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais|A decidir|A equipe está avaliando a possibilidade de utiliza-lo.|
 
 ### 2.3 Banco de dados PostgreSQL
 

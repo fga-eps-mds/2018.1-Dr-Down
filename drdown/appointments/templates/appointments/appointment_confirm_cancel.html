@@ -1,0 +1,16 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans "Appointments" %}{% endblock %}
+
+{% block inner %}
+<h1>{% trans 'Cancel Appointment' %}</h1>
+
+<form method="post" action="">
+  {% csrf_token %}
+  <p>{% trans 'Are you sure you want to cancel this appointment?' %} </p>
+  <button class="btn btn-success float-right ml-1" type="submit">{% trans 'Yes' %}</button>
+  <a href="{% url 'appointments:list_appointments' %}" class="btn btn-danger float-right">{% trans 'No' %}</a>
+</form>
+
+
+{% endblock %}

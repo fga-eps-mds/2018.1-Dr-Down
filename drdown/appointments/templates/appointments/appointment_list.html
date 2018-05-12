@@ -1,0 +1,107 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block css %}
+  {{block.super}}
+  <link href="{% static 'appointments/css/appointment.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}{% trans "Appointments" %}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% if request.user.employee %}
+      <a href="{% url 'appointments:create_appointment' %}" class="btn btn-secondary float-right">{% trans "New Appointment" %}</a>
+      <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right mr-3">{% trans "Requests" %}</a>
+    {% elif request.user.patient %}
+      <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right">{% trans "Requests" %}</a>
+    {% endif %}
+    <h2>{% trans 'Appointments' %}</h2><hr>
+
+    {% url 'appointments:list_appointments' as url %}
+    {% if request.path == url %}
+      <div id="search">
+        <form class="form-inline" action="" method="GET">
+          {{ form }}
+          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans 'Search' %}</button>
+          </fieldset>
+        </form>
+      </div>
+    {% endif %}
+
+    <div class="row mt-4 mb-4">
+      <div class="float-left col-md-auto w-82" id="appointment_list">
+        {% for appointment in appointment_list %}
+          {% now 'm-d-Y' as today %}
+          {% now 'H:i' as time %}
+          <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="appointment">
+            <div class="message" style="width:98%">
+              {% if request.user.employee and appointment.status != canceled %}
+                {% if appointment.date|date:"m-d-Y" > today %}
+                    <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm mt-2 float-right">{% trans "Cancel" %}</a>
+                    <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm mt-2 mr-1 float-right">{% trans "Edit" %}</a>
+                {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' > time %}
+                  <a href="{% url 'appointments:update_status_appointment' appointment.pk %}" class="btn btn-danger btn-sm mt-2 float-right">{% trans "Cancel" %}</a>
+                  <a href="{% url 'appointments:update_appointment' appointment.pk %}" class="btn btn-secondary btn-sm mt-2 mr-1 float-right">{% trans "Edit" %}</a>
+                {% endif %}
+              {% endif %}
+              <h5 class="mt-2">{% trans 'Patient'%}: {{appointment.patient.user.name}}</h5>
+              <font size="4" >{% trans 'Doctor'%}: {{ appointment.doctor.user.name}}</font><br>
+              <font size="2" >{% trans 'Especiality'%}: {{appointment.get_speciality_display}}</font><br>
+              <font size="2" >{% trans 'Date'%}: {{ appointment.date}}</font><br>
+              <font size="2" >{% trans 'Time'%}: {{ appointment.time}}</font><br>
+              {% if appointment.date|date:"m-d-Y" > today %}
+                <font size="2" >{% trans 'Status'%}: {{ appointment.get_status_display}}</font><br>
+              {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' > time %}
+                <font size="2" >{% trans 'Status'%}: {{ appointment.get_status_display}}</font><br>
+              {% elif appointment.date|date:"m-d-Y" == today and appointment.time|time:'H:i' < time %}
+                <font size="2" >{% trans 'Status'%}: {% trans 'Done' %}</font><br>
+              {% endif %}
+            </div>
+          </div>
+        {% empty %}
+          <h4 class="lead text-secondary" align="center">{% trans 'There are no appointments scheduled'%}</h4>
+        {% endfor %}
+      </div>
+
+      <div class="col-sm-2 border-left border-secondary float-right w-18" id="sidebar">
+        <i class="fa fa-angle-double-right"></i>
+        <a href="{% url 'appointments:list_appointments' %}" class="text-tertiary">{% trans "Search All" %}</a>
+        {% for year in years %}
+          <div class="panel panel-info">
+            {% if year == current_year %}
+              <div class="panel-heading" data-toggle="collapse" data-target="#bar-{{year}}">
+                <i class="fa fa-fw fa-chevron-down"></i>
+                <i class="fa fa-fw fa-chevron-right"></i>
+                {{year}}
+              </div>
+            {% else %}
+              <div class="panel-heading collapsed" data-toggle="collapse" data-target="#bar-{{year}}">
+                <i class="fa fa-fw fa-chevron-down"></i>
+                <i class="fa fa-fw fa-chevron-right"></i>
+                {{year}}
+              </div>
+            {% endif %}
+            <div class="panel-body">
+              {% if year == current_year %}
+                <div class="collapse show" id="bar-{{year}}">
+                  {% for month in months %}
+                    <a href="{% url 'appointments:archive_month' year forloop.counter %}" class="text-tertiary">{{month}}</a></br>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <div class="collapse" id="bar-{{year}}">
+                  {% for month in months %}
+                    <a href="{% url 'appointments:archive_month' year forloop.counter %}" class="text-tertiary">{{month}}</a></br>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% include "core/pagination.html" %}
+  </div>
+
+{% endblock %}

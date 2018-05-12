@@ -2,6 +2,8 @@ from test_plus.test import TestCase
 from drdown.users.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from dateutil.relativedelta import relativedelta
+from datetime import date
 
 from ..models import Employee, HealthTeam, Patient, Responsible
 
@@ -55,7 +57,7 @@ class TestUser(TestCase):
             5, 10, 4, 66, 12
         ]
 
-        today = timezone.datetime.today()
+        today = timezone.localdate()
 
         for test_age in test_ages:
             self.user.birthday = timezone.datetime(
@@ -73,6 +75,7 @@ class TestUser(TestCase):
             )
 
         edge_cases_months = [
+            -1,
             0,
             1,
             5,
@@ -86,7 +89,7 @@ class TestUser(TestCase):
         ]
 
         for months in edge_cases_months:
-            self.user.birthday = today - timezone.timedelta(days=30*months)
+            self.user.birthday = today + relativedelta(months=-months)
 
             self.user.save()
             self.user.refresh_from_db()
@@ -108,6 +111,21 @@ class TestUser(TestCase):
                         self.user.age(),
                         1
                     )
+
+    def test_invalid_birthday(self):
+        today = timezone.localdate()
+        tomorrow = today + relativedelta(days=1)
+        past = date(1800, 1, 1)
+
+        with self.assertRaises(ValidationError):
+            self.user.birthday = tomorrow
+            self.user.save()
+            self.user.clean()
+
+        with self.assertRaises(ValidationError):
+            self.user.birthday = past
+            self.user.save()
+            self.user.clean()
 
 
 class TestField(TestCase):

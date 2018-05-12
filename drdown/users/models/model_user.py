@@ -90,7 +90,7 @@ class User(AbstractUser):
               today.day) < (self.birthday.month,
                             self.birthday.day))
 
-        if age is 0:
+        if age <= 0:
             diff_month = (today.year - self.birthday.year) * 12 + \
              today.month - self.birthday.month
             age = 0 if diff_month < 6 else 0.5
@@ -132,6 +132,22 @@ class User(AbstractUser):
             raise error
         else:
             self.has_specialization = (self.count_user_specialization() is 1)
+
+        if isinstance(self.birthday, timezone.datetime):
+            self.birthday = self.birthday.date()
+
+        if self.birthday:
+            if timezone.localdate().isoformat() < str(self.birthday):
+                raise ValidationError(
+                    {'birthday': _("The birthday cannot be in the future!")}
+                )
+            elif (
+                timezone.datetime.strptime(str(self.birthday), "%Y-%m-%d") <
+                timezone.datetime.strptime("1900-01-01", "%Y-%m-%d")
+            ):
+                raise ValidationError(
+                    {'birthday': _("This birthday is too old.")}
+                )
 
         return data
 
