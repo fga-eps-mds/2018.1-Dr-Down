@@ -90,6 +90,10 @@ sql: manage.py
 	# Show SQL commands
 	sudo docker-compose -f ${file} run --rm ${container} python manage.py sqlmigrate ${app_label} ${migration_name}
 
+populate: manage.py
+	# Populate the database
+	sudo docker-compose -f ${file} run --rm ${container} python utility/populate.py
+
 # TESTS --------------------------------------------------------
 local := "**/tests/"
 
