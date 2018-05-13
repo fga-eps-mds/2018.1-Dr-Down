@@ -361,7 +361,18 @@ def populate():
         created_by=employee_2,
     )
 
-    print ('------------------------------\n')
+    print ('================================================================')
+    print ('WARNING:\n')
+    print ('All passwords displayed on this terminal '
+           'are generated randomly\n and can not be '
+           'displayed again. Be sure to save them in '
+           'a safe \nplace before continuing, otherwise'
+           'you will have to redo the whole\n process.')
+    print ('================================================================\n')
+
+    input("I saved the passwords in a safe place (press enter to continue...)")
+
+    print ('\n------------------------------\n')
     print ('Database populated with sucess')
     print ('------------------------------\n')
 
