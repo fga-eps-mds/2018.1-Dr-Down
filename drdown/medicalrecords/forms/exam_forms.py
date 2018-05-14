@@ -6,4 +6,4 @@ class ExamForm(forms.ModelForm):
 
     class Meta:
         model = Exam
-        fields = ["file", "day", "status", "name"]
+        fields = ["file", "day", "category", "observations"]

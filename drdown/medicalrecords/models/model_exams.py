@@ -22,31 +22,39 @@ class Exam(models.Model):
         help_text=_('Day the exam was performed'),
     )
 
-    STATUS = (
-        (3, _('Executed')),
-        (2, _('Collected')),
-        (1, _('Marked examination')),
+    CATEGORIES = (
+        (None, _("select a category")),
+        (0, _("Others")),
+        (1, _('Structured Physical Exam')),
+        (2, _('Vision Exam')),
+        (3, _('Ear Exam')),
+        (4, _('Hearth Exam')),
+        (5, _('Muscle skeletal system Exam')),
+        (6, _('Nervous system Exam')),
     )
 
-    status = models.IntegerField(
-        _('Status'),
-        choices=STATUS,
-        help_text=_("Please, insert the status of the exam"),
+    category = models.IntegerField(
+        _('Category'),
+        choices=CATEGORIES,
+        help_text=_("Please, insert the category of the exam"),
+        null=True,
+        blank=False,
     )
 
-    name = models.CharField(
-        _('Exam Name'),
-        max_length=200
+
+    observations = models.CharField(
+        _('Observations'),
+        max_length=200,
+        blank=True, 
+        default=""
     )
 
-    author = models.ForeignKey(
-        HealthTeam,
-        on_delete=models.CASCADE,
-        verbose_name=_("Author")
-    )
 
     def __str__(self):
-        return self.patient.user.get_username() + " - " + self.name
+        return (
+            self.patient.user.get_username() +
+            " - " + self.get_category_display()
+        )
 
     class Meta:
         verbose_name = _("Exam")
