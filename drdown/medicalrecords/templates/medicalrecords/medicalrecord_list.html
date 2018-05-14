@@ -274,16 +274,9 @@
                             <h3 >{% trans 'Medical Exams' %}</h3>
                         </div>
 
-                        {% if user.healthteam %}
-                            <div class="col-auto">
-                                {% if specificexams is None %}
-                                    <a href="{% url 'medicalrecords:create_specific_exam_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "New" %}</a>
-                                {% else %}
-                                    <a href="{% url 'medicalrecords:update_exams_medicalrecords'  view.kwargs.username %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
-                                {% endif %}
-
-                            </div>
-                        {% endif %}
+                        <div class="col-auto">
+                            <a href="{% url 'medicalrecords:create_exam_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+                        </div>
                     </div>
 
 
@@ -292,132 +285,58 @@
 
                         <div class="col border-right">
 
-                            <div class="row">
+                            <div class="accordion" id="accordionExample">
 
-                                <div class="col"><label><strong>{% trans 'Structured Physical:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
+                            {% for category, exams in exams_categories.items %}
+                                <div class="card">
+                                    <div class="card-header" id="headingCategory{{ category }}">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory{{category}}">
+                                                {{ category }}
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseCategory{{category}}" class="collapse" data-parent="#headingCategory{{ category }}">
+                                        <div class="card-body">
+
+                                            
+                                            {% for exam in exams %}
 
 
-                                    {% if specificexams.structured_physical_exam %}
+                                                <div class="row">
 
-                                        <a class="text-secondary" href="{{ specificexams.structured_physical_exam.url }}"> {{  specificexams.structured_physical_exam.name }} </a>
+                                                    <div class="col mx-3 alert alert-dark" role="alert">
 
-                                    {% else %}
+                                                        <div class="col">
+                                                            <a class="col text-secondary" href="{{ exam.file.url }}"> {{  exam.file.name }} </a>
+                                                            <div class="w-100"></div>
+                                                            <p class="col text-secondary">{% trans 'Date' %}: {{ exam.day.date }}</p>
+                                                        </div>
 
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
+                                                        <div class="col">
+                                                            <p class="col text-secondary">{% trans 'Obs' %}: {{ exam.observations }}</p>
+                                                        </div>
 
-                                    {% endif %}
+                                                       
+                                                    </div>
 
+                                                </div>
+
+                                            {% endfor %}
+                                                
+
+                                        </div>
+                                    </div>
                                 </div>
+                            
+                            {% empty %}
+                                <p class="text-secondary">{% trans 'There are no registered exams for this patient.' %}</p>
+                            {% endfor %}
+
 
                             </div>
 
-
-                            <div class="row">
-
-                                <div class="col"><label><strong>{% trans 'Vision:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
-
-                                    {% if specificexams.vision %}
-
-                                        <a class="text-secondary" href="{{ specificexams.vision.url }}"> {{  specificexams.vision.name }} </a>
-
-                                    {% else %}
-
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-
-                                    {% endif %}
-
-                               </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col"><label><strong>{% trans 'Ear:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
-
-                                    {% if  specificexams.ear %}
-
-                                        <a class="text-secondary" href="{{ specificexams.ear.url }}"> {{  specificexams.ear.name }} </a>
-
-                                    {% else %}
-
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-
-                                    {% endif %}
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="col">
-
-                            <div class="row">
-
-                                <div class="col"><label><strong>{% trans 'Heart:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
-
-                                    {% if specificexams.hearth %}
-
-                                        <a class="text-secondary" href="{{ specificexams.hearth.url }}"> {{  specificexams.hearth.name }} </a>
-
-                                    {% else %}
-
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-
-                                    {% endif %}
-
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col"><label><strong>{% trans 'Muscle skeletal system:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
-
-                                    {% if specificexams.muscle_skeletal_system %}
-
-                                        <a class="text-secondary" href="{{ specificexams.muscle_skeletal_system.url }}"> {{  specificexams.muscle_skeletal_system.name }} </a>
-
-                                    {% else %}
-
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-
-                                    {% endif %}
-
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-
-                                <div class="col"><label><strong>{% trans 'Nervous System:'%}</strong></label></div>
-                                <div class="w-100"></div>
-                                <div class="col mx-3 alert alert-dark" role="alert">
-
-                                    {% if  specificexams.nervous_system %}
-
-                                        <a class="text-secondary" href="{{ specificexams.nervous_system.url }}"> {{  specificexams.nervous_system.name }} </a>
-
-                                    {% else %}
-
-                                        <h6 class="text-secondary"> {% trans 'Not send' %} </h6>
-
-                                    {% endif %}
-
-                                </div>
-
-                            </div>
 
                         </div>
 
