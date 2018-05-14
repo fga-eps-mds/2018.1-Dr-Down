@@ -15,16 +15,16 @@
 
 {% block content %}
 
-  <br/><br/><br/><br/><br/><br/><br/>
-	
-  <center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
-  <a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
-  <hr class="star-dark bg-star-white">
+<br/><br/><br/><br/><br/><br/><br/>
+
+<center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
+<a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
+<hr class="star-dark bg-star-white">
 
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{% trans 'FROM 9 YEARS OLD'%}</a>
+    <a class="nav-item nav-link active text-secondary" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
+    <a class="nav-item nav-link text-secondary" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{% trans 'FROM 9 YEARS OLD'%}</a>
   </div>
 </nav>
 
@@ -257,17 +257,6 @@
 		        <th class="text-light bg-secondary" scope="col" colspan="19" style="text-align: center;">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</th>
 		      </tr>
 		      </thead>
-		      <tr>
-		        <th scope="row" style="text-align: center;"><h5>{% trans 'Subtitle: '%}</h5></th>
-		        <th class="bg-success" scope="col"></th>
-		        <th scope="col" colspan="4" style="text-align: center;"><h6>{% trans 'Routine'%}</h6></th>
-		        <th class="bg-info" scope="col"></th>
-		        <th scope="col" colspan="3" style="text-align: center;"><h6>{% trans 'Vaccinate Unvaccinated'%}</h6></th>
-		        <th class="bg-warning" scope="col"></th>
-		        <th scope="col" colspan="3" style="text-align: center;"><h6>{% trans 'Special Situations'%}</h6></th>
-		        <th class="bg-danger" scope="col"></th>
-		        <th scope="col" colspan="3" style="text-align: center;"><h6>{% trans 'Contraindicated'%}</h6></th>
-		      </tr>
 		  </table>
 		</div>
 	</div>
