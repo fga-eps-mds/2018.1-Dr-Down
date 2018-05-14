@@ -55,17 +55,30 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         )
 
         staticdata = StaticData.objects.filter(patient=patient)
-        specificexams = SpecificExam.objects.filter(patient=patient).first()
         medicines = Medicine.objects.filter(patient=patient)
-        exams = Exam.objects.filter(patient=patient)
         complaints = Complaint.objects.filter(patient=patient)
 
         context['complaints'] = complaints
-        context['exams'] = exams
         context['medicines'] = medicines
         context['staticdata'] = staticdata
         context['medicalrecordlist'] = context['object_list']
         context['related_patient'] = patient
+
+        exams = Exam.objects.filter(patient=patient)
+        context['exams'] = exams
+
+        category_dict = {}
+
+        for category in Exam.CATEGORIES:
+            query = Exam.objects.filter(
+                patient=patient,
+                category=category[0]
+            )
+
+            if query.exists():
+                category_dict[category[1]] = query
+
+        context['exams_categories'] = category_dict
 
         return context
 
