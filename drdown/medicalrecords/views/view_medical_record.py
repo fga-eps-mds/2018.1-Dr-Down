@@ -61,7 +61,11 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['complaints'] = complaints
         context['medicines'] = medicines
         context['staticdata'] = staticdata
-        context['medicalrecordlist'] = context['object_list']
+        
+        context['medicalrecordlist'] = context['object_list'].filter(
+            patient=patient
+        )
+
         context['related_patient'] = patient
 
         exams = Exam.objects.filter(patient=patient)
