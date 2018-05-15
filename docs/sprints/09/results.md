@@ -27,9 +27,9 @@ __Histórias entregues:__
 | O membro que estava sem máquina de trabalho (notebook) conseguiu uma nova | Algumas sugestões aumentaram um pouco a história | Melhor escrita dos reviews dos pull requests |
 | A pontuação das histórias refletiu melhor o esforço que foi necessário | Não conseguir entender o código de outro membro para fazer correção | O membro participar na história de refatoração do seu código |
 | Melhor auto planejamento dos membros | Confusão com as sugestões do reviews | Auto popular o banco para fazer os testes |
-| Troca de conhecimento efetiva entre os membros | Algumas sugestões aumentaram um pouco a história | - |
+| Troca de conhecimento efetiva entre os membros | Cliente ainda dificulta as conversas e realizações de reuniões | - |
 | Membro gostou de trabalhar com a API do Google | Adoecimento de membros da equipe | - |
-| Os membros conseguiram entregar as histórias complexas | Cliente ainda dificulta as conversas e realizações de reuniões | - |
+| Os membros conseguiram entregar as histórias complexas | - | - |
 | Fechamento das issues antes do último dia da sprint | - | - |
 | Gráfico de commits bem destribuido (bom planejamento e trabalho) | - | - |
 
@@ -55,4 +55,10 @@ __Histórias entregues:__
 
 ## 9. Análise do Scrum Master
 
+Esta sprint ocorreu tranquilamente e sem problemas, tanto que boa parte das histórias foram entregues na quinta. Isso é mais um sinal de que amadurecemos nossos conhecimentos.
 
+Com relação à questão de problemas com o entendimento dos critérios de aceitação e do que é proposto nos reviews, ficamos de melhorar a escrita dos textos, aumentando a clareza do que é pedido.
+
+Sobre a questão da dificuldade de refatorar o código de outros membros e a sugestão de melhoria de que algum dos envolvidos com a confecção do código original estejam na refatoração, chegamos à conclusão de que a melhoria proposta não é a melhor saída para resolver este problema. Ao invés disso, combinamos de tomar um maior cuidado com o código que é feito e fazer uso de comentários para deixar claro o que trechos mais complexos estão fazendo, tornando mais fácil a manutenibilidade.
+
+Por fim, a questão do cliente indisponível ou então respondendo e marcando as coisas em cima da hora continua, fazendo com que nós continuemos sem poder contar muito com ele.
