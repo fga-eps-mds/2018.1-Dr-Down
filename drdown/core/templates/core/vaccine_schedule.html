@@ -23,16 +23,24 @@
 <a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
 <hr class="star-dark bg-star-white">
 
-<nav>
-  <div class="nav nav-tabs nav-tabs-extension" id="nav-tab" role="tablist">
-		<a class="nav-item nav-link-extension py-3 px-2 rounded-top active show" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
-    <a class="nav-item nav-link-extension py-3 px-2 rounded-top show" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{% trans 'FROM 9 YEARS OLD'%}</a>
-  </div>
-</nav>
+<div class="mb-3">
+	<ul class="nav nav-tabs nav-tabs-extension nav-fill">
+	    <li class="nav-item active border border-light">
+	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top" data-toggle="tab" href="#nav-home" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
+	    </li>
+	    <li class="nav-item border border-light">
+	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#nav-profile">{% trans 'FROM 9 YEARS OLD'%}</a>
+	    </li>
+	</ul>
 
-<div class="tab-content" id="nav-tabContent">
+<!-- 	<div class="nav nav-tabs nav-tabs-extension" id="nav-tab" role="tablist">
+	<a class="nav-item nav-link-extension py-3 px-2 rounded-top active show" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
+	<a class="nav-item nav-link-extension py-3 px-2 rounded-top show" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{% trans 'FROM 9 YEARS OLD'%}</a>
+	</div> -->
+</div>
+
+<div class="tab-content nav-item" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
 		<div class="table-responsive">
 		  <table class="table table-bordered table-striped">
 		    <thead>
@@ -263,7 +271,7 @@
 		</div>
 	</div>
 
-	<div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+	<div class="tab-pane fade nav-item" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 	<!-- Tabela secundária -->
 		<div class="table-responsive">
 		  <table class="table table-bordered table-striped">
@@ -386,7 +394,7 @@
 		        <th class="text-light bg-secondary" style="text-align: center;" colspan="2"><font size="2">{% trans '60+ Years'%}</font></th>
 		      </tr>
 		      <tr>
-						<th class="text-light bg-secondary" scope="col" colspan="4" style="text-align: center;">{% trans '9 TO 10 YEARS OLD'%}</th>
+				<th class="text-light bg-secondary" scope="col" colspan="4" style="text-align: center;">{% trans '9 TO 10 YEARS OLD'%}</th>
 		        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'ADOLESCENT'%}</th>
 		        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'ADULT'%}</th>
 		        <th class="text-light bg-secondary" scope="col" style="text-align: center;" colspan="2">{% trans 'OLD MAN'%}</th>
@@ -399,7 +407,7 @@
 
 <br/>
 
-<img src="/static/core/images/Subtitle.png">
+<img class="rounded mx-auto d-block" src="/static/core/images/Subtitle.png">
 
 <br/><br/>
 
