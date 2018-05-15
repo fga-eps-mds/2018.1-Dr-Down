@@ -13,10 +13,10 @@ from ..views.views_base import BaseViewForm, BaseViewUrl
 class MedicinesCreateView(BaseViewForm, BaseViewUrl, CreateView):
     model = Medicine
     form_class = MedicineForm
-    template_name = 'medicalrecords/medicalrecord_static_data_form.html'
+    template_name = 'medicalrecords/medicalrecord_medicine_form.html'
 
 
 class MedicinesUpdateView(BaseViewUrl, UpdateView):
     model = Medicine
     form_class = MedicineForm
-    template_name = 'medicalrecords/medicalrecord_static_data_form.html'
+    template_name = 'medicalrecords/medicalrecord_medicine_form.html'
