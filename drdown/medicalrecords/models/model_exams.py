@@ -44,7 +44,7 @@ class Exam(models.Model):
     observations = models.CharField(
         _('Observations'),
         max_length=200,
-        blank=True, 
+        blank=True,
         default=""
     )
 
