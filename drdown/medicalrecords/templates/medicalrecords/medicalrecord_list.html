@@ -58,7 +58,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu1">{% trans "Important notes" %}</a>
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu1">{% trans "Evolution" %}</a>
                 </li>
 
                 <li class="nav-item">
@@ -130,7 +130,7 @@
 
                     <div class="row">
 
-                        <h3 class="col mb-5">{% trans 'Important Notes' %}</h3>
+                        <h3 class="col mb-5">{% trans 'Evolution' %}</h3>
 
                         {% if user.healthteam %}
                             <div class="col">
@@ -200,7 +200,7 @@
                                 
                             {% empty %}
 
-                                <h4>{% trans 'There are no Important notes for this patient.'%}</h4>
+                                <h4>{% trans 'There are no Evolution for this patient.'%}</h4>
 
                             {% endfor %}
                         </div>
