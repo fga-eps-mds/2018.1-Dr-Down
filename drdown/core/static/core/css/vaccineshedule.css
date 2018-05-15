@@ -62,3 +62,8 @@
 .mt-13{
   margin-top:10rem;
 }
+
+.size-sm{
+  height: 3em;
+  width: auto;
+}
