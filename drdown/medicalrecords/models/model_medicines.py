@@ -27,6 +27,12 @@ class Medicine(models.Model):
         help_text=_('Does the patient still use this medication?')
     )
 
+    medicine_use_interval = models.CharField(
+        _('Time between uses'),
+        max_length=50,
+        default=""
+    )
+
     author = models.ForeignKey(
         HealthTeam,
         on_delete=models.CASCADE,

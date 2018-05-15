@@ -404,6 +404,7 @@
                                                 <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
                                                 <th class="col-auto" scope="col">{% trans 'Name' %}</th>
                                                 <th class="col-auto" scope="col">{% trans 'Dosage' %}</th>
+                                                <th class="col-auto" scope="col">{% trans 'Time between uses' %}</th>
                                                 <th class="col-auto" scope="col">{% trans 'In use?' %}</th>
                                             </tr>
                                         </thead>
@@ -416,6 +417,9 @@
                                                     </th>
                                                     <td>{{medicine.medicine_name}}</td>
                                                     <td>{{medicine.medicine_dosage}}</td>
+
+                                                    <td>{{medicine.medicine_use_interval}}</td>
+                                                    
                                                     <td>
                                                         <input type="checkbox" disabled {% if  medicine.medicine_in_use %} checked {% endif %} >
                                                     </td>
