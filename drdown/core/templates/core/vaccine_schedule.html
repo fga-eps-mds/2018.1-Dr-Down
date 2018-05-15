@@ -16,13 +16,11 @@
 {% endblock css %}
 
 {% block content %}
-
-<br/><br/><br/><br/><br/><br/><br/>
-
-<center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
-<a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
-<hr class="star-dark bg-star-white">
-
+<div class="mt-13">
+	<center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
+	<a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
+	<hr class="star-dark bg-star-white">
+</div>
 <div class="mb-3">
 	<ul class="nav nav-tabs nav-tabs-extension nav-fill">
 	    <li class="nav-item active border border-light">
@@ -405,10 +403,6 @@
 	</div>
 </div>
 
-<br/>
-
-<img class="rounded mx-auto d-block" src="/static/core/images/Subtitle.png">
-
-<br/><br/>
+<img class="rounded mx-auto d-block mt-5 mb-5" src="/static/core/images/Subtitle.png">
 
 {% endblock content %}
