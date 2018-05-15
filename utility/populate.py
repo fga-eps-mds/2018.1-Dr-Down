@@ -8,10 +8,13 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 def create_password():
     '''
-    Generates random passwords for each user
+    Generates passwords for each user
     '''
 
-    password = ''.join(random.choice(string.ascii_uppercase +
+    if len(sys.argv) > 1:
+        password = sys.argv[1]
+    else:
+        password = ''.join(random.choice(string.ascii_uppercase +
                                      string.ascii_lowercase +
                                      string.digits) for _ in range(9)
                        )
