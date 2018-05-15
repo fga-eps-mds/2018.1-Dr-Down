@@ -7,7 +7,6 @@ from ..models.model_exams import Exam
 from ..models.model_medical_record import MedicalRecord
 from ..models.model_static_data import StaticData
 from ..models.model_medicines import Medicine
-from ..models.model_specific_exams import SpecificExam
 from ..models.model_complaint import Complaint
 from django.test.client import Client
 from django.urls import reverse
@@ -72,9 +71,8 @@ class TestViewMedicalRecords(TestCase):
         self.exam = Exam.objects.create(
             patient=self.patient,
             day=timezone.now() - timezone.timedelta(days=1),
-            status=3,
-            name="Sangue",
-            author=self.health_team
+            category=1,
+            file="exam.txt"
         )
 
         self.medicine = Medicine.objects.create(
@@ -82,11 +80,6 @@ class TestViewMedicalRecords(TestCase):
             medicine_name="Neosaldina",
             medicine_dosage="2",
             medicine_in_use=True,
-            author=self.health_team
-        )
-
-        self.specificexams = SpecificExam.objects.create(
-            patient=self.patient,
             author=self.health_team
         )
 
@@ -259,10 +252,11 @@ class TestViewMedicalRecords(TestCase):
 
         self.assertEqual(self.complaint.__str__(), 'teste_2 -  Comptaint ID: 1')
 
-        self.assertEqual(self.exam.__str__(), 'teste_2 - Sangue')
+        self.assertEqual(
+            self.exam.__str__(),
+            str('teste_2 - ' + self.exam.get_category_display())
+        )
 
         self.assertEqual(self.medicine.__str__(), 'teste_2 - Neosaldina')
-
-        self.assertEqual(self.specificexams.__str__(), 'teste_2')
 
         self.assertEqual(self.staticdata.__str__(), 'teste_2')
