@@ -69,6 +69,14 @@
                     <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu3">{% trans "Medical Exams" %}</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu4">{% trans "Patient Medicine" %}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu5">{% trans "Complaints" %}</a>
+                </li>
+
             </ul>
 
             <div class="tab-content">
@@ -306,7 +314,7 @@
 
                         <div class="col border-right">
 
-                            <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="accordionmenu3">
 
                             {% for category, exams in exams_categories.items %}
                                 <div class="card">
@@ -364,6 +372,72 @@
 
 
                     </div>
+
+                </div>
+
+                <div id="menu4" class="tab-pane fade">
+                    <div class="row mb-5">
+                        <div class="col">
+                            <h3 >{% trans 'Patient Medicine' %}</h3>
+                        </div>
+
+                        <div class="col-auto">
+                            <a href="{% url 'medicalrecords:create_medicine'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+                        </div>
+                    
+                    </div>
+
+                    <div class="row mb-5">
+                    
+                        <div class="col">
+                                
+
+                            {% if medicines %}
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-sm table-bordered">                                    
+                                        
+                                        <thead class="btn-secondary">
+                                            <tr>
+                                                <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
+                                                <th class="col-auto" scope="col">{% trans 'Name' %}</th>
+                                                <th class="col-auto" scope="col">{% trans 'Dosage' %}</th>
+                                                <th class="col-auto" scope="col">{% trans 'In use?' %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            {% for medicine in medicines %}
+                                                <tr>
+                                                    <th scope="row">
+                                                            <a href="{% url 'medicalrecords:update_medicine' view.kwargs.username medicine.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
+                                                    </th>
+                                                    <td>{{medicine.medicine_name}}</td>
+                                                    <td>{{medicine.medicine_dosage}}</td>
+                                                    <td>
+                                                        <input type="checkbox" disabled {% if  medicine.medicine_in_use %} checked {% endif %} >
+                                                    </td>
+                                                </tr> 
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+
+                             <p class="text-secondary">{% trans 'There are no registered medicines for this patient.' %}</p>
+
+
+                            {% endif %}
+                                    
+                        </div>
+                    
+                    </div>
+
+                </div>
+
+                <div id="menu5" class="tab-pane fade">
+            
 
                 </div>
 

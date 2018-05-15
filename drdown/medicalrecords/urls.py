@@ -56,4 +56,17 @@ urlpatterns = [
             form_class=StaticDataForm),
         name='update_static_data_medicalrecords'
     ),
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/new-medicine/$',
+        view=view_medicines.MedicinesCreateView.as_view(
+            form_class=MedicineForm),
+        name='create_medicine'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/update-medicine/(?P<pk>\d+)/$',
+        view=view_medicines.MedicinesUpdateView.as_view(
+            form_class=MedicineForm),
+        name='update_medicine'
+    ),
+
 ]
