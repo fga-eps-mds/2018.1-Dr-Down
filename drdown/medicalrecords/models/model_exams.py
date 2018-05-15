@@ -23,7 +23,7 @@ class Exam(models.Model):
     )
 
     CATEGORIES = (
-        (None, _("select a category")),
+        (None, _("Select a category...")),
         (0, _("Others")),
         (1, _('Structured Physical Exam')),
         (2, _('Vision Exam')),
@@ -41,14 +41,12 @@ class Exam(models.Model):
         blank=False,
     )
 
-
     observations = models.CharField(
         _('Observations'),
         max_length=200,
         blank=True, 
         default=""
     )
-
 
     def __str__(self):
         return (
