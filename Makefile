@@ -94,6 +94,10 @@ populate: manage.py
 	# Populate the database
 	sudo docker-compose -f ${file} run --rm ${container} python utility/populate.py
 
+populate-dev: manage.py
+	# Populate the database
+	sudo docker-compose -f ${file} run --rm ${container} python utility/populate.py goiaba10
+
 # TESTS --------------------------------------------------------
 local := "**/tests/"
 
