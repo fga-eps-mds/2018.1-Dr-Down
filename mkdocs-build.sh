@@ -8,7 +8,8 @@ rev=$(git rev-parse --short HEAD)
 (
   git config user.name "${GH_USER_NAME}"
   git config user.email "${GH_USER_EMAIL}"
-  git remote set-url origin "https://${GH_TOKEN}@${GH_REF}"
+  git remote remove origin
+  git remote add origin "https://${GH_TOKEN}@${GH_REF}"
   git fetch origin
 )
 
