@@ -61,4 +61,4 @@ Com relação à questão de problemas com o entendimento dos critérios de acei
 
 Sobre a questão da dificuldade de refatorar o código de outros membros e a sugestão de melhoria de que algum dos envolvidos com a confecção do código original estejam na refatoração, chegamos à conclusão de que a melhoria proposta não é a melhor saída para resolver este problema. Ao invés disso, combinamos de tomar um maior cuidado com o código que é feito e fazer uso de comentários para deixar claro o que trechos mais complexos estão fazendo, tornando mais fácil a manutenibilidade.
 
-Por fim, a questão do cliente indisponível ou então respondendo e marcando as coisas em cima da hora continua, fazendo com que nós continuemos sem poder contar muito com ele.
+Por fim, a questão do cliente indisponível ou então respondendo e marcando as coisas em cima da hora continua, fazendo com que nós continuemos sem poder contar muito com ele. Desta forma, continuaremos fazendo como temos até então de tomar as decisões em grupo e nos basear nos documentos e informações que temos a disposição.

@@ -52,10 +52,9 @@ Tendo em vista o cansaço em virtude de uma das histórias da sprint passada, e 
 
 Para fechar esta sprint, também haverão histórias técnicas de documentação e para homogeneizar o frontend da aplicação.
 
-
 ## 5. Mudanças
 
-Para esta sprint, ainda trabalhando a questão da pontuação das histórias, decidimos que usaremos histórias do tipo CRUD como referência para pontuações. Uma história com o mesmo nível de complexidade desta vale 5 pontos. Caso seja mais fácil, será pontuada com menos e se for mais difícil com mais do que 5 pontos.
+Para esta sprint, ainda trabalhando a questão da pontuação das histórias, decidimos que usaremos histórias do tipo CRUD como referência para pontuações. Uma história com o mesmo nível de esforço desta vale 5 pontos. Caso seja mais fácil, será pontuada com menos e se for mais difícil com mais do que 5 pontos. Outro fator a ser considerado para pontuar as histórias, além desse esforço, é quantas horas de trabalho são estimadas para concluí-las, ou seja, o quanto serão trabalhosas.
 
 Outra mudança foi adiantar histórias mais complexas que ficariam para a Sprint 10 para esta, já que na próxima semana os membros de MDS terão avaliações e trabalhos de outras matérias.
 
