@@ -744,7 +744,7 @@ msgstr "DO NASCIMENTO AOS 6 ANOS DE IDADE"
 #: drdown/core/templates/core/vaccine_schedule.html:28
 #| msgid "9 TO 10 YEARS OLD"
 msgid "FROM 9 YEARS OLD"
-msgstr "9 ATÉ 10 ANOS DE IDADE"
+msgstr "DOS 9 ANOS EM DIANTE"
 
 #: drdown/core/templates/core/vaccine_schedule.html:39
 #: drdown/core/templates/core/vaccine_schedule.html:236
