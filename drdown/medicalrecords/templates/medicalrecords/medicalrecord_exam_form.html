@@ -25,10 +25,14 @@
             <div class="formgroup row my-2  border rounded">
               <div class="col fieldWrapper my-2">
 
+
+
                 {% if field.errors %}
-                  <div class="col">
-                    {{ field.errors }}
-                  </div>
+                <div div class="alert alert-danger">
+                  {% for error in field.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
                 {% endif %}
 
                 <div class="col">

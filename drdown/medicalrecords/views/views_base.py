@@ -1,6 +1,7 @@
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from drdown.users.models.model_health_team import HealthTeam
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 from django.urls import reverse_lazy
 
@@ -31,3 +32,9 @@ class BaseViewUrl():
         )
 
         return success_url
+
+class BaseViewPermissions(UserPassesTestMixin):
+
+    def test_func(self):
+        return hasattr(self.request.user, 'healthteam') or \
+               hasattr(self.request.user, 'employee')

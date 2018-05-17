@@ -281,7 +281,9 @@
               <h3 >{% trans 'Patient Medicine' %}</h3>
             </div>
             <div class="col-auto">
+              {% if request.user.healthteam or request.user.employee%}
               <a href="{% url 'medicalrecords:create_medicine'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+              {% endif %}
             </div>
           </div>
           <div class="row mb-5">
@@ -291,8 +293,10 @@
                   <table class="table table-hover table-sm table-bordered">
                     <thead class="btn-secondary">
                       <tr>
+                        {% if request.user.healthteam or request.user.employee %}
                         <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
-                        <th class="col-auto" scope="col">{% trans 'Name' %}</th>
+                        {% endif %}
+                        <th class="col-auto" scope="col">{% trans 'Name of medicine' %}</th>
                         <th class="col-auto" scope="col">{% trans 'Dosage' %}</th>
                         <th class="col-auto" scope="col">{% trans 'Time between uses' %}</th>
                         <th class="col-auto" scope="col">{% trans 'In use?' %}</th>
@@ -301,9 +305,11 @@
                     <tbody>
                       {% for medicine in medicines %}
                         <tr>
+                          {% if request.user.healthteam or request.user.employee%}
                           <th scope="row">
                             <a href="{% url 'medicalrecords:update_medicine' view.kwargs.username medicine.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
                           </th>
+                          {% endif %}
                           <td>{{medicine.medicine_name}}</td>
                           <td>{{medicine.medicine_dosage}}</td>
                           <td>{{medicine.medicine_use_interval}}</td>

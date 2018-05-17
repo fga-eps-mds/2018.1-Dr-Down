@@ -1,7 +1,8 @@
 from django.db import models
-from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 
 class Exam(models.Model):
@@ -53,6 +54,16 @@ class Exam(models.Model):
             self.patient.user.get_username() +
             " - " + self.get_category_display()
         )
+
+    def clean(self, *args, **kwargs):
+        if self.day:
+            if timezone.localdate().isoformat() < str(self.day):
+                raise ValidationError(
+                    {'day':
+                        _("The complaint cannot be in the future!")}
+                )
+
+        return super(Exam, self).clean()
 
     class Meta:
         verbose_name = _("Exam")

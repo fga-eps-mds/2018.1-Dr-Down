@@ -243,6 +243,41 @@ class TestViewMedicalRecords(TestCase):
             follow=True)
         self.assertEquals(response.status_code, 200)
 
+    def test_exam_valid_date(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        self.client.force_login(user=self.user_1)
+        data = {
+            'observation': 'test',
+            'day': timezone.now() - timezone.timedelta(days=1),
+            'file': 'text.txt'
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='medicalrecords:create_exam_medicalrecords',
+                args=(self.patient.user.username,)
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+    def test_exam_invalid_date(self):
+        """
+            Test if exam day cannot be in future
+        """
+
+
+        with self.assertRaises(ValidationError):
+            complaint = Exam.objects.create(
+                day=timezone.now() + timezone.timedelta(days=1),
+                patient=self.patient,
+                observations="Não tô legal",
+                file="teuxt.txt",
+            )
+
+            complaint.clean()
+
     def test__str__(self):
         """
         This test check if __str__ is returning the data correctly.

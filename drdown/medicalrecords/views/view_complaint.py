@@ -5,10 +5,11 @@ from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView
 from django.urls import reverse_lazy
 from ..forms.complaint_forms import ComplaintForm
-from ..views.views_base import BaseViewForm, BaseViewUrl
+from ..views.views_base import BaseViewForm, BaseViewUrl, BaseViewPermissions
 
 
-class ComplaintCreateView(BaseViewForm, BaseViewUrl, CreateView):
+class ComplaintCreateView(BaseViewForm, BaseViewUrl,
+                          BaseViewPermissions, CreateView):
     model = Complaint
     form_class = ComplaintForm
     template_name = 'medicalrecords/medicalrecord_complaint_form.html'

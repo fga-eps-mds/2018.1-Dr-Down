@@ -5,10 +5,11 @@ from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView
 from django.urls import reverse_lazy
 from ..forms.exam_forms import ExamForm
-from ..views.views_base import BaseViewForm, BaseViewUrl
+from ..views.views_base import BaseViewForm, BaseViewUrl, BaseViewPermissions
 
 
-class ExamCreateView(BaseViewForm, BaseViewUrl, CreateView):
+class ExamCreateView(BaseViewForm, BaseViewUrl, BaseViewPermissions,
+                     CreateView):
     model = Exam
     form_class = ExamForm
     template_name = 'medicalrecords/medicalrecord_exam_form.html'
