@@ -33,6 +33,7 @@ class BaseViewUrl():
 
         return success_url
 
+
 class BaseViewPermissions(UserPassesTestMixin):
 
     def test_func(self):

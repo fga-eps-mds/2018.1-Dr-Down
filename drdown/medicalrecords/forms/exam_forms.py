@@ -5,7 +5,6 @@ from django import forms
 class ExamForm(forms.ModelForm):
 
 
-
     class Meta:
         model = Exam
         fields = ["file", "day", "category", "observations"]
