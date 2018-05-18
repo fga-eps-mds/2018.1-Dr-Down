@@ -12,6 +12,38 @@ jQuery(document).ready(function($) {
    });
 });
 </script>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script>
+jQuery("#newsDiv").ready(
+    function($) {
+        getNews();
+    }
+)
+function getNews() {
+        var url = 'https://newsapi.org/v2/everything?q=sindrome-de-down&apiKey=253146a95cbd408a9f0e0ee28f70e5fb';        
+        var req = new Request(url, {method: 'GET'});        
+        fetch(req).then(
+            function(response) {
+                data = response.json();
+                console.log(data);               
+                return data;
+            }
+        ).then(
+            function(data) {
+                jsontest = data;
+                console.log(data);
+                $("#divNews").empty(); // Set Div Empty                
+                //Set For loop for binding Div Row wise
+                for (var i = 0; i < data.articles.length; i++) {
+                    //Design Div Dynamically using append
+                    $("#divNews").append("<tr><td><B style='color:#2C3E50'>" + data.articles[i].title +
+                    "</B> </td></tr><tr><td>" +
+                    data.articles[i].description + "</td></tr>");
+                }
+            }
+        )
+}
+</script>
 {% endblock %}
 
 {% block css %}
@@ -132,7 +164,7 @@ jQuery(document).ready(function($) {
       </div>
   </section>
 
-  <section class="mb-0 border-blue margin-1" id="further-reading">
+  <section class="mb-3 border-blue margin-1" id="further-reading">
       <div class="container ">
         <h2 class="text-center text-uppercase text-size-2 text-secondary text-blue-1">{% trans "Further reading" %}</h2>
         <hr class="star-dark mb-5">
@@ -150,7 +182,15 @@ jQuery(document).ready(function($) {
       </div>
   </section>
 </div>
+
 <div class="container">
-  <iframe src="http://www.noticiasemseusite.com.br/MN_Cont_Externo.asp?CodUsr=13902&CodRSS=1&CorTiulo=3d6196&CorFonte=0f0e0e&CorFundo=FFFFFF&width=500&height=200" width="100%" height="200" marginwidth="0" marginheight="0" scrolling="yes" frameborder="0"></iframe>
+  <div id="divNews" class="border-blue pr-3 pl-3 pb-3 pt-3 mb-2">
+  </div>
 </div>
+
+<div class="container">
+  <iframe src="http://www.feed43.com/1558312155644030.xml" style="width: 100%; height: 20rem" class="border-blue">
+  </iframe>
+</div>
+
 {% endblock %}
