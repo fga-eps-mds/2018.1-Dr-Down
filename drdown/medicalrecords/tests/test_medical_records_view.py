@@ -7,7 +7,6 @@ from ..models.model_exams import Exam
 from ..models.model_medical_record import MedicalRecord
 from ..models.model_static_data import StaticData
 from ..models.model_medicines import Medicine
-from ..models.model_specific_exams import SpecificExam
 from ..models.model_complaint import Complaint
 from django.test.client import Client
 from django.urls import reverse
@@ -72,9 +71,8 @@ class TestViewMedicalRecords(TestCase):
         self.exam = Exam.objects.create(
             patient=self.patient,
             day=timezone.now() - timezone.timedelta(days=1),
-            status=3,
-            name="Sangue",
-            author=self.health_team
+            category=1,
+            file="exam.txt"
         )
 
         self.medicine = Medicine.objects.create(
@@ -82,11 +80,6 @@ class TestViewMedicalRecords(TestCase):
             medicine_name="Neosaldina",
             medicine_dosage="2",
             medicine_in_use=True,
-            author=self.health_team
-        )
-
-        self.specificexams = SpecificExam.objects.create(
-            patient=self.patient,
             author=self.health_team
         )
 
@@ -250,6 +243,41 @@ class TestViewMedicalRecords(TestCase):
             follow=True)
         self.assertEquals(response.status_code, 200)
 
+    def test_exam_valid_date(self):
+        """
+        Test if create form is valid with all required fields
+        """
+        self.client.force_login(user=self.user_1)
+        data = {
+            'observation': 'test',
+            'day': timezone.now() - timezone.timedelta(days=1),
+            'file': 'text.txt'
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='medicalrecords:create_exam_medicalrecords',
+                args=(self.patient.user.username,)
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+    def test_exam_invalid_date(self):
+        """
+            Test if exam day cannot be in future
+        """
+
+
+        with self.assertRaises(ValidationError):
+            complaint = Exam.objects.create(
+                day=timezone.now() + timezone.timedelta(days=1),
+                patient=self.patient,
+                observations="Não tô legal",
+                file="teuxt.txt",
+            )
+
+            complaint.clean()
+
     def test__str__(self):
         """
         This test check if __str__ is returning the data correctly.
@@ -259,10 +287,11 @@ class TestViewMedicalRecords(TestCase):
 
         self.assertEqual(self.complaint.__str__(), 'teste_2 -  Comptaint ID: 1')
 
-        self.assertEqual(self.exam.__str__(), 'teste_2 - Sangue')
+        self.assertEqual(
+            self.exam.__str__(),
+            str('teste_2 - ' + self.exam.get_category_display())
+        )
 
         self.assertEqual(self.medicine.__str__(), 'teste_2 - Neosaldina')
-
-        self.assertEqual(self.specificexams.__str__(), 'teste_2')
 
         self.assertEqual(self.staticdata.__str__(), 'teste_2')

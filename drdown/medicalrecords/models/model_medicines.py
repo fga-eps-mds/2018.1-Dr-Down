@@ -24,7 +24,14 @@ class Medicine(models.Model):
 
     medicine_in_use = models.BooleanField(
         verbose_name=_('In use?'),
-        help_text=_('Does the patient still use this medication?')
+        help_text=_('Does the patient still use this medication?'),
+        default=True
+    )
+
+    medicine_use_interval = models.CharField(
+        _('Time between uses'),
+        max_length=50,
+        default=""
     )
 
     author = models.ForeignKey(

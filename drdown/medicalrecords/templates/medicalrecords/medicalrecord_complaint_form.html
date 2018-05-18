@@ -16,27 +16,32 @@
 
         {{ form.media }}
 
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data " action="#menu5">
 
             {% csrf_token %}
             {{ form.description.errors }}
             <label>{% trans 'Description'%} : </label> <div style="margin-right: 90%;">{{ form.description }}</div>
 
             <br/>
-
-            {{ form.complaint_day.errors }}
+            {% if form.complaint_day.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.complaint_day.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+            {% endif %}
             <div><label>{% trans 'Day of complaint'%} : </label> <input type="date" name="complaint_day" required=true class="form-control"></div>
 
             <br/>
 
             {{ form.complaint_time.errors }}
-            <div><label>{% trans 'Time of complaint'%} : </label> <input type="time" name="complaint_time" required=true class="form-control"></div>
+            <div><label>{% trans 'Time of complaint'%} : </label> <input type="time" name="complaint_time" class="form-control"></div>
 
             <br/>
 
-            <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
+            <button type="submit" class="btn btn-success align-btn ml-3 float-right" style="margin-left: 0%;">{% trans 'Save' %}</button>
 
-            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger align-btn ml-3 float-right" >{% trans "Cancel" %}</a>
 
         </form>
 

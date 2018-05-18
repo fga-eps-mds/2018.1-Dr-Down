@@ -1,7 +1,6 @@
 from drdown.users.models.model_health_team import HealthTeam
 from ..models.model_medical_record import MedicalRecord
 from ..models.model_static_data import StaticData
-from ..models.model_specific_exams import SpecificExam
 from ..models.model_medicines import Medicine
 from ..models.model_exams import Exam
 from ..models.model_complaint import Complaint
@@ -56,18 +55,34 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         )
 
         staticdata = StaticData.objects.filter(patient=patient)
-        specificexams = SpecificExam.objects.filter(patient=patient).first()
         medicines = Medicine.objects.filter(patient=patient)
-        exams = Exam.objects.filter(patient=patient)
         complaints = Complaint.objects.filter(patient=patient)
 
         context['complaints'] = complaints
-        context['exams'] = exams
         context['medicines'] = medicines
-        context['specificexams'] = specificexams
         context['staticdata'] = staticdata
-        context['medicalrecordlist'] = context['object_list']
+
+        context['medicalrecordlist'] = context['object_list'].filter(
+            patient=patient
+        )
+
         context['related_patient'] = patient
+
+        exams = Exam.objects.filter(patient=patient)
+        context['exams'] = exams
+
+        category_dict = {}
+
+        for category in Exam.CATEGORIES:
+            query = Exam.objects.filter(
+                patient=patient,
+                category=category[0]
+            )
+
+            if query.exists():
+                category_dict[category[1]] = query
+
+        context['exams_categories'] = category_dict
 
         return context
 

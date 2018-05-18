@@ -19,40 +19,46 @@
 
         <div class="row">
             <div class="col">
-            
+
                 <form method="post" enctype="multipart/form-data" action="#menu2">
 
                     {% csrf_token %}
 
                     {% for field in form %}
-                        
-                        <div class="formgroup row my-2  border rounded">    
-                           
+
+                        <div class="formgroup row my-2  border rounded">
+
                             <div class="col fieldWrapper my-2">
 
-                                
+
                                 {% if field.errors %}
                                     <div class="col">
                                         {{ field.errors }}
                                     </div>
                                 {% endif %}
-                                    
-                                    
+
+
                                 <div class="col">
                                     {{ field.label_tag }}
                                 </div>
-                                
+
+
                                 <div class="col">
                                     {{ field }}
                                 </div>
-                                
+                                <div class="col" >
+                                  <font size="2">
+                                  {{ field.help_text|safe}}
+                                  </font>
+                                </div>
+
                             </div>
-                        
+
                         </div>
 
                     {% endfor %}
                     <div class="row">
-                        
+
                         <div class="col">
                         </div>
 

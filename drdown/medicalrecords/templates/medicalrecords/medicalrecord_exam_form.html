@@ -9,33 +9,67 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+  <div class="container">
 
-        <h2>{% trans 'Add Specific Exams' %}</h2>
-
-        <form method="post" enctype="multipart/form-data">
-
-            {% csrf_token %}
-
-      {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-          <p class="lead">
-            {{ field.label_tag }}<br>
-            {{ field }}
-          </p>
-        </div>
-      {% endfor %}
-
-            <button type="submit" class="btn btn-secondary align-btn ml-3" style="margin-left: 0%;">{% trans 'Save' %}</button>
-
-            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-secondary align-btn ml-3" >{% trans "Cancel" %}</a>
-
-        </form>
-
+    <div class="row">
+      <div class="col">
+          <h2>{% trans 'Add Exam' %}</h2>
+      </div>
     </div>
 
-    <br/>
-    <br/>
+    <div class="row">
+      <div class="col">
+        <form method="post" enctype="multipart/form-data"action="#menu3">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
+
+
+                {% if field.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in field.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ field.label_tag }}
+                </div>
+
+                <div class="col">
+                  {{ field }}
+                </div>
+
+                {% if field.help_text %}
+                  <font size="2" class="ml-3">{{ field.help_text|safe }}</font>
+                {% endif %}
+
+              </div>
+            </div>
+
+          {% endfor %}
+          <div class="row">
+
+            <div class="col">
+            </div>
+
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success my-2 mx-1" style="margin-left: 0%;">{% trans 'Save' %}</button>
+            </div>
+
+            <div class="col-auto">
+                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-2 mx-1" >{% trans "Cancel" %}</a>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
 
 {% endblock %}
