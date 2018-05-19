@@ -66,3 +66,18 @@
   height: 3em;
   width: auto;
 }
+
+.modal-dialog {
+  min-width: 100%;
+  height: auto;
+  margin: 20px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-width: 100%;
+
+}
+
