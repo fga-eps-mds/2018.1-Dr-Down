@@ -20,6 +20,8 @@ class Complaint(models.Model):
 
     complaint_time = models.TimeField(
         _('Time of complaint'),
+        null=True,
+        blank=True
     )
 
     patient = models.ForeignKey(

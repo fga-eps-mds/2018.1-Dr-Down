@@ -4,9 +4,8 @@ from drdown.medicalrecords.forms.medicalrecords_forms import MedicalRecordForm
 from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
 from drdown.medicalrecords.forms.medicines_forms import MedicineForm
 from drdown.medicalrecords.forms.complaint_forms import ComplaintForm
-from drdown.medicalrecords.forms.specific_exams_forms import SpecificExamsForm
 from drdown.medicalrecords.views import view_medical_record, view_static_data,\
-    view_medicines, view_specific_exams, view_complaint, view_exams
+    view_medicines, view_complaint, view_exams
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -38,13 +37,6 @@ urlpatterns = [
     ),
 
     url(
-        regex=r'^(?P<username>[\w.@+-]+)/new-specific-exam/$',
-        view=view_specific_exams.SpecificExamCreateView.as_view(
-            form_class=SpecificExamsForm),
-        name='create_specific_exam_medicalrecords'
-    ),
-
-    url(
         regex=r'^(?P<username>[\w.@+-]+)/new-complaint/$',
         view=view_complaint.ComplaintCreateView.as_view(
             form_class=ComplaintForm),
@@ -59,16 +51,22 @@ urlpatterns = [
     ),
 
     url(
-        regex=r'^(?P<username>[\w.@+-]+)/update-exams/$',
-        view=view_specific_exams.SpecificExamUpdateView.as_view(
-            form_class=SpecificExamsForm),
-        name='update_exams_medicalrecords'
-    ),
-
-    url(
         regex=r'^(?P<username>[\w.@+-]+)/update-static-data/$',
         view=view_static_data.StaticDataUpdateView.as_view(
             form_class=StaticDataForm),
         name='update_static_data_medicalrecords'
     ),
+    url(
+        regex=r'^(?P<username>[\w.@+-]+)/new-medicine/$',
+        view=view_medicines.MedicinesCreateView.as_view(
+            form_class=MedicineForm),
+        name='create_medicine'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/update-medicine/(?P<pk>\d+)/$',
+        view=view_medicines.MedicinesUpdateView.as_view(
+            form_class=MedicineForm),
+        name='update_medicine'
+    ),
+
 ]

@@ -7,10 +7,11 @@ from django.views.generic import CreateView, DeleteView, UpdateView, ListView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin
 from ..forms.static_data_forms import StaticDataForm
-from ..views.views_base import BaseViewForm, BaseViewUrl
+from ..views.views_base import BaseViewForm, BaseViewUrl, BaseViewPermissions
 
 
-class StaticDataCreateView(BaseViewUrl, BaseViewForm, CreateView):
+class StaticDataCreateView(BaseViewUrl, BaseViewForm, BaseViewPermissions,
+                           CreateView):
     model = StaticData
     form_class = StaticDataForm
     template_name = 'medicalrecords/medicalrecord_static_data_form.html'
