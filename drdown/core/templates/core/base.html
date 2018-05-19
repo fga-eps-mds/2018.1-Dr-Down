@@ -78,11 +78,11 @@
           </a></li>
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="#appointments" data-toggle="collapse" aria-expanded="false" >
               {% trans "Appointments" %}
-              <span class="caret ml-1"></span>
+              <i class="fa fa-angle-down"></i>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="collapse" id="appointments">
               <li><a href="{% url 'appointments:list_appointments' %}">
                 {% trans "Scheduled" %}
               </a></li>
@@ -102,11 +102,11 @@
 
           {% elif user.patient %}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a href="#medicalhistory" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Medical History" %}
-                <span class="ml-1 caret"></span>
+                <i class="fa fa-angle-down"></i>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="collapse" id="medicalhistory">
                 <li><a href="{% url 'medicalrecords:list_medicalrecords' request.user.username  %}">
                   {% trans "Medical Record" %}
                 </a></li>
@@ -116,11 +116,11 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a href="#vaccines-pat" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
-                <span class="ml-1 caret"></span>
+                <i class="fa fa-angle-down"></i>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="collapse" id="vaccines-pat">
                 <li><a href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
                   {% trans "Calendar" %}
                 </a></li>
@@ -133,11 +133,11 @@
           {% elif user.responsible %}
             {% for patient in request.user.responsible.patient_set.all %}
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <a href="#patient" data-toggle="collapse" aria-expanded="false" >
                   {% trans "Patient" %} {{patient.user.name}}
-                  <span class="ml-1 caret"></span>
+                  <i class="fa fa-angle-down"></i>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="collapse" id="patient">
                   <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
                     {% trans "Medical Record" %}
                   </a></li>
@@ -148,11 +148,11 @@
               </li>
             {% endfor %}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a href="#vaccine-resp" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
-                <span class="ml-1 caret"></span>
+                <i class="fa fa-angle-down"></i>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="collapse" id="vaccine-resp">
                 <li><a href="{% url 'core:vaccine' %}">
                   {% trans "Calendar" %}
                 </a></li>
