@@ -43,9 +43,6 @@
     <div class="col-7 col-md ">
        <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
     </div>
-    <div class="col-auto float-right mr-0">
-        <a href="{% url 'users:patient_medical_sheet' view.kwargs.username  %}" class="btn btn-secondary" >{% trans "Return" %}</a>
-    </div>
   </div>
 
   <div class="row justify-content-center mb-3">
