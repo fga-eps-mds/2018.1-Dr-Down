@@ -1,2 +1,50 @@
-<p>HELLO!</p>
-<p>{{patient}}</p>
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% trans "PDF" %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="">
+   	<meta name="author" content="EPS/MDS">
+   	<style>
+   		.data {
+   			margin-left: 3em;
+   		}
+    </style>
+  </head>
+
+  <body>
+  	<header>  
+  		<img src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">	
+  	</header>
+
+		<div id="body">
+			<div class="container fl" id="patient_data">
+				<strong><p>{% trans 'Patient Data' %}</p></strong>
+				<div class="data">
+					<p>{% trans 'Patient name' %}: {{ patient.user.name }}</p>
+					<p>{% trans 'SUS number' %}: {{ patient.sus_number }}</p>
+					<p>{% trans 'Birthday' %}: {{ patient.user.birthday }}</p>
+			</div>
+
+			<div id="evolution">
+			</div>
+			
+			<div id="postnatal-data">
+			</div>
+			
+			<div id="medical-exams">
+			</div>
+			
+			<div id="patient-medicine">
+			</div>
+			
+			<div id="complaints">
+			</div>
+		</div>
+	</body>
