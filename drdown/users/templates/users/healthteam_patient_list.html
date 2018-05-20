@@ -40,14 +40,14 @@
                                 <div class="row">
 
                                     <div class="col-auto border-right">
-                                        
-                                        <img class="col-auto my-1 rounded-circle img-fluid" 
-                                            {% if patient.user.photo %}    
-                                                src="{{patient.user.photo.url}}" 
-                                            {% else %}    
-                                                src="{% static 'users/img/user.png' %}"                                            
+
+                                        <img class="col-auto my-1 rounded-circle img-fluid"
+                                            {% if patient.user.photo %}
+                                                src="{{patient.user.photo.url}}"
+                                            {% else %}
+                                                src="{% static 'users/img/user.png' %}"
                                             {% endif %}
-                                            
+
                                         style="height: auto; width: 100px;">
                                     </div>
 
@@ -63,14 +63,14 @@
                             <div class="col-auto border-left">
 
                                 <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}" class="btn btn-secondary mx-1 my-1" >{% trans "Medical Records" %}</a>
-                            
-                            </div>                            
+
+                            </div>
 
                             <div class="col-auto">
-                                
-                                <a href="{% url 'users:patient_medical_sheet' patient.user.username  %}" class="btn btn-secondary mx-1 my-1" >{% trans "Medical Sheet" %}</a>
 
-                            </div>    
+                                <a href="{% url 'careline:checklist_detail' patient.user.username  %}" class="btn btn-secondary mx-1 my-1" >{% trans "Checklist" %}</a>
+
+                            </div>
 
                         </div>
 
