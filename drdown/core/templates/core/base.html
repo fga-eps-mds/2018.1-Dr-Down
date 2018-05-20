@@ -182,9 +182,9 @@
         {% endfor %}
       {% endif %}
       <!-- Page Content -->
-      <div id="page-content-wrapper ">
+      <wrapper class="d-flex flex-column">
         <a href="#menu-toggle" class="btn fa fa-bars" id="menu-toggle"></a>
-        <div class="container-fluid content-out-sidebar">
+        <div class="flex-fill">
           {% block content %}
           {% endblock content %}
         </div>
@@ -195,7 +195,7 @@
             <small>{% trans "Copyright &copy; Dr. Down 2018" %}</small>
           </div>
         </div>
-      </div>
+      </wrapper>
     </div>
     {% endblock navbar %}
 

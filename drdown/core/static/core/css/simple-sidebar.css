@@ -4,10 +4,13 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
-body {
-  overflow-x: hidden;
+body, wrapper {
+   min-height:100vh;
 }
 
+.flex-fill {
+   flex:1 1 auto;
+}
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
