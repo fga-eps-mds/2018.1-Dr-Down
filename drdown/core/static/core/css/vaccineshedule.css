@@ -67,17 +67,10 @@
   width: auto;
 }
 
-.modal-dialog {
+.modal-vaccine {
   min-width: 100%;
   height: auto;
   margin: 20px;
   margin-right: 10px;
   padding: 0;
 }
-
-.modal-content {
-  height: auto;
-  min-width: 100%;
-
-}
-

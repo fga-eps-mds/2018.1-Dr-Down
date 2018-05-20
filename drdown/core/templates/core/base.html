@@ -46,7 +46,7 @@
 
     <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-lg modal-vaccine">
         <div class="modal-content">
           <div class="modal-body">
           {% include "core/vaccine_schedule.html" %}
@@ -173,14 +173,41 @@
             <li><a href="{% url 'forum:list_categories' %}">{% trans "Forums" %}</a></li>
             <li><a href="#">{% trans "Events" %}</a></li>
             <li><a href="#">{% trans "Help" %}</a></li>
-            <li><a class="text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a></li>
+            <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
       </div>
+
+        <!-- Logout Modal -->
+        <div class="modal fade" id="logout" role="dialog">
+          <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">{% trans 'Log out' %}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>{% trans 'Are you sure you want to log out?' %}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Cancel' %}</button>
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                  {% endif %}
+                  <button class="btn btn-danger float-right" type="submit">{% trans 'Log Out' %}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
       {% if messages %}
         {% for message in messages %}
             <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
         {% endfor %}
       {% endif %}
+
       <!-- Page Content -->
       <wrapper class="d-flex flex-column">
         <a href="#menu-toggle" class="btn fa fa-bars" id="menu-toggle"></a>
