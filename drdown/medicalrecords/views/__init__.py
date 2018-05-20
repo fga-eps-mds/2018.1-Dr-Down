@@ -5,4 +5,5 @@ from ..views import (
     view_medicines,
     view_static_data,
     views_base,
+    view_pdf,
 )

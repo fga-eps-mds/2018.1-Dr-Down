@@ -5,7 +5,7 @@ from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
 from drdown.medicalrecords.forms.medicines_forms import MedicineForm
 from drdown.medicalrecords.forms.complaint_forms import ComplaintForm
 from drdown.medicalrecords.views import view_medical_record, view_static_data,\
-    view_medicines, view_complaint, view_exams
+    view_medicines, view_complaint, view_exams, view_pdf
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -68,5 +68,9 @@ urlpatterns = [
             form_class=MedicineForm),
         name='update_medicine'
     ),
-
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/pdf/$',
+        view=view_pdf.PDFView.as_view(),
+        name='pdf'
+    ),
 ]
