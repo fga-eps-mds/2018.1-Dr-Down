@@ -144,6 +144,41 @@
 			</div>
 
 			<div id="evolution">
+				<strong><h2>{% trans 'Evolution' %}</h2></strong>
+				{% for medicalrecord in patient.medicalrecord_set.all %}
+					<div class="data">
+						<table class="table">
+							<tbody>
+								<tr class="line" id="name">
+									<td class="label">
+										<label>{% trans 'Author'%}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicalrecord.author.user.name }}</label>
+									</td>
+								</tr>		
+								<tr class="line" id="sus_number">
+									<td class="label">
+										<label>{% trans 'Created at'%}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicalrecord.day.date }}</label>
+									</td>
+								</tr>	
+								<tr id="birthday">
+									<td class="label">
+										<label>{% trans 'Message' %}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicalrecord.message }}</label>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>					
+							</tbody>
+						</table>	
+					</div>
+				{% endfor %}
 			</div>
 			
 			<div id="postnatal-data">
