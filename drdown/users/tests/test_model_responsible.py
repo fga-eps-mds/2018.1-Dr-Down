@@ -27,7 +27,6 @@ class TestModelResponsible(TestCase):
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user_2,
-            priority=1,
             mother_name="Mãe",
             father_name="Pai",
             ethnicity=3,
@@ -156,4 +155,3 @@ class TestModelResponsible(TestCase):
             self.responsible.have_patient_needing_atention(),
             True
         )
-
