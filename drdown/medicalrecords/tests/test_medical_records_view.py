@@ -28,7 +28,7 @@ class TestViewMedicalRecords(TestCase):
         self.user_3 = self.make_user(username="teste_3")
         self.user_4 = self.make_user(username="teste_4")
         self.patient = Patient.objects.create(ses="1234567",
-                                              user=self.user_2, priority=1,
+                                              user=self.user_2,
                                               mother_name="Mãe",
                                               father_name="Pai",
                                               ethnicity=3,
