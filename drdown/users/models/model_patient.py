@@ -39,19 +39,6 @@ class Patient(models.Model):
         verbose_name=_('Responsible')
     )
 
-    PRIORITIES = (
-        (5, _('Not urgent')),
-        (4, _('Not very urgent')),
-        (3, _('Urgent')),
-        (2, _('Very urgent')),
-        (1, _('Emerging')),
-      )
-    priority = models.IntegerField(
-        _('Priority'),
-        choices=PRIORITIES,
-        help_text=_("Please, insert the degree of priority of the patient"),
-    )
-
     mother_name = models.CharField(
         _('Name of mother'),
         help_text=_("Please, insert your mother name"),
