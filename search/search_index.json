@@ -2404,6 +2404,196 @@
             "location": "/sprints/08/results/#9-analise-do-scrum-master", 
             "text": "Nesta sprint, continuamos mantendo nossas entregas, com apenas uma d\u00edvida t\u00e9cnica. Apesar da semana complicada por causa de outras mat\u00e9rias, os membros de MDS mantiveram as entregas deles dentro do prazo.  Como os membros de MDS adiantaram que a semana da Sprint 10 ser\u00e1 complicada (mais do que foi a dessa sprint), teremos que nos planejar para que essa sprint tenha hist\u00f3rias menos complexas. Por isso, provavelmente para a pr\u00f3xima semana adiantaremos hist\u00f3rias que consideramos mais complexas e que possam j\u00e1 serem feitas.  Quanto ao problema de um dos membros do grupo n\u00e3o ter um laptop temporariamente, isso j\u00e1 est\u00e1 sendo resolvido, j\u00e1 que ele comprou outro que dever\u00e1 chegar na pr\u00f3xima semana.  Por fim, a quest\u00e3o da hist\u00f3ria cansativa foi algo que n\u00f3s todos n\u00e3o t\u00ednhamos previsto de antem\u00e3o. Mas em outras sprints aproveitaremos a experi\u00eancia adquirida nessa para evitar esse tipo de quest\u00e3o tomando provid\u00eancias como, por exemplo, quebrando a hist\u00f3ria em mais de uma.", 
             "title": "9. An\u00e1lise do Scrum Master"
+        }, 
+        {
+            "location": "/sprints/09/planning/", 
+            "text": "Planejamento da Sprint 9\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint:\n 9\n\n\nData de in\u00edcio:\n 28/04/2018\n\n\nData de T\u00e9rmino:\n 04/05/2018\n\n\nDura\u00e7\u00e3o\n: 6 dias\n\n\nPontos Planejados:\n 22 pontos\n\n\nMembros ausentes:\n Nenhum\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Sconetto\n\n\n\n\n\n\nArquiteto:\n\n\n\n\n\n\nVictor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Pareamento\n\n\n\n\n\n\nDaniel e Geovana\n\n\n\n\n\n\nElias e Guilherme\n\n\n\n\n\n\nGabriela e Joberth\n\n\n\n\n\n\n4. Planejamento da Sprint\n\n\nA Sprint 9 foi planejada para dar continuidade \u00e0s hist\u00f3rias da ficha de acompanhamento. Al\u00e9m dessas, features para a marca\u00e7\u00e3o de consultas e para exibir a localiza\u00e7\u00e3o do Cris Down tamb\u00e9m foram colocadas no Backlog da Sprint.\n\n\nTendo em vista o cansa\u00e7o em virtude de uma das hist\u00f3rias da sprint passada, e da complexidade da feature de evolu\u00e7\u00e3o do prontu\u00e1rio, esta foi dividida em 2 hist\u00f3rias, com a primeira ficando para esta sprint e a outra para o futuro.\n\n\nPara fechar esta sprint, tamb\u00e9m haver\u00e3o hist\u00f3rias t\u00e9cnicas de documenta\u00e7\u00e3o e para homogeneizar o frontend da aplica\u00e7\u00e3o.\n\n\n5. Mudan\u00e7as\n\n\nPara esta sprint, ainda trabalhando a quest\u00e3o da pontua\u00e7\u00e3o das hist\u00f3rias, decidimos que usaremos hist\u00f3rias do tipo CRUD como refer\u00eancia para pontua\u00e7\u00f5es. Uma hist\u00f3ria com o mesmo n\u00edvel de esfor\u00e7o desta vale 5 pontos. Caso seja mais f\u00e1cil, ser\u00e1 pontuada com menos e se for mais dif\u00edcil com mais do que 5 pontos. Outro fator a ser considerado para pontuar as hist\u00f3rias, al\u00e9m desse esfor\u00e7o, \u00e9 quantas horas de trabalho s\u00e3o estimadas para conclu\u00ed-las, ou seja, o quanto ser\u00e3o trabalhosas.\n\n\nOutra mudan\u00e7a foi adiantar hist\u00f3rias mais complexas que ficariam para a Sprint 10 para esta, j\u00e1 que na pr\u00f3xima semana os membros de MDS ter\u00e3o avalia\u00e7\u00f5es e trabalhos de outras mat\u00e9rias.\n\n\n6. Backlog da Sprint\n\n\n\n\nUS83 - Evoluir prontu\u00e1rio\n\n\nTS84 - Manter o frontend padronizado\n\n\nUS85 - Solicitar consulta\n\n\nUS86 - Localiza\u00e7\u00e3o\n\n\nTS87 - Documentar o Pipeline\n\n\nTS88 - Documentar o mindmap\n\n\nTS96 - Documentar a Sprint 8\n\n\n\n\n7. Risk Burndown", 
+            "title": "Planejamento"
+        }, 
+        {
+            "location": "/sprints/09/planning/#planejamento-da-sprint-9", 
+            "text": "", 
+            "title": "Planejamento da Sprint 9"
+        }, 
+        {
+            "location": "/sprints/09/planning/#1-resumo-da-sprint", 
+            "text": "N\u00famero da sprint:  9  Data de in\u00edcio:  28/04/2018  Data de T\u00e9rmino:  04/05/2018  Dura\u00e7\u00e3o : 6 dias  Pontos Planejados:  22 pontos  Membros ausentes:  Nenhum", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/09/planning/#2-papeis", 
+            "text": "Scrum Master:   Diego Fran\u00e7a    Product Owner:    Mariana Mendes    DevOps:    Jo\u00e3o Sconetto    Arquiteto:    Victor Arnaud    Time de Desenvolvimento:   Daniel Maike  Elias Bernardo  Gabriela Medeiros  Geovana Ramos  Guilherme Guy  Joberth Rodrigues", 
+            "title": "2. Pap\u00e9is"
+        }, 
+        {
+            "location": "/sprints/09/planning/#3-pareamento", 
+            "text": "Daniel e Geovana    Elias e Guilherme    Gabriela e Joberth", 
+            "title": "3. Pareamento"
+        }, 
+        {
+            "location": "/sprints/09/planning/#4-planejamento-da-sprint", 
+            "text": "A Sprint 9 foi planejada para dar continuidade \u00e0s hist\u00f3rias da ficha de acompanhamento. Al\u00e9m dessas, features para a marca\u00e7\u00e3o de consultas e para exibir a localiza\u00e7\u00e3o do Cris Down tamb\u00e9m foram colocadas no Backlog da Sprint.  Tendo em vista o cansa\u00e7o em virtude de uma das hist\u00f3rias da sprint passada, e da complexidade da feature de evolu\u00e7\u00e3o do prontu\u00e1rio, esta foi dividida em 2 hist\u00f3rias, com a primeira ficando para esta sprint e a outra para o futuro.  Para fechar esta sprint, tamb\u00e9m haver\u00e3o hist\u00f3rias t\u00e9cnicas de documenta\u00e7\u00e3o e para homogeneizar o frontend da aplica\u00e7\u00e3o.", 
+            "title": "4. Planejamento da Sprint"
+        }, 
+        {
+            "location": "/sprints/09/planning/#5-mudancas", 
+            "text": "Para esta sprint, ainda trabalhando a quest\u00e3o da pontua\u00e7\u00e3o das hist\u00f3rias, decidimos que usaremos hist\u00f3rias do tipo CRUD como refer\u00eancia para pontua\u00e7\u00f5es. Uma hist\u00f3ria com o mesmo n\u00edvel de esfor\u00e7o desta vale 5 pontos. Caso seja mais f\u00e1cil, ser\u00e1 pontuada com menos e se for mais dif\u00edcil com mais do que 5 pontos. Outro fator a ser considerado para pontuar as hist\u00f3rias, al\u00e9m desse esfor\u00e7o, \u00e9 quantas horas de trabalho s\u00e3o estimadas para conclu\u00ed-las, ou seja, o quanto ser\u00e3o trabalhosas.  Outra mudan\u00e7a foi adiantar hist\u00f3rias mais complexas que ficariam para a Sprint 10 para esta, j\u00e1 que na pr\u00f3xima semana os membros de MDS ter\u00e3o avalia\u00e7\u00f5es e trabalhos de outras mat\u00e9rias.", 
+            "title": "5. Mudan\u00e7as"
+        }, 
+        {
+            "location": "/sprints/09/planning/#6-backlog-da-sprint", 
+            "text": "US83 - Evoluir prontu\u00e1rio  TS84 - Manter o frontend padronizado  US85 - Solicitar consulta  US86 - Localiza\u00e7\u00e3o  TS87 - Documentar o Pipeline  TS88 - Documentar o mindmap  TS96 - Documentar a Sprint 8", 
+            "title": "6. Backlog da Sprint"
+        }, 
+        {
+            "location": "/sprints/09/planning/#7-risk-burndown", 
+            "text": "", 
+            "title": "7. Risk Burndown"
+        }, 
+        {
+            "location": "/sprints/09/results/", 
+            "text": "Fechamento da Sprint 9\n\n\n1. Resumo da Sprint\n\n\nPontos Planejados\n: 22 pontos\n\n\nPontos conclu\u00eddos\n: 31 pontos\n\n\nD\u00edvidas t\u00e9cnicas\n: 0 pontos\n\n\nHist\u00f3rias entregues:\n\n\n\n\nUS83 - Evoluir prontu\u00e1rio\n\n\nTS84 - Manter o frontend padronizado\n\n\nUS85 - Solicitar consulta\n\n\nUS86 - Localiza\u00e7\u00e3o\n\n\nTS87 - Documentar o Pipeline\n\n\nTS88 - Documentar o mindmap\n\n\nTS96 - Documentar a Sprint 8\n\n\n\n\n2. Retrospectiva da Sprint\n\n\n\n\n\n\n\n\nPontos Positivos\n\n\nPontos Negativos\n\n\nSugest\u00e3o de Melhoria\n\n\n\n\n\n\n\n\n\n\nTudo foi entregue\n\n\nTrabalhos de outros mat\u00e9rias afetando a execu\u00e7\u00e3o de atividades do projeto\n\n\nNas dailys n\u00e3o presenciais, tentar responder o mais cedo poss\u00edvel\n\n\n\n\n\n\nGanho de conhecimento com a execu\u00e7\u00e3o das hist\u00f3rias\n\n\nCrit\u00e9rio de aceita\u00e7\u00e3o da hist\u00f3ria do prontu\u00e1rio poderia estar mais claro\n\n\nEsclarecer melhor os crit\u00e9rios de aceita\u00e7\u00e3o\n\n\n\n\n\n\nO membro que estava sem m\u00e1quina de trabalho (notebook) conseguiu uma nova\n\n\nAlgumas sugest\u00f5es aumentaram um pouco a hist\u00f3ria\n\n\nMelhor escrita dos reviews dos pull requests\n\n\n\n\n\n\nA pontua\u00e7\u00e3o das hist\u00f3rias refletiu melhor o esfor\u00e7o que foi necess\u00e1rio\n\n\nN\u00e3o conseguir entender o c\u00f3digo de outro membro para fazer corre\u00e7\u00e3o\n\n\nO membro participar na hist\u00f3ria de refatora\u00e7\u00e3o do seu c\u00f3digo\n\n\n\n\n\n\nMelhor auto planejamento dos membros\n\n\nConfus\u00e3o com as sugest\u00f5es do reviews\n\n\nAuto popular o banco para fazer os testes\n\n\n\n\n\n\nTroca de conhecimento efetiva entre os membros\n\n\nCliente ainda dificulta as conversas e realiza\u00e7\u00f5es de reuni\u00f5es\n\n\n-\n\n\n\n\n\n\nMembro gostou de trabalhar com a API do Google\n\n\nAdoecimento de membros da equipe\n\n\n-\n\n\n\n\n\n\nOs membros conseguiram entregar as hist\u00f3rias complexas\n\n\n-\n\n\n-\n\n\n\n\n\n\nFechamento das issues antes do \u00faltimo dia da sprint\n\n\n-\n\n\n-\n\n\n\n\n\n\nGr\u00e1fico de commits bem destribuido (bom planejamento e trabalho)\n\n\n-\n\n\n-\n\n\n\n\n\n\n\n\n3. Quadro de Conhecimento\n\n\n\n\n5. Gr\u00e1fico do Burndown\n\n\n\n\n6. Velocity\n\n\n\n\n7. Gr\u00e1fico de Commits\n\n\n\n\n8. EVM\n\n\n\n\n9. An\u00e1lise do Scrum Master\n\n\nEsta sprint ocorreu tranquilamente e sem problemas, tanto que boa parte das hist\u00f3rias foram entregues na quinta. Isso \u00e9 mais um sinal de que amadurecemos nossos conhecimentos.\n\n\nCom rela\u00e7\u00e3o \u00e0 quest\u00e3o de problemas com o entendimento dos crit\u00e9rios de aceita\u00e7\u00e3o e do que \u00e9 proposto nos reviews, ficamos de melhorar a escrita dos textos, aumentando a clareza do que \u00e9 pedido.\n\n\nSobre a quest\u00e3o da dificuldade de refatorar o c\u00f3digo de outros membros e a sugest\u00e3o de melhoria de que algum dos envolvidos com a confec\u00e7\u00e3o do c\u00f3digo original estejam na refatora\u00e7\u00e3o, chegamos \u00e0 conclus\u00e3o de que a melhoria proposta n\u00e3o \u00e9 a melhor sa\u00edda para resolver este problema. Ao inv\u00e9s disso, combinamos de tomar um maior cuidado com o c\u00f3digo que \u00e9 feito e fazer uso de coment\u00e1rios para deixar claro o que trechos mais complexos est\u00e3o fazendo, tornando mais f\u00e1cil a manutenibilidade.\n\n\nPor fim, a quest\u00e3o do cliente indispon\u00edvel ou ent\u00e3o respondendo e marcando as coisas em cima da hora continua, fazendo com que n\u00f3s continuemos sem poder contar muito com ele. Desta forma, continuaremos fazendo como temos at\u00e9 ent\u00e3o de tomar as decis\u00f5es em grupo e nos basear nos documentos e informa\u00e7\u00f5es que temos a disposi\u00e7\u00e3o.", 
+            "title": "Resultado"
+        }, 
+        {
+            "location": "/sprints/09/results/#fechamento-da-sprint-9", 
+            "text": "", 
+            "title": "Fechamento da Sprint 9"
+        }, 
+        {
+            "location": "/sprints/09/results/#1-resumo-da-sprint", 
+            "text": "Pontos Planejados : 22 pontos  Pontos conclu\u00eddos : 31 pontos  D\u00edvidas t\u00e9cnicas : 0 pontos  Hist\u00f3rias entregues:   US83 - Evoluir prontu\u00e1rio  TS84 - Manter o frontend padronizado  US85 - Solicitar consulta  US86 - Localiza\u00e7\u00e3o  TS87 - Documentar o Pipeline  TS88 - Documentar o mindmap  TS96 - Documentar a Sprint 8", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/09/results/#2-retrospectiva-da-sprint", 
+            "text": "Pontos Positivos  Pontos Negativos  Sugest\u00e3o de Melhoria      Tudo foi entregue  Trabalhos de outros mat\u00e9rias afetando a execu\u00e7\u00e3o de atividades do projeto  Nas dailys n\u00e3o presenciais, tentar responder o mais cedo poss\u00edvel    Ganho de conhecimento com a execu\u00e7\u00e3o das hist\u00f3rias  Crit\u00e9rio de aceita\u00e7\u00e3o da hist\u00f3ria do prontu\u00e1rio poderia estar mais claro  Esclarecer melhor os crit\u00e9rios de aceita\u00e7\u00e3o    O membro que estava sem m\u00e1quina de trabalho (notebook) conseguiu uma nova  Algumas sugest\u00f5es aumentaram um pouco a hist\u00f3ria  Melhor escrita dos reviews dos pull requests    A pontua\u00e7\u00e3o das hist\u00f3rias refletiu melhor o esfor\u00e7o que foi necess\u00e1rio  N\u00e3o conseguir entender o c\u00f3digo de outro membro para fazer corre\u00e7\u00e3o  O membro participar na hist\u00f3ria de refatora\u00e7\u00e3o do seu c\u00f3digo    Melhor auto planejamento dos membros  Confus\u00e3o com as sugest\u00f5es do reviews  Auto popular o banco para fazer os testes    Troca de conhecimento efetiva entre os membros  Cliente ainda dificulta as conversas e realiza\u00e7\u00f5es de reuni\u00f5es  -    Membro gostou de trabalhar com a API do Google  Adoecimento de membros da equipe  -    Os membros conseguiram entregar as hist\u00f3rias complexas  -  -    Fechamento das issues antes do \u00faltimo dia da sprint  -  -    Gr\u00e1fico de commits bem destribuido (bom planejamento e trabalho)  -  -", 
+            "title": "2. Retrospectiva da Sprint"
+        }, 
+        {
+            "location": "/sprints/09/results/#3-quadro-de-conhecimento", 
+            "text": "", 
+            "title": "3. Quadro de Conhecimento"
+        }, 
+        {
+            "location": "/sprints/09/results/#5-grafico-do-burndown", 
+            "text": "", 
+            "title": "5. Gr\u00e1fico do Burndown"
+        }, 
+        {
+            "location": "/sprints/09/results/#6-velocity", 
+            "text": "", 
+            "title": "6. Velocity"
+        }, 
+        {
+            "location": "/sprints/09/results/#7-grafico-de-commits", 
+            "text": "", 
+            "title": "7. Gr\u00e1fico de Commits"
+        }, 
+        {
+            "location": "/sprints/09/results/#8-evm", 
+            "text": "", 
+            "title": "8. EVM"
+        }, 
+        {
+            "location": "/sprints/09/results/#9-analise-do-scrum-master", 
+            "text": "Esta sprint ocorreu tranquilamente e sem problemas, tanto que boa parte das hist\u00f3rias foram entregues na quinta. Isso \u00e9 mais um sinal de que amadurecemos nossos conhecimentos.  Com rela\u00e7\u00e3o \u00e0 quest\u00e3o de problemas com o entendimento dos crit\u00e9rios de aceita\u00e7\u00e3o e do que \u00e9 proposto nos reviews, ficamos de melhorar a escrita dos textos, aumentando a clareza do que \u00e9 pedido.  Sobre a quest\u00e3o da dificuldade de refatorar o c\u00f3digo de outros membros e a sugest\u00e3o de melhoria de que algum dos envolvidos com a confec\u00e7\u00e3o do c\u00f3digo original estejam na refatora\u00e7\u00e3o, chegamos \u00e0 conclus\u00e3o de que a melhoria proposta n\u00e3o \u00e9 a melhor sa\u00edda para resolver este problema. Ao inv\u00e9s disso, combinamos de tomar um maior cuidado com o c\u00f3digo que \u00e9 feito e fazer uso de coment\u00e1rios para deixar claro o que trechos mais complexos est\u00e3o fazendo, tornando mais f\u00e1cil a manutenibilidade.  Por fim, a quest\u00e3o do cliente indispon\u00edvel ou ent\u00e3o respondendo e marcando as coisas em cima da hora continua, fazendo com que n\u00f3s continuemos sem poder contar muito com ele. Desta forma, continuaremos fazendo como temos at\u00e9 ent\u00e3o de tomar as decis\u00f5es em grupo e nos basear nos documentos e informa\u00e7\u00f5es que temos a disposi\u00e7\u00e3o.", 
+            "title": "9. An\u00e1lise do Scrum Master"
+        }, 
+        {
+            "location": "/sprints/10/planning/", 
+            "text": "Planejamento da Sprint 10\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint:\n 10\n\n\nData de in\u00edcio:\n 19/05/2018\n\n\nData de T\u00e9rmino:\n 25/05/2018\n\n\nDura\u00e7\u00e3o\n: 6 dias\n\n\nPontos Planejados:\n 23 pontos\n\n\nMembros ausentes:\n Nenhum\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Sconetto\n\n\n\n\n\n\nArquiteto:\n\n\n\n\n\n\nVictor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Pareamento\n\n\n\n\n\n\nDaniel e Gabriela\n\n\n\n\n\n\nElias e Geovana\n\n\n\n\n\n\nGuilherme e Joberth\n\n\n\n\n\n\n4. Planejamento da Sprint\n\n\nA Sprint 10 foi planejada para ser mais tranquila do que as anteriores, pois nesta semana v\u00e1rios membros da equipe tiveram provas e tamb\u00e9m trabalhos para entregar. Por isso, foram priorizadas hist\u00f3rias que julgamos ter uma menor complexidade e/ou serem menos trabalhosas.\n\n\nAl\u00e9m disso, o micro-servi\u00e7o acerca das curvas de crescimento para a S\u00edndrome de Down ser\u00e1 iniciado nessa sprint. Por fim, realizaremos a refatora\u00e7\u00e3o do roadmap do projeto e a revis\u00e3o da entrega e do deploy cont\u00ednuos.\n\n\n5. Mudan\u00e7as\n\n\nPara esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior, com exce\u00e7\u00e3o da prioriza\u00e7\u00e3o de hist\u00f3rias diferente do que tem sido praticado em fun\u00e7\u00e3o de quest\u00f5es relacionadas \u00e0 faculdade, como explicado no t\u00f3pico anterior deste documento.\n\n\n6. Backlog da Sprint\n\n\n\n\nUS89 - Evoluir Prontu\u00e1rio (Medicamentos, Queixa, Exames)\n\n\nUS90 - Not\u00edcias sobre SD\n\n\nTS91 - Refatorar Vacina\n\n\nTS92 - Popula Banco\n\n\nTS93 - Refatorar Roadmap\n\n\nUS94 - Curvas de crescimento\n\n\nTS95 - Revis\u00e3o CI/CD\n\n\nTS97 - Documentar a Sprint 9\n\n\n\n\n7. Risk Burndown", 
+            "title": "Planejamento"
+        }, 
+        {
+            "location": "/sprints/10/planning/#planejamento-da-sprint-10", 
+            "text": "", 
+            "title": "Planejamento da Sprint 10"
+        }, 
+        {
+            "location": "/sprints/10/planning/#1-resumo-da-sprint", 
+            "text": "N\u00famero da sprint:  10  Data de in\u00edcio:  19/05/2018  Data de T\u00e9rmino:  25/05/2018  Dura\u00e7\u00e3o : 6 dias  Pontos Planejados:  23 pontos  Membros ausentes:  Nenhum", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/10/planning/#2-papeis", 
+            "text": "Scrum Master:   Diego Fran\u00e7a    Product Owner:    Mariana Mendes    DevOps:    Jo\u00e3o Sconetto    Arquiteto:    Victor Arnaud    Time de Desenvolvimento:   Daniel Maike  Elias Bernardo  Gabriela Medeiros  Geovana Ramos  Guilherme Guy  Joberth Rodrigues", 
+            "title": "2. Pap\u00e9is"
+        }, 
+        {
+            "location": "/sprints/10/planning/#3-pareamento", 
+            "text": "Daniel e Gabriela    Elias e Geovana    Guilherme e Joberth", 
+            "title": "3. Pareamento"
+        }, 
+        {
+            "location": "/sprints/10/planning/#4-planejamento-da-sprint", 
+            "text": "A Sprint 10 foi planejada para ser mais tranquila do que as anteriores, pois nesta semana v\u00e1rios membros da equipe tiveram provas e tamb\u00e9m trabalhos para entregar. Por isso, foram priorizadas hist\u00f3rias que julgamos ter uma menor complexidade e/ou serem menos trabalhosas.  Al\u00e9m disso, o micro-servi\u00e7o acerca das curvas de crescimento para a S\u00edndrome de Down ser\u00e1 iniciado nessa sprint. Por fim, realizaremos a refatora\u00e7\u00e3o do roadmap do projeto e a revis\u00e3o da entrega e do deploy cont\u00ednuos.", 
+            "title": "4. Planejamento da Sprint"
+        }, 
+        {
+            "location": "/sprints/10/planning/#5-mudancas", 
+            "text": "Para esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior, com exce\u00e7\u00e3o da prioriza\u00e7\u00e3o de hist\u00f3rias diferente do que tem sido praticado em fun\u00e7\u00e3o de quest\u00f5es relacionadas \u00e0 faculdade, como explicado no t\u00f3pico anterior deste documento.", 
+            "title": "5. Mudan\u00e7as"
+        }, 
+        {
+            "location": "/sprints/10/planning/#6-backlog-da-sprint", 
+            "text": "US89 - Evoluir Prontu\u00e1rio (Medicamentos, Queixa, Exames)  US90 - Not\u00edcias sobre SD  TS91 - Refatorar Vacina  TS92 - Popula Banco  TS93 - Refatorar Roadmap  US94 - Curvas de crescimento  TS95 - Revis\u00e3o CI/CD  TS97 - Documentar a Sprint 9", 
+            "title": "6. Backlog da Sprint"
+        }, 
+        {
+            "location": "/sprints/10/planning/#7-risk-burndown", 
+            "text": "", 
+            "title": "7. Risk Burndown"
+        }, 
+        {
+            "location": "/sprints/10/results/", 
+            "text": "Fechamento da Sprint 10\n\n\n1. Resumo da Sprint\n\n\nPontos Planejados\n: 23 pontos\n\n\nPontos conclu\u00eddos\n: 23 pontos\n\n\nD\u00edvidas t\u00e9cnicas\n: 0 pontos\n\n\nHist\u00f3rias entregues:\n\n\n\n\nUS89 - Evoluir Prontu\u00e1rio (Medicamentos, Queixa, Exames)\n\n\nUS90 - Not\u00edcias sobre SD\n\n\nTS91 - Refatorar Vacina\n\n\nTS92 - Popula Banco\n\n\nTS93 - Refatorar Roadmap\n\n\nUS94 - Curvas de crescimento\n\n\nTS95 - Revis\u00e3o CI/CD\n\n\nTS97 - Documentar a Sprint 9\n\n\n\n\n2. Retrospectiva da Sprint\n\n\n\n\n\n\n\n\nPontos Positivos\n\n\nPontos Negativos\n\n\nSugest\u00e3o de Melhoria\n\n\n\n\n\n\n\n\n\n\nImplementamos um micro servi\u00e7o\n\n\nAs hist\u00f3rias n\u00e3o ficaram muito bem dividas\n\n\nRespeitar mais os hor\u00e1rios estabelecidos\n\n\n\n\n\n\nApesar de ter sido uma semana muito turbulenta, todas as hist\u00f3rias foram entregues\n\n\nUma hist\u00f3ria exigiu um esfor\u00e7o maior do que o esperado e pontuado\n\n\nPara o problema do cliente, o stakeholder conseguiu sanar todas as nossas d\u00favidas\n\n\n\n\n\n\n-\n\n\nEssa semana foi muito turbulenta em rela\u00e7\u00e3o \u00e0s outras mat\u00e9rias\n\n\n-\n\n\n\n\n\n\n-\n\n\nN\u00e3o tinha nenhum micro-servi\u00e7o pronto para o que era necess\u00e1rio em uma das hist\u00f3rias\n\n\n-\n\n\n\n\n\n\n-\n\n\nO cliente faltou a reuni\u00e3o dessa semana\n\n\n-\n\n\n\n\n\n\n\n\n3. Quadro de Conhecimento\n\n\n\n\n5. Gr\u00e1fico do Burndown\n\n\n\n\n6. Velocity\n\n\n\n\n7. Gr\u00e1fico de Commits\n\n\n\n\n8. EVM\n\n\n\n\n9. An\u00e1lise do Scrum Master\n\n\nMesmo esta sprint tendo sido pensada para ser mais tranquila, acabou que uma das hist\u00f3rias foi mais trabalhosa do que inicialmente estimamos, enquanto outra foi bem mais simples. Continuaremos aplicando o que temos feito com rela\u00e7\u00e3o \u00e0 pontua\u00e7\u00e3o das hist\u00f3rias para evitar que isto volte a acontecer, como discutir com mais calma as hist\u00f3rias, buscando levantar poss\u00edveis gargalos e dificuldades.\n\n\nQuanto \u00e0 quest\u00e3o do micro-servi\u00e7o n\u00e3o existente, tivemos que criar um durante esta sprint para que pud\u00e9ssemos implementar a quest\u00e3o da curva de crescimento espec\u00edfica para pessoas com S\u00edndrome de Down que um dos nossos clientes sugeriu que a nossa aplica\u00e7\u00e3o tenha.\n\n\nPor fim, mais uma vez um dos clientes marcou a reuni\u00e3o para um determinado hor\u00e1rio mas apareceu apenas 50 minutos depois da hora combinada, quando os membros da nossa equipe j\u00e1 estavam saindo pois tinham seus pr\u00f3prios compromissos. Como temos feito at\u00e9 ent\u00e3o, continuaremos trabalhando usando os documentos que temos a disposi\u00e7\u00e3o e o que temos decidido em grupo para o nosso projeto, at\u00e9 que esta quest\u00e3o do contato com o cliente possa ser melhor resolvida.", 
+            "title": "Resultado"
+        }, 
+        {
+            "location": "/sprints/10/results/#fechamento-da-sprint-10", 
+            "text": "", 
+            "title": "Fechamento da Sprint 10"
+        }, 
+        {
+            "location": "/sprints/10/results/#1-resumo-da-sprint", 
+            "text": "Pontos Planejados : 23 pontos  Pontos conclu\u00eddos : 23 pontos  D\u00edvidas t\u00e9cnicas : 0 pontos  Hist\u00f3rias entregues:   US89 - Evoluir Prontu\u00e1rio (Medicamentos, Queixa, Exames)  US90 - Not\u00edcias sobre SD  TS91 - Refatorar Vacina  TS92 - Popula Banco  TS93 - Refatorar Roadmap  US94 - Curvas de crescimento  TS95 - Revis\u00e3o CI/CD  TS97 - Documentar a Sprint 9", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/10/results/#2-retrospectiva-da-sprint", 
+            "text": "Pontos Positivos  Pontos Negativos  Sugest\u00e3o de Melhoria      Implementamos um micro servi\u00e7o  As hist\u00f3rias n\u00e3o ficaram muito bem dividas  Respeitar mais os hor\u00e1rios estabelecidos    Apesar de ter sido uma semana muito turbulenta, todas as hist\u00f3rias foram entregues  Uma hist\u00f3ria exigiu um esfor\u00e7o maior do que o esperado e pontuado  Para o problema do cliente, o stakeholder conseguiu sanar todas as nossas d\u00favidas    -  Essa semana foi muito turbulenta em rela\u00e7\u00e3o \u00e0s outras mat\u00e9rias  -    -  N\u00e3o tinha nenhum micro-servi\u00e7o pronto para o que era necess\u00e1rio em uma das hist\u00f3rias  -    -  O cliente faltou a reuni\u00e3o dessa semana  -", 
+            "title": "2. Retrospectiva da Sprint"
+        }, 
+        {
+            "location": "/sprints/10/results/#3-quadro-de-conhecimento", 
+            "text": "", 
+            "title": "3. Quadro de Conhecimento"
+        }, 
+        {
+            "location": "/sprints/10/results/#5-grafico-do-burndown", 
+            "text": "", 
+            "title": "5. Gr\u00e1fico do Burndown"
+        }, 
+        {
+            "location": "/sprints/10/results/#6-velocity", 
+            "text": "", 
+            "title": "6. Velocity"
+        }, 
+        {
+            "location": "/sprints/10/results/#7-grafico-de-commits", 
+            "text": "", 
+            "title": "7. Gr\u00e1fico de Commits"
+        }, 
+        {
+            "location": "/sprints/10/results/#8-evm", 
+            "text": "", 
+            "title": "8. EVM"
+        }, 
+        {
+            "location": "/sprints/10/results/#9-analise-do-scrum-master", 
+            "text": "Mesmo esta sprint tendo sido pensada para ser mais tranquila, acabou que uma das hist\u00f3rias foi mais trabalhosa do que inicialmente estimamos, enquanto outra foi bem mais simples. Continuaremos aplicando o que temos feito com rela\u00e7\u00e3o \u00e0 pontua\u00e7\u00e3o das hist\u00f3rias para evitar que isto volte a acontecer, como discutir com mais calma as hist\u00f3rias, buscando levantar poss\u00edveis gargalos e dificuldades.  Quanto \u00e0 quest\u00e3o do micro-servi\u00e7o n\u00e3o existente, tivemos que criar um durante esta sprint para que pud\u00e9ssemos implementar a quest\u00e3o da curva de crescimento espec\u00edfica para pessoas com S\u00edndrome de Down que um dos nossos clientes sugeriu que a nossa aplica\u00e7\u00e3o tenha.  Por fim, mais uma vez um dos clientes marcou a reuni\u00e3o para um determinado hor\u00e1rio mas apareceu apenas 50 minutos depois da hora combinada, quando os membros da nossa equipe j\u00e1 estavam saindo pois tinham seus pr\u00f3prios compromissos. Como temos feito at\u00e9 ent\u00e3o, continuaremos trabalhando usando os documentos que temos a disposi\u00e7\u00e3o e o que temos decidido em grupo para o nosso projeto, at\u00e9 que esta quest\u00e3o do contato com o cliente possa ser melhor resolvida.", 
+            "title": "9. An\u00e1lise do Scrum Master"
         }
     ]
 }
