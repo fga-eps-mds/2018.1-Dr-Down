@@ -11,8 +11,43 @@ class Risk(models.Model):
       (2, _('Very urgent')),
       (1, _('Emerging')),
     )
-    priority = models.IntegerField(
-      _('Priority'),
+    priority_speech_theraphy = models.IntegerField(
+      _('Speech Therapy Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_psychology = models.IntegerField(
+      _('Psychology Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_physiotherapy = models.IntegerField(
+      _('Physiotherapy Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_occupational_therapy = models.IntegerField(
+      _('Occupational Therapy Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_cardiology = models.IntegerField(
+      _('Cardiology Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_neurology = models.IntegerField(
+      _('Neurology Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_pediatrics = models.IntegerField(
+      _('Pediatrics Priority'),
+      choices=PRIORITIES,
+      help_text=_("Please, insert the degree of priority of the patient"),
+    )
+    priority_nursing = models.IntegerField(
+      _('Nursing Priority'),
       choices=PRIORITIES,
       help_text=_("Please, insert the degree of priority of the patient"),
     )
