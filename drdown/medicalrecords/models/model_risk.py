@@ -4,6 +4,12 @@ from django.utils.translation import ugettext_lazy as _
 
 class Risk(models.Model):
 
+    patient = models.OneToOneField(
+        Patient,
+        on_delete=models.CASCADE,
+        verbose_name=_('Patient')
+    )
+
     PRIORITIES = (
       (5, _('Not urgent')),
       (4, _('Not very urgent')),
@@ -42,7 +48,7 @@ class Risk(models.Model):
       help_text=_("Please, insert the degree of pediatrics priority of the patient"),
     )
     priority_general_practitioner = models.IntegerField(
-      _('Nursing Priority'),
+      _('General Practitioner Priority'),
       choices=PRIORITIES,
       help_text=_("Please, insert the degree of general practitioner priority of the patient"),
     )
