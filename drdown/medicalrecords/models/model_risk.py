@@ -26,11 +26,6 @@ class Risk(models.Model):
       choices=PRIORITIES,
       help_text=_("Please, insert the degree of physiotherapy priority of the patient"),
     )
-    priority_occupational_therapy = models.IntegerField(
-      _('Occupational Therapy Priority'),
-      choices=PRIORITIES,
-      help_text=_("Please, insert the degree of occupational therapy priority of the patient"),
-    )
     priority_cardiology = models.IntegerField(
       _('Cardiology Priority'),
       choices=PRIORITIES,
@@ -46,8 +41,8 @@ class Risk(models.Model):
       choices=PRIORITIES,
       help_text=_("Please, insert the degree of pediatrics priority of the patient"),
     )
-    priority_nursing = models.IntegerField(
+    priority_general_practitioner = models.IntegerField(
       _('Nursing Priority'),
       choices=PRIORITIES,
-      help_text=_("Please, insert the degree of nursing priority of the patient"),
+      help_text=_("Please, insert the degree of general practitioner priority of the patient"),
     )
