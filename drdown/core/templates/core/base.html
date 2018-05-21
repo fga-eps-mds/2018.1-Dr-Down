@@ -83,7 +83,7 @@
             <a href="#appointments" data-toggle="collapse" aria-expanded="false" >
               {% trans "Appointments" %}
             </a>
-            <ul class="collapse list-unstyled" id="appointments">
+            <ul class="collapse list-unstyled" id="appointments" data-collapse-group="collapse-group">
               <li><a href="{% url 'appointments:list_appointments' %}">
                 {% trans "Scheduled" %}
               </a></li>
@@ -110,7 +110,7 @@
               <a href="#medicalhistory" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Medical History" %}
               </a>
-              <ul class="collapse list-unstyled" id="medicalhistory">
+              <ul class="collapse list-unstyled" id="medicalhistory" data-collapse-group="collapse-group">
                 <li><a href="{% url 'medicalrecords:list_medicalrecords' request.user.username  %}">
                   {% trans "Medical Record" %}
                 </a></li>
@@ -123,7 +123,7 @@
               <a href="#vaccines-pat" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
               </a>
-              <ul class="collapse list-unstyled" id="vaccines-pat">
+              <ul class="collapse list-unstyled" id="vaccines-pat" data-collapse-group="collapse-group">
                 <li><a href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
                   {% trans "Calendar" %}
                 </a></li>
@@ -139,7 +139,7 @@
                 <a href="#patient" data-toggle="collapse" aria-expanded="false" >
                   {% trans "Patient" %} {{patient.user.name}}
                 </a>
-                <ul class="collapse list-unstyled" id="patient">
+                <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
                   <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
                     {% trans "Medical Record" %}
                   </a></li>
@@ -153,7 +153,7 @@
               <a href="#vaccine-resp" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
               </a>
-              <ul class="collapse list-unstyled" id="vaccine-resp">
+              <ul class="collapse list-unstyled" id="vaccine-resp" data-collapse-group="collapse-group">
                 <li><a href="{% url 'core:vaccine' %}">
                   {% trans "Calendar" %}
                 </a></li>
@@ -258,6 +258,13 @@
         $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+        });
+      </script>
+      <script>
+        $("[data-collapse-group]").on('show.bs.collapse', function () {
+          var $this = $(this);
+          var thisCollapseAttr = $this.attr('data-collapse-group');
+          $("[data-collapse-group='" + thisCollapseAttr + "']").not($this).collapse('hide');
         });
       </script>
     {% endblock javascript %}

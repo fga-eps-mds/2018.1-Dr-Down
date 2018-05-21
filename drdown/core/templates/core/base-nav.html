@@ -57,56 +57,18 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
-            </li>
             {% if user.is_authenticated %}
             <div class="btn-group">
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{request.user.username}}</strong></button></a>
+                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans 'Return'%}</strong></button></a>
               </li>
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                {% if user.healthteam %}
-                  <a class="dropdown-item" href="{% url 'users:healthteam_patient_list' %}">{% trans "My Patients" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Search" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Risk Rating" %}</a>
-                {% endif %}
-                {% if user.patient %}
-                  <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                  <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' user.username %}">{% trans "My Queries" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
-                {% endif %}
-                {% if user.responsible %}
-                  <a class="dropdown-item" href="#">{% trans "My Patient" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
-                {% endif %}
-                {% if user.employee %}
-                  <a class="dropdown-item" href="#">{% trans "Schedules" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Search" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                {% endif %}
-                {% if user.employee or user.responsible or user.patient or user.doctor %}
-                  <a class="dropdown-item" href="{% url 'appointments:list_appointments' %}">{% trans "Appointments" %}</a>
-                  <div class="dropdown-divider"></div>
-                {% endif %}
-                  <a class="dropdown-item" href="{% url 'users:update' %}">{% trans "Edit Profile" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Help" %}</a>
-                  <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
-              </div>
+
             </div>
             {% else %}
+
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
+              </li>
               <li class="nav-item mx-0 mx-lg-1">
                 <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_login' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign in" %}</strong></button></a>
               </li>
