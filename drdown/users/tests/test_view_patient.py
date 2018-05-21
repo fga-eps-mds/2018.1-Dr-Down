@@ -19,7 +19,7 @@ class TestViewEmployee (TestCase):
         self.client = Client()
         self.user = self.make_user()
         self.patient = Patient.objects.create(ses="1234567",
-                                              user=self.user, priority=1,
+                                              user=self.user,
                                               mother_name="Mãe", father_name="Pai",
                                               ethnicity=3, sus_number="12345678911",
                                               civil_registry_of_birth="12345678911",
