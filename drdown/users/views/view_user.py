@@ -65,7 +65,6 @@ class UserDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
         if hasattr(user, 'patient'):
 
             context['patient_ses'] = user.patient.ses
-            context['patient_priority'] = (user.patient.get_priority_display())
             context['patient_mother_name'] = user.patient.mother_name
             context['patient_father_name'] = user.patient.father_name
             context['patient_ethnicity'] = \
