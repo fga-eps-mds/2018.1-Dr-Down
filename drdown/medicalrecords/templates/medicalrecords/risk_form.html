@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% url 'appointments:create_request' as url %}
+  {% if request.path == url %}
+    {% trans "New Request" %}
+  {% else %}
+    {% trans "Edit Request" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="col-md-6 offset-md-3">
+
+    {% url 'medicalrecords:update_risk' as url %}
+      <h2>{% trans "Edit Risk" %}</h2><hr>
+
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+          <div class="fieldWrapper">
+              {{ field.errors }}
+            <p class="lead">
+
+              {{ field.label_tag }}<br>
+              {{ field }}
+            </p>
+          </div>
+      {% endfor %}
+      <div class="row float-right mr-5">
+        <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
+        <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
