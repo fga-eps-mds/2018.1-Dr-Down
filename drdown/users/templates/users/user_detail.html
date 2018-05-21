@@ -53,10 +53,10 @@
                     <img src="{% static 'users/img/user.png' %}" class="img-responsive center-block img-thumbnail">
                 {% endif %}
 
-                <div class="row"></br></div>
+                <div class="row"><br></div>
                 {% if object == request.user %}
                 <div class="row">
-                  <a class="btn btn-secondary btn-block btn-margin" href="{% url 'users:update' %}" role="button">{% trans 'Edit data' %}</a>
+                  <a class="btn btn-secondary btn-block btn-margin" href="{% url 'users:update' %}" role="button">{% trans 'Edit Profile' %}</a>
                 </div>
 
                 <div class="row">
@@ -64,13 +64,13 @@
                 </div>
 
                 <div class="row">
-                  <a class=" btn btn-danger btn-block btn-margin" href="{% url 'users:delete' %}" role="button">{% trans 'Delete' %}</a>
+                  <a class=" btn btn-danger btn-block btn-margin" href="{% url 'users:delete' %}" role="button">{% trans 'Delete Account' %}</a>
                 </div>
                 {% endif %}
               </div>
             </div>
 
-            <div class="col border-left">
+            <div class="col border-left ml-3 mr-3">
               {% if object.name %}
                 <div class="row">
                   <label class="col"> <strong>{% trans 'Name: '%} </strong> </label>
