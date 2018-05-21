@@ -142,8 +142,33 @@ body, wrapper {
 }
 
 img.center {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
+
+.dropdown a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+  display: block;
+  position: absolute;
+  right: 20px;
+  content: '\f107';
+  font-family: FontAwesome;
+}
+
+.dropdown a[aria-expanded="true"]::before {
+  content: '\f106';
+}
+
+.dropdown .list-unstyled a{
+  text-indent: 50px;
+}
+
+.dropdown .list-unstyled a:hover{
+  text-indent: 40px;
+}
+
 
 
