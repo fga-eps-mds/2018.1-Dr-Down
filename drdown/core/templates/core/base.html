@@ -60,22 +60,25 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-
-          <li class="sidebar-brand"><a href="{% url 'core:home' %}">Dr.Down</a></li>
+        <div class="container">
+          <li class="navbar-brand mb-3"><a href="{% url 'core:home' %}">Dr.Down</a></li>
           {% if object.photo %}
-            <img class="center" src="{{ object.photo.url }}" width="100px" >
+            <img class="center rounded-circle" src="{{ object.photo.url }}" width="100px" >
           {% else %}
             <img class="center" src="{% static 'users/img/user.png' %}" width="100px" >
           {% endif %}
+          <h5 class="text-primary text-center mt-2">{{request.user.username}}</h5>
+        </div>
 
-          <li><a class="text-center pr-3 border-bottom ml-4 mr-4" href="{% url 'users:detail' request.user.username %}">
-            {{request.user.username}}
-          </a></li>
+        <hr class="star">
+
+        <ul class="sidebar-nav">
+
           <li><a href="{% url 'users:detail' request.user.username %}">
             {% trans "My Profile" %}
           </a></li>
 
+          {% if not user.healthteam %}
           <li class="dropdown">
             <a href="#appointments" data-toggle="collapse" aria-expanded="false" >
               {% trans "Appointments" %}
@@ -89,8 +92,12 @@
               </a></li>
             </ul>
           </li>
+          {% endif %}
 
           {% if user.healthteam %}
+            <li><a href="{% url 'appointments:list_appointments' %}" >
+              {% trans "Appointments" %}
+            </a></li>
             <li><a href="{% url 'users:healthteam_patient_list' %}">
               {% trans "My Patients" %}
             </a></li>
