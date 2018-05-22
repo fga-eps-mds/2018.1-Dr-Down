@@ -217,6 +217,55 @@
 			</div>
 			
 			<div id="patient-medicine">
+				<strong><h2>{% trans 'Medicine' %}</h2></strong>
+				{% for medicine in patient.medicine_set.all %}
+					<div class="data">
+						<table class="table">
+							<tbody>
+								<tr class="line" id="name">
+									<td class="label">
+										<label>{% trans 'Name of medicine' %}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicine.medicine_name }}</label>
+									</td>
+								</tr>		
+								<tr class="line" id="sus_number">
+									<td class="label">
+										<label>{% trans 'Dosage' %}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicine.medicine_dosage }}</label>
+									</td>
+								</tr>	
+								<tr id="birthday">
+									<td class="label">
+										<label>{% trans 'Time between uses' %}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ medicine.medicine_use_interval }}</label>
+									</td>
+								</tr>	
+								<tr id="birthday">
+									<td class="label">
+										<label>{% trans 'In use?' %}:</label>					
+									</td>
+									<td class="info">
+										<label> 
+											{% if  medicine.medicine_in_use %}{% trans 'Yes' %}
+											{% else %}{% trans "No" %}
+											{% endif %}
+										</label>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>	
+							</tbody>
+						</table>	
+					</div>	
+				{% empty %}
+					<p>{% trans 'There are no medicines registered for this patient.'%}</p>		
+				{% endfor %}	
 			</div>
 			
 			<div id="complaints">
