@@ -70,6 +70,7 @@ hr.star {
   text-align: center;
   border: none;
   border-top: solid 0.1rem;
+  border-color: white;
   margin: 1.5rem;
 }
 

@@ -63,6 +63,12 @@
   text-decoration: underline;
 }
 
+.btn-margin {
+  margin-top: 3px;
+}
+.btn {
+    margin: 10px auto;
+}
 
 
 

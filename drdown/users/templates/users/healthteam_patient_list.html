@@ -48,25 +48,15 @@
                                     </div>
 
                                     <div class="col">
-                                        <h4 class="text-tertiary h-blue" >{{ patient.user.name }}</h4>
+                                      <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
+                                        <h4 class="text-tertiary h-blue" >{{ patient.user.name }} {{patient.user.last_name}}</h4>
                                         <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
+                                      </a>
                                     </div>
 
                                 </div>
                             </div>
 
-
-                            <div class="col-auto border-left">
-
-                                <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}" class="btn btn-secondary mx-1 my-1" >{% trans "Medical Records" %}</a>
-
-                            </div>
-
-                            <div class="col-auto">
-
-                                <a href="{% url 'careline:checklist_detail' patient.user.username  %}" class="btn btn-secondary mx-1 my-1" >{% trans "Checklist" %}</a>
-
-                            </div>
 
                         </div>
 

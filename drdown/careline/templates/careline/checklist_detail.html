@@ -117,30 +117,35 @@
   <table class="table table-bordered" style="height: 100px;">
     <thead>
       <tr>
+        <th scope="col"><label class="container"><input type="checkbox" data-toggle="toggle" disabled><span class="checkmark required"></span>{% trans 'Required'%}</label></th>
+        <th colspan="4"><label class="container"><input type="checkbox" data-toggle="toggle" disabled><span class="checkmark when_needed"></span>{% trans 'When Needed'%}</label></th>
+        <th colspan="3"><label class="container"><input type="checkbox" data-toggle="toggle" checked disabled><span class="checkmark when_needed"></span>{% trans 'Done'%}</label></th>
+      </tr>
+      <tr>
         <th scope="col" rowspan="2" style="text-align: center;">{% trans 'Interventions / Evaluation'%}</th>
         <th colspan="7" style="text-align: center;">{% trans 'AGE'%}</th>
 
       </tr>
       <tr>
 
-        <th scope="col" style="text-align: center;">{% trans 'Newborn'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Newborn'%}</th>
         {% if age >= 0.5 %}
-        <th scope="col" style="text-align: center;">{% trans 'Six Months'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Six Months'%}</th>
         {% endif %}
         {% if age >= 1 %}
-        <th scope="col" style="text-align: center;">{% trans 'One Year'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'One Year'%}</th>
         {% endif %}
         {% if age >= 2 %}
-        <th scope="col" style="text-align: center;">{% trans 'Two Years'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Two Years'%}</th>
         {% endif %}
         {% if age >= 3 %}
-        <th scope="col" style="text-align: center;">{% trans 'Three Years'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Three Years'%}</th>
         {% endif %}
         {% if age >= 5 %}
-        <th scope="col" style="text-align: center;">{% trans 'Five Years'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Five Years'%}</th>
         {% endif %}
         {% if age >= 6 %}
-        <th scope="col" style="text-align: center;">{% trans 'Six to Ten Years'%}</th>
+        <th class="fix" scope="col" style="text-align: center;">{% trans 'Six to Ten Years'%}</th>
         {% endif %}
       </tr>
     </thead>
@@ -697,11 +702,7 @@
           <th colspan="8">{% trans '** Thyrogram: TSH, free T4. For antithyroid antibodies, routinely request between 9 and 12 years or when needed.'%}</th>
       </tr>
 
-      <tr>
-        <th scope="col"><label class="container"><input type="checkbox" data-toggle="toggle" disabled><span class="checkmark required"></span>{% trans 'Required'%}</label></th>
-        <th colspan="4"><label class="container"><input type="checkbox" data-toggle="toggle" disabled><span class="checkmark when_needed"></span>{% trans 'When Needed'%}</label></th>
-        <th colspan="3"><label class="container"><input type="checkbox" data-toggle="toggle" checked disabled><span class="checkmark when_needed"></span>{% trans 'Done'%}</label></th>
-      </tr>
+
 
     </tbody>
   </table>

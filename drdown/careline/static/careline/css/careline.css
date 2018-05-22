@@ -73,4 +73,11 @@
   transform: rotate(45deg);
 }
 
+.fix {
+    position: sticky;
+    position: -webkit-sticky;
+    top: -5px;
+    background: white;
+    z-index: 10;
+}
 

@@ -70,13 +70,17 @@
 
       <div class="tab-content">
         <div id="home" class="tab-pane fade">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center ">
             <div class="col-auto">
                 {% if related_patient.user.photo %}
                     <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
                 {% else %}
                     <img src="{% static 'users/img/user.png' %}" class="align-photo">
                 {% endif %}
+                <div class="row"><br></div>
+                <div class="row">
+                  <div class="container"><a class="btn btn-secondary btn-block btn-margin" href="{% url 'careline:checklist_detail' related_patient.user.username  %}" role="button">{% trans 'Checklist' %}</a></div>
+                </div>
             </div>
 
             <div class="col border-left">
