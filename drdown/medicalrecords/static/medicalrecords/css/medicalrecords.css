@@ -45,7 +45,7 @@
 
 .nav-tabs-extension {
     margin-bottom: 0;
-    background: transparent;    
+    background: transparent;
 }
 
 .nav-link-extension{
@@ -57,6 +57,10 @@
     font-weight: bold;
     color: #ddd;
     background: #1a252f;
+}
+
+.btn-link {
+  text-decoration: underline;
 }
 
 
