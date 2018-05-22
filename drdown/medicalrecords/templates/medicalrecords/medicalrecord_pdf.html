@@ -28,7 +28,8 @@
       }
       p {
           margin: 0 0 3px 0;
-          font-size: 14pt;
+          font-size: 10pt;
+          margin-left: 3em;
       }
       table {
           line-height: 140%;
@@ -178,13 +179,41 @@
 							</tbody>
 						</table>	
 					</div>
+				{% empty %}
+					<p>{% trans 'There are no evolutions registered for this patient.'%}</p>
 				{% endfor %}
 			</div>
 			
 			<div id="postnatal-data">
-			</div>
-			
-			<div id="medical-exams">
+				<strong><h2>{% trans 'Postnatal Data' %}</h2></strong>
+				{% if patient.staticdata %}
+					<div class="data">
+						<table class="table">
+							<tbody>
+								<tr class="line" id="name">
+									<td class="label">
+										<label>{% trans 'Weight at birth: '%}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ patient.staticdata.weight }} {% trans 'grams'%}</label>
+									</td>
+								</tr>		
+								<tr class="line" id="sus_number">
+									<td class="label">
+										<label>{% trans 'APGAR: '%}:</label>					
+									</td>
+									<td class="info">
+										<label>{{ patient.staticdata.APGAR }}</label>
+									</td>
+									<td></td>
+									<td></td>
+								</tr>					
+							</tbody>
+						</table>	
+					</div>
+				{% else %}
+					<p>{% trans 'No postnatal data for this patient.'%}</p>
+				{% endif %}			
 			</div>
 			
 			<div id="patient-medicine">
