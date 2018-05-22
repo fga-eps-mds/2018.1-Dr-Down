@@ -99,10 +99,8 @@
 
         </div>
 
-  <center><h2 class="text-tertiary">{% trans "Care Line" %}</h2></center>
-  <hr class="star-dark bg-star-blue">
+  <center><h2 class="text-tertiary mb-3">{% trans "Care Line" %}</h2></center>
   <h5 class="list-group-item-heading ">{% trans 'Name: ' %}{{ checklist.patient.user.name }}</h5>
-  <a class="btn btn-secondary pull-right" href="{% url 'core:vaccine' %}" role="button">{% trans 'Vaccine Schedule' %}</a>
 
     {% if age == 0 %}
         <h5 class="list-group-item-heading h-blue">{% trans 'Age: ' %} {% trans "Newborn" %}</h5>

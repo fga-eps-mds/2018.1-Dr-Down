@@ -10,44 +10,47 @@
 
 {% block content %}
 
-    <div class="container">
+  <div class="container">
 
-        <h2>{% trans 'Add new Complaint' %}</h2>
+    <h2>{% trans 'Add new Complaint' %}</h2>
+    {{ form.media }}
 
-        {{ form.media }}
+    <form method="post" enctype="multipart/form-data " action="#menu5">
 
-        <form method="post" enctype="multipart/form-data " action="#menu5">
+      {% csrf_token %}
+      {{ form.description.errors }}
+      <label>{% trans 'Description'%} : </label>
+      <div style="margin-right: 90%;">
+        {{ form.description }}
+      </div>
 
-            {% csrf_token %}
-            {{ form.description.errors }}
-            <label>{% trans 'Description'%} : </label> <div style="margin-right: 90%;">{{ form.description }}</div>
+      {% if form.complaint_day.errors %}
+          <div div class="alert alert-danger">
+            {% for error in form.complaint_day.errors %}
+                <strong>{{ error|escape }}</strong>
+            {% endfor %}
+          </div>
+      {% endif %}
+      <div class="mb-3" style="width: 170px;">
+        <label>{% trans 'Day of complaint'%} : </label>
+        <input type="date" name="complaint_day" class="form-control">
+      </div>
 
-            <br/>
-            {% if form.complaint_day.errors %}
-                <div div class="alert alert-danger">
-                  {% for error in form.complaint_day.errors %}
-                      <strong>{{ error|escape }}</strong>
-                  {% endfor %}
-                </div>
-            {% endif %}
-            <div><label>{% trans 'Day of complaint'%} : </label> <input type="date" name="complaint_day" required=true class="form-control"></div>
+      {{ form.complaint_time.errors }}
+      <div class="mb-3" >
+        <label>{% trans 'Time of complaint'%} : </label>
+        <input style="width: 80px;" type="time" name="complaint_time" class="form-control">
+      </div>
 
-            <br/>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-auto">
+          <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+          <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+        </div>
+      </div>
+    </form>
 
-            {{ form.complaint_time.errors }}
-            <div><label>{% trans 'Time of complaint'%} : </label> <input type="time" name="complaint_time" class="form-control"></div>
-
-            <br/>
-
-            <button type="submit" class="btn btn-success align-btn ml-3 float-right" style="margin-left: 0%;">{% trans 'Save' %}</button>
-
-            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger align-btn ml-3 float-right" >{% trans "Cancel" %}</a>
-
-        </form>
-
-    </div>
-
-    <br/>
-    <br/>
+  </div>
 
 {% endblock %}

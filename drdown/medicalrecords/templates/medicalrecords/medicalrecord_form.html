@@ -15,67 +15,48 @@
 {% endblock script %}
 
 {% block content %}
-    <div class="container">
+  <div class="container">
 
-
-        <div class="row">
-            <div class="col">
-                <h2>{% trans 'New Medical Record' %}</h2>
-            </div>
-        </div>
-
-        <div class="row">  
-            <div class="col">  
-                <form id="form_to_submit" method="post" enctype="multipart/form-data" action="#menu1">
-            
-                    {% csrf_token %}
-
-                    <div class="formgroup row my-2 border-top">
-                        
-                        <div class="col fieldWrapper my-2">  
-
-                            <label>
-                                <strong>{% trans 'Message'%} :</strong>
-                            </label> 
-
-
-                            <div style="margin-right: 90%;">
-                                {{ form.message }}
-                            </div>
-                            
-                        </div>
-                    </div>
-
-
-                    <div class="row my-2 border rounded">  
-                        <div class="col my-3">  
-                            
-                            <label>{% trans 'Attachments'%} : </label> {{ form.document }}
-                        
-                        </div>
-                    </div>
-                
-                    <div class="row">
-                        
-                        <div class="col"></div>
-
-                        <div class="col-auto">
-
-                            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
-                                            
-                        </div>
-                        
-                        <div class="col-auto">
-
-                            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
-
-                        </div>
-                    </div>
-
-                    
-                </form>
-            </div>
-        </div>
+    <div class="row">
+      <div class="col">
+        <h2>{% trans 'New Medical Record' %}</h2>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <form id="form_to_submit" method="post" enctype="multipart/form-data" action="#menu1">
+
+          {% csrf_token %}
+          <div class="formgroup row my-2 border-top">
+            <div class="col fieldWrapper my-2">
+              <label>
+                <strong>{% trans 'Message'%} :</strong>
+              </label>
+
+              <div style="margin-right: 90%;">
+                {{ form.message }}
+              </div>
+            </div>
+          </div>
+
+            <div class="row my-2 border rounded">
+              <div class="col my-3">
+                <label>{% trans 'Attachments'%} : </label> {{ form.document }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-4"></div>
+              <div class="col-auto">
+                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+                <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+              </div>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

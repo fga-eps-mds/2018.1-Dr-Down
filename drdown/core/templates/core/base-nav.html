@@ -57,18 +57,17 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
+            </li>
             {% if user.is_authenticated %}
             <div class="btn-group">
               <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans 'Return'%}</strong></button></a>
+                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{request.user.username}}</strong></button></a>
               </li>
 
             </div>
             {% else %}
-
-              <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
-              </li>
               <li class="nav-item mx-0 mx-lg-1">
                 <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_login' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign in" %}</strong></button></a>
               </li>
