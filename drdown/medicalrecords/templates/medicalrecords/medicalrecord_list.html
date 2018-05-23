@@ -40,8 +40,12 @@
 <div class="container">
 
   <div class="row justify-content-between mb-3">
-    <div class="col-7 col-md ">
-       <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
+    <div class="ml-4">
+      <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
+    </div>
+    <div class="float-right mr-4">
+      <a href="{% url 'careline:checklist_detail' related_patient.user.username %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">{% trans "Checklist" %}</a>
+      <i class="fa fa-angle-double-right" style="font-size:25px;"></i>
     </div>
   </div>
 
@@ -78,9 +82,6 @@
                     <img src="{% static 'users/img/user.png' %}" class="align-photo">
                 {% endif %}
                 <div class="row"><br></div>
-                <div class="row">
-                  <div class="container"><a class="btn btn-secondary btn-block btn-margin" href="{% url 'careline:checklist_detail' related_patient.user.username  %}" role="button">{% trans 'Checklist' %}</a></div>
-                </div>
             </div>
 
             <div class="col border-left">
