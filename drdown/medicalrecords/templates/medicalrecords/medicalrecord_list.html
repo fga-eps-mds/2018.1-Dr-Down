@@ -389,12 +389,10 @@
 
           <div class="row">
             <label class="col"> <strong>{% trans 'Risk general practitioner: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk speech theraphy: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk psychology: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk pediatrics: '%} </strong> </label>
             <div class="w-100"></div>
             <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_general_practitioner }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_speech_theraphy }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_psychology }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_pediatrics }} </div>
           </div>
 
           <div class="row">
@@ -406,10 +404,12 @@
           </div>
 
           <div class="row">
-            <label class="col"> <strong>{% trans 'Risk pediatrics: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk speech theraphy: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk psychology: '%} </strong> </label>
             <label class="col"> <strong>{% trans 'Risk physiotherapy: '%} </strong> </label>
             <div class="w-100"></div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_pediatrics }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_speech_theraphy }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_psychology }} </div>
             <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_physiotherapy }} </div>
           </div>
 
