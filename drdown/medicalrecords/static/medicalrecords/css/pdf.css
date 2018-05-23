@@ -6,4 +6,12 @@
   margin-top: 2.5cm;
   margin-bottom: 2cm;
 }
-    
+
+.fix-top {
+  top:50px;
+  position:sticky;
+}
+
+.top-bar{
+  background: white;
+}
