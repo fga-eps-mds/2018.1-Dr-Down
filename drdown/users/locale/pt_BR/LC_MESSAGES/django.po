@@ -449,7 +449,7 @@ msgstr ""
 
 #: drdown/users/templates/users/user_detail.html:59
 msgid "Edit Profile"
-msgstr "Editar perfil"
+msgstr "Editar Perfil"
 
 #: drdown/users/templates/users/user_detail.html:63
 msgid "Change E-Mail"

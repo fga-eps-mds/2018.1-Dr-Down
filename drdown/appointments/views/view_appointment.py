@@ -18,8 +18,8 @@ class AppointmentFilter(LoginRequiredMixin, BaseFilter):
     search_fields = {
         'search_date': ['date'],
         'search_speciality': ['speciality'],
-        'search_doctor': ['user__name'],
-        'search_patient': ['user__name'],
+        'search_doctor': ['doctor__user__name'],
+        'search_patient': ['patient__user__name'],
     }
 
 

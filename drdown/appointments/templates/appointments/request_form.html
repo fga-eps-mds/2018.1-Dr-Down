@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="offset-md-1">
+  <div class="col-md-6 offset-md-3">
 
     {% url 'appointments:create_request' as url %}
     {% if request.path == url %}
@@ -23,53 +23,19 @@
     <form method="post">
       {% csrf_token %}
 
-      <div class="fieldWrapper">
-        <div class="row">
-          <div class="row">
-          <div class="col-auto">
-          <p>*{{ form.speciality.label_tag }}</p>
-          {{ form.speciality.errors }}
-          {{ form.speciality}}
-          </div>
-
-           <div class="col-auto">
-          <p>{{ form.doctor.label_tag }}</p>
-          {{ form.doctor.errors }}
-          {{ form.doctor }}
-             </div>
-
-          <div class="col-auto">
-          <p>*{{ form.patient.label_tag }}</p>
-          {{ form.patient.errors }}
-          {{ form.patient }}
-            </div>
-          </div>
-
-
-          <div class="col-auto">
-          <p>*{{ form.shift.label_tag }}</p>
-          {{ form.shift.errors }}
-          {{ form.shift }}
-            </div>
-
-          <div class="col-auto">
-          <p>*{{ form.day.label_tag }}</p>
-          {{ form.day.errors }}
-          {{ form.day }}
-            </div>
-
-          <div class="col mt-4">
-          <p>{{ form.motive.label_tag }}</p>
-          {{ form.motive.errors }}
-            <p>{{ form.motive }}</p>
-            </div>
-
+      {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p class="lead">
+            {% if field != form.motive and field != form.doctor %}
+              *
+            {% endif %}
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
         </div>
-
-      </div>
-
-
-      <div class="row float-right mt-4">
+     {% endfor %}
+      <div class="row float-right mt-5">
         <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
       </div>

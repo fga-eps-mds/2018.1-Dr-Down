@@ -170,7 +170,7 @@ msgstr "Prontuários"
 
 #: drdown/medicalrecords/models/model_medicines.py:17
 msgid "Medicine Name"
-msgstr "Nome do remério"
+msgstr "Nome do remédio"
 
 #: drdown/medicalrecords/models/model_medicines.py:22
 msgid "Medicine dosage"
