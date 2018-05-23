@@ -21,9 +21,8 @@
    {% if request.path == url %}
      <div id="search">
        <form class="form-inline" action="" method="GET">
-
          <select name="search_speciality" id="id_search_speciality">
-           <option value="0" selected>{% trans 'Speciality' %}</option>
+           <option value="" selected>{% trans 'Speciality' %}</option>
            <option value="SPEECH_THERAPHY">{% trans 'Speech Theraphy' %}</option>
            <option value="PSYCHOLOGY">{% trans 'Psychology' %}</option>
            <option value="PHYSIOTHERAPY">{% trans 'Physiotherapy' %}</option>
@@ -34,13 +33,14 @@
            <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
            <option value="NURSING">{% trans 'Nursing' %}</option>
          </select>
+         <input type="text" style="max-width: 180px;" name="search_doctor" placeholder="{% trans 'Doctor' %}" id="id_search_doctor" />
+         <input type="text" style="max-width: 180px;" name="search_patient" placeholder="{% trans 'Patient' %}" id="id_search_patient" />
 
          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
 
        </form>
      </div>
    {% endif %}
-
 
     {% for appointmentrequest in appointmentrequest_list %}
       <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
