@@ -1,6 +1,7 @@
 {% load static %}
 {% load i18n %}
 
+
 <!DOCTYPE html>
 <html lang="pt_BR">
 
@@ -12,307 +13,259 @@
     <meta name="description" content="">
    	<meta name="author" content="EPS/MDS">
 
-   	<style type="text/css">
-   		.img-5{
-   			width: 80px;
-   			height: auto;
-   		}
+      <!-- Latest compiled and minified Bootstrap 4 beta CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-   		.data {
-   			margin-left: 3em;
-   		}
+    <!-- Your stuff: Third-party CSS libraries go here -->
 
-      html {
-          font-family: "Helvetica", "sans-serif";
-          color: #333333;
-      }
-      p {
-          margin: 0 0 3px 0;
-          font-size: 10pt;
-          margin-left: 3em;
-      }
-      table {
-          line-height: 140%;
-          margin-bottom: 20px;
-      }
-      table.bordered {
-          border-top: 0.1pt solid #999999;
-          border-bottom: 0.1pt solid #999999;
-      }
-      tr, td, th { border: none; }
-      th {
-          font-size: 10pt;
-          border-bottom: 0.1pt solid #999999;
-          padding: 3px 0;
-          line-height: 1;
-          font-weight: bold;
-      }
-      td {
-          font-size: 10pt;
-          vertical-align: top;
-          padding: 1px 0;
-      }
-      td:last-child { padding-bottom: 0; }
-      .text-left { text-align: left; }
-      .text-right { text-align: right; }
-      .bottom-10 { margin-bottom: 10px; }
-      .bottom-20 { margin-bottom: 20px; }
-      .header { color: #7f7f7f; }
-      .header p { font-size: 13px; line-height: 1.5em; }
-      .header-link { font-weight: bold; text-decoration: none; color: #4F81BD; font-size: 14px; }
-      .logo { margin-bottom: 20px; margin-left: -25px; }
-      .logo img { zoom: 60%; }
-      .recipient { margin-left: 7cm; }
-      .main h1 {
-          margin: 18px 0 18px 0;
-          font-size: 250%;
-          font-weight: normal;
-          color: #4F81BD;
-      }
-      h2 {
-          margin: 18px 0 6px 0;
-          font-size: 180%;
-          font-weight: normal;
-      }
-      .info { border: 1px solid #4F81BD; padding: 10px; margin-top: 50px; margin-bottom: 50px; }
-      .info a { color: #4F81BD; text-decoration: none; }
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'core/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-      @page {
-        size: {{ pagesize|default:"A4" }};
-        margin-left: 2.5cm;label
-        margin-right: 2.5cm;
-        margin-top: 2.5cm;
-        margin-bottom: 2cm;
-        @frame header {
-          -pdf-frame-content: page-header;
-          margin-top: 0.7cm;
-          margin-right: 2mm;
-          margin-bottom: 0cm;
-          margin-left: 1.2cm;
-        }
-        @frame footer {
-          -pdf-frame-content: page-footer;
-          bottom: 0cm;
-          margin-left: 1cm;
-          margin-right: 1cm;
-          height: 1cm;
-        }
-      }
-    </style>
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'core/homepage/css/freelancer.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'medicalrecords/css/pdf.css' %}" rel="stylesheet">
+
   </head>
 
-  <body>
-   	<div style="margin-bottom: 2em;" id="header">    		
-  		<h2 >CRIS DOWN</h2>
-  		<img class="img-5" style="right: 0px" src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">	
-  	</div>
+<body>
 
-		<div id="body">
-			<div id="patient_data">
-				<strong><h2>{% trans 'Patient Data' %}</h2></strong>
-				<div class="data">
-					<table class="table">
-						<tbody>
-							<tr class="line" id="name">
-								<td class="label">
-									<label>{% trans 'Patient name' %}:</label>					
-								</td>
-								<td class="info">
-									<label>{{ patient.user.name }}</label>
-								</td>
-							</tr>		
-							<tr class="line" id="sus_number">
-								<td class="label">
-									<label>{% trans 'SUS number' %}:</label>					
-								</td>
-								<td class="info">
-									<label>{{ patient.sus_number }}</label>
-								</td>
-							</tr>	
-							<tr id="birthday">
-								<td class="label">
-									<label>{% trans 'Birthday' %}:</label>					
-								</td>
-								<td class="info">
-									<label>{{ patient.user.birthday }}</label>
-								</td>
-								<td></td>
-								<td></td>
-							</tr>					
-						</tbody>
-					</table>	
-				</div>				
-			</div>
+  <div class="container-fluid d-print-none">
 
-			<div id="evolution">
-				<strong><h2>{% trans 'Evolution' %}</h2></strong>
-				{% for medicalrecord in patient.medicalrecord_set.all %}
-					<div class="data">
-						<table class="table">
-							<tbody>
-								<tr class="line" id="name">
-									<td class="label">
-										<label>{% trans 'Author'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicalrecord.author.user.name }}</label>
-									</td>
-								</tr>		
-								<tr class="line" id="sus_number">
-									<td class="label">
-										<label>{% trans 'Created at'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicalrecord.day.date }}</label>
-									</td>
-								</tr>	
-								<tr id="birthday">
-									<td class="label">
-										<label>{% trans 'Message' %}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicalrecord.message }}</label>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>					
-							</tbody>
-						</table>	
-					</div>
-				{% empty %}
-					<p>{% trans 'There are no evolutions registered for this patient.'%}</p>
-				{% endfor %}
-			</div>
-			
-			<div id="postnatal-data">
-				<strong><h2>{% trans 'Postnatal Data' %}</h2></strong>
-				{% if patient.staticdata %}
-					<div class="data">
-						<table class="table">
-							<tbody>
-								<tr class="line" id="name">
-									<td class="label">
-										<label>{% trans 'Weight at birth: '%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ patient.staticdata.weight }} {% trans 'grams'%}</label>
-									</td>
-								</tr>		
-								<tr class="line" id="sus_number">
-									<td class="label">
-										<label>{% trans 'APGAR: '%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ patient.staticdata.APGAR }}</label>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>					
-							</tbody>
-						</table>	
-					</div>
-				{% else %}
-					<p>{% trans 'No postnatal data for this patient.'%}</p>
-				{% endif %}			
-			</div>
-			
-			<div id="patient-medicine">
-				<strong><h2>{% trans 'Medicine' %}</h2></strong>
-				{% for medicine in patient.medicine_set.all %}
-					<div class="data">
-						<table class="table">
-							<tbody>
-								<tr class="line" id="name">
-									<td class="label">
-										<label>{% trans 'Name of medicine' %}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicine.medicine_name }}</label>
-									</td>
-								</tr>		
-								<tr class="line" id="sus_number">
-									<td class="label">
-										<label>{% trans 'Dosage' %}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicine.medicine_dosage }}</label>
-									</td>
-								</tr>	
-								<tr id="birthday">
-									<td class="label">
-										<label>{% trans 'Time between uses' %}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ medicine.medicine_use_interval }}</label>
-									</td>
-								</tr>	
-								<tr id="birthday">
-									<td class="label">
-										<label>{% trans 'In use?' %}:</label>					
-									</td>
-									<td class="info">
-										<label> 
-											{% if  medicine.medicine_in_use %}{% trans 'Yes' %}
-											{% else %}{% trans "No" %}
-											{% endif %}
-										</label>
-									</td>
-									<td></td>
-									<td></td>
-								</tr>	
-							</tbody>
-						</table>	
-					</div>	
-				{% empty %}
-					<p>{% trans 'There are no medicines registered for this patient.'%}</p>		
-				{% endfor %}	
-			</div>
-			
-			<div id="complaints">
-				<strong><h2>{% trans 'Complaints' %}</h2></strong>
-				{% for complaint in patient.complaint_set.all %}
-					<div class="data">
-						<table class="table">
-							<tbody>
-								<tr class="line" id="name">
-									<td class="label">
-										<label>{% trans 'Author'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ complaint.author.user.name }}</label>
-									</td>
-								</tr>		
-								<tr class="line" id="sus_number">
-									<td class="label">
-										<label>{% trans 'Complaint day'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ complaint.complaint_day }}</label>
-									</td>
-								</tr>	
-								<tr class="line" id="sus_number">
-									<td class="label">
-										<label>{% trans 'Complaint description'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ complaint.description }}</label>
-									</td>
-								</tr>	
-								<tr id="birthday">
-									<td class="label">
-										<label>{% trans 'Created at'%}:</label>					
-									</td>
-									<td class="info">
-										<label>{{ complaint.complaint_day }}, {{ complaint.complaint_time }}</label>
-									</td>
-								</tr>					
-							</tbody>
-						</table>
-					</div>
-				{% empty %}
-					<p>{% trans 'There are no complaints registered for this patient.'%}</p>
-				{% endfor %}	
-			</div>
-		</div>
+   <div class="row" id="printRow">
+      <div class="col border-bottom">
+        PRINT THIS PAGE -- TODO
+      </div>
+    </div>
+  
+  </div>
 
-	</body>
+  <div class="container border">
+
+    <div class="row my-1" id="header">
+      <div class="col">
+        <img class="img-fluid" src="{% static 'medicalrecords/images/header.png' %}" width="100%" heigth="auto">	
+      </div>
+    </div>
+
+    <div class="row my-1" id="patient_data">
+      <strong><h2>{% trans 'Patient Data' %}</h2></strong>
+      <div class="data">
+        <table class="table">
+          <tbody>
+            <tr class="line" id="name">
+              <td class="label">
+                <label>{% trans 'Patient name' %}:</label>					
+              </td>
+              <td class="info">
+                <label>{{ patient.user.name }}</label>
+              </td>
+            </tr>		
+            <tr class="line" id="sus_number">
+              <td class="label">
+                <label>{% trans 'SUS number' %}:</label>					
+              </td>
+              <td class="info">
+                <label>{{ patient.sus_number }}</label>
+              </td>
+            </tr>	
+            <tr id="birthday">
+              <td class="label">
+                <label>{% trans 'Birthday' %}:</label>					
+              </td>
+              <td class="info">
+                <label>{{ patient.user.birthday }}</label>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>					
+          </tbody>
+        </table>	
+      </div>				
+    </div>
+
+    <div class="row my-1" id="evolution">
+      <strong><h2>{% trans 'Evolution' %}</h2></strong>
+      {% for medicalrecord in patient.medicalrecord_set.all %}
+        <div class="data">
+          <table class="table">
+            <tbody>
+              <tr class="line" id="name">
+                <td class="label">
+                  <label>{% trans 'Author'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicalrecord.author.user.name }}</label>
+                </td>
+              </tr>		
+              <tr class="line" id="sus_number">
+                <td class="label">
+                  <label>{% trans 'Created at'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicalrecord.day.date }}</label>
+                </td>
+              </tr>	
+              <tr id="birthday">
+                <td class="label">
+                  <label>{% trans 'Message' %}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicalrecord.message }}</label>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>					
+            </tbody>
+          </table>	
+        </div>
+      {% empty %}
+        <p>{% trans 'There are no evolutions registered for this patient.'%}</p>
+      {% endfor %}
+    </div>
+    
+    <div class="row my-1" id="postnatal-data">
+      <strong><h2>{% trans 'Postnatal Data' %}</h2></strong>
+      {% if patient.staticdata %}
+        <div class="row" class="data">
+          <table class="table">
+            <tbody>
+              <tr class="line" id="name">
+                <td class="label">
+                  <label>{% trans 'Weight at birth: '%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ patient.staticdata.weight }} {% trans 'grams'%}</label>
+                </td>
+              </tr>		
+              <tr class="line" id="sus_number">
+                <td class="label">
+                  <label>{% trans 'APGAR: '%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ patient.staticdata.APGAR }}</label>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>					
+            </tbody>
+          </table>	
+        </div>
+      {% else %}
+        <p>{% trans 'No postnatal data for this patient.'%}</p>
+      {% endif %}			
+    </div>
+    
+    <div class="row my-1" id="patient-medicine">
+      <strong><h2>{% trans 'Medicine' %}</h2></strong>
+      {% for medicine in patient.medicine_set.all %}
+        <div class="data">
+          <table class="table">
+            <tbody>
+              <tr class="line" id="name">
+                <td class="label">
+                  <label>{% trans 'Name of medicine' %}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicine.medicine_name }}</label>
+                </td>
+              </tr>		
+              <tr class="line" id="sus_number">
+                <td class="label">
+                  <label>{% trans 'Dosage' %}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicine.medicine_dosage }}</label>
+                </td>
+              </tr>	
+              <tr id="birthday">
+                <td class="label">
+                  <label>{% trans 'Time between uses' %}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ medicine.medicine_use_interval }}</label>
+                </td>
+              </tr>	
+              <tr id="birthday">
+                <td class="label">
+                  <label>{% trans 'In use?' %}:</label>					
+                </td>
+                <td class="info">
+                  <label> 
+                    {% if  medicine.medicine_in_use %}{% trans 'Yes' %}
+                    {% else %}{% trans "No" %}
+                    {% endif %}
+                  </label>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>	
+            </tbody>
+          </table>	
+        </div>	
+      {% empty %}
+        <p>{% trans 'There are no medicines registered for this patient.'%}</p>		
+      {% endfor %}	
+    </div>
+    
+    <div class="row my-1" id="complaints">
+      
+      <strong><h2>{% trans 'Complaints' %}</h2></strong>
+      
+      {% for complaint in patient.complaint_set.all %}
+        <div class="data">
+
+          <table class="table">
+            <tbody>
+              <tr class="line" id="name">
+                <td class="label">
+                  <label>{% trans 'Author'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ complaint.author.user.name }}</label>
+                </td>
+              </tr>		
+              <tr class="line" id="sus_number">
+                <td class="label">
+                  <label>{% trans 'Complaint day'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ complaint.complaint_day }}</label>
+                </td>
+              </tr>	
+              <tr class="line" id="sus_number">
+                <td class="label">
+                  <label>{% trans 'Complaint description'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ complaint.description }}</label>
+                </td>
+              </tr>	
+              <tr id="birthday">
+                <td class="label">
+                  <label>{% trans 'Created at'%}:</label>					
+                </td>
+                <td class="info">
+                  <label>{{ complaint.complaint_day }}, {{ complaint.complaint_time }}</label>
+                </td>
+              </tr>					
+            </tbody>
+          </table>
+
+        </div>
+
+      {% empty %}
+        
+        <p>{% trans 'There are no complaints registered for this patient.'%}</p>
+      {% endfor %}	
+  
+    </div>
+
+  </div>
+
+</body>
