@@ -17,19 +17,17 @@ class AppointmentSearchForm(forms.Form):
     search_date = forms.DateField(
         required=False,
         label=_('Date'),
-        widget=forms.TextInput(
+        widget=forms.SelectDateWidget(
             attrs={'placeholder': _('(Year)-(Month)-(Day)')}
         )
     )
 
-    search_doctor = forms.ModelChoiceField(
-        queryset=HealthTeam.objects.all(),
+    search_doctor = forms.CharField(
         required=False,
         label=_('Doctor')
     )
 
-    search_patient = forms.ModelChoiceField(
-        queryset=Patient.objects.all(),
+    search_patient = forms.CharField(
         required=False,
         label=_('Patient')
     )

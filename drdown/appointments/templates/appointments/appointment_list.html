@@ -21,10 +21,22 @@
     {% url 'appointments:list_appointments' as url %}
     {% if request.path == url %}
       <div id="search">
-        <form class="form-inline" action="" method="GET">
-          {{ form }}
-          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans 'Search' %}</button>
-          </fieldset>
+          <form class="form-inline" action="" method="GET">
+
+            <label>Speciality:</label>
+            {{ form.search_speciality }}
+
+            <label>Date:</label>
+            {{ form.search_date}}
+
+            <label >Doctor:</label>
+            {{ form.search_doctor }}
+
+            <label>Patient:</label>
+            {{ form.search_patient }}
+
+            <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">Pesquisar</button>
+        </form>
         </form>
       </div>
     {% endif %}
