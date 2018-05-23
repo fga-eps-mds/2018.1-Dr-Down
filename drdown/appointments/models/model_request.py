@@ -67,6 +67,7 @@ class AppointmentRequest(models.Model):
     CARDIOLOGY = "Cardiology"
     NEUROLOGY = "Neurology"
     PEDIATRICS = "Pediatrics"
+    GENERAL_PRACTITIONER = "General Practitioner"
 
     SPECIALITY_REQUEST_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
@@ -76,6 +77,7 @@ class AppointmentRequest(models.Model):
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
+        (GENERAL_PRACTITIONER, _('General Practitioner')),
     )
 
     speciality = models.CharField(
