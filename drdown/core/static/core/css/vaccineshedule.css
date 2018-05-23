@@ -74,3 +74,10 @@
   margin-right: 10px;
   padding: 0;
 }
+
+
+.full {
+    display:table;
+    width:96%;
+    table-layout:fixed;
+}

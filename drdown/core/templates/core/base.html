@@ -135,26 +135,30 @@
 
           {% elif user.responsible %}
             {% for patient in request.user.responsible.patient_set.all %}
+              {% if forloop.revcounter == 1%}
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
+                    {{patient.user.name}}
+                  </a></li>
+              {% else %}
               <li class="dropdown">
                 <a href="#patient" data-toggle="collapse" aria-expanded="false" >
-                  {% trans "Patient" %} {{patient.user.name}}
+                  {% trans " My Patients" %}
                 </a>
                 <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
                   <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
                     {% trans "Medical Record" %}
                   </a></li>
-                  <li><a href="{% url 'careline:checklist_detail' patient.user.username  %}">
-                    {% trans "Care Line" %}
-                  </a></li>
+
                 </ul>
               </li>
+              {% endif %}
             {% endfor %}
             <li class="dropdown">
               <a href="#vaccine-resp" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
               </a>
               <ul class="collapse list-unstyled" id="vaccine-resp" data-collapse-group="collapse-group">
-                <li><a href="{% url 'core:vaccine' %}">
+                <li><a href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
                   {% trans "Calendar" %}
                 </a></li>
                 <li><a href="{% url 'core:locations' %}">
