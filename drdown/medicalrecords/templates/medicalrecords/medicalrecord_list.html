@@ -386,42 +386,33 @@
                 </div>
             {% endif %}
           </div>
-          <div class="list-group">
-            <div class="accordion" id="accordionmenu1">
-              {% for complaint in complaints %}
-                <div class="card">
-                  <div class="card-header" id="headingComplaint{{ complaint.id }}">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComplaint{{complaint.id}}">
-                          {% trans 'Author'%}: {{ complaint.author.user.name }} | {% trans 'Complaint day'%}: {{ complaint.complaint_day }}
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseComplaint{{complaint.id}}" class="collapse" data-parent="#headingComplaint{{ complaint.id }}">
-                    <div class="card-body">
-                      <div class="h-blue list-group-item mb-5">
-                        <div class="row">
-                          <div class="col alert alert-dark mx-2 my-2">
-                            <p class="text-tertiary h-blue"> {{ complaint.description|markdown }} </p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col border-right border-top">
-                            <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ complaint.author.user.name }} </p>
-                          </div>
-                          <div class="col border-top">
-                            <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ complaint.complaint_day }}, {{ complaint.complaint_time }} </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              {% empty %}
-                  <h4>{% trans 'There are no complaints registered for this patient.'%}</h4>
-              {% endfor %}
-            </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk general practitioner: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk speech theraphy: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk psychology: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_general_practitioner }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_speech_theraphy }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_psychology }} </div>
           </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk cardiology: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk neurology: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_cardiology }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_neurology }} </div>
+          </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk pediatrics: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk physiotherapy: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_pediatrics }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_physiotherapy }} </div>
+          </div>
+
         </div>
       </div>
     </div>
