@@ -21,22 +21,26 @@
     {% url 'appointments:list_appointments' as url %}
     {% if request.path == url %}
       <div id="search">
-          <form class="form-inline" action="" method="GET">
+        <form class="form-inline" action="" method="GET">
 
-            <label>Speciality:</label>
-            {{ form.search_speciality }}
+          <select name="search_speciality" id="id_search_speciality">
+            <option value="0" selected>{% trans 'Speciality' %}</option>
+            <option value="SPEECH_THERAPHY">{% trans 'Speech Theraphy' %}</option>
+            <option value="PSYCHOLOGY">{% trans 'Psychology' %}</option>
+            <option value="PHYSIOTHERAPY">{% trans 'Physiotherapy' %}</option>
+            <option value="OCCUPATIONAL_THERAPY">{% trans 'Occupational Therapy' %}</option>
+            <option value="DOCTOR">{% trans 'Doctor' %}</option>
+            <option value="CARDIOLOGY">{% trans 'Cardiology' %}</option>
+            <option value="NEUROLOGY">{% trans 'Neurology' %}</option>
+            <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
+            <option value="NURSING">{% trans 'Nursing' %}</option>
+          </select>
+          {{ form.search_date}}
+          <input type="text" style="max-width: 180px;" name="{% trans 'Doctor' %}" placeholder="Médico" id="id_search_doctor" />
+          <input type="text" style="max-width: 180px;" name="search_patient" placeholder="{% trans 'Patient' %}" id="id_search_patient" />
 
-            <label>Date:</label>
-            {{ form.search_date}}
+          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
 
-            <label >Doctor:</label>
-            {{ form.search_doctor }}
-
-            <label>Patient:</label>
-            {{ form.search_patient }}
-
-            <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">Pesquisar</button>
-        </form>
         </form>
       </div>
     {% endif %}
@@ -78,7 +82,7 @@
 
       <div class="col-sm-2 border-left border-secondary float-right w-18" id="sidebar">
         <i class="fa fa-angle-double-right"></i>
-        <a href="{% url 'appointments:list_appointments' %}" class="text-tertiary">{% trans "Search All" %}</a>
+        <a href="{% url 'appointments:list_appointments' %}" class="text-tertiary">{% trans "Show All" %}</a>
         {% for year in years %}
           <div class="panel panel-info">
             {% if year == current_year %}
