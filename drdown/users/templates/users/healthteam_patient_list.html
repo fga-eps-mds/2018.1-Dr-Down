@@ -9,69 +9,58 @@
 
 {% block content %}
 <div class="container">
-    <div class="row justify-content-between mb-1">
-        <h2 class="col-7 col-md text-tertiary">{% trans "Select a patient" %}</h2>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <form class="form-inline float-right" action="" method="GET">
-                <div class="search"><label>{% trans 'Patient:'%}</label> {{ form.list_patient }}</div>
+  <div class="row justify-content-between mb-5">
+      <h2 class="text-tertiary">{% trans "Select a patient" %}</h2><br>
+    <form class="" action="" method="GET">
+      <label>{% trans 'Patient:'%}</label>
+      {{ form.list_patient }}
+      <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans 'Search' %}</button>
+    </form>
+  </div>
 
-                <button class="btn btn-secondary align-btn" type="submit">{% trans 'Search' %}</button>
-            </form>
-        </div>
-    </div>
+  <div class="row">
+    <div class="col">
+      <div class="list-group">
+        {% for patient in object_list %}
+          <li class=" h-blue list-group-item" >
+            <div class="row">
 
-    <div class="row">
-        <div class="col">
-            <div class="list-group">
+              <div class="col">
+                <div class="row">
+                  <div class="col-auto border-right">
+                    <img class="col-auto my-1 img-rounded img-fluid"
+                    {% if patient.user.photo %}
+                        src="{{patient.user.photo.url}}"
+                    {% else %}
+                        src="{% static 'users/img/user.png' %}"
+                    {% endif %}
+                    style="height: auto; width: 100px;">
+                  </div>
 
-                {% for patient in object_list %}
-                    <li class=" h-blue list-group-item" >
+                  <div class="col">
+                    <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
+                      <h4 class="text-tertiary h-blue" >{{ patient.user.name }} {{patient.user.last_name}}</h4>
+                      <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-                        <div class="row">
-                            <div class="col">
-
-                                <div class="row">
-
-                                    <div class="col-auto border-right">
-
-                                        <img class="col-auto my-1 img-rounded img-fluid"
-                                            {% if patient.user.photo %}
-                                                src="{{patient.user.photo.url}}"
-                                            {% else %}
-                                                src="{% static 'users/img/user.png' %}"
-                                            {% endif %}
-
-                                        style="height: auto; width: 100px;">
-                                    </div>
-
-                                    <div class="col">
-                                      <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
-                                        <h4 class="text-tertiary h-blue" >{{ patient.user.name }} {{patient.user.last_name}}</h4>
-                                        <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
-                                      </a>
-                                    </div>
-                                </div>
-                            </div>
-                              {% if patient.responsible %}
-                               <div class="col-auto border-left">
-
-                                        <h5 class="text-tertiary h-blue"> {% trans 'Responsible:' %} </h5>
-                                        <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} {{patient.responsible.user.last_name}}</p>
-                               </div>
-                              {% endif %}
-                        </div>
-
-                    </li>
-                    {% empty %}
-                        <h4>{% trans 'There are no patients for this user.'%}</h4>
-                    {% endfor %}
-
+              {% if patient.responsible %}
+                <div class="col-auto border-left">
+                  <h5 class="text-tertiary h-blue"> {% trans 'Responsible:' %} </h5>
+                  <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} {{patient.responsible.user.last_name}}</p>
+                </div>
+              {% endif %}
 
             </div>
-        </div>
+          </li>
+          {% empty %}
+              <h4>{% trans 'There are no patients for this user.'%}</h4>
+          {% endfor %}
+      </div>
     </div>
+  </div>
 </div>
 {% endblock content %}
