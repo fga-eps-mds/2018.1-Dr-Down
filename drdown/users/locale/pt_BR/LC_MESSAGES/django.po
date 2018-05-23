@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 16:46+0000\n"
+"POT-Creation-Date: 2018-05-23 18:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -456,7 +456,6 @@ msgid "Change E-Mail"
 msgstr "Mudar E-mail"
 
 #: drdown/users/templates/users/user_detail.html:67
-
 msgid "Delete Account"
 msgstr "Excluir conta"
 

@@ -12,7 +12,6 @@
   <div class="container">
     {% if request.user.employee %}
       <a href="{% url 'appointments:create_appointment' %}" class="btn btn-secondary float-right">{% trans "New Appointment" %}</a>
-      <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right mr-3">{% trans "Requests" %}</a>
     {% elif request.user.patient %}
       <a href="{% url 'appointments:list_requests' %}" class="btn btn-secondary float-right">{% trans "Requests" %}</a>
     {% endif %}

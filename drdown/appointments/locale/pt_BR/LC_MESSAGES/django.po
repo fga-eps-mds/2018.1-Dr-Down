@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 16:46+0000\n"
+"POT-Creation-Date: 2018-05-23 18:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,45 +19,56 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: drdown/appointments/forms/appointments_form.py:11
-#: drdown/appointments/forms/appointments_form.py:13
 #: drdown/appointments/forms/requests_form.py:10
 #: drdown/appointments/forms/requests_form.py:12
 #: drdown/appointments/models/model_appointment.py:40
 #: drdown/appointments/models/model_request.py:82
 #: drdown/appointments/templates/appointments/appointment_form.html:24
+#: drdown/appointments/templates/appointments/appointment_list.html:26
 #: drdown/appointments/templates/appointments/appointment_request_form.html:14
 msgid "Speciality"
 msgstr "Especialidade"
 
-#: drdown/appointments/forms/appointments_form.py:19
+#: drdown/appointments/forms/appointments_form.py:16
 #: drdown/appointments/models/model_appointment.py:10
 #: drdown/appointments/templates/appointments/appointment_form.html:86
-#: drdown/appointments/templates/appointments/appointment_list.html:63
+#: drdown/appointments/templates/appointments/appointment_list.html:66
 #: drdown/appointments/templates/appointments/appointment_request_form.html:76
 msgid "Date"
 msgstr "Data"
 
-#: drdown/appointments/forms/appointments_form.py:21
-msgid "(Year)-(Month)-(Day)"
-msgstr "(Ano)-(Mês)-(Dia)"
+#: drdown/appointments/forms/appointments_form.py:18
+msgid "Year"
+msgstr "Ano"
 
-#: drdown/appointments/forms/appointments_form.py:27
+#: drdown/appointments/forms/appointments_form.py:18
+msgid "Month"
+msgstr "Mês"
+
+#: drdown/appointments/forms/appointments_form.py:18
+msgid "Day"
+msgstr "Dia"
+
+#: drdown/appointments/forms/appointments_form.py:24
 #: drdown/appointments/forms/requests_form.py:27
 #: drdown/appointments/models/model_appointment.py:49
 #: drdown/appointments/models/model_request.py:91
 #: drdown/appointments/templates/appointments/appointment_form.html:49
-#: drdown/appointments/templates/appointments/appointment_list.html:61
+#: drdown/appointments/templates/appointments/appointment_list.html:31
+#: drdown/appointments/templates/appointments/appointment_list.html:38
+#: drdown/appointments/templates/appointments/appointment_list.html:64
 #: drdown/appointments/templates/appointments/appointment_request_form.html:39
 #: drdown/appointments/templates/appointments/request_list.html:32
 msgid "Doctor"
 msgstr "Médico"
 
-#: drdown/appointments/forms/appointments_form.py:32
+#: drdown/appointments/forms/appointments_form.py:29
 #: drdown/appointments/forms/requests_form.py:33
 #: drdown/appointments/models/model_appointment.py:56
 #: drdown/appointments/models/model_request.py:99
 #: drdown/appointments/templates/appointments/appointment_form.html:68
-#: drdown/appointments/templates/appointments/appointment_list.html:60
+#: drdown/appointments/templates/appointments/appointment_list.html:39
+#: drdown/appointments/templates/appointments/appointment_list.html:63
 #: drdown/appointments/templates/appointments/appointment_request_form.html:58
 #: drdown/appointments/templates/appointments/request_list.html:31
 msgid "Patient"
@@ -67,9 +78,9 @@ msgstr "Paciente"
 #: drdown/appointments/forms/requests_form.py:20
 #: drdown/appointments/models/model_appointment.py:69
 #: drdown/appointments/models/model_request.py:113
-#: drdown/appointments/templates/appointments/appointment_list.html:66
-#: drdown/appointments/templates/appointments/appointment_list.html:68
-#: drdown/appointments/templates/appointments/appointment_list.html:70
+#: drdown/appointments/templates/appointments/appointment_list.html:69
+#: drdown/appointments/templates/appointments/appointment_list.html:71
+#: drdown/appointments/templates/appointments/appointment_list.html:73
 #: drdown/appointments/templates/appointments/request_list.html:39
 msgid "Status"
 msgstr "Status"
@@ -80,7 +91,7 @@ msgstr "Dia da consulta"
 
 #: drdown/appointments/models/model_appointment.py:16
 #: drdown/appointments/templates/appointments/appointment_form.html:98
-#: drdown/appointments/templates/appointments/appointment_list.html:64
+#: drdown/appointments/templates/appointments/appointment_list.html:67
 #: drdown/appointments/templates/appointments/appointment_request_form.html:85
 msgid "Time"
 msgstr "Horário"
@@ -102,6 +113,7 @@ msgstr "Fonoaudiologia"
 #: drdown/appointments/models/model_request.py:73
 #: drdown/appointments/templates/appointments/appointment_form.html:29
 #: drdown/appointments/templates/appointments/appointment_form.html:38
+#: drdown/appointments/templates/appointments/appointment_list.html:28
 #: drdown/appointments/templates/appointments/appointment_request_form.html:19
 #: drdown/appointments/templates/appointments/appointment_request_form.html:28
 msgid "Psychology"
@@ -111,6 +123,7 @@ msgstr "Psicologia"
 #: drdown/appointments/models/model_request.py:74
 #: drdown/appointments/templates/appointments/appointment_form.html:30
 #: drdown/appointments/templates/appointments/appointment_form.html:39
+#: drdown/appointments/templates/appointments/appointment_list.html:29
 #: drdown/appointments/templates/appointments/appointment_request_form.html:20
 #: drdown/appointments/templates/appointments/appointment_request_form.html:29
 msgid "Physiotherapy"
@@ -120,6 +133,7 @@ msgstr "Fisioterapia"
 #: drdown/appointments/models/model_request.py:75
 #: drdown/appointments/templates/appointments/appointment_form.html:31
 #: drdown/appointments/templates/appointments/appointment_form.html:40
+#: drdown/appointments/templates/appointments/appointment_list.html:30
 #: drdown/appointments/templates/appointments/appointment_request_form.html:21
 #: drdown/appointments/templates/appointments/appointment_request_form.html:30
 msgid "Occupational Therapy"
@@ -129,6 +143,7 @@ msgstr "Terapia Ocupacional"
 #: drdown/appointments/models/model_request.py:76
 #: drdown/appointments/templates/appointments/appointment_form.html:32
 #: drdown/appointments/templates/appointments/appointment_form.html:41
+#: drdown/appointments/templates/appointments/appointment_list.html:32
 #: drdown/appointments/templates/appointments/appointment_request_form.html:22
 #: drdown/appointments/templates/appointments/appointment_request_form.html:31
 msgid "Cardiology"
@@ -138,6 +153,7 @@ msgstr "Cardiologia"
 #: drdown/appointments/models/model_request.py:77
 #: drdown/appointments/templates/appointments/appointment_form.html:33
 #: drdown/appointments/templates/appointments/appointment_form.html:42
+#: drdown/appointments/templates/appointments/appointment_list.html:33
 #: drdown/appointments/templates/appointments/appointment_request_form.html:23
 #: drdown/appointments/templates/appointments/appointment_request_form.html:32
 msgid "Neurology"
@@ -147,6 +163,7 @@ msgstr "Neurologia"
 #: drdown/appointments/models/model_request.py:78
 #: drdown/appointments/templates/appointments/appointment_form.html:34
 #: drdown/appointments/templates/appointments/appointment_form.html:43
+#: drdown/appointments/templates/appointments/appointment_list.html:34
 #: drdown/appointments/templates/appointments/appointment_request_form.html:24
 #: drdown/appointments/templates/appointments/appointment_request_form.html:33
 msgid "Pediatrics"
@@ -182,7 +199,7 @@ msgstr "Consulta"
 #: drdown/appointments/models/model_appointment.py:82
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:3
 #: drdown/appointments/templates/appointments/appointment_list.html:9
-#: drdown/appointments/templates/appointments/appointment_list.html:19
+#: drdown/appointments/templates/appointments/appointment_list.html:18
 #: drdown/appointments/templates/appointments/request_confirm_cancel.html:3
 msgid "Appointments"
 msgstr "Consultas"
@@ -275,8 +292,7 @@ msgid "Request"
 msgstr "Pedido"
 
 #: drdown/appointments/models/model_request.py:126
-#: drdown/appointments/templates/appointments/appointment_list.html:15
-#: drdown/appointments/templates/appointments/appointment_list.html:17
+#: drdown/appointments/templates/appointments/appointment_list.html:16
 #: drdown/appointments/templates/appointments/request_list.html:9
 #: drdown/appointments/templates/appointments/request_list.html:16
 msgid "Requests"
@@ -325,8 +341,22 @@ msgstr "Cancelar"
 msgid "Schedule"
 msgstr "Marcar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:53
+#: drdown/appointments/templates/appointments/appointment_list.html:27
+#, fuzzy
+#| msgid "Speech Therapy"
+msgid "Speech Theraphy"
+msgstr "Fonoaudiologia"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:35
+msgid "Nursing"
+msgstr "Enfermaria"
+
+#: drdown/appointments/templates/appointments/appointment_list.html:41
+msgid "Search"
+msgstr "Pesquisar"
+
 #: drdown/appointments/templates/appointments/appointment_list.html:56
+#: drdown/appointments/templates/appointments/appointment_list.html:59
 #: drdown/appointments/templates/appointments/appointment_request_form.html:92
 #: drdown/appointments/templates/appointments/request_confirm_delete.html:14
 #: drdown/appointments/templates/appointments/request_form.html:38
@@ -334,28 +364,28 @@ msgstr "Marcar"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:54
 #: drdown/appointments/templates/appointments/appointment_list.html:57
+#: drdown/appointments/templates/appointments/appointment_list.html:60
 #: drdown/appointments/templates/appointments/request_list.html:23
 msgid "Edit"
 msgstr "Editar"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:62
+#: drdown/appointments/templates/appointments/appointment_list.html:65
 #: drdown/appointments/templates/appointments/request_list.html:33
 msgid "Especiality"
 msgstr "Especialidade"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:70
+#: drdown/appointments/templates/appointments/appointment_list.html:73
 msgid "Done"
 msgstr "Concluído"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:75
+#: drdown/appointments/templates/appointments/appointment_list.html:78
 msgid "There are no appointments scheduled"
 msgstr "Não há consultas marcadas"
 
-#: drdown/appointments/templates/appointments/appointment_list.html:81
-msgid "Search All"
-msgstr "Pesquisar tudo"
+#: drdown/appointments/templates/appointments/appointment_list.html:84
+msgid "Show All"
+msgstr "Mostrar tudo"
 
 #: drdown/appointments/templates/appointments/appointment_request_form.html:77
 msgid "Requested day of the week"
@@ -487,8 +517,3 @@ msgstr "Novembro"
 msgid "December"
 msgstr "Dezembro"
 
-#~ msgid "Search"
-#~ msgstr "Pesquisar"
-
-#~ msgid "Nursing"
-#~ msgstr "Enfermaria"
