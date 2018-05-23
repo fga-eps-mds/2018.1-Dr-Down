@@ -15,7 +15,7 @@ from ..forms.users_forms import PatientSearchForm
 
 class PatientFilter(BaseFilter):
     search_fields = {
-       'list_patient': ['id'],
+       'list_patient': ['user__name'],
     }
 
 

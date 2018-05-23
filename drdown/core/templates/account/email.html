@@ -1,12 +1,11 @@
-
-{% extends "account/base.html" %}
+{% extends user.is_authenticated|yesno:"core/base.html,core/base-nav.html" %}
 
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}{% trans "Account" %}{% endblock %}
+{% block title %}{% trans "Account" %}{% endblock %}
 
-{% block inner %}
+{% block content %}
   <div class="row pb-5">
     <h1>{% trans "E-mail Addresses" %}</h1>
   </div>

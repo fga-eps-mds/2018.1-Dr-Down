@@ -37,7 +37,7 @@
 
                                     <div class="col-auto border-right">
 
-                                        <img class="col-auto my-1 rounded-circle img-fluid"
+                                        <img class="col-auto my-1 img-rounded img-fluid"
                                             {% if patient.user.photo %}
                                                 src="{{patient.user.photo.url}}"
                                             {% else %}
@@ -53,11 +53,15 @@
                                         <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
                                       </a>
                                     </div>
-
                                 </div>
                             </div>
+                              {% if patient.responsible %}
+                               <div class="col-auto border-left">
 
-
+                                        <h5 class="text-tertiary h-blue"> {% trans 'Responsible:' %} </h5>
+                                        <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} {{patient.responsible.user.last_name}}</p>
+                               </div>
+                              {% endif %}
                         </div>
 
                     </li>

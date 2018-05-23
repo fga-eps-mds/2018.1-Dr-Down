@@ -5,8 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class PatientSearchForm(forms.Form):
 
-    list_patient = forms.ModelChoiceField(
-        queryset=Patient.objects.all(),
+    list_patient = forms.CharField(
         required=False,
         label=_('Search patient!')
     )
