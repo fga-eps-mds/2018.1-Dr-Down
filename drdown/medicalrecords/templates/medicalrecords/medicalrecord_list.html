@@ -69,9 +69,11 @@
         <li class="nav-item">
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu5">{% trans "Complaints" %}</a>
         </li>
+        {% if user.healthteam or user.employee %}
         <li class="nav-item">
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu6">{% trans "Risks" %}</a>
         </li>
+        {% endif %}
       </ul>
 
       <div class="tab-content">
