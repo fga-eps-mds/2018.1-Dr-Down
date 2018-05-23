@@ -61,11 +61,11 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <div class="container">
-          <li class="navbar-brand mb-3"><a href="{% url 'core:home' %}">Dr.Down</a></li>
-          {% if object.photo %}
-            <img class="center rounded-circle" src="{{ object.photo.url }}" width="100px" >
+          <li class="navbar-brand ml-1   list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
+          {% if user.photo %}
+            <img class="center img-thumbnail " src="{{ user.photo.url }}" width="125px" >
           {% else %}
-            <img class="center" src="{% static 'users/img/user.png' %}" width="100px" >
+            <img class="center img-thumbnail" src="{% static 'users/img/user.png' %}" width="125px" >
           {% endif %}
           <h5 class="text-primary text-center mt-2">{{request.user.username}}</h5>
         </div>

@@ -48,9 +48,9 @@
                   <h2 class="text-center">{% trans 'Health Team' %}</h2>
                 {% endif %}
                 {% if object.photo %}
-                    <img src="{{ object.photo.url }}" width="20px" class="img-responsive center-block img-thumbnail">
+                    <img src="{{ object.photo.url }}" width="300px" class="img-responsive center-block img-thumbnail">
                 {% else %}
-                    <img src="{% static 'users/img/user.png' %}" class="img-responsive center-block img-thumbnail">
+                    <img src="{% static 'users/img/user.png' %}" width="300px" class="img-responsive center-block img-thumbnail">
                 {% endif %}
 
                 <div class="row"><br></div>

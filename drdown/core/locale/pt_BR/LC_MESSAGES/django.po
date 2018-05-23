@@ -380,7 +380,7 @@ msgstr "Copyright &copy; Dr. Down 2018"
 
 #: drdown/core/templates/core/base.html:78
 msgid "My Profile"
-msgstr "Editar Perfil"
+msgstr "Meu Perfil"
 
 #: drdown/core/templates/core/base.html:84
 #: drdown/core/templates/core/base.html:99

@@ -176,5 +176,9 @@ img.center {
   text-indent: 40px;
 }
 
+.list-inline {
+  display: flex;
+  justify-content: center;
+}
 
 
