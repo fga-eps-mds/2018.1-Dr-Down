@@ -1,12 +1,11 @@
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import DetailView
-from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 from ..views.views_base import BaseViewPermissions
 
 
 class PDFView(
-    BaseViewPermissions, PDFTemplateResponseMixin, DetailView
+    BaseViewPermissions, DetailView
 ):
 
     model = Patient
