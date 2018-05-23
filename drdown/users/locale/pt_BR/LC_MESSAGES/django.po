@@ -457,7 +457,7 @@ msgstr "Mudar E-mail"
 
 #: drdown/users/templates/users/user_detail.html:67
 msgid "Delete Account"
-msgstr "Excluir conta"
+msgstr "Excluir Conta"
 
 #: drdown/users/templates/users/user_detail.html:76
 msgid "Name: "

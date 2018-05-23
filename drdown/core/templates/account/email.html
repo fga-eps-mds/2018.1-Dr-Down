@@ -11,66 +11,66 @@
     <h1>{% trans "E-mail Addresses" %}</h1>
   </div>
 
-{% if user.emailaddress_set.all %}
-<div class="row mb-3"><p class="lead">{% trans 'The following e-mail addresses are associated with your account:' %}</p></div>
+  {% if user.emailaddress_set.all %}
+  <div class="row mb-3"><p class="lead">{% trans 'The following e-mail addresses are associated with your account:' %}</p></div>
 
-<form action="{% url 'account_email' %}" class="email_list" method="post">
-{% csrf_token %}
-<fieldset class="blockLabels">
+  <form action="{% url 'account_email' %}" class="email_list" method="post">
+  {% csrf_token %}
+  <fieldset class="blockLabels">
 
   {% for emailaddress in user.emailaddress_set.all %}
-<div class="radio">
-    <label for="email_radio_{{forloop.counter}}" class="{% if emailaddress.primary %}primary_email{%endif%}">
+    <div class="radio">
+      <label for="email_radio_{{forloop.counter}}" class="{% if emailaddress.primary %}primary_email{%endif%}">
 
-      <div class="row">
-        <div class="col-1">
-          <input class= "" id="email_radio_{{forloop.counter}}" type="radio" name="email" {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{%endif %} value="{{emailaddress.email}}"/>
+        <div class="row">
+          <div class="col-1">
+            <input class= "" id="email_radio_{{forloop.counter}}" type="radio" name="email" {% if emailaddress.primary or user.emailaddress_set.count == 1 %}checked="checked"{%endif %} value="{{emailaddress.email}}"/>
+          </div>
+          <div class="col">{{ emailaddress.email }}</div>
+
+          {% if emailaddress.verified %}
+            <div class="col"><span>{% trans "Verified" %}/</span></div>
+          {% else %}
+            <div class="col"><span>{% trans "Unverified" %}/</span></div>
+          {% endif %}
+
+          {% if emailaddress.primary %}<div class="col"><span>{% trans "Primary" %}</span></div>{% endif %}
         </div>
-        <div class="col">{{ emailaddress.email }}</div>
-
-        {% if emailaddress.verified %}
-          <div class="col"><span class="verified lead" ><font size="3">{% trans "Verified" %}</font>/</span></div>
-        {% else %}
-          <div class="col"><span class="unverified lead"><font size="3">{% trans "Unverified" %}</font>/</span></div>
-        {% endif %}
-
-        {% if emailaddress.primary %}<div class="col"><span class="primary lead"><font size="3">{% trans "Primary" %}</font></span></div>{% endif %}
-      </div>
-    </label>
-  </div>
+      </label>
+    </div>
 
   {% endfor %}
 
-<div class="form-group">
-    <div class="row float-right pb-5 pt-3">
-      <div class="col pr-0 pb-2"><button class="secondaryAction btn btn-secondary" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button></div>
-        <div class="col pr-0 pb-2"><button class="secondaryAction btn btn-secondary ml-2" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button></div>
-        <div class="col pr-0 pb-2"><button class="primaryAction btn btn-danger ml-2" type="submit" name="action_remove" >{% trans 'Remove' %}</button></div>
+  <div class="form-group">
+      <div class="row float-right pb-5 pt-3">
+        <div class="col pr-0 pb-2"><button class="secondaryAction btn btn-secondary" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button></div>
+          <div class="col pr-0 pb-2"><button class="secondaryAction btn btn-secondary ml-2" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button></div>
+          <div class="col pr-0 pb-2"><button class="primaryAction btn btn-danger ml-2" type="submit" name="action_remove" >{% trans 'Remove' %}</button></div>
+      </div>
+  </div>
+
+  </fieldset>
+  </form>
+
+  {% else %}
+  <p class="lead"><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
+
+  {% endif %}
+
+
+  <div class="row mb-5">
+    <h2>{% trans "Add E-mail Address" %}</h2>
+  </div>
+
+  <form method="post" action="{% url 'account_email' %}" class="add_email">
+    <div class="row">
+      {% csrf_token %}
+      <div class="col-12">{{ form|crispy }}</div>
+      <div class="col-12">
+        <button class="btn btn-secondary float-right" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
+      </div>
     </div>
-</div>
-
-</fieldset>
-</form>
-
-{% else %}
-<p class="lead"><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
-
-{% endif %}
-
-
-    <div class="row mb-5">
-      <h2>{% trans "Add E-mail Address" %}</h2>
-    </div>
-
-      <form method="post" action="{% url 'account_email' %}" class="add_email">
-        <div class="row">
-          {% csrf_token %}
-          <div class="col-12">{{ form|crispy }}</div>
-          <div class="col-12">
-            <button class="btn btn-secondary float-right" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
-          </div>
-        </div>
-      </form>
+  </form>
 
 
 </div>
