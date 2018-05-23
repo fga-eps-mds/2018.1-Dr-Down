@@ -13,9 +13,8 @@ from ..forms.requests_form import RequestSearchForm
 class RequestFilter(LoginRequiredMixin, BaseFilter):
     search_fields = {
         'search_speciality': ['speciality'],
-        'search_doctor': ['doctor__id'],
-        'search_patient': ['patient__id'],
-        'search_status': ['status'],
+        'search_doctor': ['doctor__user__name'],
+        'search_patient': ['patient__user__name'],
     }
 
 
