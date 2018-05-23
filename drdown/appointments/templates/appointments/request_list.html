@@ -15,6 +15,33 @@
       <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary mt-1 float-right mr-3">{% trans "New Request" %}</a>
     {% endif %}
     <h2>{% trans 'Requests' %}</h2><hr>
+
+
+    {% url 'appointments:list_requests' as url %}
+   {% if request.path == url %}
+     <div id="search">
+       <form class="form-inline" action="" method="GET">
+
+         <select name="search_speciality" id="id_search_speciality">
+           <option value="0" selected>{% trans 'Speciality' %}</option>
+           <option value="SPEECH_THERAPHY">{% trans 'Speech Theraphy' %}</option>
+           <option value="PSYCHOLOGY">{% trans 'Psychology' %}</option>
+           <option value="PHYSIOTHERAPY">{% trans 'Physiotherapy' %}</option>
+           <option value="OCCUPATIONAL_THERAPY">{% trans 'Occupational Therapy' %}</option>
+           <option value="DOCTOR">{% trans 'Doctor' %}</option>
+           <option value="CARDIOLOGY">{% trans 'Cardiology' %}</option>
+           <option value="NEUROLOGY">{% trans 'Neurology' %}</option>
+           <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
+           <option value="NURSING">{% trans 'Nursing' %}</option>
+         </select>
+
+         <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
+
+       </form>
+     </div>
+   {% endif %}
+
+
     {% for appointmentrequest in appointmentrequest_list %}
       <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
         <div class="message" style="width:98%">
