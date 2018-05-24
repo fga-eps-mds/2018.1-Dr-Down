@@ -37,3 +37,7 @@ body {
 a:hover .h-blue{
   color: #042d63;
 }
+
+.out-sidebar-content{
+  margin: 30px;
+}

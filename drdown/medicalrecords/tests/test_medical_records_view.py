@@ -119,6 +119,7 @@ class TestViewMedicalRecords(TestCase):
         """
         Test if form is valid with blank fields
         """
+        self.client.force_login(user=self.user_1)
         response = self.client.post(
             path=reverse(
                 viewname='medicalrecords:create_medicalrecords',

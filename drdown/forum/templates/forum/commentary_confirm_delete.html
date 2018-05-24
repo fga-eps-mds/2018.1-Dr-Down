@@ -1,18 +1,20 @@
-{% extends "account/base.html" %}
+{% extends view.get_template %}
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Commentary" %}{% endblock %}
+{% block title %}{% trans "Commentary" %}{% endblock %}
 
-{% block inner %}
-<h1>{% trans "Delete" %}</h1>
+{% block content %}
+<div class="col-md-6 offset-md-3">
 
-<form method="post" action="">
-  {% csrf_token %}
-  <p>{% trans 'Are you sure you want to delete this commentary?' %} </p>
-  <a href="{% url 'forum:list_commentary' commentary.post.category.slug commentary.post.category.pk commentary.post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
-  <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
-</form>
+  <h1>{% trans "Delete" %}</h1>
 
+  <form method="post" action="">
+    {% csrf_token %}
+    <p>{% trans 'Are you sure you want to delete this commentary?' %} </p>
+    <a href="{% url 'forum:list_commentary' commentary.post.category.slug commentary.post.category.pk commentary.post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+    <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+  </form>
+</div>
 
 {% endblock %}

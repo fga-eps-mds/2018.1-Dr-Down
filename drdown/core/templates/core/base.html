@@ -28,137 +28,220 @@
     <link href="{% static 'core/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}"" rel="stylesheet" type="text/css">
+    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="{% static 'core/homepage/css/freelancer.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/project.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/simple-sidebar.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/vaccineshedule.css' %}" rel="stylesheet">
     {% endblock %}
 
     {% block script %}
     {%  endblock %}
   </head>
+
   <body id="page-top">
-    <!-- Navigation -->
-    {% block navbar %}
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}#page-top">{% trans "Dr. Down" %}</a>
-        <button class="navbar-toggler mb-3 navbar-toggler-right text-uppercase btn-secondary text-white rounded border border-secondary" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          {% trans "Menu" %}
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:home' %}#page-top"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Home" %}</strong></button></a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:about' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Down's Syndrome" %}</strong></button></a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'forum:list_categories' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Forums" %}</strong></button></a>
-            </li>
-            {% if user.is_authenticated %}
-            <div class="btn-group">
-              <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link px-0 mt-2" href= "{% url 'users:detail' request.user.username %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{{request.user.username}}</strong></button></a>
-              </li>
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
-              <div class="dropdown-menu">
-                {% if user.healthteam %}
-                  <a class="dropdown-item" href="{% url 'users:healthteam_patient_list' %}">{% trans "My Patients" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Search" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Risk Rating" %}</a>
-                {% endif %}
-                {% if user.patient %}
-                  <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                  <a class="dropdown-item" href="{% url 'medicalrecords:list_medicalrecords' user.username %}">{% trans "My Queries" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
-                {% endif %}
-                {% if user.responsible %}
-                  <a class="dropdown-item" href="#">{% trans "My Patient" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Queue" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "My Schedule" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                  <a class="dropdown-item" href="{% url 'careline:checklist_list' %}">{% trans "Care Line" %}</a>
-                {% endif %}
-                {% if user.employee %}
-                  <a class="dropdown-item" href="#">{% trans "Schedules" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Search" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Events" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Locations" %}</a>
-                {% endif %}
-                {% if user.employee or user.responsible or user.patient or user.doctor %}
-                  <a class="dropdown-item" href="{% url 'appointments:list_appointments' %}">{% trans "Appointments" %}</a>
-                  <div class="dropdown-divider"></div>
-                {% endif %}
-                  <a class="dropdown-item" href="{% url 'users:update' %}">{% trans "Edit Profile" %}</a>
-                  <a class="dropdown-item" href="#">{% trans "Help" %}</a>
-                  <a class="dropdown-item text-danger" href="{% url 'account_logout' %}"">{% trans "Log out" %}</a>
-              </div>
-            </div>
-            {% else %}
-              <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_login' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign in" %}</strong></button></a>
-              </li>
-              <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_signup' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign up" %}</strong></button></a>
-              </li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </nav>
-    {% endblock navbar %}
 
-
-    {% if messages %}
-      {% for message in messages %}
-          <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
-
-
-    <div class="content content-margin">
-      {% block content %}
-      {% endblock content %}
-    </div>
-        <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-       <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h4 class="text-uppercase mb-4">CRIS DOWN</h4>
-            <p class="lead">
-              {% trans "Centro de Referência Interdisciplinar em Síndrome de Down" %}
-              <br>{% trans "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte" %}
-              <br>{% trans "Phone: 3325-4219" %}
-            </p>
+    <!-- Large modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-vaccine">
+        <div class="modal-content">
+          <div class="modal-body">
+          {% include "core/vaccine_schedule.html" %}
           </div>
         </div>
       </div>
-    </footer>
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>{% trans "Copyright &copy; Dr. Down 2018" %}</small>
-      </div>
     </div>
+
+    <!-- Navigation -->
+    {% block navbar %}
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <div class="container">
+          <li class="navbar-brand ml-4 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
+          {% if request.user.photo %}
+            <img class="center" src="{{ request.user.photo.url }}" width="100px" >
+          {% else %}
+            <img class="center" src="{% static 'users/img/user.png' %}" width="100px" >
+          {% endif %}
+          <h5 class="text-primary text-center mt-2">{{request.user.username}}</h5>
+        </div>
+
+        <hr class="star">
+
+        <ul class="sidebar-nav">
+
+          <li><a href="{% url 'users:detail' request.user.username %}">
+            {% trans "My Profile" %}
+          </a></li>
+
+          {% if not user.healthteam %}
+          <li class="dropdown">
+            <a href="#appointments" data-toggle="collapse" aria-expanded="false" >
+              {% trans "Appointments" %}
+            </a>
+            <ul class="collapse list-unstyled" id="appointments" data-collapse-group="collapse-group">
+              <li><a href="{% url 'appointments:list_appointments' %}">
+                {% trans "Scheduled" %}
+              </a></li>
+              <li><a href="{% url 'appointments:list_requests' %}">
+                {% trans "Requests" %}
+              </a></li>
+            </ul>
+          </li>
+          {% endif %}
+
+          {% if user.healthteam %}
+            <li><a href="{% url 'appointments:list_appointments' %}" >
+              {% trans "Appointments" %}
+            </a></li>
+            <li><a href="{% url 'users:healthteam_patient_list' %}">
+              {% trans "My Patients" %}
+            </a></li>
+            <li><a href="#">
+              {% trans "My Schedule" %}
+            </a></li>
+
+          {% elif user.patient %}
+            <li class="dropdown">
+              <a href="#medicalhistory" data-toggle="collapse" aria-expanded="false" >
+                {% trans "Medical History" %}
+              </a>
+              <ul class="collapse list-unstyled" id="medicalhistory" data-collapse-group="collapse-group">
+                <li><a href="{% url 'medicalrecords:list_medicalrecords' request.user.username  %}">
+                  {% trans "Medical Record" %}
+                </a></li>
+                <li><a href="{% url 'careline:checklist_detail' request.user.username  %}">
+                  {% trans "Care Line" %}
+                </a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#vaccines-pat" data-toggle="collapse" aria-expanded="false" >
+                {% trans "Vaccines" %}
+              </a>
+              <ul class="collapse list-unstyled" id="vaccines-pat" data-collapse-group="collapse-group">
+                <li><a href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
+                  {% trans "Calendar" %}
+                </a></li>
+                <li><a href="{% url 'core:locations' %}">
+                  {% trans "Health Centers" %}
+                </a></li>
+              </ul>
+            </li>
+
+          {% elif user.responsible %}
+            {% for patient in request.user.responsible.patient_set.all %}
+              {% if forloop.revcounter == 1%}
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
+                    {{patient.user.name}}
+                  </a></li>
+              {% else %}
+              <li class="dropdown">
+                <a href="#patient" data-toggle="collapse" aria-expanded="false" >
+                  {% trans " My Patients" %}
+                </a>
+                <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
+                    {% trans "Medical Record" %}
+                  </a></li>
+
+                </ul>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="dropdown">
+              <a href="#vaccine-resp" data-toggle="collapse" aria-expanded="false" >
+                {% trans "Vaccines" %}
+              </a>
+              <ul class="collapse list-unstyled" id="vaccine-resp" data-collapse-group="collapse-group">
+                <li><a href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">
+                  {% trans "Calendar" %}
+                </a></li>
+                <li><a href="{% url 'core:locations' %}">
+                  {% trans "Health Centers" %}
+                  </a></li>
+              </ul>
+            </li>
+
+          {% elif user.employee %}
+            <li><a href="{% url 'users:healthteam_patient_list' %}">
+              {% trans "Patients" %}
+            </a></li>
+
+          {% endif %}
+
+            <li><a href="{% url 'forum:list_categories' %}">{% trans "Forums" %}</a></li>
+            <li><a href="#">{% trans "Events" %}</a></li>
+            <li><a href="#">{% trans "Help" %}</a></li>
+            <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
+        </ul>
+      </div>
+
+        <!-- Logout Modal -->
+        <div class="modal fade" id="logout" role="dialog">
+          <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">{% trans 'Log out' %}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>{% trans 'Are you sure you want to log out?' %}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Cancel' %}</button>
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                  {% endif %}
+                  <button class="btn btn-danger float-right" type="submit">{% trans 'Log Out' %}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <!-- Page Content -->
+      <wrapper class="d-flex flex-column">
+        <a href="#menu-toggle" class="btn fa fa-bars" id="menu-toggle"></a>
+        <div class="flex-fill out-sidebar-content">
+          {% block content %}
+          {% endblock content %}
+        </div>
+
+        <!-- Footer -->
+        <div class="copyright py-4 text-center text-white">
+          <div class="container">
+            <small>{% trans "Copyright &copy; Dr. Down 2018" %}</small>
+          </div>
+        </div>
+      </wrapper>
+    </div>
+    {% endblock navbar %}
+
+
+
+
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
       <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
         <i class="fa fa-chevron-up"></i>
       </a>
     </div>
+
     {% block modal %}{% endblock modal %}
+
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -169,13 +252,25 @@
 
       <!-- Your stuff: Third-party javascript libraries go here -->
       <!-- place project specific Javascript in this file -->
-      <script src="{% static 'core/js/project.js' %}"></script>
       <script src="{% static 'core/homepage/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'core/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Plugin JavaScript -->
       <script src="{% static 'core/homepage/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
       <!-- Custom scripts for this template -->
       <script src="{% static 'core/homepage/js/freelancer.min.js' %}"></script>
+      <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+      </script>
+      <script>
+        $("[data-collapse-group]").on('show.bs.collapse', function () {
+          var $this = $(this);
+          var thisCollapseAttr = $this.attr('data-collapse-group');
+          $("[data-collapse-group='" + thisCollapseAttr + "']").not($this).collapse('hide');
+        });
+      </script>
     {% endblock javascript %}
   </body>
 </html>

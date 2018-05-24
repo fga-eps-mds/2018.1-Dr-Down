@@ -40,11 +40,12 @@
 <div class="container">
 
   <div class="row justify-content-between mb-3">
-    <div class="col-7 col-md ">
-       <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
+    <div class="ml-4">
+      <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
     </div>
-    <div class="col-auto float-right mr-0">
-        <a href="{% url 'users:patient_medical_sheet' view.kwargs.username  %}" class="btn btn-secondary" >{% trans "Return" %}</a>
+    <div class="float-right mr-4">
+      <a href="{% url 'careline:checklist_detail' related_patient.user.username %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">{% trans "Checklist" %}</a>
+      <i class="fa fa-angle-double-right" style="font-size:25px;"></i>
     </div>
   </div>
 
@@ -73,13 +74,14 @@
 
       <div class="tab-content">
         <div id="home" class="tab-pane fade">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center ">
             <div class="col-auto">
                 {% if related_patient.user.photo %}
                     <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
                 {% else %}
                     <img src="{% static 'users/img/user.png' %}" class="align-photo">
                 {% endif %}
+                <div class="row"><br></div>
             </div>
 
             <div class="col border-left">
@@ -90,12 +92,6 @@
               </div>
 
               <div class="row">
-                <label class="col"><strong>{% trans 'SUS: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.sus_number }} </div>
-              </div>
-
-              <div class="row">
                 <label class="col"><strong>{% trans 'Birthday: '%}</strong></label>
                 <div class="w-100"></div>
                 <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.user.birthday }}</div>
@@ -103,9 +99,34 @@
 
               {% if related_patient.user.cpf %}
                 <div class="row">
-                    <label ><strong>{% trans 'cpf: '%}</strong></label>{{ related_patient.cpf }}
+                    <label ><strong>{% trans 'CPF: '%}</strong></label>{{ related_patient.cpf }}
                 </div>
               {% endif %}
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'SUS: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.sus_number }} </div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'SES: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.ses }}</div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'Civil Registry of Birth: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.civil_registry_of_birth}}</div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'Declaration of Live Birth: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.declaration_of_live_birth }}</div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -344,6 +365,7 @@
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComplaint{{complaint.id}}">
                           {% trans 'Author'%}: {{ complaint.author.user.name }} | {% trans 'Complaint day'%}: {{ complaint.complaint_day }}
+                          <i class="fa fa-angle-down ml-2" style="font-size:24px"></i>
                       </button>
                     </h5>
                   </div>

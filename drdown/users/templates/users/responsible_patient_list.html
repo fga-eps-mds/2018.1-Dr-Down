@@ -5,14 +5,14 @@
 {% block content %}
 <div class="container">
     <h2 class="text-tertiary">{% trans "Select a patient" %}</h2>
-    
+
     <div class="list-group">
 
         {% for patient in object_list %}
-            <a href= "{% url 'users:patient_medical_sheet' patient.user.username  %}" class=" h-blue list-group-item" >
-            
+            <a href="{% url 'careline:checklist_detail' patient.user.username  %}" class="btn btn-secondary mx-1 my-1" >{% trans "Checklist" %}</a>
+
                 <div class="d-flex w-10 justify-content-start">
-                        
+
                     {% if patient.user.photo %}
                         <img class="d-flex mr-3 rounded-circle" src="{{patient.user.photo.url}}" height="80px" width="80px">
                     {% else %}
@@ -30,7 +30,7 @@
                 <h4>{% trans 'There are no patients for this user.'%}</h4>
             {% endfor %}
 
-        
+
     </div>
 </div>
 {% endblock content %}

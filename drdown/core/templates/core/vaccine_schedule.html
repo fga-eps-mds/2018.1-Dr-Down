@@ -1,36 +1,25 @@
-{% extends "core/base.html" %}
 {% load static %}
 {% load i18n %}
-{% block css %}
-	<link href="{% static 'core/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  	<!-- Custom fonts for this template -->
-    <link href="{% static 'core/homepage/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-  	<!-- Custom styles for this template -->
-  	<link href="{% static 'core/homepage/css/freelancer.css' %}" rel="stylesheet">
-  	<link href="{% static 'core/css/home.css' %}" rel="stylesheet">
-	<link href="{% static 'core/css/vaccineshedule.css' %}" rel="stylesheet">
-{% endblock css %}
 
-{% block content %}
-<div class="mt-13">
-	<center><h2 class="text-tertiary">{% trans "Vaccine Schedule" %}</h2></center>
-	<a class="float-right mr-3 lead border pl-2 pr-2 hover-yellow text-blue-1" href="{% url 'core:locations' %}">{% trans "Vaccination Locations" %}</a>
-	<hr class="star-dark bg-star-white">
+<div class="mt-2">
+	<h2 class="text-center text-tertiary">{% trans "Vaccine Schedule" %}</h2>
+	<button class="float-right mr-3 btn btn-danger" data-dismiss="modal">{% trans "Close" %}</button>
+	<hr class="center-block star-dark bg-star-white">
 </div>
 <div class="mb-3">
 	<ul class="nav nav-tabs nav-tabs-extension nav-fill">
 	    <li class="nav-item active border border-light">
-	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top" data-toggle="tab" href="#nav-home" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
+	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top" style="text-decoration:underline;" data-toggle="tab" href="#nav-home" aria-controls="nav-home" aria-selected="true">{% trans 'OF BIRTH TO THE 6 YEARS OF AGE'%}</a>
 	    </li>
 	    <li class="nav-item border border-light">
-	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#nav-profile">{% trans 'FROM 9 YEARS OLD'%}</a>
+	        <a class="nav-link nav-link-extension py-3 px-2 rounded-top" style="text-decoration:underline;" data-toggle="tab" href="#nav-profile">{% trans 'FROM 9 YEARS OLD'%}</a>
 	    </li>
 	</ul>
 </div>
 
-<div class="tab-content nav-item" id="nav-tabContent">
+<img class="rounded mx-auto d-block mt-5 mb-5 size-sm" src="/static/core/images/Subtitle.png">
+
+<div class="tab-content nav-item" id="nav-tabContent" style="font-size:12px;">
   	<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 		<div class="table-responsive">
 			<table class="table table-bordered table-striped">
@@ -392,6 +381,5 @@
 		</div>
 	</div>
 </div>
-<img class="rounded mx-auto d-block mt-5 mb-5 size-sm" src="/static/core/images/Subtitle.png">
 
-{% endblock content %}
+
