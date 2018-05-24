@@ -13,6 +13,7 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from unittest.mock import *
+from ..models.model_risk import Risk
 
 
 class TestViewMedicalRecords(TestCase):
@@ -295,3 +296,4 @@ class TestViewMedicalRecords(TestCase):
         self.assertEqual(self.medicine.__str__(), 'teste_2 - Neosaldina')
 
         self.assertEqual(self.staticdata.__str__(), 'teste_2')
+        self.assertEqual(self.patient.risk.__str__(),'teste_2 - Risks')
