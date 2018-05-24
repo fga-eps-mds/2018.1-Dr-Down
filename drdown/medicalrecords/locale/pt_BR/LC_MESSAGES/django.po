@@ -27,7 +27,6 @@ msgstr "Prontuário"
 
 #: drdown/medicalrecords/models/model_complaint.py:12
 #: drdown/medicalrecords/models/model_medical_record.py:14
-
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:151
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:170
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:385
@@ -369,7 +368,6 @@ msgstr " Linha de cuidado"
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:56
 msgid "Patient data"
 msgstr "Dados do paciente"
-
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:59
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:136

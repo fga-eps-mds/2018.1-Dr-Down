@@ -250,7 +250,7 @@ class TestPatientListViewSelector(TestCase):
 
     def test_get_redirect_for_patient(self):
         """
-            Test if a patient is redirected for its medical follow-up sheet when accessing the  List View
+            Test if a patient is redirected for its profile when accessing the  List View
         """
 
         self.client.force_login(self.user_patient1)
@@ -263,7 +263,7 @@ class TestPatientListViewSelector(TestCase):
         )
 
         url = reverse(
-            viewname='users:patient_medical_sheet',
+            viewname='users:detail',
             kwargs={'username': self.user_patient1.username}
         )
 

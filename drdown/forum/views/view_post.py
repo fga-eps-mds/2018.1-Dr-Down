@@ -1,5 +1,6 @@
 from ..models.model_post import Post
 from ..models.model_category import Category
+from .view_base import BaseViewTemplate
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import DeleteView
@@ -9,7 +10,7 @@ from django.utils import timezone
 from drdown.forum.form.forum_forms import PostForm
 
 
-class PostListView(ListView):
+class PostListView(BaseViewTemplate, ListView):
     model = Post
     paginate_by = 20
 
@@ -27,7 +28,7 @@ class PostListView(ListView):
         return queryset
 
 
-class PostCreateView(CreateView):
+class PostCreateView(BaseViewTemplate, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'forum/form_post.html'
@@ -57,7 +58,7 @@ class PostCreateView(CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-class PostDeleteView (DeleteView):
+class PostDeleteView (BaseViewTemplate, DeleteView):
     model = Post
 
     def get_success_url(self, **kwargs):
@@ -77,7 +78,7 @@ class PostDeleteView (DeleteView):
         return post
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(BaseViewTemplate, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'forum/form_post.html'

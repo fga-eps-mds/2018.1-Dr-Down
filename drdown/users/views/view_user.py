@@ -15,7 +15,7 @@ from ..forms.users_forms import PatientSearchForm
 
 class PatientFilter(BaseFilter):
     search_fields = {
-       'list_patient': ['id'],
+       'list_patient': ['user__name'],
     }
 
 
@@ -137,9 +137,8 @@ class PatientListViewSelector(RedirectView):
     def get(self, request, *args, **kwargs):
 
         if hasattr(request.user, 'patient'):
-            # redirect user_patient to the its medical sheet view
             url = reverse(
-                viewname='users:patient_medical_sheet',
+                viewname='users:detail',
                 kwargs={'username': request.user.username}
             )
             return redirect(url)
@@ -220,10 +219,3 @@ class HealthTeamPatientListView(SearchListView):
             return redirect(url)
 
         return super().get(request, *args, **kwargs)
-
-
-class PatientDetailView(DetailView):
-    model = Patient
-    template_name = 'users/patient_detail.html'
-    slug_url_kwarg = 'username'
-    slug_field = 'user__username'

@@ -46,9 +46,4 @@ urlpatterns = [
         view=views.HealthTeamPatientListView.as_view(),
         name='healthteam_patient_list'
     ),
-    url(
-        regex=r'^~patients/(?P<username>[\w.@+-]+)$',
-        view=views.PatientDetailView.as_view(),
-        name='patient_medical_sheet'
-    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

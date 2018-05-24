@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-04 10:24+0000\n"
+"POT-Creation-Date: 2018-05-23 18:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,27 +45,28 @@ msgid "Category"
 msgstr "Categoria"
 
 #: drdown/forum/models/model_category.py:28
-#: drdown/forum/templates/forum/category_list.html:7
-#: drdown/forum/templates/forum/commentary_list.html:16
-#: drdown/forum/templates/forum/form_commentary.html:9
-#: drdown/forum/templates/forum/form_post.html:9
+#: drdown/forum/templates/forum/category_list.html:3
+#: drdown/forum/templates/forum/category_list.html:9
+#: drdown/forum/templates/forum/commentary_list.html:18
 #: drdown/forum/templates/forum/post_list.html:10
 msgid "Categories"
 msgstr "Categorias"
 
 #: drdown/forum/models/model_commentary.py:9
 #: drdown/forum/models/model_post.py:14
+#: drdown/forum/templates/forum/form_commentary.html:14
+#: drdown/forum/templates/forum/form_post.html:15
 msgid "Message"
 msgstr "Mensagem"
 
 #: drdown/forum/models/model_commentary.py:16
 #: drdown/forum/models/model_post.py:45
-#: drdown/forum/templates/forum/form_commentary.html:28
-#: drdown/forum/templates/forum/form_post.html:27
+#: drdown/forum/templates/forum/form_commentary.html:15
+#: drdown/forum/templates/forum/form_post.html:16
 #: drdown/forum/templates/forum/post_confirm_delete.html:5
 #: drdown/forum/templates/forum/post_list.html:26
 msgid "Post"
-msgstr ""
+msgstr "Post"
 
 #: drdown/forum/models/model_commentary.py:19
 #: drdown/forum/models/model_post.py:25
@@ -105,6 +106,7 @@ msgid "Commentaries"
 msgstr "Comentários"
 
 #: drdown/forum/models/model_post.py:9
+#: drdown/forum/templates/forum/form_post.html:14
 msgid "Title"
 msgstr "Título"
 
@@ -117,83 +119,94 @@ msgid "Message of post"
 msgstr "Mensagem do post"
 
 #: drdown/forum/models/model_post.py:46
-#: drdown/forum/templates/forum/commentary_list.html:4
-#: drdown/forum/templates/forum/commentary_list.html:17
-#: drdown/forum/templates/forum/form_commentary.html:10
-#: drdown/forum/templates/forum/form_post.html:10
+#: drdown/forum/templates/forum/commentary_list.html:6
+#: drdown/forum/templates/forum/commentary_list.html:19
 #: drdown/forum/templates/forum/post_list.html:3
 #: drdown/forum/templates/forum/post_list.html:11
 #: drdown/forum/templates/forum/post_list.html:20
 msgid "Posts"
 msgstr "Posts"
 
-#: drdown/forum/templates/forum/category_list.html:3
-msgid "Care ine"
-msgstr ""
-
-#: drdown/forum/templates/forum/category_list.html:16
+#: drdown/forum/templates/forum/category_list.html:20
 msgid "There are no categories."
 msgstr "Não há categorias"
 
-#: drdown/forum/templates/forum/commentary_confirm_delete.html:8
-#: drdown/forum/templates/forum/commentary_confirm_delete.html:14
-#: drdown/forum/templates/forum/commentary_list.html:28
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:10
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:16
 #: drdown/forum/templates/forum/commentary_list.html:30
-#: drdown/forum/templates/forum/commentary_list.html:80
+#: drdown/forum/templates/forum/commentary_list.html:32
 #: drdown/forum/templates/forum/commentary_list.html:82
-#: drdown/forum/templates/forum/post_confirm_delete.html:8
+#: drdown/forum/templates/forum/commentary_list.html:84
+#: drdown/forum/templates/forum/commentary_list.html:102
+#: drdown/forum/templates/forum/commentary_list.html:134
+#: drdown/forum/templates/forum/post_confirm_delete.html:9
 #: drdown/forum/templates/forum/post_confirm_delete.html:14
 msgid "Delete"
 msgstr "Escluir"
 
-#: drdown/forum/templates/forum/commentary_confirm_delete.html:12
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:14
+#: drdown/forum/templates/forum/commentary_list.html:96
 msgid "Are you sure you want to delete this commentary?"
 msgstr "Tem certeza que deseja excluir esse comentário?"
 
-#: drdown/forum/templates/forum/commentary_confirm_delete.html:13
+#: drdown/forum/templates/forum/commentary_confirm_delete.html:15
+#: drdown/forum/templates/forum/commentary_list.html:99
+#: drdown/forum/templates/forum/commentary_list.html:131
+#: drdown/forum/templates/forum/form_commentary.html:18
+#: drdown/forum/templates/forum/form_post.html:18
 #: drdown/forum/templates/forum/post_confirm_delete.html:13
 msgid "Cancel"
 msgstr "Cancela"
 
-#: drdown/forum/templates/forum/commentary_list.html:24
+#: drdown/forum/templates/forum/commentary_list.html:26
 msgid "New commentary"
 msgstr "Novo comentário"
 
-#: drdown/forum/templates/forum/commentary_list.html:27
-#: drdown/forum/templates/forum/commentary_list.html:79
+#: drdown/forum/templates/forum/commentary_list.html:29
+#: drdown/forum/templates/forum/commentary_list.html:81
 msgid "Edit"
 msgstr "Editar"
 
-#: drdown/forum/templates/forum/commentary_list.html:41
+#: drdown/forum/templates/forum/commentary_list.html:43
 msgid "by"
 msgstr "por"
 
-#: drdown/forum/templates/forum/commentary_list.html:45
-#: drdown/forum/templates/forum/commentary_list.html:74
+#: drdown/forum/templates/forum/commentary_list.html:47
+#: drdown/forum/templates/forum/commentary_list.html:76
 msgid "Updated on"
 msgstr "Atualizado em"
 
-#: drdown/forum/templates/forum/commentary_list.html:48
+#: drdown/forum/templates/forum/commentary_list.html:50
 msgid "Posted on"
 msgstr "Postado em"
 
-#: drdown/forum/templates/forum/commentary_list.html:76
+#: drdown/forum/templates/forum/commentary_list.html:78
 msgid "Created on"
 msgstr "Criado em"
 
-#: drdown/forum/templates/forum/commentary_list.html:90
+#: drdown/forum/templates/forum/commentary_list.html:92
+#: drdown/forum/templates/forum/commentary_list.html:124
+msgid "Confirm delete"
+msgstr "Confirmar deleção"
+
+#: drdown/forum/templates/forum/commentary_list.html:115
 msgid "There are no comments yet."
 msgstr "Ainda não há comentários."
 
-#: drdown/forum/templates/forum/form_commentary.html:4
-#: drdown/forum/templates/forum/form_commentary.html:12
-#: drdown/forum/templates/forum/form_commentary.html:16
+#: drdown/forum/templates/forum/commentary_list.html:128
+msgid "Are you sure you want to delete"
+msgstr "Você tem certeza que deseja deletar "
+
+#: drdown/forum/templates/forum/form_commentary.html:3
+#: drdown/forum/templates/forum/form_post.html:3
+msgid "New Medical Record"
+msgstr "Novo prontuário"
+
+#: drdown/forum/templates/forum/form_commentary.html:10
 msgid "New Commentary"
 msgstr "Novo Comentário"
 
-#: drdown/forum/templates/forum/form_post.html:4
-#: drdown/forum/templates/forum/form_post.html:11
-#: drdown/forum/templates/forum/form_post.html:15
+#: drdown/forum/templates/forum/form_post.html:10
 msgid "New Post"
 msgstr "Nova Postagem"
 

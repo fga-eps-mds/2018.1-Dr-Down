@@ -9,7 +9,6 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-24 02:04+0000\n"
-
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: drdown/appointments/forms/appointments_form.py:11
-
 #: drdown/appointments/forms/requests_form.py:10
 #: drdown/appointments/forms/requests_form.py:12
 #: drdown/appointments/models/model_appointment.py:40
@@ -43,7 +41,6 @@ msgstr "Data"
 #: drdown/appointments/forms/appointments_form.py:18
 msgid "Year"
 msgstr "Ano"
-
 
 #: drdown/appointments/forms/appointments_form.py:18
 msgid "Month"
@@ -77,8 +74,6 @@ msgstr "Médico"
 #: drdown/appointments/templates/appointments/request_list.html:31
 msgid "Patient"
 msgstr "Paciente"
-
-
 
 #: drdown/appointments/models/model_appointment.py:11
 msgid "Date of appointment"
@@ -337,7 +332,6 @@ msgstr "Pedido"
 #: drdown/appointments/models/model_request.py:141
 #: drdown/appointments/templates/appointments/appointment_list.html:15
 #: drdown/appointments/templates/appointments/appointment_list.html:17
-
 #: drdown/appointments/templates/appointments/request_list.html:9
 #: drdown/appointments/templates/appointments/request_list.html:17
 msgid "Requests"
@@ -508,7 +502,6 @@ msgstr "Aceitar"
 #: drdown/appointments/templates/appointments/request_list.html:56
 msgid "Decline"
 msgstr "Recusar"
-
 
 #: drdown/appointments/templates/appointments/request_list.html:51
 msgid "Confirm delete"

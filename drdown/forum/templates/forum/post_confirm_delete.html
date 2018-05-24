@@ -1,18 +1,17 @@
-{% extends "account/base.html" %}
+{% extends view.get_template %}
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Post" %}{% endblock %}
+{% block title %}{% trans "Post" %}{% endblock %}
 
-{% block inner %}
-<h1>{% trans "Delete" %}</h1>
-
-<form method="post" action="">
-  {% csrf_token %}
-  <p>{% trans 'Are you sure you want to delete ' %}{{ post.title }} ?</p>
-  <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
-  <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
-</form>
-
-
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  <h1>{% trans "Delete" %}</h1>
+  <form method="post" action="">
+    {% csrf_token %}
+    <p>{% trans 'Are you sure you want to delete ' %}{{ post.title }} ?</p>
+    <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+    <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+  </form>
+</div><br/><br/>
 {% endblock %}
