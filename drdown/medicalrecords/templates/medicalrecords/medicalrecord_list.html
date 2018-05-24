@@ -70,6 +70,11 @@
         <li class="nav-item">
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu5">{% trans "Complaints" %}</a>
         </li>
+        {% if user.healthteam or user.employee %}
+        <li class="nav-item">
+            <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu6">{% trans "Risks" %}</a>
+        </li>
+        {% endif %}
       </ul>
 
       <div class="tab-content">
@@ -394,6 +399,44 @@
               {% endfor %}
             </div>
           </div>
+        </div>
+
+        <div id="menu6" class="tab-pane fade">
+          <div class="row">
+            <h3 class="col mb-5">{% trans 'Risks' %}</h3>
+            {% if user.healthteam %}
+                <div class="col">
+                    <a href="{% url 'medicalrecords:update_risk'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "Edit" %}</a>
+                </div>
+            {% endif %}
+          </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk general practitioner: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk pediatrics: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_general_practitioner }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_pediatrics }} </div>
+          </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk cardiology: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk neurology: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_cardiology }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_neurology }} </div>
+          </div>
+
+          <div class="row">
+            <label class="col"> <strong>{% trans 'Risk speech theraphy: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk psychology: '%} </strong> </label>
+            <label class="col"> <strong>{% trans 'Risk physiotherapy: '%} </strong> </label>
+            <div class="w-100"></div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_speech_theraphy }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_psychology }} </div>
+            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_physiotherapy }} </div>
+          </div>
+
         </div>
       </div>
     </div>

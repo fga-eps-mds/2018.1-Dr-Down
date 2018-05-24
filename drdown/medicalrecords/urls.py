@@ -4,13 +4,14 @@ from drdown.medicalrecords.forms.medicalrecords_forms import MedicalRecordForm
 from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
 from drdown.medicalrecords.forms.medicines_forms import MedicineForm
 from drdown.medicalrecords.forms.complaint_forms import ComplaintForm
+from drdown.medicalrecords.forms.risk_forms import RiskForm
 from drdown.medicalrecords.views import view_medical_record, view_static_data,\
-    view_medicines, view_complaint, view_exams
+    view_medicines, view_complaint, view_exams, view_risk
 
 app_name = 'medicalrecords'
 urlpatterns = [
     url(
-        regex=r'list/(?P<username>[\w.@+-]+)$',
+        regex=r'list/(?P<username>[\w.@+-]+)/$',
         view=view_medical_record.MedicalRecordsList.as_view(),
         name='list_medicalrecords'
     ),
@@ -67,6 +68,11 @@ urlpatterns = [
         view=view_medicines.MedicinesUpdateView.as_view(
             form_class=MedicineForm),
         name='update_medicine'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/risk/edit/$',
+        view=view_risk.RiskUpdateView.as_view(),
+        name='update_risk'
     ),
 
 ]

@@ -91,7 +91,6 @@ def create_patient(user, n, responsible):
         Patient.objects.create(
             ses='11234561'+str(n),
             user=user,
-            priority=1,
             mother_name="Janaína Roussef",
             father_name="João das neves",
             ethnicity=3,

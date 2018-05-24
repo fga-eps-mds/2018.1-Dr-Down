@@ -14,6 +14,32 @@
       <a href="{% url 'appointments:create_request' %}" class="btn btn-secondary mt-1 float-right mr-3">{% trans "New Request" %}</a>
     {% endif %}
     <h2>{% trans 'Requests' %}</h2><hr>
+
+
+    {% url 'appointments:list_requests' as url %}
+   {% if request.path == url %}
+     <div id="search">
+       <form class="form-inline" action="" method="GET">
+         <select name="search_speciality" id="id_search_speciality">
+           <option value="" selected>{% trans 'Speciality' %}</option>
+           <option value="SPEECH THERAPY">{% trans 'Speech Theraphy' %}</option>
+           <option value="PSYCHOLOGY">{% trans 'Psychology' %}</option>
+           <option value="PHYSIOTHERAPY">{% trans 'Physiotherapy' %}</option>
+           <option value="OCCUPATIONAL THERAPY">{% trans 'Occupational Therapy' %}</option>
+           <option value="GENERAL PRACTITIONER">{% trans 'General Practitioner' %}</option>
+           <option value="CARDIOLOGY">{% trans 'Cardiology' %}</option>
+           <option value="NEUROLOGY">{% trans 'Neurology' %}</option>
+           <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
+         </select>
+         <input type="text" style="max-width: 180px;" name="search_doctor" placeholder="{% trans 'Doctor' %}" id="id_search_doctor" />
+         <input type="text" style="max-width: 180px;" name="search_patient" placeholder="{% trans 'Patient' %}" id="id_search_patient" />
+
+         <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
+
+       </form>
+     </div>
+   {% endif %}
+
     {% for appointmentrequest in appointmentrequest_list %}
       <div class="media mb-2 media-body dialogalog body border-top border-bottom" id="request">
         <div class="message" style="width:98%">
@@ -37,6 +63,9 @@
             <font size="2" >{% trans 'Motive'%}: {{appointmentrequest.motive}}</font><br>
           {% endif %}
           <font size="2" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}}</font><br>
+          {% if request.user.employee %}
+            <font size="2" >{% trans 'Risk'%}: {{appointmentrequest.get_risk_display}}</font><br>
+          {% endif %}
           {% if appointmentrequest.observation %}
             <font size="2" >{% trans 'Observation'%}: {{appointmentrequest.observation}}</font><br>
           {% endif %}

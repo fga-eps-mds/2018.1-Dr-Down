@@ -23,7 +23,6 @@ class TestViewAppointment(TestCase):
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user,
-            priority=1,
             mother_name="Mother",
             father_name="Father",
             ethnicity=3,
@@ -284,4 +283,3 @@ class TestViewAppointment(TestCase):
             data=data,
             follow=True)
         self.assertEquals(response.status_code, 200)
-

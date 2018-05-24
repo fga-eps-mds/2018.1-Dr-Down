@@ -36,7 +36,6 @@ class TestViewChecklistDetailView(TestCase):
         Patient.objects.create(
             ses="1234567",
             user=self.user_patient1,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
@@ -56,7 +55,6 @@ class TestViewChecklistDetailView(TestCase):
         Patient.objects.create(
             ses="1234213",
             user=self.user_patient2,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
