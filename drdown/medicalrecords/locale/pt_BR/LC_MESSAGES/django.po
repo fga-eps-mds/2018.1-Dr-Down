@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-24 12:13+0000\n"
+"POT-Creation-Date: 2018-05-24 18:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,7 @@ msgstr "Hora da queixa"
 #: drdown/medicalrecords/models/model_exams.py:13
 #: drdown/medicalrecords/models/model_medical_record.py:22
 #: drdown/medicalrecords/models/model_medicines.py:12
-#: drdown/medicalrecords/models/model_risk.py:10
+#: drdown/medicalrecords/models/model_risk.py:11
 #: drdown/medicalrecords/models/model_static_data.py:13
 msgid "Patient"
 msgstr "Paciente"
@@ -197,88 +197,90 @@ msgstr "Tempo entre usos"
 msgid "Patient Medicine"
 msgstr "Remédio do Paciente"
 
-#: drdown/medicalrecords/models/model_risk.py:14
+#: drdown/medicalrecords/models/model_risk.py:15
 msgid "Not urgent"
 msgstr "Não urgente"
 
-#: drdown/medicalrecords/models/model_risk.py:15
+#: drdown/medicalrecords/models/model_risk.py:16
 msgid "Not very urgent"
 msgstr "Não muito urgente"
 
-#: drdown/medicalrecords/models/model_risk.py:16
+#: drdown/medicalrecords/models/model_risk.py:17
 msgid "Urgent"
 msgstr "Urgente"
 
-#: drdown/medicalrecords/models/model_risk.py:17
+#: drdown/medicalrecords/models/model_risk.py:18
 msgid "Very urgent"
 msgstr "Muito urgente"
 
-#: drdown/medicalrecords/models/model_risk.py:18
+#: drdown/medicalrecords/models/model_risk.py:19
 msgid "Emerging"
 msgstr "Emergencial"
 
-#: drdown/medicalrecords/models/model_risk.py:21
+#: drdown/medicalrecords/models/model_risk.py:22
 msgid "Speech Therapy Priority"
-msgstr "Prioridade de Fonoaudiologia"
+msgstr "Prioridade Fonoaudiológica"
 
-#: drdown/medicalrecords/models/model_risk.py:23
+#: drdown/medicalrecords/models/model_risk.py:24
+#, fuzzy
+#| msgid "Please, insert the degree of speech therapy priority of the patient"
 msgid "Please, insert the degree of speech therapy priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
-
-#: drdown/medicalrecords/models/model_risk.py:27
-msgid "Psychology Priority"
-msgstr "Prioridade de Psicologia"
+msgstr "Por favor, insira o grau de prioridade fonoaudiológica do paciente"
 
 #: drdown/medicalrecords/models/model_risk.py:29
+msgid "Psychology Priority"
+msgstr "Prioridade Psicológica"
+
+#: drdown/medicalrecords/models/model_risk.py:31
 msgid "Please, insert the degree of psychology priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
+msgstr "Por favor, insira o grau de prioridade psicológica do paciente"
 
-#: drdown/medicalrecords/models/model_risk.py:33
+#: drdown/medicalrecords/models/model_risk.py:36
 msgid "Physiotherapy Priority"
-msgstr "Priodade de Fisioterapia"
+msgstr "Priodade Fisioterapêutica"
 
-#: drdown/medicalrecords/models/model_risk.py:35
+#: drdown/medicalrecords/models/model_risk.py:38
 msgid "Please, insert the degree of physiotherapy priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
+msgstr "Por favor, insira o grau de prioridade fisioterapêutica do paciente"
 
-#: drdown/medicalrecords/models/model_risk.py:39
+#: drdown/medicalrecords/models/model_risk.py:43
 msgid "Cardiology Priority"
-msgstr "Prioridade de Cardiologia"
-
-#: drdown/medicalrecords/models/model_risk.py:41
-msgid "Please, insert the degree of cardiology priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
+msgstr "Prioridade Cardiológica"
 
 #: drdown/medicalrecords/models/model_risk.py:45
+msgid "Please, insert the degree of cardiology priority of the patient"
+msgstr "Por favor, insira o grau de prioridade cardiológica do paciente"
+
+#: drdown/medicalrecords/models/model_risk.py:50
 msgid "Neurology Priority"
-msgstr "Prioridade de Neurologia"
+msgstr "Prioridade Neurológica"
 
-#: drdown/medicalrecords/models/model_risk.py:47
+#: drdown/medicalrecords/models/model_risk.py:52
 msgid "Please, insert the degree of neurology priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
-
-#: drdown/medicalrecords/models/model_risk.py:51
-msgid "Pediatrics Priority"
-msgstr "Prioridade de Pediatria"
-
-#: drdown/medicalrecords/models/model_risk.py:53
-msgid "Please, insert the degree of pediatrics priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
+msgstr "Por favor, insira o grau de prioridade neurológica do paciente"
 
 #: drdown/medicalrecords/models/model_risk.py:57
-msgid "General Practitioner Priority"
-msgstr "Prioridade de Clínico Geral"
+msgid "Pediatrics Priority"
+msgstr "Prioridade Pediátrica"
 
 #: drdown/medicalrecords/models/model_risk.py:59
-msgid ""
-"Please, insert the degree of general practitioner priority of the patient"
-msgstr "Por favor, insira a categoria do exame"
+msgid "Please, insert the degree of pediatrics priority of the patient"
+msgstr "Por favor, insira o grau de prioridade pediátrica do paciente"
 
 #: drdown/medicalrecords/models/model_risk.py:64
+msgid "General Practitioner Priority"
+msgstr "Prioridade Geral"
+
+#: drdown/medicalrecords/models/model_risk.py:66
+msgid ""
+"Please, insert the degree of general practitioner priority of the patient"
+msgstr "Por favor, insira o grau de prioridade geral do paciente"
+
+#: drdown/medicalrecords/models/model_risk.py:72
 msgid "Risk"
 msgstr "Risco"
 
-#: drdown/medicalrecords/models/model_risk.py:65
+#: drdown/medicalrecords/models/model_risk.py:73
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:74
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:384
 msgid "Risks"
@@ -536,7 +538,7 @@ msgstr "Editar Risco"
 msgid "Submit"
 msgstr "Enviar"
 
-#: drdown/medicalrecords/tests/test_medical_records_view.py:129
+#: drdown/medicalrecords/tests/test_medical_records_view.py:130
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
