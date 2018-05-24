@@ -1,13 +1,11 @@
-
-@page {
-  size: 7in 9.25in;
+.w-100{
+	width: 100%;
 }
 
-.fix-top {
-  top:50px;
-  position:sticky;
+.w-30{
+	width: 30%;
 }
 
-.top-bar{
-  background: white;
+.color-white{
+	background-color: white;
 }
