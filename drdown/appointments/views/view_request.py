@@ -36,8 +36,8 @@ class RequestListView(LoginRequiredMixin, SearchListView):
                 patient__in=user.responsible.patient_set.all()
             ).order_by('id')
         elif hasattr(user, 'employee'):
-            queryset = AppointmentRequest.objects.all(
-            ).order_by('id')
+            queryset = AppointmentRequest.objects.filter(
+                ).order_by('risk', 'id')
         else:
             queryset = AppointmentRequest.objects.none()
         return queryset
@@ -60,6 +60,30 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy(
             viewname='appointments:list_requests',
     )
+
+    def form_valid(self, form):
+        speciality = form.instance.speciality
+
+        if speciality == AppointmentRequest.CARDIOLOGY:
+             risk = form.instance.patient.risk.priority_cardiology
+        elif speciality == AppointmentRequest.NEUROLOGY:
+            risk = form.instance.patient.risk.priority_neurology
+        elif speciality == AppointmentRequest.PEDIATRICS:
+            risk = form.instance.patient.risk.priority_pediatrics
+        elif speciality == AppointmentRequest.SPEECH_THERAPHY:
+            risk = form.instance.patient.risk.priority_speech_theraphy
+        elif speciality == AppointmentRequest.PHYSIOTHERAPY:
+            risk = form.instance.patient.risk.priority_physiotherapy
+        elif speciality == AppointmentRequest.PSYCHOLOGY:
+            risk = form.instance.patient.risk.priority_psychology
+        elif speciality == AppointmentRequest.OCCUPATIONAL_THERAPY:
+            risk = form.instance.patient.risk.priority_general_practitioner
+        else:
+            risk = 5
+
+        form.instance.risk = risk
+
+        return super().form_valid(form)
 
 
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
