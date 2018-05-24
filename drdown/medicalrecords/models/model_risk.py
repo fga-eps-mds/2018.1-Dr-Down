@@ -59,3 +59,7 @@ class Risk(models.Model):
       help_text=_("Please, insert the degree of general practitioner priority of the patient"),
       default=5,
     )
+
+    class Meta:
+        verbose_name = _('Risk')
+        verbose_name_plural = _('Risks')
