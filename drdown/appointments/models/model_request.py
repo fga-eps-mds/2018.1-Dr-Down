@@ -119,7 +119,7 @@ class AppointmentRequest(models.Model):
         max_length=20,
         editable=False,
     )
-    
+
     RISKS = (
       (5, _('Not urgent')),
       (4, _('Not very urgent')),
@@ -130,7 +130,7 @@ class AppointmentRequest(models.Model):
     risk = models.IntegerField(
       _('Risk'),
       choices=RISKS,
-      default = 5,
+      default=5,
     )
 
     def __str__(self):

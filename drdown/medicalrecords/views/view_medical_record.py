@@ -64,14 +64,20 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         context['medicines'] = medicines
         context['staticdata'] = staticdata
 
-        context['risk_priority_speech_theraphy'] = patient.risk.get_priority_speech_theraphy_display()
-        context['risk_priority_general_practitioner'] = patient.risk.get_priority_general_practitioner_display()
-        context['risk_priority_pediatrics'] = patient.risk.get_priority_pediatrics_display()
-        context['risk_priority_neurology'] = patient.risk.get_priority_neurology_display()
-        context['risk_priority_cardiology'] = patient.risk.get_priority_cardiology_display()
-        context['risk_priority_physiotherapy'] = patient.risk.get_priority_physiotherapy_display()
-        context['risk_priority_psychology'] = patient.risk.get_priority_psychology_display()
-
+        context['risk_priority_speech_theraphy'] = \
+            patient.risk.get_priority_speech_theraphy_display()
+        context['risk_priority_general_practitioner'] = \
+            patient.risk.get_priority_general_practitioner_display()
+        context['risk_priority_pediatrics'] = \
+            patient.risk.get_priority_pediatrics_display()
+        context['risk_priority_neurology'] = \
+            patient.risk.get_priority_neurology_display()
+        context['risk_priority_cardiology'] = \
+            patient.risk.get_priority_cardiology_display()
+        context['risk_priority_physiotherapy'] = \
+            patient.risk.get_priority_physiotherapy_display()
+        context['risk_priority_psychology'] = \
+            patient.risk.get_priority_psychology_display()
 
         context['medicalrecordlist'] = context['object_list'].filter(
             patient=patient

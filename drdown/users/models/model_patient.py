@@ -171,6 +171,7 @@ def create_procedures(sender, instance, **kwargs):
         apps.get_model('careline', 'Checklist') \
             .objects.create(patient=instance)
 
+
 @receiver(post_save, sender=Patient)
 def create_risk(sender, instance, **kwargs):
     if not hasattr(instance, 'risk'):
