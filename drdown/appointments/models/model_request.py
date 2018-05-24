@@ -120,6 +120,8 @@ class AppointmentRequest(models.Model):
         editable=False,
     )
 
+    risk = models.IntegerField(default=0)
+
     def __str__(self):
         return _('Appointment request of ') + self.patient.user.name
 
