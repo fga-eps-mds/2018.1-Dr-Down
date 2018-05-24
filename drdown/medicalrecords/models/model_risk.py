@@ -21,16 +21,16 @@ class Risk(models.Model):
     priority_speech_theraphy = models.IntegerField(
       _('Speech Therapy Priority'),
       choices=PRIORITIES,
-      help_text=_("Please,"
-                  + "insert the degree of" +
-                  "speech therapy priority of the patient"),
+      help_text=_("Please," +
+                  " insert the degree of" +
+                  " speech therapy priority of the patient"),
       default=5,
     )
     priority_psychology = models.IntegerField(
       _('Psychology Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of psychology priority of the patient"),
       default=5,
     )
@@ -38,7 +38,7 @@ class Risk(models.Model):
       _('Physiotherapy Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of physiotherapy priority of the patient"),
       default=5,
     )
@@ -46,7 +46,7 @@ class Risk(models.Model):
       _('Cardiology Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of cardiology priority of the patient"),
       default=5,
     )
@@ -54,7 +54,7 @@ class Risk(models.Model):
       _('Neurology Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of neurology priority of the patient"),
       default=5,
     )
@@ -62,7 +62,7 @@ class Risk(models.Model):
       _('Pediatrics Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of pediatrics priority of the patient"),
       default=5,
     )
@@ -70,7 +70,7 @@ class Risk(models.Model):
       _('General Practitioner Priority'),
       choices=PRIORITIES,
       help_text=_("Please," +
-                  "insert the degree" +
+                  " insert the degree" +
                   " of general practitioner priority of the patient"),
       default=5,
     )
