@@ -63,3 +63,6 @@ class Risk(models.Model):
     class Meta:
         verbose_name = _('Risk')
         verbose_name_plural = _('Risks')
+
+    def __str__(self):
+        return self.patient.user.get_username() + " - " + "Risks"
