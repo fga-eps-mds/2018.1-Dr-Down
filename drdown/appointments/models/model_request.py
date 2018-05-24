@@ -119,8 +119,19 @@ class AppointmentRequest(models.Model):
         max_length=20,
         editable=False,
     )
-
-    risk = models.IntegerField(default=0)
+    
+    RISKS = (
+      (5, _('Not urgent')),
+      (4, _('Not very urgent')),
+      (3, _('Urgent')),
+      (2, _('Very urgent')),
+      (1, _('Emerging')),
+    )
+    risk = models.IntegerField(
+      _('Risk'),
+      choices=RISKS,
+      default = 5,
+    )
 
     def __str__(self):
         return _('Appointment request of ') + self.patient.user.name
