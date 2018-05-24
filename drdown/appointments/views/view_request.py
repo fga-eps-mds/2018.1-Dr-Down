@@ -76,7 +76,7 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
             risk = form.instance.patient.risk.priority_physiotherapy
         elif speciality == AppointmentRequest.PSYCHOLOGY:
             risk = form.instance.patient.risk.priority_psychology
-        elif speciality == AppointmentRequest.OCCUPATIONAL_THERAPY:
+        elif speciality == AppointmentRequest.GENERAL_PRACTITIONER:
             risk = form.instance.patient.risk.priority_general_practitioner
         else:
             risk = 5
