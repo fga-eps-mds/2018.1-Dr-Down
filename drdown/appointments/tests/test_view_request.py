@@ -159,3 +159,215 @@ class TestViewRequest(TestCase):
             data=data,
             follow=True)
         self.assertEquals(response.status_code, 200)
+
+    def test_request_form_valid(self):
+        """
+        Test if risk speciality is the same of request speciality
+        """
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.CARDIOLOGY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.CARDIOLOGY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_cardiology,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.NEUROLOGY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.NEUROLOGY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_neurology,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.PEDIATRICS,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.PEDIATRICS,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_pediatrics,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.SPEECH_THERAPHY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_speech_theraphy,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.PHYSIOTHERAPY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.PHYSIOTHERAPY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_physiotherapy,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.PSYCHOLOGY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.PSYCHOLOGY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_psychology,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.GENERAL_PRACTITIONER,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.GENERAL_PRACTITIONER,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': self.patient.risk.priority_general_practitioner,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+
+        request = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.GENERAL_PRACTITIONER,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.client.force_login(user=self.user3)
+        data = {
+            'speciality': Appointment.OCCUPATIONAL_THERAPY,
+            'doctor': self.doctor.pk,
+            'patient': self.patient.pk,
+            'day': AppointmentRequest.MONDAY,
+            'shift': AppointmentRequest.MORNING,
+            'status': AppointmentRequest.PENDING,
+            'risk': 5,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
