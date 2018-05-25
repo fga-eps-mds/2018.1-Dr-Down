@@ -67,6 +67,7 @@ class AppointmentRequest(models.Model):
     CARDIOLOGY = "Cardiology"
     NEUROLOGY = "Neurology"
     PEDIATRICS = "Pediatrics"
+    GENERAL_PRACTITIONER = "General Practitioner"
 
     SPECIALITY_REQUEST_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),
@@ -76,6 +77,7 @@ class AppointmentRequest(models.Model):
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
+        (GENERAL_PRACTITIONER, _('General Practitioner')),
     )
 
     speciality = models.CharField(
@@ -116,6 +118,19 @@ class AppointmentRequest(models.Model):
         default=PENDING,
         max_length=20,
         editable=False,
+    )
+
+    RISKS = (
+      (5, _('Not urgent')),
+      (4, _('Not very urgent')),
+      (3, _('Urgent')),
+      (2, _('Very urgent')),
+      (1, _('Emerging')),
+    )
+    risk = models.IntegerField(
+      _('Risk'),
+      choices=RISKS,
+      default=5,
     )
 
     def __str__(self):

@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+{% extends user.is_authenticated|yesno:"core/base.html,core/base-nav.html" %}
 {% load static %}
 {% load i18n %}
 
@@ -23,6 +23,17 @@ jQuery(document).ready(function($) {
 {% block title %}{% trans "Down's Syndrome infos" %}{% endblock title %}
 
 {% block content %}
+
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-vaccine">
+    <div class="modal-content">
+      <div class="modal-body">
+      {% include "core/vaccine_schedule.html" %}
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="mb-0 sumary marginl-1">
   <div class="container border-blue pt-4 pb-4" id="sumary">
@@ -139,7 +150,7 @@ jQuery(document).ready(function($) {
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
               <p class="lead">
-                <p><a class="lead hover-yellow text-blue-1 link" href="{% url 'core:vaccine' %}">{% trans "Vaccine Schedule" %}</a></p>
+                <p><a class="lead hover-yellow text-blue-1 link" href=".bd-example-modal-lg" data-toggle="modal" data-target=".bd-example-modal-lg">{% trans "Vaccine Schedule" %}</a></p>
                 <p><a class="lead hover-yellow text-blue-1 link" href="http://www.movimentodown.org.br/sindrome-de-down/o-que-e/">O que é Síndrome de Down? - Movimento Down</a></p>
                 <p><a class="lead hover-yellow text-blue-1 link" href="http://www.fsdown.org.br/sobre-a-sindrome-de-down/o-que-e-sindrome-de-down/">O que é Síndrome de Down? - Fundação Síndrome de Down</a></p>
                 <p><a class="lead hover-yellow text-blue-1 link" href="http://bvsms.saude.gov.br/bvs/publicacoes/cuidados_saude_pessoas_sindorme_down.pdf">CUIDADOS DE SAÚDE ÀS PESSOAS COM SÍNDROME DE DOWN - MINISTÉRIO DA SAÚDE (PDF)</a></p>

@@ -17,7 +17,6 @@ class TestModelAppointment(TestCase):
         self.patient = Patient.objects.create(
             ses="1234567",
             user=self.user,
-            priority=1,
             mother_name="Mother",
             father_name="Father",
             ethnicity=3,

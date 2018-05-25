@@ -1,10 +1,10 @@
-{% extends "account/base.html" %}
+{% extends user.is_authenticated|yesno:"core/base.html,core/base-nav.html" %}
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Log Out" %}{% endblock %}
+{% block title %}{% trans "Log Out" %}{% endblock %}
 
-{% block inner %}
+{% block content %}
 	<h1>{% trans "Delete" %}</h1>
 
 	<form method="post" action="">
@@ -12,6 +12,6 @@
 	  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
 	  <button class="btn float-right btn-danger" type="submit">{% trans 'Delete' %}</button>
 	</form>
-	
+
 	<a href="{% url 'users:detail' user.username %}"><button class="btn ml-3 btn-secondary mr-2 float-right" type="submit">{% trans 'Cancel' %}</button></a>
 {% endblock %}

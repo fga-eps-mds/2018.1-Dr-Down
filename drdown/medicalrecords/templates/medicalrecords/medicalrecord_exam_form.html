@@ -25,8 +25,6 @@
             <div class="formgroup row my-2  border rounded">
               <div class="col fieldWrapper my-2">
 
-
-
                 {% if field.errors %}
                 <div div class="alert alert-danger">
                   {% for error in field.errors %}
@@ -51,20 +49,13 @@
             </div>
 
           {% endfor %}
-          <div class="row">
-
-            <div class="col">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-auto">
+                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+                <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+              </div>
             </div>
-
-            <div class="col-auto">
-                <button type="submit" class="btn btn-success my-2 mx-1" style="margin-left: 0%;">{% trans 'Save' %}</button>
-            </div>
-
-            <div class="col-auto">
-                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-2 mx-1" >{% trans "Cancel" %}</a>
-            </div>
-
-          </div>
         </form>
 
       </div>

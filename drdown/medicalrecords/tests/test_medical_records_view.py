@@ -13,6 +13,7 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from unittest.mock import *
+from ..models.model_risk import Risk
 
 
 class TestViewMedicalRecords(TestCase):
@@ -28,7 +29,7 @@ class TestViewMedicalRecords(TestCase):
         self.user_3 = self.make_user(username="teste_3")
         self.user_4 = self.make_user(username="teste_4")
         self.patient = Patient.objects.create(ses="1234567",
-                                              user=self.user_2, priority=1,
+                                              user=self.user_2,
                                               mother_name="Mãe",
                                               father_name="Pai",
                                               ethnicity=3,
@@ -119,6 +120,7 @@ class TestViewMedicalRecords(TestCase):
         """
         Test if form is valid with blank fields
         """
+        self.client.force_login(user=self.user_1)
         response = self.client.post(
             path=reverse(
                 viewname='medicalrecords:create_medicalrecords',
@@ -327,3 +329,4 @@ class TestViewMedicalRecords(TestCase):
         self.assertEqual(self.medicine.__str__(), 'teste_2 - Neosaldina')
 
         self.assertEqual(self.staticdata.__str__(), 'teste_2')
+        self.assertEqual(self.patient.risk.__str__(),'teste_2 - Risks')

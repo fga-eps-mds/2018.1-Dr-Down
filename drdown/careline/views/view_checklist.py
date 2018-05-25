@@ -83,6 +83,9 @@ class ChecklistDetailView(DetailView):
         elif hasattr(current_user, 'healthteam'):
             allowed = True
 
+        elif hasattr(current_user, 'employee'):
+            allowed = True
+
         return allowed
 
     def prepare_context_data(self, user, context):

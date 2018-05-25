@@ -6,30 +6,25 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class AppointmentSearchForm(forms.Form):
-    search_speciality = forms.CharField(
+    search_speciality = forms.ChoiceField(
         required=False,
         label=_('Speciality'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('Speciality')}
-        )
     )
 
     search_date = forms.DateField(
         required=False,
         label=_('Date'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('(Year)-(Month)-(Day)')}
+        widget=forms.SelectDateWidget(
+            empty_label=(_("Year"), _("Month"), _("Day")),
         )
     )
 
-    search_doctor = forms.ModelChoiceField(
-        queryset=HealthTeam.objects.all(),
+    search_doctor = forms.CharField(
         required=False,
-        label=_('Doctor')
+        label=_('Doctor'),
     )
 
-    search_patient = forms.ModelChoiceField(
-        queryset=Patient.objects.all(),
+    search_patient = forms.CharField(
         required=False,
-        label=_('Patient')
+        label=_('Patient'),
     )

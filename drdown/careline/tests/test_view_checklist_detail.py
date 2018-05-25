@@ -4,7 +4,7 @@ from django.shortcuts import reverse
 from django.utils import timezone
 
 from drdown.careline.models import Procedure
-from drdown.users.models import Patient, Responsible, HealthTeam
+from drdown.users.models import Patient, Responsible, HealthTeam, Employee
 
 from drdown.careline.views import ChecklistDetailView
 
@@ -36,7 +36,6 @@ class TestViewChecklistDetailView(TestCase):
         Patient.objects.create(
             ses="1234567",
             user=self.user_patient1,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
@@ -56,7 +55,6 @@ class TestViewChecklistDetailView(TestCase):
         Patient.objects.create(
             ses="1234213",
             user=self.user_patient2,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
@@ -80,6 +78,16 @@ class TestViewChecklistDetailView(TestCase):
             register_number="1234567",
             registration_state=HealthTeam.DF,
         )
+
+        self.user_employee = self.make_user(username='employee')
+        self.user_employee.birthday = timezone.datetime(2000, 1, 1)
+
+        self.user_employee.save()
+        self.user_employee.refresh_from_db()
+
+
+        self.employee = Employee.objects.create(cpf="974.220.200-16", user=self.user_employee, departament=Employee.ADMINISTRATION)
+
 
 
         self.client = Client()
@@ -112,6 +120,21 @@ class TestViewChecklistDetailView(TestCase):
 
         self.assertEquals(
             self.view.has_permission(current_user=self.user_health_team, target_user=self.user_patient2),
+            True
+        )
+
+    def test_has_permission_for_employee(self):
+        """
+            Test if a healthteam have access to a patient
+        """
+
+        self.assertEquals(
+            self.view.has_permission(current_user=self.user_employee, target_user=self.user_patient1),
+            True
+        )
+
+        self.assertEquals(
+            self.view.has_permission(current_user=self.user_employee, target_user=self.user_patient2),
             True
         )
 

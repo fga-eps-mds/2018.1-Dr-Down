@@ -53,7 +53,6 @@ class TestModelProcedure(TestCase):
         self.patient1 = Patient.objects.create(
             ses="1234567",
             user=self.user_patient1,
-            priority=1,
             mother_name="Mãe",
             father_name="Pai",
             ethnicity=3,
