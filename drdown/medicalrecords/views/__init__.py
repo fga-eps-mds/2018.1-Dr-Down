@@ -6,4 +6,5 @@ from ..views import (
     view_static_data,
     views_base,
     view_risk,
+    view_pdf,
 )

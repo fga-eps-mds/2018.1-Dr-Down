@@ -41,11 +41,16 @@
 
   <div class="row justify-content-between mb-3">
     <div class="ml-4">
-      <h2 class="text-tertiary">{% trans 'Medical Record' %}: {{ related_patient.user.name }}</h2>
+      <h2 class="text-tertiary">
+        {% trans 'Medical Record' %}: {{ related_patient.user.name }}
+      </h2>
     </div>
     <div class="float-right mr-4">
-      <a href="{% url 'careline:checklist_detail' related_patient.user.username %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">{% trans "Checklist" %}</a>
-      <i class="fa fa-angle-double-right" style="font-size:25px;"></i>
+
+      <a href="{% url 'careline:checklist_detail' related_patient.user.username %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
+        {% trans "Checklist" %}
+        <i class="fa fa-angle-double-right" style="font-size:25px;"></i>
+      </a>
     </div>
   </div>
 
@@ -437,6 +442,16 @@
             <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_physiotherapy }} </div>
           </div>
 
+        </div>
+      </div>
+
+      <div class="row my-1">
+        <div class="col"></div>
+        <div class="col-auto">
+          <a href="{% url 'medicalrecords:pdf' related_patient.user.username %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
+            {% trans 'Print/Save' %} {% trans 'Medical Record' %}
+            <i class="border-left fa fa-print" style="font-size:25px;"></i>
+          </a>
         </div>
       </div>
     </div>

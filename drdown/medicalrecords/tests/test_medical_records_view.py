@@ -161,6 +161,14 @@ class TestViewMedicalRecords(TestCase):
         )
         self.assertEquals(response.status_code, 200)
 
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:pdf',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
     def test_list_view_logout(self):
         """
         Makes sure that the medicalrecord search view gives 302
@@ -172,6 +180,14 @@ class TestViewMedicalRecords(TestCase):
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 302)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:pdf',
                 args=(self.patient.user.username,)
             )
         )
@@ -192,6 +208,14 @@ class TestViewMedicalRecords(TestCase):
         )
         self.assertEquals(response.status_code, 200)
 
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:pdf',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
     def test_list_view_not_specialized(self):
         """
         Makes sure that a user without permissions cannot
@@ -203,6 +227,14 @@ class TestViewMedicalRecords(TestCase):
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:list_medicalrecords',
+                args=(self.patient.user.username,)
+            )
+        )
+        self.assertEquals(response.status_code, 302)
+
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:pdf',
                 args=(self.patient.user.username,)
             )
         )
