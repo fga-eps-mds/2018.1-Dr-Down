@@ -66,3 +66,18 @@
   height: 3em;
   width: auto;
 }
+
+.modal-vaccine {
+  min-width: 99%;
+  height: auto;
+  margin: 10px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+
+.full {
+    display:table;
+    width:96%;
+    table-layout:fixed;
+}

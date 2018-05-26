@@ -1,5 +1,6 @@
 from ..models.model_commentary import Commentary
 from ..models.model_post import Post
+from .view_base import BaseViewTemplate
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import DeleteView
@@ -9,7 +10,7 @@ from django.utils import timezone
 from drdown.forum.form.forum_forms import ComentaryForm
 
 
-class CommentaryListView(ListView):
+class CommentaryListView(BaseViewTemplate, ListView):
     model = Commentary
 
     def get_context_data(self, **kwargs):
@@ -23,7 +24,7 @@ class CommentaryListView(ListView):
         return queryset
 
 
-class CommentaryCreateView(CreateView):
+class CommentaryCreateView(BaseViewTemplate, CreateView):
     model = Commentary
     template_name = 'forum/form_commentary.html'
     form_class = ComentaryForm
@@ -54,7 +55,7 @@ class CommentaryCreateView(CreateView):
         return super(CommentaryCreateView, self).form_valid(form)
 
 
-class CommentaryDeleteView (DeleteView):
+class CommentaryDeleteView (BaseViewTemplate, DeleteView):
     model = Commentary
     success_url = reverse_lazy('forum:list_categories')
 
@@ -77,7 +78,7 @@ class CommentaryDeleteView (DeleteView):
         return success_delete_url
 
 
-class CommentaryUpdateView(UpdateView):
+class CommentaryUpdateView(BaseViewTemplate, UpdateView):
     model = Commentary
     template_name = 'forum/form_commentary.html'
     fields = ['message']

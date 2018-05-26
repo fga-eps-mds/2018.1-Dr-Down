@@ -3,6 +3,7 @@ from ..models.model_medical_record import MedicalRecord
 from ..models.model_static_data import StaticData
 from ..models.model_medicines import Medicine
 from ..models.model_exams import Exam
+from ..models.model_risk import Risk
 from ..models.model_complaint import Complaint
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
@@ -57,10 +58,26 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         staticdata = StaticData.objects.filter(patient=patient)
         medicines = Medicine.objects.filter(patient=patient)
         complaints = Complaint.objects.filter(patient=patient)
+        risk = Risk.objects.filter(patient=patient)
 
         context['complaints'] = complaints
         context['medicines'] = medicines
         context['staticdata'] = staticdata
+
+        context['risk_priority_speech_theraphy'] = \
+            patient.risk.get_priority_speech_theraphy_display()
+        context['risk_priority_general_practitioner'] = \
+            patient.risk.get_priority_general_practitioner_display()
+        context['risk_priority_pediatrics'] = \
+            patient.risk.get_priority_pediatrics_display()
+        context['risk_priority_neurology'] = \
+            patient.risk.get_priority_neurology_display()
+        context['risk_priority_cardiology'] = \
+            patient.risk.get_priority_cardiology_display()
+        context['risk_priority_physiotherapy'] = \
+            patient.risk.get_priority_physiotherapy_display()
+        context['risk_priority_psychology'] = \
+            patient.risk.get_priority_psychology_display()
 
         context['medicalrecordlist'] = context['object_list'].filter(
             patient=patient

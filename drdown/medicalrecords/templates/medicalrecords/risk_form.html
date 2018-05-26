@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block content %}
+  <div class="col-md-6 offset-md-3">
+
+    {% url 'medicalrecords:update_risk' as url %}
+      <h2>{% trans "Edit Risk" %}</h2><hr>
+
+    <form method="post">
+      {% csrf_token %}
+
+          <div class="fieldWrapper">
+              {{ form.errors }}
+            <p class="lead">
+              <div class="row mb-4">
+                <label class="col"> <strong>{{ form.priority_general_practitioner.label }}</strong></label>
+                <label class="col ml-5"> <strong>{{ form.priority_pediatrics.label }}</strong></label>
+                <div class="w-100"></div>
+                <div class="col mx-3" role="alert">{{ form.priority_general_practitioner }}</div>
+                <div class="col mx-3 ml-5" role="alert">{{ form.priority_pediatrics }}</div>
+              </div>
+              <div class="row mb-4">
+                <label class="col"> <strong>{{ form.priority_cardiology.label }}</strong> </label>
+                <label class="col ml-5"> <strong>{{ form.priority_neurology.label }}</strong></label>
+                <div class="w-100"></div>
+                <div class="col mx-3" role="alert">{{ form.priority_cardiology }}</div>
+                <div class="col mx-3 ml-5" role="alert">{{ form.priority_neurology }}</div>
+              </div>
+              <div class="row mb-4">
+                <label class="col"> <strong>{{ form.priority_speech_theraphy.label }}</strong> </label>
+                <label class="col"> <strong>{{ form.priority_psychology.label }}</strong></label>
+                <label class="col"> <strong>{{ form.priority_physiotherapy.label }}</strong></label>
+                <div class="w-100"></div>
+                <div class="col mx-3" role="alert">{{ form.priority_speech_theraphy }}</div>
+                <div class="col mx-3" role="alert">{{ form.priority_psychology }}</div>
+                <div class="col mx-3" role="alert">{{ form.priority_physiotherapy }}</div>
+              </div>
+            </p>
+          </div>
+
+      <div class="row float-right mr-2">
+        <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
+        <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

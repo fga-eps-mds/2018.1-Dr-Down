@@ -5,30 +5,18 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class RequestSearchForm(forms.Form):
-    search_speciality = forms.CharField(
-        required=False,
-        label=_('Speciality'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('Speciality')}
-        )
+
+    search_speciality = forms.ChoiceField(
+       required=False,
+       label=_('Speciality'),
     )
 
-    search_status = forms.CharField(
-        required=False,
-        label=_('Status'),
-        widget=forms.TextInput(
-            attrs={'placeholder': _('Status')}
-        )
+    search_doctor = forms.CharField(
+       required=False,
+       label=_('Doctor'),
     )
 
-    search_doctor = forms.ModelChoiceField(
-        queryset=HealthTeam.objects.all(),
-        required=False,
-        label=_('Doctor')
-    )
-
-    search_patient = forms.ModelChoiceField(
-        queryset=Patient.objects.all(),
-        required=False,
-        label=_('Patient')
+    search_patient = forms.CharField(
+       required=False,
+       label=_('Patient'),
     )

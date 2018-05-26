@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+{% extends view.get_template %}
 {% load static i18n %}
 {% block title %}{% trans "Categories" %}{% endblock %}
 
@@ -7,11 +7,6 @@
   <div class="row">
     <div class="col">
       <h2 class="text-tertiary">{% trans "Categories" %}</h2>
-    </div>
-    <div class="col">
-      {% if user.is_authenticated %}
-      <a href= "{% url 'users:detail' user.username  %}" class="btn btn-secondary float-right btn-sm">{% trans 'Return' %}</a>
-      {% endif %}
     </div>
   </div>
 

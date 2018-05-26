@@ -22,19 +22,20 @@
 
     <form method="post">
       {% csrf_token %}
+
       {% for field in form %}
-          <div class="fieldWrapper">
-              {{ field.errors }}
-            <p class="lead">
-              {% if field != form.motive and field != form.doctor %}
-                *
-              {% endif %}
-              {{ field.label_tag }}<br>
-              {{ field }}
-            </p>
-          </div>
-      {% endfor %}
-      <div class="row float-right mr-5">
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          <p class="lead">
+            {% if field != form.motive and field != form.doctor %}
+              *
+            {% endif %}
+            {{ field.label_tag }}<br>
+            {{ field }}
+          </p>
+        </div>
+     {% endfor %}
+      <div class="row float-right mt-5">
         <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
       </div>

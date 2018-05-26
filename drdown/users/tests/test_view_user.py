@@ -190,7 +190,6 @@ class TestPatientListViewSelector(TestCase):
         Patient.objects.create(
             ses="1234567",
             user=self.user_patient1,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
@@ -212,7 +211,6 @@ class TestPatientListViewSelector(TestCase):
         Patient.objects.create(
             ses="1234213",
             user=self.user_patient2,
-            priority=1,
             mother_name="Mae",
             father_name="Pai",
             ethnicity=3,
@@ -252,7 +250,7 @@ class TestPatientListViewSelector(TestCase):
 
     def test_get_redirect_for_patient(self):
         """
-            Test if a patient is redirected for its medical follow-up sheet when accessing the  List View
+            Test if a patient is redirected for its profile when accessing the  List View
         """
 
         self.client.force_login(self.user_patient1)
@@ -265,7 +263,7 @@ class TestPatientListViewSelector(TestCase):
         )
 
         url = reverse(
-            viewname='users:patient_medical_sheet',
+            viewname='users:detail',
             kwargs={'username': self.user_patient1.username}
         )
 

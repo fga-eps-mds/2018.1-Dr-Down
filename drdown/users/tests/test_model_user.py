@@ -393,7 +393,6 @@ class TestField(TestCase):
             Patient.objects.create(
                 ses="1234567",
                 user=self.user1,
-                priority=1,
                 mother_name="Mãe",
                 father_name="Pai",
                 ethnicity=3,
@@ -507,7 +506,6 @@ class TestField(TestCase):
         patient = Patient.objects.create(
             ses="1234567",
             user=self.user1,
-            priority=1,
             mother_name="Mãe",
             father_name="Pai",
             ethnicity=3,
@@ -623,7 +621,6 @@ class TestField(TestCase):
         patient = Patient.objects.create(
             ses="1234567",
             user=self.user1,
-            priority=1,
             mother_name="Mãe",
             father_name="Pai",
             ethnicity=3,
@@ -699,7 +696,6 @@ class TestField(TestCase):
         patient = Patient.objects.create(
             ses="1234567",
             user=self.user1,
-            priority=1,
             mother_name="Mãe",
             father_name="Pai",
             ethnicity=3,
