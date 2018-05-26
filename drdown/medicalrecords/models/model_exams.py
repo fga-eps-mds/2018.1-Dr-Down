@@ -15,7 +15,8 @@ class Exam(models.Model):
 
     file = models.FileField(
         upload_to='media/medicalrecords/exams',
-        verbose_name=_('Exam')
+        verbose_name=_('Exam'),
+        help_text = _('Exam file'),
     )
 
     day = models.DateTimeField(
@@ -57,7 +58,7 @@ class Exam(models.Model):
 
     def clean(self, *args, **kwargs):
         if self.day:
-            if timezone.localdate().isoformat() < str(self.day):
+            if timezone.now() < self.day:
                 raise ValidationError(
                     {'day':
                         _("The complaint cannot be in the future!")}

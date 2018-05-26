@@ -18,7 +18,8 @@ class User(AbstractUser):
         help_text=_("Photo of user."),
         verbose_name=_('Photo'),
         blank=True,
-        null=True
+        null=True,
+        max_length = 500
     )
 
     name = models.CharField(
