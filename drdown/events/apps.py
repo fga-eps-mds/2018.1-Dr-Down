@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class EventsConfig(AppConfig):
-    name = 'events'
+    name = 'drdown.events'
+    verbose_name = 'Events'
