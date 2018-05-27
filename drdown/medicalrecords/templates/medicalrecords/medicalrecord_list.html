@@ -70,7 +70,7 @@
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu3">{% trans "Medical Exams" %}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu4">{% trans "Patient Medicine" %}</a>
+            <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu4">{% trans "Prescription" %}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu5">{% trans "Complaints" %}</a>
@@ -309,7 +309,7 @@
         <div id="menu4" class="tab-pane fade">
           <div class="row mb-5">
             <div class="col">
-              <h3 >{% trans 'Patient Medicine' %}</h3>
+              <h3 >{% trans "Patient prescription" %}</h3>
             </div>
             <div class="col-auto">
               {% if request.user.healthteam or request.user.employee%}
@@ -353,7 +353,7 @@
                   </table>
                 </div>
               {% else %}
-                <h4>{% trans 'There are no medicines registered for this patient.'%}</h4>
+                <h4>{% trans "There are no prescriptions registered for this patient."%}</h4>
               {% endif %}
             </div>
           </div>
