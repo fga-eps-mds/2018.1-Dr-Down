@@ -24,19 +24,46 @@ class Curves(models.Model):
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         if self.weight != self.__original_weight:
             # weight changed
-            new_weight = WeightHistory(patient=self.patient, weight=self.weight)
+            new_weight = WeightHistory(
+                patient=self.patient,
+                age=self.get_age,
+                weight=self.weight
+            )
             new_weight.save()
-            new_bmi = BMIHistory(patient=self.patient, bmi=self.get_bmi)
+            new_bmi = BMIHistory(
+                patient=self.patient,
+                age=self.get_age,
+                bmi=self.get_bmi
+            )
             new_bmi.save()
         elif self.height != self.__original_height:
             # height changed
-            new_height = HeightHistory(patient=self.patient, height=self.weight)
+            new_height = HeightHistory(
+                patient=self.patient,
+                age=self.get_age,
+                height=self.weight
+            )
             new_height.save()
-            new_bmi = BMIHistory(patient=self.patient, bmi=self.get_bmi)
+            new_bmi = BMIHistory(
+                patient=self.patient,
+                age=self.get_age,
+                bmi=self.get_bmi
+            )
             new_bmi.save()
         super(Curves, self).save(force_insert, force_update, *args, **kwargs)
         self.__original_weight = self.weight
         self.__original_height = self.height
+
+    def get_bmi(self):
+        return self.weight / (self.height * self.height)
+
+    def get_age(self):
+        # get age in years
+        born = self.patient.user.birthday
+        today = timezone.today()
+        age_years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+        # convert to months
+        self.age = age_years * 12
 
     def weight_history(self):
         return WeightHistory.objects.filter(patient=self.patient).order_by('-age')
@@ -46,9 +73,6 @@ class Curves(models.Model):
 
     def bmi_history(self):
         return BMIHistory.objects.filter(patient=self.patient).order_by('-age')
-
-    def get_bmi(self):
-        return self.weight / (self.height * self.height)
 
 
 class WeightHistory(models.Model):
@@ -63,15 +87,6 @@ class WeightHistory(models.Model):
     class Meta:
         unique_together = ('patient', 'age',)
 
-    def save(self, *args, **kwargs):
-        # get age in years
-        born = self.patient.user.birthday
-        today = timezone.today()
-        age_years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-        # convert to months
-        self.age = age_years * 12
-        super(WeightHistory, self).save(*args, **kwargs)
-
 
 class HeightHistory(models.Model):
     patient = models.ForeignKey(
@@ -85,15 +100,6 @@ class HeightHistory(models.Model):
     class Meta:
         unique_together = ('patient', 'age',)
 
-    def save(self, *args, **kwargs):
-        # get age in years
-        born = self.patient.user.birthday
-        today = timezone.today()
-        age_years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-        # convert to months
-        self.age = age_years * 12
-        super(HeightHistory, self).save(*args, **kwargs)
-
 
 class BMIHistory(models.Model):
     patient = models.ForeignKey(
@@ -106,12 +112,3 @@ class BMIHistory(models.Model):
 
     class Meta:
         unique_together = ('patient', 'age',)
-
-    def save(self, *args, **kwargs):
-        # get age in years
-        born = self.patient.user.birthday
-        today = timezone.today()
-        age_years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-        # convert to months
-        self.age = age_years * 12
-        super(BMIHistory, self).save(*args, **kwargs)
