@@ -15,17 +15,27 @@
 
     <h1 class="mb-5">{% trans 'Events'%}</h1>
 
-  ]
-
+     {% if user.employee %}
+       <div class="row mb-5">
+         <div class="col">
+         <a href="{% url 'events:create_event'%}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
+         </div>
+       </div>
+     {% endif %}
     <div class="accordion" id="accordionmenu3">
         {% for event in events_list %}
                   <div class="card">
-                    <div class="card-header" id="heading{{ event.pk }}">
-                       <div  style="margin-left: 40%">
+                    <div class="card-header row" id="heading{{ event.pk }}">
+                       <div  style="margin-left: 40%" class="col">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
                           <h4>{{ event.name }}</h4>
                         </button>
                        </div>
+                      {% if user.employee %}
+                      <div class="col">
+                         <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
+                      </div>
+                      {% endif %}
                     </div>
                     <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
                       <div class="card-body">
