@@ -17,6 +17,7 @@ class EventsCreateView(CreateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
+        'name',
 		'date',
 		'time',
 		'description',
