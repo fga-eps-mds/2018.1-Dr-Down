@@ -63,3 +63,44 @@ class BMI(models.Model):
     class Meta:
         unique_together = ('curves', 'age',)
         verbose_name = _("BMI")
+
+
+@receiver(post_save, sender=Height)
+@receiver(post_save, sender=Weight)
+def create_BMI(sender, instance, **kwargs):
+
+
+    height_object = apps.get_model('medicalrecords', 'Height') \
+            .objects.filter(
+                curves=instance.curves,
+                age=instance.age
+            ).first()
+
+    weight_object = apps.get_model('medicalrecords', 'Weight') \
+            .objects.filter(
+                curves=instance.curves,
+                age=instance.age
+            ).first()
+
+    bmi_object =  apps.get_model('medicalrecords', 'BMI') \
+            .objects.filter(
+                curves=instance.curves,
+                age=instance.age
+            ).first()
+
+    if bmi_object:
+        # if a bmi exists for an age weight and height exists, and it should be
+        # updated with the new calculated value
+        bmi_object.bmi = BMI.calculate_bmi(weight_object.weight, height_object.height)
+        bmi_object.save()
+
+    elif height_object and weight_object:
+        apps.get_model('medicalrecords', 'BMI') \
+            .objects.create(
+                curves=instance.curves,
+                age=instance.age,
+                bmi=BMI.calculate_bmi(
+                    weight_object.weight,
+                    height_object.height
+                )
+            )
