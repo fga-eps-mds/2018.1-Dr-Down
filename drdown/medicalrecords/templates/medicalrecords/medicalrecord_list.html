@@ -228,6 +228,13 @@
                   <div class="w-100"></div>
                   <div class="col mx-3 alert alert-dark" role="alert">{{  related_patient.staticdata.APGAR }}</div>
                 </div>
+                <div class="row">
+                  <div class="col"><label><strong>{% trans 'Foot Test:'%}</strong></label></div>
+                  <div class="w-100"></div>
+                  <div class="col mx-3 alert alert-dark" role="alert">
+                    <a class="text-secondary" href="{{ related_patient.staticdata.foot_test.url }}"> {{  related_patient.staticdata.foot_test.name }} </a>
+                  </div>
+                </div>
               </div>
               <div class="col">
                 <div class="row">
