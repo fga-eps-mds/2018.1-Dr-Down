@@ -15,25 +15,10 @@
       <select class= "select form-control" name="speciality" required id="id_speciality">
         {% if appointment_request.speciality %}
           <option value="{{appointment_request.speciality}}" selected>{{appointment_request.get_speciality_display}}</option>
-          <option value="Speech_Theraphy">{% trans 'Speech Theraphy' %}</option>
-          <option value="Psychology">{% trans 'Psychology' %}</option>
-          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
-          <option value="Occupational_Theraphy">{% trans 'Occupational Therapy' %}</option>
-          <option value="General_Practitioner">{% trans 'General Practitioner' %}</option>
-          <option value="Cardiology">{% trans 'Cardiology' %}</option>
-          <option value="Neurology">{% trans 'Neurology' %}</option>
-          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+
         {% else %}
           <option value="" selected>---------</option>
           <option value="{{appointment_request.speciality}}" selected>{{appointment_request.get_speciality_display}}</option>
-          <option value="Speech_Theraphy">{% trans 'Speech Theraphy' %}</option>
-          <option value="Psychology">{% trans 'Psychology' %}</option>
-          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
-          <option value="Occupational_Theraphy">{% trans 'Occupational Therapy' %}</option>
-          <option value="General_Practitioner">{% trans 'General Practitioner' %}</option>
-          <option value="Cardiology">{% trans 'Cardiology' %}</option>
-          <option value="Neurology">{% trans 'Neurology' %}</option>
-          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
         {% endif %}
       </select>
     </div>

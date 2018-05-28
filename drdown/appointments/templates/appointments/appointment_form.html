@@ -22,18 +22,11 @@
     {% csrf_token %}
     <div class="fieldWrapper form-group">
       <label for="id_speciality" class="col-form-label">{% trans 'Speciality' %}:</label>
-      <select class= "select form-control" name="speciality" required id="id_speciality">
         {% if object.speciality %}
+        <select class= "select form-control" name="speciality"  disabled id="id_speciality">
           <option value="{{object.speciality}}" selected>{{object.get_speciality_display}}</option>
-          <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
-          <option value="Psychology">{% trans 'Psychology' %}</option>
-          <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
-          <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
-          <option value="Cardiology">{% trans 'Cardiology' %}</option>
-          <option value="Neurology">{% trans 'Neurology' %}</option>
-          <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
-          <option value="General Practitioner">{% trans 'General Practitioner' %}</option>
         {% else %}
+        <select class= "select form-control" name="speciality"  required id="id_speciality">
           <option value="" selected>---------</option>
           <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
           <option value="Psychology">{% trans 'Psychology' %}</option>

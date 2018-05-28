@@ -142,7 +142,6 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
     fields = [
-        'speciality',
         'doctor',
         'patient',
         'date',
@@ -166,7 +165,6 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
         context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
 
         context['health_team'] = HealthTeam.objects.all()
-        context['patients'] = Patient.objects.all()
         return context
 
 
@@ -212,7 +210,6 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
         context = super(
             AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
         context['health_team'] = HealthTeam.objects.all()
-        context['patients'] = Patient.objects.all()
         context['appointment_request'] = AppointmentRequest.objects.get(
             pk=self.kwargs.get('request_pk')
         )
