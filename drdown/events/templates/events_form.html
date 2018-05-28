@@ -11,10 +11,28 @@
 {% endblock %}
 
 {% block content %}
-<h2>{% trans 'New Event' %}</h2>
+  {% if object %}
+    <h2>{% trans 'Edit Event' %}</h2>
+  {% else %}
+    <h2>{% trans 'New Event' %}</h2>
+  {% endif %}
 <form method='post' class="mt-3">
 	{% csrf_token %}
-	<div class="row">
+
+  <div class="row">
+		<div class="form-group col">
+			{% if object.name %}
+        <label>{% trans 'Name' %}</label>
+			  <input class="form-control" type="text" name="name" maxlength="80" required id="id_name" value="{{ object.name }}"/>
+      {% else %}
+        <label>{% trans 'Name' %}</label>
+			  <input class="form-control" type="text" name="name" maxlength="80" required id="id_name"/>
+			  <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+		  {% endif %}
+    </div>
+	</div>
+
+  <div class="row">
 		<div class="form-group col">
       <label for="id_date">{% trans 'Date' %}</label>
       {% if object.date %}
@@ -52,7 +70,7 @@
 		<div class="form-group col">
       {% if object.value %}
         <label for="id_value">{% trans 'Value of event' %}</label>
-			  <input class="form-control" type="number" name="value" step="0.10" required id="id_value" min="0" max="99.99" value="{{ object.value }}"/>
+			  <input class="form-control" type="number" name="value" step="0.10" required id="id_value" min="0" max="99.99" value="{{ object.value|stringformat:'g' }}"/>
       {% else %}
 			  <label for="id_value">{% trans 'Value of event' %}</label>
 			  <input class="form-control" type="number" name="value" step="0.10" required id="id_value" min="0" max="99.99"/>

@@ -12,15 +12,20 @@
 
 
 {% block content %}
+
+    <h1 class="mb-5">{% trans 'Events'%}</h1>
+
+  ]
+
     <div class="accordion" id="accordionmenu3">
-                {% for event in events_list %}
+        {% for event in events_list %}
                   <div class="card">
                     <div class="card-header" id="heading{{ event.pk }}">
-                      <h5 class="mb-0">
+                       <div  style="margin-left: 40%">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
-                          {{ event }}
+                          <h4>{{ event.name }}</h4>
                         </button>
-                      </h5>
+                       </div>
                     </div>
                     <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
                       <div class="card-body">
