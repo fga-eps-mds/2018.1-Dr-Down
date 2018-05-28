@@ -40,7 +40,7 @@
 
                   <div class="col">
                     <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
-                      <h4 class="text-tertiary h-blue" >{{ patient.user.name }} {{patient.user.last_name}}</h4>
+                      <h4 class="text-tertiary h-blue" >{{ patient.user.name }}</h4>
                       <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
                     </a>
                   </div>
@@ -50,7 +50,7 @@
               {% if patient.responsible %}
                 <div class="col-auto border-left">
                   <h5 class="text-tertiary h-blue"> {% trans 'Responsible:' %} </h5>
-                  <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} {{patient.responsible.user.last_name}}</p>
+                  <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} </p>
                 </div>
               {% endif %}
 
