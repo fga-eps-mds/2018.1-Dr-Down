@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% url 'events:create_event' as url %}
+  {% if request.path == url %}
+    {% trans "New Event" %}
+<!--   {% else %}
+    {% trans "Edit Appointment" %} -->
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<form method='post'>
+	{% csrf_token %}
+	{% for field in form %}
+
+		{{ field.errors }}
+		{{ field.label }}
+		{{ field }}
+
+	{% endfor %}
+	<button> {% trans 'Create' %} </button>
+</form>
+
+{% endblock %}
