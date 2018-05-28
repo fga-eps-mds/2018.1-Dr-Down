@@ -35,6 +35,7 @@ class EventsUpdateView(UpdateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
+        'name',
         'date',
         'time',
         'description',
