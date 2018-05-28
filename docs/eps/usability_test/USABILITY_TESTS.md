@@ -1,16 +1,16 @@
-#Teste de Usabilidade
+# Teste de Usabilidade
 
 | Data | Versão | Descrição | Autor |
 |----|------|---------|-----|
 |28/05/2018|0.0.1|Primeira Versão do documento de teste de usabilidade|Mariana De Souza Mendes|
 
 
-##Introdução
+## Introdução
 
 Este relatório descreve um estudo de usabilidade de partes do Dr. Down com o intuito de identificar barreiras ao uso e aceitação do mesmo que possam ser mitigadas em fases posteriores de ajuste. 
 A usabilidade sempre foi uma preocupação do nosso sistema visto que vários perfis de usuários farão a utilização do mesmo e um dos perfis possui uma Síndrome de Down.
 
-##Definir o grupo de usuários
+## Definir o grupo de usuários
 
 O Dr. Down possui diversos usuários de diferentes perfis e realizaremos o teste com pelo menos um de cada grupo.
 
