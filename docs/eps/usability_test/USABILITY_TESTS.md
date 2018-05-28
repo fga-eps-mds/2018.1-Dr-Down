@@ -69,36 +69,36 @@ Os usuários terão que realizar as tarefas planejadas e para cada tarefa o aval
 Com base nisso o avaliador irá anotar os problemas encontrados e depois propor uma solução.
 
 ### Tarefa 1: Com o usuário deslogado, procure as seguintes informações no site
-- Informações gerais;
- - Localização do Cris Down;
- - Leituras complementares;
- - Calendário de Vacina;
+	 - Informações gerais;
+	 - Localização do Cris Down;
+	 - Leituras complementares;
+	 - Calendário de Vacina;
 
 ### Tarefa 2: Ainda com o usuário deslogado, procure pelo fórum
-- Acessar o fórum;
+	- Acessar o fórum;
 
 ### Tarefa 3: Cadastrar usuário
-- Cadastrar;
-- Editar informações;
-- Confirmar e-mail;
+	- Cadastrar;
+	- Editar informações;
+	- Confirmar e-mail;
 
 ### Tarefa 4: Login
-- Realizar login;
-- Na página principal, encontre o atalho para o perfil do usuário;
+	- Realizar login;
+	- Na página principal, encontre o atalho para o perfil do usuário;
 
 ### Tarefa 5: Fórum com login
-- Acessar categoria;
-- Acessar post;
-- Criar um comentário;
-- Apagar um comentário;
-- Criar um post;
-- Apagar um post;
+	- Acessar categoria;
+	- Acessar post;
+	- Criar um comentário;
+	- Apagar um comentário;
+	- Criar um post;
+	- Apagar um post;
 
 ### Tarefa 6: Usuário Paciente
-- Acessar o checklist;
-- Acessar o prontuário;
-- Solicitar uma consulta;
-- Calendário de vacina;
+	- Acessar o checklist;
+	- Acessar o prontuário;
+	- Solicitar uma consulta;
+	- Calendário de vacina;
 
 ### Tarefa 7: Usuário Funcionário
 	- Acessar o checklist de determinado paciente;
@@ -107,8 +107,8 @@ Com base nisso o avaliador irá anotar os problemas encontrados e depois propor 
 	- Calendário de vacina;
 
 ### Tarefa 8: Usuário Equipe Médica
-Acessar prontuário de determinado paciente;
-Acessar o checklist de determinado paciente;
+	- Acessar prontuário de determinado paciente;
+	- Acessar o checklist de determinado paciente;
 
 ### Tarefa 9: Acessar a página de eventos
 
