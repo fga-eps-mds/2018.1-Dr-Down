@@ -4,7 +4,7 @@ from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView
 from django.urls import reverse_lazy
-from ..forms.curves_form import HeightForm, WeightForm
+from ..forms.curves_form import HeightForm, WeightForm, CephalicPerimeterForm
 from ..views.views_base import BaseViewForm, BaseViewUrl, BaseViewPermissions
 
 class FormValid():
@@ -41,3 +41,16 @@ class WeightUpdateView(BaseViewPermissions, BaseViewUrl, UpdateView):
     model = Weight
     form_class = WeightForm
     template_name = 'medicalrecords/medicalrecord_weight_form.html'
+
+class CephalicPerimeterCreateView(FormValid, BaseViewPermissions, BaseViewUrl, CreateView):
+    model = Weight
+    form_class = CephalicPerimeterForm
+    template_name = 'medicalrecords/medicalrecord_cephalic_perimeter_form.html'
+
+
+class CephalicPerimeterUpdateView(BaseViewPermissions, BaseViewUrl, UpdateView):
+    model = Weight
+    form_class = CephalicPerimeterForm
+    template_name = 'medicalrecords/medicalrecord_cephalic_perimeter_form.html'
+
+

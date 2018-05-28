@@ -86,7 +86,7 @@ urlpatterns = [
         regex=r'(?P<username>[\w.@+-]+)/curves/create-height/$',
         view=view_curves.HeightCreateView.as_view(),
         name='create_height'
-    ),  
+    ),
     url(
         regex=r'(?P<username>[\w.@+-]+)/curves/update-height/(?P<pk>\d+)/$',
         view=view_curves.HeightUpdateView.as_view(),
@@ -101,5 +101,15 @@ urlpatterns = [
         regex=r'(?P<username>[\w.@+-]+)/curves/update-weight/(?P<pk>\d+)/$',
         view=view_curves.WeightUpdateView.as_view(),
         name='update_weight'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/create-cephalic-perimeter/$',
+        view=view_curves.CephalicPerimeterCreateView.as_view(),
+        name='create_cephalic_perimeter'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/update-cephalic-perimeter/(?P<pk>\d+)/$',
+        view=view_curves.CephalicPerimeterUpdateView.as_view(),
+        name='update_cephalic_perimeter'
     ),
 ]

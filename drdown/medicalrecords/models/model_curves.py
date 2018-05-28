@@ -15,6 +15,7 @@ class Curves(models.Model):
         verbose_name=_('Patient')
     )
 
+
 class Weight(models.Model):
 
     curves = models.ForeignKey(
@@ -65,10 +66,25 @@ class BMI(models.Model):
         verbose_name = _("BMI")
 
 
+class CephalicPerimeter(models.Model):
+
+    curves = models.ForeignKey(
+        Curves,
+        on_delete=models.CASCADE,
+        verbose_name=_('Patient')
+    )
+
+    cephalic_perimeter = models.FloatField()
+    age = models.IntegerField()
+
+    class Meta:
+        unique_together = ('curves', 'age',)
+        verbose_name = _("Cephalic Perimeter")
+
+
 @receiver(post_save, sender=Height)
 @receiver(post_save, sender=Weight)
 def create_BMI(sender, instance, **kwargs):
-
 
     height_object = apps.get_model('medicalrecords', 'Height') \
             .objects.filter(
