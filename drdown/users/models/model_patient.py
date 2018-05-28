@@ -177,3 +177,12 @@ def create_risk(sender, instance, **kwargs):
     if not hasattr(instance, 'risk'):
         apps.get_model('medicalrecords', 'Risk') \
             .objects.create(patient=instance)
+
+
+@receiver(post_save, sender=Patient)
+def create_curves(sender, instance, **kwargs):
+    if not hasattr(instance, 'curves'):
+        apps.get_model('medicalrecords', 'Curves') \
+            .objects.create(
+                patient=instance,
+            )
