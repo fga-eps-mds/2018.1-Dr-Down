@@ -5,8 +5,11 @@ from drdown.medicalrecords.forms.static_data_forms import StaticDataForm
 from drdown.medicalrecords.forms.medicines_forms import MedicineForm
 from drdown.medicalrecords.forms.complaint_forms import ComplaintForm
 from drdown.medicalrecords.forms.risk_forms import RiskForm
-from drdown.medicalrecords.views import view_medical_record, view_static_data,\
-    view_medicines, view_complaint, view_exams, view_pdf, view_risk
+from drdown.medicalrecords.views import (
+    view_medical_record, view_static_data,
+    view_medicines, view_complaint, view_exams,
+    view_pdf, view_risk, view_curves,
+)
 
 app_name = 'medicalrecords'
 urlpatterns = [
@@ -78,5 +81,25 @@ urlpatterns = [
         regex=r'(?P<username>[\w.@+-]+)/pdf/$',
         view=view_pdf.PDFView.as_view(),
         name='pdf'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/create-height/$',
+        view=view_curves.HeightCreateView.as_view(),
+        name='create_height'
+    ),  
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/update-height/(?P<pk>\d+)/$',
+        view=view_curves.HeightUpdateView.as_view(),
+        name='update_height'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/create-weight/$',
+        view=view_curves.WeightCreateView.as_view(),
+        name='create_weight'
+    ),
+    url(
+        regex=r'(?P<username>[\w.@+-]+)/curves/update-weight/(?P<pk>\d+)/$',
+        view=view_curves.WeightUpdateView.as_view(),
+        name='update_weight'
     ),
 ]
