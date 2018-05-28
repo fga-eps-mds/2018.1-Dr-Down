@@ -447,125 +447,8 @@
         </div>
 
         <div id="menu7" class="tab-pane fade">
-          <div class="row mb-5">
-            <div class="col">
-              <h3 >{% trans 'Curves' %}</h3>
-            </div>
-          </div>
-
-          <div class="row mb-5">
-            
-            <div class="col border-bottom">
-              TODO: INSERT GRAPH (PLACEHOLDER)
-              <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">
-              TODO: INSERT GRAPH
-            </div>
-          </div>
-
-          <div class="row mb-5">
-
-            <div class="col-auto">
-
-
-              <div class="table-responsive">
-                <table class="table table-hover table-sm table-bordered">
-                  <thead class="btn-secondary">
-                    <tr>
-                      {% if request.user.healthteam or request.user.employee%}
-                        <th class="col-auto" scope="col">
-                          <a href="{% url 'medicalrecords:create_weight' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-                        </th>
-                      {% endif %}
-                      <th class="col-auto" scope="col">{% trans 'Weight' %} ({% trans 'kilograms'%})</th>
-                      <th class="col-auto" scope="col">{% trans 'Age' %} ({% trans 'months'%})</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for weight in related_patient.curves.weight_set.all %}
-                      <tr>
-
-                        {% if request.user.healthteam or request.user.employee%}
-                          <td>
-                            <a href="{% url 'medicalrecords:update_weight' view.kwargs.username weight.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>     
-                          </td>
-                        {% endif %}
-
-                        <td>{{weight.weight|floatformat}}</td>
-                        <td>{{weight.age}}</td>
-
-                      </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-            
-            </div>
-
-            <div class="col-auto">
-
-                <div class="table-responsive">
-                  <table class="table table-hover table-sm table-bordered">
-                    <thead class="btn-secondary">
-                      <tr>
-                        {% if request.user.healthteam or request.user.employee%}
-                          <th class="col-auto" scope="col">
-                            <a href="{% url 'medicalrecords:create_height' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-                          </th>
-                        {% endif %}
-                        <th class="col-auto" scope="col">{% trans 'Height' %} ({% trans 'centimeters'%})</th>
-                        <th class="col-auto" scope="col">{% trans 'Age' %} ({% trans 'months'%})</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {% for height in related_patient.curves.height_set.all %}
-                        <tr>
-
-                          {% if request.user.healthteam or request.user.employee%}
-                            <td>
-                              <a href="{% url 'medicalrecords:update_height' view.kwargs.username height.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>     
-                            </td>
-                          {% endif %}
-  
-                          <td>{{height.height}}</td>
-                          <td>{{height.age}}</td>
-  
-                        </tr>
-                      {% endfor %}
-                    </tbody>
-                  </table>
-                </div>
-              
-              </div>
-
-              <div class="col-auto">
-
-                  <div class="table-responsive">
-                    <table class="table table-hover table-sm table-bordered">
-                      <thead class="btn-secondary">
-                        <tr>
-                          <th class="col-auto" scope="col">{% trans 'BMI' %}</th>
-                          <th class="col-auto" scope="col">{% trans 'Age' %} ({% trans 'months'%})</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for bmi in related_patient.curves.bmi_set.all %}
-                          <tr>
-    
-                            <td>{{bmi.bmi|floatformat}}</td>
-                            <td>{{bmi.age}}</td>
-    
-                          </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                  </div>
-                
-                </div>
-
-          </div>
+          {% include "medicalrecords/curves.html" %}
         </div>
-
-
 
       </div>
 
@@ -578,6 +461,7 @@
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </div>
