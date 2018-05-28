@@ -20,16 +20,6 @@ class TestViewRequest(TestCase):
         self.user4 = self.make_user(username='user_4')
         self.user5 = self.make_user(username='user_5')
 
-        self.patient = Patient.objects.create(
-            ses="1234567",
-            user=self.user,
-            mother_name="Mother",
-            father_name="Father",
-            ethnicity=3,
-            sus_number="12345678911",
-            civil_registry_of_birth="12345678911",
-            declaration_of_live_birth="12345678911"
-        )
 
         self.doctor = HealthTeam.objects.create(
             cpf="057.641.271-65",
@@ -49,7 +39,20 @@ class TestViewRequest(TestCase):
         self.responsible = Responsible.objects.create(
             user=self.user4,
             cpf="022.852.870-46",
-            patient=self.patient
+        )
+
+
+
+        self.patient = Patient.objects.create(
+            ses="1234567",
+            user=self.user,
+            mother_name="Mother",
+            father_name="Father",
+            ethnicity=3,
+            sus_number="12345678911",
+            civil_registry_of_birth="12345678911",
+            declaration_of_live_birth="12345678911",
+            responsible= self.responsible
         )
 
         self.appointment = Appointment.objects.create(
@@ -123,6 +126,18 @@ class TestViewRequest(TestCase):
         Makes sure that the request create view is loaded correctly
         """
         self.client.force_login(user=self.user)
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:create_request'
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_request_create_view_responsible(self):
+        """
+        Makes sure that the request create view is loaded correctly
+        """
+        self.client.force_login(user=self.user4)
         response = self.client.post(
             path=reverse(
                 viewname='appointments:create_request'
