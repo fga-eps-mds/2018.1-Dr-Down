@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-28 14:02+0000\n"
+"POT-Creation-Date: 2018-05-28 23:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: drdown/medicalrecords/models/model_medical_record.py:41
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:45
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:459
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:463
 msgid "Medical Record"
 msgstr "Prontuário"
 
@@ -30,7 +30,7 @@ msgstr "Prontuário"
 #: drdown/medicalrecords/models/model_medical_record.py:14
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:161
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:180
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:402
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:406
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:107
 msgid "Created at"
 msgstr "Criado em"
@@ -73,8 +73,8 @@ msgstr "Descrição da queixa"
 #: drdown/medicalrecords/models/model_static_data.py:44
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:161
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:177
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:384
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:399
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:388
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:403
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:101
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:211
 msgid "Author"
@@ -86,13 +86,12 @@ msgstr "Queixa"
 
 #: drdown/medicalrecords/models/model_complaint.py:47
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:76
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:370
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:374
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:204
 msgid "Complaints"
 msgstr "Queixas"
 
 #: drdown/medicalrecords/models/model_complaint.py:54
-#: drdown/medicalrecords/models/model_exams.py:74
 msgid "The complaint cannot be in the future!"
 msgstr "A queixa não pode ser no futuro!"
 
@@ -102,7 +101,6 @@ msgid "Exam"
 msgstr "Exame"
 
 #: drdown/medicalrecords/models/model_exams.py:19
-#| msgid "Exam Name"
 msgid "Exam file"
 msgstr "Nome do exame"
 
@@ -147,7 +145,6 @@ msgid "Nervous system Exam"
 msgstr "Exame do sistema nervoso"
 
 #: drdown/medicalrecords/models/model_exams.py:36
-#| msgid "Add Exam"
 msgid "Blood Exam"
 msgstr "Exame de Sangue"
 
@@ -176,7 +173,6 @@ msgid "Bioimpedance"
 msgstr "Bioimpedância"
 
 #: drdown/medicalrecords/models/model_exams.py:43
-#| msgid "Marked examination"
 msgid "Neurological examinations"
 msgstr "Exames neurológicos"
 
@@ -185,7 +181,6 @@ msgid "Urine Analysis"
 msgstr "Exame de Urina"
 
 #: drdown/medicalrecords/models/model_exams.py:45
-#| msgid "Marked examination"
 msgid "Stool Examination"
 msgstr "Exame de Fezes"
 
@@ -200,6 +195,10 @@ msgstr "Por favor, insira a categoria do exame"
 #: drdown/medicalrecords/models/model_exams.py:57
 msgid "Observations"
 msgstr "Observações"
+
+#: drdown/medicalrecords/models/model_exams.py:74
+msgid "The exam cannot be in the future!"
+msgstr "O exame não pode ser no futuro!"
 
 #: drdown/medicalrecords/models/model_exams.py:81
 msgid "Exams"
@@ -232,7 +231,7 @@ msgid "Medicine dosage"
 msgstr "Dosagem do remédio"
 
 #: drdown/medicalrecords/models/model_medicines.py:26
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:340
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:344
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:185
 msgid "In use?"
 msgstr "Em uso?"
@@ -242,7 +241,7 @@ msgid "Does the patient still use this medication?"
 msgstr "O paciente ainda usa esse medicamento?"
 
 #: drdown/medicalrecords/models/model_medicines.py:32
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:339
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:343
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:179
 msgid "Time between uses"
 msgstr "Tempo entre usos"
@@ -334,7 +333,7 @@ msgstr "Risco"
 
 #: drdown/medicalrecords/models/model_risk.py:80
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:80
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:418
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:422
 msgid "Risks"
 msgstr "Riscos"
 
@@ -377,23 +376,23 @@ msgstr "Novo prontuário"
 msgid "Add new Complaint"
 msgstr "Adicionar nova queixa"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:48
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:46
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:55
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:52
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:49
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:47
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:48
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:54
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:52
 #: drdown/medicalrecords/templates/medicalrecords/risk_form.html:43
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:49
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:56
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:53
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:50
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:47
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:48
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:49
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:55
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:53
 msgid "Save"
 msgstr "Salvar"
 
@@ -489,8 +488,8 @@ msgid "There are no evolutions registered for this patient."
 msgstr "Não há evoluções registradas para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:210
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:348
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:421
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:352
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:425
 msgid "Edit"
 msgstr "Editar"
 
@@ -508,7 +507,6 @@ msgid "APGAR: "
 msgstr "APGAR:"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:232
-#| msgid "Heart Test:"
 msgid "Foot Test:"
 msgstr "Teste do Pézinho:"
 
@@ -526,8 +524,8 @@ msgid "No postnatal data for this patient."
 msgstr "Não há dados de pós-natal para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:272
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:323
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:373
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:327
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:377
 msgid "Add"
 msgstr "Adicionar"
 
@@ -535,77 +533,78 @@ msgstr "Adicionar"
 msgid "Date"
 msgstr "Data"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:300
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:301
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:303
 msgid "Obs"
 msgstr "Obs"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:309
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:313
 msgid "There are no exams registered for this patient."
 msgstr "Não há exames registrados para este paciente."
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:319
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:323
 msgid "Patient prescription"
 msgstr "Prescrição do paciente"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:335
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:339
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:16
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:158
 msgid "Medicine"
 msgstr "Remédio"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:337
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:341
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:165
 msgid "Name of medicine"
 msgstr "Nome do remédio"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:338
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:342
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:171
 msgid "Dosage"
 msgstr "Dosagem"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:363
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:367
 msgid "There are no prescriptions registered for this patient."
 msgstr "Não há prescrições registradas para este paciente."
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:384
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:388
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:217
 msgid "Complaint day"
 msgstr "Dia da queixa"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:410
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:414
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:235
 msgid "There are no complaints registered for this patient."
 msgstr "Não há queixas registradas para este paciente."
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:427
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:431
 msgid "Risk general practitioner: "
 msgstr "Risco geral: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:428
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:432
 msgid "Risk pediatrics: "
 msgstr "Risco pediátrico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:435
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:439
 msgid "Risk cardiology: "
 msgstr "Risco cardiológico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:436
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:440
 msgid "Risk neurology: "
 msgstr "Risco neurológico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:443
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:447
 msgid "Risk speech theraphy: "
 msgstr "Risco fonoaudiológico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:444
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:448
 msgid "Risk psychology: "
 msgstr "Risco psicológico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:445
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:449
 msgid "Risk physiotherapy: "
 msgstr "Risco fisioterapêutico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:459
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:463
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:49
 msgid "Print/Save"
 msgstr "Imprimir/Salvar"

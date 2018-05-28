@@ -71,7 +71,7 @@ class Exam(models.Model):
             if timezone.now() < self.day:
                 raise ValidationError(
                     {'day':
-                        _("The complaint cannot be in the future!")}
+                        _("The exam cannot be in the future!")}
                 )
 
         return super(Exam, self).clean()
