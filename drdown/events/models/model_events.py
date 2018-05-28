@@ -4,6 +4,12 @@ from django.utils.translation import ugettext_lazy as _
 
 class Events(models.Model):
 
+    name = models.CharField(
+        _('Name'),
+        help_text = _('Name of event'),
+        max_length= 50,
+        default=""
+    )
     date = models.DateField(
         _('Date'),
         help_text=_('Date of event'),
