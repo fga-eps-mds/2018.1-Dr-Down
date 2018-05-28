@@ -33,3 +33,7 @@ class Events(models.Model):
         decimal_places = 2,
         max_digits = 3,
     )
+
+    class Meta:
+        verbose_name = _("Event")
+        verbose_name_plural = _("Events")
