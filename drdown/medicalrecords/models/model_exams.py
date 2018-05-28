@@ -41,6 +41,8 @@ class Exam(models.Model):
         (12, _('Map and Holter')),
         (13, _('Bioimpedance')),
         (14, _('Neurological examinations')),
+        (15, _('Urine Analysis')),
+        (16, _('Stool Examination')),
     )
 
     category = models.IntegerField(
