@@ -319,8 +319,8 @@
               <h3 >{% trans "Patient prescription" %}</h3>
             </div>
             <div class="col-auto">
-              {% if request.user.healthteam or request.user.employee%}
-              <a href="{% url 'medicalrecords:create_medicine'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+              {% if request.user.healthteam %}
+                <a href="{% url 'medicalrecords:create_medicine'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
               {% endif %}
             </div>
           </div>
@@ -332,7 +332,7 @@
                     <thead class="btn-secondary">
                       <tr>
                         {% if request.user.healthteam or request.user.employee %}
-                        <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
+                          <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
                         {% endif %}
                         <th class="col-auto" scope="col">{% trans 'Name of medicine' %}</th>
                         <th class="col-auto" scope="col">{% trans 'Dosage' %}</th>
@@ -343,7 +343,7 @@
                     <tbody>
                       {% for medicine in medicines %}
                         <tr>
-                          {% if request.user.healthteam or request.user.employee%}
+                          {% if request.user.healthteam %}
                           <th scope="row">
                             <a href="{% url 'medicalrecords:update_medicine' view.kwargs.username medicine.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
                           </th>
