@@ -68,25 +68,25 @@ O Dr. Down possui diversos usuários de diferentes perfis e realizaremos o teste
 Os usuários terão que realizar as tarefas planejadas e para cada tarefa o avaliador irá cronometrar quanto tempo o usuário leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.
 Com base nisso o avaliador irá anotar os problemas encontrados e depois propor uma solução.
 
-### Tarefa 1: Com o usuário deslogado, procure as seguintes informações no site:
+### Tarefa 1: Com o usuário deslogado, procure as seguintes informações no site
 - Informações gerais;
  - Localização do Cris Down;
  - Leituras complementares;
  - Calendário de Vacina;
 
-### Tarefa 2: Ainda com o usuário deslogado, procure pelo fórum:
+### Tarefa 2: Ainda com o usuário deslogado, procure pelo fórum
 - Acessar o fórum;
 
-### Tarefa 3: Cadastrar usuário;
+### Tarefa 3: Cadastrar usuário
 - Cadastrar;
 - Editar informações;
 - Confirmar e-mail;
 
-### Tarefa 4: Login;
+### Tarefa 4: Login
 - Realizar login;
 - Na página principal, encontre o atalho para o perfil do usuário;
 
-### Tarefa 5: Fórum com login;
+### Tarefa 5: Fórum com login
 - Acessar categoria;
 - Acessar post;
 - Criar um comentário;
@@ -94,24 +94,24 @@ Com base nisso o avaliador irá anotar os problemas encontrados e depois propor 
 - Criar um post;
 - Apagar um post;
 
-### Tarefa 6: Usuário Paciente:
+### Tarefa 6: Usuário Paciente
 - Acessar o checklist;
 - Acessar o prontuário;
 - Solicitar uma consulta;
 - Calendário de vacina;
 
-### Tarefa 7: Usuário Funcionário:
+### Tarefa 7: Usuário Funcionário
 	- Acessar o checklist de determinado paciente;
 	- Acessar o prontuário de determinado paciente;
 	- Solicitar uma consulta de um determinado paciente;
 	- Calendário de vacina;
 
-### Tarefa 8: Usuário Equipe Médica: 
+### Tarefa 8: Usuário Equipe Médica
 Acessar prontuário de determinado paciente;
 Acessar o checklist de determinado paciente;
 
-### Tarefa 9: Acessar a página de eventos:
+### Tarefa 9: Acessar a página de eventos
 
-### Tarefa 10: Acessar a página de ajuda;
+### Tarefa 10: Acessar a página de ajuda
 
 	
