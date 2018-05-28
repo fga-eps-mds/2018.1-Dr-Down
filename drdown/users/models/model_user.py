@@ -19,7 +19,7 @@ class User(AbstractUser):
         verbose_name=_('Photo'),
         blank=True,
         null=True,
-        max_length = 500
+        max_length=500
     )
 
     name = models.CharField(

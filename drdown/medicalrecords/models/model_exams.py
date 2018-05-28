@@ -16,7 +16,7 @@ class Exam(models.Model):
     file = models.FileField(
         upload_to='media/medicalrecords/exams',
         verbose_name=_('Exam'),
-        help_text = _('Exam file'),
+        help_text=_('Exam file'),
     )
 
     day = models.DateTimeField(
