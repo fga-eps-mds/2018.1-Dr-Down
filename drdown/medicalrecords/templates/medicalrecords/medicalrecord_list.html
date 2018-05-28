@@ -297,7 +297,11 @@
                                     <p class="col text-secondary">{% trans 'Date' %}: {{ exam.day.date }}</p>
                                 </div>
                                 <div class="col">
-                                    <p class="col text-secondary">{% trans 'Obs' %}: {{ exam.observations }}</p>
+                                    {% if exam.observations == '' %}
+                                      <p class="col text-secondary">{% trans 'Obs' %}: - </p>
+                                    {% else %}
+                                      <p class="col text-secondary">{% trans 'Obs' %}: {{ exam.observations }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                           </div>
