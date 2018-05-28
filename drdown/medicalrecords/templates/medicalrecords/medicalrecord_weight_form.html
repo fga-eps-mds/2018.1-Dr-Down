@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans 'New Medical Record' %}{% endblock %}
+
+{% block css %}
+{{block.super}}
+<link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+          <h2>{% trans 'Weight' %}</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <form method="post" enctype="multipart/form-data"action="#menu7">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
+                {% if field.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in field.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ field.label_tag }}
+                </div>
+
+                <div class="col">
+                  {{ field }}
+                </div>
+
+                {% if field.help_text %}
+                  <font size="2" class="ml-3">{{ field.help_text|safe }}</font>
+                {% endif %}
+
+              </div>
+            </div>
+
+          {% endfor %}
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-auto">
+                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+                <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+              </div>
+            </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
