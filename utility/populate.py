@@ -67,7 +67,7 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
             created_at=timezone.now(),
             updated_at=timezone.now(),
             is_active=True,
-            has_specialization = False
+            has_specialization=False
         )
 
         # EmailAdress is for validating email confirmation on user creation
@@ -169,7 +169,7 @@ def populate():
     healthteam_1 = create_user(
         'Laura',
         'Oliveira',
-        'Laura',
+        'Laura Oliveira',
         'laura',
         'laura@email.com',
         '1998-04-05',
@@ -179,7 +179,7 @@ def populate():
     healthteam_2 = create_user(
         'Maura',
         'Oliveira',
-        'Maura',
+        'Maura Oliveira',
         'maura',
         'maura@email.com',
         '1998-04-05',
@@ -189,7 +189,7 @@ def populate():
     healthteam_3 = create_user(
         'Sara',
         'Oliveira',
-        'Sara',
+        'Sara Oliveira',
         'sara',
         'sara@email.com',
         '1998-04-05',
@@ -207,7 +207,7 @@ def populate():
     responsible_1 = create_user(
         'José',
         'Vaz',
-        'José',
+        'José Vaz',
         'jose',
         'jose@email.com',
         '1998-04-05',
@@ -217,7 +217,7 @@ def populate():
     responsible_2 = create_user(
         'Ana',
         'Vitória',
-        'Ana',
+        'Ana Vitória',
         'ana',
         'ana@email.com',
         '1998-04-05',
@@ -227,7 +227,7 @@ def populate():
     responsible_3 = create_user(
         'Júlio',
         'Tavares',
-        'Júlio',
+        'Júlio Tavares',
         'julio',
         'julio@email.com',
         '1998-04-05',
@@ -246,7 +246,7 @@ def populate():
     patient_3 = create_user(
         'Enzo',
         'Gabriel',
-        'Enzo',
+        'Enzo Gabriel',
         'enzo',
         'enzo@email.com',
         timezone.now() - timezone.timedelta(days=3650),
@@ -257,7 +257,7 @@ def populate():
     patient_4 = create_user(
         'Valentina',
         'Valente',
-        'Valentina',
+        'Valentina Valente',
         'valentina',
         'valentina@email.com',
         timezone.now() - timezone.timedelta(days=1),
@@ -268,7 +268,7 @@ def populate():
     patient_1 = create_user(
         'Gabriel',
         'dos Santos',
-        'Gabriel',
+        'Gabriel dos Santos',
         'gabriel',
         'gabriel@email.com',
         '1998-04-05',
@@ -279,7 +279,7 @@ def populate():
     patient_2 = create_user(
         'Carla',
         'Júlia',
-        'Carla',
+        'Carla Júlia',
         'carla',
         'carla@email.com',
         '1998-04-05',
@@ -290,7 +290,7 @@ def populate():
     patient_5 = create_user(
         'Bia',
         'Falcão',
-        'Bianca',
+        'Bianca Falcão',
         'bianca',
         'bianca@email.com',
         timezone.now() - timezone.timedelta(days=1),
@@ -301,7 +301,7 @@ def populate():
     patient_6 = create_user(
         'Nathan',
         'Vilela',
-        'Nathan',
+        'Nathan Vilela',
         'nathan',
         'nathan@email.com',
         '1998-04-05',
@@ -322,7 +322,7 @@ def populate():
     employee_1 = create_user(
         'Pedro',
         'Victor',
-        'Pedro',
+        'Pedro Victor',
         'pedro',
         'pedro@email.com',
         '1998-04-05',
@@ -332,7 +332,7 @@ def populate():
     employee_2 = create_user(
         'Raíssa',
         'Parente',
-        'Raíssa',
+        'Raíssa Parente',
         'raissa',
         'raissa@email.com',
         '1998-04-05',
