@@ -31,7 +31,7 @@ class Events(models.Model):
         _('Value of event'),
         help_text=_('Event value if that is paid'),
         decimal_places = 2,
-        max_digits = 3,
+        max_digits = 4,
     )
 
     class Meta:
