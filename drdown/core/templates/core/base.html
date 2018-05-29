@@ -135,22 +135,24 @@
 
           {% elif user.responsible %}
             {% for patient in request.user.responsible.patient_set.all %}
-              {% if forloop.revcounter == 1%}
-                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
-                    {{patient.user.name}}
-                  </a></li>
-              {% else %}
+              {% if forloop.revcounter is not 1 and forloop.counter == 1%}
               <li class="dropdown">
                 <a href="#patient" data-toggle="collapse" aria-expanded="false" >
                   {% trans " My Patients" %}
                 </a>
                 <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
+                  {% for patient in request.user.responsible.patient_set.all %}
                   <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
-                    {% trans "Medical Record" %}
+                    {{patient.user.name}}
                   </a></li>
+                  {% endfor %}
 
                 </ul>
               </li>
+              {% elif forloop.revcounter ==  1  and forloop.counter == 1 %}
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
+                    {{patient.user.name}}
+                  </a></li>
               {% endif %}
             {% endfor %}
             <li class="dropdown">

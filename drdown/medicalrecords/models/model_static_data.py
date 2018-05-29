@@ -33,6 +33,11 @@ class StaticData(models.Model):
         verbose_name=_('Test of the Ear')
     )
 
+    foot_test = models.FileField(
+        upload_to='media/medicalrecords',
+        verbose_name=_('Foot test')
+    )
+
     author = models.ForeignKey(
         HealthTeam,
         on_delete=models.CASCADE,

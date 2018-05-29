@@ -1,0 +1,54 @@
+{% load static i18n %}
+
+    <div class="row mb-5">
+      <div class="col">
+          <h3 >{% trans 'Medical Exams' %}</h3>
+      </div>
+      {% if request.user.healthteam %}
+        <div class="col-auto">
+            <a href="{% url 'medicalrecords:create_exam_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="row mb-5">
+      <div class="col border-right">
+        <div class="accordion" id="accordionmenu3">
+          {% for category, exams in exams_categories.items %}
+            <div class="card">
+              <div class="card-header" id="headingCategory{{ category }}">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory{{category}}">
+                    {{ category }}
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseCategory{{category}}" class="collapse" data-parent="#headingCategory{{ category }}">
+                <div class="card-body">
+                  {% for exam in exams %}
+                    <div class="row">
+                      <div class="col mx-3 alert alert-dark" role="alert">
+                          <div class="col">
+                              <a class="col text-secondary" href="{{ exam.file.url }}"> {{  exam.file.name }} </a>
+                              <div class="w-100"></div>
+                              <p class="col text-secondary">{% trans 'Date' %}: {{ exam.day.date }}</p>
+                          </div>
+                          <div class="col">
+                              {% if exam.observations == '' %}
+                                <p class="col text-secondary">{% trans 'Obs' %}: - </p>
+                              {% else %}
+                                <p class="col text-secondary">{% trans 'Obs' %}: {{ exam.observations }}</p>
+                              {% endif %}
+                          </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% empty %}
+            <h4>{% trans 'There are no exams registered for this patient.'%}</h4>
+          {% endfor %}
+        </div>
+      </div>
+    </div>

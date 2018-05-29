@@ -1,0 +1,57 @@
+{% load static i18n %}
+
+          <div class="row justify-content-center ">
+            <div class="col-auto">
+                {% if related_patient.user.photo %}
+                    <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
+                {% else %}
+                    <img src="{% static 'users/img/user.png' %}" class="align-photo">
+                {% endif %}
+                <div class="row"><br></div>
+            </div>
+
+            <div class="col border-left">
+              <div class="row">
+                <label class="col"> <strong>{% trans 'Name: '%} </strong> </label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert"> {{ related_patient.user.name }} </div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'Birthday: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.user.birthday }}</div>
+              </div>
+
+              {% if related_patient.user.cpf %}
+                <div class="row">
+                    <label ><strong>{% trans 'CPF: '%}</strong></label>{{ related_patient.cpf }}
+                </div>
+              {% endif %}
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'SUS: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.sus_number }} </div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'SES: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.ses }}</div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'Civil Registry of Birth: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.civil_registry_of_birth}}</div>
+              </div>
+
+              <div class="row">
+                <label class="col"><strong>{% trans 'Declaration of Live Birth: '%}</strong></label>
+                <div class="w-100"></div>
+                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.declaration_of_live_birth }}</div>
+              </div>
+
+            </div>
+          </div>
