@@ -6,7 +6,7 @@
   {% if request.path == url %}
     {% trans "New Event" %}
    {% else %}
-    {% trans "Edit Appointment" %} -->
+    {% trans "Edit Event" %} -->
   {% endif %}
 {% endblock %}
 
@@ -95,8 +95,7 @@
 		    <small class="text-muted">{% trans 'Enter event description and details' %}</small>
     {% endif %}
 	</div>
-
-	<button type="submit" class="btn btn-success float-right">Create</button>
+	  <button type="submit" class="btn btn-success float-right">{% trans 'Submit' %}</button>
 </form>
 
 {% endblock %}
