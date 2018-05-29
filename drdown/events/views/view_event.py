@@ -32,13 +32,9 @@ class EventsCreateView(BaseViewPermissions, CreateView):
 		'value',
 	]
 
-    def get_success_url(self):
-
-      success_create_url = reverse(
+    success_url= reverse_lazy(
 			viewname='events:list_events',
       )
-      return success_create_url
-
 
 class EventsUpdateView(BaseViewPermissions, UpdateView):
     model = Events
