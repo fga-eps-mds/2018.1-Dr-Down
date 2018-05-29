@@ -1511,6 +1511,231 @@
             "title": "Legenda"
         }, 
         {
+            "location": "/eps/usability_test/USABILITY_TESTS/", 
+            "text": "Teste de Usabilidade\n\n\n\n\n\n\n\n\nData\n\n\nVers\u00e3o\n\n\nDescri\u00e7\u00e3o\n\n\nAutor\n\n\n\n\n\n\n\n\n\n\n28/05/2018\n\n\n0.0.1\n\n\nPrimeira Vers\u00e3o do documento de teste de usabilidade\n\n\nMariana De Souza Mendes\n\n\n\n\n\n\n\n\nIntrodu\u00e7\u00e3o\n\n\nEste relat\u00f3rio descreve um estudo de usabilidade de partes do Dr. Down com o intuito de identificar barreiras ao uso e aceita\u00e7\u00e3o do mesmo que possam ser mitigadas em fases posteriores de ajuste. \nA usabilidade sempre foi uma preocupa\u00e7\u00e3o do nosso sistema visto que v\u00e1rios perfis de usu\u00e1rios far\u00e3o a utiliza\u00e7\u00e3o do mesmo e um dos perfis possui uma S\u00edndrome de Down.\n\n\nDefinir o grupo de usu\u00e1rios\n\n\nO Dr. Down possui diversos usu\u00e1rios de diferentes perfis e realizaremos o teste com pelo menos um de cada grupo.\n\n\n- Equipe de Sa\u00fade do Cris Down\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRepresentante\n\n\nUsu\u00e1rios\n\n\n\n\n\n\nDescri\u00e7\u00e3o\n\n\nEquipe m\u00e9dica que trabalha no Cris Down atendendo casos de SD.\n\n\n\n\n\n\nTipo\n\n\nUsu\u00e1rio Avan\u00e7ado\n\n\n\n\n\n\nResponsabilidade\n\n\nConhecer a aplica\u00e7\u00e3o e todas as suas funcionalidades, al\u00e9m de utiliz\u00e1-la para facilitar seu trabalho.\n\n\n\n\n\n\nCrit\u00e9rios de sucesso\n\n\nSer capaz de utilizar o sistema para melhorar o atendimento de seus pacientes e aprimorar o gerenciamento do Cris Down.\n\n\n\n\n\n\nEnvolvimento\n\n\nBaixo\n\n\n\n\n\n\nComent\u00e1rios ou Problemas\n\n\n-\n\n\n\n\n\n\n\n\n- Profissionais de Sa\u00fade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRepresentante\n\n\nUsu\u00e1rios\n\n\n\n\n\n\nDescri\u00e7\u00e3o\n\n\nProfissionais de sa\u00fade relacionados ao Cris Down que possibilitam atendimento ao paciente em localiza\u00e7\u00f5es mais pr\u00f3ximas a sua resid\u00eancia.\n\n\n\n\n\n\nTipo\n\n\nUsu\u00e1rio Avan\u00e7ado\n\n\n\n\n\n\nResponsabilidade\n\n\nConhecer a aplica\u00e7\u00e3o e utiliz\u00e1-la para auxiliar no tratamento de pacientes com SD.\n\n\n\n\n\n\nCrit\u00e9rios de sucesso\n\n\nUtilizar o sistema para colaborar no tratamento dos pacientes com SD do Cris Down\n\n\n\n\n\n\nEnvolvimento\n\n\nBaixo\n\n\n\n\n\n\nComent\u00e1rios ou Problemas\n\n\n-\n\n\n\n\n\n\n\n\n- Familiares e/ou Respons\u00e1veis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRepresentante\n\n\nUsu\u00e1rios\n\n\n\n\n\n\nDescri\u00e7\u00e3o\n\n\nFamiliares do paciente com SD.\n\n\n\n\n\n\nTipo\n\n\nUsu\u00e1rio Informal\n\n\n\n\n\n\nResponsabilidade\n\n\nConhecer a aplica\u00e7\u00e3o e us\u00e1-la para auxiliar no acompanhamento de seu familiar com SD. Marcar consultas para seu familiar com SD.\n\n\n\n\n\n\nCrit\u00e9rios de sucesso\n\n\nGanhar facilidade em se comunicar com Cris Down e acompanhar o prontu\u00e1rio de seu familiar portador de SD.\n\n\n\n\n\n\nEnvolvimento\n\n\nBaixo\n\n\n\n\n\n\nComent\u00e1rios ou Problemas\n\n\n-\n\n\n\n\n\n\n\n\n- Paciente\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRepresentante\n\n\nUsu\u00e1rios\n\n\n\n\n\n\nDescri\u00e7\u00e3o\n\n\nPaciente com SD\n\n\n\n\n\n\nTipo\n\n\nUsu\u00e1rio Informal\n\n\n\n\n\n\nResponsabilidade\n\n\nConhecer a aplica\u00e7\u00e3o e us\u00e1-la para auxiliar em seu tratamento.\n\n\n\n\n\n\nCrit\u00e9rios de sucesso\n\n\nPassar menos tempo em fila de espera e ter uma forma mais f\u00e1cil de gerir seu calend\u00e1rio de consulta.\n\n\n\n\n\n\nEnvolvimento\n\n\nBaixo\n\n\n\n\n\n\nComent\u00e1rios ou Problemas\n\n\n-\n\n\n\n\n\n\n\n\nTarefas\n\n\nOs usu\u00e1rios ter\u00e3o que realizar as tarefas planejadas e para cada tarefa o avaliador ir\u00e1 cronometrar quanto tempo o usu\u00e1rio leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.\nCom base nisso o avaliador ir\u00e1 anotar os problemas encontrados e depois propor uma solu\u00e7\u00e3o.\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site\n\n\n - Informa\u00e7\u00f5es gerais;\n - Localiza\u00e7\u00e3o do Cris Down;\n - Leituras complementares;\n - Calend\u00e1rio de Vacina;\n\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum\n\n\n- Acessar o f\u00f3rum;\n\n\n\nTarefa 3: Cadastrar usu\u00e1rio\n\n\n- Cadastrar;\n- Editar informa\u00e7\u00f5es;\n- Confirmar e-mail;\n\n\n\nTarefa 4: Login\n\n\n- Realizar login;\n- Na p\u00e1gina principal, encontre o atalho para o perfil do usu\u00e1rio;\n\n\n\nTarefa 5: F\u00f3rum com login\n\n\n- Acessar categoria;\n- Acessar post;\n- Criar um coment\u00e1rio;\n- Apagar um coment\u00e1rio;\n- Criar um post;\n- Apagar um post;\n\n\n\nTarefa 6: Usu\u00e1rio Paciente\n\n\n- Acessar o checklist;\n- Acessar o prontu\u00e1rio;\n- Solicitar uma consulta;\n- Calend\u00e1rio de vacina;\n\n\n\nTarefa 7: Usu\u00e1rio Funcion\u00e1rio\n\n\n- Acessar o checklist de determinado paciente;\n- Acessar o prontu\u00e1rio de determinado paciente;\n- Solicitar uma consulta de um determinado paciente;\n- Calend\u00e1rio de vacina;\n\n\n\nTarefa 8: Usu\u00e1rio Equipe M\u00e9dica\n\n\n- Acessar prontu\u00e1rio de determinado paciente;\n- Acessar o checklist de determinado paciente;\n\n\n\nTarefa 9: Acessar a p\u00e1gina de eventos\n\n\nTarefa 10: Acessar a p\u00e1gina de ajuda", 
+            "title": "Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#teste-de-usabilidade", 
+            "text": "Data  Vers\u00e3o  Descri\u00e7\u00e3o  Autor      28/05/2018  0.0.1  Primeira Vers\u00e3o do documento de teste de usabilidade  Mariana De Souza Mendes", 
+            "title": "Teste de Usabilidade"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#introducao", 
+            "text": "Este relat\u00f3rio descreve um estudo de usabilidade de partes do Dr. Down com o intuito de identificar barreiras ao uso e aceita\u00e7\u00e3o do mesmo que possam ser mitigadas em fases posteriores de ajuste. \nA usabilidade sempre foi uma preocupa\u00e7\u00e3o do nosso sistema visto que v\u00e1rios perfis de usu\u00e1rios far\u00e3o a utiliza\u00e7\u00e3o do mesmo e um dos perfis possui uma S\u00edndrome de Down.", 
+            "title": "Introdu\u00e7\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#definir-o-grupo-de-usuarios", 
+            "text": "O Dr. Down possui diversos usu\u00e1rios de diferentes perfis e realizaremos o teste com pelo menos um de cada grupo.", 
+            "title": "Definir o grupo de usu\u00e1rios"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#-equipe-de-saude-do-cris-down", 
+            "text": "Representante  Usu\u00e1rios    Descri\u00e7\u00e3o  Equipe m\u00e9dica que trabalha no Cris Down atendendo casos de SD.    Tipo  Usu\u00e1rio Avan\u00e7ado    Responsabilidade  Conhecer a aplica\u00e7\u00e3o e todas as suas funcionalidades, al\u00e9m de utiliz\u00e1-la para facilitar seu trabalho.    Crit\u00e9rios de sucesso  Ser capaz de utilizar o sistema para melhorar o atendimento de seus pacientes e aprimorar o gerenciamento do Cris Down.    Envolvimento  Baixo    Coment\u00e1rios ou Problemas  -", 
+            "title": "- Equipe de Sa\u00fade do Cris Down"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#-profissionais-de-saude", 
+            "text": "Representante  Usu\u00e1rios    Descri\u00e7\u00e3o  Profissionais de sa\u00fade relacionados ao Cris Down que possibilitam atendimento ao paciente em localiza\u00e7\u00f5es mais pr\u00f3ximas a sua resid\u00eancia.    Tipo  Usu\u00e1rio Avan\u00e7ado    Responsabilidade  Conhecer a aplica\u00e7\u00e3o e utiliz\u00e1-la para auxiliar no tratamento de pacientes com SD.    Crit\u00e9rios de sucesso  Utilizar o sistema para colaborar no tratamento dos pacientes com SD do Cris Down    Envolvimento  Baixo    Coment\u00e1rios ou Problemas  -", 
+            "title": "- Profissionais de Sa\u00fade"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#-familiares-eou-responsaveis", 
+            "text": "Representante  Usu\u00e1rios    Descri\u00e7\u00e3o  Familiares do paciente com SD.    Tipo  Usu\u00e1rio Informal    Responsabilidade  Conhecer a aplica\u00e7\u00e3o e us\u00e1-la para auxiliar no acompanhamento de seu familiar com SD. Marcar consultas para seu familiar com SD.    Crit\u00e9rios de sucesso  Ganhar facilidade em se comunicar com Cris Down e acompanhar o prontu\u00e1rio de seu familiar portador de SD.    Envolvimento  Baixo    Coment\u00e1rios ou Problemas  -", 
+            "title": "- Familiares e/ou Respons\u00e1veis"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#-paciente", 
+            "text": "Representante  Usu\u00e1rios    Descri\u00e7\u00e3o  Paciente com SD    Tipo  Usu\u00e1rio Informal    Responsabilidade  Conhecer a aplica\u00e7\u00e3o e us\u00e1-la para auxiliar em seu tratamento.    Crit\u00e9rios de sucesso  Passar menos tempo em fila de espera e ter uma forma mais f\u00e1cil de gerir seu calend\u00e1rio de consulta.    Envolvimento  Baixo    Coment\u00e1rios ou Problemas  -", 
+            "title": "- Paciente"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefas", 
+            "text": "Os usu\u00e1rios ter\u00e3o que realizar as tarefas planejadas e para cada tarefa o avaliador ir\u00e1 cronometrar quanto tempo o usu\u00e1rio leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.\nCom base nisso o avaliador ir\u00e1 anotar os problemas encontrados e depois propor uma solu\u00e7\u00e3o.", 
+            "title": "Tarefas"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-1-com-o-usuario-deslogado-procure-as-seguintes-informacoes-no-site", 
+            "text": "- Informa\u00e7\u00f5es gerais;\n - Localiza\u00e7\u00e3o do Cris Down;\n - Leituras complementares;\n - Calend\u00e1rio de Vacina;", 
+            "title": "Tarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-2-ainda-com-o-usuario-deslogado-procure-pelo-forum", 
+            "text": "- Acessar o f\u00f3rum;", 
+            "title": "Tarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-3-cadastrar-usuario", 
+            "text": "- Cadastrar;\n- Editar informa\u00e7\u00f5es;\n- Confirmar e-mail;", 
+            "title": "Tarefa 3: Cadastrar usu\u00e1rio"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-4-login", 
+            "text": "- Realizar login;\n- Na p\u00e1gina principal, encontre o atalho para o perfil do usu\u00e1rio;", 
+            "title": "Tarefa 4: Login"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-5-forum-com-login", 
+            "text": "- Acessar categoria;\n- Acessar post;\n- Criar um coment\u00e1rio;\n- Apagar um coment\u00e1rio;\n- Criar um post;\n- Apagar um post;", 
+            "title": "Tarefa 5: F\u00f3rum com login"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-6-usuario-paciente", 
+            "text": "- Acessar o checklist;\n- Acessar o prontu\u00e1rio;\n- Solicitar uma consulta;\n- Calend\u00e1rio de vacina;", 
+            "title": "Tarefa 6: Usu\u00e1rio Paciente"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-7-usuario-funcionario", 
+            "text": "- Acessar o checklist de determinado paciente;\n- Acessar o prontu\u00e1rio de determinado paciente;\n- Solicitar uma consulta de um determinado paciente;\n- Calend\u00e1rio de vacina;", 
+            "title": "Tarefa 7: Usu\u00e1rio Funcion\u00e1rio"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-8-usuario-equipe-medica", 
+            "text": "- Acessar prontu\u00e1rio de determinado paciente;\n- Acessar o checklist de determinado paciente;", 
+            "title": "Tarefa 8: Usu\u00e1rio Equipe M\u00e9dica"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-9-acessar-a-pagina-de-eventos", 
+            "text": "", 
+            "title": "Tarefa 9: Acessar a p\u00e1gina de eventos"
+        }, 
+        {
+            "location": "/eps/usability_test/USABILITY_TESTS/#tarefa-10-acessar-a-pagina-de-ajuda", 
+            "text": "", 
+            "title": "Tarefa 10: Acessar a p\u00e1gina de ajuda"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/", 
+            "text": "1\u00ba TESTE DE USABILIDADE\n\n\nEsse teste foi feito com o frontend antigo. Foi com base nele e com com as considera\u00e7\u00f5es do cliente e da Professora Carla que mudamos para o frontend atual. Melhorando assim a usabilidade do software.\n\n\nUsu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com navbar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.\n\n\nTarefas:\n\n\nOs usu\u00e1rios ter\u00e3o que realizar as tarefas planejadas e para cada tarefa o avaliador ir\u00e1 cronometrar quanto tempo o usu\u00e1rio leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.\n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades.\n\n\nTarefa 4: Login.\n\n\nP\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum.\n\n\nTarefa 6: Funcionalidades.\n\n\nMuita dificuldade em achar todos links para as funcionalidades.\n\n\nTarefa 7: Consulta.\n\n\nConsulta: utilizou com facilidade.\n\n\nTarefa 8: Prontu\u00e1rio.\n\n\nProntu\u00e1rio: um pouco de dificuldade ao usar as abas e entender o funcionamento de cada uma.\n\n\nConclus\u00e3o\n\n\nO usu\u00e1rio conseguiu utilizar as funcionalidades com facilidade, com exce\u00e7\u00e3o de algumas que ele necessitou de um pouco mais de tempo para atingir seu objetivo.  Por\u00e9m, apresentou bastante dificuldade em navegar entre as funcionalidades e tamb\u00e9m bastante dificuldade para encontrar as p\u00e1ginas que necessitava.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 5/10", 
+            "title": "Relatorio 01"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#1o-teste-de-usabilidade", 
+            "text": "Esse teste foi feito com o frontend antigo. Foi com base nele e com com as considera\u00e7\u00f5es do cliente e da Professora Carla que mudamos para o frontend atual. Melhorando assim a usabilidade do software.  Usu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com navbar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.", 
+            "title": "1\u00ba TESTE DE USABILIDADE"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefas", 
+            "text": "Os usu\u00e1rios ter\u00e3o que realizar as tarefas planejadas e para cada tarefa o avaliador ir\u00e1 cronometrar quanto tempo o usu\u00e1rio leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.", 
+            "title": "Tarefas:"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-1-com-o-usuario-deslogado-procure-as-seguintes-informacoes-no-site", 
+            "text": "O usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.", 
+            "title": "Tarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-2-ainda-com-o-usuario-deslogado-procure-pelo-forum", 
+            "text": "N\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.", 
+            "title": "Tarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-3-cadastrar-usuario", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 3: Cadastrar usu\u00e1rio."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-4-login", 
+            "text": "P\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.", 
+            "title": "Tarefa 4: Login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-5-forum-com-login", 
+            "text": "Usu\u00e1rio teve facilidade em utilizar o f\u00f3rum.", 
+            "title": "Tarefa 5: F\u00f3rum com login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-6-funcionalidades", 
+            "text": "Muita dificuldade em achar todos links para as funcionalidades.", 
+            "title": "Tarefa 6: Funcionalidades."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-7-consulta", 
+            "text": "Consulta: utilizou com facilidade.", 
+            "title": "Tarefa 7: Consulta."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#tarefa-8-prontuario", 
+            "text": "Prontu\u00e1rio: um pouco de dificuldade ao usar as abas e entender o funcionamento de cada uma.", 
+            "title": "Tarefa 8: Prontu\u00e1rio."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#conclusao", 
+            "text": "O usu\u00e1rio conseguiu utilizar as funcionalidades com facilidade, com exce\u00e7\u00e3o de algumas que ele necessitou de um pouco mais de tempo para atingir seu objetivo.  Por\u00e9m, apresentou bastante dificuldade em navegar entre as funcionalidades e tamb\u00e9m bastante dificuldade para encontrar as p\u00e1ginas que necessitava.", 
+            "title": "Conclus\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_01/#nota-de-usabilidade-do-usuario-510", 
+            "text": "", 
+            "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 5/10"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/", 
+            "text": "2\u00b0 TESTE DE USABILIDADE\n\n\nUsu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com sidebar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.\n\n\nTarefas:\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.\n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades.\n\n\nTarefa 4: Login.\n\n\nP\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum.\n\n\nTarefa 6: Usu\u00e1rio Paciente\n\n\nChecklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.\nCalend\u00e1rio de vacinas: Foram relatadas muitas dificuldades na usabilidade(tabela muito grande) e compreens\u00e3o dos textos(pouco claros). \n\n\nTarefa 7: Usu\u00e1rio Equipe M\u00e9dica\n\n\nProntu\u00e1rio: Dificuldade em interpretar o checkbox \u201cem uso\u201d da aba de rem\u00e9dios. Dificuldade de visualiza\u00e7\u00e3o das queixas como links. Dificuldade em interpretar \"evolu\u00e7\u00e3o\" como relat\u00f3rio. Dificuldade de busca de um paciente. Dificuldade de acessar a checklist do paciente a partir de seu prontu\u00e1rio.\n\n\nTarefa 8: Usu\u00e1rio Respons\u00e1vel\n\n\nSem dificuldades.\n\n\nConclus\u00e3o\n\n\nAp\u00f3s refatora\u00e7\u00e3o do frontend, o usu\u00e1rio foi capaz de navegar entre os links e achar aquilo que necessitava. As dificuldades foram voltadas para o nome de alguns campos do site.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 9/10", 
+            "title": "Relatorio 02"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#2-teste-de-usabilidade", 
+            "text": "Usu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com sidebar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.", 
+            "title": "2\u00b0 TESTE DE USABILIDADE"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefas", 
+            "text": "", 
+            "title": "Tarefas:"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-1-com-o-usuario-deslogado-procure-as-seguintes-informacoes-no-site", 
+            "text": "O usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.", 
+            "title": "Tarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-2-ainda-com-o-usuario-deslogado-procure-pelo-forum", 
+            "text": "N\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.", 
+            "title": "Tarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-3-cadastrar-usuario", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 3: Cadastrar usu\u00e1rio."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-4-login", 
+            "text": "P\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.", 
+            "title": "Tarefa 4: Login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-5-forum-com-login", 
+            "text": "Usu\u00e1rio teve facilidade em utilizar o f\u00f3rum.", 
+            "title": "Tarefa 5: F\u00f3rum com login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-6-usuario-paciente", 
+            "text": "Checklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.\nCalend\u00e1rio de vacinas: Foram relatadas muitas dificuldades na usabilidade(tabela muito grande) e compreens\u00e3o dos textos(pouco claros).", 
+            "title": "Tarefa 6: Usu\u00e1rio Paciente"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-7-usuario-equipe-medica", 
+            "text": "Prontu\u00e1rio: Dificuldade em interpretar o checkbox \u201cem uso\u201d da aba de rem\u00e9dios. Dificuldade de visualiza\u00e7\u00e3o das queixas como links. Dificuldade em interpretar \"evolu\u00e7\u00e3o\" como relat\u00f3rio. Dificuldade de busca de um paciente. Dificuldade de acessar a checklist do paciente a partir de seu prontu\u00e1rio.", 
+            "title": "Tarefa 7: Usu\u00e1rio Equipe M\u00e9dica"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#tarefa-8-usuario-responsavel", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 8: Usu\u00e1rio Respons\u00e1vel"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#conclusao", 
+            "text": "Ap\u00f3s refatora\u00e7\u00e3o do frontend, o usu\u00e1rio foi capaz de navegar entre os links e achar aquilo que necessitava. As dificuldades foram voltadas para o nome de alguns campos do site.", 
+            "title": "Conclus\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_02/#nota-de-usabilidade-do-usuario-910", 
+            "text": "", 
+            "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 9/10"
+        }, 
+        {
             "location": "/sprints/00/planning/", 
             "text": "Planejamento Sprint 00\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint\n: 0\n\n\nData de in\u00edcio\n: 05/03/2018\n\n\nData de T\u00e9rmino\n: 10/03/2018\n\n\nDura\u00e7\u00e3o\n: 5 dias\n\n\nPontos Planejados\n: 15 pontos\n\n\nMembros presentes\n: Todos\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\nArquiteto:\n  Victor Arnaud\n\n\n\n\n\n\nDesenvolvedores:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Planejamento da Sprint\n\n\nO planejamento da sprint foi feito com o pouco de informa\u00e7\u00f5es que temos, e com o intuito de come\u00e7ar a preparar todos os membros da equipe, em especial aqueles que est\u00e3o cursando MDS, para a execu\u00e7\u00e3o do projeto. Isso resultou em hist\u00f3rias de treinamentos e estudos sobre as tecnologias e processos que ser\u00e3o usadas ao longo de todo o semestre.\n\n\n4. Backlog da Sprint\n\n\nMDS e EPS\n\n\n\n\n\n\nS01\n - Estudar a respeito de GitFlow\n\n\n\n\n\n\nS02\n - Treinamento de Documenta\u00e7\u00f5es  (Vis\u00e3o, Arquitetura, Especifica\u00e7\u00e3o, Prototipagem)\n\n\n\n\n\n\nS03\n - Estudar a metodologia SCRUM\n\n\n\n\n\n\nS04\n - Treinamento de Python/Django\n\n\n\n\n\n\nS05\n - Treinamento de Git e Git Flow", 
             "title": "Planejamento"
