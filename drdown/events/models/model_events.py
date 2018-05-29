@@ -6,8 +6,8 @@ class Events(models.Model):
 
     name = models.CharField(
         _('Name'),
-        help_text = _('Name of event'),
-        max_length= 50,
+        help_text=_('Name of event'),
+        max_length=50,
         default=""
     )
     date = models.DateField(
@@ -20,7 +20,7 @@ class Events(models.Model):
         help_text=_('Time of event'),
         max_length=50
     )
-    description =  models.TextField(
+    description = models.TextField(
         _('Description'),
         help_text=_('Description from event'),
         max_length=500,
@@ -29,15 +29,15 @@ class Events(models.Model):
 
     organize_by = models.CharField(
         _('Organize by'),
-        max_length = 80,
+        max_length=80,
         help_text=_('Person who organize the event'),
     )
 
     value = models.DecimalField(
         _('Value of event'),
         help_text=_('Event value if that is paid'),
-        decimal_places = 2,
-        max_digits = 4,
+        decimal_places=2,
+        max_digits=4,
     )
 
     class Meta:

@@ -8,6 +8,7 @@ from django.urls import reverse
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin
 
+
 class BaseViewPermissions(UserPassesTestMixin):
 
     def test_func(self):
@@ -20,21 +21,23 @@ class EventsListView(ListView):
     slug_url_kwarg = 'name'
     template_name = 'events_list.html'
 
+
 class EventsCreateView(BaseViewPermissions, CreateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
         'name',
-		'date',
-		'time',
-		'description',
-		'organize_by',
-		'value',
-	]
+        'date',
+        'time',
+        'description',
+        'organize_by',
+        'value',
+    ]
 
-    success_url= reverse_lazy(
-			viewname='events:list_events',
-      )
+    success_url = reverse_lazy(
+        viewname='events:list_events',
+    )
+
 
 class EventsUpdateView(BaseViewPermissions, UpdateView):
     model = Events
@@ -58,13 +61,9 @@ class EventsUpdateView(BaseViewPermissions, UpdateView):
         viewname='events:list_events',
     )
 
-    
 
 class EventsDeleteView(BaseViewPermissions, DeleteView):
     model = Events
     success_url = reverse_lazy(
         viewname='events:list_events',
     )
-
-
-
