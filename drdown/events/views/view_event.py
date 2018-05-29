@@ -6,6 +6,13 @@ from django.views.generic import ListView
 from drdown.events.models.model_events import Events
 from django.urls import reverse
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin
+
+class BaseViewPermissions(UserPassesTestMixin):
+
+    def test_func(self):
+        return hasattr(self.request.user, 'employee')
+
 
 class EventsListView(ListView):
     model = Events
@@ -13,7 +20,7 @@ class EventsListView(ListView):
     slug_url_kwarg = 'name'
     template_name = 'events_list.html'
 
-class EventsCreateView(CreateView):
+class EventsCreateView(BaseViewPermissions, CreateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
@@ -32,7 +39,8 @@ class EventsCreateView(CreateView):
       )
       return success_create_url
 
-class EventsUpdateView(UpdateView):
+
+class EventsUpdateView(BaseViewPermissions, UpdateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
@@ -54,10 +62,13 @@ class EventsUpdateView(UpdateView):
         viewname='events:list_events',
     )
 
-class EventsDeleteView(DeleteView):
+    
+
+class EventsDeleteView(BaseViewPermissions, DeleteView):
     model = Events
     success_url = reverse_lazy(
         viewname='events:list_events',
     )
+
 
 
