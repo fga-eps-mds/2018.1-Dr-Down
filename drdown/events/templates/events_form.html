@@ -5,7 +5,7 @@
   {% url 'events:create_event' as url %}
   {% if request.path == url %}
     {% trans "New Event" %}
-<!--   {% else %}
+   {% else %}
     {% trans "Edit Appointment" %} -->
   {% endif %}
 {% endblock %}
@@ -91,7 +91,7 @@
     {% endif %}
 	</div>
 
-	<button type="submit" class="btn btn-sucess">Create</button>
+	<button type="submit" class="btn btn-success float-right">Create</button>
 </form>
 
 {% endblock %}

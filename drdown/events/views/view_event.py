@@ -54,5 +54,10 @@ class EventsUpdateView(UpdateView):
         viewname='events:list_events',
     )
 
+class EventsDeleteView(DeleteView):
+    model = Events
+    success_url = reverse_lazy(
+        viewname='events:list_events',
+    )
 
 

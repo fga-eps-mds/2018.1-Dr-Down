@@ -2,6 +2,7 @@ from django.conf.urls import url
 from drdown.events.views.view_event import EventsListView
 from drdown.events.views.view_event import EventsCreateView
 from drdown.events.views.view_event import EventsUpdateView
+from drdown.events.views.view_event import EventsDeleteView
 
 app_name ='events'
 
@@ -21,4 +22,10 @@ urlpatterns = [
     	view = EventsUpdateView.as_view(),
     	name = 'update_event'
      ),
+    url(
+        regex = r'^delete/(?P<pk>\d+)/$',
+        view = EventsDeleteView.as_view(),
+        name = 'delete_event'
+     ),
+
 ]
