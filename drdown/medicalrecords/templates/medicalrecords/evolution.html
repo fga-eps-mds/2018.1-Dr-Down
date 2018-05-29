@@ -1,0 +1,58 @@
+{% load static i18n %}
+{% load markdown_deux_tags %}
+
+  <div class="row">
+    <h3 class="col mb-5">{% trans 'Evolution' %}</h3>
+    {% if user.healthteam %}
+        <div class="col">
+            <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "New" %}</a>
+        </div>
+    {% endif %}
+  </div>
+
+  <div class="list-group">
+    <div class="accordion" id="accordionmenu1">
+      {% for medicalrecord in medicalrecordlist %}
+        <div class="card">
+          <div class="card-header" id="headingMedicalRecord{{ medicalrecord.id }}">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseMedicalRecord{{medicalrecord.id}}">
+                  {% trans 'Author'%}: {{ medicalrecord.author.user.name }} | {% trans 'Created at'%}: {{ medicalrecord.day }}
+              </button>
+            </h5>
+          </div>
+
+            <div id="collapseMedicalRecord{{medicalrecord.id}}" class="collapse" data-parent="#headingMedicalRecord{{ medicalrecord.id }}">
+              <div class="card-body">
+                <div class="h-blue list-group-item mb-5">
+                  <div class="row">
+                    <div class="col alert alert-dark mx-2 my-2">
+                      <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col border-right border-top">
+                        <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ medicalrecord.author.user.name }} </p>
+                    </div>
+                    <div class="col border-top">
+                        <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ medicalrecord.day }} </p>
+                    </div>
+                  </div>
+
+                  {% if medicalrecord.document %}
+                    <div class="row">
+                      <div class="col">
+                          <p>{% trans 'Attachment:' %} <a class="text-secondary" href="{{ medicalrecord.document.url }}">{{ medicalrecord.document.name }}</a></p>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        </div>
+      {% empty %}
+          <h4>{% trans 'There are no evolutions registered for this patient.'%}</h4>
+      {% endfor %}
+    </div>
+  </div>
