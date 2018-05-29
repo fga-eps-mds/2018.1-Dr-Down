@@ -8,4 +8,4 @@ class CurvesForm(forms.ModelForm):
 
     class Meta:
         model = Curves
-        fields = ["height", "weight", "age", "cephalic_perimeter"   ]
+        fields = ["height", "weight", "age", "cephalic_perimeter", ]
