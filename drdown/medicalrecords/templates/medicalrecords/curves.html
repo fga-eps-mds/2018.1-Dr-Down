@@ -1,62 +1,83 @@
 {% load static i18n %}
 
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Year', 'Patient', 'Ideal'],
+      ['10',  19  , 24],
+      ['11',  20.5, 25],
+      ['12',  21.5, 26],
+      ['13',  22.3, 27]
+    ]);
+
+    var options = {
+      title: 'IMC',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+
 <div class="row mb-5">
   <div class="col">
+    {% if request.user.healthteam or request.user.employee%}
+              <th class="col-auto" scope="col">
+                <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+              </th>
+            {% endif %}
     <h3 >{% trans 'Curves' %}</h3>
   </div>
 </div>
 
 <div class="row mb-5">
-
-  <div class="col border-bottom">
-    TODO: INSERT GRAPH (PLACEHOLDER)
-    <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">
-    TODO: INSERT GRAPH
-  </div>
-</div>
-
-<div class="row mb-5">
-
   <div class="col-auto">
     <div class="table-responsive">
-      <table class="table table-hover table-sm table-bordered">
+      <table class="table table-bordered">
 
-        <thead class="btn-secondary">
+        <thead class="bg-secondary text-white">
           <tr>
-            {% if request.user.healthteam or request.user.employee%}
-              <th class="col-auto" scope="col">
-                <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-              </th>
-            {% endif %}
-            <th class="col-auto" scope="col">{% trans 'Age' %} </th>
-            <th class="col-auto" scope="col">{% trans 'Weight' %} </th>
-            <th class="col-auto" scope="col">{% trans 'Height' %}</th>
-            <th class="col-auto" scope="col">{% trans 'Cephalic Perimeter' %} </th>
-            <th class="col-auto" scope="col">{% trans 'BMI' %} </th>
+            <th width="200px">{% trans 'Age' %} </th>
+            <th width="200px">{% trans 'Weight' %} </th>
+            <th width="200px">{% trans 'Height' %}</th>
+            <th width="200px">{% trans 'Cephalic Perimeter' %} </th>
+            <th width="200px">{% trans 'BMI' %} </th>
+            <th width="100px">{% trans 'Edit' %} </th>
           </tr>
         </thead>
 
         <tbody>
           {% for curve in related_patient.curves_set.all %}
             <tr>
-
-              {% if request.user.healthteam or request.user.employee%}
-                <td>
-                  <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
-                </td>
-              {% endif %}
               <td>{{curve.age}}</td>
               <td>{{curve.weight|floatformat}}</td>
               <td>{{curve.height}}</td>
               <td>{{curve.cephalic_perimeter}}</td>
               <td>{{curve.bmi}}</td>
-
-
+              {% if request.user.healthteam or request.user.employee%}
+                <td>
+                  <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm" style="margin: 0px;" >{% trans "Edit" %}</a>
+                </td>
+              {% endif %}
             </tr>
           {% endfor %}
         </tbody>
 
       </table>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col border-bottom">
+     <div id="curve_chart" style="width: 1000px; height: 500px"></div>
     </div>
   </div>
 
