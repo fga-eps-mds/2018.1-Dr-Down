@@ -20,11 +20,18 @@ __Histórias entregues:__
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
-
+| solução alternativa para a história | muitos commits feitos mais ao fim da sprint | componentes costumam dar problemas e gerar atrasos na histórias |
+| aprendizados de membros da equipe | componente utilizado em uma das histórias apresentou problemas | voltar o ritmo da equipe para como estava antes |
+| ganho de experiência de membros da equipe com front end | doença de um dos membros | evitar ao máximo faltar a eventos presenciais da equipe |
+| pontualidade de todos na reunião de sábado | perda de ritmo nas sprints | - |
+| boa distribuição da carga de trabalho ao longo da sprint | front end precisar ser mudado com frequência | - |
+| finalização do microsserviço | atraso na resposta das dailys não presenciais | - |
+| o nosso grupo está trabalhando bem | centralização em alguns membros do review das histórias | - |
+| o devops estável facilitou a implementação do microsserviço | greve atrapalhando o andamento das atividades do grupo | - |
 
 ## 3. Quadro de Conhecimento
 
-![Quadro de conhecimento da Sprint 11]()
+![Quadro de conhecimento da Sprint 11](https://uploaddeimagens.com.br/images/001/438/765/full/quadro_conhecimento_S11.png?1527459099)
 
 ## 5. Gráfico do Burndown
 
