@@ -10,6 +10,12 @@ class Events(models.Model):
         max_length=50,
         default=""
     )
+    location = models.CharField(
+        _('Location'),
+        help_text=_('Location of event'),
+        max_length=50,
+        default=""
+    )
     date = models.DateField(
         _('Date'),
         help_text=_('Date of event'),
@@ -33,13 +39,17 @@ class Events(models.Model):
         help_text=_('Person who organize the event'),
     )
 
-    value = models.DecimalField(
+    free = models.BooleanField(default=False)
+
+    value = models.FloatField(
         _('Value of event'),
         help_text=_('Event value if that is paid'),
-        decimal_places=2,
-        max_digits=4,
     )
 
     class Meta:
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
+
+    def clean_status(self):
+        # when field is cleaned, we always return the existing model field.
+        return self.instance.status
