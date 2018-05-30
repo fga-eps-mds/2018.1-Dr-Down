@@ -23,7 +23,10 @@
         <div class="card-header border row" id="heading{{ event.pk }}">
           <div class="col-sm">
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
-              <h4 class="lead">{{ event.name }}</h4>
+              <div class="col">
+                <h4 class="lead row">{{ event.name }}</h4>
+                <small class="row text-muted">{{ event.date }}</small>
+              </div>              
             </button>
           </div>
           {% if user.employee %}
