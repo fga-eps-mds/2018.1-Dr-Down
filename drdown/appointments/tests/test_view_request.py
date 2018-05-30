@@ -19,7 +19,13 @@ class TestViewRequest(TestCase):
         self.user3 = self.make_user(username='user_3')
         self.user4 = self.make_user(username='user_4')
         self.user5 = self.make_user(username='user_5')
-
+        self.user6 = self.make_user(username='user_6')
+        self.user7 = self.make_user(username='user_7')
+        self.user8 = self.make_user(username='user_8')
+        self.user9 = self.make_user(username='user_9')
+        self.user10 = self.make_user(username='user_10')
+        self.user11 = self.make_user(username='user_11')
+        self.user12 = self.make_user(username='user_12')
 
         self.doctor = HealthTeam.objects.create(
             cpf="057.641.271-65",
@@ -27,6 +33,69 @@ class TestViewRequest(TestCase):
             speciality=HealthTeam.NEUROLOGY,
             council_acronym=HealthTeam.CRM,
             register_number="1234567",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_2 = HealthTeam.objects.create(
+            cpf="421.549.920-80",
+            user=self.user6,
+            speciality=HealthTeam.CARDIOLOGY,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234577",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_3 = HealthTeam.objects.create(
+            cpf="084.684.390-02",
+            user=self.user7,
+            speciality=HealthTeam.PEDIATRICS,
+            council_acronym=HealthTeam.CRM,
+            register_number="1234447",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_4 = HealthTeam.objects.create(
+            cpf="662.855.400-71",
+            user=self.user8,
+            speciality=HealthTeam.SPEECH_THERAPHY,
+            council_acronym=HealthTeam.CREFONO,
+            register_number="4434447",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_5 = HealthTeam.objects.create(
+            cpf="705.246.660-08",
+            user=self.user9,
+            speciality=HealthTeam.PHYSIOTHERAPY,
+            council_acronym=HealthTeam.CREFITO,
+            register_number="4474447",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_6 = HealthTeam.objects.create(
+            cpf="320.663.380-01",
+            user=self.user10,
+            speciality=HealthTeam.PSYCHOLOGY,
+            council_acronym=HealthTeam.CRP,
+            register_number="5474447",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_7 = HealthTeam.objects.create(
+            cpf="736.358.660-83",
+            user=self.user11,
+            speciality=HealthTeam.DOCTOR,
+            council_acronym=HealthTeam.CRM,
+            register_number="9474447",
+            registration_state=HealthTeam.DF,
+        )
+
+        self.doctor_8 = HealthTeam.objects.create(
+            cpf="574.422.400-97",
+            user=self.user12,
+            speciality=HealthTeam.OCCUPATIONAL_THERAPY,
+            council_acronym=HealthTeam.CREFITO,
+            register_number="9974447",
             registration_state=HealthTeam.DF,
         )
 
@@ -179,18 +248,10 @@ class TestViewRequest(TestCase):
         """
         Test if risk speciality is the same of request speciality
         """
-        request = AppointmentRequest.objects.create(
-            shift=AppointmentRequest.MORNING,
-            day=AppointmentRequest.MONDAY,
-            speciality=AppointmentRequest.CARDIOLOGY,
-            doctor=self.doctor,
-            patient=self.patient,
-            status=AppointmentRequest.PENDING
-        )
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.CARDIOLOGY,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_2.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -242,7 +303,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.PEDIATRICS,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_3.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -268,7 +329,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.SPEECH_THERAPHY,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_4.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -294,7 +355,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.PHYSIOTHERAPY,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_5.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -320,7 +381,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.PSYCHOLOGY,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_6.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -346,7 +407,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.GENERAL_PRACTITIONER,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_7.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
@@ -372,7 +433,7 @@ class TestViewRequest(TestCase):
         self.client.force_login(user=self.user3)
         data = {
             'speciality': Appointment.OCCUPATIONAL_THERAPY,
-            'doctor': self.doctor.pk,
+            'doctor': self.doctor_8.pk,
             'patient': self.patient.pk,
             'day': AppointmentRequest.MONDAY,
             'shift': AppointmentRequest.MORNING,
