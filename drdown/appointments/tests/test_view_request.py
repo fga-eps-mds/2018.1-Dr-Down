@@ -6,6 +6,7 @@ from drdown.users.models.model_employee import Employee
 from drdown.users.models.model_responsible import Responsible
 from drdown.users.models.model_patient import Patient
 from django.urls import reverse
+from django.test.client import Client
 
 
 class TestViewRequest(TestCase):
@@ -447,3 +448,15 @@ class TestViewRequest(TestCase):
             data=data,
             follow=True)
         self.assertEquals(response.status_code, 200)
+        data = {
+            'speciality': Appointment.PSYCHOLOGY,
+        }
+        response = self.client.post(
+            path=reverse(
+                viewname='appointments:ajax_load_doctors',
+            ),
+            data=data,
+            follow=True)
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'appointments/doctors_dropdown_list_options.html')
+
