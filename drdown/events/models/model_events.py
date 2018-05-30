@@ -53,10 +53,10 @@ class Events(models.Model):
         if self.date:
             if date.today() + timezone.timedelta(days=1) > self.date:
                 raise ValidationError(
-                    {'date':_("The date cannot be in today or past!")}
+                    {'date':
+                        _("The date cannot be in today or past!")}
                 )
 
     class Meta:
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
-

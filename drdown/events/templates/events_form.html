@@ -30,6 +30,12 @@
 {% endblock script %}
 
 {% block content %}
+
+  <div class="row">
+    {% if form.date.errors %}
+        <div class="alert alert-danger col" role="alert">{{ form.date.errors }}</div>
+    {% endif %}
+  </div>
   {% if object %}
     <h2>{% trans 'Edit Event' %}</h2>
   {% else %}
@@ -51,11 +57,6 @@
 		  {% endif %}
     </div>
 	</div>
-  <div class="row">
-    {% if form.date.errors %}
-        <div class="alert alert-danger col" role="alert">{{ form.date.errors }}</div>
-    {% endif %}
-  </div>
   <div class="row">
 		<div class="form-group col">
       <label for="id_date">{% trans 'Date' %}</label>
