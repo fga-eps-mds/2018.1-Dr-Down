@@ -11,12 +11,7 @@ class RequestSearchForm(forms.Form):
        label=_('Speciality'),
     )
 
-    search_doctor = forms.CharField(
+    search_name = forms.CharField(
        required=False,
-       label=_('Doctor'),
-    )
-
-    search_patient = forms.CharField(
-       required=False,
-       label=_('Patient'),
+       label=_('Name'),
     )
