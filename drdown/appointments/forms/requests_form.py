@@ -32,13 +32,6 @@ class RequestForm(forms.ModelForm):
         self.fields['doctor'].queryset = HealthTeam.objects.none()
 
         if 'speciality' in self.data:
-            try:
-                speciality_id = self.data.get('speciality')
-                self.fields['doctor'].queryset = HealthTeam.objects.filter(
+            speciality_id = self.data.get('speciality')
+            self.fields['doctor'].queryset = HealthTeam.objects.filter(
                     speciality=speciality_id).order_by('id')
-            except (ValueError, TypeError):
-                pass  # invalid input from the client; ignore and fallback to empty City queryset
-        elif self.instance.pk:
-            self.fields[
-                'doctor'].queryset = self.instance.appointment.health_team_set.order_by(
-                'id')
