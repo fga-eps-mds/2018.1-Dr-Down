@@ -23,11 +23,11 @@
 		<div class="form-group col">
 			{% if object.name %}
         <label>{% trans 'Name' %}</label>
-			  <input class="form-control" type="text" name="name" maxlength="80" required id="id_name" value="{{ object.name }}"/>
+			  <input class="form-control" type="text" name="name" maxlength="50" required id="id_name" value="{{ object.name }}"/>
         <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
       {% else %}
         <label>{% trans 'Name' %}</label>
-			  <input class="form-control" type="text" name="name" maxlength="80" required id="id_name"/>
+			  <input class="form-control" type="text" name="name" maxlength="50" required id="id_name"/>
 			  <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
 		  {% endif %}
     </div>

@@ -20,55 +20,53 @@
     {% endif %}
     <div class="accordion" id="accordionmenu3">
       {% for event in events_list %}
-        <div class="card">
-          <div class="card-header row" id="heading{{ event.pk }}">
-            <div class="col-sm">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
-                <h4>{{ event.name }}</h4>
-              </button>
-            </div>
-            {% if user.employee %}
-              <div class="col-1">
-                 <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
-              </div>
-              <div class="col-1">
-                <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space float-right">{% trans "Delete" %}</a>
-              </div>
-            {% endif %}
+        <div class="card-header border row" id="heading{{ event.pk }}">
+          <div class="col-sm">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
+              <h4 class="lead">{{ event.name }}</h4>
+            </button>
           </div>
-          <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
-            <div class="card-body">
-              <div class="row">
-                <label class="col"><strong>{% trans 'Date' %} :</strong></label>
-                <label class="col"><strong>{% trans 'Time' %} :</strong></label>
+          {% if user.employee %}
+            <div class="col-1">
+               <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
+            </div>
+            <div class="col-1">
+              <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space float-right">{% trans "Delete" %}</a>
+            </div>
+          {% endif %}
+        </div>
+        <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
+          <div class="card-body">
+            <div class="row">
+              <label class="col"><strong>{% trans 'Date' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Time' %} :</strong></label>
+            </div>
+            <div class="row">
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.date }}</div>
               </div>
-              <div class="row">
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.time }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col"><strong>{% trans 'Organize by' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Value' %} :</strong></label>
+            </div>
+            <div class="row">
                 <div class="col mx-3 alert alert-dark" role="alert">
-                  <div class="col">{{ event.date }}</div>
+                  <div class="col">{{ event.organize_by }}</div>
                 </div>
                 <div class="col mx-3 alert alert-dark" role="alert">
-                  <div class="col">{{ event.time }}</div>
+                  <div class="col">R$ {{ event.value }}</div>
                 </div>
-              </div>
-              <div class="row">
-                <label class="col"><strong>{% trans 'Organize by' %} :</strong></label>
-                <label class="col"><strong>{% trans 'Value' %} :</strong></label>
-              </div>
-              <div class="row">
-                  <div class="col mx-3 alert alert-dark" role="alert">
-                    <div class="col">{{ event.organize_by }}</div>
-                  </div>
-                  <div class="col mx-3 alert alert-dark" role="alert">
-                    <div class="col">R$ {{ event.value }}</div>
-                  </div>
-              </div>
-              <div class="row">
-                <label class="col"><strong>{% trans 'Description' %}</strong></label>
-              </div>
-              <div class="row">
-                <div class="col mx-3 alert alert-dark" role="alert">
-                  <div class="col">{{ event.description }}</div>
-                </div>
+            </div>
+            <div class="row">
+              <label class="col"><strong>{% trans 'Description' %}</strong></label>
+            </div>
+            <div class="row">
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.description }}</div>
               </div>
             </div>
           </div>
