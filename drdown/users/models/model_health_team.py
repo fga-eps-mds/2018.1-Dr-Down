@@ -125,7 +125,7 @@ class HealthTeam(models.Model):
     PSYCHOLOGY = _("Psychology")
     PHYSIOTHERAPY = _("Physiotherapy")
     OCCUPATIONAL_THERAPY = _("Occupational Therapy")
-    DOCTOR = _("Doctor")
+    GENERAL_PRACTITIONER = _("General Practitioner")
     CARDIOLOGY = _("Cardiology")
     NEUROLOGY = _("Neurology")
     PEDIATRICS = _("Pediatrics")
@@ -136,7 +136,7 @@ class HealthTeam(models.Model):
         (PSYCHOLOGY, _('Psychology')),
         (PHYSIOTHERAPY, _('Physiotherapy')),
         (OCCUPATIONAL_THERAPY, _('Occupational Therapy')),
-        (DOCTOR, _('Doctor')),
+        (GENERAL_PRACTITIONER, _('General Practitioner')),
         (CARDIOLOGY, _('Cardiology')),
         (NEUROLOGY, _('Neurology')),
         (PEDIATRICS, _('Pediatrics')),
@@ -157,7 +157,7 @@ class HealthTeam(models.Model):
     def get_speciality_relation_list(self):
 
         crm = [
-            HealthTeam.DOCTOR,
+            HealthTeam.GENERAL_PRACTITIONER,
             HealthTeam.CARDIOLOGY,
             HealthTeam.NEUROLOGY,
             HealthTeam.PEDIATRICS,
