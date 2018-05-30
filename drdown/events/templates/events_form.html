@@ -10,6 +10,25 @@
   {% endif %}
 {% endblock %}
 
+{% block script %}
+<script type="text/javascript">
+
+	function toggle(checkboxID, toggleID) {
+     var checkbox = document.getElementById(checkboxID);
+     var toggle = document.getElementById(toggleID);
+     if (checkbox.checked){
+        toggle.readOnly= true;
+        toggle.value=0;
+     }
+     else {
+      toggle.readOnly= false;
+     }
+  }
+
+</script>
+
+{% endblock script %}
+
 {% block content %}
   {% if object %}
     <h2>{% trans 'Edit Event' %}</h2>
@@ -71,18 +90,43 @@
 		  {% endif %}
     </div>
 
-		<div class="form-group col">
-      {% if object.value %}
-        <label for="id_value">{% trans 'Value of event' %}</label>
-			  <input class="form-control" type="number" name="value" step="0.10" required id="id_value" min="0" max="99.99" value="{{ object.value|stringformat:'g' }}"/>
-        <small class="text-muted">{% trans 'Enter a value between R$00,00 to R$99,00' %}</small>
-      {% else %}
-			  <label for="id_value">{% trans 'Value of event' %}</label>
-			  <input class="form-control" type="number" name="value" step="0.10" required id="id_value" min="0" max="99.99"/>
-        <small class="text-muted">{% trans 'Enter a value between R$00,00 to R$99,00' %}</small>
-      {% endif %}
-		</div>
+    <div class="form-group col">
+    {% if object.location %}
+      <label for="id_location">{% trans 'Location' %}</label>
+      <input class="form-control" type="text" name="location" maxlength="80" required id="id_location" value="{{ object.location }}"/>
+      <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+    {% else %}
+      <label for="id_location">{% trans 'Location' %}</label>
+      <input class="form-control" type="text" name="location" maxlength="80" required id="id_location"/>
+      <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+    {% endif %}
+  </div>
 	</div>
+  <div class="row">
+    <div class="form-group col">
+      {% if object.free %}
+          <label for="id_free">{% trans 'Free' %}</label>
+          <input class="form-control" type="checkbox" name="free" onclick="toggle('id_free', 'id_value')" id="id_free" checked/>
+          <small class="text-muted">{% trans 'Event is free?' %}</small>
+        {% else %}
+          <label for="id_free">{% trans 'Free' %}</label>
+          <input class="form-control" type="checkbox" onclick="toggle('id_free', 'id_value')" name="free" id="id_free"/>
+          <small class="text-muted">{% trans 'Event is free?' %}</small>
+        {% endif %}
+      </div>
+
+    <div class="form-group col">
+      {% if object.value %}
+          <label for="id_value">{% trans 'Value of event' %}</label>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" value="{{ object.value|stringformat:'g' }}"/>
+          <small class="text-muted">{% trans 'Enter a value event' %}</small>
+        {% else %}
+          <label for="id_value">{% trans 'Value of event' %}</label>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" />
+          <small class="text-muted">{% trans 'Enter a value event' %}</small>
+        {% endif %}
+      </div>
+  </div>
 
 	<div class="form-group">
     {% if object.description %}
