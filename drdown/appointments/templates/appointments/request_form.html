@@ -45,7 +45,11 @@
 
             <div class="col">
               <label> <strong>{{ form.doctor.label_tag }}</strong></label>
-                {{ form.doctor }}
+              <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
+                {% for doctor in doctors %}
+                  <option value="{{ doctor.pk }}">{{ doctor.user.name}}</option>
+                {% endfor %}
+              </select>
               <p>{{ form.doctor.help_text }}</p>
             </div>
 
