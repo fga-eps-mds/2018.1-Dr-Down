@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
+from django.utils import timezone
+from datetime import date
 
 
 class Events(models.Model):
@@ -46,10 +49,14 @@ class Events(models.Model):
         help_text=_('Event value if that is paid'),
     )
 
+    def clean(self, *args, **kwargs):
+        if self.date:
+            if date.today() + timezone.timedelta(days=1) > self.date:
+                raise ValidationError(
+                    {'date':_("The complaint cannot be in today or past!")}
+                )
+
     class Meta:
         verbose_name = _("Event")
         verbose_name_plural = _("Events")
 
-    def clean_status(self):
-        # when field is cleaned, we always return the existing model field.
-        return self.instance.status
