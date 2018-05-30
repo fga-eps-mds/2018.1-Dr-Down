@@ -20,7 +20,7 @@
       <h2>{% trans "Edit Request" %}</h2><hr>
     {% endif %}
 
-    <form method="post">
+    <form method="post" id="doctorForm" data-doctors-url="{% url 'appointments:ajax_load_doctors' %}" novalidate>
       {% csrf_token %}
 
         <div class="fieldWrapper">
@@ -39,16 +39,13 @@
                 <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
                 <option value="General Practitioner">{% trans 'General Practitioner' %}</option>
             </select>
+          </div>
               <p>{{ form.speciality.help_text }}</p>
-            </div>
+
 
             <div class="col">
               <label> <strong>{{ form.doctor.label_tag }}</strong></label>
-              <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
-                {% for doctor in health_team %}
-                  <option value="{{ doctor.pk }}">{{ doctor.user.name}}</option>
-                {% endfor %}
-              </select>
+                {{ form.doctor }}
               <p>{{ form.doctor.help_text }}</p>
             </div>
 
@@ -92,14 +89,31 @@
               <div> {{ form.motive }} </div>
               <p>{{ form.motive.help_text }}</p>
             </div>
-            
           </p>
-        </div>
+          </div>
       <div class="row float-right mt-5">
         <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
       </div>
     </form>
   </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_speciality").change(function () {
+      var url = $("#doctorForm").attr("data-doctors-url");  // get the url of the `load_cities` view
+      var specialityId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'speciality': specialityId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_doctor").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
 
 {% endblock %}
