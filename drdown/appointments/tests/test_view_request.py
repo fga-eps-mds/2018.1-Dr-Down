@@ -84,7 +84,7 @@ class TestViewRequest(TestCase):
         self.doctor_7 = HealthTeam.objects.create(
             cpf="736.358.660-83",
             user=self.user11,
-            speciality=HealthTeam.DOCTOR,
+            speciality=HealthTeam.GENERAL_PRACTITIONER,
             council_acronym=HealthTeam.CRM,
             register_number="9474447",
             registration_state=HealthTeam.DF,
