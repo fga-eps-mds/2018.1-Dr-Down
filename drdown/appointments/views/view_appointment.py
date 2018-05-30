@@ -208,11 +208,12 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super(
             AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
-        test = AppointmentRequest.objects.get(pk=self.kwargs.get('request_pk'))
-        context['health_team'] = HealthTeam.objects.filter(speciality=test.speciality)
+        test = \
+            AppointmentRequest.objects.get(pk=self.kwargs.get('request_pk'))
+        context['health_team'] = \
+            HealthTeam.objects.filter(speciality=test.speciality)
         context['appointment_request'] = test
         return context
-
 
     def form_valid(self, form):
         request = AppointmentRequest.objects.get(

@@ -42,7 +42,9 @@ class AppointmentRequest(models.Model):
     day = models.CharField(
         _('Day of the week'),
         choices=DAYS_CHOICES,
-        help_text=_('Preferred day of the week. It is not guaranteed that the appointment will be marked on the preferred day.'),
+        help_text=_("Preferred day of the week. " +
+                    "It is not guaranteed that the appointment will be " +
+                    "marked on the preferred day."),
         max_length=10
     )
 
@@ -92,7 +94,9 @@ class AppointmentRequest(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_('Doctor'),
         related_name='requests',
-        help_text=_('Preferred doctor. It is not guaranteed that the appointment will be scheduled with the doctor preferred.'),
+        help_text=_("Preferred doctor. " +
+                    "It is not guaranteed that the appointment will be " +
+                    "scheduled with the doctor preferred."),
         blank=True,
         null=True,
     )

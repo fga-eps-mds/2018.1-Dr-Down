@@ -16,6 +16,7 @@ class RequestSearchForm(forms.Form):
        label=_('Name'),
     )
 
+
 class RequestForm(forms.ModelForm):
     class Meta:
         model = AppointmentRequest
@@ -25,7 +26,7 @@ class RequestForm(forms.ModelForm):
                   'shift',
                   'day',
                   'motive',
-        )
+                  )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

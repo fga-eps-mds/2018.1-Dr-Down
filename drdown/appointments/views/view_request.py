@@ -96,8 +96,13 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
 
 def load_doctors(request):
     speciality = request.GET.get('speciality')
-    doctors = HealthTeam.objects.filter(speciality=speciality).order_by('user__name')
-    return render(request, 'appointments/doctors_dropdown_list_options.html', {'doctors': doctors})
+    doctors = HealthTeam.objects.filter(
+        speciality=speciality
+    ).order_by('user__name')
+    return render(request,
+                  'appointments/doctors_dropdown_list_options.html',
+                  {'doctors': doctors}
+                  )
 
 
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
