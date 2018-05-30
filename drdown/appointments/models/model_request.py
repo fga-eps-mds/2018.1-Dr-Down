@@ -94,6 +94,7 @@ class AppointmentRequest(models.Model):
         related_name='requests',
         help_text=_('Preferred doctor. It is not guaranteed that the appointment will be scheduled with the doctor preferred.'),
         blank=True,
+        null=True,
     )
 
     patient = models.ForeignKey(
