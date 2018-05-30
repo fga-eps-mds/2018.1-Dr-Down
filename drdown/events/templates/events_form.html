@@ -51,7 +51,11 @@
 		  {% endif %}
     </div>
 	</div>
-
+  <div class="row">
+    {% if form.date.errors %}
+        <div class="alert alert-danger col" role="alert">{{ form.date.errors }}</div>
+    {% endif %}
+  </div>
   <div class="row">
 		<div class="form-group col">
       <label for="id_date">{% trans 'Date' %}</label>
