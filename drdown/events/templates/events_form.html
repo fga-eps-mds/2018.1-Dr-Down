@@ -56,10 +56,10 @@
 		<div class="form-group col">
       <label for="id_date">{% trans 'Date' %}</label>
       {% if object.date %}
-			  <input class="form-control" type="date" name="date" min="{% now 'Y-m-d' %}" required id="id_date" value="{{ object.date | date:'Y-m-d' }}" />
+			  <input class="form-control" type="date" name="date" required id="id_date" value="{{ object.date | date:'Y-m-d' }}" />
         <small class="text-muted">{% trans 'Enter a event date' %}</small>
       {% else %}
-        <input class="form-control" type="date" min="{% now 'Y-m-d' %}" name="date" required id="id_date" />
+        <input class="form-control" type="date" name="date" required id="id_date" />
         <small class="text-muted">{% trans 'Enter a event date' %}</small>
       {% endif %}
 		</div>
@@ -116,15 +116,19 @@
       </div>
 
     <div class="form-group col">
-      {% if object.value %}
+      {% if object.free %}
+        <label for="id_value">{% trans 'Value of event' %} :</label>
+        <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" value="0" readonly/>
+        <small class="text-muted">{% trans 'Enter a value event' %}</small>
+      {% elif object.value %}
           <label for="id_value">{% trans 'Value of event' %}</label>
           <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" value="{{ object.value|stringformat:'g' }}"/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
-        {% else %}
+      {% else %}
           <label for="id_value">{% trans 'Value of event' %}</label>
           <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" />
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
-        {% endif %}
+      {% endif %}
       </div>
   </div>
 
