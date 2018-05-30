@@ -26,6 +26,8 @@ class EventsCreateView(BaseViewPermissions, CreateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
+        'free',
+        'location',
         'name',
         'date',
         'time',
@@ -43,6 +45,8 @@ class EventsUpdateView(BaseViewPermissions, UpdateView):
     model = Events
     template_name = 'events_form.html'
     fields = [
+        'free',
+        'location',
         'name',
         'date',
         'time',
