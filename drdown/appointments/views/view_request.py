@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from search_views.search import SearchListView
 from drdown.users.models.model_patient import Patient
+from drdown.users.models.model_health_team import HealthTeam
 from search_views.filters import BaseFilter
 from drdown.appointments.models import AppointmentRequest
 from ..forms.requests_form import RequestSearchForm
@@ -85,16 +86,17 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
 
         return super().form_valid(form)
 
-    def get_form(self, *args, **kwargs):
-        form = super(RequestCreateView, self).get_form(*args, **kwargs)
+    def get_context_data(self, **kwargs):
+        context = super(RequestCreateView, self).get_context_data(**kwargs)
+
+        context['health_team'] = HealthTeam.objects.all()
         if hasattr(self.request.user, 'patient'):
-            form.fields['patient'].queryset = Patient.objects.filter(
+            context['patients'] = Patient.objects.filter(
                 user=self.request.user)
         elif hasattr(self.request.user, 'responsible'):
-            form.fields['patient'].queryset = \
+            context['patients'] = \
                 self.request.user.responsible.patient_set.all()
-        return form
-
+        return context
 
 class RequestUpdateView(LoginRequiredMixin, UpdateView):
     model = AppointmentRequest

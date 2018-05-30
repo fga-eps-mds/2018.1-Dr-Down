@@ -23,19 +23,78 @@
     <form method="post">
       {% csrf_token %}
 
-      {% for field in form %}
         <div class="fieldWrapper">
-            {{ field.errors }}
+            {{ form.errors }}
           <p class="lead">
-            {% if field != form.motive and field != form.doctor %}
-              *
-            {% endif %}
-            {{ field.label_tag }}<br>
-            {{ field }}
-            <p>{{ field.help_text }}</p>
+            <div class="col">
+              <label> <strong>* {{ form.speciality.label_tag }}</strong></label>
+              <select class= "select form-control" name="speciality"  required id="id_speciality">
+                <option value="" selected>---------</option>
+                <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
+                <option value="Psychology">{% trans 'Psychology' %}</option>
+                <option value="Physiotherapy">{% trans 'Physiotherapy' %}</option>
+                <option value="Occupational Therapy">{% trans 'Occupational Therapy' %}</option>
+                <option value="Cardiology">{% trans 'Cardiology' %}</option>
+                <option value="Neurology">{% trans 'Neurology' %}</option>
+                <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
+                <option value="General Practitioner">{% trans 'General Practitioner' %}</option>
+            </select>
+              <p>{{ form.speciality.help_text }}</p>
+            </div>
+
+            <div class="col">
+              <label> <strong>{{ form.doctor.label_tag }}</strong></label>
+              <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
+                {% for doctor in health_team %}
+                  <option value="{{ doctor.pk }}">{{ doctor.user.name}}</option>
+                {% endfor %}
+              </select>
+              <p>{{ form.doctor.help_text }}</p>
+            </div>
+
+            <div class="col">
+              <label> <strong>* {{ form.patient.label_tag }}</strong></label>
+              <select name="patient" class= "select form-control" required id="id_patient" size="6">
+                {% for patient in patients %}
+                  <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
+                {% endfor %}
+              </select>
+              <p>{{ form.patient.help_text }}</p>
+            </div>
+
+            <div class="col">
+              <label> <strong>* {{ form.shift.label_tag }}</strong></label>
+              <select class= "select form-control" name="shift"  required id="id_shift">
+                <option value="" selected>---------</option>
+                <option value="M">{% trans 'Morning' %}</option>
+                <option value="A">{% trans 'Afternoon' %}</option>
+            </select>
+              <p>{{ form.shift.help_text }}</p>
+            </div>
+
+            <div class="col">
+              <label> <strong>* {{ form.day.label_tag }}</strong></label>
+              <select class= "select form-control" name="day"  required id="id_day">
+                <option value="" selected>---------</option>
+                <option value="Sunday">{% trans 'Sunday' %}</option>
+                <option value="Monday">{% trans 'Monday' %}</option>
+                <option value="Tuesday">{% trans 'Tuesday' %}</option>
+                <option value="Wednesday">{% trans 'Wednesday' %}</option>
+                <option value="Thursday">{% trans 'Thursday' %}</option>
+                <option value="Friday">{% trans 'Friday' %}</option>
+                <option value="Saturday">{% trans 'Saturday' %}</option>
+            </select>
+              <p>{{ form.day.help_text }}</p>
+            </div>
+
+            <div class="col">
+              <label> <strong>{{ form.motive.label_tag }}</strong></label>
+              <div> {{ form.motive }} </div>
+              <p>{{ form.motive.help_text }}</p>
+            </div>
+            
           </p>
         </div>
-     {% endfor %}
       <div class="row float-right mt-5">
         <a href="{% url 'appointments:list_requests' %}" class="btn btn-danger mr-2  ">{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success mr-5 " >{% trans "Submit" %}</button>
