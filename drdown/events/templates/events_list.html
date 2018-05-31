@@ -58,7 +58,7 @@
                 </div>
               {% else %}
                 <div class="col mx-3 alert alert-dark" role="alert">
-                  <div class="col">R$ {{ event.value }}</div>
+                  <div class="col">R$ {{ event.value|floatformat:2 }}</div>
                 </div>
               {% endif %}  
             </div>

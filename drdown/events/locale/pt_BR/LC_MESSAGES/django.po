@@ -86,7 +86,7 @@ msgstr "Valor do evento"
 
 #: drdown/events/models/model_events.py:49
 msgid "Event value if that is paid"
-msgstr "Insira o valor do evento"
+msgstr "Valor do evento"
 
 #: drdown/events/models/model_events.py:57
 msgid "The date cannot be in today or past!"
@@ -114,10 +114,9 @@ msgstr "Editar evento"
 
 #: drdown/events/templates/events_form.html:49
 #: drdown/events/templates/events_form.html:52
-#, fuzzy
 #| msgid "Enter a event date"
 msgid "Enter a event name"
-msgstr "Data do evento"
+msgstr "Nome do evento"
 
 #: drdown/events/templates/events_form.html:61
 #: drdown/events/templates/events_form.html:64
@@ -136,25 +135,22 @@ msgstr "Organizador do evento"
 
 #: drdown/events/templates/events_form.html:95
 #: drdown/events/templates/events_form.html:98
-#, fuzzy
 #| msgid "Enter a event date"
 msgid "Enter a event location"
-msgstr "Data do evento"
+msgstr "Local do evento"
 
 #: drdown/events/templates/events_form.html:107
 #: drdown/events/templates/events_form.html:110
-#, fuzzy
 #| msgid "Events"
 msgid "Event is free?"
-msgstr "Eventos"
+msgstr "O evento é gratuito?"
 
 #: drdown/events/templates/events_form.html:118
 #: drdown/events/templates/events_form.html:121
 #: drdown/events/templates/events_form.html:124
-#, fuzzy
 #| msgid "Enter a event date"
 msgid "Enter a value event"
-msgstr "Data do evento"
+msgstr "Valor do evento"
 
 #: drdown/events/templates/events_form.html:132
 #: drdown/events/templates/events_form.html:135
