@@ -1608,7 +1608,7 @@
         {
             "location": "/eps/usability_test/relatorio_01/", 
             "text": "1\u00ba TESTE DE USABILIDADE\n\n\nEsse teste foi feito com o frontend antigo. Foi com base nele e com com as considera\u00e7\u00f5es do cliente e da Professora Carla que mudamos para o frontend atual. Melhorando assim a usabilidade do software.\n\n\nUsu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com navbar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.\n\n\nTarefas:\n\n\nOs usu\u00e1rios ter\u00e3o que realizar as tarefas planejadas e para cada tarefa o avaliador ir\u00e1 cronometrar quanto tempo o usu\u00e1rio leva para realizar determinadas tarefa e quais foram as dificuldades encontradas.\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.\n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades.\n\n\nTarefa 4: Login.\n\n\nP\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum.\n\n\nTarefa 6: Funcionalidades.\n\n\nMuita dificuldade em achar todos links para as funcionalidades.\n\n\nTarefa 7: Consulta.\n\n\nConsulta: utilizou com facilidade.\n\n\nTarefa 8: Prontu\u00e1rio.\n\n\nProntu\u00e1rio: um pouco de dificuldade ao usar as abas e entender o funcionamento de cada uma.\n\n\nConclus\u00e3o\n\n\nO usu\u00e1rio conseguiu utilizar as funcionalidades com facilidade, com exce\u00e7\u00e3o de algumas que ele necessitou de um pouco mais de tempo para atingir seu objetivo.  Por\u00e9m, apresentou bastante dificuldade em navegar entre as funcionalidades e tamb\u00e9m bastante dificuldade para encontrar as p\u00e1ginas que necessitava.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 5/10", 
-            "title": "Relatorio 01"
+            "title": "Relat\u00f3rio 01"
         }, 
         {
             "location": "/eps/usability_test/relatorio_01/#1o-teste-de-usabilidade", 
@@ -1673,7 +1673,7 @@
         {
             "location": "/eps/usability_test/relatorio_02/", 
             "text": "2\u00b0 TESTE DE USABILIDADE\n\n\nUsu\u00e1rio: Gabriel Martins \nIdade: 19 anos\nTipo: Aluno da FGA\nEstado do site: P\u00e1ginas com sidebar, somente.\nAvaliador(a): Geovona, Gabriela, Daniel, Bernardo, Guilherme e Joberth.\n\n\nTarefas:\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Conte\u00fado muito extenso e pouco claro.\nLeituras complementares est\u00e3o muito escondidas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar.\n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades.\n\n\nTarefa 4: Login.\n\n\nP\u00e1gina de update extensa, chata e o usu\u00e1rio n\u00e3o entendeu o porqu\u00ea de tantos cadastros.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum.\n\n\nTarefa 6: Usu\u00e1rio Paciente\n\n\nChecklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.\nCalend\u00e1rio de vacinas: Foram relatadas muitas dificuldades na usabilidade(tabela muito grande) e compreens\u00e3o dos textos(pouco claros). \n\n\nTarefa 7: Usu\u00e1rio Equipe M\u00e9dica\n\n\nProntu\u00e1rio: Dificuldade em interpretar o checkbox \u201cem uso\u201d da aba de rem\u00e9dios. Dificuldade de visualiza\u00e7\u00e3o das queixas como links. Dificuldade em interpretar \"evolu\u00e7\u00e3o\" como relat\u00f3rio. Dificuldade de busca de um paciente. Dificuldade de acessar a checklist do paciente a partir de seu prontu\u00e1rio.\n\n\nTarefa 8: Usu\u00e1rio Respons\u00e1vel\n\n\nSem dificuldades.\n\n\nConclus\u00e3o\n\n\nAp\u00f3s refatora\u00e7\u00e3o do frontend, o usu\u00e1rio foi capaz de navegar entre os links e achar aquilo que necessitava. As dificuldades foram voltadas para o nome de alguns campos do site.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 9/10", 
-            "title": "Relatorio 02"
+            "title": "Relat\u00f3rio 02"
         }, 
         {
             "location": "/eps/usability_test/relatorio_02/#2-teste-de-usabilidade", 
@@ -1734,6 +1734,71 @@
             "location": "/eps/usability_test/relatorio_02/#nota-de-usabilidade-do-usuario-910", 
             "text": "", 
             "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 9/10"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/", 
+            "text": "3\u00b0 TESTE DE USABILIDADE\n\n\nUsu\u00e1rio: Get\u00falio Bernardo Morato Filho\nIdade: 35\nTipo: Stakeholder e M\u00e9dico.\nEstado do site: Quase todas as features est\u00e3o implementadas. Faltando apenas a p\u00e1gina de eventos e a de ajuda.\nAvaliador(a): Mariana de Souza Mendes e Jo\u00e3o Pedro Sconetto.\n\n\nTarefas:\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Gostou do calend\u00e1rio de vacinas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nEncontrou o f\u00f3rum com facilidade.\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar e/ou comentar no f\u00f3rum.\n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades.\n\n\nTarefa 4: Login.\n\n\nSem dificuldades.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum.\n\n\nTarefa 6: Usu\u00e1rio Paciente\n\n\nChecklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.\n\n\nTarefa 7: Usu\u00e1rio Equipe M\u00e9dica\n\n\nProntu\u00e1rio: Gostou do modo de abas e do conte\u00fado do prontu\u00e1rio. Dificuldade em buscar um paciente. Dificuldade de acessar a checklist do paciente a partir de seu prontu\u00e1rio.\n\n\nTarefa 8: Usu\u00e1rio Respons\u00e1vel\n\n\nSem dificuldades.\n\n\nConclus\u00e3o\n\n\nHouve uma melhora na usabilidade, menos dificuldades foram relatadas. Algumas dificuldades relatadas j\u00e1 haviam sido mencionadas e elas ser\u00e3o avaliadas para que possamos melhorar.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 8/10", 
+            "title": "Relat\u00f3rio 03"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#3-teste-de-usabilidade", 
+            "text": "Usu\u00e1rio: Get\u00falio Bernardo Morato Filho\nIdade: 35\nTipo: Stakeholder e M\u00e9dico.\nEstado do site: Quase todas as features est\u00e3o implementadas. Faltando apenas a p\u00e1gina de eventos e a de ajuda.\nAvaliador(a): Mariana de Souza Mendes e Jo\u00e3o Pedro Sconetto.", 
+            "title": "3\u00b0 TESTE DE USABILIDADE"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefas", 
+            "text": "", 
+            "title": "Tarefas:"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-1-com-o-usuario-deslogado-procure-as-seguintes-informacoes-no-site", 
+            "text": "O usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: dificuldade em encontrar o link quando n\u00e3o logado. Abas com as idades pouco claras. Gostou do calend\u00e1rio de vacinas.", 
+            "title": "Tarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-2-ainda-com-o-usuario-deslogado-procure-pelo-forum", 
+            "text": "Encontrou o f\u00f3rum com facilidade.\nN\u00e3o fica claro que o usu\u00e1rio deve estar logado para postar e/ou comentar no f\u00f3rum.", 
+            "title": "Tarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-3-cadastrar-usuario", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 3: Cadastrar usu\u00e1rio."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-4-login", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 4: Login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-5-forum-com-login", 
+            "text": "Usu\u00e1rio teve facilidade em utilizar o f\u00f3rum.", 
+            "title": "Tarefa 5: F\u00f3rum com login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-6-usuario-paciente", 
+            "text": "Checklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.", 
+            "title": "Tarefa 6: Usu\u00e1rio Paciente"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-7-usuario-equipe-medica", 
+            "text": "Prontu\u00e1rio: Gostou do modo de abas e do conte\u00fado do prontu\u00e1rio. Dificuldade em buscar um paciente. Dificuldade de acessar a checklist do paciente a partir de seu prontu\u00e1rio.", 
+            "title": "Tarefa 7: Usu\u00e1rio Equipe M\u00e9dica"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#tarefa-8-usuario-responsavel", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 8: Usu\u00e1rio Respons\u00e1vel"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#conclusao", 
+            "text": "Houve uma melhora na usabilidade, menos dificuldades foram relatadas. Algumas dificuldades relatadas j\u00e1 haviam sido mencionadas e elas ser\u00e3o avaliadas para que possamos melhorar.", 
+            "title": "Conclus\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_03/#nota-de-usabilidade-do-usuario-810", 
+            "text": "", 
+            "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 8/10"
         }, 
         {
             "location": "/sprints/00/planning/", 
