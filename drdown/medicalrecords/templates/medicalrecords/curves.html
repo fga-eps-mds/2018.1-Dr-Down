@@ -2,8 +2,127 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+<script type="text/javascript">
+
+  function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = jQuery.trim(cookies[i]);
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+
+  function csrfSafeMethod(method) {
+      // these HTTP methods do not require CSRF protection
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+
+  var csrftoken = getCookie('csrftoken');
+
+  var drdown_data;
+  $("#graphic").ready(
+    function() {
+
+      $.ajax({
+        type:"GET",
+        url:"{% url 'medicalrecords:curve_ajax' %}",
+        data: {
+          'username': document.getElementById("_username").value,
+          'data_type': 'height' 
+        },
+        success: function(response){
+          drdown_data = JSON.stringify(response.data);
+          ready();
+        },
+        error: function(response){
+          console.log(response);
+        }
+      });
+
+    }
+  )
+
+  function ready(){
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+  
+  }
+
+  function convertToArray(string) {
+
+    var json_data = JSON.parse(string);
+
+    var array = []
+
+    json_data.graphic.forEach(element => {
+      array.push(element)
+    });
+
+    //populatePatientCurve(array)
+
+    console.log(array)
+
+    return array
+  }
+
+  function defineOptions(title) {
+    return {
+      title: title,
+      hAxis: {
+        title: 'Age',
+        titleTextStyle: {color: '#333'},
+        minValue: 25
+      },
+      vAxis: {
+        title: 'Height',
+        titleTextStyle: {color: '#333'},
+        minValue: 0,
+        format: 'decimal',
+      },
+      explorer: {
+        actions: ['dragToZoom', 'rightClickToReset'],
+        axis: 'horizontal',
+        keepInBounds: true,
+        maxZoomIn: 4.0
+      },
+      crosshair: { trigger: 'selection' },
+      lineWidth: 2,
+      series: {
+        0: { color: '#e2431e' },
+        1: { color: '#e7711b' },
+        2: { color: '#f1ca3a' },
+        3: { color: '#6f9654' },
+        4: { color: '#1c91c0' },
+        5: { color: '#e7711b' },
+        6: { color: '#e2431e' },
+      },
+      is3D: true
+    };
+  }
+
+  function drawChart() {
+    var array = convertToArray(drdown_data)
+    var data = google.visualization.arrayToDataTable(array);
+    var options = defineOptions(title='Graph')
+    var chart = new google.visualization.AreaChart(document.getElementById('curve_chart'));
+    chart.draw(data, options);
+
+  }
+
+</script>
+
 
 <div class="row mb-5">
+  <input id="_username" value="{{related_patient.user.username}}" hidden />
   <div class="col">
     {% if request.user.healthteam or request.user.employee%}
       <th class="col-auto" scope="col">
