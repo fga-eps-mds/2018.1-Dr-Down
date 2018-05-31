@@ -269,7 +269,7 @@ SOCIALACCOUNT_ADAPTER = 'drdown.users.adapters.SocialAccountAdapter'
 # ------------------------------------------------------------------------------
 DATE_INPUT_FORMATS = ["%d/%m/%Y"]
 RAVEN_CONFIG = {
-    'dsn': 'https://22d07455078144e4a3d5ab465ba1f8e8:44043cf5e18341888e3b45d3c98a3565@sentry.io/1200702',
+    'dsn': '',
 }
 
 PAGEDOWN_SHOW_PREVIEW = False
