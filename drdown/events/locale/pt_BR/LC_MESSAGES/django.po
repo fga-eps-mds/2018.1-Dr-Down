@@ -34,10 +34,9 @@ msgid "Location"
 msgstr "Local"
 
 #: drdown/events/models/model_events.py:18
-#, fuzzy
 #| msgid "Date of event"
 msgid "Location of event"
-msgstr "Data do evento"
+msgstr "Local do evento"
 
 #: drdown/events/models/model_events.py:23
 #: drdown/events/templates/events_form.html:58
@@ -184,10 +183,9 @@ msgid "Value"
 msgstr "Valor"
 
 #: drdown/events/templates/events_list.html:57
-#, fuzzy
 #| msgid "New Event"
 msgid "Free Event"
-msgstr "Novo evento"
+msgstr "Evento gratuito"
 
 #: drdown/events/templates/events_list.html:91
 msgid "Confirm delete"
