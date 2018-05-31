@@ -26,9 +26,16 @@
         <div class="fieldWrapper">
             {{ form.errors }}
           <p class="lead">
+
             <div class="col">
               <label> <strong>* {{ form.speciality.label_tag }}</strong></label>
-              <select class= "select form-control" name="speciality"  required id="id_speciality">
+              {% if object.speciality  %}
+               <p class= "form-control" readonly>{{ object.speciality }}</p>
+              {% else %}
+              <select class= "select form-control" name="speciality"  required id="id_speciality" >
+                {% if object.speciality  %}
+                  <option value="object.speciality" selected >{{object.get_speciality_display }}</option>
+                {% else %}
                 <option value="" selected>---------</option>
                 <option value="Speech Therapy">{% trans 'Speech Therapy' %}</option>
                 <option value="Psychology">{% trans 'Psychology' %}</option>
@@ -38,37 +45,62 @@
                 <option value="Neurology">{% trans 'Neurology' %}</option>
                 <option value="Pediatrics">{% trans 'Pediatrics' %}</option>
                 <option value="General Practitioner">{% trans 'General Practitioner' %}</option>
+                {% endif %}
             </select>
+            <p>{{ form.speciality.help_text }}</p>
+            {% endif %}
           </div>
-              <p>{{ form.speciality.help_text }}</p>
 
 
             <div class="col">
               <label> <strong>{{ form.doctor.label_tag }}</strong></label>
-              <select name="doctor" class= "select form-control" required id="id_doctor" size="6">
+              {% if object.doctor  %}
+               <p class= "form-control" readonly>{{ object.doctor.user.name }}</p>
+              {% else %}
+              <select name="doctor" class= "select form-control" required id="id_doctor" size="6" >
+              {% if object.doctor  %}
+                  <option value="object.doctor" selected >{{object.doctor.user.name }}</option>
+                {% else %}
                 {% for doctor in doctors %}
                   <option value="{{ doctor.pk }}">{{ doctor.user.name}}</option>
                 {% endfor %}
+                {% endif %}
               </select>
               <p>{{ form.doctor.help_text }}</p>
+              {% endif %}
             </div>
 
             <div class="col">
               <label> <strong>* {{ form.patient.label_tag }}</strong></label>
-              <select name="patient" class= "select form-control" required id="id_patient" size="6">
+              {% if object.patient  %}
+              <p class= "form-control" readonly>{{ object.patient.user.name }}</p>
+              {% else %}
+              <select name="patient" class= "select form-control" required id="id_patient" >
+                {% if object.patient  %}
+                  <option value="object.patient" selected >{{object.patient.user.name }}</option>
+                {% else %}
+                <option value="" selected>---------</option>
                 {% for patient in patients %}
                   <option value="{{ patient.pk }}">{{ patient.user.name }}</option>
                 {% endfor %}
+                {% endif %}
               </select>
               <p>{{ form.patient.help_text }}</p>
+              {% endif %}
             </div>
 
             <div class="col">
               <label> <strong>* {{ form.shift.label_tag }}</strong></label>
               <select class= "select form-control" name="shift"  required id="id_shift">
+                {% if object.shift  %}
+                  <option value="object.shift" selected >{{object.get_shift_display }}</option>
+                  <option value="M">{% trans 'Morning' %}</option>
+                  <option value="A">{% trans 'Afternoon' %}</option>
+                {% else %}
                 <option value="" selected>---------</option>
                 <option value="M">{% trans 'Morning' %}</option>
                 <option value="A">{% trans 'Afternoon' %}</option>
+                {% endif %}
             </select>
               <p>{{ form.shift.help_text }}</p>
             </div>
@@ -76,14 +108,25 @@
             <div class="col">
               <label> <strong>* {{ form.day.label_tag }}</strong></label>
               <select class= "select form-control" name="day"  required id="id_day">
-                <option value="" selected>---------</option>
-                <option value="Sunday">{% trans 'Sunday' %}</option>
-                <option value="Monday">{% trans 'Monday' %}</option>
-                <option value="Tuesday">{% trans 'Tuesday' %}</option>
-                <option value="Wednesday">{% trans 'Wednesday' %}</option>
-                <option value="Thursday">{% trans 'Thursday' %}</option>
-                <option value="Friday">{% trans 'Friday' %}</option>
-                <option value="Saturday">{% trans 'Saturday' %}</option>
+                {% if object.day  %}
+                  <option value="object.day" selected >{{object.get_day_display }}</option>
+                  <option value="Sunday">{% trans 'Sunday' %}</option>
+                  <option value="Monday">{% trans 'Monday' %}</option>
+                  <option value="Tuesday">{% trans 'Tuesday' %}</option>
+                  <option value="Wednesday">{% trans 'Wednesday' %}</option>
+                  <option value="Thursday">{% trans 'Thursday' %}</option>
+                  <option value="Friday">{% trans 'Friday' %}</option>
+                  <option value="Saturday">{% trans 'Saturday' %}</option>
+                {% else %}
+                  <option value="" selected>---------</option>
+                  <option value="Sunday">{% trans 'Sunday' %}</option>
+                  <option value="Monday">{% trans 'Monday' %}</option>
+                  <option value="Tuesday">{% trans 'Tuesday' %}</option>
+                  <option value="Wednesday">{% trans 'Wednesday' %}</option>
+                  <option value="Thursday">{% trans 'Thursday' %}</option>
+                  <option value="Friday">{% trans 'Friday' %}</option>
+                  <option value="Saturday">{% trans 'Saturday' %}</option>
+                {% endif %}
             </select>
               <p>{{ form.day.help_text }}</p>
             </div>

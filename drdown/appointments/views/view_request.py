@@ -109,6 +109,9 @@ class RequestUpdateView(LoginRequiredMixin, UpdateView):
     model = AppointmentRequest
     template_name = 'appointments/request_form.html'
     fields = [
+        'speciality',
+        'doctor',
+        'patient',
         'shift',
         'day',
         'motive',
