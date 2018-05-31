@@ -109,7 +109,7 @@ class AppointmentRequest(models.Model):
     )
 
     SCHEDULED = 'Scheduled'
-    PENDING = 'Pending'
+    PENDING = _('Pending')
     DECLINED = 'Declined'
 
     STATUS_CHOICES = (

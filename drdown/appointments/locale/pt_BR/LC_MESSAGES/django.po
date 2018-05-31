@@ -21,7 +21,7 @@ msgstr ""
 #: drdown/appointments/forms/appointments_form.py:11
 #: drdown/appointments/forms/requests_form.py:11
 #: drdown/appointments/models/model_appointment.py:42
-#: drdown/appointments/models/model_request.py:84
+#: drdown/appointments/models/model_request.py:86
 #: drdown/appointments/templates/appointments/appointment_form.html:24
 #: drdown/appointments/templates/appointments/appointment_list.html:27
 #: drdown/appointments/templates/appointments/appointment_request_form.html:14
@@ -72,14 +72,14 @@ msgid "Time of appointment"
 msgstr "Hora da consulta"
 
 #: drdown/appointments/models/model_appointment.py:31
-#: drdown/appointments/models/model_request.py:73
+#: drdown/appointments/models/model_request.py:75
 #: drdown/appointments/templates/appointments/appointment_form.html:31
 #: drdown/appointments/templates/appointments/request_form.html:33
 msgid "Speech Therapy"
 msgstr "Fonoaudiologia"
 
 #: drdown/appointments/models/model_appointment.py:32
-#: drdown/appointments/models/model_request.py:74
+#: drdown/appointments/models/model_request.py:76
 #: drdown/appointments/templates/appointments/appointment_form.html:32
 #: drdown/appointments/templates/appointments/appointment_list.html:29
 #: drdown/appointments/templates/appointments/request_form.html:34
@@ -88,7 +88,7 @@ msgid "Psychology"
 msgstr "Psicologia"
 
 #: drdown/appointments/models/model_appointment.py:33
-#: drdown/appointments/models/model_request.py:75
+#: drdown/appointments/models/model_request.py:77
 #: drdown/appointments/templates/appointments/appointment_form.html:33
 #: drdown/appointments/templates/appointments/appointment_list.html:30
 #: drdown/appointments/templates/appointments/request_form.html:35
@@ -97,7 +97,7 @@ msgid "Physiotherapy"
 msgstr "Fisioterapia"
 
 #: drdown/appointments/models/model_appointment.py:34
-#: drdown/appointments/models/model_request.py:76
+#: drdown/appointments/models/model_request.py:78
 #: drdown/appointments/templates/appointments/appointment_form.html:34
 #: drdown/appointments/templates/appointments/appointment_list.html:31
 #: drdown/appointments/templates/appointments/request_form.html:36
@@ -106,7 +106,7 @@ msgid "Occupational Therapy"
 msgstr "Terapia Ocupacional"
 
 #: drdown/appointments/models/model_appointment.py:35
-#: drdown/appointments/models/model_request.py:77
+#: drdown/appointments/models/model_request.py:79
 #: drdown/appointments/templates/appointments/appointment_form.html:35
 #: drdown/appointments/templates/appointments/appointment_list.html:32
 #: drdown/appointments/templates/appointments/request_form.html:37
@@ -115,7 +115,7 @@ msgid "Cardiology"
 msgstr "Cardiologia"
 
 #: drdown/appointments/models/model_appointment.py:36
-#: drdown/appointments/models/model_request.py:78
+#: drdown/appointments/models/model_request.py:80
 #: drdown/appointments/templates/appointments/appointment_form.html:36
 #: drdown/appointments/templates/appointments/appointment_list.html:33
 #: drdown/appointments/templates/appointments/request_form.html:38
@@ -124,7 +124,7 @@ msgid "Neurology"
 msgstr "Neurologia"
 
 #: drdown/appointments/models/model_appointment.py:37
-#: drdown/appointments/models/model_request.py:79
+#: drdown/appointments/models/model_request.py:81
 #: drdown/appointments/templates/appointments/appointment_form.html:37
 #: drdown/appointments/templates/appointments/appointment_list.html:34
 #: drdown/appointments/templates/appointments/request_form.html:39
@@ -133,7 +133,7 @@ msgid "Pediatrics"
 msgstr "Pediatria"
 
 #: drdown/appointments/models/model_appointment.py:38
-#: drdown/appointments/models/model_request.py:80
+#: drdown/appointments/models/model_request.py:82
 #: drdown/appointments/templates/appointments/appointment_form.html:38
 #: drdown/appointments/templates/appointments/request_form.html:40
 #: drdown/appointments/templates/appointments/request_list.html:30
@@ -145,7 +145,7 @@ msgid "Speciality of appointment"
 msgstr "Especialidade da consulta"
 
 #: drdown/appointments/models/model_appointment.py:51
-#: drdown/appointments/models/model_request.py:93
+#: drdown/appointments/models/model_request.py:95
 #: drdown/appointments/templates/appointments/appointment_form.html:44
 #: drdown/appointments/templates/appointments/appointment_list.html:67
 #: drdown/appointments/templates/appointments/appointment_request_form.html:27
@@ -155,7 +155,7 @@ msgid "Doctor"
 msgstr "Médico"
 
 #: drdown/appointments/models/model_appointment.py:58
-#: drdown/appointments/models/model_request.py:103
+#: drdown/appointments/models/model_request.py:107
 #: drdown/appointments/templates/appointments/appointment_form.html:63
 #: drdown/appointments/templates/appointments/appointment_list.html:66
 #: drdown/appointments/templates/appointments/appointment_request_form.html:46
@@ -164,7 +164,7 @@ msgid "Patient"
 msgstr "Paciente"
 
 #: drdown/appointments/models/model_appointment.py:66
-#: drdown/appointments/models/model_request.py:112
+#: drdown/appointments/models/model_request.py:116
 msgid "Scheduled"
 msgstr "Marcado"
 
@@ -173,7 +173,7 @@ msgid "Canceled"
 msgstr "Cancelado"
 
 #: drdown/appointments/models/model_appointment.py:71
-#: drdown/appointments/models/model_request.py:117
+#: drdown/appointments/models/model_request.py:121
 #: drdown/appointments/templates/appointments/appointment_list.html:72
 #: drdown/appointments/templates/appointments/appointment_list.html:74
 #: drdown/appointments/templates/appointments/appointment_list.html:76
@@ -218,7 +218,6 @@ msgid "Shift"
 msgstr "Turno"
 
 #: drdown/appointments/models/model_request.py:20
-#| msgid "Requested shift"
 msgid "Preferred shift"
 msgstr "Turno de preferência"
 
@@ -266,83 +265,88 @@ msgstr "Dia da semana"
 msgid ""
 "Preferred day of the week. It is not guaranteed that the appointment will be "
 "marked on the preferred day."
-msgstr "Dia da semana de preferência. Não é garantido que a consulta seja "
-"marcada no dia de preferência."
+msgstr ""
+"Dia da semana de preferência. Não é garantido que a consulta seja marcada no "
+"dia de preferência."
 
-#: drdown/appointments/models/model_request.py:50
+#: drdown/appointments/models/model_request.py:52
 #: drdown/appointments/templates/appointments/request_list.html:69
 msgid "Motive"
 msgstr "Motivo"
 
-#: drdown/appointments/models/model_request.py:51
+#: drdown/appointments/models/model_request.py:53
 msgid "Why are you requesting an appointment?"
 msgstr "Porquê você está marcando esta consulta?"
 
-#: drdown/appointments/models/model_request.py:57
-#: drdown/appointments/templates/appointments/request_confirm_cancel.html:12
+#: drdown/appointments/models/model_request.py:59
+#: drdown/appointments/templates/appointments/request_confirm_cancel.html:13
 #: drdown/appointments/templates/appointments/request_list.html:76
 msgid "Observation"
 msgstr "Observação"
 
-#: drdown/appointments/models/model_request.py:58
+#: drdown/appointments/models/model_request.py:60
 msgid "Why was it scheduled/declined?"
 msgstr "Por que foi agendado/recusado?"
 
-#: drdown/appointments/models/model_request.py:86
-#| msgid "Especiality"
+#: drdown/appointments/models/model_request.py:88
 msgid "Desired specialty"
 msgstr "Especialidade desejada"
 
-#: drdown/appointments/models/model_request.py:95
+#: drdown/appointments/models/model_request.py:97
 msgid ""
 "Preferred doctor. It is not guaranteed that the appointment will be "
 "scheduled with the doctor preferred."
-msgstr "Médico de preferência. Não é garantido que a consulta seja "
-"marcada com o médico de preferência."
+msgstr ""
+"Médico de preferência. Não é garantido que a consulta seja marcada com o "
+"médico de preferência."
 
-#: drdown/appointments/models/model_request.py:113
+#: drdown/appointments/models/model_request.py:112
+msgid "Pending"
+msgstr "Pendente"
+
+#: drdown/appointments/models/model_request.py:117
 msgid "Declined"
 msgstr "Recusado"
 
-#: drdown/appointments/models/model_request.py:118
+#: drdown/appointments/models/model_request.py:122
 msgid "Was the request accepted?"
 msgstr "O pedido foi aceito?"
 
-#: drdown/appointments/models/model_request.py:126
+#: drdown/appointments/models/model_request.py:130
 msgid "Not urgent"
 msgstr "Não urgente"
 
-#: drdown/appointments/models/model_request.py:127
+#: drdown/appointments/models/model_request.py:131
 msgid "Not very urgent"
 msgstr "Não muito urgente"
 
-#: drdown/appointments/models/model_request.py:128
+#: drdown/appointments/models/model_request.py:132
 msgid "Urgent"
 msgstr "Urgente"
 
-#: drdown/appointments/models/model_request.py:129
+#: drdown/appointments/models/model_request.py:133
 msgid "Very urgent"
 msgstr "Muito urgente"
 
-#: drdown/appointments/models/model_request.py:130
+#: drdown/appointments/models/model_request.py:134
 msgid "Emerging"
 msgstr "Emergencial"
 
-#: drdown/appointments/models/model_request.py:133
+#: drdown/appointments/models/model_request.py:137
 #: drdown/appointments/templates/appointments/request_list.html:73
 msgid "Risk"
 msgstr "Risco"
 
-#: drdown/appointments/models/model_request.py:139
+#: drdown/appointments/models/model_request.py:143
 #: drdown/appointments/tests/test_model_request.py:130
 msgid "Appointment request of "
 msgstr "Pedido de consulta de"
 
-#: drdown/appointments/models/model_request.py:142
+#: drdown/appointments/models/model_request.py:146
 msgid "Request"
 msgstr "Pedido"
 
-#: drdown/appointments/models/model_request.py:143
+#: drdown/appointments/models/model_request.py:147
 #: drdown/appointments/templates/appointments/appointment_list.html:16
 #: drdown/appointments/templates/appointments/request_list.html:9
 #: drdown/appointments/templates/appointments/request_list.html:16
@@ -350,7 +354,7 @@ msgid "Requests"
 msgstr "Pedidos"
 
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:6
-#: drdown/appointments/templates/appointments/request_confirm_cancel.html:6
+#: drdown/appointments/templates/appointments/request_confirm_cancel.html:7
 msgid "Cancel Appointment"
 msgstr "Cancelar Consulta"
 
@@ -360,13 +364,13 @@ msgstr "Tem certeza que deseja cancelar esta consulta?"
 
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:11
 #: drdown/appointments/templates/appointments/request_after_result_confirm_delete.html:16
-#: drdown/appointments/templates/appointments/request_confirm_cancel.html:15
+#: drdown/appointments/templates/appointments/request_confirm_cancel.html:16
 msgid "Yes"
 msgstr "Sim"
 
 #: drdown/appointments/templates/appointments/appointment_confirm_cancel.html:12
 #: drdown/appointments/templates/appointments/request_after_result_confirm_delete.html:17
-#: drdown/appointments/templates/appointments/request_confirm_cancel.html:16
+#: drdown/appointments/templates/appointments/request_confirm_cancel.html:17
 msgid "No"
 msgstr "Não"
 
@@ -394,7 +398,6 @@ msgstr "Marcar"
 
 #: drdown/appointments/templates/appointments/appointment_list.html:28
 #: drdown/appointments/templates/appointments/request_list.html:26
-#| msgid "Speech Therapy"
 msgid "Speech Theraphy"
 msgstr "Fonoaudiologia"
 
@@ -464,7 +467,7 @@ msgstr "Você está ciente"
 msgid "This request will be deleted"
 msgstr "Este pedido será deletado"
 
-#: drdown/appointments/templates/appointments/request_confirm_cancel.html:10
+#: drdown/appointments/templates/appointments/request_confirm_cancel.html:11
 msgid "Are you sure you want to cancel this request?"
 msgstr "Tem certeza que deseja cancelar esta consulta?"
 
