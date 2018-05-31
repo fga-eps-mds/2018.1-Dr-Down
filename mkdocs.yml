@@ -28,10 +28,11 @@ pages:
     - Ferramentas: eps/PROJECT_TOOLS.md
     - Riscos: eps/RISKS.md
     - Pipeline: eps/PIPELINE.md
-  - Testes de usabilidade:
+  - Testes de Usabilidade:
     - Introdução: eps/usability_test/USABILITY_TESTS.md
-    - Relatorio 01: eps/usability_test/relatorio_01.md
-    - Relatorio 02: eps/usability_test/relatorio_02.md
+    - Relatório 01: eps/usability_test/relatorio_01.md
+    - Relatório 02: eps/usability_test/relatorio_02.md
+    - Relatório 03: eps/usability_test/relatorio_03.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
