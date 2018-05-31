@@ -13,7 +13,7 @@ O usuário encontrou a página com facilidade.
 Calendário de vacina: dificuldade em encontrar o link quando não logado. Abas com as idades pouco claras. Gostou do calendário de vacinas.
 
 ### Tarefa 2: Ainda com o usuário deslogado, procure pelo fórum.
-Encontou o fórum com facilidade.
+Encontrou o fórum com facilidade.
 Não fica claro que o usuário deve estar logado para postar e/ou comentar no fórum.
 
 ### Tarefa 3: Cadastrar usuário.   
@@ -35,7 +35,7 @@ Prontuário: Gostou do modo de abas e do conteúdo do prontuário. Dificuldade e
 Sem dificuldades.
 
 ## Conclusão
-Houve uma melhora na usabilidade, menos dificuldades foram relatadas. Algumas dificuldades relatas já haviam sido mencionadas e elas serão avaliadas para que possamos melhorar.
+Houve uma melhora na usabilidade, menos dificuldades foram relatadas. Algumas dificuldades relatadas já haviam sido mencionadas e elas serão avaliadas para que possamos melhorar.
 
 ## NOTA DE USABILIDADE DO USUÁRIO: 8/10
 
