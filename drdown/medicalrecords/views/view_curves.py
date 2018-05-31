@@ -98,9 +98,13 @@ class CurveDataParser(BaseViewPermissions, View):
 
     def api_data_type(self):
         if self.data_type == "bmi":
-            return "imc/"
+            return "imc"
+        elif self.data_type == "cephalic_perimeter":
+            return "cephalic_perimeter"
         else:
             return self.data_type
+
+        
 
     def api_gender(self):
 
