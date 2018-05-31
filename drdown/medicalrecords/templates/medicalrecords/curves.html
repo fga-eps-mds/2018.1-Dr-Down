@@ -30,10 +30,10 @@
 <div class="row mb-5">
   <div class="col">
     {% if request.user.healthteam or request.user.employee%}
-              <th class="col-auto" scope="col">
-                <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-              </th>
-            {% endif %}
+      <th class="col-auto" scope="col">
+        <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+      </th>
+    {% endif %}
     <h3 >{% trans 'Curves' %}</h3>
   </div>
 </div>
