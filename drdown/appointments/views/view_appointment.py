@@ -162,8 +162,12 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
-
-        context['health_team'] = HealthTeam.objects.all()
+        appointment = Appointment.objects.get(
+            pk=self.kwargs.get('appointment_pk')
+        )
+        context['health_team'] = HealthTeam.objects.filter(
+            speciality=appointment.speciality
+        )
         return context
 
 
