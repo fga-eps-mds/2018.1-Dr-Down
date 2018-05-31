@@ -43,6 +43,7 @@
             <div class="row">
               <label class="col"><strong>{% trans 'Date' %} :</strong></label>
               <label class="col"><strong>{% trans 'Time' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Value' %} :</strong></label>
             </div>
             <div class="row">
               <div class="col mx-3 alert alert-dark" role="alert">
@@ -51,17 +52,26 @@
               <div class="col mx-3 alert alert-dark" role="alert">
                 <div class="col">{{ event.time }}</div>
               </div>
+              {% if event.free %}
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">{% trans 'Free Event' %}</div>
+                </div>
+              {% else %}
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">R$ {{ event.value }}</div>
+                </div>
+              {% endif %}  
             </div>
             <div class="row">
               <label class="col"><strong>{% trans 'Organize by' %} :</strong></label>
-              <label class="col"><strong>{% trans 'Value' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Location' %} :</strong></label>
             </div>
             <div class="row">
                 <div class="col mx-3 alert alert-dark" role="alert">
                   <div class="col">{{ event.organize_by }}</div>
                 </div>
                 <div class="col mx-3 alert alert-dark" role="alert">
-                  <div class="col">R$ {{ event.value }}</div>
+                  <div class="col">{{ event.location }}</div>
                 </div>
             </div>
             <div class="row">

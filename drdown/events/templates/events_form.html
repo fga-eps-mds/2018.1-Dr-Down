@@ -43,7 +43,7 @@
       {% csrf_token %}
       <div class="row">
         <div class="form-group col">
-          <label>{% trans 'Name' %}</label>
+          <label>{% trans 'Name' %}*</label>
           {% if object.name %}
             <input class="form-control" type="text" name="name" maxlength="50" required id="id_name" value="{{ object.name }}"/>
             <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
@@ -55,7 +55,7 @@
       </div>
       <div class="row">
         <div class="form-group col">
-          <label for="id_date">{% trans 'Date' %}</label>
+          <label for="id_date">{% trans 'Date' %}*</label>
           {% if object.date %}
             <input class="form-control" type="date" name="date" required id="id_date" value="{{ object.date | date:'Y-m-d' }}" />
             <small class="text-muted">{% trans 'Enter a event date' %}</small>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="form-group col">
-          <label for="id_time">{% trans 'Time' %}</label>
+          <label for="id_time">{% trans 'Time' %}*</label>
           {% if object.time %}
             <input class="form-control" type="time" name="time" required id="id_time" value="{{ object.time }}"/>
             <small class="text-muted">{% trans 'Enter a event time' %}</small>
@@ -79,7 +79,7 @@
 
       <div class="row">
         <div class="form-group col">
-          <label for="id_organize_by">{% trans 'Organize by' %}</label>
+          <label for="id_organize_by">{% trans 'Organize by' %}*</label>
           {% if object.organize_by %}
             <input class="form-control" type="text" name="organize_by" maxlength="80" required id="id_organize_by" value="{{ object.organize_by }}"/>
             <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
@@ -89,7 +89,7 @@
           {% endif %}
         </div>
         <div class="form-group col">
-          <label for="id_location">{% trans 'Location' %}</label>
+          <label for="id_location">{% trans 'Location' %}*</label>
           {% if object.location %}
             <input class="form-control" type="text" name="location" maxlength="80" required id="id_location" value="{{ object.location }}"/>
             <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
@@ -101,7 +101,7 @@
       </div>
 
       <div class="row">
-        <label class="col" for="id_value">{% trans 'Value of event' %}</label>
+        <label class="col" for="id_value">{% trans 'Value of event' %}*</label>
         <div class="col-auto">
           {% if object.free %}
             <small class="text-muted mr-1">{% trans 'Event is free?' %}</small>
@@ -126,7 +126,7 @@
       </div>
 
       <div class="form-group">
-        <label for="id_description">{% trans 'Description' %}</label>
+        <label for="id_description">{% trans 'Description' %}*</label>
         {% if object.description %}
           <textarea class="form-control" name="description" cols="40" rows="5" maxlength="500" id="id_description" required>{{object.description}}</textarea>
           <small class="text-muted">{% trans 'Enter event description and details' %}</small>
