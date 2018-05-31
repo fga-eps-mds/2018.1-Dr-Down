@@ -116,14 +116,14 @@ def create_patient(user, n, responsible):
         raise ValidationError("An error occurred. Stopping the script")
 
 
-def create_healthteam(user, n, cpf):
+def create_healthteam(user, cpf, speciality, council_acronym, register_number):
     try:
         HealthTeam.objects.create(
             cpf=cpf,
             user=user,
-            speciality=HealthTeam.NEUROLOGY,
-            council_acronym=HealthTeam.CRM,
-            register_number='123456'+str(n),
+            speciality=speciality,
+            council_acronym=council_acronym,
+            register_number=register_number,
             registration_state=HealthTeam.DF,
         )
     except IntegrityError:
@@ -196,9 +196,147 @@ def populate():
         'F'
     )
 
-    create_healthteam(healthteam_1, 1, '326.763.330-38')
-    create_healthteam(healthteam_2, 2, '875.076.060-23')
-    create_healthteam(healthteam_3, 3, '452.347.400-13')
+    healthteam_4 = create_user(
+        'Diogo',
+        'Thiago',
+        'Diogo Thiago',
+        'diogo',
+        'diogo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_4,
+        '756.750.559-24',
+        HealthTeam.SPEECH_THERAPHY,
+        HealthTeam.CREFONO,
+        1234548
+    )
+
+    healthteam_5 = create_user(
+        'Marcelo',
+        'Filipe',
+        'Marcelo Filipe',
+        'marcelo',
+        'marcelo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_5,
+        '395.183.589-31',
+        HealthTeam.PSYCHOLOGY,
+        HealthTeam.CRP,
+        1234578
+    )
+
+    healthteam_6 = create_user(
+        'Heitor',
+        'Ian',
+        'Heitor Ian',
+        'heitor',
+        'heitor@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_6,
+        '227.707.358-02',
+        HealthTeam.PHYSIOTHERAPY,
+        HealthTeam.CREFITO,
+        1234448
+    )
+
+    healthteam_7 = create_user(
+        'Gustavo',
+        'Roberto',
+        'Gustavo Roberto',
+        'gustavo',
+        'gustavo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_7,
+        '914.049.996-04',
+        HealthTeam.OCCUPATIONAL_THERAPY,
+        HealthTeam.CREFITO,
+        1235548
+    )
+
+
+
+    healthteam_8 = create_user(
+        'Fábio',
+        'Rodrigo',
+        'Fábio Rodrigo',
+        'fabio',
+        'fabio@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_8,
+        '627.696.105-11',
+        HealthTeam.GENERAL_PRACTITIONER,
+        HealthTeam.CRM,
+        2235548
+    )
+
+    healthteam_9 = create_user(
+        'Emanuel',
+        'Henry',
+        'Emanuel Henry',
+        'emanuel',
+        'emanuel@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_9,
+        '271.770.958-45',
+        HealthTeam.CARDIOLOGY,
+        HealthTeam.CRM,
+        1735548
+    )
+    healthteam_10 = create_user(
+        'Renato',
+        'Jorge',
+        'Renato Jorge',
+        'renato',
+        'renato@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_10,
+        '002.213.483-28',
+        HealthTeam.PEDIATRICS,
+        HealthTeam.CRM,
+        1775548
+    )
+
+    create_healthteam(
+        healthteam_1,
+        '326.763.330-38',
+        HealthTeam.NEUROLOGY,
+        HealthTeam.CRM,
+        1234567
+    )
+    create_healthteam(
+        healthteam_2,
+        '875.076.060-23',
+        HealthTeam.NURSING,
+        HealthTeam.COREN,
+        1234568
+    )
+    create_healthteam(
+        healthteam_3,
+        '452.347.400-13',
+        HealthTeam.NEUROLOGY,
+        HealthTeam.CRM,
+        1234569
+    )
 
     print ('\n------------------------')
     print ('Creating Responsibles...')

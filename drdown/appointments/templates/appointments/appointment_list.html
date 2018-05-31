@@ -19,9 +19,10 @@
 
     {% url 'appointments:list_appointments' as url %}
     {% if request.path == url %}
+    <div class="row ml-1 mb-3">
       <div id="search">
         <form class="form-inline" action="" method="GET">
-
+          <div class="row ml-1 mr-3">
           <select name="search_speciality" id="id_search_speciality">
             <option value="" selected>{% trans 'Speciality' %}</option>
             <option value="SPEECH">{% trans 'Speech Theraphy' %}</option>
@@ -32,14 +33,18 @@
             <option value="NEUROLOGY">{% trans 'Neurology' %}</option>
             <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
           </select>
-          {{ form.search_date}}
-          <input type="text" style="max-width: 180px;" name="search_doctor" placeholder="{% trans 'Doctor' %}" id="id_search_doctor" />
-          <input type="text" style="max-width: 180px;" name="search_patient" placeholder="{% trans 'Patient' %}" id="id_search_patient" />
-
+          </div>
+          <div class="row ml-3 mr-3">
+          {{ form.search_date }}
+          </div>
+          <div class="row ml-3 mr-3">
+          <input type="text" style="max-width: 180px;" name="search_name" placeholder="{% trans 'Name' %}" id="id_search_name" />
+          </div>
           <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
 
         </form>
       </div>
+    </div>
     {% endif %}
 
     <div class="row mt-4 mb-4">

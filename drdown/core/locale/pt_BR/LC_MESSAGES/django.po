@@ -389,7 +389,7 @@ msgstr "Consultas"
 
 #: drdown/core/templates/core/base.html:88
 msgid "Scheduled"
-msgstr "Marcadas"
+msgstr "Marcado"
 
 #: drdown/core/templates/core/base.html:91
 msgid "Requests"
