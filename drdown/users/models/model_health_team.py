@@ -121,15 +121,15 @@ class HealthTeam(models.Model):
         max_length=30
     )
 
-    SPEECH_THERAPHY = _("Speech Therapy")
-    PSYCHOLOGY = _("Psychology")
-    PHYSIOTHERAPY = _("Physiotherapy")
-    OCCUPATIONAL_THERAPY = _("Occupational Therapy")
-    GENERAL_PRACTITIONER = _("General Practitioner")
-    CARDIOLOGY = _("Cardiology")
-    NEUROLOGY = _("Neurology")
-    PEDIATRICS = _("Pediatrics")
-    NURSING = _("Nursing")
+    SPEECH_THERAPHY = "Speech Therapy"
+    PSYCHOLOGY = "Psychology"
+    PHYSIOTHERAPY = "Physiotherapy"
+    OCCUPATIONAL_THERAPY = "Occupational Therapy"
+    GENERAL_PRACTITIONER = "General Practitioner"
+    CARDIOLOGY = "Cardiology"
+    NEUROLOGY = "Neurology"
+    PEDIATRICS = "Pediatrics"
+    NURSING = "Nursing"
 
     SPECIALITY_CHOICES = (
         (SPEECH_THERAPHY, _('Speech Therapy')),

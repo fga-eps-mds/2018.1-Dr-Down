@@ -104,16 +104,16 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
     $("#id_speciality").change(function () {
-      var url = $("#doctorForm").attr("data-doctors-url");  // get the url of the `load_cities` view
-      var specialityId = $(this).val();  // get the selected country ID from the HTML input
+      var url = $("#doctorForm").attr("data-doctors-url");
+      var specialityId = $(this).val();
 
-      $.ajax({                       // initialize an AJAX request
-        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      $.ajax({
+        url: url,
         data: {
-          'speciality': specialityId       // add the country id to the GET parameters
+          'speciality': specialityId
         },
-        success: function (data) {   // `data` is the return of the `load_cities` view function
-          $("#id_doctor").html(data);  // replace the contents of the city input with the data that came from the server
+        success: function (data) {
+          $("#id_doctor").html(data);
         }
       });
 
