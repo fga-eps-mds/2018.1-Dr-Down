@@ -177,7 +177,7 @@
           {% endif %}
 
             <li><a href="{% url 'forum:list_categories' %}">{% trans "Forums" %}</a></li>
-            <li><a href="#">{% trans "Events" %}</a></li>
+            <li><a href="{% url 'events:list_events' %}">{% trans "Events" %}</a></li>
             <li><a href="#">{% trans "Help" %}</a></li>
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
