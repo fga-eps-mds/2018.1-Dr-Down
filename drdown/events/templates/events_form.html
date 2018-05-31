@@ -46,10 +46,10 @@
           <label>{% trans 'Name' %}*</label>
           {% if object.name %}
             <input class="form-control" type="text" name="name" maxlength="50" required id="id_name" value="{{ object.name }}"/>
-            <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+            <small class="text-muted">{% trans 'Enter a event name' %}</small>
           {% else %}
             <input class="form-control" type="text" name="name" maxlength="50" required id="id_name"/>
-            <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+            <small class="text-muted">{% trans 'Enter a event name' %}</small>
           {% endif %}
         </div>
       </div>
@@ -92,10 +92,10 @@
           <label for="id_location">{% trans 'Location' %}*</label>
           {% if object.location %}
             <input class="form-control" type="text" name="location" maxlength="80" required id="id_location" value="{{ object.location }}"/>
-            <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+            <small class="text-muted">{% trans 'Enter a event location' %}</small>
           {% else %}
             <input class="form-control" type="text" name="location" maxlength="80" required id="id_location"/>
-            <small class="text-muted">{% trans 'Enter a event organizer' %}</small>
+            <small class="text-muted">{% trans 'Enter a event location' %}</small>
           {% endif %}
         </div>
       </div>
