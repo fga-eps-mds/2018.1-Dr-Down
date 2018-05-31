@@ -68,8 +68,14 @@
           {% if appointmentrequest.motive %}
             <font size="2" >{% trans 'Motive'%}: {{appointmentrequest.motive}}</font><br>
           {% endif %}
-          <font size="2" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}}</font><br>
-          {% if request.user.employee %}
+          <br/>
+          <div class="row">
+          <div class="col-auto">
+            <p class= "form-control"  > <font size="3" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}} </font><br></p>
+          </div>
+            <div class="col-auto"></div>
+          </div>
+            {% if request.user.employee %}
             <font size="2" >{% trans 'Risk'%}: {{appointmentrequest.get_risk_display}}</font><br>
           {% endif %}
           {% if appointmentrequest.observation %}

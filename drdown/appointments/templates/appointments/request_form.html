@@ -20,7 +20,7 @@
       <h2>{% trans "Edit Request" %}</h2><hr>
     {% endif %}
 
-    <form method="post" id="doctorForm" data-doctors-url="{% url 'appointments:ajax_load_doctors' %}" novalidate>
+    <form method="post" id="doctorForm" data-doctors-url="{% url 'appointments:ajax_load_doctors' %}">
       {% csrf_token %}
 
         <div class="fieldWrapper">
@@ -32,7 +32,7 @@
               {% if object.speciality  %}
                <p class= "form-control" readonly>{{ object.speciality }}</p>
               {% else %}
-              <select class= "select form-control" name="speciality"  required id="id_speciality" >
+              <select class= "select form-control" name="speciality"  required="" id="id_speciality" >
                 {% if object.speciality  %}
                   <option value="object.speciality" selected >{{object.get_speciality_display }}</option>
                 {% else %}
@@ -57,7 +57,7 @@
               {% if object.doctor  %}
                <p class= "form-control" readonly>{{ object.doctor.user.name }}</p>
               {% else %}
-              <select name="doctor" class= "select form-control" required id="id_doctor" size="6" >
+              <select name="doctor" class= "select form-control"  id="id_doctor" size="6" >
               {% if object.doctor  %}
                   <option value="object.doctor" selected >{{object.doctor.user.name }}</option>
                 {% else %}

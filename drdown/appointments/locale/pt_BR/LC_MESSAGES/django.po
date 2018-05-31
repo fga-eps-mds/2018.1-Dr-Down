@@ -152,7 +152,7 @@ msgstr "Especialidade da consulta"
 #: drdown/appointments/templates/appointments/request_list.html:61
 #: drdown/appointments/templates/appointments/request_list.html:63
 msgid "Doctor"
-msgstr "Médico"
+msgstr "Profissional de saúde"
 
 #: drdown/appointments/models/model_appointment.py:58
 #: drdown/appointments/models/model_request.py:107
@@ -297,8 +297,8 @@ msgid ""
 "Preferred doctor. It is not guaranteed that the appointment will be "
 "scheduled with the doctor preferred."
 msgstr ""
-"Médico de preferência. Não é garantido que a consulta seja marcada com o "
-"médico de preferência."
+"Profissional de saúde de preferência. Não é garantido que a consulta seja marcada com o "
+"profissional de saúde escolhido."
 
 #: drdown/appointments/models/model_request.py:112
 msgid "Pending"
@@ -512,7 +512,7 @@ msgstr "Recusar"
 
 #: drdown/appointments/templates/appointments/request_list.html:61
 msgid "Does not have doctor preference"
-msgstr "Não há preferência por um médico específico."
+msgstr "Não há preferência por um profissional de saúde específico."
 
 #: drdown/appointments/templates/appointments/request_list.html:86
 msgid "Confirm delete"
