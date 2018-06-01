@@ -43,6 +43,6 @@ class TestModelRequest(TestCase):
         """
         Test if BMI is calculates correctly
         """
-        bmi = self.WEIGHT / (self.HEIGHT**2)
+        bmi = self.WEIGHT / (self.HEIGHT/100 * self.HEIGHT/100)
 
         self.assertAlmostEqual(bmi, self.curve.get_bmi())
