@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from ...users.models.model_patient import Patient
+from django.core.validators import MinValueValidator
 
 
 class Curves(models.Model):
@@ -11,22 +12,19 @@ class Curves(models.Model):
         verbose_name=_('Patient')
     )
     weight = models.FloatField(
-        default=0.0,
-        help_text=_('Weight in kg')
+        help_text=_('Weight in kg'),
     )
     height = models.IntegerField(
-        default=0,
         help_text=_('Height in cm'),
+        validators=[MinValueValidator(0.1)],
     )
     cephalic_perimeter = models.FloatField(
-        default=0.0,
         help_text=_('Perimeter in cm')
     )
     bmi = models.FloatField(
         default=0.0
     )
     age = models.IntegerField(
-        default=0,
         help_text=_('Age in months')
     )
 
