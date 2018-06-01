@@ -32,13 +32,13 @@
       {% for curve in related_patient.curves_set.all %}
         <tr>
           <td>{{curve.age}} {% trans 'months'%}</td>
-          <td>{{curve.weight|floatformat:2}}kg</td>
-          <td>{{curve.height}}cm</td>
-          <td>{{curve.cephalic_perimeter}}cm</td>
+          <td>{{curve.weight|floatformat:2}} Kg</td>
+          <td>{{curve.height}} cm</td>
+          <td>{{curve.cephalic_perimeter}} cm</td>
           <td>{{curve.bmi|floatformat:2}}</td>
           {% if request.user.healthteam or request.user.employee%}
             <td>
-              <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm" style="margin: 0px;" >{% trans "Edit" %}</a>
+              <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
             </td>
           {% endif %}
         </tr>
