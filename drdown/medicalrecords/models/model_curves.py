@@ -11,19 +11,23 @@ class Curves(models.Model):
         verbose_name=_('Patient')
     )
     weight = models.FloatField(
-        default=0.0
+        default=0.0,
+        help_text=_('Weight in kg')
     )
     height = models.IntegerField(
-        default=0
+        default=0,
+        help_text=_('Height in cm'),
     )
     cephalic_perimeter = models.FloatField(
-        default=0.0
+        default=0.0,
+        help_text=_('Perimeter in cm')
     )
     bmi = models.FloatField(
         default=0.0
     )
     age = models.IntegerField(
-        default=0
+        default=0,
+        help_text=_('Age in months')
     )
 
     def get_bmi(self):

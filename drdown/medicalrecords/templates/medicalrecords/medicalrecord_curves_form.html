@@ -13,7 +13,7 @@
 
     <div class="row">
       <div class="col">
-          <h2>{% trans 'Height' %}</h2>
+          <h2>{% trans 'Growth Data' %}</h2>
       </div>
     </div>
 
@@ -49,13 +49,12 @@
             </div>
 
           {% endfor %}
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-auto">
-                <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
-                <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
-              </div>
-            </div>
+
+          <div class="float-right">
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+          </div>
+
         </form>
 
       </div>
