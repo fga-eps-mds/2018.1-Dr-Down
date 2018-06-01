@@ -1,0 +1,113 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% trans "Events" %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    {% if user.employee %}
+      <div class="row mb-5">
+        <div class="col">
+          <h1>{% trans 'Events'%}</h1>
+        </div>
+        <div class="col mt-1">
+          <a href="{% url 'events:create_event'%}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
+        </div>
+      </div>
+    {% endif %}
+    <div class="accordion" id="accordionmenu3">
+      {% for event in events_list %}
+        <div class="card-header border row" id="heading{{ event.pk }}">
+          <div class="col-sm">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
+              <div class="col">
+                <h4 class="lead row">{{ event.name }}</h4>
+                <small class="row text-muted">{{ event.date }}</small>
+              </div>              
+            </button>
+          </div>
+          {% if user.employee %}
+            <div class="col-1">
+               <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
+            </div>
+            <div class="col-1">
+              <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space float-right">{% trans "Delete" %}</a>
+            </div>
+          {% endif %}
+        </div>
+        <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
+          <div class="card-body">
+            <div class="row">
+              <label class="col"><strong>{% trans 'Date' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Time' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Value' %} :</strong></label>
+            </div>
+            <div class="row">
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.date }}</div>
+              </div>
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.time }}</div>
+              </div>
+              {% if event.free %}
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">{% trans 'Free Event' %}</div>
+                </div>
+              {% else %}
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">R$ {{ event.value|floatformat:2 }}</div>
+                </div>
+              {% endif %}  
+            </div>
+            <div class="row">
+              <label class="col"><strong>{% trans 'Organize by' %} :</strong></label>
+              <label class="col"><strong>{% trans 'Location' %} :</strong></label>
+            </div>
+            <div class="row">
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">{{ event.organize_by }}</div>
+                </div>
+                <div class="col mx-3 alert alert-dark" role="alert">
+                  <div class="col">{{ event.location }}</div>
+                </div>
+            </div>
+            <div class="row">
+              <label class="col"><strong>{% trans 'Description' %}</strong></label>
+            </div>
+            <div class="row">
+              <div class="col mx-3 alert alert-dark" role="alert">
+                <div class="col">{{ event.description }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="event-{{ event.name }} delete_event" role="dialog">
+          <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">{% trans 'Confirm delete' %}</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>{% trans 'Are you sure you want to delete this event?' %}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Cancel' %}</button>
+                <form method="post" action="{% url 'events:delete_event' event.pk %}">
+                  {% csrf_token %}
+                  <button class="btn btn-danger float-right" type="submit">{% trans 'Delete' %}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <h4>{% trans 'There are no events registered.'%}</h4>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

@@ -64,9 +64,10 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
             birthday=birthday,
             telephone='(22)22222-2222',
             gender=gender,
-            created_at='2018-04-05',
-            updated_at='2018-04-05',
+            created_at=timezone.now(),
+            updated_at=timezone.now(),
             is_active=True,
+            has_specialization=False
         )
 
         # EmailAdress is for validating email confirmation on user creation
@@ -88,7 +89,7 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
 def create_patient(user, n, responsible):
 
     try:
-        Patient.objects.create(
+        patients = Patient.objects.create(
             ses='11234561'+str(n),
             user=user,
             mother_name="Janaína Roussef",
@@ -100,18 +101,29 @@ def create_patient(user, n, responsible):
             responsible=responsible
         )
 
+        Risk.objects.filter(patient=patients).update(
+            patient=patients,
+            priority_speech_theraphy = 5,
+            priority_psychology = 5,
+            priority_physiotherapy = 5,
+            priority_neurology = 5,
+            priority_cardiology = 5,
+            priority_pediatrics = 5,
+            priority_general_practitioner = 5,
+        )
+
     except IntegrityError:
         raise ValidationError("An error occurred. Stopping the script")
 
 
-def create_healthteam(user, n, cpf):
+def create_healthteam(user, cpf, speciality, council_acronym, register_number):
     try:
         HealthTeam.objects.create(
             cpf=cpf,
             user=user,
-            speciality=HealthTeam.NEUROLOGY,
-            council_acronym=HealthTeam.CRM,
-            register_number='123456'+str(n),
+            speciality=speciality,
+            council_acronym=council_acronym,
+            register_number=register_number,
             registration_state=HealthTeam.DF,
         )
     except IntegrityError:
@@ -157,7 +169,7 @@ def populate():
     healthteam_1 = create_user(
         'Laura',
         'Oliveira',
-        'Laura',
+        'Laura Oliveira',
         'laura',
         'laura@email.com',
         '1998-04-05',
@@ -167,7 +179,7 @@ def populate():
     healthteam_2 = create_user(
         'Maura',
         'Oliveira',
-        'Maura',
+        'Maura Oliveira',
         'maura',
         'maura@email.com',
         '1998-04-05',
@@ -177,16 +189,154 @@ def populate():
     healthteam_3 = create_user(
         'Sara',
         'Oliveira',
-        'Sara',
+        'Sara Oliveira',
         'sara',
         'sara@email.com',
         '1998-04-05',
         'F'
     )
 
-    create_healthteam(healthteam_1, 1, '326.763.330-38')
-    create_healthteam(healthteam_2, 2, '875.076.060-23')
-    create_healthteam(healthteam_3, 3, '452.347.400-13')
+    healthteam_4 = create_user(
+        'Diogo',
+        'Thiago',
+        'Diogo Thiago',
+        'diogo',
+        'diogo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_4,
+        '756.750.559-24',
+        HealthTeam.SPEECH_THERAPHY,
+        HealthTeam.CREFONO,
+        1234548
+    )
+
+    healthteam_5 = create_user(
+        'Marcelo',
+        'Filipe',
+        'Marcelo Filipe',
+        'marcelo',
+        'marcelo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_5,
+        '395.183.589-31',
+        HealthTeam.PSYCHOLOGY,
+        HealthTeam.CRP,
+        1234578
+    )
+
+    healthteam_6 = create_user(
+        'Heitor',
+        'Ian',
+        'Heitor Ian',
+        'heitor',
+        'heitor@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_6,
+        '227.707.358-02',
+        HealthTeam.PHYSIOTHERAPY,
+        HealthTeam.CREFITO,
+        1234448
+    )
+
+    healthteam_7 = create_user(
+        'Gustavo',
+        'Roberto',
+        'Gustavo Roberto',
+        'gustavo',
+        'gustavo@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_7,
+        '914.049.996-04',
+        HealthTeam.OCCUPATIONAL_THERAPY,
+        HealthTeam.CREFITO,
+        1235548
+    )
+
+
+
+    healthteam_8 = create_user(
+        'Fábio',
+        'Rodrigo',
+        'Fábio Rodrigo',
+        'fabio',
+        'fabio@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_8,
+        '627.696.105-11',
+        HealthTeam.GENERAL_PRACTITIONER,
+        HealthTeam.CRM,
+        2235548
+    )
+
+    healthteam_9 = create_user(
+        'Emanuel',
+        'Henry',
+        'Emanuel Henry',
+        'emanuel',
+        'emanuel@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_9,
+        '271.770.958-45',
+        HealthTeam.CARDIOLOGY,
+        HealthTeam.CRM,
+        1735548
+    )
+    healthteam_10 = create_user(
+        'Renato',
+        'Jorge',
+        'Renato Jorge',
+        'renato',
+        'renato@email.com',
+        '1998-04-05',
+        'M'
+    )
+    create_healthteam(
+        healthteam_10,
+        '002.213.483-28',
+        HealthTeam.PEDIATRICS,
+        HealthTeam.CRM,
+        1775548
+    )
+
+    create_healthteam(
+        healthteam_1,
+        '326.763.330-38',
+        HealthTeam.NEUROLOGY,
+        HealthTeam.CRM,
+        1234567
+    )
+    create_healthteam(
+        healthteam_2,
+        '875.076.060-23',
+        HealthTeam.NURSING,
+        HealthTeam.COREN,
+        1234568
+    )
+    create_healthteam(
+        healthteam_3,
+        '452.347.400-13',
+        HealthTeam.NEUROLOGY,
+        HealthTeam.CRM,
+        1234569
+    )
 
     print ('\n------------------------')
     print ('Creating Responsibles...')
@@ -195,7 +345,7 @@ def populate():
     responsible_1 = create_user(
         'José',
         'Vaz',
-        'José',
+        'José Vaz',
         'jose',
         'jose@email.com',
         '1998-04-05',
@@ -205,7 +355,7 @@ def populate():
     responsible_2 = create_user(
         'Ana',
         'Vitória',
-        'Ana',
+        'Ana Vitória',
         'ana',
         'ana@email.com',
         '1998-04-05',
@@ -215,7 +365,7 @@ def populate():
     responsible_3 = create_user(
         'Júlio',
         'Tavares',
-        'Júlio',
+        'Júlio Tavares',
         'julio',
         'julio@email.com',
         '1998-04-05',
@@ -234,7 +384,7 @@ def populate():
     patient_3 = create_user(
         'Enzo',
         'Gabriel',
-        'Enzo',
+        'Enzo Gabriel',
         'enzo',
         'enzo@email.com',
         timezone.now() - timezone.timedelta(days=3650),
@@ -245,7 +395,7 @@ def populate():
     patient_4 = create_user(
         'Valentina',
         'Valente',
-        'Valentina',
+        'Valentina Valente',
         'valentina',
         'valentina@email.com',
         timezone.now() - timezone.timedelta(days=1),
@@ -256,7 +406,7 @@ def populate():
     patient_1 = create_user(
         'Gabriel',
         'dos Santos',
-        'Gabriel',
+        'Gabriel dos Santos',
         'gabriel',
         'gabriel@email.com',
         '1998-04-05',
@@ -267,15 +417,39 @@ def populate():
     patient_2 = create_user(
         'Carla',
         'Júlia',
-        'Carla',
+        'Carla Júlia',
         'carla',
         'carla@email.com',
         '1998-04-05',
         'F'
     )
 
+    print ('(Minnor)')
+    patient_5 = create_user(
+        'Bia',
+        'Falcão',
+        'Bianca Falcão',
+        'bianca',
+        'bianca@email.com',
+        timezone.now() - timezone.timedelta(days=1),
+        'F'
+    )
+
+    print ('(18+)')
+    patient_6 = create_user(
+        'Nathan',
+        'Vilela',
+        'Nathan Vilela',
+        'nathan',
+        'nathan@email.com',
+        '1998-04-05',
+        'M'
+    )
+
     create_patient(patient_3, 3, responsible1)
     create_patient(patient_4, 4, responsible2)
+    create_patient(patient_5, 5, responsible2)
+    create_patient(patient_6, 6, responsible2)
     create_patient(patient_1, 1, None)
     create_patient(patient_2, 2, None)
 
@@ -286,7 +460,7 @@ def populate():
     employee_1 = create_user(
         'Pedro',
         'Victor',
-        'Pedro',
+        'Pedro Victor',
         'pedro',
         'pedro@email.com',
         '1998-04-05',
@@ -296,7 +470,7 @@ def populate():
     employee_2 = create_user(
         'Raíssa',
         'Parente',
-        'Raíssa',
+        'Raíssa Parente',
         'raissa',
         'raissa@email.com',
         '1998-04-05',
@@ -391,6 +565,7 @@ from drdown.users.models.model_patient import Patient
 from drdown.forum.models.model_category import Category
 from drdown.forum.models.model_post import Post
 from drdown.forum.models.model_commentary import Commentary
+from drdown.medicalrecords.models.model_risk import Risk
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 from allauth.account.models import EmailAddress

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-01 18:07+0000\n"
+"POT-Creation-Date: 2018-06-01 21:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -348,7 +348,7 @@ msgid "Down's Syndrome"
 msgstr "Síndrome de Down"
 
 #: drdown/core/templates/core/base-nav.html:61
-#: drdown/core/templates/core/base.html:177
+#: drdown/core/templates/core/base.html:179
 msgid "Forums"
 msgstr "Fórum"
 
@@ -374,7 +374,7 @@ msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
 #: drdown/core/templates/core/base-nav.html:113
-#: drdown/core/templates/core/base.html:226
+#: drdown/core/templates/core/base.html:228
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -389,7 +389,7 @@ msgstr "Consultas"
 
 #: drdown/core/templates/core/base.html:88
 msgid "Scheduled"
-msgstr "Marcadas"
+msgstr "Marcado"
 
 #: drdown/core/templates/core/base.html:91
 msgid "Requests"
@@ -408,7 +408,6 @@ msgid "Medical History"
 msgstr "Histórico Médico"
 
 #: drdown/core/templates/core/base.html:115
-#: drdown/core/templates/core/base.html:149
 msgid "Medical Record"
 msgstr "Prontuário"
 
@@ -417,7 +416,7 @@ msgid "Care Line"
 msgstr "Linha de Cuidado"
 
 #: drdown/core/templates/core/base.html:124
-#: drdown/core/templates/core/base.html:158
+#: drdown/core/templates/core/base.html:160
 #: drdown/core/templates/core/vaccine_schedule.html:28
 #: drdown/core/templates/core/vaccine_schedule.html:225
 #: drdown/core/templates/core/vaccine_schedule.html:258
@@ -426,45 +425,45 @@ msgid "Vaccines"
 msgstr "Vacinas"
 
 #: drdown/core/templates/core/base.html:128
-#: drdown/core/templates/core/base.html:162
+#: drdown/core/templates/core/base.html:164
 msgid "Calendar"
 msgstr "Calendário"
 
 #: drdown/core/templates/core/base.html:131
-#: drdown/core/templates/core/base.html:165
+#: drdown/core/templates/core/base.html:167
 msgid "Health Centers"
 msgstr "Locais de vacinação"
 
-#: drdown/core/templates/core/base.html:145
+#: drdown/core/templates/core/base.html:141
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:172
+#: drdown/core/templates/core/base.html:174
 msgid "Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:178
+#: drdown/core/templates/core/base.html:180
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:179
+#: drdown/core/templates/core/base.html:181
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:180
-#: drdown/core/templates/core/base.html:189
+#: drdown/core/templates/core/base.html:182
+#: drdown/core/templates/core/base.html:191
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:193
+#: drdown/core/templates/core/base.html:195
 msgid "Are you sure you want to log out?"
 msgstr "Você tem certeza que deseja sair?"
 
-#: drdown/core/templates/core/base.html:196
+#: drdown/core/templates/core/base.html:198
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/core/templates/core/base.html:202
+#: drdown/core/templates/core/base.html:204
 msgid "Log Out"
 msgstr "Sair"
 

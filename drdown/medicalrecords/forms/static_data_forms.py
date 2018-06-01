@@ -6,4 +6,4 @@ class StaticDataForm(forms.ModelForm):
 
     class Meta:
         model = StaticData
-        fields = ["weight", "APGAR", "heart_test", "ear_test"]
+        fields = ["weight", "APGAR", "heart_test", "ear_test", "foot_test"]

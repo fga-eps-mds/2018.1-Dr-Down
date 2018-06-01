@@ -90,6 +90,7 @@ class TestViewMedicalRecords(TestCase):
             weight=800,
             ear_test="text.txt",
             heart_test="teuxt.txt",
+            foot_test="foot.txt",
             author=self.health_team
         )
 

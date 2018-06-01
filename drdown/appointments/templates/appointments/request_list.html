@@ -18,9 +18,10 @@
 
     {% url 'appointments:list_requests' as url %}
    {% if request.path == url %}
+   <div class="row ml-1 mb-3">
      <div id="search">
-       <form class="form-inline" action="" method="GET">
-         <select name="search_speciality" id="id_search_speciality">
+       <form class="form-inline " action="" method="GET">
+         <select class="form-control" name="search_speciality" id="id_search_speciality">
            <option value="" selected>{% trans 'Speciality' %}</option>
            <option value="SPEECH THERAPY">{% trans 'Speech Theraphy' %}</option>
            <option value="PSYCHOLOGY">{% trans 'Psychology' %}</option>
@@ -31,13 +32,14 @@
            <option value="NEUROLOGY">{% trans 'Neurology' %}</option>
            <option value="PEDIATRICS">{% trans 'Pediatrics' %}</option>
          </select>
-         <input type="text" style="max-width: 180px;" name="search_doctor" placeholder="{% trans 'Doctor' %}" id="id_search_doctor" />
-         <input type="text" style="max-width: 180px;" name="search_patient" placeholder="{% trans 'Patient' %}" id="id_search_patient" />
-
+         <div class="row ml-3 mr-3">
+         <input type="text" style="max-width: 180px;" class="form-control" name="search_name" placeholder="{% trans 'Name' %}" id="id_search_name" />
+         </div>
          <button class="btn fa fa-search ml-2 clear-" style="background-color:LightGray" type="submit">{% trans "Search" %}</button>
 
        </form>
      </div>
+    </div>
    {% endif %}
 
     {% for appointmentrequest in appointmentrequest_list %}
@@ -55,15 +57,25 @@
             <a href="{% url 'appointments:update_status_request' appointmentrequest.pk %}" class="btn mt-1 btn-danger btn-sm float-right mr-2">{% trans "Decline" %}</a>
           {% endif %}
           <h5 class="mt-2">{% trans 'Patient'%}: {{appointmentrequest.patient.user.name}}</h5>
-          <font size="4" >{% trans 'Doctor'%}: {{ appointmentrequest.doctor.user.name}}</font><br>
+          {% if appointmentrequest.doctor.user.name == none %}
+            <font size="3" >{% trans 'Doctor'%}: {% trans 'Does not have doctor preference'%}</font><br>
+          {% else %}
+            <font size="3" >{% trans 'Doctor'%}: {{ appointmentrequest.doctor.user.name}}</font><br>
+          {% endif %}
           <font size="2" >{% trans 'Especiality'%}: {{appointmentrequest.get_speciality_display}}</font><br>
           <font size="2" >{% trans 'Shift'%}: {{appointmentrequest.get_shift_display}}</font><br>
           <font size="2" >{% trans 'Day of the week'%}: {{appointmentrequest.get_day_display}}</font><br>
           {% if appointmentrequest.motive %}
             <font size="2" >{% trans 'Motive'%}: {{appointmentrequest.motive}}</font><br>
           {% endif %}
-          <font size="2" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}}</font><br>
-          {% if request.user.employee %}
+          <br/>
+          <div class="row">
+          <div class="col-auto">
+            <p class= "form-control"  > <font size="3" >{% trans 'Status'%}: {{appointmentrequest.get_status_display}} </font><br></p>
+          </div>
+            <div class="col-auto"></div>
+          </div>
+            {% if request.user.employee %}
             <font size="2" >{% trans 'Risk'%}: {{appointmentrequest.get_risk_display}}</font><br>
           {% endif %}
           {% if appointmentrequest.observation %}
