@@ -11,7 +11,7 @@ from django.http import (
 )
 from django.urls import reverse, reverse_lazy
 
-from urllib import parse, request
+from urllib import parse, request as urlrequest
 import json
 
 
@@ -80,6 +80,7 @@ class CurveDataParser(BaseViewPermissions, View):
 
         for curve in curves:
 
+            # tuple, 0 == age, 1 == value
             curve_data = (curve.age, getattr(curve, attr))
             data.append(curve_data)
 
@@ -93,18 +94,18 @@ class CurveDataParser(BaseViewPermissions, View):
 
     def get_api_url(self, request):
 
+        # get the current addres and add service port 
         url = parse.urlparse(request.build_absolute_uri())
         return str(url.netloc) + self.api_port
 
     def api_data_type(self):
+
         if self.data_type == "bmi":
             return "imc"
         elif self.data_type == "cephalic_perimeter":
-            return "cephalic_perimeter"
+            return "perimeter"
         else:
             return self.data_type
-
-        
 
     def api_gender(self):
 
@@ -121,24 +122,37 @@ class CurveDataParser(BaseViewPermissions, View):
         return "months"
 
     def get_api_directory(self):
+
+        # API directory map:
+
         # api/growth-curve/height/
         # api/growth-curve/weight/
-        # api/growth-curve/perimeter/
-        # api/growth-curve/imc/
         # [male-months, male-years, female-months, female-years, result]
 
-        return (
-            "api/growth-curve/" + self.api_data_type() + "/" +
-            self.api_gender() + "-" + self.api_time_frame()
-        )
+        # api/growth-curve/imc/
+        # api/growth-curve/perimeter/
+        # [male, female, result]
+
+        api_dir = "api/growth-curve/" + self.api_data_type() + "/" + self.api_gender()
+
+        if self.api_data_type() not in ["imc", "perimeter"]:
+            api_dir += "-" + self.api_time_frame()
+
+        return api_dir
 
     def get_api_data(self):
 
-        url = "http://" + self.api_url + "/" + self.get_api_directory()
+        # Ideally, in place of the constant, one would use self.api_url
+        # but its not working right now
+        API_URL = "drdown-homolog.ml:8000"
 
-        req = request.Request(url=url,)
+        url = "http://" + API_URL + "/" + self.get_api_directory()
+        print("DEBUG >>> URL " + url)
 
-        opener = request.build_opener()
+        # create a request and parse response as JSON
+        req = urlrequest.Request(url=url,)
+
+        opener = urlrequest.build_opener()
         f = opener.open(req)
 
         json_obj = json.loads(f.read())
@@ -149,10 +163,51 @@ class CurveDataParser(BaseViewPermissions, View):
 
         graphic = self.api_data['graphic']
 
-        # data_tuple: 0 is age, 1 is value
+        # data is a tuple with 0 == patient age, 1 == value
 
-        for data_tuple in self.drdown_data:
-            list = graphic[data_tuple[0] + 1]
-            list[-1] = data_tuple[1]
+        for data in self.select_data():
+
+            # the index is age + 1, because the first line
+            # in the 'graphic' returned by the api is a Header line
+            # so it saves no values
+            graph_list = graphic[data[0] + 1]
+
+            # the last element is the value
+            graph_list[-1] = data[1]
 
         return self.api_data
+
+    def select_data(self):
+
+        selected_curves = []
+
+        if self.api_time_frame() == 'months':
+
+            # if we are asking for months, the API limit is 36
+            selected_curves = list(
+                filter(lambda x: x[0] <= 36, self.drdown_data)
+            )
+
+        elif self.api_time_frame() == 'years':
+
+            # get data with months bigger than 36
+            year_curves = list(filter(lambda x: x[0] > 36, self.drdown_data))
+
+            # API years go from 3 to 18
+            for i in range(3, 18):
+                # this line filter all curve points that belongs to a year
+                # ex: month 36 to month 48, then gets the last one of those
+                # this behaviour was defined bt management (instead os a mean)
+                selected_curves += list(
+                    filter(
+                        lambda x: (i * 12 <= x[0] < (i + 1) * 12), year_curves
+                    )
+                )[-1]
+
+        # handy debug line, for the poor guy who will be doing maintenance
+        # here in the future:
+
+        # print("DEBUG >>>" + self.api_time_frame() + " " + 
+        # self.get_api_directory() + " " + str(selected_curves))
+
+        return selected_curves
