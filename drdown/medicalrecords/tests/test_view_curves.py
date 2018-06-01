@@ -74,3 +74,52 @@ class TestModelRequest(TestCase):
         )
 
         self.assertEquals(response.status_code, 200)
+
+    def test_data_parse_curves_height(self):
+        self.client.force_login(user=self.user2)
+        self.client.request()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+            ),
+            follow=True,
+            data={'username': self.user.username, 'data_type': 'height', }
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_data_parse_curves_weight(self):
+        self.client.force_login(user=self.user2)
+        self.client.request()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+            ),
+            follow=True,
+            data={'username': self.user.username, 'data_type': 'weight', }
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_data_parse_curves_bmi(self):
+        self.client.force_login(user=self.user2)
+        self.client.request()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+            ),
+            follow=True,
+            data={'username': self.user.username, 'data_type': 'bmi', }
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_data_parse_curves_cephalic_perimeter(self):
+        self.user.gender = "F"
+        self.client.force_login(user=self.user2)
+        self.client.request()
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+            ),
+            follow=True,
+            data={'username': self.user.username, 'data_type': 'cephalic_perimeter', }
+        )
+        self.assertEquals(response.status_code, 200)
