@@ -443,7 +443,7 @@ msgstr "Exames Médicos"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:73
 msgid "Prescription"
-msgstr "Precrição"
+msgstr "Prescrição"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:99
 msgid "Name: "
