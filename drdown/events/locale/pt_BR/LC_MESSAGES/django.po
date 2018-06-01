@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-31 04:06+0000\n"
+"POT-Creation-Date: 2018-06-01 21:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,6 @@ msgid "Location"
 msgstr "Local"
 
 #: drdown/events/models/model_events.py:18
-#| msgid "Date of event"
 msgid "Location of event"
 msgstr "Local do evento"
 
@@ -113,7 +112,6 @@ msgstr "Editar evento"
 
 #: drdown/events/templates/events_form.html:49
 #: drdown/events/templates/events_form.html:52
-#| msgid "Enter a event date"
 msgid "Enter a event name"
 msgstr "Nome do evento"
 
@@ -134,20 +132,17 @@ msgstr "Organizador do evento"
 
 #: drdown/events/templates/events_form.html:95
 #: drdown/events/templates/events_form.html:98
-#| msgid "Enter a event date"
 msgid "Enter a event location"
 msgstr "Local do evento"
 
 #: drdown/events/templates/events_form.html:107
 #: drdown/events/templates/events_form.html:110
-#| msgid "Events"
 msgid "Event is free?"
 msgstr "O evento é gratuito?"
 
 #: drdown/events/templates/events_form.html:118
 #: drdown/events/templates/events_form.html:121
 #: drdown/events/templates/events_form.html:124
-#| msgid "Enter a event date"
 msgid "Enter a value event"
 msgstr "Valor do evento"
 
@@ -183,7 +178,6 @@ msgid "Value"
 msgstr "Valor"
 
 #: drdown/events/templates/events_list.html:57
-#| msgid "New Event"
 msgid "Free Event"
 msgstr "Evento gratuito"
 

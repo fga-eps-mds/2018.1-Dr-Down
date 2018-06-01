@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-23 18:20+0000\n"
+"POT-Creation-Date: 2018-06-01 21:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,7 +182,7 @@ msgstr ""
 "** Tireograma: TSH, T4 livre. Para os anticorpos antitiroidiano, solicitar "
 "como rotina entre 9 e 12 anos ou quando necessário."
 
-#: drdown/careline/views/view_checklist.py:131
+#: drdown/careline/views/view_checklist.py:134
 msgid ""
 "Error: You cannot change data on this form. You need to be at least 13 years "
 "old."
@@ -190,7 +190,7 @@ msgstr ""
 "Erro: Você não pode mudar os dados neste formulário. Você deve ter pelo "
 "menos 13 anos de idade."
 
-#: drdown/careline/views/view_checklist.py:146
+#: drdown/careline/views/view_checklist.py:149
 msgid "Success! Your changes were saved."
 msgstr "Sucesso! Suas mudanças foram salvas."
 

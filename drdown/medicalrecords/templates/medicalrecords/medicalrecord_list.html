@@ -80,6 +80,9 @@
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu6">{% trans "Risks" %}</a>
         </li>
         {% endif %}
+        <li class="nav-item">
+          <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu7">{% trans "Curves" %}</a>
+        </li>
       </ul>
 
       <div class="tab-content">
@@ -110,6 +113,11 @@
         <div id="menu6" class="tab-pane fade">
           {% include "medicalrecords/risks.html" %}
         </div>
+
+        <div id="menu7" class="tab-pane fade">
+          {% include "medicalrecords/curves.html" %}
+        </div>
+
       </div>
 
       <div class="row my-1">
@@ -121,6 +129,7 @@
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </div>
