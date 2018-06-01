@@ -31,7 +31,7 @@ class Curves(models.Model):
     )
 
     def get_bmi(self):
-        return self.weight / (self.height * self.height)
+        return self.weight / (self.height/100 * self.height/100)
 
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         self.bmi = self.get_bmi()
