@@ -123,6 +123,6 @@ __OBS__: Os principais artefatos que estão inclusos no, e participam do, pipeli
 
 ### Processo do Pipeline v0.0.1
 
-Afim de tornar mais claro como ocorre o processo do CI/CD, assim como mostrar em detalhes como é feito o pipeline de integração, deploy e entrega contínua da ferramenta Dr. Down, foi desenhado, com auxílio da ferramenta [Bizagi](https://www.bizagi.com/pt), o processo com cada tarefa e como é executado cada estágio que foi descrito acima:
+A fim de tornar mais claro como ocorre o processo do CI/CD, assim como mostrar em detalhes como é feito o pipeline de integração, deploy e entrega contínua da ferramenta Dr. Down, foi desenhado, com auxílio da ferramenta [Bizagi](https://www.bizagi.com/pt), o processo com cada tarefa e como é executado cada estágio que foi descrito acima:
 
 ![processo](https://i.imgur.com/5mOnkbz.png)
