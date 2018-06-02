@@ -4,9 +4,9 @@
 
 __Número da sprint:__ 10
 
-__Data de início:__ 19/05/2018
+__Data de início:__ 12/05/2018
 
-__Data de Término:__ 25/05/2018
+__Data de Término:__ 18/05/2018
 
 __Duração__: 6 dias
 

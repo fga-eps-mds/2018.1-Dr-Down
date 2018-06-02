@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^careline/', include('drdown.careline.urls', namespace='careline')),
     url(r'^medicalrecords/', include('drdown.medicalrecords.urls', namespace='medicalrecords')),
     url(r'^appointments/', include('drdown.appointments.urls', namespace='appointments')),
+    url(r'^events/', include('drdown.events.urls', namespace='events')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

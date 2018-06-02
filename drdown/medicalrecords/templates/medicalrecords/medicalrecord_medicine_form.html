@@ -39,16 +39,16 @@
                     <div class="col">
                         {{ field }}
                     </div>
+                {% if field.help_text %}
+                  <font size="2" class="ml-3">{{ field.help_text|safe }}</font>
+                {% endif %}
                 </div>
             </div>
           {% endfor %}
 
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-auto">
-              <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
-              <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
-            </div>
+          <div class="row float-right mr-2">
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
           </div>
         </form>
 

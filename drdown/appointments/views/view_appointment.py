@@ -18,8 +18,7 @@ class AppointmentFilter(LoginRequiredMixin, BaseFilter):
     search_fields = {
         'search_date': ['date'],
         'search_speciality': ['speciality'],
-        'search_doctor': ['doctor__user__name'],
-        'search_patient': ['patient__user__name'],
+        'search_name': ['doctor__user__name', 'patient__user__name'],
     }
 
 
@@ -142,7 +141,6 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
     model = Appointment
     template_name = 'appointments/appointment_form.html'
     fields = [
-        'speciality',
         'doctor',
         'patient',
         'date',
@@ -164,9 +162,12 @@ class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentUpdateView, self).get_context_data(**kwargs)
-
-        context['health_team'] = HealthTeam.objects.all()
-        context['patients'] = Patient.objects.all()
+        appointment = Appointment.objects.get(
+            pk=self.kwargs.get('appointment_pk')
+        )
+        context['health_team'] = HealthTeam.objects.filter(
+            speciality=appointment.speciality
+        )
         return context
 
 
@@ -211,11 +212,11 @@ class AppointmentFromRequestCreateView(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super(
             AppointmentFromRequestCreateView, self).get_context_data(**kwargs)
-        context['health_team'] = HealthTeam.objects.all()
-        context['patients'] = Patient.objects.all()
-        context['appointment_request'] = AppointmentRequest.objects.get(
-            pk=self.kwargs.get('request_pk')
-        )
+        test = \
+            AppointmentRequest.objects.get(pk=self.kwargs.get('request_pk'))
+        context['health_team'] = \
+            HealthTeam.objects.filter(speciality=test.speciality)
+        context['appointment_request'] = test
         return context
 
     def form_valid(self, form):

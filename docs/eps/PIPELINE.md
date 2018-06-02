@@ -120,3 +120,9 @@ Quarto Estágio:
 
 
 __OBS__: Os principais artefatos que estão inclusos no, e participam do, pipeline são: ```.travis.yml```, ```codeclimate.yml```, ```mkdocs-build.sh```, ```production-deploy.sh``` e ```staging-deploy.sh```, todos estão disponíveis no repositório da aplicação no [GitHub](https://github.com/fga-gpp-mds/2018.1-Dr-Down).
+
+### Processo do Pipeline v0.0.1
+
+A fim de tornar mais claro como ocorre o processo do CI/CD, assim como mostrar em detalhes como é feito o pipeline de integração, deploy e entrega contínua da ferramenta Dr. Down, foi desenhado, com auxílio da ferramenta [Bizagi](https://www.bizagi.com/pt), o processo com cada tarefa e como é executado cada estágio que foi descrito acima:
+
+![processo](https://i.imgur.com/5mOnkbz.png)

@@ -70,7 +70,7 @@
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu3">{% trans "Medical Exams" %}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu4">{% trans "Patient Medicine" %}</a>
+            <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu4">{% trans "Prescription" %}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu5">{% trans "Complaints" %}</a>
@@ -80,369 +80,44 @@
             <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu6">{% trans "Risks" %}</a>
         </li>
         {% endif %}
+        <li class="nav-item">
+          <a class="nav-link nav-link-extension py-3 px-2 rounded-top " data-toggle="tab" href="#menu7">{% trans "Curves" %}</a>
+        </li>
       </ul>
 
       <div class="tab-content">
         <div id="home" class="tab-pane fade">
-          <div class="row justify-content-center ">
-            <div class="col-auto">
-                {% if related_patient.user.photo %}
-                    <img src="{{ related_patient.user.photo.url }}" width="20px" class="align-photo">
-                {% else %}
-                    <img src="{% static 'users/img/user.png' %}" class="align-photo">
-                {% endif %}
-                <div class="row"><br></div>
-            </div>
-
-            <div class="col border-left">
-              <div class="row">
-                <label class="col"> <strong>{% trans 'Name: '%} </strong> </label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert"> {{ related_patient.user.name }} </div>
-              </div>
-
-              <div class="row">
-                <label class="col"><strong>{% trans 'Birthday: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.user.birthday }}</div>
-              </div>
-
-              {% if related_patient.user.cpf %}
-                <div class="row">
-                    <label ><strong>{% trans 'CPF: '%}</strong></label>{{ related_patient.cpf }}
-                </div>
-              {% endif %}
-
-              <div class="row">
-                <label class="col"><strong>{% trans 'SUS: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.sus_number }} </div>
-              </div>
-
-              <div class="row">
-                <label class="col"><strong>{% trans 'SES: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.ses }}</div>
-              </div>
-
-              <div class="row">
-                <label class="col"><strong>{% trans 'Civil Registry of Birth: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.civil_registry_of_birth}}</div>
-              </div>
-
-              <div class="row">
-                <label class="col"><strong>{% trans 'Declaration of Live Birth: '%}</strong></label>
-                <div class="w-100"></div>
-                <div class="col alert alert-dark mx-3" role="alert">{{ related_patient.declaration_of_live_birth }}</div>
-              </div>
-
-            </div>
-          </div>
+          {% include "medicalrecords/patient_data.html" %}
         </div>
 
         <div id="menu1" class="tab-pane fade">
-          <div class="row">
-            <h3 class="col mb-5">{% trans 'Evolution' %}</h3>
-            {% if user.healthteam %}
-                <div class="col">
-                    <a href="{% url 'medicalrecords:create_medicalrecords'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "New" %}</a>
-                </div>
-            {% endif %}
-          </div>
-
-          <div class="list-group">
-            <div class="accordion" id="accordionmenu1">
-              {% for medicalrecord in medicalrecordlist %}
-                <div class="card">
-                  <div class="card-header" id="headingMedicalRecord{{ medicalrecord.id }}">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseMedicalRecord{{medicalrecord.id}}">
-                          {% trans 'Author'%}: {{ medicalrecord.author.user.name }} | {% trans 'Created at'%}: {{ medicalrecord.day }}
-                      </button>
-                    </h5>
-                  </div>
-
-                    <div id="collapseMedicalRecord{{medicalrecord.id}}" class="collapse" data-parent="#headingMedicalRecord{{ medicalrecord.id }}">
-                      <div class="card-body">
-                        <div class="h-blue list-group-item mb-5">
-                          <div class="row">
-                            <div class="col alert alert-dark mx-2 my-2">
-                              <p class="text-tertiary h-blue"> {{ medicalrecord.message|markdown }} </p>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col border-right border-top">
-                                <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ medicalrecord.author.user.name }} </p>
-                            </div>
-                            <div class="col border-top">
-                                <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ medicalrecord.day }} </p>
-                            </div>
-                          </div>
-
-                          {% if medicalrecord.document %}
-                            <div class="row">
-                              <div class="col">
-                                  <p>{% trans 'Attachment:' %} <a class="text-secondary" href="{{ medicalrecord.document.url }}">{{ medicalrecord.document.name }}</a></p>
-                              </div>
-                            </div>
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              {% empty %}
-                  <h4>{% trans 'There are no evolutions registered for this patient.'%}</h4>
-              {% endfor %}
-            </div>
-          </div>
+          {% include "medicalrecords/evolution.html" %}
         </div>
 
         <div id="menu2" class="tab-pane fade">
-          <div class="row mb-5">
-            <div class="col">
-              <h3 >{% trans 'Postnatal data' %}</h3>
-            </div>
-            {% if user.healthteam %}
-              <div class="col-auto">
-                {% if related_patient.staticdata.weight %}
-                    <a href="{% url 'medicalrecords:update_static_data_medicalrecords'  view.kwargs.username %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
-                {% else %}
-                    <a href="{% url 'medicalrecords:create_static_data_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "New" %}</a>
-                {% endif %}
-              </div>
-            {% endif %}
-          </div>
-
-          <div class="row mb-5">
-            {% if related_patient.staticdata %}
-              <div class="col border-right">
-                <div class="row">
-                  <div class="col"><label><strong>{% trans 'Weight at birth: '%} </strong></label></div>
-                  <div class="w-100"></div>
-                  <div class="col mx-3 alert alert-dark" role="alert"> {{ related_patient.staticdata.weight  }}  {% trans 'grams'%}</div>
-                </div>
-                <div class="row">
-                  <div class="col"><label><strong>{% trans 'APGAR: '%}</strong></label></div>
-                  <div class="w-100"></div>
-                  <div class="col mx-3 alert alert-dark" role="alert">{{  related_patient.staticdata.APGAR }}</div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="row">
-                  <div class="col"><label><strong>{% trans 'Heart Test:'%}</strong></label></div>
-                  <div class="w-100"></div>
-                  <div class="col mx-3 alert alert-dark" role="alert">
-                    <a class="text-secondary" href="{{ related_patient.staticdata.heart_test.url }}"> {{  related_patient.staticdata.heart_test.name }} </a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col"><label><strong>{% trans 'Ear Test:'%}</strong></label></div>
-                  <div class="w-100"></div>
-                  <div class="col mx-3 alert alert-dark" role="alert">
-                    <a class="text-secondary" href="{{ related_patient.staticdata.ear_test.url }}"> {{  related_patient.staticdata.ear_test.name }} </a>
-                  </div>
-                </div>
-              </div>
-            {% else %}
-              <div class="row">
-                <h3 class="col mx-3">
-                  <label><strong>{% trans 'No postnatal data for this patient.'%} </strong></label>
-                </h3>
-              </div>
-            {% endif %}
-          </div>
+          {% include "medicalrecords/static_data.html" %}
         </div>
 
         <div id="menu3" class="tab-pane fade">
-          <div class="row mb-5">
-            <div class="col">
-                <h3 >{% trans 'Medical Exams' %}</h3>
-            </div>
-            {% if request.user.healthteam %}
-              <div class="col-auto">
-                  <a href="{% url 'medicalrecords:create_exam_medicalrecords'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-              </div>
-            {% endif %}
-          </div>
-
-          <div class="row mb-5">
-            <div class="col border-right">
-              <div class="accordion" id="accordionmenu3">
-                {% for category, exams in exams_categories.items %}
-                  <div class="card">
-                    <div class="card-header" id="headingCategory{{ category }}">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCategory{{category}}">
-                          {{ category }}
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseCategory{{category}}" class="collapse" data-parent="#headingCategory{{ category }}">
-                      <div class="card-body">
-                        {% for exam in exams %}
-                          <div class="row">
-                            <div class="col mx-3 alert alert-dark" role="alert">
-                                <div class="col">
-                                    <a class="col text-secondary" href="{{ exam.file.url }}"> {{  exam.file.name }} </a>
-                                    <div class="w-100"></div>
-                                    <p class="col text-secondary">{% trans 'Date' %}: {{ exam.day.date }}</p>
-                                </div>
-                                <div class="col">
-                                    <p class="col text-secondary">{% trans 'Obs' %}: {{ exam.observations }}</p>
-                                </div>
-                            </div>
-                          </div>
-                        {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                {% empty %}
-                  <h4>{% trans 'There are no exams registered for this patient.'%}</h4>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
+          {% include "medicalrecords/exams.html" %}
         </div>
 
         <div id="menu4" class="tab-pane fade">
-          <div class="row mb-5">
-            <div class="col">
-              <h3 >{% trans 'Patient Medicine' %}</h3>
-            </div>
-            <div class="col-auto">
-              {% if request.user.healthteam or request.user.employee%}
-              <a href="{% url 'medicalrecords:create_medicine'  view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-              {% endif %}
-            </div>
-          </div>
-          <div class="row mb-5">
-            <div class="col">
-              {% if medicines %}
-                <div class="table-responsive">
-                  <table class="table table-hover table-sm table-bordered">
-                    <thead class="btn-secondary">
-                      <tr>
-                        {% if request.user.healthteam or request.user.employee %}
-                        <th class="col-auto" scope="col">{% trans 'Medicine' %}</th>
-                        {% endif %}
-                        <th class="col-auto" scope="col">{% trans 'Name of medicine' %}</th>
-                        <th class="col-auto" scope="col">{% trans 'Dosage' %}</th>
-                        <th class="col-auto" scope="col">{% trans 'Time between uses' %}</th>
-                        <th class="col-auto" scope="col">{% trans 'In use?' %}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {% for medicine in medicines %}
-                        <tr>
-                          {% if request.user.healthteam or request.user.employee%}
-                          <th scope="row">
-                            <a href="{% url 'medicalrecords:update_medicine' view.kwargs.username medicine.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
-                          </th>
-                          {% endif %}
-                          <td>{{medicine.medicine_name}}</td>
-                          <td>{{medicine.medicine_dosage}}</td>
-                          <td>{{medicine.medicine_use_interval}}</td>
-                          <td>
-                              <input type="checkbox" disabled {% if  medicine.medicine_in_use %} checked {% endif %} >
-                          </td>
-                        </tr>
-                      {% endfor %}
-                    </tbody>
-                  </table>
-                </div>
-              {% else %}
-                <h4>{% trans 'There are no medicines registered for this patient.'%}</h4>
-              {% endif %}
-            </div>
-          </div>
+          {% include "medicalrecords/medicines.html" %}
         </div>
+
         <div id="menu5" class="tab-pane fade">
-          <div class="row">
-            <h3 class="col mb-5">{% trans 'Complaints' %}</h3>
-            {% if user.healthteam %}
-                <div class="col">
-                    <a href="{% url 'medicalrecords:create_complaint_medicalrecords'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
-                </div>
-            {% endif %}
-          </div>
-          <div class="list-group">
-            <div class="accordion" id="accordionmenu1">
-              {% for complaint in complaints %}
-                <div class="card">
-                  <div class="card-header" id="headingComplaint{{ complaint.id }}">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComplaint{{complaint.id}}">
-                          {% trans 'Author'%}: {{ complaint.author.user.name }} | {% trans 'Complaint day'%}: {{ complaint.complaint_day }}
-                          <i class="fa fa-angle-down ml-2" style="font-size:24px"></i>
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseComplaint{{complaint.id}}" class="collapse" data-parent="#headingComplaint{{ complaint.id }}">
-                    <div class="card-body">
-                      <div class="h-blue list-group-item mb-5">
-                        <div class="row">
-                          <div class="col alert alert-dark mx-2 my-2">
-                            <p class="text-tertiary h-blue"> {{ complaint.description|markdown }} </p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col border-right border-top">
-                            <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ complaint.author.user.name }} </p>
-                          </div>
-                          <div class="col border-top">
-                            <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ complaint.complaint_day }}, {{ complaint.complaint_time }} </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              {% empty %}
-                  <h4>{% trans 'There are no complaints registered for this patient.'%}</h4>
-              {% endfor %}
-            </div>
-          </div>
+          {% include "medicalrecords/complaints.html" %}
         </div>
 
         <div id="menu6" class="tab-pane fade">
-          <div class="row">
-            <h3 class="col mb-5">{% trans 'Risks' %}</h3>
-            {% if user.healthteam %}
-                <div class="col">
-                    <a href="{% url 'medicalrecords:update_risk'  view.kwargs.username  %}" class="btn btn-success float-right" >{% trans "Edit" %}</a>
-                </div>
-            {% endif %}
-          </div>
-
-          <div class="row">
-            <label class="col"> <strong>{% trans 'Risk general practitioner: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk pediatrics: '%} </strong> </label>
-            <div class="w-100"></div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_general_practitioner }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_pediatrics }} </div>
-          </div>
-
-          <div class="row">
-            <label class="col"> <strong>{% trans 'Risk cardiology: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk neurology: '%} </strong> </label>
-            <div class="w-100"></div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_cardiology }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_neurology }} </div>
-          </div>
-
-          <div class="row">
-            <label class="col"> <strong>{% trans 'Risk speech theraphy: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk psychology: '%} </strong> </label>
-            <label class="col"> <strong>{% trans 'Risk physiotherapy: '%} </strong> </label>
-            <div class="w-100"></div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_speech_theraphy }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_psychology }} </div>
-            <div class="col alert alert-dark mx-3" role="alert"> {{ risk_priority_physiotherapy }} </div>
-          </div>
-
+          {% include "medicalrecords/risks.html" %}
         </div>
+
+        <div id="menu7" class="tab-pane fade">
+          {% include "medicalrecords/curves.html" %}
+        </div>
+
       </div>
 
       <div class="row my-1">
@@ -454,6 +129,7 @@
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </div>

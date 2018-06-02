@@ -1,0 +1,53 @@
+{% load static i18n %}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<div class="row mb-5">
+  <div class="col">
+    {% if request.user.healthteam or request.user.employee%}
+      <th class="col-auto" scope="col">
+        <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+      </th>
+    {% endif %}
+    <h3 >{% trans 'Curves' %}</h3>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+
+    <thead class="bg-secondary text-white">
+      <tr>
+        <th width="17%">{% trans 'Age' %} </th>
+        <th width="17%">{% trans 'Weight' %} </th>
+        <th width="17%">{% trans 'Height' %}</th>
+        <th width="17%">{% trans 'Cephalic Perimeter' %} </th>
+        <th width="17%">{% trans 'BMI' %} </th>
+        <th width="9%">{% trans 'Edit' %} </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for curve in related_patient.curves_set.all %}
+        <tr>
+          <td>{{curve.age}} {% trans 'months'%}</td>
+          <td>{{curve.weight|floatformat:2}} Kg</td>
+          <td>{{curve.height}} cm</td>
+          <td>{{curve.cephalic_perimeter}} cm</td>
+          <td>{{curve.bmi|floatformat:2}}</td>
+          {% if request.user.healthteam or request.user.employee%}
+            <td>
+              <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
+            </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+</div>
+
+
+
+

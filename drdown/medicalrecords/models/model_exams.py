@@ -15,7 +15,8 @@ class Exam(models.Model):
 
     file = models.FileField(
         upload_to='media/medicalrecords/exams',
-        verbose_name=_('Exam')
+        verbose_name=_('Exam'),
+        help_text=_('Exam file'),
     )
 
     day = models.DateTimeField(
@@ -32,6 +33,16 @@ class Exam(models.Model):
         (4, _('Hearth Exam')),
         (5, _('Muscle skeletal system Exam')),
         (6, _('Nervous system Exam')),
+        (7, _('Blood Exam')),
+        (8, _('Bone Densitometry')),
+        (9, _('Biopsy')),
+        (10, _('Endoscopy')),
+        (11, _('Echocardiogram')),
+        (12, _('Map and Holter')),
+        (13, _('Bioimpedance')),
+        (14, _('Neurological examinations')),
+        (15, _('Urine Analysis')),
+        (16, _('Stool Examination')),
     )
 
     category = models.IntegerField(
@@ -57,10 +68,10 @@ class Exam(models.Model):
 
     def clean(self, *args, **kwargs):
         if self.day:
-            if timezone.localdate().isoformat() < str(self.day):
+            if timezone.now() < self.day:
                 raise ValidationError(
                     {'day':
-                        _("The complaint cannot be in the future!")}
+                        _("The exam cannot be in the future!")}
                 )
 
         return super(Exam, self).clean()

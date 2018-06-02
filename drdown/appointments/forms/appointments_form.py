@@ -19,12 +19,7 @@ class AppointmentSearchForm(forms.Form):
         )
     )
 
-    search_doctor = forms.CharField(
-        required=False,
-        label=_('Doctor'),
-    )
-
-    search_patient = forms.CharField(
-        required=False,
-        label=_('Patient'),
+    search_name = forms.CharField(
+       required=False,
+       label=_('Name'),
     )

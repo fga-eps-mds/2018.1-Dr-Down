@@ -13,7 +13,8 @@ from drdown.appointments.views.view_request import (
     RequestUpdateView,
     RequestDeleteView,
     RequestUpdateStatusView,
-    RequestAfterResultDeleteView
+    RequestAfterResultDeleteView,
+    load_doctors
 )
 
 
@@ -79,4 +80,10 @@ urlpatterns = [
         view=RequestUpdateStatusView.as_view(),
         name='update_status_request'
     ),
+    url(
+        regex=r'^ajax/load-doctors/$',
+        view=load_doctors,
+        name='ajax_load_doctors'
+    ),
+
 ]

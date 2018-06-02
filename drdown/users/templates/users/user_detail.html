@@ -75,7 +75,7 @@
                 <div class="row">
                   <label class="col"> <strong>{% trans 'Name: '%} </strong> </label>
                   <div class="w-100"></div>
-                  <div class="col alert alert-dark mx-3" role="alert"> {{ user.name }} {{ user.last_name}} </div>
+                  <div class="col alert alert-dark mx-3" role="alert"> {{ user.name }}</div>
                 </div>
               {% endif %}
 
@@ -172,13 +172,15 @@
 
 
 
-
+              <label class="col"><strong>{% trans 'Patients: '%}</strong></label>
               {% for patient in responsible_patient %}
 
                 <div class="row">
-                  <label class="col"><strong>{% trans 'Patients: '%}</strong></label>
+
                   <div class="w-100"></div>
-                  <div class="col alert alert-dark mx-3" role="alert">{{ patient }}</div>
+                  <div class="col alert alert-dark mx-3" role="alert">
+                    {{ patient.user.name }} {{ patient.user.last_name}}
+                  </div>
                 </div>
 
               {% endfor %}
