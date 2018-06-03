@@ -87,6 +87,7 @@ LOCAL_APPS = [
     'drdown.medicalrecords.apps.MedicalRecordsConfig',
     'drdown.appointments.apps.AppointmentsConfig',
     'drdown.events.apps.EventsConfig',
+    'drdown.notifications.apps.NotificationsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
