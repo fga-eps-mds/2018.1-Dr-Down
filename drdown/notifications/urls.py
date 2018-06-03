@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views.view_notifcations import NotificationCenterView
+from .views.view_notifcations import PatientNotificationsView
 
 
 app_name = 'notifications'
@@ -7,8 +7,8 @@ app_name = 'notifications'
 urlpatterns = [
     url(
         regex=r'^$',
-        view=NotificationCenterView.as_view(),
-        name='notifications'
+        view=PatientNotificationsView.as_view(),
+        name='patient_notifications'
     ),
 
 ]
