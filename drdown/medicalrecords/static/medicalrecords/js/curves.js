@@ -132,6 +132,18 @@ function convertToArray(string) {
         array.push(element)
     });
 
+    array.forEach(element => {
+
+        var item = element.pop()
+
+        if (item == 0){
+            item = null;
+        }
+
+        element.push(item);
+
+    });
+
     //populatePatientCurve(array)
 
     console.log(array)
