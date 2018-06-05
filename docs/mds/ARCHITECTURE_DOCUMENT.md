@@ -24,7 +24,7 @@
 | 22/04/2018 | 2.0.0 | Versão 2.0 do Arquitetura e componentes da sprint 07 | Victor Arnaud, Geovana Ramos e Gabriela Medeiros |
 | 26/04/2018 | 2.1.0 | Inserindo componentes da sprint 08 | Victor Arnaud |
 | 01/05/2018 | 2.2.0 | Inserindo componentes para as sprints 09 a 12 | Victor Arnaud |
-| 26/05/2018 | 2.3.0 | Documentando componentes/apis/microserviços utilizados e descartados | Victor Arnaud |
+| 26/05/2018 | 2.3.0 | Documentando componentes/apis/microsserviços utilizados e descartados | Victor Arnaud |
 
 ## 1: Introdução
 
@@ -82,7 +82,7 @@ O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o
 
 Como citado acima, cada aplicação do Django pode ser considerada um componente caso siga todas as características citadas e esteja empacotado e mantido no **pypi**. Para maiores informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a>
 
-Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes, APIS e microserviços foram selecionados para complementar o projeto.
+Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes, APIS e microsserviços foram selecionados para complementar o projeto.
 
 #### 2.2.1 Model
 
@@ -135,21 +135,21 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação django para publicar eventos como um calendario|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não da liberdade para modifica-lo.|
-|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do django|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não da liberdade para modifica-lo.|
+|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação Django para publicar eventos como um calendario|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.|
+|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do Django|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.|
 |[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|A decidir|A aplicação ainda está sendo avaliada|
 
 #### Ficha de acompanhamento e Relatórios
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
+|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo Django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário Django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
 |[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
-|[reportlab](https://pypi.org/project/reportlab/)|O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.|Não|Foi recomendado na documentação do [django](https://docs.djan  goproject.com/pt-br/2.0/howto/outputting-pdf/), utilizar essa biblioteca para gerar os PDFs e gráficos do projeto. Porém a equipe achou uma maneira alternativa de faze-lo|
+|[reportlab](https://pypi.org/project/reportlab/)|O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.|Não|Foi recomendado na documentação do [Django](https://docs.djan  goproject.com/pt-br/2.0/howto/outputting-pdf/), utilizar essa biblioteca para gerar os PDFs e gráficos do projeto. Porém a equipe achou uma maneira alternativa de faze-lo|
 |[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|Não|A documentação do Django aconselha utilizar o ReportLab.|
 |[WeasyPrint](https://github.com/Kozea/WeasyPrint)|O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.|Não|Foi escolhido pela equipe o componente django-easy-pdf|
-|[sdcurve](https://github.com/Dr-Down/sdcurve)|Microserviço de curva de crescimento, altura, peso, EMC e perímetro cefálico para crianças com Síndrome de Down|Sim|Requisitos do cliente.|
-|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da google|Sim|Utilizado para plotar os graficos de crescimento das crianças com síndrome de down|
+|[sdcurve](https://github.com/Dr-Down/sdcurve)|Microsserviço de curva de crescimento, altura, peso, EMC e perímetro encefálico para crianças com Síndrome de Down|Sim|Requisitos do cliente.|
+|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da google|Sim|Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down|
 
 #### Localização
 
@@ -166,7 +166,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
 |[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|Não|Foi decidido a utilização do django-search-view pelo fato de utilizar CBV.|
 |[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
-|[django-anymail](https://github.com/anymail/django-anymail)|Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais|Não|Foi utilizando o serviço ao inves do componente|
+|[django-anymail](https://github.com/anymail/django-anymail)|Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais|Não|Foi utilizando o serviço ao invés do componente|
 |[Httplib2](https://github.com/httplib2/httplib2)|Biblioteca cliente HTTP pequena e rápida para Python. Possui conexões persistentes, cache, suporte ao Appengine.|Sim|Usado para fazer comunicações via requisições HTTP|
 
 ### 2.3 Banco de dados PostgreSQL
