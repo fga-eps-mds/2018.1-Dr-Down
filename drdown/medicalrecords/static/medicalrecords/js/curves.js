@@ -60,7 +60,8 @@ $("#weight_chart").ready(
             url:"curves/ajax/",
             data: {
                 'username': document.getElementById("_username").value,
-                'data_type': 'weight'
+                'data_type': 'weight',
+                'time_frame': 'months'
             },
             success: function(response){
                 weight_data = JSON.stringify(response.data);
@@ -84,7 +85,8 @@ $("#bmi_chart").ready(
             url:"curves/ajax/",
             data: {
                 'username': document.getElementById("_username").value,
-                'data_type': 'bmi'
+                'data_type': 'bmi',
+                'time_frame': 'months'
             },
             success: function(response){
                 bmi_data = JSON.stringify(response.data);
@@ -108,7 +110,8 @@ $("#perimeter_chart").ready(
             url:"curves/ajax/",
             data: {
                 'username': document.getElementById("_username").value,
-                'data_type': 'cephalic_perimeter'
+                'data_type': 'cephalic_perimeter',
+                'time_frame': 'months'
             },
             success: function(response){
                 perimeter_data = JSON.stringify(response.data);
