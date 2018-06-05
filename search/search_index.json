@@ -2984,6 +2984,101 @@
             "location": "/sprints/11/results/#9-analise-do-scrum-master", 
             "text": "No geral, a sprint ocorreu bem, sem que tenhamos tidos d\u00edvidas t\u00e9cnicas, com os membros ainda aprendendo com as hist\u00f3rias e pareamentos e com o DevOps bem implementado colaborando positivamente para o sucesso do nosso microsservi\u00e7o.  Quanto \u00e0 quest\u00e3o do atraso na resposta das dailys n\u00e3o presenciais, da perda de ritmo nas sprints e da centraliza\u00e7\u00e3o dos reviews em alguns membros do grupo, conversamos sobre isso e levantamos que \u00e9 preciso ter mais compromisso e tomarmos cuidado para que o nosso bom trabalho enquanto grupo n\u00e3o se perca nessa fase final. Por isso, procuraremos tomar mais cuidado com esses pontos levantados para que eles n\u00e3o se repitam ou sejam ao menos reduzidos.  Sobre os componentes que apresentaram problemas, vimos que costumam ser os que mexem com front-end. Por isso, decidimos que n\u00e3o iremos mais utiliz\u00e1-los sempre que poss\u00edvel, usando apenas aqueles que trabalhem com o back-end.  Por fim, conversamos que a quest\u00e3o do front-end constantemente alterado \u00e9 natural dele, pois ele \u00e9 um ponto que costuma receber bastante aten\u00e7\u00e3o e feedback sobre. Por isso, \u00e9 esperado que de tempos em tempos ele acabe sofrendo altera\u00e7\u00f5es.", 
             "title": "9. An\u00e1lise do Scrum Master"
+        }, 
+        {
+            "location": "/sprints/12/planning/", 
+            "text": "Planejamento da Sprint 12\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint:\n 12\n\n\nData de in\u00edcio:\n 26/05/2018\n\n\nData de T\u00e9rmino:\n 01/06/2018\n\n\nDura\u00e7\u00e3o\n: 6 dias\n\n\nPontos Planejados:\n 25 pontos\n\n\nMembros ausentes:\n Nenhum\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Sconetto\n\n\n\n\n\n\nArquiteto:\n\n\n\n\n\n\nVictor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Pareamento\n\n\n\n\n\n\nDaniel e Elias\n\n\n\n\n\n\nGabriela e Joberth\n\n\n\n\n\n\nGeovana e Guilherme\n\n\n\n\n\n\n4. Planejamento da Sprint\n\n\nA Sprint 12 foi planejada para o in\u00edcio da implementa\u00e7\u00e3o do microsservi\u00e7o das curvas de crescimento na aplica\u00e7\u00e3o do Dr. Down. Outra feature que ser\u00e1 implementada \u00e9 o CRUD de eventos relacionados \u00e0 S\u00edndrome de Down e ao Cris Down para a divulga\u00e7\u00e3o no aplicativo.\n\n\nAl\u00e9m disso, ser\u00e3o realizados testes de usabilidade da aplica\u00e7\u00e3o e a arruma\u00e7\u00e3o de bugs nas features do prontu\u00e1rio e de consultas.\n\n\n5. Mudan\u00e7as\n\n\nPara esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior.\n\n\n6. Backlog da Sprint\n\n\n\n\nTS103 - BUGFIX PRONTU\u00c1RIO\n\n\nTS104 - BUGFIX CONSULTAS\n\n\nUS105 - Curvas de crescimento\n\n\nUS106 - Criar eventos\n\n\nTS107 - Revis\u00e3o do pipeline\n\n\nTS108 - Documenta\u00e7\u00e3o da sprint 11\n\n\nTS109 - Documentar testes de usabilidade\n\n\nTS110 - Realizar teste de usabilidade\n\n\n\n\n7. Risk Burndown", 
+            "title": "Planejamento"
+        }, 
+        {
+            "location": "/sprints/12/planning/#planejamento-da-sprint-12", 
+            "text": "", 
+            "title": "Planejamento da Sprint 12"
+        }, 
+        {
+            "location": "/sprints/12/planning/#1-resumo-da-sprint", 
+            "text": "N\u00famero da sprint:  12  Data de in\u00edcio:  26/05/2018  Data de T\u00e9rmino:  01/06/2018  Dura\u00e7\u00e3o : 6 dias  Pontos Planejados:  25 pontos  Membros ausentes:  Nenhum", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/12/planning/#2-papeis", 
+            "text": "Scrum Master:   Diego Fran\u00e7a    Product Owner:    Mariana Mendes    DevOps:    Jo\u00e3o Sconetto    Arquiteto:    Victor Arnaud    Time de Desenvolvimento:   Daniel Maike  Elias Bernardo  Gabriela Medeiros  Geovana Ramos  Guilherme Guy  Joberth Rodrigues", 
+            "title": "2. Pap\u00e9is"
+        }, 
+        {
+            "location": "/sprints/12/planning/#3-pareamento", 
+            "text": "Daniel e Elias    Gabriela e Joberth    Geovana e Guilherme", 
+            "title": "3. Pareamento"
+        }, 
+        {
+            "location": "/sprints/12/planning/#4-planejamento-da-sprint", 
+            "text": "A Sprint 12 foi planejada para o in\u00edcio da implementa\u00e7\u00e3o do microsservi\u00e7o das curvas de crescimento na aplica\u00e7\u00e3o do Dr. Down. Outra feature que ser\u00e1 implementada \u00e9 o CRUD de eventos relacionados \u00e0 S\u00edndrome de Down e ao Cris Down para a divulga\u00e7\u00e3o no aplicativo.  Al\u00e9m disso, ser\u00e3o realizados testes de usabilidade da aplica\u00e7\u00e3o e a arruma\u00e7\u00e3o de bugs nas features do prontu\u00e1rio e de consultas.", 
+            "title": "4. Planejamento da Sprint"
+        }, 
+        {
+            "location": "/sprints/12/planning/#5-mudancas", 
+            "text": "Para esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior.", 
+            "title": "5. Mudan\u00e7as"
+        }, 
+        {
+            "location": "/sprints/12/planning/#6-backlog-da-sprint", 
+            "text": "TS103 - BUGFIX PRONTU\u00c1RIO  TS104 - BUGFIX CONSULTAS  US105 - Curvas de crescimento  US106 - Criar eventos  TS107 - Revis\u00e3o do pipeline  TS108 - Documenta\u00e7\u00e3o da sprint 11  TS109 - Documentar testes de usabilidade  TS110 - Realizar teste de usabilidade", 
+            "title": "6. Backlog da Sprint"
+        }, 
+        {
+            "location": "/sprints/12/planning/#7-risk-burndown", 
+            "text": "", 
+            "title": "7. Risk Burndown"
+        }, 
+        {
+            "location": "/sprints/12/results/", 
+            "text": "Fechamento da Sprint 12\n\n\n1. Resumo da Sprint\n\n\nPontos Planejados\n: 25 pontos\n\n\nPontos conclu\u00eddos\n: 25 pontos\n\n\nD\u00edvidas t\u00e9cnicas\n: 0 pontos\n\n\nHist\u00f3rias entregues:\n\n\n\n\nTS103 - BUGFIX PRONTU\u00c1RIO\n\n\nTS104 - BUGFIX CONSULTAS\n\n\nUS105 - Curvas de crescimento\n\n\nUS106 - Criar eventos\n\n\nTS107 - Revis\u00e3o do pipeline\n\n\nTS108 - Documenta\u00e7\u00e3o da sprint 11\n\n\nTS109 - Documentar testes de usabilidade\n\n\nTS110 - Realizar teste de usabilidade\n\n\n\n\n2. Retrospectiva da Sprint\n\n\n\n\n\n\n\n\nPontos Positivos\n\n\nPontos Negativos\n\n\nSugest\u00e3o de Melhoria\n\n\n\n\n\n\n\n\n\n\nConhecimento com AJAX e JS\n\n\nAs hist\u00f3rias estavam gerando bugs\n\n\nExplicitar melhor as hist\u00f3rias que envolvem o microsservi\u00e7o\n\n\n\n\n\n\nTodos de EPS revisaram o PR\n\n\nAlta complexidade da hist\u00f3ria desgastou os membros\n\n\nDiscutir melhor todas as hist\u00f3rias\n\n\n\n\n\n\nA ideia inicial no desenvolvimento da hist\u00f3ria do microsservi\u00e7o foi a correta\n\n\nHist\u00f3ria do microsservi\u00e7o ficou mal planejada\n\n\nBuscar planejar melhor as hist\u00f3rias\n\n\n\n\n\n\nAs outras hist\u00f3rias foram bem planejadas e o trabalho est\u00e1 corriqueiro, sem maiores problemas\n\n\nFalta da reuni\u00e3o presencial na \u00faltima semana\n\n\nBuscar melhorar a sa\u00fade\n\n\n\n\n\n\nO conhecimento da equipe aumentou devido a experi\u00eancia, o que leva a execu\u00e7\u00e3o mais r\u00e1pida das hist\u00f3rias\n\n\nDojo n\u00e3o presencial n\u00e3o foi t\u00e3o efetivo\n\n\nMelhorar a comunica\u00e7\u00e3o do que deve ser feito\n\n\n\n\n\n\nTroca de conhecimento entro membros de EPS e MDS bem elevada\n\n\nExcesso de carga em outras mat\u00e9rias\n\n\nMembros de EPS se esfor\u00e7ar para revisar o PR o quanto antes\n\n\n\n\n\n\nO n\u00edvel de conhecimento t\u00e9cnico dos membros est\u00e1 bem elevado\n\n\nFalha de comunica\u00e7\u00e3o devido a reuni\u00e3o n\u00e3o presencial\n\n\nTodos os membros de EPS devem revisar PR (mesmo se j\u00e1 tiver o n\u00famero m\u00ednimo de aprova\u00e7\u00f5es)\n\n\n\n\n\n\nO e-mail est\u00e1 funcionando\n\n\nMembro ausente no canal de comunica\u00e7\u00e3o da equipe\n\n\nPareamento entre EPS foi produtivo\n\n\n\n\n\n\nExecu\u00e7\u00e3o da sprint, apesar dos problemas, foi boa e n\u00e3o houve d\u00e9bitos\n\n\nA greve atrapalhou muito a semana\n\n\n\n\n\n\n\n\n-\n\n\nDemora dos membros de EPS para revisar os PR\n\n\n-\n\n\n\n\n\n\n\n\n3. Quadro de Conhecimento\n\n\n\n\n5. Gr\u00e1fico do Burndown\n\n\n\n\n6. Velocity\n\n\n\n\n7. Gr\u00e1fico de Commits\n\n\n\n\n8. EVM\n\n\n\n\n9. An\u00e1lise do Scrum Master\n\n\nApesar das dificuldades que tivemos em virtude da greve de caminhoneiros que atrapalharam as atividades presenciais, do excesso de carga de outras mat\u00e9rias e da dificuldade que ocorreu em virtude da complexidade de uma das hist\u00f3rias, a Sprint terminou sem que houvessem d\u00edvidas t\u00e9cnicas, e com o aumento de conhecimento dos membros da equipe devido \u00e0s trocas de informa\u00e7\u00f5es e experi\u00eancia entre eles.\n\n\nMesmo com a divis\u00e3o de uma das hist\u00f3rias em duas devido \u00e0 sua complexidade, ainda ocorreram problemas gerados principalmente pela novidade de trabalhar com microsservi\u00e7o e pela falha na comunica\u00e7\u00e3o dos membros da equipe. Para evitar que isso ocorra na segunda parte dessa hist\u00f3ria, que ser\u00e1 finalizada na pr\u00f3xima sprint, analisamos bem a segunda parte da hist\u00f3ria para que fique claro o que deve ser feito e para que n\u00e3o haja novas falhas de comunica\u00e7\u00e3o.\n\n\nForam v\u00e1rios os preju\u00edzos em decorr\u00eancia da greve que ocorreu durante a sprint, que fez com que encontros presenciais n\u00e3o acontecessem, e isso prejudicou a nossa comunica\u00e7\u00e3o e a qualidade/execu\u00e7\u00e3o dos nossos rituais \u00e1geis. Fizemos o melhor para contornar esse problema, usando daily meetings via bot e realizando nossa reuni\u00e3o de s\u00e1bado via conversa em \u00e1udio online.\n\n\nMesmo com a maior participa\u00e7\u00e3o de outros membros de EPS na revis\u00e3o dos PRs, foi colocado que isto ainda tem espa\u00e7o para melhorias, como maior rapidez nas an\u00e1lises e que todos fa\u00e7am reviews. Mas foi colocado que alguns dos membros s\u00f3 podem analisar os PRs \u00e0 noite, e nesse hor\u00e1rio muitas vezes as hist\u00f3rias j\u00e1 conseguiram o n\u00famero de reviews m\u00ednimos e j\u00e1 foram mergeadas para a develop. Por isso, uma solu\u00e7\u00e3o sugerida para as pr\u00f3ximas sprints foi que todos os membros de EPS passem a revisar os PRs somente \u00e0 noite.\n\n\nPor fim, alguns membros estiveram pouco participativos das discuss\u00f5es da equipe ao longo da sprint. Isso foi conversado com eles durante a reuni\u00e3o, e eles colocaram que ter\u00e3o mais participa\u00e7\u00e3o na pr\u00f3xima sprint.", 
+            "title": "Resultado"
+        }, 
+        {
+            "location": "/sprints/12/results/#fechamento-da-sprint-12", 
+            "text": "", 
+            "title": "Fechamento da Sprint 12"
+        }, 
+        {
+            "location": "/sprints/12/results/#1-resumo-da-sprint", 
+            "text": "Pontos Planejados : 25 pontos  Pontos conclu\u00eddos : 25 pontos  D\u00edvidas t\u00e9cnicas : 0 pontos  Hist\u00f3rias entregues:   TS103 - BUGFIX PRONTU\u00c1RIO  TS104 - BUGFIX CONSULTAS  US105 - Curvas de crescimento  US106 - Criar eventos  TS107 - Revis\u00e3o do pipeline  TS108 - Documenta\u00e7\u00e3o da sprint 11  TS109 - Documentar testes de usabilidade  TS110 - Realizar teste de usabilidade", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/12/results/#2-retrospectiva-da-sprint", 
+            "text": "Pontos Positivos  Pontos Negativos  Sugest\u00e3o de Melhoria      Conhecimento com AJAX e JS  As hist\u00f3rias estavam gerando bugs  Explicitar melhor as hist\u00f3rias que envolvem o microsservi\u00e7o    Todos de EPS revisaram o PR  Alta complexidade da hist\u00f3ria desgastou os membros  Discutir melhor todas as hist\u00f3rias    A ideia inicial no desenvolvimento da hist\u00f3ria do microsservi\u00e7o foi a correta  Hist\u00f3ria do microsservi\u00e7o ficou mal planejada  Buscar planejar melhor as hist\u00f3rias    As outras hist\u00f3rias foram bem planejadas e o trabalho est\u00e1 corriqueiro, sem maiores problemas  Falta da reuni\u00e3o presencial na \u00faltima semana  Buscar melhorar a sa\u00fade    O conhecimento da equipe aumentou devido a experi\u00eancia, o que leva a execu\u00e7\u00e3o mais r\u00e1pida das hist\u00f3rias  Dojo n\u00e3o presencial n\u00e3o foi t\u00e3o efetivo  Melhorar a comunica\u00e7\u00e3o do que deve ser feito    Troca de conhecimento entro membros de EPS e MDS bem elevada  Excesso de carga em outras mat\u00e9rias  Membros de EPS se esfor\u00e7ar para revisar o PR o quanto antes    O n\u00edvel de conhecimento t\u00e9cnico dos membros est\u00e1 bem elevado  Falha de comunica\u00e7\u00e3o devido a reuni\u00e3o n\u00e3o presencial  Todos os membros de EPS devem revisar PR (mesmo se j\u00e1 tiver o n\u00famero m\u00ednimo de aprova\u00e7\u00f5es)    O e-mail est\u00e1 funcionando  Membro ausente no canal de comunica\u00e7\u00e3o da equipe  Pareamento entre EPS foi produtivo    Execu\u00e7\u00e3o da sprint, apesar dos problemas, foi boa e n\u00e3o houve d\u00e9bitos  A greve atrapalhou muito a semana     -  Demora dos membros de EPS para revisar os PR  -", 
+            "title": "2. Retrospectiva da Sprint"
+        }, 
+        {
+            "location": "/sprints/12/results/#3-quadro-de-conhecimento", 
+            "text": "", 
+            "title": "3. Quadro de Conhecimento"
+        }, 
+        {
+            "location": "/sprints/12/results/#5-grafico-do-burndown", 
+            "text": "", 
+            "title": "5. Gr\u00e1fico do Burndown"
+        }, 
+        {
+            "location": "/sprints/12/results/#6-velocity", 
+            "text": "", 
+            "title": "6. Velocity"
+        }, 
+        {
+            "location": "/sprints/12/results/#7-grafico-de-commits", 
+            "text": "", 
+            "title": "7. Gr\u00e1fico de Commits"
+        }, 
+        {
+            "location": "/sprints/12/results/#8-evm", 
+            "text": "", 
+            "title": "8. EVM"
+        }, 
+        {
+            "location": "/sprints/12/results/#9-analise-do-scrum-master", 
+            "text": "Apesar das dificuldades que tivemos em virtude da greve de caminhoneiros que atrapalharam as atividades presenciais, do excesso de carga de outras mat\u00e9rias e da dificuldade que ocorreu em virtude da complexidade de uma das hist\u00f3rias, a Sprint terminou sem que houvessem d\u00edvidas t\u00e9cnicas, e com o aumento de conhecimento dos membros da equipe devido \u00e0s trocas de informa\u00e7\u00f5es e experi\u00eancia entre eles.  Mesmo com a divis\u00e3o de uma das hist\u00f3rias em duas devido \u00e0 sua complexidade, ainda ocorreram problemas gerados principalmente pela novidade de trabalhar com microsservi\u00e7o e pela falha na comunica\u00e7\u00e3o dos membros da equipe. Para evitar que isso ocorra na segunda parte dessa hist\u00f3ria, que ser\u00e1 finalizada na pr\u00f3xima sprint, analisamos bem a segunda parte da hist\u00f3ria para que fique claro o que deve ser feito e para que n\u00e3o haja novas falhas de comunica\u00e7\u00e3o.  Foram v\u00e1rios os preju\u00edzos em decorr\u00eancia da greve que ocorreu durante a sprint, que fez com que encontros presenciais n\u00e3o acontecessem, e isso prejudicou a nossa comunica\u00e7\u00e3o e a qualidade/execu\u00e7\u00e3o dos nossos rituais \u00e1geis. Fizemos o melhor para contornar esse problema, usando daily meetings via bot e realizando nossa reuni\u00e3o de s\u00e1bado via conversa em \u00e1udio online.  Mesmo com a maior participa\u00e7\u00e3o de outros membros de EPS na revis\u00e3o dos PRs, foi colocado que isto ainda tem espa\u00e7o para melhorias, como maior rapidez nas an\u00e1lises e que todos fa\u00e7am reviews. Mas foi colocado que alguns dos membros s\u00f3 podem analisar os PRs \u00e0 noite, e nesse hor\u00e1rio muitas vezes as hist\u00f3rias j\u00e1 conseguiram o n\u00famero de reviews m\u00ednimos e j\u00e1 foram mergeadas para a develop. Por isso, uma solu\u00e7\u00e3o sugerida para as pr\u00f3ximas sprints foi que todos os membros de EPS passem a revisar os PRs somente \u00e0 noite.  Por fim, alguns membros estiveram pouco participativos das discuss\u00f5es da equipe ao longo da sprint. Isso foi conversado com eles durante a reuni\u00e3o, e eles colocaram que ter\u00e3o mais participa\u00e7\u00e3o na pr\u00f3xima sprint.", 
+            "title": "9. An\u00e1lise do Scrum Master"
         }
     ]
 }
