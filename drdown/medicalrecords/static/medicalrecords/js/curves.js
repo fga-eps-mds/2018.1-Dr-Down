@@ -92,7 +92,7 @@ $(document).on('change','#height_time_select',function(){
 });
 
 $(document).on('change','#weight_time_select',function(){
-    call_height(time_frame=$("#weight_time_select").val())
+    call_weight(time_frame=$("#weight_time_select").val())
 });
 
 $("#weight_time_select").ready(
@@ -151,6 +151,14 @@ $("#perimeter_chart").ready(
     }
 )
 
+$("#menu7-tab").click(function () {
+        var func_to_call = function () {redraw_charts();};
+        var time = 3000;
+
+        setTimeout(func_to_call, time);
+    }
+)
+
 function convertToArray(string) {
 
     var json_data = JSON.parse(string);
@@ -173,8 +181,6 @@ function convertToArray(string) {
 
     });
 
-    //populatePatientCurve(array)
-
     console.log(array)
 
     return array
@@ -186,38 +192,31 @@ function defineOptions(data_type) {
     hAxis_title = 'Ages';
     vAxis_title = data_type;
     
-    var h_values = [0,0];
-    var v_values = [0,0];
+    var colors = {}
 
-    switch (data_type) {
-        case DATA_TYPES.height:
-            
-            v_values[1] = 200;
-            
-            h_values[1] = 18*12;
-            break;
-        case DATA_TYPES.weight:
-            v_values[1] = 250;
-
-
-            h_values[1] = 18*12;
-            break;
-        case DATA_TYPES.bmi:
-            v_values[0] = 10;
-            v_values[1] = 50;
-
-            h_values[0] = 3;
-            h_values[1] = 18;
-            break;
-        case DATA_TYPES.perimeter:
-            v_values[0] = 10;
-            v_values[1] = 50;
-
-            h_values[1] = 24;
-            break;
-    
-        default:
-            break;
+    if (data_type == DATA_TYPES.bmi){
+        colors = {
+            0: { color: '#f96363' }, // red - 5%
+            1: { color: '#f7ae6a' }, // orange  6- 10%
+            2: { color: '#ffe06d' }, // yellow - 25%
+            3: { color: '#b6ff84' }, // green - 50%
+            4: { color: '#ffe06d' }, // yellow - 75%
+            5: { color: '#f7ae6a' }, // orange - 85%
+            6: { color: '#f96363' }, // red - 80%
+            7: { color: '#f96363'},  // extra_red - 95%
+            8: { color: '#003791'},  // blue - patient  
+        };
+    }else{
+        colors = {
+            0: { color: '#f96363' }, // red - 3%
+            1: { color: '#f7ae6a' }, // orange 6- 10%
+            2: { color: '#ffe06d' }, // yellow - 25%
+            3: { color: '#b6ff84' }, // green - 50%
+            4: { color: '#ffe06d' }, // yellow - 75%
+            5: { color: '#f7ae6a' }, // orange - 90%
+            6: { color: '#f96363' }, // red - 97%
+            7: { color: '#003791'},  // blue - patient
+        };
     }
 
     return {
@@ -241,17 +240,18 @@ function defineOptions(data_type) {
         },
         crosshair: { trigger: 'selection' },
         lineWidth: 2,
-        series: {
-            0: { color: '#f96363' }, // red - 3%
-            1: { color: '#f7ae6a' }, // orange 6- 10%
-            2: { color: '#ffe06d' }, // yellow - 25%
-            3: { color: '#b6ff84' }, // green - 50%
-            4: { color: '#ffe06d' }, // yellow - 75%
-            5: { color: '#f7ae6a' }, // orange - 90%
-            6: { color: '#f96363' }, // red - 97%
-        },
-        is3D: false
+        series: colors,
+        is3D: false,
     };
+}
+
+function redraw_charts() {
+    
+    draw_HeigthChart();
+    draw_WeigthChart();
+    draw_BMIChart();
+    draw_PerimeterChart();
+
 }
 
 function draw_HeigthChart() {
