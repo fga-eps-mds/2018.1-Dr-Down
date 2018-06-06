@@ -59,14 +59,17 @@ class HealthTeamNotificationsView(TemplateView):
         context = super(HealthTeamNotificationsView, self).get_context_data(**kwargs)
 
         user = self.request.user
-        context['appointments'] = Appointment.objects.filter(
-            doctor=user.doctor,
-        )
 
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
         context['events'] = Events.objects.filter(
             date__range=(start_date, end_date)
+        )
+
+        context['appointments'] = Appointment.objects.filter(
+            doctor=user.healthteam
+        ).filter(
+            date__day=start_date.date().day
         )
 
         return context
