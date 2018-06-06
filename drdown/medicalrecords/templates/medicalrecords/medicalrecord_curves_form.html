@@ -21,34 +21,102 @@
       <div class="col">
         <form method="post" enctype="multipart/form-data"action="#menu7">
           {% csrf_token %}
-          {% for field in form %}
+
             <div class="formgroup row my-2  border rounded">
               <div class="col fieldWrapper my-2">
 
-                {% if field.errors %}
+                {% if form.height.errors %}
                 <div div class="alert alert-danger">
-                  {% for error in field.errors %}
+                  {% for error in form.height.errors %}
                       <strong>{{ error|escape }}</strong>
                   {% endfor %}
                 </div>
                 {% endif %}
 
                 <div class="col">
-                  {{ field.label_tag }}
+                  {{ form.height.label_tag }}
                 </div>
 
                 <div class="col">
-                  {{ field }}
+                  {{ form.height }}
                 </div>
 
-                {% if field.help_text %}
-                  <font size="2" class="ml-3">{{ field.help_text|safe }}</font>
-                {% endif %}
+                <font size="2" class="ml-3">{% trans 'Height in kg' %}</font>
 
               </div>
             </div>
 
-          {% endfor %}
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
+                {% if form.weight.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.weight.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ form.weight.label_tag }}
+                </div>
+
+                <div class="col">
+                  {{ form.weight }}
+                </div>
+
+                <font size="2" class="ml-3">{% trans 'Weight in kg' %}</font>
+
+              </div>
+            </div>
+
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
+                {% if form.age.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.age.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ form.age.label_tag }}
+                </div>
+
+                <div class="col">
+                  {{ form.age }}
+                </div>
+
+                <font size="2" class="ml-3">{% trans 'Age in months' %}</font>
+
+              </div>
+            </div>
+
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
+                {% if form.cephalic_perimeter.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.cephalic_perimeter.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ form.cephalic_perimeter.label_tag }}
+                </div>
+
+                <div class="col">
+                  {{ form.cephalic_perimeter }}
+                </div>
+
+                <font size="2" class="ml-3">{% trans 'Perimeter in cm' %}</font>
+
+              </div>
+            </div>
 
           <div class="float-right">
             <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
