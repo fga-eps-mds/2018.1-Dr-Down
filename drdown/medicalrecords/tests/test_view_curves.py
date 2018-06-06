@@ -81,9 +81,10 @@ class TestModelRequest(TestCase):
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
+
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'height', }
+            data={'username': self.user.username, 'data_type': 'height','time_frame': 'months' }
         )
         self.assertEquals(response.status_code, 200)
 
@@ -95,7 +96,7 @@ class TestModelRequest(TestCase):
                 viewname='medicalrecords:curve_ajax',
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'weight', }
+            data={'username': self.user.username, 'data_type': 'weight','time_frame': 'months' }
         )
         self.assertEquals(response.status_code, 200)
 
