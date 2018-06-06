@@ -190,3 +190,20 @@ class TestModelRequest(TestCase):
         )
 
         self.assertEquals(response.status_code, 200)
+
+    def test_curves_validation(self):
+        """
+        Test if curves age validation is ok
+        """
+        self.curve_test = Curves.objects.create(
+            patient=self.patient,
+            weight=self.WEIGHT,
+            height=self.HEIGHT,
+            cephalic_perimeter=self.CEPHALIC_PERIMETER,
+            age=233,
+        )
+        self.curve_test.save()
+        self.curve_test.refresh_from_db()
+
+        self.assertEquals(self.curve_test.cephalic_perimeter, 0)
+

@@ -62,6 +62,34 @@
             <div class="formgroup row my-2  border rounded">
               <div class="col fieldWrapper my-2">
 
+                {% if form.age.errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.age.errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="col">
+                  {{ form.age.label_tag }}
+                </div>
+
+                <div class="col">
+                  {% if object.age %}
+                  <fieldset disabled="disabled">{{ form.age }}</fieldset>
+                  {% else %}
+                     <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter()" onkeypress="return isNumberKey(event)"  />
+                  {% endif%}
+                </div>
+
+                <font size="2" class="ml-3">{% trans 'Age in months' %}</font>
+
+              </div>
+            </div>
+          
+            <div class="formgroup row my-2  border rounded">
+              <div class="col fieldWrapper my-2">
+
                 {% if form.height.errors %}
                 <div div class="alert alert-danger">
                   {% for error in form.height.errors %}
@@ -103,34 +131,6 @@
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Weight in kg' %}</font>
-
-              </div>
-            </div>
-
-            <div class="formgroup row my-2  border rounded">
-              <div class="col fieldWrapper my-2">
-
-                {% if form.age.errors %}
-                <div div class="alert alert-danger">
-                  {% for error in form.age.errors %}
-                      <strong>{{ error|escape }}</strong>
-                  {% endfor %}
-                </div>
-                {% endif %}
-
-                <div class="col">
-                  {{ form.age.label_tag }}
-                </div>
-
-                <div class="col">
-                  {% if object.age %}
-                  <fieldset disabled="disabled">{{ form.age }}</fieldset>
-                  {% else %}
-                     <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter()" onkeypress="return isNumberKey(event)"  />
-                  {% endif%}
-                </div>
-
-                <font size="2" class="ml-3">{% trans 'Age in months' %}</font>
 
               </div>
             </div>
