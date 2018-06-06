@@ -242,13 +242,13 @@ function defineOptions(data_type) {
         crosshair: { trigger: 'selection' },
         lineWidth: 2,
         series: {
-            0: { color: '#e2431e' },
-            1: { color: '#e7711b' },
-            2: { color: '#f1ca3a' },
-            3: { color: '#6f9654' },
-            4: { color: '#1c91c0' },
-            5: { color: '#e7711b' },
-            6: { color: '#e2431e' },
+            0: { color: '#f96363' }, // red - 3%
+            1: { color: '#f7ae6a' }, // orange 6- 10%
+            2: { color: '#ffe06d' }, // yellow - 25%
+            3: { color: '#b6ff84' }, // green - 50%
+            4: { color: '#ffe06d' }, // yellow - 75%
+            5: { color: '#f7ae6a' }, // orange - 90%
+            6: { color: '#f96363' }, // red - 97%
         },
         is3D: false
     };

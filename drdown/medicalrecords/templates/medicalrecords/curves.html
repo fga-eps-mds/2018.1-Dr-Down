@@ -49,8 +49,16 @@
             </tr>
           {% endfor %}
         </tbody>
-
       </table>
+
+
+      {% if related_patient.curves_set.count < 1 %}
+        <div class="col border rounded">
+            <div class="col-auto">
+              <p class="text-secondary my-1"> {% trans "No data for this patient. The graphics will display default data." %} </p>
+            </div>            
+        </div>  
+      {% endif %}
     </div>
   </div>
 </div>
