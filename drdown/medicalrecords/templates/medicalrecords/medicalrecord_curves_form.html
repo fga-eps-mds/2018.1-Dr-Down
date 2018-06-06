@@ -86,7 +86,11 @@
                 </div>
 
                 <div class="col">
-                  {{ form.age }}
+                  {% if object.age %}
+                  <fieldset disabled="disabled">{{ form.age }}</fieldset>
+                  {% else %}
+                    {{ form.age }}
+                  {% endif%}
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Age in months' %}</font>
