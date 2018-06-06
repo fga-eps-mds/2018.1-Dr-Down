@@ -1,4 +1,12 @@
 
+var DATA_TYPES = {
+    height: 'Height',
+    weight: 'Weight',
+    bmi: 'BMI',
+    perimeter: 'Perimeter'
+}
+
+
 function getCookie(name) {
   var cookieValue = null;
   if (document.cookie && document.cookie !== '') {
@@ -27,53 +35,69 @@ var weight_data;
 var bmi_data;
 var perimeter_data;
 
-$("#height_chart").ready(
+function call_height(time_frame){
+
+    $.ajax({
+        type:"GET",
+        url:"curves/ajax/",
+        data: {
+            'username': document.getElementById("_username").value,
+            'data_type': 'height',
+            'time_frame' : time_frame,
+        },
+        success: function(response){
+            height_data = JSON.stringify(response.data);
+            
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(draw_HeigthChart);
+        },
+        error: function(response){
+            console.log(response);
+        }
+    });
+
+}
+
+function call_weight(time_frame) {
+
+    $.ajax({
+        type:"GET",
+        url:"curves/ajax/",
+        data: {
+            'username': document.getElementById("_username").value,
+            'data_type': 'weight',
+            'time_frame': 'months'
+        },
+        success: function(response){
+            weight_data = JSON.stringify(response.data);
+            
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(draw_WeigthChart);
+        },
+        error: function(response){
+            console.log(response);
+        }
+    });
+    
+}
+
+$("#height_time_select").ready(
     function() {
-
-        $.ajax({
-            type:"GET",
-            url:"curves/ajax/",
-            data: {
-                'username': document.getElementById("_username").value,
-                'data_type': 'height',
-                'time_frame' : 'months'
-            },
-            success: function(response){
-                height_data = JSON.stringify(response.data);
-                
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(draw_HeigthChart);
-            },
-            error: function(response){
-                console.log(response);
-            }
-        });
-
+        call_height(time_frame=$("#height_time_select").val())
     }
 )
 
-$("#weight_chart").ready(
-    function() {
+$(document).on('change','#height_time_select',function(){
+    call_height(time_frame=$("#height_time_select").val())
+});
 
-        $.ajax({
-            type:"GET",
-            url:"curves/ajax/",
-            data: {
-                'username': document.getElementById("_username").value,
-                'data_type': 'weight',
-                'time_frame': 'months'
-            },
-            success: function(response){
-                weight_data = JSON.stringify(response.data);
-                
-                google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(draw_WeigthChart);
-            },
-            error: function(response){
-                console.log(response);
-            }
-        });
+$(document).on('change','#weight_time_select',function(){
+    call_height(time_frame=$("#weight_time_select").val())
+});
 
+$("#weight_time_select").ready(
+    function () {
+        call_weight(time_frame=$("#weight_time_select").val())    
     }
 )
 
@@ -154,13 +178,6 @@ function convertToArray(string) {
     console.log(array)
 
     return array
-}
-
-var DATA_TYPES = {
-    height: 'Height',
-    weight: 'Weight',
-    bmi: 'BMI',
-    perimeter: 'Perimeter'
 }
 
 function defineOptions(data_type) {

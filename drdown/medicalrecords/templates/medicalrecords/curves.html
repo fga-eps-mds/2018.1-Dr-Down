@@ -17,48 +17,114 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-bordered">
+<div class="row mb-2">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table table-bordered">
 
-    <thead class="bg-secondary text-white">
-      <tr>
-        <th width="17%">{% trans 'Age' %} </th>
-        <th width="17%">{% trans 'Weight' %} </th>
-        <th width="17%">{% trans 'Height' %}</th>
-        <th width="17%">{% trans 'Cephalic Perimeter' %} </th>
-        <th width="17%">{% trans 'BMI' %} </th>
-        <th width="9%">{% trans 'Edit' %} </th>
-      </tr>
-    </thead>
+        <thead class="bg-secondary text-white">
+          <tr>
+            <th width="17%">{% trans 'Age' %} </th>
+            <th width="17%">{% trans 'Weight' %} </th>
+            <th width="17%">{% trans 'Height' %}</th>
+            <th width="17%">{% trans 'Cephalic Perimeter' %} </th>
+            <th width="17%">{% trans 'BMI' %} </th>
+            <th width="9%">{% trans 'Edit' %} </th>
+          </tr>
+        </thead>
 
-    <tbody>
-      {% for curve in related_patient.curves_set.all %}
-        <tr>
-          <td>{{curve.age}} {% trans 'months'%}</td>
-          <td>{{curve.weight|floatformat:2}} Kg</td>
-          <td>{{curve.height}} cm</td>
-          <td>{{curve.cephalic_perimeter}} cm</td>
-          <td>{{curve.bmi|floatformat:2}}</td>
-          {% if request.user.healthteam or request.user.employee%}
-            <td>
-              <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
-            </td>
-          {% endif %}
-        </tr>
-      {% endfor %}
-    </tbody>
+        <tbody>
+          {% for curve in related_patient.curves_set.all %}
+            <tr>
+              <td>{{curve.age}} {% trans 'months'%}</td>
+              <td>{{curve.weight|floatformat:2}} Kg</td>
+              <td>{{curve.height}} cm</td>
+              <td>{{curve.cephalic_perimeter}} cm</td>
+              <td>{{curve.bmi|floatformat:2}}</td>
+              {% if request.user.healthteam or request.user.employee%}
+                <td>
+                  <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
+                </td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </tbody>
 
-  </table>
+      </table>
+    </div>
+  </div>
 </div>
 
 
-  <div class="row mb-5">
-    <div class="col border-bottom">
-      <div id="height_chart" style="width: 1000px; height: 500px"></div>
-      <div id="weight_chart" style="width: 1000px; height: 500px"></div>
-      <div id="bmi_chart" style="width: 1000px; height: 500px"></div>
-      <div id="perimeter_chart" style="width: 1000px; height: 500px"></div>
+<div class="row mb-5">
+    
+  <div class="col mxy-1 border-top border-bottom">
+    <div class="row">
+      
+      <div class="col"></div>
+
+      <div class="col-auto mr-0 my-1">
+        <p class="text-secondary"> {% trans 'View by:' %} </p>
+      </div>
+      
+      <div class="col-auto ml-0 mr-1 my-1">
+        <select id="height_time_select" class="custom-select">
+          <option selected value="months"> {% trans "Months" %} </option>
+          <option value="years"> {% trans "Years" %} </option>
+        </select>
+      </div>
+    
+    </div>
+    
+    <div class="row">
+      <div id="height_chart" class="col" style="width: 100%; height: 500px;">
+        <p class="text-secondary"> {% trans "Loading height chart..." %} </p>
+      </div>
     </div>
   </div>
+
+  <div class="w-100"></div>
+
+  <div class="col mxy-1 border-bottom">
+      <div class="row">
+      
+          <div class="col"></div>
+    
+          <div class="col-auto mr-0 my-1">
+            <p class="text-secondary"> {% trans 'View by:' %} </p>
+          </div>
+          
+          <div class="col-auto ml-0 mr-1 my-1">
+            <select id="weight_time_select" class="custom-select">
+              <option selected value="months"> {% trans "Months" %} </option>
+              <option value="years"> {% trans "Years" %} </option>
+            </select>
+          </div>
+        
+      </div>
+      
+      <div class="row">
+        <div id="weight_chart" class="col" style="width: 100%; height: 500px;">
+          <p class="text-secondary"> {% trans "Loading weight chart..." %} </p>
+        </div>
+      </div>
+  </div>
+
+  <div class="w-100"></div>
+
+
+  <div class="col mxy-1 border-bottom">
+    <div id="bmi_chart" class="col" style="width: 100%; height: 500px;">
+        <p class="text-secondary"> {% trans "Loading BMI chart..." %} </p></div>
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col mxy-1">
+    <div id="perimeter_chart" class="col" style="width: 100%; height: 500px;">
+        <p class="text-secondary"> {% trans "Loading cephalic perimeter chart..." %} </p></div>
+  </div>
+
+</div>
 
 
