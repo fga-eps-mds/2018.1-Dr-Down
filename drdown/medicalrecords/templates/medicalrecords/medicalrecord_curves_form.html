@@ -8,6 +8,43 @@
 <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
 {% endblock %}
 
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function()
+    {
+        function updateCephalicPerimeter()
+        {
+            $("#cephalic_perimeter").removeAttr('disabled');
+            var num = parseInt($("#age").val());
+            if (num >= 24){
+            var total = 0;
+            $("#cephalic_perimeter").prop("disabled", true);
+            }
+            if (num < 24){
+            $("#cephalic_perimeter").val("")
+            }
+            var total = total;
+            $("#cephalic_perimeter").val(total);
+        }
+
+
+        $(document).on("change, keyup", "#age", updateCephalicPerimeter);
+    });
+  </script>
+
+  <script>
+    function isNumberKey(evt)
+      {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+        return false;
+        return true;
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
   <div class="container">
 
@@ -19,7 +56,7 @@
 
     <div class="row">
       <div class="col">
-        <form method="post" enctype="multipart/form-data"action="#menu7">
+        <form method="post" enctype="multipart/form-data"action="#menu7" id="doctorForm">
           {% csrf_token %}
 
             <div class="formgroup row my-2  border rounded">
@@ -41,7 +78,7 @@
                   {{ form.height }}
                 </div>
 
-                <font size="2" class="ml-3">{% trans 'Height in kg' %}</font>
+                <font size="2" class="ml-3">{% trans 'Height in cm' %}</font>
 
               </div>
             </div>
@@ -89,7 +126,7 @@
                   {% if object.age %}
                   <fieldset disabled="disabled">{{ form.age }}</fieldset>
                   {% else %}
-                    {{ form.age }}
+                     <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter()" onkeypress="return isNumberKey(event)"  />
                   {% endif%}
                 </div>
 
@@ -114,7 +151,7 @@
                 </div>
 
                 <div class="col">
-                  {{ form.cephalic_perimeter }}
+                  <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter"value=""/>
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Perimeter in cm' %}</font>
