@@ -165,7 +165,7 @@ function convertToArray(string) {
 
         var item = element.pop()
 
-        if (item == 0){
+        if (item == 0 && array.indexOf(element) != 1){
             item = null;
         }
 
