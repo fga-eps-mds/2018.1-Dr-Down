@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from drdown.appointments.models.model_request import AppointmentRequest
 from drdown.appointments.models.model_appointment import Appointment
 from drdown.events.models.model_events import Events
+from drdown.forum.models.model_post import Post
 from datetime import timedelta
 from django.utils import timezone
 
@@ -79,11 +80,11 @@ class EmployeeNotificationsView(TemplateView):
         context = super(EmployeeNotificationsView, self).get_context_data(**kwargs)
 
         context['requests'] = AppointmentRequest.objects.all()
+        user = self.request.user
 
-        start_date = timezone.now()
-        end_date = start_date + timedelta(days=6)
-        context['events'] = Events.objects.filter(
-            date__range=(start_date, end_date)
-        )
+        context['commentaries'] = Post.objects.filter(
+            created_by=user
+        ).order_by('-created_at').first().commentaries.all()
+
 
         return context
