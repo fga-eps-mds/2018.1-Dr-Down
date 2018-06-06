@@ -59,6 +59,11 @@ class HealthTeamNotificationsView(TemplateView):
         context = super(HealthTeamNotificationsView, self).get_context_data(**kwargs)
 
         user = self.request.user
+        post = Post.objects.filter(
+            created_by=user
+        ).order_by('-created_at').first()
+        if post != None:
+            context['commentaries'] = post.commentaries.all()
 
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
@@ -85,9 +90,11 @@ class EmployeeNotificationsView(TemplateView):
         context['requests'] = AppointmentRequest.objects.all()
         user = self.request.user
 
-        context['commentaries'] = Post.objects.filter(
+        post = Post.objects.filter(
             created_by=user
-        ).order_by('-created_at').first().commentaries.all()
+        ).order_by('-created_at').first()
+        if post != None:
+            context['commentaries'] = post.commentaries.all()
 
 
         return context
