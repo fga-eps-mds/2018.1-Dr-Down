@@ -115,7 +115,7 @@ class CurveDataParser(BaseViewPermissions, View):
 
         gender = self.patient.user.gender
 
-        if gender == "M" or "Male":
+        if gender in ["M", "Male"]:
             return "male"
         else:
             return "female"
