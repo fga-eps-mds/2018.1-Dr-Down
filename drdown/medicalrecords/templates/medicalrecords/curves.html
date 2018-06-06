@@ -34,7 +34,7 @@
         </thead>
 
         <tbody>
-          {% for curve in related_patient.curves_set.all %}
+          {% for curve in curves %}
             <tr>
               <td>{{curve.age}} {% trans 'months'%}</td>
               <td>{{curve.weight|floatformat:2}} Kg</td>
@@ -56,8 +56,8 @@
         <div class="col border rounded">
             <div class="col-auto">
               <p class="text-secondary my-1"> {% trans "No data for this patient. The graphics will display default data." %} </p>
-            </div>            
-        </div>  
+            </div>
+        </div>
       {% endif %}
     </div>
   </div>
@@ -65,25 +65,25 @@
 
 
 <div class="row mb-5">
-    
+
   <div class="col mxy-1 border-top border-bottom">
     <div class="row">
-      
+
       <div class="col"></div>
 
       <div class="col-auto mr-0 my-1">
         <p class="text-secondary"> {% trans 'View by:' %} </p>
       </div>
-      
+
       <div class="col-auto ml-0 mr-1 my-1">
         <select id="height_time_select" class="custom-select">
           <option selected value="months"> {% trans "Months" %} </option>
           <option value="years"> {% trans "Years" %} </option>
         </select>
       </div>
-    
+
     </div>
-    
+
     <div class="row">
       <div id="height_chart" class="col" style="width: 100%; height: 500px;">
         <p class="text-secondary"> {% trans "Loading height chart..." %} </p>
@@ -95,22 +95,22 @@
 
   <div class="col mxy-1 border-bottom">
       <div class="row">
-      
+
           <div class="col"></div>
-    
+
           <div class="col-auto mr-0 my-1">
             <p class="text-secondary"> {% trans 'View by:' %} </p>
           </div>
-          
+
           <div class="col-auto ml-0 mr-1 my-1">
             <select id="weight_time_select" class="custom-select">
               <option selected value="months"> {% trans "Months" %} </option>
               <option value="years"> {% trans "Years" %} </option>
             </select>
           </div>
-        
+
       </div>
-      
+
       <div class="row">
         <div id="weight_chart" class="col" style="width: 100%; height: 500px;">
           <p class="text-secondary"> {% trans "Loading weight chart..." %} </p>
