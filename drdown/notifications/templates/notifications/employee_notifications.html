@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+  <div class="container">
+
+    <h2 class="text-tertiary">{% trans "Requests" %}</h2>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>{% trans "You have" %} {{requests|length}} {% trans "appointments requests" %}.</p>
+    </div>
+
+    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>{% trans "Your last post has" %} {{ commentaries | length }} {% trans " commentaries" %}.</p>
+    </div>
+
+  </div>
+
+{% endblock %}
