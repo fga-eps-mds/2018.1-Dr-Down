@@ -1,16 +1,18 @@
+from django.contrib import messages
+from django.db import IntegrityError
+from django.utils.translation import ugettext_lazy as _
 from ..models.model_curves import Curves
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView, View
 from ..forms.curves_form import CurvesForm
 from ..views.views_base import BaseViewUrl, BaseViewPermissions
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import (
     HttpResponse,
     HttpResponseForbidden,
     JsonResponse,
 )
 from django.urls import reverse, reverse_lazy
-
 from urllib import parse, request as urlrequest
 import json
 from math import floor
@@ -31,10 +33,21 @@ class FormValid():
 
 class CurvesCreateView(
     FormValid, BaseViewPermissions, BaseViewUrl, CreateView
-):
+    ):
+
     model = Curves
     form_class = CurvesForm
     template_name = 'medicalrecords/medicalrecord_curves_form.html'
+
+    def post(self, request, *args, **kwargs):
+        try:
+            return super().post(request, *args, **kwargs)
+        except IntegrityError:
+            messages.add_message(request, messages.ERROR,
+                                 _('The patient already has a curve at this '
+                                   'age. If wanted, just change its data.'))
+            return render(request, template_name=self.template_name,
+                          context=self.get_context_data())
 
 
 class CurvesUpdateView(
@@ -98,7 +111,7 @@ class CurveDataParser(BaseViewPermissions, View):
 
     def get_api_url(self, request):
 
-        # get the current addres and add service port 
+        # get the current addres and add service port
         url = parse.urlparse(request.build_absolute_uri())
         return str(url.netloc) + self.api_port
 
