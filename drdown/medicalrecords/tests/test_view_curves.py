@@ -1,6 +1,7 @@
 from test_plus.test import TestCase
 from django.test.client import Client
 from ..models.model_curves import Curves
+from ..views.view_curves import CurveDataParser
 from drdown.users.models.model_patient import Patient
 from drdown.users.models.model_health_team import HealthTeam
 from django.urls import reverse
@@ -76,51 +77,82 @@ class TestModelRequest(TestCase):
         self.assertEquals(response.status_code, 200)
 
     def test_data_parse_curves_height(self):
+        
         self.client.force_login(user=self.user2)
         self.client.request()
+        
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
 
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'height','time_frame': 'months' }
+            data={'username': self.patient.user.username, 'data_type': 'height','time_frame': 'months' }
         )
+        
         self.assertEquals(response.status_code, 200)
 
     def test_data_parse_curves_weight(self):
+        
         self.client.force_login(user=self.user2)
         self.client.request()
+        
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'weight','time_frame': 'months' }
+            data={'username': self.patient.user.username, 'data_type': 'weight','time_frame': 'months' }
         )
+        
         self.assertEquals(response.status_code, 200)
 
     def test_data_parse_curves_bmi(self):
+        
         self.client.force_login(user=self.user2)
         self.client.request()
+
+        self.patient.user.gender = 'Female'
+        self.patient.user.save()
+
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'bmi', }
+            data={'username': self.patient.user.username, 'data_type': 'bmi', 'time_frame': 'years' }
         )
+        
         self.assertEquals(response.status_code, 200)
 
+    def test_api_gender(self):
+        curve_api = CurveDataParser()
+
+        curve_api.patient = self.patient
+
+        self.patient.user.gender = 'Male'
+        self.patient.user.save()
+
+        self.assertEquals(curve_api.api_gender(), 'male')
+
+
+        self.patient.user.gender = 'Female'
+        self.patient.user.save()
+
+        self.assertEquals(self.patient.user.gender, 'Female')
+        self.assertEquals(curve_api.api_gender(), 'female')
+
     def test_data_parse_curves_cephalic_perimeter(self):
-        self.user.gender = "F"
+
         self.client.force_login(user=self.user2)
         self.client.request()
+        
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
             ),
             follow=True,
-            data={'username': self.user.username, 'data_type': 'cephalic_perimeter', }
+            data={'username': self.patient.user.username, 'data_type': 'cephalic_perimeter', }
         )
+        
         self.assertEquals(response.status_code, 200)
