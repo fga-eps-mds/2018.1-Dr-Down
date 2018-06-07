@@ -12,7 +12,10 @@ from allauth.account.models import (
     EmailConfirmation,
     EmailConfirmationHMAC,
 )
-
+from drdown.users.models.model_health_team import HealthTeam
+from drdown.users.models.model_patient import Patient
+from drdown.users.models.model_employee import Employee
+from drdown.users.models.model_responsible import Responsible
 
 class AccountsTestCase(TestCase):
 
@@ -27,6 +30,45 @@ class AccountsTestCase(TestCase):
             username='mariam', password='12345', name='Maria')
         self.user3 = self.user = User.objects.create_user(
             username='joao', password='12345')
+        self.user_1 = self.user = User.objects.create_user(
+            username='felipe', password='12345', name='lipe')
+        self.user_2 = self.user = User.objects.create_user(
+            username='mam', password='12345', name='Mam')
+        self.user_3 = self.user = User.objects.create_user(
+            username='lol', password='12345', name='lol')
+        self.user_4 = self.user = User.objects.create_user(
+            username='sab', password='12345', name='sab')
+
+
+        self.responsible = Responsible.objects.create(
+            user=self.user_3,
+            cpf="065.770.581-05",
+        )
+
+        self.patient = Patient.objects.create(ses="1234567",
+                                              user=self.user_2,
+                                              mother_name="Mãe",
+                                              father_name="Pai",
+                                              ethnicity=3,
+                                              responsible=self.responsible,
+                                              sus_number="123456789012345",
+                                              civil_registry_of_birth="12345678911",
+                                              declaration_of_live_birth="12345678911")
+
+        self.health_team = HealthTeam.objects.create(
+            cpf="507.522.730-94",
+            user=self.user_1,
+            council_acronym='CRM',
+            register_number=123456789,
+            registration_state='DF',
+            speciality=HealthTeam.NEUROLOGY
+        )
+
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user_4,
+            departament=Employee.ADMINISTRATION
+        )
 
     def test_login(self):
         """
@@ -70,6 +112,12 @@ class AccountsTestCase(TestCase):
         detail_view = reverse('users:detail', kwargs={
                               'username': self.user2.username})
         self.assertRedirects(user_redirect, detail_view)
+
+    def test_redirect_login_sucess_patient(self):
+        self.client.force_login(user=self.user_2)
+        user_redirect = self.client.post('/accounts/login/')
+        patient_view = reverse('notifications:patient_notifications')
+        self.assertRedirects(user_redirect, patient_view)
 
     def test_redirect_not_logged_sucess(self):
         self.client.force_login(user=self.user3)
