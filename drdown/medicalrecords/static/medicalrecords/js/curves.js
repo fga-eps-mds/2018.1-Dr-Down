@@ -191,15 +191,15 @@ function defineOptions(data_type, data_array) {
     
     if(data_array != null){
      
-        title = data_array[0][0];
-        hAxis_title = data_array[0][data_array[0].length - 1];
-        vAxis_title = data_array[0][0];
+        title = data_array[0][data_array[0].length - 1];
+        hAxis_title = data_array[0][0];
+        vAxis_title = data_array[0][data_array[0].length - 1];
 
     }else{
    
         title = data_type;
-        hAxis_title = "Ages";
-        vAxis_title = data_type;
+        hAxis_title = data_type;
+        vAxis_title = "Ages";
    
     }
 
