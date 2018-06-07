@@ -15,21 +15,27 @@
     {
         function updateCephalicPerimeter()
         {
-            $("#cephalic_perimeter").removeAttr('disabled');
+            $("#cephalic_perimeter").removeAttr('hidden');
+            
             var num = parseInt($("#age").val());
+            
             if (num >= 24){
-            var total = 0;
-            $("#cephalic_perimeter").prop("disabled", true);
+              var total = 0;
+              $("#cephalic_perimeter").prop("hidden", true);
             }
+            
             if (num < 24){
-            $("#cephalic_perimeter").val("")
+              $("#cephalic_perimeter").val("")
             }
+            
             var total = total;
             $("#cephalic_perimeter").val(total);
         }
 
         $(document).on("change, keyup", "#age", updateCephalicPerimeter);
     });
+
+  
   </script>
 
   <script>
@@ -56,9 +62,16 @@
           $("#converted_month").val(result_m);
       }
 
+
         $(document).on("change, keyup", "#age", getAge);
         $.proxy(getAge, $('#age'))();
     });
+
+    $("#submit_btn").click(
+      function (){
+        $("#cephalic_perimeter").removeAttr('disabled');
+      }
+    )
 
   </script>
 {% endblock %}
@@ -187,7 +200,7 @@
 
           <div class="float-right">
             <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
-            <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
+            <button id="submit_bnt" type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
           </div>
 
         </form>
