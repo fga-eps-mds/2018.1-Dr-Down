@@ -111,6 +111,8 @@ def create_patient(user, n, responsible):
             priority_pediatrics = 5,
             priority_general_practitioner = 5,
         )
+        
+        create_curves(patients)
 
     except IntegrityError:
         raise ValidationError("An error occurred. Stopping the script")
@@ -153,6 +155,43 @@ def create_employee(user, cpf):
     except IntegrityError:
         raise ValidationError("An error occurred. Stopping the script")
 
+def create_curves(patient):
+
+    max_age = random.randint(1, 18*12)
+
+    
+    weights = [2, ]
+    heights = [30, ]
+    perimeters = [30, ]
+
+    for age in range(1, max_age):
+
+        skip = random.randint(0, 1)
+
+        if not skip:
+            
+            weight = random.randint(
+                max(weights), max(weights) + random.randint(1, 2)
+            )
+            weights.append(weight)
+            
+            height = random.randint(
+                max(heights), max(heights) + random.randint(2, 5)
+            )
+            heights.append(height)
+            
+            perimeter = random.randint(
+                max(perimeters), max(perimeters) + random.randint(0, 3)
+            )
+            perimeters.append(perimeter)
+
+            Curves.objects.create(
+                patient=patient,
+                weight=weight,
+                height=height,
+                age=age,
+                cephalic_perimeter=perimeter,   
+            )
 
 def populate():
 
@@ -562,6 +601,7 @@ from drdown.users.models.model_responsible import Responsible
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
+from drdown.medicalrecords.models.model_curves import Curves
 from drdown.forum.models.model_category import Category
 from drdown.forum.models.model_post import Post
 from drdown.forum.models.model_commentary import Commentary
