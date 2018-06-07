@@ -57,6 +57,7 @@
       }
 
         $(document).on("change, keyup", "#age", getAge);
+        $.proxy(getAge, $('#age'))();
     });
 
   </script>
@@ -93,13 +94,13 @@
                 <div class="row">
                   <div class="col ml-3">
                     {% if object.age %}
-                    <fieldset disabled="disabled">{{ form.age }}</fieldset>
+                       <input class="span4 input-big" disabled id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()"  value="{{ object.age }}"/>
                     {% else %}
                        <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()" onkeypress="return isNumberKey(event)"  />
                     {% endif%}
                   </div>
                   <div class="col">
-                    {% trans 'Equivalent to: '%}<input class="no " readonly size="1" id="converted_year" name="converted_year"value=""/>  {% trans 'year(s) and'%}  <input class="no" size="1" readonly id="converted_month" name="converted_month"value=""/>  {% trans 'month(s)'%}
+                    {% trans 'Equivalent to: '%}  <input class="no " readonly size="1" id="converted_year" name="converted_year"value=""/>  {% trans 'year(s) and'%}  <input class="no" size="1" readonly id="converted_month" name="converted_month"value=""/>  {% trans 'month(s)'%}
                   </div>
                 </div>
 
@@ -172,7 +173,12 @@
                 </div>
 
                 <div class="col">
-                  <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter"value=""/>
+                    {% if object.cephalic_perimeter %}
+                      <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter" value="{{object.cephalic_perimeter}}"/>
+                    {% else %}
+                      <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter" value=""/>
+                    {% endif %}
+
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Perimeter in cm. If the age is greater than 23, the head circumference is disregarded' %}</font>
