@@ -7,18 +7,19 @@
 
     <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
 
+
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <p>{% trans "You have" %} {{appointments|length}} {% trans "appointments" %}.</p>
+      <p>{% trans "You have" %} {{scheduled|length}} {% trans "appointments requests accepted and not visualized" %}.</p>
     </div>
 
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <p>{% trans "You have" %} {{scheduled|length}} {% trans "appointments scheduled" %}.</p>
+      <p>{% trans "You have" %} {{cancel|length}} {% trans "appointments requests declined and not visualized" %}.</p>
     </div>
 
     <h2 class="text-tertiary">{% trans "Events" %}</h2>
@@ -28,6 +29,15 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+    </div>
+
+    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>{% trans "Your last post has" %} {{ commentaries | length }} {% trans " commentaries" %}.</p>
     </div>
 
   </div>

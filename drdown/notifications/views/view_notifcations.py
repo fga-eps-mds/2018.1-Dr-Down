@@ -23,11 +23,23 @@ class PatientNotificationsView(UserPassesTestMixin,TemplateView):
             patient=user.patient,
         )
 
+        context['cancel'] = AppointmentRequest.objects.filter(
+            status=AppointmentRequest.DECLINED,
+        ).filter(
+            patient=user.patient,
+        )
+
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
         context['events'] = Events.objects.filter(
             date__range=(start_date, end_date)
         )
+
+        post = Post.objects.filter(
+            created_by=user
+        ).order_by('-created_at').first()
+        if post != None:
+            context['commentaries'] = post.commentaries.all()
 
         return context
 
