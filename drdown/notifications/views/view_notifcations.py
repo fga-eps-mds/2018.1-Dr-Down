@@ -3,11 +3,13 @@ from drdown.appointments.models.model_request import AppointmentRequest
 from drdown.appointments.models.model_appointment import Appointment
 from drdown.events.models.model_events import Events
 from drdown.forum.models.model_post import Post
+from drdown.users.models.model_patient import Patient
 from datetime import timedelta
 from django.utils import timezone
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
-class PatientNotificationsView(TemplateView):
+class PatientNotificationsView(UserPassesTestMixin,TemplateView):
     template_name = 'notifications/patient_notifications.html'
 
     def get_context_data(self, **kwargs):
@@ -29,8 +31,11 @@ class PatientNotificationsView(TemplateView):
 
         return context
 
+    def test_func(self):
+        return hasattr(self.request.user, 'patient')
 
-class ResponsibleNotificationsView(TemplateView):
+
+class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
     template_name = 'notifications/responsible_notifications.html'
 
     def get_context_data(self, **kwargs):
@@ -38,6 +43,7 @@ class ResponsibleNotificationsView(TemplateView):
         context = super(ResponsibleNotificationsView, self).get_context_data(**kwargs)
 
         user = self.request.user
+
         context['appointments'] = Appointment.objects.filter(
             patient__in=user.responsible.patient_set.all(),
         )
@@ -50,8 +56,11 @@ class ResponsibleNotificationsView(TemplateView):
 
         return context
 
+    def test_func(self):
+        return hasattr(self.request.user, 'responsible')
 
-class HealthTeamNotificationsView(TemplateView):
+
+class HealthTeamNotificationsView(UserPassesTestMixin,TemplateView):
     template_name = 'notifications/health_team_notifications.html'
 
     def get_context_data(self, **kwargs):
@@ -79,9 +88,13 @@ class HealthTeamNotificationsView(TemplateView):
 
         return context
 
+    def test_func(self):
+        return hasattr(self.request.user, 'healthteam')
 
-class EmployeeNotificationsView(TemplateView):
+
+class EmployeeNotificationsView(UserPassesTestMixin,TemplateView):
     template_name = 'notifications/employee_notifications.html'
+
 
     def get_context_data(self, **kwargs):
 
@@ -98,3 +111,6 @@ class EmployeeNotificationsView(TemplateView):
 
 
         return context
+
+    def test_func(self):
+        return hasattr(self.request.user, 'employee')
