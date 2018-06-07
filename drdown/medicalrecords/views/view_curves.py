@@ -6,7 +6,7 @@ from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView, View
 from ..forms.curves_form import CurvesForm
 from ..views.views_base import (
-    BaseViewUrl, 
+    BaseViewUrl,
     BaseViewPermissions,
     BaseViewPermissionPatientResponsible
 )
@@ -37,7 +37,7 @@ class FormValid():
 
 class CurvesCreateView(
     FormValid, BaseViewPermissions, BaseViewUrl, CreateView
-    ):
+):
 
     model = Curves
     form_class = CurvesForm
@@ -78,7 +78,6 @@ class CurveDataParser(BaseViewPermissionPatientResponsible, View):
         'height': _("Height"),
         'cephalic_perimeter': _("Cephalic Perimeter"),
     }
- 
 
     def get(self, request, *args, **kwargs):
 

@@ -40,17 +40,17 @@ class BaseViewPermissions(UserPassesTestMixin):
         return hasattr(self.request.user, 'healthteam') or \
                hasattr(self.request.user, 'employee')
 
+
 class BaseViewPermissionPatientResponsible(BaseViewPermissions):
-    
+
     def test_func(self):
-        
+
         allowed = super().test_func()
 
         if self.kwargs.get('username') is not None:
             username = self.kwargs.get('username')
         elif self.request.GET.get('username') is not None:
             username = self.request.GET.get('username')
-
 
         return allowed or \
             self.request.user.username == username or \

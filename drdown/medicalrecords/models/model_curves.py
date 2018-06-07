@@ -39,7 +39,7 @@ class Curves(models.Model):
     def save(self, force_insert=False, force_update=False, *args, **kwargs):
         self.bmi = self.get_bmi()
         if self.age >= 24:
-            self.cephalic_perimeter = 0;
+            self.cephalic_perimeter = 0
 
         super(Curves, self).save(force_insert, force_update, *args, **kwargs)
 
