@@ -45,8 +45,23 @@
               </td>
               <td>{{curve.weight|floatformat:2}} Kg</td>
               <td>{{curve.height}} cm</td>
-              <td>{{curve.cephalic_perimeter}} cm</td>
-              <td>{{curve.bmi|floatformat:2}}</td>
+              <td>
+                
+                {% if curve.age < 24 %}
+                  {{curve.cephalic_perimeter}} cm
+                {% else %}
+                  --
+                {% endif %}
+                  
+              </td>
+              <td>
+                
+                {% if curve.age >= 24 %}
+                  {{curve.bmi|floatformat:2}}
+                {% else %}
+                  --
+                {% endif %}
+              </td>
               {% if request.user.healthteam or request.user.employee%}
                 <td>
                   <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
