@@ -199,9 +199,14 @@ class CurveDataParser(BaseViewPermissions, View):
 
             index = age if self.api_time_frame() == 'months' else floor(age/12)
 
-            graph_list = graphic[
-                index + 1 if self.api_time_frame() == 'months' else index - 1
-            ]
+            if self.api_time_frame() == 'months':
+                index += 1
+            elif self.data_type in ['height', 'weight']:
+                index -= 2
+            else:
+                index -= 1
+
+            graph_list = graphic[index]
 
             # the last element is the value
             graph_list[-1] = data[1]
@@ -223,7 +228,7 @@ class CurveDataParser(BaseViewPermissions, View):
 
         elif self.api_time_frame() == 'years':
 
-            MIN_YEAR = 2
+            MIN_YEAR = 2 if self.data_type == 'bmi' else 3
             MAX_YEAR = 18
 
             # get data with months bigger than MIN_YEAR

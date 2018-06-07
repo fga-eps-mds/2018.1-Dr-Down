@@ -66,7 +66,7 @@ function call_weight(time_frame) {
         data: {
             'username': document.getElementById("_username").value,
             'data_type': 'weight',
-            'time_frame': 'months'
+            'time_frame': time_frame,
         },
         success: function(response){
             weight_data = JSON.stringify(response.data);
