@@ -36,7 +36,13 @@
         <tbody>
           {% for curve in curves %}
             <tr>
-              <td>{{curve.age}} {% trans 'months'%}</td>
+              <td>{{curve.age}}
+                {% if curve.age <= 1%}
+                  {% trans 'month'%}
+                {% else %}
+                  {% trans 'months'%}
+                {% endif %}
+              </td>
               <td>{{curve.weight|floatformat:2}} Kg</td>
               <td>{{curve.height}} cm</td>
               <td>{{curve.cephalic_perimeter}} cm</td>

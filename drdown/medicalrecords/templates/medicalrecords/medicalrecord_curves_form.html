@@ -28,7 +28,6 @@
             $("#cephalic_perimeter").val(total);
         }
 
-
         $(document).on("change, keyup", "#age", updateCephalicPerimeter);
     });
   </script>
@@ -42,6 +41,24 @@
         return false;
         return true;
     }
+  </script>
+
+  <script>
+    $(document).ready(function()
+    {
+      function getAge()
+      {
+          var month = parseFloat($("#age").val());
+          var year = Math.floor(month/12);
+          var result_m = month%12;
+
+          $("#converted_year").val(year);
+          $("#converted_month").val(result_m);
+      }
+
+        $(document).on("change, keyup", "#age", getAge);
+    });
+
   </script>
 {% endblock %}
 
@@ -73,13 +90,17 @@
                 <div class="col">
                   {{ form.age.label_tag }}
                 </div>
-
-                <div class="col">
-                  {% if object.age %}
-                  <fieldset disabled="disabled">{{ form.age }}</fieldset>
-                  {% else %}
-                     <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter()" onkeypress="return isNumberKey(event)"  />
-                  {% endif%}
+                <div class="row">
+                  <div class="col ml-3">
+                    {% if object.age %}
+                    <fieldset disabled="disabled">{{ form.age }}</fieldset>
+                    {% else %}
+                       <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()" onkeypress="return isNumberKey(event)"  />
+                    {% endif%}
+                  </div>
+                  <div class="col">
+                    {% trans 'Equivalent to: '%}<input class="no " readonly size="1" id="converted_year" name="converted_year"value=""/>  {% trans 'year(s) and'%}  <input class="no" size="1" readonly id="converted_month" name="converted_month"value=""/>  {% trans 'month(s)'%}
+                  </div>
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Age in months' %}</font>
