@@ -11,63 +11,91 @@
 {% block title %}{% trans "Help" %}{% endblock title %}
 
 {% block content %}
-
-<nav class="col-md-2 d-none d-md-block sidebar h-100 border-right">
-  <div class="sidebar-sticky">
-    <ul class="nav flex-column">
-    	<h3 class="text-center border-bottom pb-3">{% trans 'Tutorial' %}</h3>	
-      <li class="nav-item">
-        <a class="nav-link text-blue lead" href="#">{% trans 'Starting' %}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-blue lead" href="#">{% trans 'Register e Login' %}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-blue lead" href="#">{% trans 'Forum' %}</a>
-      </li>
-      {% if user.is_authenticated %}
+	<nav class="col-md-2 d-none d-md-block sidebar h-100 border-right">
+	  <div class="sidebar-sticky">
+	    <ul class="nav flex-column">
+	    	<h3 class="text-center border-bottom pb-3">{% trans 'Tutorial' %}</h3>	
+	      <li class="nav-item">
+	        <a class="nav-link text-blue lead" href="#">{% trans 'Starting' %}</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link text-blue lead" href="#">{% trans 'Register e Login' %}</a>
+	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link text-blue lead" href="#">{% trans 'Forum' %}</a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">
-	          <span data-feather="bar-chart-2"></span>
-	          Reports
-	        </a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">
-	          <span data-feather="layers"></span>
-	          Integrations
-	        </a>
-	      </li>
-	    {% endif %}
-    </ul>
-  </div>
-</nav>
+	      {% if user.patient %}
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Medical Records' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Events' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans '#' %}</a>
+		      </li>
 
+	      {% elif user.healthteam %}
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Medical Records' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Events' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans '#' %}</a>
+		      </li>
 
-{# Informações que qualquer usuário pode ver #}
-{#% if not user.is_authenticated  %#}
-<div id="user">
-	{% include "core/help_user.html" %}
-</div>
-{# Informações que o patient pode ver #}
-{#% elif user.patient %#}
-<div id="help_patient">
-</div>
-{# Informações que o health_team pode ver #}
-{#% elif user.healthteam %#}
-<div id="help_health_team">
-</div>
-{# Informações que o employee pode ver #}
-{#% elif user.employee %#}
-<div id="help_employee">
-</div>
-{# Informações que o responsible pode ver #}
-{#% elif user.resposible %#}
-<div id="responsible">
-</div>
-{#% endif %#}
+	      {% elif user.responsible %}
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Medical Records' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Events' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans '#' %}</a>
+		      </li>
+
+	      {% elif user.employee %}
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Medical Records' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans 'Events' %}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link text-blue lead" href="#">{% trans '#' %}</a>
+		      </li>
+
+		    {% else %}
+
+	    	{% endif %}
+	    </ul>
+	  </div>
+	</nav>
+
+	{# Informações que qualquer usuário pode ver #}
+	{#% if not user.is_authenticated  %#}
+	<div id="user">
+		{% include "core/help_user.html" %}
+	</div>
+	{# Informações que o patient pode ver #}
+	{#% elif user.patient %#}
+	<div id="help_patient">
+	</div>
+	{# Informações que o health_team pode ver #}
+	{#% elif user.healthteam %#}
+	<div id="help_health_team">
+	</div>
+	{# Informações que o employee pode ver #}
+	{#% elif user.employee %#}
+	<div id="help_employee">
+	</div>
+	{# Informações que o responsible pode ver #}
+	{#% elif user.resposible %#}
+	<div id="responsible">
+	</div>
+	{#% endif %#}
 
 {% endblock %}

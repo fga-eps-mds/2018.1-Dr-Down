@@ -3,5 +3,9 @@
 }
 
 .text-blue{
-	color: #2C3E50;
+	color: #01070c;
+}
+
+.text-blue a:focus, a:hover, a:active{
+	color: #224e72;
 }
