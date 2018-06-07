@@ -29,7 +29,9 @@
             <th width="17%">{% trans 'Height' %}</th>
             <th width="17%">{% trans 'Cephalic Perimeter' %} </th>
             <th width="17%">{% trans 'BMI' %} </th>
-            <th width="9%">{% trans 'Edit' %} </th>
+            {% if request.user.healthteam or request.user.employee%}
+              <th width="9%">{% trans 'Edit' %} </th>
+            {% endif %}
           </tr>
         </thead>
 
