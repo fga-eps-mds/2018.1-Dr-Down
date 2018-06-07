@@ -97,25 +97,27 @@ msgid "The complaint cannot be in the future!"
 msgstr "A queixa não pode ser no futuro!"
 
 #: drdown/medicalrecords/models/model_curves.py:15
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:23
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:28
 msgid "Weight"
 msgstr "Peso"
 
 #: drdown/medicalrecords/models/model_curves.py:16
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:154
 msgid "Weight in kg"
 msgstr "Peso em kg"
 
 #: drdown/medicalrecords/models/model_curves.py:19
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:24
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:29
 msgid "Height"
 msgstr "Altura"
 
 #: drdown/medicalrecords/models/model_curves.py:20
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:130
 msgid "Height in cm"
 msgstr "Altura em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:24
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:25
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:30
 msgid "Cephalic Perimeter"
 msgstr "Perímetro Cefálico"
 
@@ -124,16 +126,17 @@ msgid "Perimeter in cm"
 msgstr "Perímetro em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:28
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:26
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:31
 msgid "BMI"
 msgstr "IMC"
 
 #: drdown/medicalrecords/models/model_curves.py:32
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:22
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:27
 msgid "Age"
 msgstr "Idade"
 
 #: drdown/medicalrecords/models/model_curves.py:33
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:106
 msgid "Age in months"
 msgstr "Idade em meses"
 
@@ -405,7 +408,7 @@ msgid "Medical Record Static Data"
 msgstr "Prontuário - Dados Estáticos"
 
 #: drdown/medicalrecords/templates/medicalrecords/complaints.html:8
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:10
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:13
 #: drdown/medicalrecords/templates/medicalrecords/exams.html:9
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:9
 msgid "Add"
@@ -421,22 +424,62 @@ msgstr "Dia da queixa"
 msgid "There are no complaints registered for this patient."
 msgstr "Não há queixas registradas para este paciente."
 
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:13
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:16
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:84
 msgid "Curves"
 msgstr "Curvas"
 
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:27
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:41
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:32
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:52
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:34
 #: drdown/medicalrecords/templates/medicalrecords/risks.html:7
 #: drdown/medicalrecords/templates/medicalrecords/static_data.html:10
 msgid "Edit"
 msgstr "Editar"
 
-#: drdown/medicalrecords/templates/medicalrecords/curves.html:34
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:41
+msgid "month"
+msgstr "meses"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:43
 msgid "months"
 msgstr "meses"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:64
+msgid "No data for this patient. The graphics will display default data."
+msgstr ""
+"Não há dados para esse paciente. O gráfico irá exibir a informação padrão"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:81
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:108
+msgid "View by:"
+msgstr "Visualizar por:"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:86
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:113
+msgid "Months"
+msgstr "Meses"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:87
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:114
+msgid "Years"
+msgstr "Anos"
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:95
+msgid "Loading height chart..."
+msgstr "Carregando gráfico de altura..."
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:122
+msgid "Loading weight chart..."
+msgstr "Carregando gráfico de peso..."
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:132
+msgid "Loading BMI chart..."
+msgstr "Carregando gráfico de IMC..."
+
+#: drdown/medicalrecords/templates/medicalrecords/curves.html:139
+msgid "Loading cephalic perimeter chart..."
+msgstr "Carregando gráfico de Perímetro Cefálico..."
 
 #: drdown/medicalrecords/templates/medicalrecords/evolution.html:5
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:64
@@ -493,7 +536,7 @@ msgstr "Adicionar nova queixa"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:46
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:54
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:183
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:50
@@ -504,7 +547,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:47
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:55
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:184
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:51
@@ -522,9 +565,29 @@ msgstr "Apagar"
 msgid "Are you sure you want to delete this medical record?"
 msgstr "Você tem certeza que deseja apagar este prontuário?"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:16
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:70
 msgid "Growth Data"
 msgstr "Dados de Crescimento"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:102
+msgid "Equivalent to: "
+msgstr "Equivalente a:"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:102
+msgid "year(s) and"
+msgstr "ano(s) e"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:102
+msgid "month(s)"
+msgstr "mes(es)"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:178
+msgid ""
+"Perimeter in cm. If the age is greater than 23, the head circumference is "
+"disregarded"
+msgstr ""
+"Perímetro em cm. Se a idade for maior que 23, o perímetro cefálico é "
+"desconsiderado"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:16
 msgid "Add Exam"
@@ -552,10 +615,8 @@ msgid "Postnatal data"
 msgstr "Dados do pós-natal"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:73
-#, fuzzy
-#| msgid "Description"
 msgid "Prescription"
-msgstr "Descriçao"
+msgstr "Prescrição"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:127
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:49
@@ -645,16 +706,12 @@ msgid "Update Static Data"
 msgstr "Atualizar Dados estáticos"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:5
-#, fuzzy
-#| msgid "Complaint description"
 msgid "Patient prescription"
-msgstr "Descrição da queixa"
+msgstr "Prescrição do paciente"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:49
-#, fuzzy
-#| msgid "There are no evolutions registered for this patient."
 msgid "There are no prescriptions registered for this patient."
-msgstr "Não há evoluções registradas para este paciente."
+msgstr "Não há prescrições registradas para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/patient_data.html:15
 msgid "Name: "
@@ -729,8 +786,6 @@ msgid "APGAR: "
 msgstr "APGAR:"
 
 #: drdown/medicalrecords/templates/medicalrecords/static_data.html:32
-#, fuzzy
-#| msgid "Foot test"
 msgid "Foot Test:"
 msgstr "Teste do Pézinho"
 
@@ -745,6 +800,13 @@ msgstr "Teste da orelinha:"
 #: drdown/medicalrecords/tests/test_medical_records_view.py:132
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
+
+#: drdown/medicalrecords/views/view_curves.py:47
+msgid ""
+"The patient already has a curve at this age. If wanted, just change its data."
+msgstr ""
+"O paciente já possui uma curva com essa idade. Caso queira, apenas altere "
+"tal curva."
 
 #~ msgid "cpf: "
 #~ msgstr "CPF: "
