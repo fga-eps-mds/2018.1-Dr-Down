@@ -1,7 +1,30 @@
 {% load static i18n %}
 
-<div>
+<div id="user_starting">
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'Starting' %}</h1>
+	<img src="{% static 'core/images/UsuarioNaoLogado/Botao Cadastrar.PNG' %}" width="100%" class="float-right border border-secondary">
+	<small style="max-width: 100%;">
+		{% blocktrans %}
+			Você não precisa estar cadastrado para usufruir das funcionalidades contidas na <i>nav bar</i>.
+		{% endblocktrans %}
+	</small>
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			O primeiro passo para começar a utilizar o site é se cadastrar. Para isso, clique no botão "Cadastrar" na extremidade superior, conforme indicado na figura.
+		{% endblocktrans %}
+	</p>
 
-  
+	<img src="{% static 'core/images/UsuarioNaoLogado/Cadastrar.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Ao clicar no botão você será redirecionado para essa página. Preencha os campos com suas informações e clique no botão indicado para continuar.
+		{% endblocktrans %}
+	</p>
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Feito isso, será enviado uma confirmação para o seu endereço de e-mail e você será redirecionado para a página de preenchimentos de informações pessoais. Para ser classificado como paciente, membro da equipe médica ou responsável, você deve entrar em contato com um funcionário do CRIS Down.
+		{% endblocktrans %}
+	</p>
 
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'Forum' %}</h1>
 </div>
