@@ -75,6 +75,11 @@
                 <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'account_signup' %}"><button type="button" class="btn btn-secondary text-uppercase"><strong>{% trans "Sign up" %}</strong></button></a>
               </li>
             {% endif %}
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 rounded js-scroll-trigger" href="{% url 'core:help' %}">
+                <i class="fa fa-question-circle mt-1" style="font-size:28px;" alt="{% trans 'Help' %}"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

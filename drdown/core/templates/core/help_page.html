@@ -2,6 +2,19 @@
 {% load static %}
 {% load i18n %}
 
+{% block script %}
+	{{ block.super }}
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script>
+	jQuery(document).ready(function($) {
+	    $(".scroll").click(function(event){
+	        event.preventDefault();
+	        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
+	   });
+	});
+	</script>
+{% endblock %}
+
 {% block css %}
 	{{ block.super }}
   <link href="{% static 'core/css/home.css' %}" rel="stylesheet">
@@ -12,86 +25,85 @@
 
 {% block content %}
 	<div class="row" style="max-width: 100%;">		
-		<nav class="col-md-2 d-none d-md-block sidebar border-right">
-		  <div class="sidebar-sticky">
-		    <ul class="nav flex-column">
-		    	<h1 class="text-center border-bottom pb-2 lead" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>	
-		    	{% if not user.is_authenticated %}
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#user_resgister_login"><h3 class="lead" style="font-size: 17px;">{% trans 'Register and Login' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-			      </li>
+		<div class="col-md-2 border-right">
+			<nav class="d-none d-md-block sidebar" style="position: fixed;">
+			  <div class="sidebar-sticky">
+			    <ul class="nav flex-column">
+			    	<h1 class="text-center border-bottom pb-2 lead" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>	
+			    	{% if not user.is_authenticated %}
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#user_resgister_login"><h3 class="lead" style="font-size: 17px;">{% trans 'Register and Login' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				      </li>
 
-		      {% elif user.patient %}
-		      	<li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#">{% trans '' %}</a>
-			      </li>
+			      {% elif user.patient %}
+			      	<li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+				      </li>
 
-		      {% elif user.healthteam %}
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
-			      </li>
+			      {% elif user.healthteam %}
+				      <li class="nav-item">
+				        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+				      </li>
 
-		      {% elif user.responsible %}
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
-			      </li>
+			      {% elif user.responsible %}
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+				      </li>
 
-		      {% elif user.employee %}
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link text-blue lead" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
-			      </li>
-			    {% else %}
-		    	{% endif %}
-		    </ul>
-		  </div>
-		</nav>
+			      {% elif user.employee %}
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue lead scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue lead scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+				      </li>
+				    {% else %}
+			    	{% endif %}
+			    </ul>
+			  </div>
+			</nav>
+		</div>
 
 		<div class="col">
 		<!-- Informações que qualquer usuário pode ver -->
 			{% if not user.is_authenticated  %}
-			<div id="help_user" class="">
+			<div id="help_user">
 				<div>
 					{% include "core/help_user.html" %}
 				</div>
