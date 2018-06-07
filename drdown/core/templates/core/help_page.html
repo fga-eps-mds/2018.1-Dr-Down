@@ -5,11 +5,47 @@
 {% block css %}
 	{{ block.super }}
   <link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+  <link href="{% static 'core/css/help.css' %}" rel="stylesheet">
 {% endblock css %}
 
 {% block title %}{% trans "Help" %}{% endblock title %}
 
 {% block content %}
+
+<nav class="col-md-2 d-none d-md-block sidebar h-100 border-right">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+    	<h3 class="text-center border-bottom pb-3">{% trans 'Tutorial' %}</h3>	
+      <li class="nav-item">
+        <a class="nav-link text-blue lead" href="#">{% trans 'Starting' %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-blue lead" href="#">{% trans 'Register e Login' %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-blue lead" href="#">{% trans 'Forum' %}</a>
+      </li>
+      {% if user.is_authenticated %}
+	      <li class="nav-item">
+	        <a class="nav-link text-blue lead" href="#">{% trans 'Forum' %}</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">
+	          <span data-feather="bar-chart-2"></span>
+	          Reports
+	        </a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">
+	          <span data-feather="layers"></span>
+	          Integrations
+	        </a>
+	      </li>
+	    {% endif %}
+    </ul>
+  </div>
+</nav>
+
 
 {# Informações que qualquer usuário pode ver #}
 {#% if not user.is_authenticated  %#}
