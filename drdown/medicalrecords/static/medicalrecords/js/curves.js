@@ -234,6 +234,7 @@ function defineOptions(data_type, data_array) {
     return {
         title: title,
         curveType: 'function',
+        interpolateNulls: 'true',
         hAxis: {
             title: hAxis_title,
             titleTextStyle: {color: '#333'},
