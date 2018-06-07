@@ -52,6 +52,14 @@ class TestModelRequest(TestCase):
             age=self.AGE,
         )
 
+        Curves.objects.create(
+            patient=self.patient,
+            weight=self.WEIGHT,
+            height=self.HEIGHT,
+            cephalic_perimeter=self.CEPHALIC_PERIMETER,
+            age=45,
+        )
+
     def test_curves_form_valid_create_view(self):
         """
         Test if create form is valid with all required fields
@@ -92,6 +100,17 @@ class TestModelRequest(TestCase):
 
         self.assertEquals(response.status_code, 200)
 
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+
+            ),
+            follow=True,
+            data={'username': self.patient.user.username, 'data_type': 'height','time_frame': 'years' }
+        )
+
+        self.assertEquals(response.status_code, 200)
+
     def test_data_parse_curves_weight(self):
 
         self.client.force_login(user=self.user2)
@@ -103,6 +122,16 @@ class TestModelRequest(TestCase):
             ),
             follow=True,
             data={'username': self.patient.user.username, 'data_type': 'weight','time_frame': 'months' }
+        )
+
+        self.assertEquals(response.status_code, 200)
+        
+        response = self.client.get(
+            path=reverse(
+                viewname='medicalrecords:curve_ajax',
+            ),
+            follow=True,
+            data={'username': self.patient.user.username, 'data_type': 'weight','time_frame': 'years' }
         )
 
         self.assertEquals(response.status_code, 200)
