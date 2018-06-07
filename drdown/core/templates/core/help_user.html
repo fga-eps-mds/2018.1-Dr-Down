@@ -1,7 +1,7 @@
 {% load static i18n %}
 
-<div id="user_starting">
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'Starting' %}</h1>
+<div id="user_resgister_login">
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'Register and Login' %}</h1>
 	<img src="{% static 'core/images/UsuarioNaoLogado/Botao Cadastrar.PNG' %}" width="100%" class="float-right border border-secondary">
 	<small style="max-width: 100%;">
 		{% blocktrans %}
@@ -13,7 +13,6 @@
 			O primeiro passo para começar a utilizar o site é se cadastrar. Para isso, clique no botão "Cadastrar" na extremidade superior, conforme indicado na figura.
 		{% endblocktrans %}
 	</p>
-
 	<img src="{% static 'core/images/UsuarioNaoLogado/Cadastrar.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -25,6 +24,27 @@
 			Feito isso, será enviado uma confirmação para o seu endereço de e-mail e você será redirecionado para a página de preenchimentos de informações pessoais. Para ser classificado como paciente, membro da equipe médica ou responsável, você deve entrar em contato com um funcionário do CRIS Down.
 		{% endblocktrans %}
 	</p>
+	<img src="{% static 'core/images/UsuarioNaoLogado/Entrar.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Para fazer o login com a sua conta, clique no botão "Entrar" na parte superior do site e insira os dados inseridos no cadastro.
+		{% endblocktrans %}
+	</p>
 
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'Forum' %}</h1>
+	<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Forum' %}</h1>
+	<img src="{% static 'core/images/UsuarioNaoLogado/Botao Forum.png' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			O fórum é o local de comunição entre usuários do site, onde você poderá fazer perguntas, sugerir melhorias e fazer reclamações, assim como ajudar outros usuários. Você só poderá comentar e criar posts se estiver entrado com a sua conta, explicado <a href="#login" class="text-blue"><i><u>aqui</u></i></a>. 
+		{% endblocktrans %}
+	</p>
+	<img src="{% static 'core/images/UsuarioNaoLogado/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			A primeira página do fórum lista as categorias dos posts, elas serão criadas de acordo com a necessidade do CRIS Down. Para ver os posts de uma categoria, clique sobre o título da categoria desejada.
+		{% endblocktrans %}
+	</p>
+
+
+
 </div>
