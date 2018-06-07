@@ -1,0 +1,104 @@
+{% load static i18n %}
+
+<div id="patient">
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'First Login' %}</h1>
+	<img src="{% static 'core/images/Pacientes/PrimeiroLogin.PNG' %}" width="100%" class="float-right border border-secondary">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Após efetuar o primeiro login no site Dr. Down, você será redirecionado para a página de editar o perfil, onde será necessário preencher seus dados para que seu cadastro seja completado no sistema, após inseri-los aperte no botão "Atualizar".
+  	{% endblocktrans %}
+	</p>
+	<img src="{% static 'core/images/Pacientes/Perfil.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Quando você tiver preenchido os seus dados e atualizado seu perfil, será redirecionado para a página "Meu Perfil", você poderá visualizar seus dados, editar seu perfil, mudar o e-mail cadastrado e excluir sua conta.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Requests' %}</h1>
+	<img src="{% static 'core/images/Pacientes/Pedidos.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Apertando em Pedidos na barra lateral você será redirecionado para a página que lista os pedidos de consultas feitos por você ou pelo seu responsável quando for um paciente menor de 18 anos.
+		{% endblocktrans %}
+	</p>
+  <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+    {% blocktrans %}
+      Nessa página você poderá criar um novo pedido para uma consulta, editar um pedido ou excluir um pedido.
+    {% endblocktrans %}
+  </p>
+
+	<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Marked Requests' %}</h1>
+	<img src="{% static 'core/images/Pacientes/PedidoMarcado.png' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Quando um funcionário do Cris Down marcar a consulta solicitada por você ou pelo seu responsável, você terá que apertar em "Ok" no pedido para mostrar que está ciente de que ele foi marcado pois ele será excluído da lista de pedidos.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Marked Appointments' %}</h1>
+	<img src="{% static 'core/images/Pacientes/ConsultasMarcadas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Ao clicar em "Marcadas" na aba de Consultas, você será redirecionado para a lista de consultas que foram marcadas para você por algum funcionário do Cris Down, onde poderá visualizar a especialidade, data e horário.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Medical Records' %}</h1>
+	<img src="{% static 'core/images/Pacientes/Prontuario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Ao clicar em "Prontuário" na aba Histórico Médico, você terá acesso ao seu pronturário, poderá visualizar os seus dados e os dados preenchidos pela equipe de saúde do Cris Down: evoluções, dados do pós-natal, exames médicos, prescrições, queixas e curvas de altura, peso, imc e perímetro cefálico.
+		{% endblocktrans %}
+	</p>
+  <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Também poderá ir para a Linha de Cuidado ou imprimir/salvar em PDF o seu prontuário.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Checklist' %}</h1>
+	<img src="{% static 'core/images/Pacientes/LinhaDeCuidado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+			Ao clicar em "Linha de Cuidado" você terá acesso a procedimentos que aparecerão de acordo com a sua idade. São procedimentos que um portador de Síndrome de Down tem que seguir no decorrer de sua vida, alguns são obrigatórios e ourtos são apenas quando necessário pelo paciente.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Vaccine Schedule' %}</h1>
+	<img src="{% static 'core/images/Pacientes/CalendarioDeVacinas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Ao clicar em calendário de vacinas, irá aparecer uma tabela com duas abas que indicam as vacinas por idade, a primeira aba é do nascimento até os seis anos de idade e a segunda aba é dos nove anos de idade em diante.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Vaccination Sites' %}</h1>
+	<img src="{% static 'core/images/Pacientes/LocaisDeVacinacao.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Após acessar "Locais de Vacinação" na barra lateral, você será redirecionado para uma lista de cidades do Distrito Federal, em que cada cidade dispõe de postos de saúde para vacinação.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Forum' %}</h1>
+	<img src="{% static 'core/images/Pacientes/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Ao acessar o Fórum, você será redirecionado para a página de Categorias do Fórum, apertando em alguma categoria você irá para os posts da mesma.
+		{% endblocktrans %}
+	</p>
+  <img src="{% static 'core/images/Pacientes/NovoPost.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Você terá acesso aos posts da categoria selecionada, também poderá inserir um novo post para a categoria.
+		{% endblocktrans %}
+	</p>
+  <img src="{% static 'core/images/Pacientes/NovoComentario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Na página de comentários, você terá acesso aos comentários do post selecionado e também poderá fazer novos comentários no post.
+		{% endblocktrans %}
+	</p>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Events' %}</h1>
+  <img src="{% static 'core/images/Pacientes/Eventos.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+		{% blocktrans %}
+      Em "Eventos", você terá acesso aos eventos promovidos pelo Cris Down, clicando no nome do evento aparecerá as informações.
+		{% endblocktrans %}
+	</p>
+
+</div>

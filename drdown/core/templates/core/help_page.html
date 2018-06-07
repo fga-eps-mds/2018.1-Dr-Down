@@ -24,12 +24,12 @@
 {% block title %}{% trans "Help" %}{% endblock title %}
 
 {% block content %}
-	<div class="row" style="max-width: 100%;">		
+	<div class="row" style="max-width: 100%;">
 		<div class="col-md-2 border-right">
 			<nav class="d-none d-md-block sidebar" style="position: fixed;">
 			  <div class="sidebar-sticky">
 			    <ul class="nav flex-column">
-			    	<h1 class="text-center border-bottom pb-2 lead" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>	
+			    	<h1 class="text-center border-bottom pb-2 lead" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>
 			    	{% if not user.is_authenticated %}
 				      <li class="nav-item">
 				        <a class="nav-link text-blue scroll" href="#user_resgister_login"><h3 class="lead" style="font-size: 17px;">{% trans 'Register and Login' %}</h3></a>
@@ -111,8 +111,9 @@
 		<!-- Informações que o patient pode ver -->
 			{% elif user.patient %}
 			<div id="help_patient">
+				{% include "core/help_patient.html" %}
 			</div>
-		<!--  Informações que o health_team pode ver -->	
+		<!--  Informações que o health_team pode ver -->
 			{% elif user.healthteam %}
 			<div id="help_health_team">
 			</div>
