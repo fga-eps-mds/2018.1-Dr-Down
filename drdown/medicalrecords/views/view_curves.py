@@ -68,6 +68,13 @@ class CurveDataParser(BaseViewPermissions, View):
     api_data = None
     time_frame = None
 
+    DATA_TYPE_TRANSLATIONS = {
+        'bmi': _("BMI"),
+        'weight': _("Weight"),
+        'height': _("Height"),
+        'cephalic_perimeter': _("Cephalic Perimeter"),
+    }
+
     def get(self, request, *args, **kwargs):
 
         self.patient = Patient.objects.filter(
@@ -210,6 +217,10 @@ class CurveDataParser(BaseViewPermissions, View):
 
             # the last element is the value
             graph_list[-1] = data[1]
+
+        headers = graphic[0]
+        headers[0] = _("Ages")
+        headers[-1] = self.DATA_TYPE_TRANSLATIONS[self.data_type]
 
         return self.api_data
 

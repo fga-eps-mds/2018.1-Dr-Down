@@ -186,11 +186,23 @@ function convertToArray(string) {
     return array
 }
 
-function defineOptions(data_type) {
+function defineOptions(data_type, data_array) {
+
     
-    title = data_type;
-    hAxis_title = 'Ages';
-    vAxis_title = data_type;
+    if(data_array != null){
+     
+        title = data_array[0][0];
+        hAxis_title = data_array[0][data_array[0].length - 1];
+        vAxis_title = data_array[0][0];
+
+    }else{
+   
+        title = data_type;
+        hAxis_title = "Ages";
+        vAxis_title = data_type;
+   
+    }
+
     
     var colors = {}
 
@@ -258,7 +270,7 @@ function draw_HeigthChart() {
 
     var height_array = convertToArray(height_data)
     var data_height = google.visualization.arrayToDataTable(height_array);
-    var options = defineOptions(data_type=DATA_TYPES.height)
+    var options = defineOptions(data_type=DATA_TYPES.height, data_array=height_array)
     var height_chart = new google.visualization.LineChart(document.getElementById('height_chart'));
     height_chart.draw(data_height, options);
 
@@ -268,7 +280,7 @@ function draw_WeigthChart() {
 
     var weight_array = convertToArray(weight_data)
     var data_weight = google.visualization.arrayToDataTable(weight_array);
-    var options = defineOptions(data_type=DATA_TYPES.weight)
+    var options = defineOptions(data_type=DATA_TYPES.weight, data_array=weight_array)
     var weight_chart = new google.visualization.LineChart(document.getElementById('weight_chart'));
     weight_chart.draw(data_weight, options);
 }
@@ -277,7 +289,7 @@ function draw_BMIChart() {
 
     var bmi_array = convertToArray(bmi_data)
     var data_bmi = google.visualization.arrayToDataTable(bmi_array);
-    var options = defineOptions(data_type=DATA_TYPES.bmi)
+    var options = defineOptions(data_type=DATA_TYPES.bmi, data_array=bmi_array)
     var bmi_chart = new google.visualization.LineChart(document.getElementById('bmi_chart'));
     bmi_chart.draw(data_bmi, options);
 }
@@ -286,7 +298,7 @@ function draw_PerimeterChart() {
 
     var perimeter_array = convertToArray(perimeter_data)
     var data_perimeter = google.visualization.arrayToDataTable(perimeter_array);
-    var options = defineOptions(data_type=DATA_TYPES.perimeter)
+    var options = defineOptions(data_type=DATA_TYPES.perimeter, data_array=perimeter_array)
     var perimeter_chart = new google.visualization.LineChart(document.getElementById('perimeter_chart'));
     perimeter_chart.draw(data_perimeter, options);
 
