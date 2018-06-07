@@ -43,16 +43,40 @@ class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
         context = super(ResponsibleNotificationsView, self).get_context_data(**kwargs)
 
         user = self.request.user
+        patients = user.responsible.patient_set.all()
 
-        context['appointments'] = Appointment.objects.filter(
-            patient__in=user.responsible.patient_set.all(),
-        )
+        patients_dict_schedule = {}
+        patients_dict_cancel = {}
+
+        for patient in patients:
+            query_scheduled = AppointmentRequest.objects.filter(
+                patient=patient,
+                status=AppointmentRequest.SCHEDULED,
+            )
+
+            query_cancel = AppointmentRequest.objects.filter(
+                patient=patient,
+                status=AppointmentRequest.DECLINED,
+            )
+
+
+            patients_dict_schedule[patient.user.name] = query_scheduled
+            patients_dict_cancel[patient.user.name] = query_cancel
+
+        context['patients_list_schedule'] = patients_dict_schedule
+        context['patients_list_cancel'] = patients_dict_cancel
 
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
         context['events'] = Events.objects.filter(
             date__range=(start_date, end_date)
         )
+
+        post = Post.objects.filter(
+            created_by=user
+        ).order_by('-created_at').first()
+        if post != None:
+            context['commentaries'] = post.commentaries.all()
 
         return context
 
