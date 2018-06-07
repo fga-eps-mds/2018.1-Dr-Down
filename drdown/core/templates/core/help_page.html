@@ -116,14 +116,16 @@
 		<!--  Informações que o health_team pode ver -->
 			{% elif user.healthteam %}
 			<div id="help_health_team">
+
 			</div>
 		<!-- Informações que o employee pode ver -->
 			{% elif user.employee %}
 			<div id="help_employee">
 			</div>
 		<!-- Informações que o responsible pode ver -->
-			{% elif user.resposible %}
+			{% elif user.responsible %}
 			<div id="help_responsible">
+				{% include "core/help_responsible.html" %}
 			</div>
 			{% endif %}
 		</div>
