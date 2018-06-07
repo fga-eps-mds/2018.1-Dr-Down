@@ -78,6 +78,8 @@ class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
         context['patients_list_schedule'] = patients_dict_schedule
         context['patients_list_cancel'] = patients_dict_cancel
 
+        context['patients'] = patients
+
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
         context['events'] = Events.objects.filter(
@@ -136,7 +138,9 @@ class EmployeeNotificationsView(UserPassesTestMixin,TemplateView):
 
         context = super(EmployeeNotificationsView, self).get_context_data(**kwargs)
 
-        context['requests'] = AppointmentRequest.objects.all()
+        context['requests'] = AppointmentRequest.objects.filter(
+            status=AppointmentRequest.PENDING
+        )
         user = self.request.user
 
         post = Post.objects.filter(

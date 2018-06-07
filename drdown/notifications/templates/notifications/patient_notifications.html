@@ -4,39 +4,37 @@
 {% block content %}
 
   <div class="container">
+    {% now 'm-d-Y' as today %}
+    {% if request.user.birthday ==  today%}
+      <h2 class="text-tertiary">{% trans "Procedures" %}</h2>
+
+      <div class="alert alert-success" role="alert">
+        <p>{% trans 'You are completing'%} {{ request.user.age }}. {% trans 'Are your vaccines and checklist up to date'%}? </p>
+      </div>
+
+
+    {% endif %}
 
     <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
 
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-success" role="alert">
       <p>{% trans "You have" %} {{scheduled|length}} {% trans "appointments requests accepted and not visualized" %}.</p>
     </div>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-success" role="alert">
       <p>{% trans "You have" %} {{cancel|length}} {% trans "appointments requests declined and not visualized" %}.</p>
     </div>
 
     <h2 class="text-tertiary">{% trans "Events" %}</h2>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-success" role="alert">
       <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
     </div>
 
     <h2 class="text-tertiary">{% trans "Forum" %}</h2>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="alert alert-success" role="alert">
       <p>{% trans "Your last post has" %} {{ commentaries | length }} {% trans " commentaries" %}.</p>
     </div>
 
