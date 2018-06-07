@@ -73,6 +73,14 @@ class TestViewNotifications(TestCase):
             created_by=self.user_3,
         )
 
+        self.post = Post.objects.create(
+            title="sdaj",
+            message="cdjsakj",
+            category=self.category,
+            created_at=timezone.datetime(1998, 5, 5),
+            created_by=self.user_1,
+        )
+
     def test_view_patient_notification(self):
         """
         Test go to notifications
@@ -93,6 +101,18 @@ class TestViewNotifications(TestCase):
         response = self.client.get(
             path=reverse(
                 viewname='notifications:responsible_notifications',
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_view_health_notification(self):
+        """
+        Test go to notifications
+        """
+        self.client.force_login(user=self.user_1)
+        response = self.client.get(
+            path=reverse(
+                viewname='notifications:health_team_notifications',
             )
         )
         self.assertEquals(response.status_code, 200)
