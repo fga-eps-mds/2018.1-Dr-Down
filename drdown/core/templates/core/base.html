@@ -74,6 +74,30 @@
 
         <ul class="sidebar-nav">
 
+          {% if user.patient %}
+            <li><a href="{% url 'notifications:patient_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.responsible %}
+            <li><a href="{% url 'notifications:responsible_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.healthteam%}
+            <li><a href="{% url 'notifications:health_team_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.employee %}
+            <li><a href="{% url 'notifications:employee_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
           <li><a href="{% url 'users:detail' request.user.username %}">
             {% trans "My Profile" %}
           </a></li>
