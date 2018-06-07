@@ -119,6 +119,12 @@ class AccountsTestCase(TestCase):
         patient_view = reverse('notifications:patient_notifications')
         self.assertRedirects(user_redirect, patient_view)
 
+    def test_redirect_login_sucess_responsible(self):
+        self.client.force_login(user=self.user_3)
+        user_redirect = self.client.post('/accounts/login/')
+        responsible_view = reverse('notifications:responsible_notifications')
+        self.assertRedirects(user_redirect, responsible_view)
+
     def test_redirect_not_logged_sucess(self):
         self.client.force_login(user=self.user3)
         user_redirect = self.client.post('/accounts/login/')
