@@ -21,11 +21,18 @@ class TestViewNotifications(TestCase):
         self.user_2 = self.make_user(username="teste_2")
         self.user_3 = self.make_user(username="teste_3")
         self.user_4 = self.make_user(username="teste_4")
+
+        self.responsible = Responsible.objects.create(
+            user=self.user_3,
+            cpf="065.770.581-05",
+        )
+
         self.patient = Patient.objects.create(ses="1234567",
                                               user=self.user_2,
                                               mother_name="Mãe",
                                               father_name="Pai",
                                               ethnicity=3,
+                                              responsible=self.responsible,
                                               sus_number="123456789012345",
                                               civil_registry_of_birth="12345678911",
                                               declaration_of_live_birth="12345678911")
@@ -37,11 +44,6 @@ class TestViewNotifications(TestCase):
             register_number=123456789,
             registration_state='DF',
             speciality=HealthTeam.NEUROLOGY
-        )
-
-        self.responsible = Responsible.objects.create(
-            user= self.user_3,
-            cpf="065.770.581-05",
         )
 
         self.employee = Employee.objects.create(
@@ -63,8 +65,13 @@ class TestViewNotifications(TestCase):
             created_by=self.user_2,
         )
 
-
-
+        self.post = Post.objects.create(
+            title="sdajs",
+            message="cdjsakjd",
+            category=self.category,
+            created_at=timezone.datetime(1998, 5, 5),
+            created_by=self.user_3,
+        )
 
     def test_view_patient_notification(self):
         """
@@ -74,6 +81,18 @@ class TestViewNotifications(TestCase):
         response = self.client.get(
             path=reverse(
                 viewname='notifications:patient_notifications',
+            )
+        )
+        self.assertEquals(response.status_code, 200)
+
+    def test_view_responsible_notification(self):
+        """
+        Test go to notifications
+        """
+        self.client.force_login(user=self.user_3)
+        response = self.client.get(
+            path=reverse(
+                viewname='notifications:responsible_notifications',
             )
         )
         self.assertEquals(response.status_code, 200)
