@@ -5,7 +5,11 @@ from ..models.model_curves import Curves
 from drdown.users.models.model_patient import Patient
 from django.views.generic import CreateView,  UpdateView, View
 from ..forms.curves_form import CurvesForm
-from ..views.views_base import BaseViewUrl, BaseViewPermissions
+from ..views.views_base import (
+    BaseViewUrl, 
+    BaseViewPermissions,
+    BaseViewPermissionPatientResponsible
+)
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import (
     HttpResponse,
@@ -58,7 +62,7 @@ class CurvesUpdateView(
     template_name = 'medicalrecords/medicalrecord_curves_form.html'
 
 
-class CurveDataParser(BaseViewPermissions, View):
+class CurveDataParser(BaseViewPermissionPatientResponsible, View):
 
     api_port = ":8000"
     patient = None
@@ -74,6 +78,7 @@ class CurveDataParser(BaseViewPermissions, View):
         'height': _("Height"),
         'cephalic_perimeter': _("Cephalic Perimeter"),
     }
+ 
 
     def get(self, request, *args, **kwargs):
 
