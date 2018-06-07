@@ -53,6 +53,10 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
     script does not continue
     """
     password = create_password()
+    if gender == 'F':
+        g='Female'
+    else:
+        g='Male'
     try:
         u = User.objects.create_user(
             first_name=first_name,
@@ -63,7 +67,7 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
             password=password,
             birthday=birthday,
             telephone='(22)22222-2222',
-            gender=gender,
+            gender=g,
             created_at=timezone.now(),
             updated_at=timezone.now(),
             is_active=True,
@@ -111,7 +115,7 @@ def create_patient(user, n, responsible):
             priority_pediatrics = 5,
             priority_general_practitioner = 5,
         )
-        
+
         create_curves(patients)
 
     except IntegrityError:
@@ -159,7 +163,7 @@ def create_curves(patient):
 
     max_age = random.randint(1, 18*12)
 
-    
+
     weights = [2, ]
     heights = [30, ]
     perimeters = [30, ]
@@ -169,17 +173,17 @@ def create_curves(patient):
         skip = random.randint(0, 1)
 
         if not skip:
-            
+
             weight = random.randint(
                 max(weights), max(weights) + random.randint(1, 2)
             )
             weights.append(weight)
-            
+
             height = random.randint(
                 max(heights), max(heights) + random.randint(2, 5)
             )
             heights.append(height)
-            
+
             perimeter = random.randint(
                 max(perimeters), max(perimeters) + random.randint(0, 3)
             )
@@ -190,7 +194,7 @@ def create_curves(patient):
                 weight=weight,
                 height=height,
                 age=age,
-                cephalic_perimeter=perimeter,   
+                cephalic_perimeter=perimeter,
             )
 
 def populate():
