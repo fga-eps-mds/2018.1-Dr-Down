@@ -47,7 +47,7 @@ function call_height(time_frame){
         },
         success: function(response){
             height_data = JSON.stringify(response.data);
-            
+
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(draw_HeigthChart);
         },
@@ -70,7 +70,7 @@ function call_weight(time_frame) {
         },
         success: function(response){
             weight_data = JSON.stringify(response.data);
-            
+
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(draw_WeigthChart);
         },
@@ -78,7 +78,7 @@ function call_weight(time_frame) {
             console.log(response);
         }
     });
-    
+
 }
 
 $("#height_time_select").ready(
@@ -97,7 +97,7 @@ $(document).on('change','#weight_time_select',function(){
 
 $("#weight_time_select").ready(
     function () {
-        call_weight(time_frame=$("#weight_time_select").val())    
+        call_weight(time_frame=$("#weight_time_select").val())
     }
 )
 
@@ -114,7 +114,7 @@ $("#bmi_chart").ready(
             },
             success: function(response){
                 bmi_data = JSON.stringify(response.data);
-                
+
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(draw_BMIChart);
             },
@@ -188,26 +188,26 @@ function convertToArray(string) {
 
 function defineOptions(data_type, data_array) {
 
-    
+
     if(data_array != null){
-     
+
         title = data_array[0][data_array[0].length - 1];
         hAxis_title = data_array[0][0];
         vAxis_title = data_array[0][data_array[0].length - 1];
 
     }else{
-   
+
         title = data_type;
         hAxis_title = data_type;
         vAxis_title = "Ages";
-   
+
     }
 
-    
-    var colors = {}
+
+    var series = {}
 
     if (data_type == DATA_TYPES.bmi){
-        colors = {
+        series = {
             0: { color: '#f96363' }, // red - 5%
             1: { color: '#f7ae6a' }, // orange  6- 10%
             2: { color: '#ffe06d' }, // yellow - 25%
@@ -216,10 +216,10 @@ function defineOptions(data_type, data_array) {
             5: { color: '#f7ae6a' }, // orange - 85%
             6: { color: '#f96363' }, // red - 80%
             7: { color: '#f96363'},  // extra_red - 95%
-            8: { color: '#003791'},  // blue - patient  
+            8: { color: '#003791', pointSize: '5'},  // blue - patient
         };
     }else{
-        colors = {
+        series = {
             0: { color: '#f96363' }, // red - 3%
             1: { color: '#f7ae6a' }, // orange 6- 10%
             2: { color: '#ffe06d' }, // yellow - 25%
@@ -227,7 +227,7 @@ function defineOptions(data_type, data_array) {
             4: { color: '#ffe06d' }, // yellow - 75%
             5: { color: '#f7ae6a' }, // orange - 90%
             6: { color: '#f96363' }, // red - 97%
-            7: { color: '#003791'},  // blue - patient
+            7: { color: '#003791', pointSize: '5'},  // blue - patient
         };
     }
 
@@ -253,13 +253,13 @@ function defineOptions(data_type, data_array) {
         },
         crosshair: { trigger: 'selection' },
         lineWidth: 2,
-        series: colors,
+        series: series,
         is3D: false,
     };
 }
 
 function redraw_charts() {
-    
+
     draw_HeigthChart();
     draw_WeigthChart();
     draw_BMIChart();

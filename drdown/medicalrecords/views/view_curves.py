@@ -77,6 +77,13 @@ class CurveDataParser(BaseViewPermissionPatientResponsible, View):
         'weight': _("Weight"),
         'height': _("Height"),
         'cephalic_perimeter': _("Cephalic Perimeter"),
+        'months': _("Age (in months)"),
+        'years': _("Age (in years)"),
+    }
+
+    DATA_AGE_TRANSLATIONS = {
+        'months': _(" (in months)"),
+        'years': _(" (in years)"),
     }
 
     def get(self, request, *args, **kwargs):
@@ -223,7 +230,7 @@ class CurveDataParser(BaseViewPermissionPatientResponsible, View):
             graph_list[-1] = data[1]
 
         headers = graphic[0]
-        headers[0] = _("Ages")
+        headers[0] = self.DATA_TYPE_TRANSLATIONS[self.api_time_frame()]
         headers[-1] = self.DATA_TYPE_TRANSLATIONS[self.data_type]
 
         return self.api_data

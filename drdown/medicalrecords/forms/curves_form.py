@@ -8,7 +8,7 @@ class CurvesForm(forms.ModelForm):
 
     weight = forms.FloatField(min_value=0.0)
 
-    height = forms.IntegerField(min_value=0)
+    height = forms.FloatField(min_value=0.0)
 
     cephalic_perimeter = forms.FloatField(min_value=0.0)
 

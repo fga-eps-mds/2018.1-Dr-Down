@@ -10,7 +10,9 @@
   <div class="col">
     {% if request.user.healthteam or request.user.employee%}
       <th class="col-auto" scope="col">
-        <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}" class="btn btn-success float-right" >{% trans "Add" %}</a>
+        <a href="{% url 'medicalrecords:create_curve' view.kwargs.username %}"
+           class="btn btn-success float-right" >{% trans "Add" %}
+        </a>
       </th>
     {% endif %}
     <h3 >{% trans 'Curves' %}</h3>
@@ -48,16 +50,16 @@
               <td>{{curve.weight|floatformat:2}} Kg</td>
               <td>{{curve.height}} cm</td>
               <td>
-                
+
                 {% if curve.age < 24 %}
                   {{curve.cephalic_perimeter}} cm
                 {% else %}
                   --
                 {% endif %}
-                  
+
               </td>
               <td>
-                
+
                 {% if curve.age >= 24 %}
                   {{curve.bmi|floatformat:2}}
                 {% else %}
@@ -66,7 +68,9 @@
               </td>
               {% if request.user.healthteam or request.user.employee%}
                 <td>
-                  <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}" class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}</a>
+                  <a href="{% url 'medicalrecords:update_curve' view.kwargs.username curve.pk %}"
+                     class="btn btn-secondary btn-sm ml-2" style="margin: 0px;" >{% trans "Edit" %}
+                  </a>
                 </td>
               {% endif %}
             </tr>
@@ -78,7 +82,9 @@
       {% if related_patient.curves_set.count < 1 %}
         <div class="col border rounded">
             <div class="col-auto">
-              <p class="text-secondary my-1"> {% trans "No data for this patient. The graphics will display default data." %} </p>
+              <p class="text-secondary my-1">
+                {% trans "No data for this patient. The graphics will display default data." %}
+              </p>
             </div>
         </div>
       {% endif %}
