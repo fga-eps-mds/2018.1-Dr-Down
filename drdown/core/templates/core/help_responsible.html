@@ -1,7 +1,7 @@
 {% load static i18n %}
 
 <div id="responsible">
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'First Login' %}</h1>
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;" id="responsible_first">{% trans 'First Login' %}</h1>
 	<img src="{% static 'core/images/Responsible/PrimeiroLogin.png' %}" width="100%" class="float-right border border-secondary">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -14,7 +14,7 @@
 			Quando você tiver preenchido os seus dados e atualizado seu perfil, será redirecionado para a página "Meu Perfil", você poderá visualizar seus dados, editar seu perfil, mudar o e-mail cadastrado e excluir sua conta.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Requests' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="responsible_request">{% trans 'Requests' %}</h1>
 	<img src="{% static 'core/images/Responsible/Pedidos.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -26,14 +26,14 @@
       Nessa página você poderá criar um novo pedido para uma consulta, editar um pedido ou excluir um pedido.
     {% endblocktrans %}
   </p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Marked Appointments' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="responsible_appointments">{% trans 'Marked Appointments' %}</h1>
 	<img src="{% static 'core/images/Responsible/Marcadas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
 			Ao clicar em "Marcadas" na aba de Consultas, você será redirecionado para a lista de consultas que foram marcadas para você por algum funcionário do Cris Down, onde poderá visualizar a especialidade, data e horário.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Vaccine Schedule' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="responsible_vaccine">{% trans 'Vaccine Schedule' %}</h1>
 	<img src="{% static 'core/images/Responsible/CalendarioDeVacinas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -47,7 +47,7 @@
       Após acessar "Locais de Vacinação" na barra lateral, você será redirecionado para uma lista de cidades do Distrito Federal, em que cada cidade dispõe de postos de saúde para vacinação.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Forum' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="reponsible_forum">{% trans 'Forum' %}</h1>
 	<img src="{% static 'core/images/Responsible/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -66,8 +66,8 @@
       Na página de comentários, você terá acesso aos comentários do post selecionado e também poderá fazer novos comentários no post.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Events' %}</h1>
-  <img src="{% static 'core/images/Responsible/Eventos.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="responsible_events">{% trans 'Events' %}</h1>
+  <img src="{% static 'core/images/Responsible/Eventos.png' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
       Em "Eventos", você terá acesso aos eventos promovidos pelo Cris Down, clicando no nome do evento aparecerá as informações.
