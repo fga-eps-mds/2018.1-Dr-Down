@@ -43,6 +43,18 @@
     <!-- Navigation -->
     {% block navbar %}
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div id="language" class="float-left ml-3">
+        <form action="{% url 'set_language' %}" method="post" class="row mb-2">
+          {% csrf_token %}
+          <input name="language" type="hidden" value="pt-br" />
+          <input type="submit" value="" style="background-image: url({% static 'core/images/brasil.png' %}); height: 32px; width: 53px;"/>
+        </form>
+        <form action="{% url 'set_language' %}" method="post" class="row">
+          {% csrf_token %}
+          <input name="language" type="hidden" value="en" />
+          <input type="submit" value="" style="background-image: url({% static 'core/images/eua.png' %}); height: 32px; width: 53px;"/>
+        </form>
+      </div>
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}#page-top">{% trans "Dr. Down" %}</a>
         <button class="navbar-toggler mb-3 navbar-toggler-right text-uppercase btn-secondary text-white rounded border border-secondary" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,38 +100,16 @@
       {% endfor %}
     {% endif %}
 
+
     <div class="content content-margin">
       {% block content %}
       {% endblock content %}
     </div>
-
-       <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">
-        <div class="row">
-          <div id="language" class="col-md-auto mt-4">
-            <form action="/i18n/setlang/" method="post" id="language-select">
-              <input name="next" type="hidden" value="/" />
-              {% csrf_token %}
-              <div class="row mb-2">
-                {% for lang in LANGUAGES %}
-                  {% if lang.0 == "pt-br" %}
-                    <div class="col-auto">                  
-                      <input type="radio" name="language" value="{{ lang.0 }}">
-                      <img src="{% static 'core/images/brasil.png' %}" class="ml-2">
-                    </div>
-                  {% else %}
-                    <div class="col-auto">
-                      <input type="radio" name="language" value="{{ lang.0 }}" >
-                      <img src="{% static 'core/images/eua.png' %}" class="ml-2">
-                    </div>
-                  {% endif %}
-                {% endfor %}
-              </div>
-              <input type="submit" value="Go" class="form-control" /> 
-            </form>
-          </div>
-          <div class="col-lg-8 float-left">
+       <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
             <h4 class="text-uppercase mb-4">CRIS DOWN</h4>
             <p class="lead">
               {% trans "Centro de Referência Interdisciplinar em Síndrome de Down" %}
