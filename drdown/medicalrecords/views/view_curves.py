@@ -81,11 +81,6 @@ class CurveDataParser(BaseViewPermissionPatientResponsible, View):
         'years': _("Age (in years)"),
     }
 
-    DATA_AGE_TRANSLATIONS = {
-        'months': _(" (in months)"),
-        'years': _(" (in years)"),
-    }
-
     def get(self, request, *args, **kwargs):
 
         self.patient = Patient.objects.filter(
