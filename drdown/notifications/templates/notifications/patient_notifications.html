@@ -62,7 +62,7 @@
     <h2 class="text-tertiary">{% trans "Forum" %}</h2>
     {% if commentaries|length > 0  %}
       <div class="alert alert-success" role="alert">
-        <a href="{% url 'forum:list_categories' %}" class="alert-success" >
+        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
           <p>{% trans "Your last post has" %} {{ commentaries|length }}
             {% trans " commentaries" %}.
           </p>

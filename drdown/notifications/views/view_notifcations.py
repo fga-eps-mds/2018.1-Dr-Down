@@ -41,6 +41,7 @@ class PatientNotificationsView(UserPassesTestMixin, TemplateView):
         ).order_by('-created_at').first()
         if post is not None:
             context['commentaries'] = post.commentaries.all()
+            context['post'] = post
 
         return context
 
@@ -92,6 +93,7 @@ class ResponsibleNotificationsView(UserPassesTestMixin, TemplateView):
         ).order_by('-created_at').first()
         if post is not None:
             context['commentaries'] = post.commentaries.all()
+            context['post'] = post
 
         return context
 
@@ -113,6 +115,7 @@ class HealthTeamNotificationsView(UserPassesTestMixin, TemplateView):
         ).order_by('-created_at').first()
         if post is not None:
             context['commentaries'] = post.commentaries.all()
+            context['post'] = post
 
         start_date = timezone.now()
         end_date = start_date + timedelta(days=6)
@@ -150,6 +153,7 @@ class EmployeeNotificationsView(UserPassesTestMixin, TemplateView):
         ).order_by('-created_at').first()
         if post is not None:
             context['commentaries'] = post.commentaries.all()
+            context['post'] = post
 
         return context
 
