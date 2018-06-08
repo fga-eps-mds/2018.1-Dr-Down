@@ -9,7 +9,9 @@
 
     {% if appointments|length > 0 %}
       <div class="alert alert-success" role="alert">
-        <p>{% trans "You have" %} {{appointments|length}} {% trans "appointments today" %}.</p>
+        <a href="{% url 'appointments:list_appointments' %}" class="alert-success" >
+          <p>{% trans "You have" %} {{appointments|length}} {% trans "appointments today" %}.</p>
+        </a>
       </div>
     {% else %}
       <div class="alert alert-success" role="alert">
@@ -20,9 +22,11 @@
     <h2 class="text-tertiary">{% trans "Forum" %}</h2>
     {% if commentaries|length > 0  %}
       <div class="alert alert-success" role="alert">
-        <p>{% trans "Your last post has" %} {{ commentaries|length }}
-          {% trans " commentaries" %}.
-        </p>
+        <a href="{% url 'forum:list_categories' %}" class="alert-success" >
+          <p>{% trans "Your last post has" %} {{ commentaries|length }}
+            {% trans " commentaries" %}.
+          </p>
+        </a>
       </div>
     {% else %}
       <div class="alert alert-success" role="alert">
@@ -34,7 +38,9 @@
     <h2 class="text-tertiary">{% trans "Events" %}</h2>
     {% if events|length > 0 %}
       <div class="alert alert-success" role="alert">
-        <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+        <a href="{% url 'events:list_events' %}" class="alert-success" >
+          <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+        </a>
       </div>
     {% else %}
       <div class="alert alert-success" role="alert">

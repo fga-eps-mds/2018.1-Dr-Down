@@ -118,7 +118,7 @@ msgstr "Suas vacinas e linha de cuidado estão em dia"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:23
 msgid "appointments requests accepted and not visualized"
-msgstr "pedidos de consulta aceitos e não visualizados"
+msgstr "pedidos de consulta aceitos e que ainda não foram visualizados"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:28
 msgid "There are no appointment requests scheduled and not visualized"
@@ -126,7 +126,7 @@ msgstr "Não há pedidos de consulta aceitos e que ainda não foram visualizados
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:35
 msgid "appointment requests declined and not visualized"
-msgstr "pedidos de consulta cancelados e que ainda não foramvisualizados"
+msgstr "pedidos de consulta cancelados e que ainda não foram visualizados"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:40
 msgid "There are no appointment requests declined and not visualized"
