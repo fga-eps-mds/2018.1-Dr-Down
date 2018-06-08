@@ -15,10 +15,10 @@ class AccountAdapter(DefaultAccountAdapter):
 
     def get_login_redirect_url(self, request):
             if request.user.name:
-                if hasattr(request.user,'patient'):
+                if hasattr(request.user, 'patient'):
                     return reverse(
                         viewname='notifications:patient_notifications'
-                )
+                    )
                 if hasattr(request.user, 'responsible'):
                     return reverse(
                         viewname='notifications:responsible_notifications'
@@ -26,11 +26,11 @@ class AccountAdapter(DefaultAccountAdapter):
                 if hasattr(request.user, 'healthteam'):
                     return reverse(
                         viewname='notifications:health_team_notifications'
-                )
+                    )
                 if hasattr(request.user, 'employee'):
                     return reverse(
                         viewname='notifications:employee_notifications'
-                )
+                    )
                 else:
                     return reverse(
                         viewname='users:detail',

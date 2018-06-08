@@ -9,12 +9,13 @@ from django.utils import timezone
 from django.contrib.auth.mixins import UserPassesTestMixin
 
 
-class PatientNotificationsView(UserPassesTestMixin,TemplateView):
+class PatientNotificationsView(UserPassesTestMixin, TemplateView):
     template_name = 'notifications/patient_notifications.html'
 
     def get_context_data(self, **kwargs):
 
-        context = super(PatientNotificationsView, self).get_context_data(**kwargs)
+        context = super(PatientNotificationsView,
+                        self).get_context_data(**kwargs)
 
         user = self.request.user
         context['scheduled'] = AppointmentRequest.objects.filter(
@@ -38,7 +39,7 @@ class PatientNotificationsView(UserPassesTestMixin,TemplateView):
         post = Post.objects.filter(
             created_by=user
         ).order_by('-created_at').first()
-        if post != None:
+        if post is not None:
             context['commentaries'] = post.commentaries.all()
 
         return context
@@ -47,12 +48,13 @@ class PatientNotificationsView(UserPassesTestMixin,TemplateView):
         return hasattr(self.request.user, 'patient')
 
 
-class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
+class ResponsibleNotificationsView(UserPassesTestMixin, TemplateView):
     template_name = 'notifications/responsible_notifications.html'
 
     def get_context_data(self, **kwargs):
 
-        context = super(ResponsibleNotificationsView, self).get_context_data(**kwargs)
+        context = super(ResponsibleNotificationsView,
+                        self).get_context_data(**kwargs)
 
         user = self.request.user
         patients = user.responsible.patient_set.all()
@@ -71,7 +73,6 @@ class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
                 status=AppointmentRequest.DECLINED,
             )
 
-
             patients_dict_schedule[patient.user.name] = query_scheduled
             patients_dict_cancel[patient.user.name] = query_cancel
 
@@ -89,7 +90,7 @@ class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
         post = Post.objects.filter(
             created_by=user
         ).order_by('-created_at').first()
-        if post != None:
+        if post is not None:
             context['commentaries'] = post.commentaries.all()
 
         return context
@@ -98,18 +99,19 @@ class ResponsibleNotificationsView(UserPassesTestMixin,TemplateView):
         return hasattr(self.request.user, 'responsible')
 
 
-class HealthTeamNotificationsView(UserPassesTestMixin,TemplateView):
+class HealthTeamNotificationsView(UserPassesTestMixin, TemplateView):
     template_name = 'notifications/health_team_notifications.html'
 
     def get_context_data(self, **kwargs):
 
-        context = super(HealthTeamNotificationsView, self).get_context_data(**kwargs)
+        context = super(HealthTeamNotificationsView,
+                        self).get_context_data(**kwargs)
 
         user = self.request.user
         post = Post.objects.filter(
             created_by=user
         ).order_by('-created_at').first()
-        if post != None:
+        if post is not None:
             context['commentaries'] = post.commentaries.all()
 
         start_date = timezone.now()
@@ -130,13 +132,13 @@ class HealthTeamNotificationsView(UserPassesTestMixin,TemplateView):
         return hasattr(self.request.user, 'healthteam')
 
 
-class EmployeeNotificationsView(UserPassesTestMixin,TemplateView):
+class EmployeeNotificationsView(UserPassesTestMixin, TemplateView):
     template_name = 'notifications/employee_notifications.html'
-
 
     def get_context_data(self, **kwargs):
 
-        context = super(EmployeeNotificationsView, self).get_context_data(**kwargs)
+        context = super(EmployeeNotificationsView,
+                        self).get_context_data(**kwargs)
 
         context['requests'] = AppointmentRequest.objects.filter(
             status=AppointmentRequest.PENDING
@@ -146,9 +148,8 @@ class EmployeeNotificationsView(UserPassesTestMixin,TemplateView):
         post = Post.objects.filter(
             created_by=user
         ).order_by('-created_at').first()
-        if post != None:
+        if post is not None:
             context['commentaries'] = post.commentaries.all()
-
 
         return context
 
