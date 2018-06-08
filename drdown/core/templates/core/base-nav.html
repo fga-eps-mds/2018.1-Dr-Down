@@ -93,22 +93,33 @@
       {% endblock content %}
     </div>
 
-    <form action="/i18n/setlang/" method="post" id="language-select">
-      <input name="next" type="hidden" value="/" />
-           {% csrf_token %}
-           <select name="language">
-               {% for lang in LANGUAGES %}
-                   <option value="{{ lang.0 }}">{{ lang.1 }}</option>
-               {% endfor %}
-           </select>
-      <input type="submit" value="Go" /> 
-    </form>
-    
-        <!-- Footer -->
+       <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">
-       <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
+        <div class="row">
+          <div id="language" class="col-md-auto mt-4">
+            <form action="/i18n/setlang/" method="post" id="language-select">
+              <input name="next" type="hidden" value="/" />
+              {% csrf_token %}
+              <div class="row mb-2">
+                {% for lang in LANGUAGES %}
+                  {% if lang.0 == "pt-br" %}
+                    <div class="col-auto">                  
+                      <input type="radio" name="language" value="{{ lang.0 }}">
+                      <img src="{% static 'core/images/brasil.png' %}" class="ml-2">
+                    </div>
+                  {% else %}
+                    <div class="col-auto">
+                      <input type="radio" name="language" value="{{ lang.0 }}" >
+                      <img src="{% static 'core/images/eua.png' %}" class="ml-2">
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <input type="submit" value="Go" class="form-control" /> 
+            </form>
+          </div>
+          <div class="col-lg-8 float-left">
             <h4 class="text-uppercase mb-4">CRIS DOWN</h4>
             <p class="lead">
               {% trans "Centro de Referência Interdisciplinar em Síndrome de Down" %}
