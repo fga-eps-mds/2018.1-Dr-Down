@@ -92,4 +92,9 @@ urlpatterns = [
         view=view_curves.CurvesUpdateView.as_view(),
         name='update_curve'
     ),
+    url(
+        regex=r'curves/ajax/$',
+        view=view_curves.CurveDataParser.as_view(),
+        name='curve_ajax'
+    ),
 ]
