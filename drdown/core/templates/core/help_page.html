@@ -54,16 +54,19 @@
 
 			      {% elif user.healthteam %}
 				      <li class="nav-item">
-				        <a class="nav-link text-blue" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+				        <a class="nav-link text-blue" href="#health_forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+				        <a class="nav-link text-blue scroll" href="#heath_patients"><h3 class="lead" style="font-size: 17px;">{% trans 'Patients' %}</h3></a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				        <a class="nav-link text-blue scroll" href="#health_schedule"><h3 class="lead" style="font-size: 17px;">{% trans 'Schedule' %}</h3></a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link text-blue scroll" href="#"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+				        <a class="nav-link text-blue scroll" href="#health_medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link text-blue scroll" href="#health_events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
 				      </li>
 
 			      {% elif user.responsible %}
@@ -116,7 +119,7 @@
 		<!--  Informações que o health_team pode ver -->
 			{% elif user.healthteam %}
 			<div id="help_health_team">
-
+				{% include "core/help_health_team.html" %}
 			</div>
 		<!-- Informações que o employee pode ver -->
 			{% elif user.employee %}
