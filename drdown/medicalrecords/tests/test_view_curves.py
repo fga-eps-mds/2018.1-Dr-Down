@@ -1,10 +1,15 @@
+from django.db import IntegrityError
+from django.db.transaction import TransactionManagementError
 from test_plus.test import TestCase
+from django.contrib.messages import get_messages
 from django.test.client import Client
 from ..models.model_curves import Curves
 from ..views.view_curves import CurveDataParser
 from drdown.users.models.model_patient import Patient
 from drdown.users.models.model_health_team import HealthTeam
 from django.urls import reverse
+from django.db import transaction
+from django.utils.translation import ugettext_lazy as _
 
 
 class TestModelRequest(TestCase):
@@ -125,7 +130,7 @@ class TestModelRequest(TestCase):
         )
 
         self.assertEquals(response.status_code, 200)
-        
+
         response = self.client.get(
             path=reverse(
                 viewname='medicalrecords:curve_ajax',
@@ -192,16 +197,16 @@ class TestModelRequest(TestCase):
         self.client.force_login(user=self.health_team.user)
 
         data = {
-            'height': self.HEIGHT,
-            'weight': self.WEIGHT,
-            'age': self.AGE,
-            'cephalic_perimeter': self.CEPHALIC_PERIMETER,
+            'height': 20,
+            'weight': 20,
+            'age': 20,
+            'cephalic_perimeter': 20,
         }
 
         response = self.client.post(
             path=reverse(
                 'medicalrecords:create_curve',
-                kwargs={'username': self.patient.user.username}
+                kwargs={'username': self.user.username}
             ),
             data=data,
             follow=True
@@ -209,16 +214,17 @@ class TestModelRequest(TestCase):
 
         self.assertEquals(response.status_code, 200)
 
-        response = self.client.post(
-            path=reverse(
-                'medicalrecords:create_curve',
-                kwargs={'username': self.patient.user.username}
-            ),
-            data=data,
-            follow=True
-        )
-
-        self.assertEquals(response.status_code, 200)
+        with self.assertRaises(Exception) as raised:
+            with transaction.atomic():
+                response = self.client.post(
+                    path=reverse(
+                        'medicalrecords:create_curve',
+                        kwargs={'username': self.user.username}
+                    ),
+                    data=data,
+                    follow=True
+                )
+        self.assertEqual(TransactionManagementError, type(raised.exception))
 
     def test_curves_validation(self):
         """
