@@ -23,10 +23,9 @@ urlpatterns = [
         name='health_team_notifications'
     ),
     url(
-            regex=r'^employee/$',
+        regex=r'^employee/$',
         view=EmployeeNotificationsView.as_view(),
         name='employee_notifications'
     ),
 
 ]
-
