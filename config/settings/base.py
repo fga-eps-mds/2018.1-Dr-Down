@@ -28,6 +28,7 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 TIME_ZONE = 'America/Sao_Paulo'
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'pt-br'
+LANGUAGES = (('en', ('English')), ('pt-br', ('Portuguese')),)
 LOCALE_PATHS = (
     str(ROOT_DIR.path('locale')),
 )
@@ -144,9 +145,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

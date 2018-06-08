@@ -60,7 +60,10 @@ class MedicalRecordsList(UserPassesTestMixin, ListView):
         complaints = Complaint.objects.filter(patient=patient)
         risk = Risk.objects.filter(patient=patient)
 
+        curves = patient.curves_set.all().order_by('age')
+
         context['complaints'] = complaints
+        context['curves'] = curves
         context['medicines'] = medicines
         context['staticdata'] = staticdata
 

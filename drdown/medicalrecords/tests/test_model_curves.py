@@ -2,10 +2,9 @@ from test_plus.test import TestCase
 from django.test.client import Client
 from ..models.model_curves import Curves
 from drdown.users.models.model_patient import Patient
-from django.urls import reverse
 
 
-class TestModelRequest(TestCase):
+class TestModelCurves(TestCase):
 
     WEIGHT = 10
     HEIGHT = 123
