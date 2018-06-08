@@ -88,11 +88,22 @@
       {% endfor %}
     {% endif %}
 
-
     <div class="content content-margin">
       {% block content %}
       {% endblock content %}
     </div>
+
+    <form action="/i18n/setlang/" method="post" id="language-select">
+      <input name="next" type="hidden" value="/" />
+           {% csrf_token %}
+           <select name="language">
+               {% for lang in LANGUAGES %}
+                   <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+               {% endfor %}
+           </select>
+      <input type="submit" value="Go" /> 
+    </form>
+    
         <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">
