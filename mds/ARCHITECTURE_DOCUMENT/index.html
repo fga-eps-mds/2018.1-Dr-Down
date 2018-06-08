@@ -197,6 +197,10 @@
                     
     <a class="" href="../../eps/usability_test/relatorio_03/">Relatório 03</a>
                 </li>
+                <li class="">
+                    
+    <a class="" href="../../eps/usability_test/relatorio_04/">Relatório 04</a>
+                </li>
     </ul>
 	    </li>
           
@@ -560,6 +564,12 @@
 <td>Inserindo componentes para as sprints 09 a 12</td>
 <td>Victor Arnaud</td>
 </tr>
+<tr>
+<td>26/05/2018</td>
+<td>2.3.0</td>
+<td>Documentando componentes/apis/microsserviços utilizados e descartados</td>
+<td>Victor Arnaud</td>
+</tr>
 </tbody>
 </table>
 <h2 id="1-introducao">1: Introdução</h2>
@@ -633,7 +643,7 @@
 <h3 id="22-django">2.2 Django</h3>
 <p>O Dr.Down será uma aplicação web desenvolvida a partir do framework Django, o qual é escrito em Python. O padrão arquitetural utilizado pelas aplicações do Django é a MVT (Model, View e Template), que é derivada da do padrão arquitetural MVC (Model, View e Controller). De acordo com o DjangoBook, a parte de controller, em Django, é tratada pelo próprio framework. Portanto a View do MVT desempenha um papel próximo, mas não igual ao controller.</p>
 <p>Como citado acima, cada aplicação do Django pode ser considerada um componente caso siga todas as características citadas e esteja empacotado e mantido no <strong>pypi</strong>. Para maiores informações: <a href="https://docs.djangoproject.com/pt-br/2.0/intro/reusable-apps/">Tutorial avançado: Como escrever aplicações reutilizáveis</a></p>
-<p>Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes foram selecionados para complementar o projeto.</p>
+<p>Abaixo explica-se o funcionamento da arquitetura interna de cada aplicação do Django e quais componentes, APIS e microsserviços foram selecionados para complementar o projeto.</p>
 <h4 id="221-model">2.2.1 Model</h4>
 <p>É uma representação do banco de dados. Além disso, também inclui características, relações e outros comportamentos que os dados podem assumir.</p>
 <p>O Django inclui varias ferramentas para automatizar tanto quanto possível o processo e a manipulação do banco de dados, de forma que o desenvolvedor não precise se preocupar tanto com o banco de dados, o que ajuda no foco do desenvolvimento da aplicação de forma mais rápida.</p>
@@ -724,15 +734,15 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/pinax/pinax-calendars/">pinax-calendars</a></td>
-<td>Aplicação django para publicar eventos como um calendario</td>
-<td align="center">A decidir</td>
-<td>A aplicação ainda está sendo avaliada pela equipe.</td>
+<td>Aplicação Django para publicar eventos como um calendario</td>
+<td align="center">Não</td>
+<td>A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/llazzaro/django-scheduler">django-scheduler</a></td>
-<td>Uma aplicação de calendario do django</td>
-<td align="center">A decidir</td>
-<td>A aplicação ainda está sendo avaliada pela equipe.</td>
+<td>Uma aplicação de calendario do Django</td>
+<td align="center">Não</td>
+<td>A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/pinax/pinax-notifications/">pinax-notifications</a></td>
@@ -755,7 +765,7 @@
 <tbody>
 <tr>
 <td><a href="https://github.com/timmyomahony/django-pagedown">django-pagedown</a></td>
-<td>Um aplicativo django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário django, seja em um aplicativo personalizado ou no Django Admin.</td>
+<td>Um aplicativo Django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário Django, seja em um aplicativo personalizado ou no Django Admin.</td>
 <td align="center">Sim</td>
 <td>O componente está sendo usado no prontuário</td>
 </tr>
@@ -766,22 +776,34 @@
 <td>O componente está sendo usado no prontuário</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Edinburgh-Genome-Foundry/pdf_reports">pdf-report</a></td>
-<td>Biblioteca Python e tema CSS para gerar relatórios em PDF a partir de HTML/Pug</td>
-<td align="center">Não</td>
-<td>A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizat esse component.</td>
-</tr>
-<tr>
 <td><a href="https://pypi.org/project/reportlab/">reportlab</a></td>
 <td>O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.</td>
-<td align="center">Sim</td>
-<td>Recomendação da documentação do <a href="https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/">django</a>, será utilizado para gerar os PDFs e gráficos do projeto</td>
+<td align="center">Não</td>
+<td>Foi recomendado na documentação do <a href="https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/">Django</a>, utilizar essa biblioteca para gerar os PDFs e gráficos do projeto. Porém a equipe achou uma maneira alternativa de faze-lo</td>
 </tr>
 <tr>
 <td><a href="https://github.com/nigma/django-easy-pdf">django-easy-pdf</a></td>
 <td>Visualização de PDF de uma maneira fácil</td>
 <td align="center">Não</td>
-<td>A documentação do Django aconselha utilizar o ReportLab, logo iremos utilizar esse component.</td>
+<td>A documentação do Django aconselha utilizar o ReportLab.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Kozea/WeasyPrint">WeasyPrint</a></td>
+<td>O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.</td>
+<td align="center">Não</td>
+<td>Foi escolhido pela equipe o componente django-easy-pdf</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Dr-Down/sdcurve">sdcurve</a></td>
+<td>Microsserviço de curva de crescimento, altura, peso, EMC e perímetro encefálico para crianças com Síndrome de Down</td>
+<td align="center">Sim</td>
+<td>Requisitos do cliente.</td>
+</tr>
+<tr>
+<td><a href="https://developers.google.com/chart/">Google Charts</a></td>
+<td>API de plotagem de gráficos da google</td>
+<td align="center">Sim</td>
+<td>Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down</td>
 </tr>
 </tbody>
 </table>
@@ -848,8 +870,14 @@
 <tr>
 <td><a href="https://github.com/anymail/django-anymail">django-anymail</a></td>
 <td>Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais</td>
-<td align="center">A decidir</td>
-<td>A equipe está avaliando a possibilidade de utiliza-lo.</td>
+<td align="center">Não</td>
+<td>Foi utilizando o serviço ao invés do componente</td>
+</tr>
+<tr>
+<td><a href="https://github.com/httplib2/httplib2">Httplib2</a></td>
+<td>Biblioteca cliente HTTP pequena e rápida para Python. Possui conexões persistentes, cache, suporte ao Appengine.</td>
+<td align="center">Sim</td>
+<td>Usado para fazer comunicações via requisições HTTP</td>
 </tr>
 </tbody>
 </table>
