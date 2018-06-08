@@ -13,7 +13,6 @@
           <p>{{ patient.user.name }} {% trans 'is completing'%} {{ request.user.age }} {% trans 'years old' %}. {% trans 'Are vaccines and checklist up to date'%}? </p>
         </div>
 
-
       {% endif %}
     {% endfor %}
 
@@ -22,27 +21,56 @@
 
     <div class="alert alert-success" role="alert">
       {% for name, appointments in patients_list_schedule.items %}
-        <p>{{ name }} {% trans "has" %} {{ appointments | length }} {% trans "appointments requests accepted and not visualized" %}.</p>
+        {% if appointments|length > 0 %}
+          <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+            {% trans "appointment requests accepted and not visualized" %}.
+          </p>
+        {% else %}
+          <p>
+            {{ name }} {% trans "has no appointment requests accepted and not visualized" %}.
+          </p>
+        {% endif %}
       {% endfor %}
     </div>
 
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-danger" role="alert">
       {% for name, appointments in patients_list_cancel.items %}
-        <p>{{ name }} {% trans "has" %} {{ appointments | length }} {% trans "appointments requests declined and not visualized" %}.</p>
+        {% if appointments|length %}
+          <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+            {% trans "appointments requests declined and not visualized" %}.
+          </p>
+        {% else %}
+          <p>
+            {{ name }} {% trans "has no appointment requests declined and not visualized" %}.
+          </p>
+        {% endif %}
       {% endfor %}
     </div>
 
     <h2 class="text-tertiary">{% trans "Forum" %}</h2>
-
-    <div class="alert alert-success" role="alert">
-      <p>{% trans "Your last post has" %} {{ commentaries | length }} {% trans " commentaries" %}.</p>
-    </div>
+    {% if commentaries|length > 0  %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has" %} {{ commentaries|length }}
+          {% trans " commentaries" %}.
+        </p>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has no commentaries" %}.
+        </p>
+      </div>
+    {% endif %}
 
     <h2 class="text-tertiary">{% trans "Events" %}</h2>
-
-    <div class="alert alert-success" role="alert">
-      <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
-    </div>
+    {% if events|length > 0 %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are no events on the next 7 days" %}.</p>
+      </div>
+    {% endif %}
 
 
 

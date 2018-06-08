@@ -7,15 +7,32 @@
 
     <h2 class="text-tertiary">{% trans "Requests" %}</h2>
 
-    <div class="alert alert-success" role="alert">
-      <p>{% trans "You have" %} {{requests|length}} {% trans "appointments requests" %}.</p>
-    </div>
+    {% if requests|length > 0 %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are" %} {{requests|length}}
+          {% trans "appointment requests not answered" %}.
+        </p>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are no appointment requests" %}.</p>
+      </div>
+    {% endif %}
 
     <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+    {% if commentaries|length > 0  %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has" %} {{ commentaries|length }}
+          {% trans " commentaries" %}.
+        </p>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has no commentaries" %}.
+        </p>
+      </div>
+    {% endif %}
 
-    <div class="alert alert-success" role="alert">
-      <p>{% trans "Your last post has" %} {{ commentaries | length }} {% trans " commentaries" %}.</p>
-    </div>
 
   </div>
 
