@@ -1,7 +1,7 @@
 {% load static i18n %}
 
 <div id="patient">
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;">{% trans 'First Login' %}</h1>
+	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;" id="patient_first">{% trans 'First Login' %}</h1>
 	<img src="{% static 'core/images/Patient/PrimeiroLogin.PNG' %}" width="100%" class="float-right border border-secondary">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -14,7 +14,7 @@
 			Quando você tiver preenchido os seus dados e atualizado seu perfil, será redirecionado para a página "Meu Perfil", você poderá visualizar seus dados, editar seu perfil, mudar o e-mail cadastrado e excluir sua conta.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Requests' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_request">{% trans 'Requests' %}</h1>
 	<img src="{% static 'core/images/Patient/Pedidos.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -26,22 +26,20 @@
       Nessa página você poderá criar um novo pedido para uma consulta, editar um pedido ou excluir um pedido.
     {% endblocktrans %}
   </p>
-
-	<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Marked Requests' %}</h1>
-	<img src="{% static 'core/images/Patient/PedidoMarcado.png' %}" width="100%" class="float-right border border-secondary mb-4">
+	<img src="{% static 'core/images/Patient/PedidoMarcado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
 			Quando um funcionário do Cris Down marcar a consulta solicitada por você ou pelo seu responsável, você terá que apertar em "Ok" no pedido para mostrar que está ciente de que ele foi marcado pois ele será excluído da lista de pedidos.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Marked Appointments' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_appointments">{% trans 'Appointments' %}</h1>
 	<img src="{% static 'core/images/Patient/ConsultasMarcadas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
 			Ao clicar em "Marcadas" na aba de Consultas, você será redirecionado para a lista de consultas que foram marcadas para você por algum funcionário do Cris Down, onde poderá visualizar a especialidade, data e horário.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Medical Records' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_medical">{% trans 'Medical Records' %}</h1>
 	<img src="{% static 'core/images/Patient/Prontuario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -53,14 +51,14 @@
       Também poderá ir para a Linha de Cuidado ou imprimir/salvar em PDF o seu prontuário.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Checklist' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_checklist">{% trans 'Checklist' %}</h1>
 	<img src="{% static 'core/images/Patient/LinhaDeCuidado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
 			Ao clicar em "Linha de Cuidado" você terá acesso a procedimentos que aparecerão de acordo com a sua idade. São procedimentos que um portador de Síndrome de Down tem que seguir no decorrer de sua vida, alguns são obrigatórios e ourtos são apenas quando necessário pelo paciente.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Vaccine Schedule' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_vaccine">{% trans 'Vaccine Schedule' %}</h1>
 	<img src="{% static 'core/images/Patient/CalendarioDeVacinas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -74,7 +72,7 @@
       Após acessar "Locais de Vacinação" na barra lateral, você será redirecionado para uma lista de cidades do Distrito Federal, em que cada cidade dispõe de postos de saúde para vacinação.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Forum' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_forum">{% trans 'Forum' %}</h1>
 	<img src="{% static 'core/images/Patient/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
@@ -93,7 +91,7 @@
       Na página de comentários, você terá acesso aos comentários do post selecionado e também poderá fazer novos comentários no post.
 		{% endblocktrans %}
 	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Events' %}</h1>
+  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_events">{% trans 'Events' %}</h1>
   <img src="{% static 'core/images/Patient/Eventos.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
 	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 		{% blocktrans %}
