@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-07 23:41+0000\n"
+"POT-Creation-Date: 2018-06-08 00:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: drdown/notifications/templates/notifications/employee_notifications.html:8
 msgid "Requests"
 msgstr "Pedidos"
@@ -44,7 +45,7 @@ msgstr "Fórum"
 #: drdown/notifications/templates/notifications/patient_notifications.html:38
 #: drdown/notifications/templates/notifications/responsible_notifications.html:38
 msgid "Your last post has"
-msgstr "O seu ultimo post contém"
+msgstr "O seu último post contém"
 
 #: drdown/notifications/templates/notifications/employee_notifications.html:17
 #: drdown/notifications/templates/notifications/health_team_notifications.html:17
@@ -79,7 +80,7 @@ msgstr "Há"
 #: drdown/notifications/templates/notifications/patient_notifications.html:32
 #: drdown/notifications/templates/notifications/responsible_notifications.html:44
 msgid "events on the next 7 days"
-msgstr "eventos nos próximos 7 dias."
+msgstr "eventos nos próximos 7 dias"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:9
 #: drdown/notifications/templates/notifications/responsible_notifications.html:10
@@ -92,17 +93,17 @@ msgstr "Você está completando"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:12
 msgid "Are your vaccines and checklist up to date"
-msgstr "Suas vacinas e linha de cuidado estão em dias"
+msgstr "Suas vacinas e linha de cuidado estão em dia"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:22
 #: drdown/notifications/templates/notifications/responsible_notifications.html:25
 msgid "appointments requests accepted and not visualized"
-msgstr "pedidos de consultas aceitas e não visualizadas"
+msgstr "pedidos de consulta aceitos e não visualizados"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:26
 #: drdown/notifications/templates/notifications/responsible_notifications.html:31
 msgid "appointments requests declined and not visualized"
-msgstr "pedidos de consultas canceladas e não visualizadas"
+msgstr "pedidos de consulta cancelados e não visualizados"
 
 #: drdown/notifications/templates/notifications/responsible_notifications.html:13
 msgid "is completing"
@@ -114,7 +115,7 @@ msgstr "anos"
 
 #: drdown/notifications/templates/notifications/responsible_notifications.html:13
 msgid "Are vaccines and checklist up to date"
-msgstr "Suas vacinas e linha de cuidado estão em dias"
+msgstr "Suas vacinas e linha de cuidado estão em dia"
 
 #: drdown/notifications/templates/notifications/responsible_notifications.html:25
 #: drdown/notifications/templates/notifications/responsible_notifications.html:31
