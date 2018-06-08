@@ -182,7 +182,7 @@
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
         <ul>
-          <div id="language" class="row mb-3 ml-2 float-left" style="position: absolute; bottom: 0; left: 0px;">
+          <div id="language" class="row mb-4 ml-2 float-left" style="position: absolute; bottom: 0; left: 0px;">
             <form action="{% url 'set_language' %}" method="post" class="col-1 mr-2">
               {% csrf_token %}
               <input name="language" type="hidden" value="pt-br" />
