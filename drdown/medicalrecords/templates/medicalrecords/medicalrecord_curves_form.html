@@ -16,18 +16,18 @@
         function updateCephalicPerimeter()
         {
             $("#cephalic_perimeter").removeAttr('hidden');
-            
+
             var num = parseInt($("#age").val());
-            
+
             if (num >= 24){
               var total = 0;
               $("#cephalic_perimeter").prop("hidden", true);
             }
-            
+
             if (num < 24){
               $("#cephalic_perimeter").val("")
             }
-            
+
             var total = total;
             $("#cephalic_perimeter").val(total);
         }
@@ -35,7 +35,7 @@
         $(document).on("change, keyup", "#age", updateCephalicPerimeter);
     });
 
-  
+
   </script>
 
   <script>
@@ -107,7 +107,7 @@
                 <div class="row">
                   <div class="col ml-3">
                     {% if object.age %}
-                       <input class="span4 input-big" disabled id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()"  value="{{ object.age }}"/>
+                       <input class="span4 input-big no" readonly id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()"  value="{{ object.age }}"/>
                     {% else %}
                        <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()" onkeypress="return isNumberKey(event)"  />
                     {% endif%}
@@ -186,8 +186,10 @@
                 </div>
 
                 <div class="col">
-                    {% if object.cephalic_perimeter %}
-                      <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter" value="{{object.cephalic_perimeter}}"/>
+                    {% if object.age > 23  %}
+                      <input class="span4 input-big no" readonly id="cephalic_perimeter" name="cephalic_perimeter" value="0"/>
+                    {% elif object.age < 24  %}
+                      {{ form.cephalic_perimeter }}
                     {% else %}
                       <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter" value=""/>
                     {% endif %}
