@@ -13,8 +13,11 @@ ALLOWED_HOSTS = [
     "localhost",
     "0.0.0.0",
     "127.0.0.1",
+    "104.236.68.6",
     "drdown-homolog.ml",
     "drdown.ml",
+    "www.drdown-homolog.ml",
+    "www.drdown.ml",
 ]
 
 # CACHES
