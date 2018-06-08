@@ -16,28 +16,30 @@ class AccountAdapter(DefaultAccountAdapter):
     def get_login_redirect_url(self, request):
             if request.user.name:
                 if hasattr(request.user, 'patient'):
-                    return reverse(
+                    path = reverse(
                         viewname='notifications:patient_notifications'
                     )
-                if hasattr(request.user, 'responsible'):
-                    return reverse(
+                elif hasattr(request.user, 'responsible'):
+                    path = reverse(
                         viewname='notifications:responsible_notifications'
                     )
-                if hasattr(request.user, 'healthteam'):
-                    return reverse(
+                elif hasattr(request.user, 'healthteam'):
+                    path = reverse(
                         viewname='notifications:health_team_notifications'
                     )
-                if hasattr(request.user, 'employee'):
-                    return reverse(
+                elif hasattr(request.user, 'employee'):
+                    path = reverse(
                         viewname='notifications:employee_notifications'
                     )
                 else:
-                    return reverse(
+                    path = reverse(
                         viewname='users:detail',
                         kwargs={'username': request.user.username}
                     )
             else:
-                return reverse('users:update')
+                path = reverse('users:update')
+
+            return path
 
 
 class SocialAccountAdapter(DefaultSocialAccountAdapter):
