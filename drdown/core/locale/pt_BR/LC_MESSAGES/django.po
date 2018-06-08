@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-01 21:41+0000\n"
+"POT-Creation-Date: 2018-06-08 11:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,94 +329,101 @@ msgstr ""
 "atualizar a página."
 
 #: drdown/core/templates/core/base-nav.html:6
-#: drdown/core/templates/core/base-nav.html:47
+#: drdown/core/templates/core/base-nav.html:48
 #: drdown/core/templates/core/base.html:6
 #: drdown/core/templates/core/home.html:20
 msgid "Dr. Down"
 msgstr "Dr. Down"
 
-#: drdown/core/templates/core/base-nav.html:49
+#: drdown/core/templates/core/base-nav.html:50
 msgid "Menu"
 msgstr "Menu"
 
-#: drdown/core/templates/core/base-nav.html:55
+#: drdown/core/templates/core/base-nav.html:56
 msgid "Home"
 msgstr "Início"
 
-#: drdown/core/templates/core/base-nav.html:58
+#: drdown/core/templates/core/base-nav.html:59
 msgid "Down's Syndrome"
 msgstr "Síndrome de Down"
 
-#: drdown/core/templates/core/base-nav.html:61
-#: drdown/core/templates/core/base.html:179
+#: drdown/core/templates/core/base-nav.html:62
+#: drdown/core/templates/core/base.html:203
 msgid "Forums"
 msgstr "Fórum"
 
-#: drdown/core/templates/core/base-nav.html:72
+#: drdown/core/templates/core/base-nav.html:73
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base-nav.html:75
+#: drdown/core/templates/core/base-nav.html:76
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base-nav.html:103
+#: drdown/core/templates/core/base-nav.html:104
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
-#: drdown/core/templates/core/base-nav.html:104
+#: drdown/core/templates/core/base-nav.html:105
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
-#: drdown/core/templates/core/base-nav.html:105
+#: drdown/core/templates/core/base-nav.html:106
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
-#: drdown/core/templates/core/base-nav.html:113
-#: drdown/core/templates/core/base.html:228
+#: drdown/core/templates/core/base-nav.html:114
+#: drdown/core/templates/core/base.html:252
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
-#: drdown/core/templates/core/base.html:78
+#: drdown/core/templates/core/base.html:79
+#: drdown/core/templates/core/base.html:85
+#: drdown/core/templates/core/base.html:91
+#: drdown/core/templates/core/base.html:97
+msgid "Notifications"
+msgstr "Notificações"
+
+#: drdown/core/templates/core/base.html:102
 msgid "My Profile"
 msgstr "Meu Perfil"
 
-#: drdown/core/templates/core/base.html:84
-#: drdown/core/templates/core/base.html:99
+#: drdown/core/templates/core/base.html:108
+#: drdown/core/templates/core/base.html:123
 msgid "Appointments"
 msgstr "Consultas"
 
-#: drdown/core/templates/core/base.html:88
+#: drdown/core/templates/core/base.html:112
 msgid "Scheduled"
 msgstr "Marcado"
 
-#: drdown/core/templates/core/base.html:91
+#: drdown/core/templates/core/base.html:115
 msgid "Requests"
 msgstr "Pedidos"
 
-#: drdown/core/templates/core/base.html:102
+#: drdown/core/templates/core/base.html:126
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:105
+#: drdown/core/templates/core/base.html:129
 msgid "My Schedule"
 msgstr "Minha Agenda"
 
-#: drdown/core/templates/core/base.html:111
+#: drdown/core/templates/core/base.html:135
 msgid "Medical History"
 msgstr "Histórico Médico"
 
-#: drdown/core/templates/core/base.html:115
+#: drdown/core/templates/core/base.html:139
 msgid "Medical Record"
 msgstr "Prontuário"
 
-#: drdown/core/templates/core/base.html:118
+#: drdown/core/templates/core/base.html:142
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
-#: drdown/core/templates/core/base.html:124
-#: drdown/core/templates/core/base.html:160
+#: drdown/core/templates/core/base.html:148
+#: drdown/core/templates/core/base.html:184
 #: drdown/core/templates/core/vaccine_schedule.html:28
 #: drdown/core/templates/core/vaccine_schedule.html:225
 #: drdown/core/templates/core/vaccine_schedule.html:258
@@ -424,46 +431,46 @@ msgstr "Linha de Cuidado"
 msgid "Vaccines"
 msgstr "Vacinas"
 
-#: drdown/core/templates/core/base.html:128
-#: drdown/core/templates/core/base.html:164
+#: drdown/core/templates/core/base.html:152
+#: drdown/core/templates/core/base.html:188
 msgid "Calendar"
 msgstr "Calendário"
 
-#: drdown/core/templates/core/base.html:131
-#: drdown/core/templates/core/base.html:167
+#: drdown/core/templates/core/base.html:155
+#: drdown/core/templates/core/base.html:191
 msgid "Health Centers"
 msgstr "Locais de vacinação"
 
-#: drdown/core/templates/core/base.html:141
+#: drdown/core/templates/core/base.html:165
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:174
+#: drdown/core/templates/core/base.html:198
 msgid "Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:180
+#: drdown/core/templates/core/base.html:204
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:181
+#: drdown/core/templates/core/base.html:205
 msgid "Help"
 msgstr "Ajuda"
 
-#: drdown/core/templates/core/base.html:182
-#: drdown/core/templates/core/base.html:191
+#: drdown/core/templates/core/base.html:206
+#: drdown/core/templates/core/base.html:215
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:195
+#: drdown/core/templates/core/base.html:219
 msgid "Are you sure you want to log out?"
 msgstr "Você tem certeza que deseja sair?"
 
-#: drdown/core/templates/core/base.html:198
+#: drdown/core/templates/core/base.html:222
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/core/templates/core/base.html:204
+#: drdown/core/templates/core/base.html:228
 msgid "Log Out"
 msgstr "Sair"
 
@@ -1154,9 +1161,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Buscar"
-
-#~ msgid "Locations"
-#~ msgstr "Locais"
 
 #~ msgid "Risk Rating"
 #~ msgstr "Classificação de Risco"

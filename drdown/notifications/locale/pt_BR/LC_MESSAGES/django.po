@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:8
+msgid "Requests"
+msgstr "Pedidos"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:12
+#: drdown/notifications/templates/notifications/health_team_notifications.html:37
+#: drdown/notifications/templates/notifications/patient_notifications.html:48
+#: drdown/notifications/templates/notifications/responsible_notifications.html:67
+msgid "There are"
+msgstr "Há"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:13
+msgid "appointment requests not answered"
+msgstr "pedidos de consulta não atendidos"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:18
+msgid "There are no appointment requests"
+msgstr "Não há pedidos de consulta"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:22
+#: drdown/notifications/templates/notifications/health_team_notifications.html:20
+#: drdown/notifications/templates/notifications/patient_notifications.html:56
+#: drdown/notifications/templates/notifications/responsible_notifications.html:50
+msgid "Forum"
+msgstr "Fórum"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:25
+#: drdown/notifications/templates/notifications/health_team_notifications.html:23
+#: drdown/notifications/templates/notifications/patient_notifications.html:59
+#: drdown/notifications/templates/notifications/responsible_notifications.html:53
+msgid "Your last post has"
+msgstr "O seu último post contém"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:26
+#: drdown/notifications/templates/notifications/health_team_notifications.html:24
+#: drdown/notifications/templates/notifications/patient_notifications.html:60
+#: drdown/notifications/templates/notifications/responsible_notifications.html:54
+msgid " commentaries"
+msgstr "comentários"
+
+#: drdown/notifications/templates/notifications/employee_notifications.html:31
+#: drdown/notifications/templates/notifications/health_team_notifications.html:29
+#: drdown/notifications/templates/notifications/patient_notifications.html:65
+#: drdown/notifications/templates/notifications/responsible_notifications.html:59
+msgid "Your last post has no commentaries"
+msgstr "O seu último post não tem comentários"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:8
+#: drdown/notifications/templates/notifications/patient_notifications.html:18
+#: drdown/notifications/templates/notifications/responsible_notifications.html:20
+msgid "Appointments"
+msgstr "Consultas"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:12
+#: drdown/notifications/templates/notifications/patient_notifications.html:22
+#: drdown/notifications/templates/notifications/patient_notifications.html:34
+msgid "You have"
+msgstr "Você tem"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:12
+msgid "appointments today"
+msgstr "consultas hoje"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:16
+msgid "You have no appointments today"
+msgstr "Você não tem consultas hoje"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:34
+#: drdown/notifications/templates/notifications/patient_notifications.html:45
+#: drdown/notifications/templates/notifications/responsible_notifications.html:64
+msgid "Events"
+msgstr "Eventos"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:37
+#: drdown/notifications/templates/notifications/patient_notifications.html:48
+#: drdown/notifications/templates/notifications/responsible_notifications.html:67
+msgid "events on the next 7 days"
+msgstr "eventos nos próximos 7 dias"
+
+#: drdown/notifications/templates/notifications/health_team_notifications.html:41
+#: drdown/notifications/templates/notifications/patient_notifications.html:52
+#: drdown/notifications/templates/notifications/responsible_notifications.html:71
+msgid "There are no events on the next 7 days"
+msgstr "Não há eventos nos próximos 7 dias"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:9
+#: drdown/notifications/templates/notifications/responsible_notifications.html:10
+msgid "Procedures"
+msgstr "Procedimentos"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:12
+msgid "You are completing"
+msgstr "Você está completando"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:12
+msgid "Are your vaccines and checklist up to date"
+msgstr "Suas vacinas e linha de cuidado estão em dia"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:23
+msgid "appointments requests accepted and not visualized"
+msgstr "pedidos de consulta aceitos e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:28
+msgid "There are no appointment requests scheduled and not visualized"
+msgstr "Não há pedidos de consulta aceitos e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:35
+msgid "appointment requests declined and not visualized"
+msgstr "pedidos de consulta cancelados e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:40
+msgid "There are no appointment requests declined and not visualized"
+msgstr "Não há pedidos de consulta cancelados e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:13
+msgid "is completing"
+msgstr "está completando"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:13
+msgid "years old"
+msgstr "anos"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:13
+msgid "Are vaccines and checklist up to date"
+msgstr "Suas vacinas e linha de cuidado estão em dia"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:25
+#: drdown/notifications/templates/notifications/responsible_notifications.html:39
+msgid "has"
+msgstr "tem"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:26
+msgid "appointment requests accepted and not visualized"
+msgstr "pedidos de consulta aceitos e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:30
+msgid "has no appointment requests accepted and not visualized"
+msgstr "não tem pedidos de consulta aceitos e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:40
+msgid "appointments requests declined and not visualized"
+msgstr "pedidos de consulta cancelados e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:44
+msgid "has no appointment requests declined and not visualized"
+msgstr "não tem pedidos de consulta cancelados e que ainda não foram visualizados"
