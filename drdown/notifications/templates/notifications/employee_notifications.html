@@ -1,0 +1,43 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+  <div class="container">
+
+    <h2 class="text-tertiary">{% trans "Requests" %}</h2>
+
+    {% if requests|length > 0 %}
+      <div class="alert alert-success" role="alert">
+        <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+          <p>{% trans "There are" %} {{requests|length}}
+            {% trans "appointment requests not answered" %}.
+          </p>
+        </a>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are no appointment requests" %}.</p>
+      </div>
+    {% endif %}
+
+    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+    {% if commentaries|length > 0  %}
+      <div class="alert alert-success" role="alert">
+        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
+          <p>{% trans "Your last post has" %} {{ commentaries|length }}
+            {% trans " commentaries" %}.
+          </p>
+        </a>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has no commentaries" %}.
+        </p>
+      </div>
+    {% endif %}
+
+
+  </div>
+
+{% endblock %}

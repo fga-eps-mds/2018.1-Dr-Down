@@ -20,11 +20,16 @@ urlpatterns = [
         name='vaccine'
     ),
     url(
-       regex=r'^vaccine/location$',
+       regex=r'^vaccine/location/$',
        view=TemplateView.as_view(
            template_name='core/vaccination_locations.html'
         ),
        name='locations'
+    ),
+    url(
+        regex=r'^help/$',
+        view=TemplateView.as_view(template_name='core/help_page.html'),
+        name='help'
     ),
 
 ]

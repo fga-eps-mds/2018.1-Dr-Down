@@ -15,9 +15,9 @@ def create_password():
         password = sys.argv[1]
     else:
         password = ''.join(random.choice(string.ascii_uppercase +
-                                     string.ascii_lowercase +
-                                     string.digits) for _ in range(9)
-                       )
+                                         string.ascii_lowercase +
+                                         string.digits) for _ in range(9)
+                           )
     return password
 
 
@@ -53,6 +53,10 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
     script does not continue
     """
     password = create_password()
+    if gender == 'F':
+        g = 'Female'
+    else:
+        g = 'Male'
     try:
         u = User.objects.create_user(
             first_name=first_name,
@@ -63,7 +67,7 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
             password=password,
             birthday=birthday,
             telephone='(22)22222-2222',
-            gender=gender,
+            gender=g,
             created_at=timezone.now(),
             updated_at=timezone.now(),
             is_active=True,
@@ -87,30 +91,31 @@ def create_user(first_name, last_name, name, username, email, birthday, gender):
 
 
 def create_patient(user, n, responsible):
-
     try:
         patients = Patient.objects.create(
-            ses='11234561'+str(n),
+            ses='11234561' + str(n),
             user=user,
             mother_name="Janaína Roussef",
             father_name="João das neves",
             ethnicity=3,
-            sus_number='1234567891'+str(n),
-            civil_registry_of_birth='1234567891'+str(n),
-            declaration_of_live_birth='1234567891'+str(n),
+            sus_number='1234567891' + str(n),
+            civil_registry_of_birth='1234567891' + str(n),
+            declaration_of_live_birth='1234567891' + str(n),
             responsible=responsible
         )
 
         Risk.objects.filter(patient=patients).update(
             patient=patients,
-            priority_speech_theraphy = 5,
-            priority_psychology = 5,
-            priority_physiotherapy = 5,
-            priority_neurology = 5,
-            priority_cardiology = 5,
-            priority_pediatrics = 5,
-            priority_general_practitioner = 5,
+            priority_speech_theraphy=5,
+            priority_psychology=5,
+            priority_physiotherapy=5,
+            priority_neurology=5,
+            priority_cardiology=5,
+            priority_pediatrics=5,
+            priority_general_practitioner=5,
         )
+
+        create_curves(patients)
 
     except IntegrityError:
         raise ValidationError("An error occurred. Stopping the script")
@@ -143,7 +148,6 @@ def create_responsible(user, cpf):
 
 
 def create_employee(user, cpf):
-
     try:
         Employee.objects.create(
             cpf=cpf,
@@ -154,8 +158,72 @@ def create_employee(user, cpf):
         raise ValidationError("An error occurred. Stopping the script")
 
 
-def populate():
+def create_curves(patient):
+    max_age = random.randint(1, 18 * 12)
+    in_range = (max_age * 3) / 4
 
+    weights = [2, ]
+    heights = [45, ]
+    perimeters = [35, ]
+
+    for age in range(1, max_age):
+
+        skip = random.randint(0, 2)
+
+        if age <= in_range:
+
+            if not skip:
+                weight = random.randint(
+                    max(weights), max(weights) + random.randint(1, 2)
+                )
+                weights.append(weight)
+
+                height = random.randint(
+                    max(heights), max(heights) + random.randint(2, 5)
+                )
+                heights.append(height)
+
+                perimeter = random.randint(
+                    max(perimeters), max(perimeters) + random.randint(0, 3)
+                )
+                perimeters.append(perimeter)
+
+                Curves.objects.create(
+                    patient=patient,
+                    weight=weight,
+                    height=height,
+                    age=age,
+                    cephalic_perimeter=perimeter,
+                )
+
+        else:
+
+            if not skip:
+                weight = random.randint(
+                    max(weights), max(weights) + random.randint(1, 1)
+                )
+                weights.append(weight)
+
+                height = random.randint(
+                    max(heights), max(heights) + random.randint(1, 3)
+                )
+                heights.append(height)
+
+                perimeter = random.randint(
+                    max(perimeters), max(perimeters) + random.randint(0, 2)
+                )
+                perimeters.append(perimeter)
+
+                Curves.objects.create(
+                    patient=patient,
+                    weight=weight,
+                    height=height,
+                    age=age,
+                    cephalic_perimeter=perimeter,
+                )
+
+
+def populate():
     print ('\n----------------------')
     print ('Populating Database...')
     print ('----------------------\n')
@@ -263,8 +331,6 @@ def populate():
         HealthTeam.CREFITO,
         1235548
     )
-
-
 
     healthteam_8 = create_user(
         'Fábio',
@@ -552,6 +618,7 @@ def populate():
     print ('Database populated with sucess')
     print ('------------------------------\n')
 
+
 import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')
@@ -562,6 +629,7 @@ from drdown.users.models.model_responsible import Responsible
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_user import User
 from drdown.users.models.model_patient import Patient
+from drdown.medicalrecords.models.model_curves import Curves
 from drdown.forum.models.model_category import Category
 from drdown.forum.models.model_post import Post
 from drdown.forum.models.model_commentary import Commentary
