@@ -329,34 +329,34 @@ msgstr ""
 "atualizar a página."
 
 #: drdown/core/templates/core/base-nav.html:6
-#: drdown/core/templates/core/base-nav.html:47
+#: drdown/core/templates/core/base-nav.html:48
 #: drdown/core/templates/core/base.html:6
 #: drdown/core/templates/core/home.html:20
 msgid "Dr. Down"
 msgstr "Dr. Down"
 
-#: drdown/core/templates/core/base-nav.html:49
+#: drdown/core/templates/core/base-nav.html:50
 msgid "Menu"
 msgstr "Menu"
 
-#: drdown/core/templates/core/base-nav.html:55
+#: drdown/core/templates/core/base-nav.html:56
 msgid "Home"
 msgstr "Início"
 
-#: drdown/core/templates/core/base-nav.html:58
+#: drdown/core/templates/core/base-nav.html:59
 msgid "Down's Syndrome"
 msgstr "Síndrome de Down"
 
-#: drdown/core/templates/core/base-nav.html:61
-#: drdown/core/templates/core/base.html:179
+#: drdown/core/templates/core/base-nav.html:62
+#: drdown/core/templates/core/base.html:203
 msgid "Forums"
 msgstr "Fórum"
 
-#: drdown/core/templates/core/base-nav.html:72
+#: drdown/core/templates/core/base-nav.html:73
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base-nav.html:75
+#: drdown/core/templates/core/base-nav.html:76
 msgid "Sign up"
 msgstr "Cadastrar"
 
@@ -384,7 +384,14 @@ msgstr "Telefone: 3325-4219"
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
-#: drdown/core/templates/core/base.html:78
+#: drdown/core/templates/core/base.html:79
+#: drdown/core/templates/core/base.html:85
+#: drdown/core/templates/core/base.html:91
+#: drdown/core/templates/core/base.html:97
+msgid "Notifications"
+msgstr "Notificações"
+
+#: drdown/core/templates/core/base.html:102
 msgid "My Profile"
 msgstr "Meu Perfil"
 
@@ -399,7 +406,7 @@ msgstr "Meu Perfil"
 msgid "Appointments"
 msgstr "Consultas"
 
-#: drdown/core/templates/core/base.html:88
+#: drdown/core/templates/core/base.html:112
 msgid "Scheduled"
 msgstr "Marcado"
 
@@ -418,19 +425,19 @@ msgstr "Pedidos"
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:105
+#: drdown/core/templates/core/base.html:129
 msgid "My Schedule"
 msgstr "Minha Agenda"
 
-#: drdown/core/templates/core/base.html:111
+#: drdown/core/templates/core/base.html:135
 msgid "Medical History"
 msgstr "Histórico Médico"
 
-#: drdown/core/templates/core/base.html:115
+#: drdown/core/templates/core/base.html:139
 msgid "Medical Record"
 msgstr "Prontuário"
 
-#: drdown/core/templates/core/base.html:118
+#: drdown/core/templates/core/base.html:142
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
@@ -446,17 +453,17 @@ msgstr "Linha de Cuidado"
 msgid "Vaccines"
 msgstr "Vacinas"
 
-#: drdown/core/templates/core/base.html:128
-#: drdown/core/templates/core/base.html:164
+#: drdown/core/templates/core/base.html:152
+#: drdown/core/templates/core/base.html:188
 msgid "Calendar"
 msgstr "Calendário"
 
-#: drdown/core/templates/core/base.html:131
-#: drdown/core/templates/core/base.html:167
+#: drdown/core/templates/core/base.html:155
+#: drdown/core/templates/core/base.html:191
 msgid "Health Centers"
 msgstr "Locais de vacinação"
 
-#: drdown/core/templates/core/base.html:141
+#: drdown/core/templates/core/base.html:165
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
@@ -484,15 +491,15 @@ msgstr "Eventos"
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:195
+#: drdown/core/templates/core/base.html:219
 msgid "Are you sure you want to log out?"
 msgstr "Você tem certeza que deseja sair?"
 
-#: drdown/core/templates/core/base.html:198
+#: drdown/core/templates/core/base.html:222
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/core/templates/core/base.html:204
+#: drdown/core/templates/core/base.html:228
 msgid "Log Out"
 msgstr "Sair"
 
@@ -1834,9 +1841,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Buscar"
-
-#~ msgid "Locations"
-#~ msgstr "Locais"
 
 #~ msgid "Risk Rating"
 #~ msgstr "Classificação de Risco"

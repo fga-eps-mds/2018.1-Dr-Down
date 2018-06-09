@@ -28,6 +28,7 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 TIME_ZONE = 'America/Sao_Paulo'
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'pt-br'
+LANGUAGES = (('en', ('English')), ('pt-br', ('Portuguese')),)
 LOCALE_PATHS = (
     str(ROOT_DIR.path('locale')),
 )
@@ -87,6 +88,7 @@ LOCAL_APPS = [
     'drdown.medicalrecords.apps.MedicalRecordsConfig',
     'drdown.appointments.apps.AppointmentsConfig',
     'drdown.events.apps.EventsConfig',
+    'drdown.notifications.apps.NotificationsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -143,9 +145,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

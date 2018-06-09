@@ -74,6 +74,30 @@
 
         <ul class="sidebar-nav">
 
+          {% if user.patient %}
+            <li><a href="{% url 'notifications:patient_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.responsible %}
+            <li><a href="{% url 'notifications:responsible_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.healthteam%}
+            <li><a href="{% url 'notifications:health_team_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
+          {% if user.employee %}
+            <li><a href="{% url 'notifications:employee_notifications' %}">
+              {% trans "Notifications" %}
+            </a></li>
+          {% endif %}
+
           <li><a href="{% url 'users:detail' request.user.username %}">
             {% trans "My Profile" %}
           </a></li>
@@ -181,6 +205,20 @@
             <li><a href="{% url 'core:help' %}">{% trans "Help" %}</a></li>
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
+        <ul>
+          <div id="language" class="row mb-4 ml-2 float-left" style="position: absolute; bottom: 0; left: 0px;">
+            <form action="{% url 'set_language' %}" method="post" class="col-1 mr-2">
+              {% csrf_token %}
+              <input name="language" type="hidden" value="pt-br" />
+              <input type="submit" value="" style="background-image: url({% static 'core/images/brasil.png' %}); height: 21px; width: 33px;" />
+            </form>
+            <form action="{% url 'set_language' %}" method="post" class="col-1">
+              {% csrf_token %}
+              <input name="language" type="hidden" value="en" />
+              <input type="submit" value="" style="background-image: url({% static 'core/images/eua.png' %}); height: 21px; width: 33px;" />
+            </form>
+          </div>
+        </ul>
       </div>
 
         <!-- Logout Modal -->
@@ -230,10 +268,8 @@
         </div>
       </wrapper>
     </div>
+
     {% endblock navbar %}
-
-
-
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">

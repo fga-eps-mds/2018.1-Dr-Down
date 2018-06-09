@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'^medicalrecords/', include('drdown.medicalrecords.urls', namespace='medicalrecords')),
     url(r'^appointments/', include('drdown.appointments.urls', namespace='appointments')),
     url(r'^events/', include('drdown.events.urls', namespace='events')),
+    url(r'^notifications/', include('drdown.notifications.urls', namespace='notifications')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,85 @@
+{% extends "core/base.html" %}
+{% load static i18n %}
+
+{% block content %}
+
+    {% now 'm-d-Y' as today %}
+
+    {% for patient in patients %}
+      {% if patient.user.birthday|date:'m-d-Y' ==  today %}
+        <h2 class="text-tertiary">{% trans "Procedures" %}</h2>
+
+        <div class="alert alert-success" role="alert">
+          <p>{{ patient.user.name }} {% trans 'is completing'%} {{ request.user.age }} {% trans 'years old' %}. {% trans 'Are vaccines and checklist up to date'%}? </p>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+
+
+    <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
+
+    <div class="alert alert-success" role="alert">
+      {% for name, appointments in patients_list_schedule.items %}
+        {% if appointments|length > 0 %}
+          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+            <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+              {% trans "appointment requests accepted and not visualized" %}.
+            </p>
+          </a>
+        {% else %}
+          <p>
+            {{ name }} {% trans "has no appointment requests accepted and not visualized" %}.
+          </p>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="alert alert-danger" role="alert">
+      {% for name, appointments in patients_list_cancel.items %}
+        {% if appointments|length %}
+          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+            <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+              {% trans "appointments requests declined and not visualized" %}.
+            </p>
+          </a>
+        {% else %}
+          <p>
+            {{ name }} {% trans "has no appointment requests declined and not visualized" %}.
+          </p>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+    {% if commentaries|length > 0  %}
+      <div class="alert alert-success" role="alert">
+        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
+          <p>{% trans "Your last post has" %} {{ commentaries|length }}
+            {% trans " commentaries" %}.
+          </p>
+        </a>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "Your last post has no commentaries" %}.
+        </p>
+      </div>
+    {% endif %}
+
+    <h2 class="text-tertiary">{% trans "Events" %}</h2>
+    {% if events|length > 0 %}
+      <div class="alert alert-success" role="alert">
+        <a href="{% url 'events:list_events' %}" class="alert-success" >
+          <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+        </a>
+      </div>
+    {% else %}
+      <div class="alert alert-success" role="alert">
+        <p>{% trans "There are no events on the next 7 days" %}.</p>
+      </div>
+    {% endif %}
+
+
+
+{% endblock %}
