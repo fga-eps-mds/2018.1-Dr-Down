@@ -2,6 +2,7 @@ from test_plus.test import TestCase
 from ..admin import PatientAdmin
 from ..models import Patient
 
+from django.db.models import Q
 from django.utils import timezone
 
 class TestModelPatient(TestCase):
@@ -189,4 +190,51 @@ class TestModelPatient(TestCase):
         self.assertEquals(
             self.user.patient.have_procedures_almost_late(),
             True
+        )
+
+    def test_count_incomplete_procedures_for_current_age(self):
+        """
+            Test if method produces correct response based on patient checklist
+        """
+
+        from drdown.careline.models.model_procedure import Procedure
+
+        today = timezone.datetime.today()
+
+        self.user.birthday = today - timezone.timedelta(days=365 + 29)
+        self.user.save()
+        self.user.refresh_from_db()
+
+        checklist = self.user.patient.checklist
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = True
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        self.assertEquals(
+            self.user.patient.count_incomplete_procedures_for_current_age(),
+            0
+        )
+
+        for procedure in checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = False
+                check_item.save()
+
+        checklist.refresh_from_db()
+
+        itens_age = Procedure.convert_age_to_item(self.user.age())
+
+        itens_count = self.user.patient.checklist.procedure_set.filter(
+            Q(checkitem__required=True) | Q(checkitem__when_needed=True),
+            checkitem__age=itens_age,
+            checkitem__check=False,
+        ).count()
+
+        self.assertEquals(
+            self.user.patient.count_incomplete_procedures_for_current_age(),
+            itens_count
         )

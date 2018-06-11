@@ -120,12 +120,14 @@ class Patient(models.Model):
 
         count += self.checklist.procedure_set.filter(
             checkitem__age=proc_age,
-            checkitem__required=True
+            checkitem__required=True,
+            checkitem__check=False,
         ).count()
 
         count += self.checklist.procedure_set.filter(
             checkitem__age=proc_age,
-            checkitem__when_needed=True
+            checkitem__when_needed=True,
+            checkitem__check=False,
         ).count()
 
         return count
