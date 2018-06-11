@@ -2,8 +2,24 @@
   padding: 20px;
 }
 
+.patient-border {
+  border-right: 1px solid #C0C0C0;
+}
+
+.responsible-border {
+  border-left: 1px solid #C0C0C0;
+}
+
 .patient:hover {
   background-color: #CAE1FF;
   text-decoration:none;
   color:#FFFFFF;
 }
+
+.patient:hover .responsible-border,
+.patient:hover .patient-border{
+  border-color: black;
+}
+
+
+

@@ -28,7 +28,7 @@
 
               <div class="col">
                 <div class="row">
-                  <div class="col-auto border-right">
+                  <div class="col-auto patient-border">
                     <img class="col-auto my-1 img-rounded img-fluid"
                     {% if patient.user.photo %}
                         src="{{patient.user.photo.url}}"
@@ -46,7 +46,7 @@
               </div>
 
               {% if patient.responsible %}
-                <div class="col-auto border-left">
+                <div class="col-auto responsible-border">
                   <h5 class="text-tertiary h-blue"> {% trans 'Responsible:' %} </h5>
                   <p class="text-tertiary h-blue">  {{patient.responsible.user.name}} </p>
                 </div>
