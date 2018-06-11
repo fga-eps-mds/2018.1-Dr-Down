@@ -1,116 +1,139 @@
 {% load static i18n %}
 
 <div id="employee">
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;" id="patient_first">{% trans 'First Login' %}</h1>
-	<img src="{% static 'core/images/Employee/PrimeiroLogin.png' %}" width="100%" class="float-right border border-secondary">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      After you log in to the Dr. Down website, you will be redirected to the profile editing page, where you will need to fill in your details so that your registration is completed in the system, after inserting them, click the "Update" button.
-  	{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/Employee/Perfil.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			Once you have filled in your data and updated your profile, you will be redirected to the "My Profile" page, you will be able to view your data, edit your profile, change the registered email and delete your account.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_request">{% trans 'Requests' %}</h1>
-	<img src="{% static 'core/images/Employee/PedidosEmployee.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			By clicking on Orders in the sidebar you will be redirected to the page that lists the requests for consultations, the orders will be ordered according to the risk of the specialty required by the patient and should be marked according to the priority.
-		{% endblocktrans %}
-	</p>
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			To mark an appointment you must click on the "Accept" button and you will be redirected to the appointment marking page.
-		{% endblocktrans %}
-	</p>
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			If the query is denied, you should write a justification for having this query refused.
-		{% endblocktrans %}
-	</p>
-	<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_appointments">{% trans 'Appointments' %}</h1>
-	<img src="{% static 'core/images/Employee/NovaConsulta.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			When you accept a query request or select the New Query option in the marked queries tab, you will be redirected to this page.
-		{% endblocktrans %}
-	</p>
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			When you are redirected to create a query through an order, the Specialty, Health Professional and Patient fields are already marked. The patient will have chosen a shift and a desired day of the week, you will have to look for this availability, if it is not possible, it is not mandatory that it be as desired by the patient.
-		{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/Employee/Consultas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			When you click Marked on the Queries tab, you will be redirected to the list of marked queries. You can edit or cancel a query, if necessary.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_medical">{% trans 'Patients' %}</h1>
-	<img src="{% static 'core/images/Employee/Pacientes.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			By clicking on "Patients" you will have access to a list of Cris Down patients and clicking on a patient you will be redirected to the patient's chart.
-		{% endblocktrans %}
-	</p>
-	<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_checklist">{% trans 'Medical Records' %}</h1>
-	<img src="{% static 'core/images/Employee/Prontuario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			When you access a patient's chart, you can view the information of the chosen patient and the data filled by the Cris Down health team: evolutions, postnatal data, medical exams, prescriptions, complaints and curves of height, weight, cephalic perimeter.
-		{% endblocktrans %}
-	</p>
-  <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      You can also go to the Care Line or print / save your medical records in PDF.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_vaccine">{% trans 'Checklist' %}</h1>
-	<img src="{% static 'core/images/Employee/LinhaDeCuidado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			By clicking on "Care Line" you will have access to procedures that the patient should follow. These are procedures that a Down Syndrome sufferer has to follow throughout his or her life, some are compulsory, and weights are only when needed by the patient.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_forum">{% trans 'Forum' %}</h1>
-	<img src="{% static 'core/images/Employee/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      By accessing the Forum, you will be redirected to the Forum Categories page, clicking on any category you will go to the forum posts.
-		{% endblocktrans %}
-	</p>
-  <img src="{% static 'core/images/Employee/NovoPost.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      You will have access to the posts of the selected category, you can also insert a new post for the category.
-		{% endblocktrans %}
-	</p>
-  <img src="{% static 'core/images/Employee/Comentario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      In the comments page, you will have access to the comments of the selected post and you will also be able to make new comments in the post.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_events">{% trans 'Events' %}</h1>
-  <img src="{% static 'core/images/Employee/BotaoNovoEvento.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      In "Events", the list of events promoted by Cris Down will appear, clicking on "New Event" will be redirected to the event creation page and you can create an event to be placed on the list.
-		{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/Employee/NovoEvento.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      In the page of new event it is mandatory to fill in the information in order that the users are well informed about the event.
-		{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/Employee/EventoDescricao.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      By clicking on an event you will have access to the event information.
-		{% endblocktrans %}
-	</p>
+	<div id="first_login">
+		<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;" id="patient_first">{% trans 'First Login' %}</h1>
+		<img src="{% static 'core/images/Employee/PrimeiroLogin.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      After you log in to the Dr. Down website, you will be redirected to the profile editing page, where you will need to fill in your details so that your registration is completed in the system, after inserting them, click the "Update" button.
+	  	{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/Employee/Perfil.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				Once you have filled in your data and updated your profile, you will be redirected to the "My Profile" page, you will be able to view your data, edit your profile, change the registered email and delete your account.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="requests">
+	  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_request">{% trans 'Requests' %}</h1>
+		<img src="{% static 'core/images/Employee/PedidosEmployee.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				By clicking on Orders in the sidebar you will be redirected to the page that lists the requests for consultations, the orders will be ordered according to the risk of the specialty required by the patient and should be marked according to the priority.
+			{% endblocktrans %}
+		</p>
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				To mark an appointment you must click on the "Accept" button and you will be redirected to the appointment marking page.
+			{% endblocktrans %}
+		</p>
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				If the query is denied, you should write a justification for having this query refused.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="appointments">
+		<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_appointments">{% trans 'Appointments' %}</h1>
+		<img src="{% static 'core/images/Employee/NovaConsulta.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				When you accept a query request or select the New Query option in the marked queries tab, you will be redirected to this page.
+			{% endblocktrans %}
+		</p>
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				When you are redirected to create a query through an order, the Specialty, Health Professional and Patient fields are already marked. The patient will have chosen a shift and a desired day of the week, you will have to look for this availability, if it is not possible, it is not mandatory that it be as desired by the patient.
+			{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/Employee/Consultas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				When you click Marked on the Queries tab, you will be redirected to the list of marked queries. You can edit or cancel a query, if necessary.
+			{% endblocktrans %}
+		</p>	
+	</div>
+
+	<div id="patients">
+	  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_medical">{% trans 'Patients' %}</h1>
+		<img src="{% static 'core/images/Employee/Pacientes.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				By clicking on "Patients" you will have access to a list of Cris Down patients and clicking on a patient you will be redirected to the patient's chart.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="medical_records">
+		<h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_checklist">{% trans 'Medical Records' %}</h1>
+		<img src="{% static 'core/images/Employee/Prontuario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				When you access a patient's chart, you can view the information of the chosen patient and the data filled by the Cris Down health team: evolutions, postnatal data, medical exams, prescriptions, complaints and curves of height, weight, cephalic perimeter.
+			{% endblocktrans %}
+		</p>
+	  <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      You can also go to the Care Line or print / save your medical records in PDF.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="checklist">
+	  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_vaccine">{% trans 'Checklist' %}</h1>
+		<img src="{% static 'core/images/Employee/LinhaDeCuidado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				By clicking on "Care Line" you will have access to procedures that the patient should follow. These are procedures that a Down Syndrome sufferer has to follow throughout his or her life, some are compulsory, and weights are only when needed by the patient.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="forum">
+	  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_forum">{% trans 'Forum' %}</h1>
+		<img src="{% static 'core/images/Employee/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      By accessing the Forum, you will be redirected to the Forum Categories page, clicking on any category you will go to the forum posts.
+			{% endblocktrans %}
+		</p>
+	  <img src="{% static 'core/images/Employee/NovoPost.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      You will have access to the posts of the selected category, you can also insert a new post for the category.
+			{% endblocktrans %}
+		</p>
+	  <img src="{% static 'core/images/Employee/Comentario.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      In the comments page, you will have access to the comments of the selected post and you will also be able to make new comments in the post.
+			{% endblocktrans %}
+		</p>		
+	</div>
+
+	<div id="events">
+	  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="patient_events">{% trans 'Events' %}</h1>
+	  <img src="{% static 'core/images/Employee/BotaoNovoEvento.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      In "Events", the list of events promoted by Cris Down will appear, clicking on "New Event" will be redirected to the event creation page and you can create an event to be placed on the list.
+			{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/Employee/NovoEvento.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      In the page of new event it is mandatory to fill in the information in order that the users are well informed about the event.
+			{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/Employee/EventoDescricao.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      By clicking on an event you will have access to the event information.
+			{% endblocktrans %}
+		</p>
+	</div>
 </div>
