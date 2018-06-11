@@ -101,20 +101,34 @@ class Patient(models.Model):
     def have_incomplete_procedures_on_current_age(self):
         from drdown.careline.models import Procedure
 
-        result = False
+        current_age = self.user.age()
+        proc_age = Procedure.convert_age_to_item(current_age)
+
+        return self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__required=True,
+            checkitem__check=False,
+        ).exists()
+
+    def count_incomplete_procedures_for_current_age(self):
+        from drdown.careline.models import Procedure
 
         current_age = self.user.age()
+        proc_age = Procedure.convert_age_to_item(current_age)
 
-        for procedure in self.checklist.procedure_set.all():
-            check_item = procedure.checkitem_set.get(
-                age=Procedure.convert_age_to_item(current_age)
-            )
+        count = 0
 
-            if not check_item.check and check_item.required:
-                result = True
-                break
+        count += self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__required=True
+        ).count()
 
-        return result
+        count += self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__when_needed=True
+        ).count()
+
+        return count
 
     def birthday_is_close(self):
         from drdown.careline.models import Procedure
