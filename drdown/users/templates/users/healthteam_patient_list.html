@@ -4,7 +4,7 @@
 
 {% block css %}
 {{block.super}}
-  <link href="{% static 'medicalrecords/css/medicalrecords.css' %}" rel="stylesheet">
+  <link href="{% static 'users/css/patient_list.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
     <div class="col">
       <div class="list-group">
         {% for patient in object_list %}
-          <li class=" h-blue list-group-item" >
+          <a class="patient" style="display:block; " href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
             <div class="row">
 
               <div class="col">
@@ -39,10 +39,8 @@
                   </div>
 
                   <div class="col">
-                    <a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
                       <h4 class="text-tertiary h-blue" >{{ patient.user.name }}</h4>
                       <p class="text-tertiary h-blue"> {% trans 'SES: ' %} {{patient.ses}}</p>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -55,7 +53,7 @@
               {% endif %}
 
             </div>
-          </li>
+          </a>
           {% empty %}
               <h4>{% trans 'There are no patients for this user.'%}</h4>
           {% endfor %}

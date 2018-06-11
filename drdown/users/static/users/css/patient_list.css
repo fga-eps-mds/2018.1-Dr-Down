@@ -1,0 +1,9 @@
+.patient {
+  padding: 20px;
+}
+
+.patient:hover {
+  background-color: #CAE1FF;
+  text-decoration:none;
+  color:#FFFFFF;
+}
