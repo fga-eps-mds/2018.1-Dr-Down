@@ -23,7 +23,7 @@
     <div class="col">
       <div class="list-group">
         {% for patient in object_list %}
-          <a class="patient" style="display:block; " href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
+          <a class="patient" style="display:block" href="{% url 'medicalrecords:list_medicalrecords' patient.user.username %}">
             <div class="row">
 
               <div class="col">
