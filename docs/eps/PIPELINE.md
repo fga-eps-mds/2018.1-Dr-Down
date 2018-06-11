@@ -4,6 +4,8 @@
 |Data|Versão|Descrição|Autor|
 | --- | --- | --- | --- |
 |06/05/2018|0.0.1|Versão inicial do documento do pipeline|João Pedro Sconetto e Mariana Mendes|
+|06/06/2018|1.0.0|Entrega da primeira versão do documento e adição da imagem do processo|João Pedro Sconetto e Mariana Mendes|
+|11/06/2018|1.0.1|Correção da imagem dos processos do pipeline|João Pedro Sconetto e Mariana Mendes|
 
 ## Processos de DevOps
 O presente documento visa esclarecer e registrar todos os processos, a cultura implementada e os padrões que foram utilizados no projeto __Dr. Down__ no viés das práticas de DevOps, a fim de unificar o desenvolvimento e as operações inerentes do projeto supracitado.
@@ -102,7 +104,7 @@ Com a execução de todos os passos da integração contínua a ferramenta de au
 
 ### Pipeline v0.0.1
 
-![pipeline](https://i.imgur.com/v3m6lQr.png)
+![pipeline](https://i.imgur.com/V1rEo9S.png)
 
 #### Legenda
 
