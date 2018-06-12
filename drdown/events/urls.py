@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from drdown.events.views.view_event import EventsListView
+from drdown.events.views.view_event import CalendarEventsListView
 from drdown.events.views.view_event import EventsCreateView
 from drdown.events.views.view_event import EventsUpdateView
 from drdown.events.views.view_event import EventsDeleteView
@@ -30,7 +31,7 @@ urlpatterns = [
      ),
      url(
          regex=r'^calendar/$',
-         view=TemplateView.as_view(template_name='events_calendar.html'),
+         view=CalendarEventsListView.as_view(),
          name='calendar'
      ),
 
