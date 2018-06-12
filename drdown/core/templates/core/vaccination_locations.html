@@ -4,7 +4,7 @@
 
 {% block css %}
 	{{block.super}}
-	<link href="{% static 'core/css/home.css' %}" rel="stylesheet">
+	<link href="{% static 'core/css/vaccine_location.css' %}" rel="stylesheet">
 
 {% endblock %}
 
@@ -25,11 +25,11 @@
 	<div class="container">
 		<center><h2 class="text-tertiary">{% trans "Vaccination Locations" %}</h2></center>
 		<hr class="star-dark bg-star-white">
-		<div class="bg-blue">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action bg-blue" onclick="aparece('local_asa_norte');">Asa Norte</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_asa_norte');" >Asa Norte</a>
 			</ul>
-			<table class=" table bg-blue" id="local_asa_norte" style="display: none; ">
+			<table class="table" id="local_asa_norte" style="display: none; ">
 				<thead>
 					<tr class="full">
 						<th scope="col">{% trans 'Local' %}</th>
@@ -73,9 +73,9 @@
 			</table>
 		</div>
 
-		<div>
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_asa_sul');">Asa Sul</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_asa_sul');">Asa Sul</a>
 			</ul>
 			<table class="ml-3 table" id="local_asa_sul" style="display: none; ">
 				<thead>
@@ -106,9 +106,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+    <div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action bg-blue" onclick="aparece('local_brazlandia');">Brazlândia</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_brazlandia');">Brazlândia</a>
 			</ul>
 			<table class="ml-3 table" id="local_brazlandia" style="display: none; ">
 				<thead>
@@ -124,9 +124,11 @@
 					</tr>
 				</tbody>
 			</table>
+    </div>
 
+    <div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_candangolandia');">Candangolândia</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_candangolandia');">Candangolândia</a>
 			</ul>
 			<table class="ml-3 table" id="local_candangolandia" style="display: none; ">
 				<thead>
@@ -144,9 +146,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+    <div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_ceilandia');">Ceilândia</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_ceilandia');">Ceilândia</a>
 			</ul>
 			<table class="ml-3 table" id="local_ceilandia" style="display: none; ">
 				<thead>
@@ -212,9 +214,9 @@
 			</table>
 		</div>
 
-		<div>
+    <div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_novo');">Cruzeiro Novo</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_novo');">Cruzeiro Novo</a>
 			</ul>
 			<table class="ml-3 table" id="local_cruzeiro_novo" style="display: none;">
 				<thead>
@@ -232,9 +234,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_velho');">Cruzeiro Velho</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_cruzeiro_velho');">Cruzeiro Velho</a>
 			</ul>
 			<table class="ml-3 table" id="local_cruzeiro_velho" style="display: none;">
 				<thead>
@@ -252,9 +254,9 @@
 			</table>
 		</div>
 
-		<div >
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_esplanada');">Esplanada dos Ministérios</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_esplanada');">Esplanada dos Ministérios</a>
 			</ul>
 			<table class="ml-3 table" id="local_esplanada" style="display: none; ">
 				<thead>
@@ -284,9 +286,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_gama');">Gama</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_gama');">Gama</a>
 			</ul>
 			<table class="ml-3 table" id="local_gama" style="display: none; ">
 				<thead>
@@ -324,9 +326,9 @@
 			</table>
 		</div>
 
-		<div >
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_guara_I');">Guará I</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_guara_I');">Guará I</a>
 			</ul>
 			<table class="ml-3 table" id="local_guara_I" style="display: none; ">
 				<thead>
@@ -356,9 +358,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_guara_II');">Guará II</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_guara_II');">Guará II</a>
 			</ul>
 			<table class="ml-3 table" id="local_guara_II" style="display: none; ">
 				<thead>
@@ -380,9 +382,9 @@
 			</table>
 		</div>
 
-		<div>
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_lago_norte');">Lago Norte</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_lago_norte');">Lago Norte</a>
 			</ul>
 			<table class="ml-3 table" id="local_lago_norte" style="display: none; ">
 				<thead>
@@ -404,9 +406,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue" >
+		<div class="location-b  ">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_lago_sul');">Lago Sul</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_lago_sul');">Lago Sul</a>
 			</ul>
 			<table class="ml-3 table" id="local_lago_sul" style="display: none; ">
 				<thead>
@@ -428,9 +430,9 @@
 			</table>
 		</div>
 
-		<div>
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_bandeirante');">Núcleo Bandeirante</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_bandeirante');">Núcleo Bandeirante</a>
 			</ul>
 			<table class="ml-3 table" id="local_bandeirante" style="display: none; ">
 				<thead>
@@ -448,9 +450,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_paranoa');">Paranoá</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_paranoa');">Paranoá</a>
 			</ul>
 			<table class="ml-3 table" id="local_paranoa" style="display: none; ">
 				<thead>
@@ -472,9 +474,9 @@
 			</table>
 		</div>
 
-		<div >
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_planaltina');">Planaltina</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_planaltina');">Planaltina</a>
 			</ul>
 			<table class="ml-3 table" id="local_planaltina" style="display: none; ">
 				<thead>
@@ -552,9 +554,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue ">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue  lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_recanto');">Recanto das Emas</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_recanto');">Recanto das Emas</a>
 			</ul>
 			<table class="ml-3 table" id="local_recanto" style="display: none; ">
 				<thead>
@@ -576,9 +578,9 @@
 			</table>
 		</div>
 
-		<div >
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_riacho');">Riacho Fundo</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_riacho');">Riacho Fundo</a>
 			</ul>
 			<table class="ml-3 table" id="local_riacho" style="display: none; ">
 				<thead>
@@ -596,9 +598,9 @@
 			</table>
 		</div>
 
-		<div class="bg-blue ">
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue  lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_sebastiao');">São Sebastião</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_sebastiao');">São Sebastião</a>
 			</ul>
 			<table class="ml-3 table" id="local_sebastiao" style="display: none; ">
 				<thead>
@@ -620,9 +622,9 @@
 			</table>
 		</div>
 
-		<div>
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_samambaia');">Samambaia</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_samambaia');">Samambaia</a>
 			</ul>
 			<table class="ml-3 table" id="local_samambaia" style="display: none; ">
 				<thead>
@@ -651,9 +653,10 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="bg-blue ">
+
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue  lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_santa_maria');">Santa Maria</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_santa_maria');">Santa Maria</a>
 			</ul>
 			<table class="ml-3 table" id="local_santa_maria" style="display: none; ">
 				<thead>
@@ -674,9 +677,10 @@
 				</tbody>
 			</table>
 		</div>
-		<div >
+
+		<div class="location-w">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_sobradinho');">Sobradinho</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_sobradinho');">Sobradinho</a>
 			</ul>
 			<table class="ml-3 table" id="local_sobradinho" style="display: none; ">
 				<thead>
@@ -725,9 +729,10 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="bg-blue ">
+
+		<div class="location-b">
 			<ul class="list-group list-group-flush">
-				<a href="javascript:;" class="bg-blue  lead hover-yellow text-blue-1 list-group-item list-group-item-action" onclick="aparece('local_taguatinga');">Taguatinga</a>
+				<a href="javascript:;" class="lead list-group-item list-group-item-action" onclick="aparece('local_taguatinga');">Taguatinga</a>
 			</ul>
 			<table class="ml-3 table" id="local_taguatinga" style="display: none; ">
 				<thead>
