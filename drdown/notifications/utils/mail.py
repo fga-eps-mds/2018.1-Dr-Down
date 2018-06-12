@@ -5,7 +5,7 @@ import requests
 try:
     from utility.email import EmailEnvironment
 except ImportError:
-    raise ImportError('Could not find the email configuration file')
+    pass
 
 DRDOWN_EMAIL = "equipe.drdown@gmail.com"
 

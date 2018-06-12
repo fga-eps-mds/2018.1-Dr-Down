@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from drdown.notifications.utils.mail import send_simple_message
+from drdown.notifications.utils import mail
 from ..utils.validators import validate_ses
 from ..utils.validators import validate_generic_number
 from ..utils.validators import validate_names
@@ -169,8 +169,8 @@ class Patient(models.Model):
         self.user.clean()
         self.user.save()
         self.clean()
-        var = "test"
-        send_simple_message(self.user, var,var)
+        # var = "test"
+        # send_simple_message(self.user, var,var)
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):

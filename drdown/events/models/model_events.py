@@ -5,7 +5,7 @@ from django.utils import timezone
 from datetime import date
 
 from drdown.notifications.utils import mail
-from drdown.users.models import User, Patient, Responsible
+from drdown.users.models import User
 
 from django.db.models import Q
 
@@ -62,7 +62,7 @@ class Events(models.Model):
                         _("The date cannot be in today or past!")}
                 )
 
-    def def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
 
         if Events.objects.filter(id=self.id).count() > 0:
             pass # TODO
