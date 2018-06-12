@@ -47,18 +47,17 @@
       </script>
     {%  endblock %}
   </head>
-  <body id="page-top">
-
+  <body>
     {% block content %}
       <div class="row" style="max-width: 100%; height: 100%;">
         <div class="col-md-2 border-right" id="side">
-          {% url 'core:create_home' as url %}
-          {% if request.path == url %}
-            <a href="{% url 'core:home' %}" class="ml-2 text-blue" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
-          {% else %}
-            <a href="{% url 'users:detail' request.user.username %}" class="ml-2 text-blue" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
-          {% endif %}
-          <div class="sticky-top" style="top: 2em;">
+          <div class="sticky-top" style="top: 1em;">
+            {% url 'core:help_home' as url %}
+            {% if request.path == url %}
+              <a href="{% url 'core:home' %}" class="ml-2 text-blue" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
+            {% else %}
+              <a href="{% url 'users:detail' request.user.username %}" class="ml-2 text-blue" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
+            {% endif %}
             <ul class="nav flex-column">
               <h1 class="text-center border-bottom pb-2 lead" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>
               {% if not user.is_authenticated %}
@@ -161,7 +160,7 @@
             </ul>
           </div>
         </div>
-        <div class="col mt-4">
+        <div class="col mt-3">
           <h1 class="text-center" style="font-size: 30px">{% trans 'Help Page' %}</h1>          
           <!-- Informações que qualquer usuário pode ver -->
           {% if not user.is_authenticated  %}
