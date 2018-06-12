@@ -1,78 +1,104 @@
 {% load static i18n %}
 
 <div id="responsible">
-	<h1 class="text-center border-bottom pb-2 lead mb-4" style="font-size: 30px;" id="health_first">{% trans 'First Login' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/PrimeiroLogin.png' %}" width="100%" class="float-right border border-secondary">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      After you log in to the Dr. Down website, you will be redirected to the profile editing page, where you will need to fill in your details so that your registration is completed in the system, after inserting them, click the "Update" button.
-  	{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/HealthTeam/MeuPerfil.png' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			Once you have filled in your data and updated your profile, you will be redirected to the "My Profile" page, you will be able to view your data, edit your profile, change the registered email and delete your account.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="health_appointments">{% trans 'Marked Appointments' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/Consultas.png' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-			By clicking on "Marked" in the Queries tab, you will be redirected to the list of queries that have been marked for you by a Cris Down employee, where you can view the specialty, date and time.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="health_patients">{% trans 'My Patients' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/Pacientes.png' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      By clicking on "Patients" you will see a list of all your patients.
-		{% endblocktrans %}
-	</p>
-	<img src="{% static 'core/images/HealthTeam/DentroPaciente.png' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      If you want to get information from a specific patient, just click on the name of the patient you want.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="health_vaccine">{% trans 'Vaccine Schedule' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/CalendarioDeVacinas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      Clicking on the vaccine calendar will show a table with two tabs that indicate the vaccines by age, the first flap is from birth to six years of age and the second flap is nine years old and up.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Vaccination Sites' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/LocaisDeVacina.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      After accessing "Vaccination Sites" in the sidebar, you will be redirected to a list of cities in the Federal District, where each city has vaccination clinics.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="health_forum">{% trans 'Forum' %}</h1>
-	<img src="{% static 'core/images/HealthTeam/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      By accessing the Forum, you will be redirected to the Forum Categories page, clicking on any category you will go to the forum posts.
-		{% endblocktrans %}
-	</p>
-  <img src="{% static 'core/images/HealthTeam/Posts.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      You will have access to the posts of the selected category, you can also insert a new post for the category.
-		{% endblocktrans %}
-	</p>
-  <img src="{% static 'core/images/HealthTeam/Comentarios.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-    	In the comments page, you will have access to the comments of the selected post and you will also be able to make new comments in the post.
-		{% endblocktrans %}
-	</p>
-  <h1 class="text-center border-bottom border-top pt-2 pb-2 lead mb-4" style="font-size: 30px;" id="forum">{% trans 'Events' %}</h1>
-  <img src="{% static 'core/images/HealthTeam/Eventos.png' %}" width="100%" class="float-right border border-secondary mb-4">
-	<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-		{% blocktrans %}
-      In "Events", you will have access to the events promoted by Cris Down, clicking on the event name will appear the information.
-		{% endblocktrans %}
-	</p>
+	<div id="first_login">
+		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_first">{% trans 'First Login' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/PrimeiroLogin.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      After you log in to the Dr. Down website, you will be redirected to the profile editing page, where you will need to fill in your details so that your registration is completed in the system, after inserting them, click the "Update" button.
+	  	{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/HealthTeam/MeuPerfil.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				Once you have filled in your data and updated your profile, you will be redirected to the "My Profile" page, you will be able to view your data, edit your profile, change the registered email and delete your account.
+			{% endblocktrans %}
+		</p>
+	</div>
 
+	<div id="appointments">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_appointments">{% trans 'Marked Appointments' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/Consultas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+				By clicking on "Marked" in the Queries tab, you will be redirected to the list of queries that have been marked for you by a Cris Down employee, where you can view the specialty, date and time.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="patients">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_patients">{% trans 'My Patients' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/Pacientes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      By clicking on "Patients" you will see a list of all your patients.
+			{% endblocktrans %}
+		</p>
+		<img src="{% static 'core/images/HealthTeam/DentroPaciente.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      If you want to get information from a specific patient, just click on the name of the patient you want.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="medical_records">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_vaccine">{% trans 'Medical Records' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/AdicionarDadosProntuario.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      Ao escolher um paciente, você pode visualizar ou adicionar informações ao seu perfil. Para isso, basta clicar na aba que desejas ver ou inserir e informações. Para acresentar informações a uma aba, basta clicar no botão "Novo" ou "Adicionar". Você também pode editar informações clicando no botão "Editar" na parte superior esquerda da janela.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="vaccine">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_vaccine">{% trans 'Vaccine Schedule' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/CalendarioDeVacinas.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      Clicking on the vaccine calendar will show a table with two tabs that indicate the vaccines by age, the first flap is from birth to six years of age and the second flap is nine years old and up.
+			{% endblocktrans %}
+		</p>
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;">{% trans 'Vaccination Sites' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/LocaisDeVacina.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      After accessing "Vaccination Sites" in the sidebar, you will be redirected to a list of cities in the Federal District, where each city has vaccination clinics.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="forum">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_forum">{% trans 'Forum' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/Forum.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      By accessing the Forum, you will be redirected to the Forum Categories page, clicking on any category you will go to the forum posts.
+			{% endblocktrans %}
+		</p>
+	  <img src="{% static 'core/images/HealthTeam/Posts.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      You will have access to the posts of the selected category, you can also insert a new post for the category.
+			{% endblocktrans %}
+		</p>
+	  <img src="{% static 'core/images/HealthTeam/Comentarios.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	    	In the comments page, you will have access to the comments of the selected post and you will also be able to make new comments in the post.
+			{% endblocktrans %}
+		</p>
+	</div>
+
+	<div id="events">
+	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="forum">{% trans 'Events' %}</h1>
+	  <img src="{% static 'core/images/HealthTeam/Eventos.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      In "Events", you will have access to the events promoted by Cris Down, clicking on the event name will appear the information.
+			{% endblocktrans %}
+		</p>
+	</div>
 </div>
