@@ -29,6 +29,9 @@ def send_message(user_list, subject, text):
         "text": text
     }
 
+    if settings.IS_TESTING:
+        return data
+
     return requests.post(
         mail_config['url'],
         auth=("api", mail_config['api']),
