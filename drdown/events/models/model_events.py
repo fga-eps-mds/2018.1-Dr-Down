@@ -65,13 +65,20 @@ class Events(models.Model):
     def save(self, *args, **kwargs):
 
         if Events.objects.filter(id=self.id).count() > 0:
-            pass # TODO
+
+            mail.send_event_update_message(
+                user_list=User.objects.filter(
+                    Q(patient__isnull=False) | Q(responsible__isnull=False)
+                ).values_list('email', flat=True),
+                event=self
+            )
+
         else:
 
             mail.send_event_creation_message(
                 user_list=User.objects.filter(
                     Q(patient__isnull=False) | Q(responsible__isnull=False)
-                ),
+                ).values_list('email', flat=True),
                 event=self
             )
 

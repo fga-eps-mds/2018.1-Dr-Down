@@ -87,6 +87,30 @@ def send_event_creation_message(user_list, event):
     return send_message(user_list, subject, text, html)
 
 
+def send_event_update_message(user_list, event):
+
+    subject = str(_("DRDOWN: The %(name)s has changed.")) % {
+        'name': event.name,
+    }
+
+    text = str(_(
+        "A event created on our site has been changed, it is of high"
+        "importance to go check its details again."
+        "Here are some of the new details:\n"
+        "\tEvent name: %(name)s - Date and time: %(date)s at %(time)s\n"
+        "\tLocation: %(location)s\n"
+        "For more information, please visit the Dr. Down website."
+        "\n\nThanks for your atention,\n\tDr. Down team.",
+        )) % {
+            'name': event.name,
+            'date': event.date,
+            'time': event.time,
+            'location': event.location
+        }
+
+    return send_message(user_list, subject, text)
+
+
 def send_appointment_cancel_message(user, requests):
 
     subject = str(_("DRDOWN: Your medical appointment was canceled."))
