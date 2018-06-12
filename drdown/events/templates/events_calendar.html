@@ -14,26 +14,27 @@
 
   <script src="{% static 'events/js/moment.min.js'%}"></script>
   <script src="{% static 'events/js/fullcalendar.min.js'%}"></script>
+
+  <script src="{% static 'events/js/pt-br.js'%}"></script>
+
   <link rel="stylesheet" href="{% static 'events/css/fullcalendar.min.css'%}">
 
   <script>
     jqCal(document).ready(function() {
         jqCal('#calendar').fullCalendar({
-            defaultDate: '2014-09-12',
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [
                 {% for event in events_list %} {
-                    title: "{{ event.name}}",
+                    title: "{{ event.name }}",
                     start: '{{ event.date|date:"Y-m-d" }}',
                     end: '{{ event.date|date:"Y-m-d" }}',
 
                 },
                 {% endfor %}
-
             ]
         });
-    });
+    }).fullCalendar('gotoDate', currentDate);
   </script>
 
 {% endblock script %}
