@@ -26,12 +26,17 @@
   <script>
     jqCal(document).ready(function() {
         jqCal('#calendar').fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,listWeek'
+            },
             editable: true,
             eventLimit: true, // allow "more" link when too many events
             events: [
                 {% for event in events_list %} {
                     title: "{{ event.name }}",
-                    start: '{{ event.date|date:"Y-m-d" }}',
+                    start: '{{ event.date|date:"Y-m-d" }}' + 'T' + '{{ event.time|time:"H:i" }}',
                     end: '{{ event.date|date:"Y-m-d" }}',
 
                 },
