@@ -1,0 +1,20 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html>
+    <body>
+      
+    {% trans 'The Dr. Down team would like to invite you to a event.' %}
+    <br>
+    {% trans "Here are the details:" %}
+    <br>    
+    
+    {% trans "Event name:" %} {{object.name}} - {% trans "Date and time:" %} {{object.date}} {% trans "at" %} {{object.time}}
+    {% trans "Location: " %} {{object.location}}
+    
+    {% trans "For more information, please visit the Dr. Down website." %}
+    <br>
+    {% trans "Thanks for your atention, <br>Dr. Down team." %}
+
+    </body>
+</html>

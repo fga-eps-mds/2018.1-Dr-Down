@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+from django.template import loader
 
 import requests
 try:
@@ -18,16 +19,27 @@ def __get_mail_config():
         return {'url': "https://api.mailgun.net", 'api': "", 'domain': "",
                 'email': ""}
 
-def send_message(user_list, subject, text):
+def __get_html(template_name, context):
+    
+    template = loader.get_template(template_name)
+
+    return template.render(context)
+
+def send_message(user_list, subject, text, html=""):
 
     mail_config = __get_mail_config()
 
     data = {
         "from": DRDOWN_EMAIL,
-        "to": user_list,
+        "to": DRDOWN_EMAIL,
+        "bcc": user_list,
         "subject": subject,
-        "text": text
+        "text": text,
+        "html": html,
     }
+
+    if settings.DEBUG:
+        print("MAIL DEBUG >>> " + str(data))
 
     if settings.IS_TESTING:
         return data
@@ -61,7 +73,12 @@ def send_event_creation_message(user_list, event):
             'location': event.location
         }
 
-    send_message(user_list, subject, text)
+    html = __get_html(
+        template_name="notifications/emails/create_event.html",
+        context={'object': event, }
+    )
+
+    return send_message(user_list, subject, text, html)
 
 
 def send_appointment_cancel_message(user, requests):
