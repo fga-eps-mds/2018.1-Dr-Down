@@ -1,9 +1,11 @@
 from test_plus.test import TestCase
 from ..admin import PatientAdmin
-from ..models import Patient
+from ..models import Patient, Responsible
+from ..models.model_patient import careline_notification
 
 from django.db.models import Q
 from django.utils import timezone
+
 
 class TestModelPatient(TestCase):
     """
@@ -18,9 +20,23 @@ class TestModelPatient(TestCase):
         self.user = self.make_user()
 
         self.user.birthday = timezone.datetime(year=2000, month=1, day=1)
+        self.user.email = "not@an.email"
 
         self.user.save()
         self.user.refresh_from_db()
+
+        self.user1 = self.make_user(username="user1")
+
+        self.user1.birthday = timezone.datetime(year=2000, month=1, day=1)
+        self.user1.email = "not@another.email"
+
+        self.user1.save()
+        self.user1.refresh_from_db()
+
+        self.responsible = Responsible.objects.create(
+            cpf="974.220.200-16",
+            user=self.user1
+        )
 
         self.patient = Patient.objects.create(
             ses="1234567",
@@ -30,7 +46,8 @@ class TestModelPatient(TestCase):
             ethnicity=3,
             sus_number="12345678911",
             civil_registry_of_birth="12345678911",
-            declaration_of_live_birth="12345678911"
+            declaration_of_live_birth="12345678911",
+            responsible=self.responsible
         )
 
     def test_get_absolute_url(self):
@@ -238,3 +255,21 @@ class TestModelPatient(TestCase):
             self.user.patient.count_incomplete_procedures_for_current_age(),
             itens_count
         )
+
+    def test_careline_notifications(self):
+        """
+            Test if patients are correct in careline notifications
+        """
+
+        target_patients = careline_notification()
+
+        self.assertIn(self.patient, target_patients)
+
+        for procedure in self.patient.checklist.procedure_set.all():
+            for check_item in procedure.checkitem_set.all():
+                check_item.check = True
+                check_item.save()
+
+        target_patients = careline_notification()
+
+        self.assertNotIn(self.patient, target_patients)

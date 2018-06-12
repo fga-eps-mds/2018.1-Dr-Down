@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from django.template import loader
+from django.db.models import Q
 
 import requests
 try:
@@ -138,3 +139,32 @@ def send_appointment_sucess_message(user):
         ))
 
     send_message(user.email, subject, text)
+
+
+def send_patient_careline_status(patient):
+
+    from drdown.users.models import User, Responsible
+
+    subject = str(_("DRDOWN: %(name)s has procedures to be made.")) % {
+            'name': patient.user.name,
+        }
+
+    text = str(_(
+        "Hello! We would like to inform you that %(name)s has "
+        "%(number)d procedure(s) to be made on the care line.\n"
+        "Please visit the Dr. Down website to check which procedures need"
+        " your attention."
+        "\n\nThanks for your atention,\n\tDr. Down team.",
+        )) % {
+            'name': patient.user.name,
+            'number': patient.count_incomplete_procedures_for_current_age(),
+        }
+
+    user_list = [
+        patient.user.email,
+    ]
+
+    if patient.responsible is not None:
+        user_list.append(patient.responsible.user.email)
+
+    send_message(user_list, subject, text)

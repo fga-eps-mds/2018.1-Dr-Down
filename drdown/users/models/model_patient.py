@@ -12,6 +12,9 @@ from ..utils.validators import validate_generic_number
 from ..utils.validators import validate_names
 from ..utils.validators import validate_sus
 
+from celery.schedules import crontab
+from celery.task import periodic_task
+
 from .model_user import User
 from .model_responsible import Responsible
 
@@ -181,6 +184,24 @@ class Patient(models.Model):
     class Meta:
         verbose_name = _("Patient")
         verbose_name_plural = _("Patients")
+
+
+# runs every 1st day of a month
+@periodic_task(run_every=crontab(day_of_month=[1, ]))
+def careline_notification():
+
+    target_patients = list(Patient.objects.all())
+    target_patients = list(
+        filter(
+            lambda x: x.count_incomplete_procedures_for_current_age() > 0,
+            target_patients
+        )
+    )
+
+    for pat in target_patients:
+        mail.send_patient_careline_status(pat)
+
+    return target_patients
 
 
 @receiver(post_save, sender=Patient)
