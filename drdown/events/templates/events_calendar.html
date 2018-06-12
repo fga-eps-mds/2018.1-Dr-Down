@@ -15,7 +15,11 @@
   <script src="{% static 'events/js/moment.min.js'%}"></script>
   <script src="{% static 'events/js/fullcalendar.min.js'%}"></script>
 
-  <script src="{% static 'events/js/pt-br.js'%}"></script>
+  {% if request.LANGUAGE_CODE == 'pt-br' %}
+    <script src="{% static 'events/js/pt-br.js'%}"></script>
+  {% elif request.LANGUAGE_CODE == 'en' %}
+    <script src="{% static 'events/js/en-gb.js'%}"></script>
+  {% endif %}
 
   <link rel="stylesheet" href="{% static 'events/css/fullcalendar.min.css'%}">
 
