@@ -5,34 +5,12 @@
   {% trans "Events" %}
 {% endblock %}
 
-{% block script %}
-
-  <script src="{% static 'events/js/jquery.min.js'%}"></script>
-  <script>
-     var jqCal = jQuery.noConflict(false);
-  </script>
-
-  <script src="{% static 'events/js/moment.min.js'%}"></script>
-  <script src="{% static 'events/js/fullcalendar.min.js'%}"></script>
-  <link rel="stylesheet" href="{% static 'events/css/fullcalendar.min.css'%}">
-
-  <script>
-    jqCal(document).ready(function() {
-        jqCal('#calendar').fullCalendar({
-            defaultDate: '2014-09-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-        });
-    });
-  </script>
-
-{% endblock script %}
-
 
 {% block content %}
+
   <div class="container">
     {% if user.employee %}
-      <div class="row mb-5">
+      <div class="row">
         <div class="col">
           <h1>{% trans 'Events'%}</h1>
         </div>
@@ -41,6 +19,14 @@
         </div>
       </div>
     {% endif %}
+
+    <div class="row mb-3 ml-1">
+      <a href="{% url 'events:calendar'%}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
+        <i class="fa fa-calendar" style="font-size:25px;" aria-hidden="true" ></i>
+        {% trans "Calendar of Events" %}
+      </a>
+    </div>
+
     <div class="accordion" id="accordionmenu3">
       {% for event in events_list %}
         <div class="card-header border row" id="heading{{ event.pk }}">
@@ -132,23 +118,5 @@
       {% endfor %}
     </div>
   </div>
-
-  <style>
-
-  calendar {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    font-size: 14px;
-  }
-
-  #calendar {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  </style>
-
-  <div id='calendar'></div>
 
 {% endblock %}
