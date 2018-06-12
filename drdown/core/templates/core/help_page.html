@@ -71,28 +71,28 @@
                 </li>
               {% elif user.patient %}
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_first"><h3 class="lead" style="font-size: 17px;">{% trans 'First Login' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#first_login"><h3 class="lead" style="font-size: 17px;">{% trans 'First Login' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_request"><h3 class="lead" style="font-size: 17px;">{% trans 'Requests' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#requests"><h3 class="lead" style="font-size: 17px;">{% trans 'Requests' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_appointments"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#appointments"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_medical"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'Checklist' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'Checklist' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_vaccine"><h3 class="lead" style="font-size: 17px;">{% trans 'Vaccines' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#vaccines"><h3 class="lead" style="font-size: 17px;">{% trans 'Vaccines' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#patient_events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
                 </li>
               {% elif user.healthteam %}
                   <li class="nav-item">
@@ -163,7 +163,7 @@
           </div>
         </div>
         <div class="col mt-3">
-          <h1 class="text-center" style="font-size: 30px">{% trans 'Help Page' %}</h1>          
+          <h1 class="text-center mb-3" style="font-size: 30px">{% trans 'Help' %}</h1>          
           <!-- Informações que qualquer usuário pode ver -->
           {% if not user.is_authenticated  %}
             <div id="help_user">
