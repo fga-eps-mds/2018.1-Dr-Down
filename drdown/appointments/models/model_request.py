@@ -2,6 +2,7 @@ from django.db import models
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from django.utils.translation import ugettext_lazy as _
+from drdown.notifications.utils import mail
 
 
 class AppointmentRequest(models.Model):
@@ -141,6 +142,15 @@ class AppointmentRequest(models.Model):
 
     def __str__(self):
         return _('Appointment request of ') + self.patient.user.name
+
+    def save(self, *args, **kwargs):
+        if self.status == AppointmentRequest.SCHEDULED:
+            mail.send_appointment_sucess_message(self.patient.user)
+        elif self.status == AppointmentRequest.DECLINED:
+            mail.send_appointment_cancel_message(self.patient.user, self)
+
+
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Request")
