@@ -339,7 +339,7 @@ pip-selfcheck.json
 
 
 # Email configuration
-utility/email.py
+utility/email_config.py
 
 drdown/media/
 

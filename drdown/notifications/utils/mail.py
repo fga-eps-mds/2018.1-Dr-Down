@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import requests
 try:
-    from utility.email import EmailEnvironment
+    from utility.email_config import EmailEnvironment
 except ImportError:
     pass
 
@@ -15,8 +15,8 @@ def __get_mail_config():
         return EmailEnvironment()
     except NameError:
         print("Mail is operating in fallback mode, no configuration provided!")
-        return {'url': "", 'api': "", 'domain': "", 'email': ""}
-
+        return {'url': "https://api.mailgun.net", 'api': "", 'domain': "",
+                'email': ""}
 
 def send_message(user_list, subject, text):
 
