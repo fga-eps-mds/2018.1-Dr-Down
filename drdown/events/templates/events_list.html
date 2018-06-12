@@ -7,14 +7,14 @@
 
 {% block script %}
 
-  <script src='http://fullcalendar.io/js/fullcalendar-3.9.0/lib/jquery.min.js'></script>
+  <script src="{% static 'events/js/jquery.min.js'%}"></script>
   <script>
-      var jqCal = jQuery.noConflict(false);
+     var jqCal = jQuery.noConflict(false);
   </script>
 
-  <script src='http://fullcalendar.io/js/fullcalendar-3.9.0/lib/moment.min.js'></script>
-  <script src='http://fullcalendar.io/js/fullcalendar-3.9.0/fullcalendar.min.js'></script>
-  <link rel="stylesheet" href='http://fullcalendar.io/js/fullcalendar-3.9.0/fullcalendar.css'>
+  <script src="{% static 'events/js/moment.min.js'%}"></script>
+  <script src="{% static 'events/js/fullcalendar.min.js'%}"></script>
+  <link rel="stylesheet" href="{% static 'events/css/fullcalendar.min.css'%}">
 
   <script>
     jqCal(document).ready(function() {
