@@ -3,6 +3,7 @@ from drdown.events.views.view_event import EventsListView
 from drdown.events.views.view_event import EventsCreateView
 from drdown.events.views.view_event import EventsUpdateView
 from drdown.events.views.view_event import EventsDeleteView
+from django.views.generic import TemplateView
 
 app_name = 'events'
 
@@ -26,6 +27,11 @@ urlpatterns = [
         regex=r'^delete/(?P<pk>\d+)/$',
         view=EventsDeleteView.as_view(),
         name='delete_event'
+     ),
+     url(
+         regex=r'^calendar/$',
+         view=TemplateView.as_view(template_name='events_calendar.html'),
+         name='calendar'
      ),
 
 ]
