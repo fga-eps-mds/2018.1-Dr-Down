@@ -19,11 +19,13 @@ def __get_mail_config():
         return {'url': "https://api.mailgun.net", 'api': "", 'domain': "",
                 'email': ""}
 
+
 def __get_html(template_name, context):
-    
+
     template = loader.get_template(template_name)
 
     return template.render(context)
+
 
 def send_message(user_list, subject, text, html=""):
 
@@ -39,7 +41,7 @@ def send_message(user_list, subject, text, html=""):
     }
 
     if settings.DEBUG:
-        print("MAIL DEBUG >>> " + str(data))
+        print("\nMAIL DEBUG >>> " + str(data))
 
     if settings.IS_TESTING:
         return data
@@ -50,10 +52,14 @@ def send_message(user_list, subject, text, html=""):
         data=data,
     )
 
-    # Testing only. Remove it
-    print ('Status: {0}'.format(request.status_code))
-    print ('Body:   {0}'.format(request.text))
+    if settings.DEBUG:
+        print("\nMAIL DEBUG >>> " + str(data))
+        print(
+            '\nMAIL DEBUG >>> request status' + str(request.status_code) +
+            ' body: ' + str(request.text)
+        )
 
+    return request
 
 
 def send_event_creation_message(user_list, event):
