@@ -64,7 +64,7 @@
               </div>
               {% if not user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link text-blue scroll" href="#user_resgister_login"><h3 class="lead" style="font-size: 17px;">{% trans 'Register and Login' %}</h3></a>
+                  <a class="nav-link text-blue scroll" href="#register_login"><h3 class="lead" style="font-size: 17px;">{% trans 'Register and Login' %}</h3></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
@@ -133,7 +133,7 @@
                     <a class="nav-link text-blue scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#checklist"><i><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></i></a>
+                    <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-blue scroll" href="#vaccine"><h3 class="lead" style="font-size: 17px;">{% trans 'Vaccines' %}</h3></a>
@@ -161,7 +161,7 @@
                     <a class="nav-link text-blue scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'Checklist' %}</h3></a>
+                    <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></a>
                   </li>
                 <li class="nav-item">
                     <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
@@ -169,7 +169,6 @@
                   <li class="nav-item">
                     <a class="nav-link text-blue scroll" href="#events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
                   </li>
-                {% else %}
                 {% endif %}
             </ul>
           </div>
