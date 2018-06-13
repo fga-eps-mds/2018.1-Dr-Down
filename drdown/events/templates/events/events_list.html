@@ -26,24 +26,23 @@
 
     <div class="accordion" id="accordionmenu3">
       {% for event in events_list %}
-        <a class="event" style="display:block" data-toggle="collapse" href="#collapse{{ event.pk }}" role="button" >
-          <div class="row" id="heading{{ event.pk }}">
 
-              <div class="col">
-                <h4 class="lead">{{ event.name }}</h4>
-                <small class="text-muted">{{ event.date }}</small>
-              </div>
+        <div class="row" id="heading{{ event.pk }}">
+          <a class="event border-right" style="display:block; width:80%;" data-toggle="collapse" href="#collapse{{ event.pk }}" role="button" >
+            <h4 class="lead">{{ event.name }}</h4>
+            <small class="text-muted">{{ event.date }}</small>
+          </a>
 
-            {% if user.employee %}
-              <div class="col-1">
-                 <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
-              </div>
-              <div class="col-1">
-                <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space float-right">{% trans "Delete" %}</a>
-              </div>
-            {% endif %}
-          </div>
-        </a>
+          {% if user.employee %}
+            <div class="col-1 border-bottom mt-4">
+               <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary " >{% trans "Edit" %}</a>
+            </div>
+            <div class="col-1 border-bottom mt-4">
+              <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space ">{% trans "Delete" %}</a>
+            </div>
+          {% endif %}
+        </div>
+
         <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
           <div class="card-body">
             <div class="row">
