@@ -8,4 +8,5 @@
 
 .text-blue a:focus, a:hover, a:active{
 	color: #224e72;
+	text-decoration: none;
 }

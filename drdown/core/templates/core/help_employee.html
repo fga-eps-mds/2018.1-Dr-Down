@@ -16,6 +16,16 @@
 		</p>
 	</div>
 
+	<div id="notifications">
+		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_first">{% trans 'Notifications' %}</h1>
+		<img src="{% static 'core/images/Employee/Notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      Nas próximas vezes que fizer o login, explicado <a href="#first_login" class="text-blue">aqui</a>, você verá a <i>Página de Notificações</i>. Essa página te avisará quando houver novos <a href="#events" class="text-blue">eventos</a>, novos pedidos de <a href="#appointments" class="text-blue">consulta</a> a serem respondidos e te atualizará sobre o fórum.
+	  	{% endblocktrans %}
+		</p>
+	</div>
+
 	<div id="requests">
 	  <h1 class=" pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_request">{% trans 'Requests' %}</h1>
 		<img src="{% static 'core/images/Employee/PedidosEmployee.PNG' %}" width="100%" class="float-right border border-secondary mb-4" id="login">

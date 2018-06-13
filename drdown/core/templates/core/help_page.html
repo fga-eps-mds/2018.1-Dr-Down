@@ -53,7 +53,7 @@
         <div class="col-md-2 border-right" id="side">
           <div class="sticky-top" style="top: 1em;">
             <ul class="nav flex-column">
-              <div class="row border-bottom">
+              <div class="row border-bottom" id="return-button-title">
                 {% url 'core:help_home' as url %}
                 {% if request.path == url %}
                   <a href="{% url 'core:home' %}" class="ml-2 text-blue col-auto" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
@@ -146,30 +146,33 @@
                   </li>
               {% elif user.employee %}
                 <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#first_login"><h3 class="lead" style="font-size: 17px;">{% trans 'First Login' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#requests"><h3 class="lead" style="font-size: 17px;">{% trans 'Requests' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#appointments"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#patients"><h3 class="lead" style="font-size: 17px;">{% trans 'Patients' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></a>
-                  </li>
+                  <a class="nav-link text-blue scroll" href="#first_login"><h3 class="lead" style="font-size: 17px;">{% trans 'First Login' %}</h3></a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-blue scroll" href="#events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
-                  </li>
-                {% endif %}
+                  <a class="nav-link text-blue scroll" href="#notifications"><h3 class="lead" style="font-size: 17px;">{% trans 'Notifications' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#requests"><h3 class="lead" style="font-size: 17px;">{% trans 'Requests' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#appointments"><h3 class="lead" style="font-size: 17px;">{% trans 'Appointments' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#patients"><h3 class="lead" style="font-size: 17px;">{% trans 'Patients' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-blue scroll" href="#events"><h3 class="lead" style="font-size: 17px;">{% trans 'Events' %}</h3></a>
+                </li>
+              {% endif %}
             </ul>
           </div>
         </div>
