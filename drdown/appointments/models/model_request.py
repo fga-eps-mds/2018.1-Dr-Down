@@ -148,8 +148,6 @@ class AppointmentRequest(models.Model):
             mail.send_appointment_sucess_message(self.patient, self)
         elif self.status == AppointmentRequest.DECLINED:
             mail.send_appointment_cancel_message(self.patient, self)
-
-
         super().save(*args, **kwargs)
 
     class Meta:
