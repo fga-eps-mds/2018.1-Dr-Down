@@ -61,7 +61,7 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <div class="container">
-          <li class="navbar-brand ml-4 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
+          <li class="navbar-brand ml-3 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
           {% if request.user.photo %}
             <img class="center" src="{{ request.user.photo.url }}" width="100px" >
           {% else %}

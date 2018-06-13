@@ -85,15 +85,15 @@
         </div>
       </div>
       <div id="language" class="mr-1 row ">
-        <form action="{% url 'set_language' %}" method="post" class="col-2 mr-2">
+        <form action="{% url 'set_language' %}" method="post" class="col-2 mr-1 mt-1">
           {% csrf_token %}
           <input name="language" type="hidden" value="pt-br" />
-          <input type="image" value="" src="{% static 'core/images/flags/br.svg' %}" style="height: 24px; width: 33px;"/>
+          <input type="image" value="" src="{% static 'core/images/flags/br.svg' %}" style="height: 21px; width: 29px;"/>
         </form>
-        <form action="{% url 'set_language' %}" method="post" class="col-2">
+        <form action="{% url 'set_language' %}" method="post" class="col-2 mt-1">
           {% csrf_token %}
           <input name="language" type="hidden" value="en" />
-          <input type="image" value="" src="{% static 'core/images/flags/us.svg' %}" style=" height: 24px; width: 33px;"/>
+          <input type="image" value="" src="{% static 'core/images/flags/us.svg' %}" style=" height: 21px; width: 29px;"/>
         </form>
       </div>
     </nav>
