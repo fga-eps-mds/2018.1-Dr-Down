@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"POT-Creation-Date: 2018-06-13 18:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: drdown/events/models/model_events.py:11
-#: drdown/events/templates/events_form.html:46
+#: drdown/events/templates/events/events_form.html:46
 msgid "Name"
 msgstr "Nome"
 
@@ -28,8 +28,8 @@ msgid "Name of event"
 msgstr "Nome do evento"
 
 #: drdown/events/models/model_events.py:17
-#: drdown/events/templates/events_form.html:92
-#: drdown/events/templates/events_list.html:67
+#: drdown/events/templates/events/events_form.html:92
+#: drdown/events/templates/events/events_list.html:73
 msgid "Location"
 msgstr "Local"
 
@@ -38,8 +38,8 @@ msgid "Location of event"
 msgstr "Local do evento"
 
 #: drdown/events/models/model_events.py:23
-#: drdown/events/templates/events_form.html:58
-#: drdown/events/templates/events_list.html:44
+#: drdown/events/templates/events/events_form.html:58
+#: drdown/events/templates/events/events_list.html:50
 msgid "Date"
 msgstr "Data"
 
@@ -48,8 +48,8 @@ msgid "Date of event"
 msgstr "Data do evento"
 
 #: drdown/events/models/model_events.py:28
-#: drdown/events/templates/events_form.html:69
-#: drdown/events/templates/events_list.html:45
+#: drdown/events/templates/events/events_form.html:69
+#: drdown/events/templates/events/events_list.html:51
 msgid "Time"
 msgstr "Hora"
 
@@ -58,8 +58,8 @@ msgid "Time of event"
 msgstr "Hora do evento"
 
 #: drdown/events/models/model_events.py:33
-#: drdown/events/templates/events_form.html:129
-#: drdown/events/templates/events_list.html:78
+#: drdown/events/templates/events/events_form.html:129
+#: drdown/events/templates/events/events_list.html:84
 msgid "Description"
 msgstr "Descrição"
 
@@ -68,8 +68,8 @@ msgid "Description from event"
 msgstr "Descrição do evento"
 
 #: drdown/events/models/model_events.py:40
-#: drdown/events/templates/events_form.html:82
-#: drdown/events/templates/events_list.html:66
+#: drdown/events/templates/events/events_form.html:82
+#: drdown/events/templates/events/events_list.html:72
 msgid "Organize by"
 msgstr "Organizado por"
 
@@ -78,7 +78,7 @@ msgid "Person who organize the event"
 msgstr "Organizador do evento"
 
 #: drdown/events/models/model_events.py:48
-#: drdown/events/templates/events_form.html:104
+#: drdown/events/templates/events/events_form.html:104
 msgid "Value of event"
 msgstr "Valor do evento"
 
@@ -95,101 +95,101 @@ msgid "Event"
 msgstr "Evento"
 
 #: drdown/events/models/model_events.py:62
-#: drdown/events/templates/events_list.html:5
-#: drdown/events/templates/events_list.html:14
+#: drdown/events/templates/events/events_list.html:5
+#: drdown/events/templates/events/events_list.html:18
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/events/templates/events_form.html:7
-#: drdown/events/templates/events_form.html:40
+#: drdown/events/templates/events/events_form.html:7
+#: drdown/events/templates/events/events_form.html:40
 msgid "New Event"
 msgstr "Novo evento"
 
-#: drdown/events/templates/events_form.html:9
-#: drdown/events/templates/events_form.html:38
+#: drdown/events/templates/events/events_form.html:9
+#: drdown/events/templates/events/events_form.html:38
 msgid "Edit Event"
 msgstr "Editar evento"
 
-#: drdown/events/templates/events_form.html:49
-#: drdown/events/templates/events_form.html:52
+#: drdown/events/templates/events/events_form.html:49
+#: drdown/events/templates/events/events_form.html:52
 msgid "Enter a event name"
 msgstr "Nome do evento"
 
-#: drdown/events/templates/events_form.html:61
-#: drdown/events/templates/events_form.html:64
+#: drdown/events/templates/events/events_form.html:61
+#: drdown/events/templates/events/events_form.html:64
 msgid "Enter a event date"
 msgstr "Data do evento"
 
-#: drdown/events/templates/events_form.html:72
-#: drdown/events/templates/events_form.html:75
+#: drdown/events/templates/events/events_form.html:72
+#: drdown/events/templates/events/events_form.html:75
 msgid "Enter a event time"
 msgstr "Hora do evento"
 
-#: drdown/events/templates/events_form.html:85
-#: drdown/events/templates/events_form.html:88
+#: drdown/events/templates/events/events_form.html:85
+#: drdown/events/templates/events/events_form.html:88
 msgid "Enter a event organizer"
 msgstr "Organizador do evento"
 
-#: drdown/events/templates/events_form.html:95
-#: drdown/events/templates/events_form.html:98
+#: drdown/events/templates/events/events_form.html:95
+#: drdown/events/templates/events/events_form.html:98
 msgid "Enter a event location"
 msgstr "Local do evento"
 
-#: drdown/events/templates/events_form.html:107
-#: drdown/events/templates/events_form.html:110
+#: drdown/events/templates/events/events_form.html:107
+#: drdown/events/templates/events/events_form.html:110
 msgid "Event is free?"
 msgstr "O evento é gratuito?"
 
-#: drdown/events/templates/events_form.html:118
-#: drdown/events/templates/events_form.html:121
-#: drdown/events/templates/events_form.html:124
+#: drdown/events/templates/events/events_form.html:118
+#: drdown/events/templates/events/events_form.html:121
+#: drdown/events/templates/events/events_form.html:124
 msgid "Enter a value event"
 msgstr "Valor do evento"
 
-#: drdown/events/templates/events_form.html:132
-#: drdown/events/templates/events_form.html:135
+#: drdown/events/templates/events/events_form.html:132
+#: drdown/events/templates/events/events_form.html:135
 msgid "Enter event description and details"
 msgstr "Descrição e detalhes"
 
-#: drdown/events/templates/events_form.html:138
+#: drdown/events/templates/events/events_form.html:138
 msgid "Submit"
 msgstr "Enviar"
 
-#: drdown/events/templates/events_form.html:140
-#: drdown/events/templates/events_list.html:98
+#: drdown/events/templates/events/events_form.html:140
+#: drdown/events/templates/events/events_list.html:104
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/events/templates/events_list.html:17
+#: drdown/events/templates/events/events_list.html:22
 msgid "New"
 msgstr "Novo"
 
-#: drdown/events/templates/events_list.html:34
+#: drdown/events/templates/events/events_list.html:39
 msgid "Edit"
 msgstr "Editar"
 
-#: drdown/events/templates/events_list.html:37
-#: drdown/events/templates/events_list.html:101
+#: drdown/events/templates/events/events_list.html:42
+#: drdown/events/templates/events/events_list.html:107
 msgid "Delete"
 msgstr "Deletar"
 
-#: drdown/events/templates/events_list.html:46
+#: drdown/events/templates/events/events_list.html:52
 msgid "Value"
 msgstr "Valor"
 
-#: drdown/events/templates/events_list.html:57
+#: drdown/events/templates/events/events_list.html:63
 msgid "Free Event"
 msgstr "Evento gratuito"
 
-#: drdown/events/templates/events_list.html:91
+#: drdown/events/templates/events/events_list.html:97
 msgid "Confirm delete"
 msgstr "Confirmar deleção"
 
-#: drdown/events/templates/events_list.html:95
+#: drdown/events/templates/events/events_list.html:101
 msgid "Are you sure you want to delete this event?"
 msgstr "Você tem certeza que deseja apagar este evento?"
 
-#: drdown/events/templates/events_list.html:108
+#: drdown/events/templates/events/events_list.html:114
 msgid "There are no events registered."
 msgstr "Não há eventos registrados."
 

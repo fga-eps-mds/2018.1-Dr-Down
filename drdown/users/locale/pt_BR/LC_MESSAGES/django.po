@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"POT-Creation-Date: 2018-06-13 18:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -352,17 +352,17 @@ msgstr "Paciente:"
 msgid "Search"
 msgstr "Buscar"
 
-#: drdown/users/templates/users/healthteam_patient_list.html:44
+#: drdown/users/templates/users/healthteam_patient_list.html:43
 #: drdown/users/templates/users/responsible_patient_list.html:24
 #: drdown/users/templates/users/user_detail.html:124
 msgid "SES: "
 msgstr "SES: "
 
-#: drdown/users/templates/users/healthteam_patient_list.html:52
+#: drdown/users/templates/users/healthteam_patient_list.html:50
 msgid "Responsible:"
 msgstr "Responsável"
 
-#: drdown/users/templates/users/healthteam_patient_list.html:60
+#: drdown/users/templates/users/healthteam_patient_list.html:58
 #: drdown/users/templates/users/responsible_patient_list.html:30
 msgid "There are no patients for this user."
 msgstr "Não há pacientes para estes usuário."

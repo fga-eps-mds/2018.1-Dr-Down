@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"POT-Creation-Date: 2018-06-13 18:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: drdown/medicalrecords/models/model_medical_record.py:41
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:5
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:45
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:127
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:121
 msgid "Medical Record"
 msgstr "Prontuário"
 
@@ -87,7 +87,7 @@ msgstr "Queixa"
 
 #: drdown/medicalrecords/models/model_complaint.py:47
 #: drdown/medicalrecords/templates/medicalrecords/complaints.html:5
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:76
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:74
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:204
 msgid "Complaints"
 msgstr "Queixas"
@@ -381,7 +381,7 @@ msgid "Risk"
 msgstr "Risco"
 
 #: drdown/medicalrecords/models/model_risk.py:80
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:80
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:78
 #: drdown/medicalrecords/templates/medicalrecords/risks.html:4
 msgid "Risks"
 msgstr "Riscos"
@@ -429,15 +429,15 @@ msgid "There are no complaints registered for this patient."
 msgstr "Não há queixas registradas para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:18
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:84
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:82
 msgid "Curves"
 msgstr "Curvas"
 
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:35
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:72
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:34
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:63
 #: drdown/medicalrecords/templates/medicalrecords/risks.html:7
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:10
 msgid "Edit"
 msgstr "Editar"
 
@@ -492,7 +492,7 @@ msgid "Evolution"
 msgstr "Evolução"
 
 #: drdown/medicalrecords/templates/medicalrecords/evolution.html:8
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:12
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:65
 msgid "New"
 msgstr "Novo"
 
@@ -506,7 +506,7 @@ msgid "There are no evolutions registered for this patient."
 msgstr "Não há evoluções registradas para este paciente."
 
 #: drdown/medicalrecords/templates/medicalrecords/exams.html:5
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:70
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:68
 msgid "Medical Exams"
 msgstr "Exames Médicos"
 
@@ -540,7 +540,7 @@ msgstr "Adicionar nova queixa"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:46
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:202
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:204
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:50
@@ -551,7 +551,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:47
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:203
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:205
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:51
@@ -585,7 +585,7 @@ msgstr "ano(s) e"
 msgid "month(s)"
 msgstr "mes(es)"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:197
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:199
 msgid ""
 "Perimeter in cm. If the age is greater than 23, the head circumference is "
 "disregarded"
@@ -613,16 +613,11 @@ msgstr " Linha de cuidado"
 msgid "Patient data"
 msgstr "Dados do paciente"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:67
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:5
-msgid "Postnatal data"
-msgstr "Dados do pós-natal"
-
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:73
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:71
 msgid "Prescription"
 msgstr "Prescrição"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:127
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:121
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:49
 msgid "Print/Save"
 msgstr "Imprimir/Salvar"
@@ -662,7 +657,7 @@ msgid "Postnatal Data"
 msgstr "Dados do pós-natal"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:140
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:24
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:77
 msgid "grams"
 msgstr "gramas"
 
@@ -671,7 +666,7 @@ msgid "APGAR"
 msgstr "APGAR:"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:153
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:58
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:113
 msgid "No postnatal data for this patient."
 msgstr "Não há dados de pós-natal para este paciente."
 
@@ -745,6 +740,30 @@ msgstr "Registro civil de nascimento: "
 msgid "Declaration of Live Birth: "
 msgstr "Declaração de nascido vivo: "
 
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:58
+msgid "Postnatal data"
+msgstr "Dados do pós-natal"
+
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:75
+msgid "Weight at birth: "
+msgstr "Peso ao nascer:"
+
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:80
+msgid "APGAR: "
+msgstr "APGAR:"
+
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:85
+msgid "Foot Test:"
+msgstr "Teste do pezinho"
+
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:95
+msgid "Heart Test:"
+msgstr "Teste do coraçãozinho:"
+
+#: drdown/medicalrecords/templates/medicalrecords/patient_data.html:102
+msgid "Ear Test:"
+msgstr "Teste da orelinha:"
+
 #: drdown/medicalrecords/templates/medicalrecords/risk_form.html:8
 msgid "Edit Risk"
 msgstr "Editar Risco"
@@ -781,26 +800,6 @@ msgstr "Risco psicológico: "
 msgid "Risk physiotherapy: "
 msgstr "Risco fisioterapêutico: "
 
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:22
-msgid "Weight at birth: "
-msgstr "Peso ao nascer:"
-
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:27
-msgid "APGAR: "
-msgstr "APGAR:"
-
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:32
-msgid "Foot Test:"
-msgstr "Teste do Pézinho"
-
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:41
-msgid "Heart Test:"
-msgstr "Teste do coraçãozinho:"
-
-#: drdown/medicalrecords/templates/medicalrecords/static_data.html:48
-msgid "Ear Test:"
-msgstr "Teste da orelinha:"
-
 #: drdown/medicalrecords/tests/test_medical_records_view.py:132
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
@@ -820,13 +819,11 @@ msgstr "Idade (em meses)"
 msgid "Age (in years)"
 msgstr "Idade (em anos)"
 
-#: drdown/medicalrecords/views/view_curves.py:85
-msgid " (in months)"
-msgstr " (em meses)"
+#~ msgid " (in months)"
+#~ msgstr " (em meses)"
 
-#: drdown/medicalrecords/views/view_curves.py:86
-msgid " (in years)"
-msgstr " (em anos)"
+#~ msgid " (in years)"
+#~ msgstr " (em anos)"
 
 #~ msgid "Ages"
 #~ msgstr "Idades"
