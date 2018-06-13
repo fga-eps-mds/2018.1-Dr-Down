@@ -1,0 +1,16 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html>
+    <body>
+
+    {% trans "Hello! We would like to inform you that " %} {{object.user.name}}{% trans " has " %}
+    {{object.count_incomplete_procedures_for_current_age}}
+    {% trans "procedure(s) to be made on the care line." %}
+    <br>
+    {% trans "Please visit the Dr. Down website to check which procedures need your attention." %}
+    <br>
+    {% trans "Thanks for your attention, <br>Dr. Down team." %}
+
+    </body>
+</html>
