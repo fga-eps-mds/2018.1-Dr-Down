@@ -23,16 +23,16 @@ urlpatterns = [
         regex=r'^update/(?P<pk>\d+)/$',
         view=EventsUpdateView.as_view(),
         name='update_event'
-     ),
+    ),
     url(
         regex=r'^delete/(?P<pk>\d+)/$',
         view=EventsDeleteView.as_view(),
         name='delete_event'
-     ),
-     url(
-         regex=r'^calendar/$',
-         view=CalendarEventsListView.as_view(),
-         name='calendar'
-     ),
+    ),
+    url(
+        regex=r'^calendar/$',
+        view=CalendarEventsListView.as_view(),
+        name='calendar'
+    ),
 
 ]
