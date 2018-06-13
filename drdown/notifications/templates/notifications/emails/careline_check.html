@@ -8,7 +8,11 @@
     {{object.count_incomplete_procedures_for_current_age}}
     {% trans "procedure(s) to be made on the care line." %}
     <br>
-    {% trans "Please visit the Dr. Down website to check which procedures need your attention." %}
+    {% trans "Please visit the " %}
+    <a href="http://drdown-homolog.ml/{% url 'careline:checklist_detail' object.user.username %}" title="Dr Down">
+      {% trans "Dr. Down website" %}
+    </a>
+    {% trans " to check which procedures need your attention." %}
     <br>
     {% trans "Thanks for your attention, <br>Dr. Down team." %}
 

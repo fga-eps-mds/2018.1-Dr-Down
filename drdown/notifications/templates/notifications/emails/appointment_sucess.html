@@ -8,7 +8,10 @@
     <br>
     {% trans "Please go to Dr. Down to confirm the request." %}
     <br>
-    {% trans "For more information, please visit the Dr. Down website." %}
+    {% trans "For more information, please visit the" %}
+    <a href="http://drdown-homolog.ml/{% url 'medicalrecords:list_medicalrecords' object.user.username  %}" title="Dr Down">
+      {% trans "Dr. Down website" %}
+    </a>
     <br>
     {% trans "Thanks for your attention, <br>Dr. Down team." %}
 
