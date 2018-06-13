@@ -109,7 +109,12 @@ def send_event_update_message(user_list, event):
             'location': event.location
         }
 
-    return send_message(user_list, subject, text)
+    html = __get_html(
+        template_name="notifications/emails/update_event.html",
+        context={'object': event, }
+    )
+
+    return send_message(user_list, subject, text, html)
 
 
 def send_appointment_cancel_message(user, requests):
@@ -125,10 +130,18 @@ def send_appointment_cancel_message(user, requests):
             'reason': requests.observation,
         }
 
-    send_message(user.email, subject, text)
+    if user.responsible is not None:
+        user.append(user.responsible.user.email)
+
+    html = __get_html(
+        template_name="notifications/emails/appointment_canceled.html",
+        context={'object': requests, }
+    )
+
+    return send_message(user, subject, text, html)
 
 
-def send_appointment_sucess_message(user):
+def send_appointment_sucess_message(user, requests):
 
     subject = str(_("DRDOWN: Your request for consultation was accepted!"))
     text = str(_(
@@ -138,7 +151,15 @@ def send_appointment_sucess_message(user):
         "\n\nThanks for your atention,\n\tDr. Down team.",
         ))
 
-    send_message(user.email, subject, text)
+    if user.responsible is not None:
+        user.append(user.responsible.user.email)
+
+    html = __get_html(
+        template_name="notifications/emails/appointment_sucess.html",
+        context={'object': requests, }
+    )
+
+    return send_message(user, subject, text, html)
 
 
 def send_patient_careline_status(patient):
@@ -167,4 +188,9 @@ def send_patient_careline_status(patient):
     if patient.responsible is not None:
         user_list.append(patient.responsible.user.email)
 
-    send_message(user_list, subject, text)
+    html = __get_html(
+        template_name="notifications/emails/careline_check.html",
+        context={'object': patient, }
+    )
+
+    return send_message(user_list, subject, text, html)
