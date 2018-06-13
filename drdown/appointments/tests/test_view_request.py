@@ -460,3 +460,23 @@ class TestViewRequest(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'appointments/doctors_dropdown_list_options.html')
 
+    def test_email_responsible(self):
+        """
+        Test if a notification email is sent to the patient responsible
+        """
+        self.request_test = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.request_test.save()
+        self.request_test.refresh_from_db()
+        self.assertEquals(self.request_test.status,
+                          AppointmentRequest.PENDING)
+        self.request_test.status=AppointmentRequest.SCHEDULED
+        self.request_test.save()
+        self.request_test.refresh_from_db()
+        self.assertEquals(self.request_test.status,AppointmentRequest.SCHEDULED)

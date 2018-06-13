@@ -145,9 +145,9 @@ class AppointmentRequest(models.Model):
 
     def save(self, *args, **kwargs):
         if self.status == AppointmentRequest.SCHEDULED:
-            mail.send_appointment_sucess_message(self.patient.user, self)
+            mail.send_appointment_sucess_message(self.patient, self)
         elif self.status == AppointmentRequest.DECLINED:
-            mail.send_appointment_cancel_message(self.patient.user, self)
+            mail.send_appointment_cancel_message(self.patient, self)
 
 
         super().save(*args, **kwargs)
