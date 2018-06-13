@@ -41,24 +41,11 @@ def send_message(user_list, subject, text, html=""):
         "html": html,
     }
 
-    if settings.DEBUG:
-        print("\nMAIL DEBUG >>> " + str(data))
-
-    if settings.IS_TESTING:
-        return data
-
     request = requests.post(
         mail_config['url'],
         auth=("api", mail_config['api']),
         data=data,
     )
-
-    if settings.DEBUG:
-        print("\nMAIL DEBUG >>> " + str(data))
-        print(
-            '\nMAIL DEBUG >>> request status' + str(request.status_code) +
-            ' body: ' + str(request.text)
-        )
 
     return request
 
