@@ -17,6 +17,16 @@
 		</p>
 	</div>
 
+	<div id="notifications">
+		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_first">{% trans 'Notifications' %}</h1>
+		<img src="{% static 'core/images/HealthTeam/Notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+	      Nas próximas vezes que fizer o login, explicado <a href="#first_login" class="text-blue">aqui</a>, você verá a <i>Página de Notificações</i>. Essa página te avisará quando houver novos <a href="#events" class="text-blue">eventos</a>, a quantidade de <a href="#appointments" class="text-blue">consultas</a> que você terá no dia e te atualizará sobre os seus posts contidos no <a href="#forum" class="text-blue">fórum</a> .
+	  	{% endblocktrans %}
+		</p>
+	</div>
+
 	<div id="appointments">
 	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="health_appointments">{% trans 'Marked Appointments' %}</h1>
 		<img src="{% static 'core/images/HealthTeam/Consultas.png' %}" width="100%" class="float-right border border-secondary mb-4">
