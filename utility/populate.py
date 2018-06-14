@@ -603,6 +603,39 @@ def populate():
         created_by=employee_2,
     )
 
+    event_1 = Events.objects.create(
+        name="Festival de Halloween",
+        location="HRAN",
+        date="2018-10-31",
+        time="16:20",
+        description="Venha aproveitar com a sua família.",
+        organize_by="Cris Down",
+        free=False,
+        value=40.00,
+    )
+
+    event_2 = Events.objects.create(
+        name="Palestra sobre Síndrome de Down",
+        location="HRAN",
+        date="2018-10-10",
+        time="08:10",
+        description="A palestra alertará sobre os procedimentos necessários.",
+        organize_by="Cris Down",
+        free=False,
+        value=10.00,
+    )
+
+    event_3 = Events.objects.create(
+        name="Palestra sobre Vacinas",
+        location="HRAN",
+        date="2018-10-15",
+        time="15:00",
+        description="A palestra falará sobre o calendário de vacinas.",
+        organize_by="Cris Down",
+        free=True,
+        value=0,
+    )
+
     print ('================================================================')
     print ('WARNING:\n')
     print ('All passwords displayed on this terminal '
@@ -632,6 +665,7 @@ from drdown.users.models.model_patient import Patient
 from drdown.medicalrecords.models.model_curves import Curves
 from drdown.forum.models.model_category import Category
 from drdown.forum.models.model_post import Post
+from drdown.events.models.model_events import Events
 from drdown.forum.models.model_commentary import Commentary
 from drdown.medicalrecords.models.model_risk import Risk
 from django.core.exceptions import ValidationError

@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="container">
 
     <div class="row mb-5">
@@ -22,6 +23,13 @@
           <a href="{% url 'events:create_event'%}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
         </div>
       {% endif %}
+    </div>
+
+    <div class="row mb-3 ml-1">
+      <a href="{% url 'events:calendar'%}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
+        <i class="fa fa-calendar" style="font-size:25px;" aria-hidden="true" ></i>
+        {% trans "Calendar of Events" %}
+      </a>
     </div>
 
     <div class="accordion" id="accordionmenu3">

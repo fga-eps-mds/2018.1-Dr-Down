@@ -71,3 +71,10 @@ class EventsDeleteView(BaseViewPermissions, DeleteView):
     success_url = reverse_lazy(
         viewname='events:list_events',
     )
+
+
+class CalendarEventsListView(ListView):
+    model = Events
+    slug_field = 'name'
+    slug_url_kwarg = 'name'
+    template_name = 'events/events_calendar.html'
