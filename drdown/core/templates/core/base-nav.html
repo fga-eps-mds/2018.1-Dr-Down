@@ -44,18 +44,6 @@
     <!-- Navigation -->
     {% block navbar %}
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div id="language" class="mr-1 row ">
-        <form action="{% url 'set_language' %}" method="post" class="col-2 mr-2">
-          {% csrf_token %}
-          <input name="language" type="hidden" value="pt-br" />
-          <input type="submit" value="" style="background-image: url({% static 'core/images/brasil.png' %}); height: 21px; width: 33px;"/>
-        </form>
-        <form action="{% url 'set_language' %}" method="post" class="col-2">
-          {% csrf_token %}
-          <input name="language" type="hidden" value="en" />
-          <input type="submit" value="" style="background-image: url({% static 'core/images/eua.png' %}); height: 21px; width: 33px;"/>
-        </form>
-      </div>
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{% url 'core:home' %}#page-top">{% trans "Dr. Down" %}</a>
         <button class="navbar-toggler mb-3 navbar-toggler-right text-uppercase btn-secondary text-white rounded border border-secondary" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,6 +83,18 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div id="language" class="mr-1 row ">
+        <form action="{% url 'set_language' %}" method="post" class="col-2 mr-1 mt-1">
+          {% csrf_token %}
+          <input name="language" type="hidden" value="pt-br" />
+          <input type="image" value="" src="{% static 'core/images/flags/br.svg' %}" style="height: 21px; width: 29px;"/>
+        </form>
+        <form action="{% url 'set_language' %}" method="post" class="col-2 mt-1">
+          {% csrf_token %}
+          <input name="language" type="hidden" value="en" />
+          <input type="image" value="" src="{% static 'core/images/flags/us.svg' %}" style=" height: 21px; width: 29px;"/>
+        </form>
       </div>
     </nav>
     {% endblock navbar %}

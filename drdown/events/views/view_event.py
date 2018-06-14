@@ -19,12 +19,12 @@ class EventsListView(ListView):
     model = Events
     slug_field = 'name'
     slug_url_kwarg = 'name'
-    template_name = 'events_list.html'
+    template_name = 'events/events_list.html'
 
 
 class EventsCreateView(BaseViewPermissions, CreateView):
     model = Events
-    template_name = 'events_form.html'
+    template_name = 'events/events_form.html'
     fields = [
         'free',
         'location',
@@ -43,7 +43,7 @@ class EventsCreateView(BaseViewPermissions, CreateView):
 
 class EventsUpdateView(BaseViewPermissions, UpdateView):
     model = Events
-    template_name = 'events_form.html'
+    template_name = 'events/events_form.html'
     fields = [
         'free',
         'location',
@@ -77,4 +77,4 @@ class CalendarEventsListView(ListView):
     model = Events
     slug_field = 'name'
     slug_url_kwarg = 'name'
-    template_name = 'events_calendar.html'
+    template_name = 'events/events_calendar.html'

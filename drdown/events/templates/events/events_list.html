@@ -5,20 +5,25 @@
   {% trans "Events" %}
 {% endblock %}
 
+{% block css %}
+  {{block.super}}
+  <link href="{% static 'events/css/events.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 
   <div class="container">
-    {% if user.employee %}
-      <div class="row">
-        <div class="col">
-          <h1>{% trans 'Events'%}</h1>
-        </div>
+
+    <div class="row mb-5">
+      <div class="col">
+        <h1>{% trans 'Events'%}</h1>
+      </div>
+      {% if user.employee %}
         <div class="col mt-1">
           <a href="{% url 'events:create_event'%}" class="btn btn-secondary float-right" >{% trans "New" %}</a>
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
 
     <div class="row mb-3 ml-1">
       <a href="{% url 'events:calendar'%}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
@@ -29,24 +34,23 @@
 
     <div class="accordion" id="accordionmenu3">
       {% for event in events_list %}
-        <div class="card-header border row" id="heading{{ event.pk }}">
-          <div class="col-sm">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ event.pk }}">
-              <div class="col">
-                <h4 class="lead row">{{ event.name }}</h4>
-                <small class="row text-muted">{{ event.date }}</small>
-              </div>
-            </button>
-          </div>
+
+        <div class="row" id="heading{{ event.pk }}">
+          <a class="event border-right" style="display:block; width:80%;" data-toggle="collapse" href="#collapse{{ event.pk }}" role="button" >
+            <h4 class="lead">{{ event.name }}</h4>
+            <small class="text-muted">{{ event.date }}</small>
+          </a>
+
           {% if user.employee %}
-            <div class="col-1">
-               <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary float-right" >{% trans "Edit" %}</a>
+            <div class="col-1 border-bottom mt-4">
+               <a href="{% url 'events:update_event' event.pk %}" class="btn btn-secondary " >{% trans "Edit" %}</a>
             </div>
-            <div class="col-1">
-              <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space float-right">{% trans "Delete" %}</a>
+            <div class="col-1 border-bottom mt-4">
+              <a data-toggle="modal" data-target="#event-{{ event.name }} delete_event"  href="" class="btn btn-danger space ">{% trans "Delete" %}</a>
             </div>
           {% endif %}
         </div>
+
         <div id="collapse{{ event.pk }}" class="collapse" data-parent="#heading{{ event.pk }}">
           <div class="card-body">
             <div class="row">
