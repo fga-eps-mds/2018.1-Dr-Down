@@ -61,7 +61,7 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <div class="container">
-          <li class="navbar-brand ml-4 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
+          <li class="navbar-brand ml-3 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
           {% if request.user.photo %}
             <img class="center" src="{{ request.user.photo.url }}" width="100px" >
           {% else %}
@@ -112,7 +112,7 @@
                 {% trans "Scheduled" %}
               </a></li>
               <li><a href="{% url 'appointments:list_requests' %}">
-                {% trans "Requests" %}
+                {% trans "Requested" %}
               </a></li>
             </ul>
           </li>
@@ -124,9 +124,6 @@
             </a></li>
             <li><a href="{% url 'users:healthteam_patient_list' %}">
               {% trans "My Patients" %}
-            </a></li>
-            <li><a href="#">
-              {% trans "My Schedule" %}
             </a></li>
 
           {% elif user.patient %}
@@ -202,23 +199,23 @@
 
             <li><a href="{% url 'forum:list_categories' %}">{% trans "Forums" %}</a></li>
             <li><a href="{% url 'events:list_events' %}">{% trans "Events" %}</a></li>
-            <li><a href="{% url 'core:help' %}">{% trans "Help" %}</a></li>
+            <li><a href="{% url 'core:help_side' %}">{% trans "Help" %}</a></li>
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
-        <ul>
-          <div id="language" class="row mb-4 ml-2 float-left" style="position: absolute; bottom: 0; left: 0px;">
-            <form action="{% url 'set_language' %}" method="post" class="col-1 mr-2">
-              {% csrf_token %}
-              <input name="language" type="hidden" value="pt-br" />
-              <input type="submit" value="" style="background-image: url({% static 'core/images/brasil.png' %}); height: 21px; width: 33px;" />
-            </form>
-            <form action="{% url 'set_language' %}" method="post" class="col-1">
-              {% csrf_token %}
-              <input name="language" type="hidden" value="en" />
-              <input type="submit" value="" style="background-image: url({% static 'core/images/eua.png' %}); height: 21px; width: 33px;" />
-            </form>
-          </div>
-        </ul>
+
+        <div id="language" class="row" style="position: fixed; bottom: 2px; left:80px;">
+          <form action="{% url 'set_language' %}" method="post" class="col-1 mr-1">
+            {% csrf_token %}
+            <input name="language" type="hidden" value="pt-br" />
+            <input type="image" value="" src="{% static 'core/images/flags/br.svg' %}" style="height: 21px; width: 28px;"/>
+          </form>
+          <form action="{% url 'set_language' %}" method="post" class="col-1">
+            {% csrf_token %}
+            <input name="language" type="hidden" value="en" />
+            <input type="image" value="" src="{% static 'core/images/flags/us.svg' %}" style=" height: 21px; width: 28px;"/>
+          </form>
+        </div>
+
       </div>
 
         <!-- Logout Modal -->

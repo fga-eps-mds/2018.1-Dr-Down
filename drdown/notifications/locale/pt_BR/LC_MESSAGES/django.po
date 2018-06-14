@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"POT-Creation-Date: 2018-06-13 23:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -235,7 +235,7 @@ msgstr ""
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:79
 msgid "Careline"
-msgstr ""
+msgstr "Linha de cuidado"
 
 #: drdown/notifications/templates/notifications/patient_notifications.html:88
 msgid "You have "

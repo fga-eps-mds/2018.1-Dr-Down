@@ -1,0 +1,14 @@
+.event{
+  padding: 20px;
+  border-bottom: 0.5px solid #C0C0C0;
+}
+
+.event h4{
+  color: black;
+}
+
+.event:hover {
+  background-color: #CAE1FF;
+  text-decoration:none;
+  color:#FFFFFF;
+}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-09 00:55+0000\n"
+"POT-Creation-Date: 2018-06-14 00:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,58 +329,62 @@ msgstr ""
 "atualizar a página."
 
 #: drdown/core/templates/core/base-nav.html:6
-#: drdown/core/templates/core/base-nav.html:60
+#: drdown/core/templates/core/base-nav.html:48
 #: drdown/core/templates/core/base.html:6
 #: drdown/core/templates/core/home.html:20
 msgid "Dr. Down"
 msgstr "Dr. Down"
 
-#: drdown/core/templates/core/base-nav.html:62
+#: drdown/core/templates/core/base-nav.html:50
 msgid "Menu"
 msgstr "Menu"
 
-#: drdown/core/templates/core/base-nav.html:68
+#: drdown/core/templates/core/base-nav.html:56
 msgid "Home"
 msgstr "Início"
 
-#: drdown/core/templates/core/base-nav.html:71
+#: drdown/core/templates/core/base-nav.html:59
 msgid "Down's Syndrome"
 msgstr "Síndrome de Down"
 
-#: drdown/core/templates/core/base-nav.html:74
-#: drdown/core/templates/core/base.html:203
+#: drdown/core/templates/core/base-nav.html:62
+#: drdown/core/templates/core/base.html:200
 msgid "Forums"
 msgstr "Fórum"
 
-#: drdown/core/templates/core/base-nav.html:85
+#: drdown/core/templates/core/base-nav.html:73
 msgid "Sign in"
 msgstr "Entrar"
 
-#: drdown/core/templates/core/base-nav.html:88
+#: drdown/core/templates/core/base-nav.html:76
 msgid "Sign up"
 msgstr "Cadastrar"
 
 #: drdown/core/templates/core/base-nav.html:93
 #: drdown/core/templates/core/base.html:205
-#: drdown/core/templates/core/help_page.html:21
+#: drdown/core/templates/core/help_page.html:189
 msgid "Help"
 msgstr "Ajuda"
 
 #: drdown/core/templates/core/base-nav.html:121
+#: drdown/core/templates/core/help_page.html:227
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
 #: drdown/core/templates/core/base-nav.html:122
+#: drdown/core/templates/core/help_page.html:228
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
 #: drdown/core/templates/core/base-nav.html:123
+#: drdown/core/templates/core/help_page.html:229
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
 #: drdown/core/templates/core/base-nav.html:131
 #: drdown/core/templates/core/base.html:266
+#: drdown/core/templates/core/help_page.html:237
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -388,6 +392,14 @@ msgstr "Copyright &copy; Dr. Down 2018"
 #: drdown/core/templates/core/base.html:85
 #: drdown/core/templates/core/base.html:91
 #: drdown/core/templates/core/base.html:97
+#: drdown/core/templates/core/help_employee.html:20
+#: drdown/core/templates/core/help_health_team.html:21
+#: drdown/core/templates/core/help_page.html:77
+#: drdown/core/templates/core/help_page.html:105
+#: drdown/core/templates/core/help_page.html:133
+#: drdown/core/templates/core/help_page.html:161
+#: drdown/core/templates/core/help_patient.html:20
+#: drdown/core/templates/core/help_responsible.html:22
 msgid "Notifications"
 msgstr "Notificações"
 
@@ -397,12 +409,12 @@ msgstr "Meu Perfil"
 
 #: drdown/core/templates/core/base.html:108
 #: drdown/core/templates/core/base.html:123
-#: drdown/core/templates/core/help_employee.html:34
-#: drdown/core/templates/core/help_page.html:44
-#: drdown/core/templates/core/help_page.html:66
-#: drdown/core/templates/core/help_page.html:88
-#: drdown/core/templates/core/help_page.html:107
-#: drdown/core/templates/core/help_patient.html:35
+#: drdown/core/templates/core/help_employee.html:50
+#: drdown/core/templates/core/help_page.html:83
+#: drdown/core/templates/core/help_page.html:108
+#: drdown/core/templates/core/help_page.html:136
+#: drdown/core/templates/core/help_page.html:167
+#: drdown/core/templates/core/help_patient.html:51
 msgid "Appointments"
 msgstr "Consultas"
 
@@ -411,41 +423,37 @@ msgid "Scheduled"
 msgstr "Marcado"
 
 #: drdown/core/templates/core/base.html:115
-#: drdown/core/templates/core/help_employee.html:17
-#: drdown/core/templates/core/help_page.html:41
-#: drdown/core/templates/core/help_page.html:85
-#: drdown/core/templates/core/help_page.html:104
-#: drdown/core/templates/core/help_patient.html:17
-#: drdown/core/templates/core/help_responsible.html:17
+#: drdown/core/templates/core/help_employee.html:30
+#: drdown/core/templates/core/help_page.html:80
+#: drdown/core/templates/core/help_page.html:130
+#: drdown/core/templates/core/help_page.html:164
+#: drdown/core/templates/core/help_patient.html:30
+#: drdown/core/templates/core/help_responsible.html:32
 msgid "Requests"
 msgstr "Pedidos"
 
 #: drdown/core/templates/core/base.html:126
-#: drdown/core/templates/core/help_health_team.html:24
+#: drdown/core/templates/core/help_health_team.html:41
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:129
-msgid "My Schedule"
-msgstr "Minha Agenda"
-
-#: drdown/core/templates/core/base.html:135
+#: drdown/core/templates/core/base.html:132
 msgid "Medical History"
 msgstr "Histórico Médico"
 
-#: drdown/core/templates/core/base.html:139
+#: drdown/core/templates/core/base.html:136
 msgid "Medical Record"
 msgstr "Prontuário"
 
-#: drdown/core/templates/core/base.html:142
+#: drdown/core/templates/core/base.html:139
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
 #: drdown/core/templates/core/base.html:148
 #: drdown/core/templates/core/base.html:184
-#: drdown/core/templates/core/help_page.html:53
-#: drdown/core/templates/core/help_page.html:72
-#: drdown/core/templates/core/help_page.html:91
+#: drdown/core/templates/core/help_page.html:92
+#: drdown/core/templates/core/help_page.html:117
+#: drdown/core/templates/core/help_page.html:148
 #: drdown/core/templates/core/vaccine_schedule.html:28
 #: drdown/core/templates/core/vaccine_schedule.html:225
 #: drdown/core/templates/core/vaccine_schedule.html:258
@@ -453,662 +461,769 @@ msgstr "Linha de Cuidado"
 msgid "Vaccines"
 msgstr "Vacinas"
 
-#: drdown/core/templates/core/base.html:152
-#: drdown/core/templates/core/base.html:188
+#: drdown/core/templates/core/base.html:149
+#: drdown/core/templates/core/base.html:185
 msgid "Calendar"
 msgstr "Calendário"
 
-#: drdown/core/templates/core/base.html:155
-#: drdown/core/templates/core/base.html:191
+#: drdown/core/templates/core/base.html:152
+#: drdown/core/templates/core/base.html:188
 msgid "Health Centers"
 msgstr "Locais de vacinação"
 
-#: drdown/core/templates/core/base.html:165
+#: drdown/core/templates/core/base.html:162
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
 #: drdown/core/templates/core/base.html:198
-#: drdown/core/templates/core/help_employee.html:52
-#: drdown/core/templates/core/help_page.html:69
-#: drdown/core/templates/core/help_page.html:110
+#: drdown/core/templates/core/help_employee.html:71
+#: drdown/core/templates/core/help_page.html:111
+#: drdown/core/templates/core/help_page.html:139
+#: drdown/core/templates/core/help_page.html:170
+#: drdown/core/templates/core/help_responsible.html:57
 msgid "Patients"
 msgstr "Meus Pacientes"
 
 #: drdown/core/templates/core/base.html:204
-#: drdown/core/templates/core/help_employee.html:97
-#: drdown/core/templates/core/help_health_team.html:70
-#: drdown/core/templates/core/help_page.html:59
-#: drdown/core/templates/core/help_page.html:78
-#: drdown/core/templates/core/help_page.html:97
-#: drdown/core/templates/core/help_page.html:122
-#: drdown/core/templates/core/help_patient.html:94
-#: drdown/core/templates/core/help_responsible.html:69
+#: drdown/core/templates/core/help_employee.html:128
+#: drdown/core/templates/core/help_health_team.html:106
+#: drdown/core/templates/core/help_page.html:98
+#: drdown/core/templates/core/help_page.html:123
+#: drdown/core/templates/core/help_page.html:154
+#: drdown/core/templates/core/help_page.html:182
+#: drdown/core/templates/core/help_patient.html:125
+#: drdown/core/templates/core/help_responsible.html:131
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:206
-#: drdown/core/templates/core/base.html:229
+#: drdown/core/templates/core/base.html:203
+#: drdown/core/templates/core/base.html:226
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:233
+#: drdown/core/templates/core/base.html:230
 msgid "Are you sure you want to log out?"
 msgstr "Você tem certeza que deseja sair?"
 
-#: drdown/core/templates/core/base.html:236
+#: drdown/core/templates/core/base.html:233
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/core/templates/core/base.html:242
+#: drdown/core/templates/core/base.html:239
 msgid "Log Out"
 msgstr "Sair"
 
 #: drdown/core/templates/core/help_employee.html:4
-#: drdown/core/templates/core/help_health_team.html:4
-#: drdown/core/templates/core/help_page.html:38
-#: drdown/core/templates/core/help_page.html:63
-#: drdown/core/templates/core/help_page.html:82
-#: drdown/core/templates/core/help_page.html:101
+#: drdown/core/templates/core/help_health_team.html:5
+#: drdown/core/templates/core/help_page.html:74
+#: drdown/core/templates/core/help_page.html:102
+#: drdown/core/templates/core/help_page.html:127
+#: drdown/core/templates/core/help_page.html:158
 #: drdown/core/templates/core/help_patient.html:4
-#: drdown/core/templates/core/help_responsible.html:4
+#: drdown/core/templates/core/help_responsible.html:6
 msgid "First Login"
 msgstr "Primeiro Login"
 
 #: drdown/core/templates/core/help_employee.html:7
-#: drdown/core/templates/core/help_health_team.html:7
+#: drdown/core/templates/core/help_health_team.html:8
 #: drdown/core/templates/core/help_patient.html:7
-#: drdown/core/templates/core/help_responsible.html:7
+#: drdown/core/templates/core/help_responsible.html:9
 msgid ""
 "\n"
-"      After you log in to the Dr. Down website, you will be redirected to "
+"\t      After you log in to the Dr. Down website, you will be redirected to "
 "the profile editing page, where you will need to fill in your details so "
 "that your registration is completed in the system, after inserting them, "
 "click the \"Update\" button.\n"
-"  \t"
+"\t  \t"
 msgstr ""
 "\n"
 "      Após efetuar o primeiro login no site Dr. Down, você será "
 "redirecionado para a página de edição de perfil, onde será necessário "
-"preencher seus dados para que seu cadastro seja completado no sistema. Após "
-"inseri-los, aperte o botão Atualizar.\n"
+"preencher seus dados para completar o seu cadastro no sistema. Após inseri-"
+"los, aperte o botão 'Atualizar'.\n"
 "  \t"
 
 #: drdown/core/templates/core/help_employee.html:13
-#: drdown/core/templates/core/help_health_team.html:13
+#: drdown/core/templates/core/help_health_team.html:14
 #: drdown/core/templates/core/help_patient.html:13
-#: drdown/core/templates/core/help_responsible.html:13
+#: drdown/core/templates/core/help_responsible.html:15
 msgid ""
 "\n"
-"\t\t\tOnce you have filled in your data and updated your profile, you will "
+"\t\t\t\tOnce you have filled in your data and updated your profile, you will "
 "be redirected to the \"My Profile\" page, you will be able to view your "
 "data, edit your profile, change the registered email and delete your "
 "account.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tApós atualizar o seu perfil, você será redirecionado para a página Meu "
-"Perfil, onde poderá visualizar seus dados, editar o perfil, mudar o e-mail "
-"cadastrado e excluir sua conta.\n"
+"\t\t\tApós atualizar o seu perfil, você será redirecionado para a página "
+"'Meu Perfil', onde poderá visualizar seus dados, editar o perfil, mudar o e-"
+"mail cadastrado e excluir sua conta.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:20
+#: drdown/core/templates/core/help_employee.html:23
 msgid ""
 "\n"
-"\t\t\tBy clicking on Orders in the sidebar you will be redirected to the "
+"\t      Nas próximas vezes que fizer o login, explicado <a href="
+"\"#first_login\" class=\"text-blue scroll\">aqui</a>, você verá a <i>Página "
+"de Notificações</i>. Essa página te avisará quando houver novos <a href="
+"\"#events\" class=\"text-blue scroll\">eventos</a>, novos pedidos de <a href="
+"\"#appointments\" class=\"text-blue scroll\">consulta</a> a serem "
+"respondidos e te atualizará sobre o fórum.\n"
+"\t  \t"
+msgstr ""
+
+#: drdown/core/templates/core/help_employee.html:33
+msgid ""
+"\n"
+"\t\t\t\tBy clicking on Orders in the sidebar you will be redirected to the "
 "page that lists the requests for consultations, the orders will be ordered "
 "according to the risk of the specialty required by the patient and should be "
 "marked according to the priority.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\tSelecionando Pedidos na barra lateral, você será redirecionado para a "
-"página que lista os pedidos de consultas. Os pedidos estarão ordenados de "
-"acordo com a prioridade na especialidade requerida pelo paciente e deverão "
-"ser marcados de acordo com essa priorização.\n"
+"\t\tSelecionando 'Pedidos' na barra lateral, você será redirecionado para a "
+"a lista dos pedidos de consultas. Os pedidos estarão ordenados de acordo com "
+"a prioridade na especialidade requerida pelo paciente e deverão ser marcados "
+"de acordo com essa priorização.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:25
+#: drdown/core/templates/core/help_employee.html:38
 msgid ""
 "\n"
-"\t\t\tTo mark an appointment you must click on the \"Accept\" button and you "
-"will be redirected to the appointment marking page.\n"
-"\t\t"
+"\t\t\t\tTo mark an appointment you must click on the \"Accept\" button and "
+"you will be redirected to the appointment marking page.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tPara marcar uma consulta você deverá clicar no botão Aceitar e em "
-"seguida será redirecionado para a página de marcação de consulta.\n"
+"\t\t\tPara marcar uma consulta você deverá clicar no botão 'Aceitar' e, em "
+"seguida, será redirecionado para a página de marcação de consulta.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:30
+#: drdown/core/templates/core/help_employee.html:43
 msgid ""
 "\n"
-"\t\t\tIf the query is denied, you should write a justification for having "
+"\t\t\t\tIf the query is denied, you should write a justification for having "
 "this query refused.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tCaso a consulta seja recusada, você obrigatoriamente deverá escrever "
 "uma justificativa para a recusa do pedido.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:37
+#: drdown/core/templates/core/help_employee.html:53
 msgid ""
 "\n"
-"\t\t\tWhen you accept a query request or select the New Query option in the "
-"marked queries tab, you will be redirected to this page.\n"
-"\t\t"
+"\t\t\t\tWhen you accept a query request or select the New Query option in "
+"the marked queries tab, you will be redirected to this page.\n"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tQuando você aceitar um pedido de consulta ou selecionar a opção de "
-"Nova Consulta na aba de consultas marcadas, será redirecionado para esta "
+"'Nova Consulta' na aba de consultas marcadas, será redirecionado para esta "
 "página.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:42
+#: drdown/core/templates/core/help_employee.html:58
 msgid ""
 "\n"
-"\t\t\tWhen you are redirected to create a query through an order, the "
+"\t\t\t\tWhen you are redirected to create a query through an order, the "
 "Specialty, Health Professional and Patient fields are already marked. The "
 "patient will have chosen a shift and a desired day of the week, you will "
 "have to look for this availability, if it is not possible, it is not "
 "mandatory that it be as desired by the patient.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tQuando estiver aceitando um pedido, os campos de Especialidade, "
+"\t\t\tQuando desejar aceitar um pedido, os campos de Especialidade, "
 "Profissional de Saúde e Paciente já estarão marcados. O paciente terá "
 "escolhido um turno e um dia da semana desejado e você terá que procurar por "
-"essa disponibilidade . Caso não seja possível, não é obrigatório que seja "
-"como desejado pelo paciente , mas neste caso é interessante que seja "
-"fornecida uma justificativa para não seguir o que foi pedido por ele.\n"
+"essa disponibilidade. Caso não seja possível, não é obrigatório que seja "
+"como desejado pelo paciente. Neste caso, procure fornecer uma justificativa "
+"para o paciente.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:48
+#: drdown/core/templates/core/help_employee.html:64
 msgid ""
 "\n"
-"\t\t\tWhen you click Marked on the Queries tab, you will be redirected to "
+"\t\t\t\tWhen you click Marked on the Queries tab, you will be redirected to "
 "the list of marked queries. You can edit or cancel a query, if necessary.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tAo selecionar Marcadas na aba de Consultas, você será redirecionado "
+"\t\t\tAo selecionar 'Marcadas' na aba de consultas, você será redirecionado "
 "para a lista de consultas marcadas. Você poderá editar ou cancelar uma "
 "consulta, caso seja necessário.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:55
-msgid ""
-"\n"
-"\t\t\tBy clicking on \"Patients\" you will have access to a list of Cris "
-"Down patients and clicking on a patient you will be redirected to the "
-"patient's chart.\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\t\tAo selecionar Pacientes, você terá acesso a uma lista de pacientes do "
-"Cris Down e ao selecionar em um paciente você será redirecionado para o "
-"prontuário do mesmo.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:59
-#: drdown/core/templates/core/help_page.html:47
-#: drdown/core/templates/core/help_page.html:113
-#: drdown/core/templates/core/help_patient.html:42
-msgid "Medical Records"
-msgstr "Prontuário"
-
-#: drdown/core/templates/core/help_employee.html:62
-msgid ""
-"\n"
-"\t\t\tWhen you access a patient's chart, you can view the information of the "
-"chosen patient and the data filled by the Cris Down health team: evolutions, "
-"postnatal data, medical exams, prescriptions, complaints and curves of "
-"height, weight, cephalic perimeter.\n"
-"\t\t"
-msgstr ""
-"\n"
-"\t\t\tAo acessar o prontuário de um paciente, é possível visualizar as "
-"informações do paciente escolhido e os dados preenchidos pela equipe de "
-"saúde do Cris Down: evoluções, dados do pós-natal, exames médicos, "
-"prescrições, queixas e as curvas de altura, peso, imc e perímetro cefálico.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:67
-#: drdown/core/templates/core/help_patient.html:50
-msgid ""
-"\n"
-"      You can also go to the Care Line or print / save your medical records "
-"in PDF.\n"
-"\t\t"
-msgstr ""
-"\n"
-"      Também poderá ir para a Linha de Cuidado ou imprimir/salvar em PDF o "
-"seu prontuário.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:71
-#: drdown/core/templates/core/help_page.html:50
-#: drdown/core/templates/core/help_page.html:116
-#: drdown/core/templates/core/help_patient.html:54
-msgid "Checklist"
-msgstr "Linha de Cuidado"
-
 #: drdown/core/templates/core/help_employee.html:74
 msgid ""
 "\n"
-"\t\t\tBy clicking on \"Care Line\" you will have access to procedures that "
+"\t\t\t\tBy clicking on \"Patients\" you will have access to a list of Cris "
+"Down patients and clicking on a patient you will be redirected to the "
+"patient's chart.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"\t\t\tAo selecionar 'Pacientes', você terá acesso a uma lista de pacientes "
+"do Cris Down, onde poderá selecionar um paciente específico e acessar o "
+"prontuário do mesmo.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:81
+#: drdown/core/templates/core/help_health_team.html:57
+#: drdown/core/templates/core/help_page.html:86
+#: drdown/core/templates/core/help_page.html:114
+#: drdown/core/templates/core/help_page.html:142
+#: drdown/core/templates/core/help_page.html:173
+#: drdown/core/templates/core/help_patient.html:61
+#: drdown/core/templates/core/help_responsible.html:67
+msgid "Medical Records"
+msgstr "Prontuário"
+
+#: drdown/core/templates/core/help_employee.html:84
+msgid ""
+"\n"
+"\t\t\t\tWhen you access a patient's chart, you can view the information of "
+"the chosen patient and the data filled by the Cris Down health team: "
+"evolutions, postnatal data, medical exams, prescriptions, complaints and "
+"curves of height, weight, cephalic perimeter.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"\t\t\tAo acessar o prontuário de um paciente, é possível visualizar suas "
+"informações e os seguintes dados preenchidos pela equipe de saúde do Cris "
+"Down: evoluções, dados do pós-natal, exames médicos, prescrições, queixas e "
+"as curvas de altura, peso, imc e perímetro cefálico.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:89
+#: drdown/core/templates/core/help_patient.html:69
+#: drdown/core/templates/core/help_responsible.html:75
+msgid ""
+"\n"
+"\t      You can also go to the Care Line or print / save your medical "
+"records in PDF.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"      Também poderá ir para a 'Linha de Cuidado', imprimir ou salvar o seu "
+"prontuário em PDF.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:96
+#: drdown/core/templates/core/help_page.html:89
+#: drdown/core/templates/core/help_patient.html:76
+#: drdown/core/templates/core/help_responsible.html:82
+msgid "Checklist"
+msgstr "Linha de Cuidado"
+
+#: drdown/core/templates/core/help_employee.html:99
+msgid ""
+"\n"
+"\t\t\t\tBy clicking on \"Care Line\" you will have access to procedures that "
 "the patient should follow. These are procedures that a Down Syndrome "
 "sufferer has to follow throughout his or her life, some are compulsory, and "
 "weights are only when needed by the patient.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tAo selecionar Linha de Cuidado você poderá visualizar os procedimentos"
-" já feitos pelo paciente."
-"Aqui serão marcados procedimentos que uma pessoa com Síndrome de Down tem que "
-"seguir no decorrer de sua vida."
-"Alguns são obrigatórios e outros apenas quando necessário pelo paciente.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:78
-#: drdown/core/templates/core/help_health_team.html:51
-#: drdown/core/templates/core/help_page.html:34
-#: drdown/core/templates/core/help_page.html:56
-#: drdown/core/templates/core/help_page.html:75
-#: drdown/core/templates/core/help_page.html:94
-#: drdown/core/templates/core/help_page.html:119
-#: drdown/core/templates/core/help_patient.html:75
-#: drdown/core/templates/core/help_responsible.html:50
-#: drdown/core/templates/core/help_user.html:34
-msgid "Forum"
-msgstr "Fórum"
-
-#: drdown/core/templates/core/help_employee.html:81
-#: drdown/core/templates/core/help_health_team.html:54
-#: drdown/core/templates/core/help_patient.html:78
-#: drdown/core/templates/core/help_responsible.html:53
-msgid ""
-"\n"
-"      By accessing the Forum, you will be redirected to the Forum Categories "
-"page, clicking on any category you will go to the forum posts.\n"
-"\t\t"
-msgstr ""
-"\n"
-"      Ao acessar o Fórum, você será redirecionado para a página de "
-"Categorias do Fórum . Selecionando alguma categoria, você irá para os posts "
-"da mesma.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:87
-#: drdown/core/templates/core/help_health_team.html:60
-#: drdown/core/templates/core/help_patient.html:84
-#: drdown/core/templates/core/help_responsible.html:59
-msgid ""
-"\n"
-"      You will have access to the posts of the selected category, you can "
-"also insert a new post for the category.\n"
-"\t\t"
-msgstr ""
-"\n"
-"      Você terá acesso aos posts da categoria selecionada e também poderá "
-"inserir um novo post para a categoria.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:93
-#: drdown/core/templates/core/help_patient.html:90
-#: drdown/core/templates/core/help_responsible.html:65
-msgid ""
-"\n"
-"      In the comments page, you will have access to the comments of the "
-"selected post and you will also be able to make new comments in the post.\n"
-"\t\t"
-msgstr ""
-"\n"
-"      Na página de comentários, você terá acesso aos comentários do post "
-"selecionado e também poderá fazer novos comentários no post.\n"
-"\t\t"
-
-#: drdown/core/templates/core/help_employee.html:100
-msgid ""
-"\n"
-"      In \"Events\", the list of events promoted by Cris Down will appear, "
-"clicking on \"New Event\" will be redirected to the event creation page and "
-"you can create an event to be placed on the list.\n"
-"\t\t"
-msgstr ""
-"\n"
-"      Em Eventos, aparecerá a lista de eventos promovidos pelo Cris Down, "
-"selecionando Novo Evento você será redirecionado para a página de criação de "
-"eventos e poderá criar um evento para ser colocado na lista.\n"
+"\t\t\tAo selecionar Linha de Cuidado você poderá visualizar os procedimentos "
+"já efetuados pelo paciente.Aqui serão marcados procedimentos que uma pessoa "
+"com Síndrome de Down deve seguir ao decorrer de sua vida.Alguns "
+"procedimentos são obrigatórios, outros apenas em casos específicos.\n"
 "\t\t"
 
 #: drdown/core/templates/core/help_employee.html:106
+#: drdown/core/templates/core/help_health_team.html:84
+#: drdown/core/templates/core/help_page.html:70
+#: drdown/core/templates/core/help_page.html:95
+#: drdown/core/templates/core/help_page.html:120
+#: drdown/core/templates/core/help_page.html:151
+#: drdown/core/templates/core/help_page.html:179
+#: drdown/core/templates/core/help_patient.html:103
+#: drdown/core/templates/core/help_responsible.html:109
+#: drdown/core/templates/core/help_user.html:37
+msgid "Forum"
+msgstr "Fórum"
+
+#: drdown/core/templates/core/help_employee.html:109
+#: drdown/core/templates/core/help_health_team.html:87
+#: drdown/core/templates/core/help_patient.html:106
+#: drdown/core/templates/core/help_responsible.html:112
 msgid ""
 "\n"
-"      In the page of new event it is mandatory to fill in the information in "
-"order that the users are well informed about the event.\n"
-"\t\t"
+"\t      By accessing the Forum, you will be redirected to the Forum "
+"Categories page, clicking on any category you will go to the forum posts.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Na página de novo evento é obrigatório o preenchimento das informações "
-"a fim de que os usuários estejam bem informados sobre o evento.\n"
+"      Ao acessar o fórum, você será redirecionado para a página de "
+"categorias, onde serão listadas os assuntos de um grupo de posts. Ao "
+"selecionar alguma categoria, aparecerá os posts relacionados à mesma.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_employee.html:112
+#: drdown/core/templates/core/help_employee.html:115
+#: drdown/core/templates/core/help_health_team.html:93
+#: drdown/core/templates/core/help_patient.html:112
+#: drdown/core/templates/core/help_responsible.html:118
 msgid ""
 "\n"
-"      By clicking on an event you will have access to the event "
-"information.\n"
+"\t      You will have access to the posts of the selected category, you can "
+"also insert a new post for the category.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"      Você terá acesso aos posts da categoria selecionada e também poderá "
+"criar um novo post.\n"
 "\t\t"
+
+#: drdown/core/templates/core/help_employee.html:121
+#: drdown/core/templates/core/help_patient.html:118
+#: drdown/core/templates/core/help_responsible.html:124
+msgid ""
+"\n"
+"\t      In the comments page, you will have access to the comments of the "
+"selected post and you will also be able to make new comments in the post.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"      Na página de comentários, você terá acesso aos comentários do post "
+"selecionado e também poderá fazer novos comentários.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:131
+msgid ""
+"\n"
+"\t      In \"Events\", the list of events promoted by Cris Down will appear, "
+"clicking on \"New Event\" will be redirected to the event creation page and "
+"you can create an event to be placed on the list.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"      Em 'Eventos', aparecerá a lista de eventos promovidos pelo Cris Down. "
+"Ao clicar em 'Novo Evento' você será redirecionado para a página de criação "
+"de eventos.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:137
+msgid ""
+"\n"
+"\t      In the page of new event it is mandatory to fill in the information "
+"in order that the users are well informed about the event.\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"      Na página de criação de um novo evento é obrigatório o preenchimento "
+"de todas as informações, a fim de que os usuários tenham o conhecimento de "
+"todos os dados necessários para a participação.\n"
+"\t\t"
+
+#: drdown/core/templates/core/help_employee.html:143
+msgid ""
+"\n"
+"\t      By clicking on an event you will have access to the event "
+"information.\n"
+"\t\t\t"
 msgstr ""
 "\n"
 "      Clicando em um evento você terá acesso às informações do mesmo.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:17
-#: drdown/core/templates/core/help_responsible.html:29
+#: drdown/core/templates/core/help_health_team.html:24
+msgid ""
+"\n"
+"\t      Nas próximas vezes que fizer o login, explicado <a href="
+"\"#first_login\" class=\"text-blue scroll\">aqui</a>, você verá a <i>Página "
+"de Notificações</i>. Essa página te avisará quando houver novos <a href="
+"\"#events\" class=\"text-blue scroll\">eventos</a>, a quantidade de <a href="
+"\"#appointments\" class=\"text-blue scroll\">consultas</a> que você terá no "
+"dia e te atualizará sobre os seus posts contidos no <a href=\"#forum\" class="
+"\"text-blue scroll\">fórum</a> .\n"
+"\t  \t"
+msgstr ""
+
+#: drdown/core/templates/core/help_health_team.html:31
+#: drdown/core/templates/core/help_responsible.html:47
 msgid "Marked Appointments"
 msgstr "Consultas"
 
-#: drdown/core/templates/core/help_health_team.html:20
-#: drdown/core/templates/core/help_patient.html:38
-#: drdown/core/templates/core/help_responsible.html:32
+#: drdown/core/templates/core/help_health_team.html:34
+#: drdown/core/templates/core/help_patient.html:54
+#: drdown/core/templates/core/help_responsible.html:50
 msgid ""
 "\n"
-"\t\t\tBy clicking on \"Marked\" in the Queries tab, you will be redirected "
+"\t\t\t\tBy clicking on \"Marked\" in the Queries tab, you will be redirected "
 "to the list of queries that have been marked for you by a Cris Down "
 "employee, where you can view the specialty, date and time.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tAo clicar em Marcadas na aba de Consultas, você será redirecionado "
+"\t\t\tAo clicar em 'Marcadas' na aba de consultas, você será redirecionado "
 "para a lista de consultas que foram marcadas para você por algum funcionário "
 "do Cris Down, na qual poderá visualizar a especialidade, data e horário.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:27
+#: drdown/core/templates/core/help_health_team.html:44
 msgid ""
 "\n"
-"      By clicking on \"Patients\" you will see a list of all your patients.\n"
-"\t\t"
+"\t      By clicking on \"Patients\" you will see a list of all your "
+"patients.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Ao clicar em Pacientes, aparecerá uma lista com todos os seus "
+"      Ao clicar em 'Pacientes', aparecerá uma lista com todos os seus "
 "pacientes.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:33
+#: drdown/core/templates/core/help_health_team.html:50
 msgid ""
 "\n"
-"      If you want to get information from a specific patient, just click on "
-"the name of the patient you want.\n"
-"\t\t"
+"\t      If you want to get information from a specific patient, just click "
+"on the name of the patient you want.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Se deseja obter informações de um paciente específico, basta "
-"selecionar sobre o nome do paciente desejado.\n"
+"      Se deseja obter informações de um paciente específico, basta clicar no "
+"nome do paciente desejado.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:37
-#: drdown/core/templates/core/help_patient.html:61
-#: drdown/core/templates/core/help_responsible.html:36
+#: drdown/core/templates/core/help_health_team.html:60
+msgid ""
+"\n"
+"\t      Ao escolher um paciente, você pode visualizar ou adicionar "
+"informações ao seu perfil. Para isso, basta clicar na aba que desejas ver ou "
+"inserir e informações. Para acresentar informações a uma aba, basta clicar "
+"no botão \"Novo\" ou \"Adicionar\". Você também pode editar informações "
+"clicando no botão \"Editar\" na parte superior esquerda da janela.\n"
+"\t\t\t"
+msgstr ""
+
+#: drdown/core/templates/core/help_health_team.html:67
+#: drdown/core/templates/core/help_patient.html:86
+#: drdown/core/templates/core/help_responsible.html:92
 #: drdown/core/templates/core/info.html:153
 #: drdown/core/templates/core/vaccine_schedule.html:5
 msgid "Vaccine Schedule"
 msgstr "Calendário de Vacinas"
 
-#: drdown/core/templates/core/help_health_team.html:40
-#: drdown/core/templates/core/help_patient.html:64
-#: drdown/core/templates/core/help_responsible.html:39
+#: drdown/core/templates/core/help_health_team.html:70
+#: drdown/core/templates/core/help_patient.html:89
+#: drdown/core/templates/core/help_responsible.html:95
 msgid ""
 "\n"
-"      Clicking on the vaccine calendar will show a table with two tabs that "
-"indicate the vaccines by age, the first flap is from birth to six years of "
-"age and the second flap is nine years old and up.\n"
-"\t\t"
+"\t      Clicking on the vaccine calendar will show a table with two tabs "
+"that indicate the vaccines by age, the first flap is from birth to six years "
+"of age and the second flap is nine years old and up.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Ao selecionar calendário de vacinas, irá aparecer uma tabela com duas "
-"abas que indicam as vacinas por idade . A primeira é do nascimento até os "
-"seis anos de idade e , a segunda, dos nove anos em diante.\n"
+"      Ao selecionar 'Calendário de Vacinas', irá aparecer uma tabela "
+"indicando as vacinas por idade. Na primeira aba da tabela estão as vacinas "
+"que deverão se tomadas do nascimento até os seis anos de idade e, a segunda, "
+"dos nove anos de idade em diante.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:44
-#: drdown/core/templates/core/help_patient.html:68
-#: drdown/core/templates/core/help_responsible.html:43
+#: drdown/core/templates/core/help_health_team.html:74
+#: drdown/core/templates/core/help_patient.html:93
+#: drdown/core/templates/core/help_responsible.html:99
 msgid "Vaccination Sites"
 msgstr "Locais de Vacinação"
 
-#: drdown/core/templates/core/help_health_team.html:47
-#: drdown/core/templates/core/help_patient.html:71
-#: drdown/core/templates/core/help_responsible.html:46
+#: drdown/core/templates/core/help_health_team.html:77
+#: drdown/core/templates/core/help_patient.html:96
+#: drdown/core/templates/core/help_responsible.html:102
 msgid ""
 "\n"
-"      After accessing \"Vaccination Sites\" in the sidebar, you will be "
+"\t      After accessing \"Vaccination Sites\" in the sidebar, you will be "
 "redirected to a list of cities in the Federal District, where each city has "
 "vaccination clinics.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Após acessar Locais de Vacinação na barra lateral, você será "
-"redirecionado para uma lista de cidades do Distrito Federal . Para cada "
-"cidade, são exibidos os postos de saúde para vacinação.\n"
+"      Após acessar 'Locais de Vacinação' na barra lateral, você será "
+"redirecionado para a lista de cidades do Distrito Federal. Basta clicar "
+"sobre uma cidade para exibir os postos de saúde daquele local.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:66
+#: drdown/core/templates/core/help_health_team.html:99
 msgid ""
 "\n"
-"    \tIn the comments page, you will have access to the comments of the "
+"\t    \tIn the comments page, you will have access to the comments of the "
 "selected post and you will also be able to make new comments in the post.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "    \tNa página de comentários, você terá acesso aos comentários do post "
-"selecionado e também poderá fazer novos comentários no post.\n"
+"selecionado e à funcionalidade de criar novos comentários.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_health_team.html:73
-#: drdown/core/templates/core/help_patient.html:97
-#: drdown/core/templates/core/help_responsible.html:72
+#: drdown/core/templates/core/help_health_team.html:109
+#: drdown/core/templates/core/help_patient.html:128
+#: drdown/core/templates/core/help_responsible.html:134
 msgid ""
 "\n"
-"      In \"Events\", you will have access to the events promoted by Cris "
+"\t      In \"Events\", you will have access to the events promoted by Cris "
 "Down, clicking on the event name will appear the information.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"      Em Eventos, você terá acesso aos eventos promovidos pelo Cris Down. "
+"      Em 'Eventos', você terá acesso aos eventos promovidos pelo Cris Down. "
 "Selecionar o evento fará aparecer as informações.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_page.html:28
+#: drdown/core/templates/core/help_page.html:6
+msgid "Help Page"
+msgstr "Ajuda"
+
+#: drdown/core/templates/core/help_page.html:63
 msgid "Tutorial"
 msgstr "Tutorial"
 
-#: drdown/core/templates/core/help_page.html:31
-#: drdown/core/templates/core/help_user.html:4
+#: drdown/core/templates/core/help_page.html:67
+#: drdown/core/templates/core/help_user.html:5
 msgid "Register and Login"
-msgstr "Registro e Log in"
+msgstr "Registro"
 
-#: drdown/core/templates/core/help_patient.html:20
+#: drdown/core/templates/core/help_page.html:145
+#: drdown/core/templates/core/help_page.html:176
+msgid "CheckList"
+msgstr "Linha de Cuidado"
+
+#: drdown/core/templates/core/help_patient.html:23
 msgid ""
 "\n"
-"\t\t\tBy clicking on the Orders in the sidebar you will be redirected to the "
-"page that lists the requests for consultations made by you or your guardian "
-"when you are a patient under the age of 18.\n"
-"\t\t"
+"\t      Nas próximas vezes que fizer o login, explicado <a href="
+"\"#first_login\" class=\"text-blue\">aqui</a>, você verá a <i>Página de "
+"Notificações</i>. Essa página te avisará quando houver novos <a href="
+"\"#events\" class=\"text-blue scroll\">eventos</a>, novos pedidos de <a href="
+"\"#appointments\" class=\"text-blue scroll\">consultas</a> respondidos e os "
+"novos comentários de seus posts contidos no <a href=\"#forum\" class=\"text-"
+"blue scroll\">fórum</a>.\n"
+"\t  \t"
+msgstr ""
+
+#: drdown/core/templates/core/help_patient.html:33
+msgid ""
+"\n"
+"\t\t\t\tBy clicking on the Orders in the sidebar you will be redirected to "
+"the page that lists the requests for consultations made by you or your "
+"guardian when you are a patient under the age of 18.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tApertando em Pedidos na barra lateral você será redirecionado para a "
-"página que lista os pedidos de consultas feitos por você ou pelo seu "
-"responsável quando for um paciente menor de 18 anos.\n"
+"\t\t\tClicando em 'Pedidos' na barra lateral você será redirecionado para a "
+"lista dos pedidos de consultas feitos por você ou pelo seu responsável, caso "
+"seja um paciente menor de 18 anos.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_patient.html:25
-#: drdown/core/templates/core/help_responsible.html:25
+#: drdown/core/templates/core/help_patient.html:38
+#: drdown/core/templates/core/help_responsible.html:40
 msgid ""
 "\n"
-"      In this page you can create a new request for a query, edit an order "
+"\t      In this page you can create a new request for a query, edit an order "
 "or delete an order.\n"
-"    "
+"\t    "
 msgstr ""
 "\n"
-"      Nessa página você poderá criar um novo pedido para uma consulta, "
-"editar um pedido ou excluir um pedido.\n"
+"      Nessa página você poderá criar, editar ou excluir um pedido.\n"
 "    "
 
-#: drdown/core/templates/core/help_patient.html:31
+#: drdown/core/templates/core/help_patient.html:44
 msgid ""
 "\n"
-"\t\t\tWhen an employee of Cris Down makes a request for you or the person in "
-"charge, you will have to press \"Ok\" on the request to show that you are "
+"\t\t\t\tWhen an employee of Cris Down makes a request for you or the person "
+"in charge, you will have to press \"Ok\" on the request to show that you are "
 "aware that it has been marked as it will be deleted from the order list.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tQuando um funcionário do Cris Down marcar a consulta solicitada por "
-"você ou pelo seu responsável, você terá que apertar em \"Ok\" no pedido para "
-"mostrar que está ciente de que ele foi marcado pois ele será excluído da "
-"lista de pedidos.\n"
+"\t\t\tQuando um funcionário do Cris Down responder ao seu pedido, aparacerá "
+"um botão \"Ok\" ao lado da sua solitação. Ao clicar nesse botão, você "
+"declara que está ciente de que seu pedido foi ou não marcado.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_patient.html:45
+#: drdown/core/templates/core/help_patient.html:64
+#: drdown/core/templates/core/help_responsible.html:70
 msgid ""
 "\n"
-"\t\t\tBy clicking on \"Medical Record\" on the Medical History tab, you will "
-"have access to your pronounary, you can view your data and data filled by "
-"the Cris Down health team: evolutions, postnatal data, medical exams, "
+"\t\t\t\tBy clicking on \"Medical Record\" on the Medical History tab, you "
+"will have access to your pronounary, you can view your data and data filled "
+"by the Cris Down health team: evolutions, postnatal data, medical exams, "
 "prescriptions, complaints and curves of height, weight, imc and head "
 "circumference.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tAo clicar em \"Prontuário\" na aba Histórico Médico, você terá acesso "
-"ao seu pronturário, poderá visualizar os seus dados e os dados preenchidos "
-"pela equipe de saúde do Cris Down: evoluções, dados do pós-natal, exames "
-"médicos, prescrições, queixas e curvas de altura, peso, imc e perímetro "
-"cefálico.\n"
+"\t\t\tAo clicar em \"Prontuário\" na aba \"Histórico Médico\", você terá "
+"acesso ao seu pronturário, poderá visualizar as suas informações pessoais e "
+"os seguintes dados preenchidos pela equipe de saúde do Cris Down: evoluções, "
+"dados do pós-natal, exames médicos, prescrições, queixas e curvas de altura, "
+"peso, imc e perímetro cefálico.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_patient.html:57
+#: drdown/core/templates/core/help_patient.html:79
 msgid ""
 "\n"
-"\t\t\tBy clicking on \"Care Line\" you will have access to procedures that "
+"\t\t\t\tBy clicking on \"Care Line\" you will have access to procedures that "
 "will appear according to your age. These are procedures that a Down Syndrome "
 "sufferer has to follow throughout his or her life, some are compulsory, and "
 "weights are only when needed by the patient.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tAo clicar em \"Linha de Cuidado\" você terá acesso a procedimentos que "
 "aparecerão de acordo com a sua idade. São procedimentos que um portador de "
 "Síndrome de Down tem que seguir no decorrer de sua vida, alguns são "
-"obrigatórios e ourtos são apenas quando necessário pelo paciente.\n"
+"obrigatórios, outros são apenas quando necessário pelo paciente.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_responsible.html:20
+#: drdown/core/templates/core/help_responsible.html:25
 msgid ""
 "\n"
-"\t\t\tBy clicking on Orders in the sidebar you will be redirected to the "
+"\t      Nas próximas vezes que fizer o login, explicado <a href="
+"\"#first_login\" class=\"text-blue scroll\">aqui</a>, você verá a <i>Página "
+"de Notificações</i>. Essa página te avisará quando houver novos <a href="
+"\"#events\" class=\"text-blue scroll\">eventos</a>, novos pedidos de <a href="
+"\"#appointments\" class=\"text-blue scroll\">consultas</a> respondidos para "
+"todos os pacientes dos quais você é responsável e os novos comentários de "
+"seus posts contidos no <a href=\"#forum\" class=\"text-blue scroll\">fórum</"
+"a>.\n"
+"\t  \t"
+msgstr ""
+
+#: drdown/core/templates/core/help_responsible.html:35
+msgid ""
+"\n"
+"\t\t\t\tBy clicking on Orders in the sidebar you will be redirected to the "
 "page that lists the requests for inquiries made by you for whom you are "
 "responsible.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tApertando em Pedidos na barra lateral você será redirecionado para a "
-"página que lista os pedidos de consultas feitos por você para quem você se "
-"responsabiliza.\n"
+"\t\t\tApertando em \"Pedidos\" na barra lateral você será redirecionado para "
+"a lista os pedidos de consultas do paciente ao qual você é reponssável.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:7
+#: drdown/core/templates/core/help_responsible.html:60
 msgid ""
 "\n"
-"\t\t\tYou do not need to be registered to enjoy the features contained in "
+"\t\t\t\tNa <i>side bar</i> está listados todos os pacientes dos quais você é "
+"responsável. Ao clicar em um deles você terá acesso à <i>checklist</i> e ao "
+"prontuário.\n"
+"\t\t\t"
+msgstr ""
+
+#: drdown/core/templates/core/help_responsible.html:85
+msgid ""
+"\n"
+"\t\t\t\tPara visualizar ou editar o checklist de um paciente sob sua "
+"responsabilidade, basta clicar no botão \"Checklist\" no canto superior "
+"direito da página do prontuário desse paciente.\n"
+"\t\t\t"
+msgstr ""
+
+#: drdown/core/templates/core/help_user.html:8
+msgid ""
+"\n"
+"\t\t\t\tYou do not need to be registered to enjoy the features contained in "
 "nav bar.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tVocê não precisa estar cadastrado para usufruir das funcionalidades "
 "contidas na nav bar.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:12
+#: drdown/core/templates/core/help_user.html:13
 msgid ""
 "\n"
-"\t\t\tThe first step to getting started is to register. To do this, click on "
-"the \"Register\" button at the upper end as shown in the figure.\n"
-"\t\t"
+"\t\t\t\tThe first step to getting started is to register. To do this, click "
+"on the \"Register\" button at the upper end as shown in the figure.\n"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tO primeiro passo para iniciar é realizar o registro. Para fazer isso,"
-"Selecione Cadastrar na parte superior do site, como mostrado na imagem."
+"\t\t\tO primeiro passo para começar a utilizar o site é realizar o registro. "
+"Para fazer isso, selecione 'Cadastrar' na parte superior do site, conforme "
+"mostrado na imagem acima."
 
-#: drdown/core/templates/core/help_user.html:18
+#: drdown/core/templates/core/help_user.html:19
 msgid ""
 "\n"
-"\t\t\tBy clicking the button you will be redirected to this page. Fill in "
+"\t\t\t\tBy clicking the button you will be redirected to this page. Fill in "
 "the fields with your information and click the indicated button to "
 "continue.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
-"\t\t\tAo clicar no botão você será redirecionado para essa página. Preencha "
-"os campos com suas informações e clique no botão indicado para continuar.\n"
+"\t\t\tAo clicar no botão você será redirecionado para o formulário de "
+"cadastro. Preencha os campos com suas informações e clique no botão indicado "
+"para continuar.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:23
+#: drdown/core/templates/core/help_user.html:24
 msgid ""
 "\n"
-"\t\t\tOnce this is done, a confirmation will be sent to your email address "
+"\t\t\t\tOnce this is done, a confirmation will be sent to your email address "
 "and you will be redirected to the personal information fills page. To be "
 "classified as a patient, member of the medical team or responsible, you must "
 "contact an employee of CRIS Down.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tFeito isso, será enviado uma confirmação para o seu endereço de e-mail "
-"e você será redirecionado para a página de preenchimentos de informações "
+"e você será redirecionado para a página de preenchimento de informações "
 "pessoais. Para ser classificado como paciente, membro da equipe médica ou "
 "responsável, você deve entrar em contato com um funcionário do CRIS Down.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:29
+#: drdown/core/templates/core/help_user.html:30
 msgid ""
 "\n"
-"\t\t\tTo login with your account, click on the \"Enter\" button at the top "
+"\t\t\t\tTo login with your account, click on the \"Enter\" button at the top "
 "of the site and enter the data entered in the registration.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tPara fazer o login com a sua conta, clique no botão \"Entrar\" na "
-"parte superior do site e insira os dados inseridos no cadastro.\n"
+"parte superior do site e insira os dados do cadastro.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:37
+#: drdown/core/templates/core/help_user.html:40
+#| msgid ""
+#| "\n"
+#| "\t\t\t\tThe forum is the place of communication between users of the "
+#| "site, where you can ask questions, suggest improvements and make "
+#| "complaints, as well as help other users. You can only comment and create "
+#| "posts if you are logged in with your account, explained <a href=\"#login"
+#| "\" class=\"text-blue\"><i><u>here</u></i></a>.\n"
+#| "\t\t\t"
 msgid ""
 "\n"
-"\t\t\tThe forum is the place of communication between users of the site, "
+"\t\t\t\tThe forum is the place of communication between users of the site, "
 "where you can ask questions, suggest improvements and make complaints, as "
 "well as help other users. You can only comment and create posts if you are "
-"logged in with your account, explained <a href=\"#login\" class=\"text-blue"
-"\"><i><u>here</u></i></a>.\n"
-"\t\t"
+"logged in with your account, explained <a href=\"#login\" class=\"text-blue "
+"scroll\"><i><u>here</u></i></a>.\n"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tO fórum é o local de comunição entre usuários do site, onde você "
 "poderá fazer perguntas, sugerir melhorias e fazer reclamações, assim como "
 "ajudar outros usuários. Você só poderá comentar e criar posts se estiver "
 "entrado com a sua conta, explicado <a href=\"#login\" class=\"text-blue"
-"\"><i><u>here</u></i></a>.\n"
+"\"><i><u>aqui</u></i></a>.\n"
 "\t\t"
 
-#: drdown/core/templates/core/help_user.html:43
+#: drdown/core/templates/core/help_user.html:46
 msgid ""
 "\n"
-"\t\t\tThe first page of the forum lists the categories of posts, they will "
+"\t\t\t\tThe first page of the forum lists the categories of posts, they will "
 "be created according to the need of CRIS Down. To see the posts of a "
 "category, click on the title of the category you want.\n"
-"\t\t"
+"\t\t\t"
 msgstr ""
 "\n"
 "\t\t\tA primeira página do fórum lista as categorias dos posts, elas serão "
@@ -1121,8 +1236,8 @@ msgid "CRIS DOWN"
 msgstr "CRIS DOWN"
 
 #: drdown/core/templates/core/home.html:24
-msgid "Medical Appointment - Queue - Foruns - Information"
-msgstr "Consultas - Filas de Espera - Fórum - Informações"
+msgid "Medical Appointment - Events - Foruns - Information"
+msgstr "Consultas - Eventos - Fórum - Informações"
 
 #: drdown/core/templates/core/home.html:32
 msgid "About"
@@ -1315,7 +1430,7 @@ msgstr ""
 "a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
 "criança."
 
-#: drdown/core/templates/core/info.html:148
+#: drdown/core/templates/core/info.html:149
 msgid "Further reading"
 msgstr "Leituras complementares"
 
@@ -1336,52 +1451,52 @@ msgstr "Locais de Vacinação"
 #: drdown/core/templates/core/vaccination_locations.html:35
 #: drdown/core/templates/core/vaccination_locations.html:83
 #: drdown/core/templates/core/vaccination_locations.html:116
-#: drdown/core/templates/core/vaccination_locations.html:134
-#: drdown/core/templates/core/vaccination_locations.html:154
-#: drdown/core/templates/core/vaccination_locations.html:222
-#: drdown/core/templates/core/vaccination_locations.html:242
-#: drdown/core/templates/core/vaccination_locations.html:262
-#: drdown/core/templates/core/vaccination_locations.html:294
-#: drdown/core/templates/core/vaccination_locations.html:334
-#: drdown/core/templates/core/vaccination_locations.html:366
-#: drdown/core/templates/core/vaccination_locations.html:390
-#: drdown/core/templates/core/vaccination_locations.html:414
-#: drdown/core/templates/core/vaccination_locations.html:438
-#: drdown/core/templates/core/vaccination_locations.html:458
-#: drdown/core/templates/core/vaccination_locations.html:482
-#: drdown/core/templates/core/vaccination_locations.html:562
-#: drdown/core/templates/core/vaccination_locations.html:586
-#: drdown/core/templates/core/vaccination_locations.html:606
-#: drdown/core/templates/core/vaccination_locations.html:630
-#: drdown/core/templates/core/vaccination_locations.html:661
-#: drdown/core/templates/core/vaccination_locations.html:684
-#: drdown/core/templates/core/vaccination_locations.html:735
+#: drdown/core/templates/core/vaccination_locations.html:136
+#: drdown/core/templates/core/vaccination_locations.html:156
+#: drdown/core/templates/core/vaccination_locations.html:224
+#: drdown/core/templates/core/vaccination_locations.html:244
+#: drdown/core/templates/core/vaccination_locations.html:264
+#: drdown/core/templates/core/vaccination_locations.html:296
+#: drdown/core/templates/core/vaccination_locations.html:336
+#: drdown/core/templates/core/vaccination_locations.html:368
+#: drdown/core/templates/core/vaccination_locations.html:392
+#: drdown/core/templates/core/vaccination_locations.html:416
+#: drdown/core/templates/core/vaccination_locations.html:440
+#: drdown/core/templates/core/vaccination_locations.html:460
+#: drdown/core/templates/core/vaccination_locations.html:484
+#: drdown/core/templates/core/vaccination_locations.html:564
+#: drdown/core/templates/core/vaccination_locations.html:588
+#: drdown/core/templates/core/vaccination_locations.html:608
+#: drdown/core/templates/core/vaccination_locations.html:632
+#: drdown/core/templates/core/vaccination_locations.html:664
+#: drdown/core/templates/core/vaccination_locations.html:688
+#: drdown/core/templates/core/vaccination_locations.html:740
 msgid "Local"
 msgstr "Local"
 
 #: drdown/core/templates/core/vaccination_locations.html:36
 #: drdown/core/templates/core/vaccination_locations.html:84
 #: drdown/core/templates/core/vaccination_locations.html:117
-#: drdown/core/templates/core/vaccination_locations.html:135
-#: drdown/core/templates/core/vaccination_locations.html:155
-#: drdown/core/templates/core/vaccination_locations.html:223
-#: drdown/core/templates/core/vaccination_locations.html:243
-#: drdown/core/templates/core/vaccination_locations.html:263
-#: drdown/core/templates/core/vaccination_locations.html:295
-#: drdown/core/templates/core/vaccination_locations.html:335
-#: drdown/core/templates/core/vaccination_locations.html:367
-#: drdown/core/templates/core/vaccination_locations.html:391
-#: drdown/core/templates/core/vaccination_locations.html:415
-#: drdown/core/templates/core/vaccination_locations.html:439
-#: drdown/core/templates/core/vaccination_locations.html:459
-#: drdown/core/templates/core/vaccination_locations.html:483
-#: drdown/core/templates/core/vaccination_locations.html:563
-#: drdown/core/templates/core/vaccination_locations.html:587
-#: drdown/core/templates/core/vaccination_locations.html:607
-#: drdown/core/templates/core/vaccination_locations.html:631
-#: drdown/core/templates/core/vaccination_locations.html:662
-#: drdown/core/templates/core/vaccination_locations.html:685
-#: drdown/core/templates/core/vaccination_locations.html:736
+#: drdown/core/templates/core/vaccination_locations.html:137
+#: drdown/core/templates/core/vaccination_locations.html:157
+#: drdown/core/templates/core/vaccination_locations.html:225
+#: drdown/core/templates/core/vaccination_locations.html:245
+#: drdown/core/templates/core/vaccination_locations.html:265
+#: drdown/core/templates/core/vaccination_locations.html:297
+#: drdown/core/templates/core/vaccination_locations.html:337
+#: drdown/core/templates/core/vaccination_locations.html:369
+#: drdown/core/templates/core/vaccination_locations.html:393
+#: drdown/core/templates/core/vaccination_locations.html:417
+#: drdown/core/templates/core/vaccination_locations.html:441
+#: drdown/core/templates/core/vaccination_locations.html:461
+#: drdown/core/templates/core/vaccination_locations.html:485
+#: drdown/core/templates/core/vaccination_locations.html:565
+#: drdown/core/templates/core/vaccination_locations.html:589
+#: drdown/core/templates/core/vaccination_locations.html:609
+#: drdown/core/templates/core/vaccination_locations.html:633
+#: drdown/core/templates/core/vaccination_locations.html:665
+#: drdown/core/templates/core/vaccination_locations.html:689
+#: drdown/core/templates/core/vaccination_locations.html:741
 msgid "Phone"
 msgstr "Telefone"
 
@@ -1795,6 +1910,147 @@ msgid ""
 msgstr ""
 "Vacinar pessoas de 9 a 45 anos previamente infectadas pelo vírus "
 "(soropositivas) com três doses: 0 - 6 - 12 meses"
+
+#~ msgid "My Schedule"
+#~ msgstr "Minha Agenda"
+
+#~ msgid ""
+#~ "\n"
+#~ "      After you log in to the Dr. Down website, you will be redirected to "
+#~ "the profile editing page, where you will need to fill in your details so "
+#~ "that your registration is completed in the system, after inserting them, "
+#~ "click the \"Update\" button.\n"
+#~ "  \t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Após efetuar o primeiro login no site Dr. Down, você será "
+#~ "redirecionado para a página de edição de perfil, onde será necessário "
+#~ "preencher seus dados para completar o seu cadastro no sistema. Após "
+#~ "inseri-los, aperte o botão 'Atualizar'.\n"
+#~ "  \t"
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\t\tOnce you have filled in your data and updated your profile, you "
+#~ "will be redirected to the \"My Profile\" page, you will be able to view "
+#~ "your data, edit your profile, change the registered email and delete your "
+#~ "account.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\t\tApós atualizar o seu perfil, você será redirecionado para a página "
+#~ "'Meu Perfil', onde poderá visualizar seus dados, editar o perfil, mudar o "
+#~ "e-mail cadastrado e excluir sua conta.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      In this page you can create a new request for a query, edit an "
+#~ "order or delete an order.\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "      Nessa página você poderá criar, editar ou excluir um pedido.\n"
+#~ "    "
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\t\tBy clicking on \"Marked\" in the Queries tab, you will be "
+#~ "redirected to the list of queries that have been marked for you by a Cris "
+#~ "Down employee, where you can view the specialty, date and time.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "\t\t\tAo clicar em 'Marcadas' na aba de consultas, você será "
+#~ "redirecionado para a lista de consultas que foram marcadas para você por "
+#~ "algum funcionário do Cris Down, na qual poderá visualizar a "
+#~ "especialidade, data e horário.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Clicking on the vaccine calendar will show a table with two tabs "
+#~ "that indicate the vaccines by age, the first flap is from birth to six "
+#~ "years of age and the second flap is nine years old and up.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Ao selecionar 'Calendário de Vacinas', irá aparecer uma tabela "
+#~ "indicando as vacinas por idade. Na primeira aba da tabela estão as "
+#~ "vacinas que deverão se tomadas do nascimento até os seis anos de idade e, "
+#~ "a segunda, dos nove anos de idade em diante.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      After accessing \"Vaccination Sites\" in the sidebar, you will be "
+#~ "redirected to a list of cities in the Federal District, where each city "
+#~ "has vaccination clinics.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Após acessar 'Locais de Vacinação' na barra lateral, você será "
+#~ "redirecionado para a lista de cidades do Distrito Federal. Basta clicar "
+#~ "sobre uma cidade para exibir os postos de saúde daquele local.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      By accessing the Forum, you will be redirected to the Forum "
+#~ "Categories page, clicking on any category you will go to the forum "
+#~ "posts.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Ao acessar o fórum, você será redirecionado para a página de "
+#~ "categorias, onde serão listadas os assuntos de um grupo de posts. Ao "
+#~ "selecionar alguma categoria, aparecerá os posts relacionados à mesma.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      You will have access to the posts of the selected category, you can "
+#~ "also insert a new post for the category.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Você terá acesso aos posts da categoria selecionada e também poderá "
+#~ "criar um novo post.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      In the comments page, you will have access to the comments of the "
+#~ "selected post and you will also be able to make new comments in the "
+#~ "post.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Na página de comentários, você terá acesso aos comentários do post "
+#~ "selecionado e também poderá fazer novos comentários.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      In \"Events\", you will have access to the events promoted by Cris "
+#~ "Down, clicking on the event name will appear the information.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Em 'Eventos', você terá acesso aos eventos promovidos pelo Cris "
+#~ "Down. Selecionar o evento fará aparecer as informações.\n"
+#~ "\t\t"
+
+#~ msgid ""
+#~ "\n"
+#~ "      You can also go to the Care Line or print / save your medical "
+#~ "records in PDF.\n"
+#~ "\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "      Também poderá ir para a 'Linha de Cuidado', imprimir ou salvar o "
+#~ "seu prontuário em PDF.\n"
+#~ "\t\t"
 
 #~ msgid ""
 #~ "\n"

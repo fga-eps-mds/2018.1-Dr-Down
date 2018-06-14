@@ -114,13 +114,13 @@
       </div>
       <div class="form-group">
         {% if object.free %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" value="0" readonly/>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" value="0" readonly/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% elif object.value %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" value="{{ object.value|stringformat:'g' }}"/>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" value="{{ object.value|stringformat:'g' }}"/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% else %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0" />
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" />
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% endif %}
       </div>

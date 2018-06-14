@@ -27,9 +27,15 @@ urlpatterns = [
        name='locations'
     ),
     url(
-        regex=r'^help/$',
+        regex=r'^help-home/$',
         view=TemplateView.as_view(template_name='core/help_page.html'),
-        name='help'
+        name='help_home'
     ),
+    url(
+        regex=r'^help-side/$',
+        view=TemplateView.as_view(template_name='core/help_page.html'),
+        name='help_side'
+    ),
+
 
 ]
