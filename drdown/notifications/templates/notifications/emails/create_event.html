@@ -5,18 +5,18 @@
     <body>
 
     {% trans 'The Dr. Down team would like to invite you to a event.' %}
-    <br>
+    <br/>
     {% trans "Here are the details:" %}
-    <br>
+    <br/>
 
     {% trans "Event name:" %} {{object.name}} - {% trans "Date and time:" %} {{object.date}} {% trans "at" %} {{object.time}}
     {% trans "Location: " %} {{object.location}}
-    <br>
+    <br/>
     {% trans "For more information, please visit the" %}
-    <a href="http://drdown-homolog.ml/{% url 'events:list_events' %}" title="Dr Down">
+    <a href="http://drdown-homolog.ml{% url 'events:list_events' %}" title="Dr Down">
       {% trans "Dr. Down website" %}
     </a>
-    <br>
+    <br/>
     {% trans "Thanks for your attention, <br>Dr. Down team." %}
 
     </body>

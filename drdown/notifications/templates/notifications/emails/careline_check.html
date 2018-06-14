@@ -3,18 +3,21 @@
 <!DOCTYPE html>
 <html>
     <body>
-
-    {% trans "Hello! We would like to inform you that " %} {{object.user.name}}{% trans " has " %}
-    {{object.count_incomplete_procedures_for_current_age}}
-    {% trans "procedure(s) to be made on the care line." %}
-    <br>
-    {% trans "Please visit the " %}
-    <a href="http://drdown-homolog.ml/{% url 'careline:checklist_detail' object.user.username %}" title="Dr Down">
-      {% trans "Dr. Down website" %}
-    </a>
-    {% trans " to check which procedures need your attention." %}
-    <br>
-    {% trans "Thanks for your attention, <br>Dr. Down team." %}
+      <h1 class="text-uppercase text-secondary mb-0">{% trans "Dr. Down" %}</h1>
+	    <hr class="star-dark bg-star-blue">
+	    <h2 class="font-weight-light mb-0">
+        {% trans "Hello! We would like to inform you that " %} {{object.user.name}}{% trans " has " %}
+        {{object.count_incomplete_procedures_for_current_age}}
+        {% trans "procedure(s) to be made on the care line." %}
+        <br>
+        {% trans "Please visit the " %}
+        <a href="http://drdown-homolog.ml{% url 'careline:checklist_detail' object.user.username %}" title="Dr Down">
+          {% trans "Dr. Down website" %}
+        </a>
+        {% trans " to check which procedures need your attention." %}
+        <br>
+        {% trans "Thanks for your attention, <br>Dr. Down team." %}
+      </h2>
 
     </body>
 </html>
