@@ -56,16 +56,15 @@ Para esta sprint não houveram mudanças significativas com relação à sprint 
 
 ## 6. Backlog da Sprint
 
-- [US111- Central de notificações](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/267)
+- [US111 - Central de notificações](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/267)
 - [US112 - Página de ajuda](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/269)
 - [US113 - Segunda parte do microsserviço](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/268)
 - [US114 - Tradução](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/270)
 - [TS115 - Revisão dos ambientes](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/271)
 - [TS116 - Revisão da arquitetura](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/272)
-- [
-TS117 - Teste de usabilidade](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/273)
+- [TS117 - Teste de usabilidade](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/273)
 - [TS118 - Documentação da sprint 12](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/274)
-- [TS 119 - Atualizar a documentação dos riscos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/278)
+- [TS119 - Atualizar a documentação dos riscos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/278)
 
 ## 7. Risk Burndown
 
