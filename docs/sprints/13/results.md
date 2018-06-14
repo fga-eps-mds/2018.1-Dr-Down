@@ -27,7 +27,7 @@ __Histórias entregues:__
 | Acabou a greve dos caminhoneiros | Um dos membros sumiu no último dia pra fechar a sprint | Tentar se organizar melhor pra fazer as histórias |
 | Está acabando | Muitos bugs |  Não começar as histórias tão tarde |
 | As histórias difíceis já foram | Muitos trabalhos e provas de outras matérias |  Levar mais a sério os PRs |
-| Apesar da semana ter sido difícil, tudo foi entregue | O sistema de produção da dando trabalho | - |
+| Apesar da semana ter sido difícil, tudo foi entregue | O ambiente de produção está tendo diversos problemas | - |
 | O micro serviço foi implementado e ficou bem legal | As histórias em geral foram iniciadas tarde na sprint | - |
 | - | As APIs deram muito trabalho | - |
 
@@ -60,4 +60,4 @@ Quanto ao membro que sumiu, ele justificou que foi um imprevisto que teve de nat
 
 Os bugs e ao trabalho no uso de APIs, eles acabaram surgindo no decorrer da sprint e as duplas conseguiram lidar bem com estes fatores, de tal forma que não houveram dívidas técnicas das histórias.
 
-Por fim, o sistema de produção deu trabalho ao longo da sprint, mas conseguimos sanar os problemas que surgiram.
+Por fim, o sistema de produção deu alguns problemas ao longo da semana, mas estamos trabalhando para arruma-los e continuaremos fazendo-o na próxima sprint.
