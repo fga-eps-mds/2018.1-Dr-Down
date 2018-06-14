@@ -56,11 +56,11 @@
               <div class="row border-bottom mb-2" id="return-button-title">
                 {% url 'core:help_home' as url %}
                 {% if request.path == url %}
-                  <a href="{% url 'core:home' %}" class="ml-2 col-auto link-white" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
+                  <a href="{% url 'core:home' %}" class="ml-2 col-2 link-white" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
                 {% else %}
                   <a href="{% url 'users:detail' request.user.username %}" class="ml-2 col-2 link-white" style="font-size: 25px;"><i class="fa fa-arrow-left"></i></a>
                 {% endif %}
-                <h1 class="text-center mt-1 lead col txt-white" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>
+                <h1 class="mt-1 lead col ml-3 txt-white" style="font-size: 25px;">{% trans 'Tutorial' %}</h1>
               </div>
               {% if not user.is_authenticated %}
                 <li class="nav-item ">
