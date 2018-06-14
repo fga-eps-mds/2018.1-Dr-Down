@@ -1,0 +1,91 @@
+{% extends 'core/base.html' %}
+{% load static i18n %}
+
+{% block title %}
+  {% trans "Calendar of Events" %}
+{% endblock %}
+
+{% block script %}
+
+  <script src="{% static 'events/js/jquery.min.js'%}"></script>
+  <script>
+     var jqCal = jQuery.noConflict(false);
+  </script>
+
+  <script src="{% static 'events/js/moment.min.js'%}"></script>
+  <script src="{% static 'events/js/fullcalendar.min.js'%}"></script>
+
+  {% if request.LANGUAGE_CODE == 'pt-br' %}
+    <script src="{% static 'events/js/pt-br.js'%}"></script>
+  {% elif request.LANGUAGE_CODE == 'en' %}
+    <script src="{% static 'events/js/en-gb.js'%}"></script>
+  {% endif %}
+
+  <link rel="stylesheet" href="{% static 'events/css/fullcalendar.min.css'%}">
+
+  <script>
+    jqCal(document).ready(function() {
+        jqCal('#calendar').fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,listWeek'
+            },
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                {% for event in events_list %} {
+                    title: "{{ event.name }}",
+                    start: '{{ event.date|date:"Y-m-d" }}' + 'T' + '{{ event.time|time:"H:i" }}',
+                    end: '{{ event.date|date:"Y-m-d" }}',
+
+                },
+                {% endfor %}
+            ]
+        });
+    }).fullCalendar('gotoDate', currentDate);
+  </script>
+
+{% endblock script %}
+
+{% block content %}
+  <div class="container">
+
+    <div class="row mt-3 float-right">
+      <div class="col mt-2 mr-5">
+        <a href="{% url 'events:list_events' %}" style="font-size:20px; text-decoration:underline;" class="text-tertiary">
+          <i class="fa fa-angle-double-left" style="font-size:25px;"></i>
+          {% trans "List of Events" %}
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="row mt-3 mb-3">
+        <div class="col">
+          <h1>{% trans 'Calendar of Events'%}</h1>
+        </div>
+      </div>
+    </div>
+
+    <style>
+
+    calendar {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+      font-size: 14px;
+    }
+
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    </style>
+
+    <div class="mt-2 mb-2" id='calendar'></div>
+
+  </div>
+
+{% endblock %}
