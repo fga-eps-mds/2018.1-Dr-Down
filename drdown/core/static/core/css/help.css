@@ -26,3 +26,7 @@
 .link-white .link-white:focus, .link-white:active, .link-white:hover{
 	color: #cbe0f2;
 }
+
+.bg-footer{
+	background-color: #202833;
+}

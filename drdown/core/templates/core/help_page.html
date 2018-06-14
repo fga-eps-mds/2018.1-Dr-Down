@@ -49,8 +49,8 @@
   </head>
   <body>
     {% block content %}
-      <div class="row" style="max-width: 100%; height: 100%;">
-        <div class="col-md-2 bg-secondary" id="side">
+      <div class="row border-bottom" style="max-width: 100%; height: 100%;">
+        <div class="col-md-2 bg-footer" id="side">
           <div class="sticky-top" style="top: 1em;">
             <ul class="nav flex-column">
               <div class="row border-bottom mb-2" id="return-button-title">
@@ -218,20 +218,6 @@
         </div>
       </div>
     {% endblock %}
-    <footer class="footer text-center">
-      <div class="container">
-       <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h4 class="text-uppercase mb-4">CRIS DOWN</h4>
-            <p class="lead">
-              {% trans "Centro de Referência Interdisciplinar em Síndrome de Down" %}
-              <br>{% trans "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte" %}
-              <br>{% trans "Phone: 3325-4219" %}
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
     <div class="copyright py-4 text-center text-white">
       <div class="container">
         <small>{% trans "Copyright &copy; Dr. Down 2018" %}</small>
