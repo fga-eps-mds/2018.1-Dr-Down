@@ -80,6 +80,30 @@
       </div>
     {% endif %}
 
+    <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
 
+    {% for patient in patients %}
+    
+    {% if patient.count_incomplete_procedures_for_current_age > 0 %}
+        
+      {% if patient.have_procedures_almost_late %}
+        <div class="alert alert-warning" role="alert">
+      {% else %}
+        <div class="alert alert-success" role="alert">
+      {% endif %}
+          {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
+          <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
+      </div>
+            
+    {% else %}
+      <div class="alert alert-success" role="alert">
+          {{patient.user.name}} {% trans "don't have procedures to be made." %} 
+          <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "But you can check the careline here" %}.</a>
+      </div>        
+    {% endif %}
+
+
+
+  {% endfor %}
 
 {% endblock %}

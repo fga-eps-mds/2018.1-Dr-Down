@@ -6,11 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-
+from drdown.notifications.utils import mail
 from ..utils.validators import validate_ses
 from ..utils.validators import validate_generic_number
 from ..utils.validators import validate_names
 from ..utils.validators import validate_sus
+
+from celery.schedules import crontab
+from celery.task import periodic_task
 
 from .model_user import User
 from .model_responsible import Responsible
@@ -101,20 +104,36 @@ class Patient(models.Model):
     def have_incomplete_procedures_on_current_age(self):
         from drdown.careline.models import Procedure
 
-        result = False
+        current_age = self.user.age()
+        proc_age = Procedure.convert_age_to_item(current_age)
+
+        return self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__required=True,
+            checkitem__check=False,
+        ).exists()
+
+    def count_incomplete_procedures_for_current_age(self):
+        from drdown.careline.models import Procedure
 
         current_age = self.user.age()
+        proc_age = Procedure.convert_age_to_item(current_age)
 
-        for procedure in self.checklist.procedure_set.all():
-            check_item = procedure.checkitem_set.get(
-                age=Procedure.convert_age_to_item(current_age)
-            )
+        count = 0
 
-            if not check_item.check and check_item.required:
-                result = True
-                break
+        count += self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__required=True,
+            checkitem__check=False,
+        ).count()
 
-        return result
+        count += self.checklist.procedure_set.filter(
+            checkitem__age=proc_age,
+            checkitem__when_needed=True,
+            checkitem__check=False,
+        ).count()
+
+        return count
 
     def birthday_is_close(self):
         from drdown.careline.models import Procedure
@@ -153,6 +172,8 @@ class Patient(models.Model):
         self.user.clean()
         self.user.save()
         self.clean()
+        # var = "test"
+        # send_simple_message(self.user, var,var)
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
@@ -163,6 +184,24 @@ class Patient(models.Model):
     class Meta:
         verbose_name = _("Patient")
         verbose_name_plural = _("Patients")
+
+
+# runs every 1st day of a month
+@periodic_task(run_every=crontab(day_of_month=[1, ]))
+def careline_notification():
+
+    target_patients = list(Patient.objects.all())
+    target_patients = list(
+        filter(
+            lambda x: x.count_incomplete_procedures_for_current_age() > 0,
+            target_patients
+        )
+    )
+
+    for pat in target_patients:
+        mail.send_patient_careline_status(pat)
+
+    return target_patients
 
 
 @receiver(post_save, sender=Patient)

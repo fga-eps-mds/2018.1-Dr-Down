@@ -1,0 +1,19 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html>
+    <body>
+
+    {% trans "Dear Sir / Madam, we would like to inform you that your request has been rejected for the following reason:" %}
+    <br/>
+    {{object.observation}}
+    <br/>
+    {% trans "For more information, please visit the" %}
+    <a href="http://drdown-homolog.ml{% url 'appointments:list_requests' %}" title="Dr Down">
+      {% trans "Dr. Down website" %}
+    </a>
+    <br/>
+    {% trans "Thanks for your attention, <br>Dr. Down team." %}
+
+    </body>
+</html>

@@ -26,3 +26,26 @@ class TestModelEvents(TestCase):
             )
 
             event.clean()
+
+    def test_update(self):
+        """
+            Test if event is updated
+        """
+
+        event = Events.objects.create(
+            name="sjdkal",
+            date="2015-01-01",
+            organize_by='mano',
+            location="sdadsad",
+            time='12:45',
+            description='sdjkajdlas',
+            free=False,
+            value=12.5,
+        )
+
+        event.name = "new name"
+        event.save()
+
+        event.refresh_from_db()
+
+        self.assertEqual(event.name, "new name")
