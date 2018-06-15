@@ -60,4 +60,4 @@ Quanto ao membro que sumiu, ele justificou que foi um imprevisto que teve de nat
 
 Os bugs e ao trabalho no uso de APIs, eles acabaram surgindo no decorrer da sprint e as duplas conseguiram lidar bem com estes fatores, de tal forma que não houveram dívidas técnicas das histórias.
 
-Por fim, o sistema de produção deu alguns problemas ao longo da semana, mas estamos trabalhando para arruma-los e continuaremos fazendo-o na próxima sprint.
+Por fim, o ambiente de produção deu alguns problemas ao longo da semana, mas estamos trabalhando para arrumá-los e continuaremos fazendo-o na próxima sprint.
