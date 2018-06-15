@@ -33,7 +33,7 @@ pages:
     - Relatório 01: eps/usability_test/relatorio_01.md
     - Relatório 02: eps/usability_test/relatorio_02.md
     - Relatório 03: eps/usability_test/relatorio_03.md
-    - Relatório 04: eps/usability_test/relatorio_04.md  
+    - Relatório 04: eps/usability_test/relatorio_04.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
@@ -57,7 +57,7 @@ pages:
     - Resultado: sprints/06/results.md
   - Sprint 7:
     - Planejamento: sprints/07/planning.md
-    - Resultado: sprints/07/results.md  
+    - Resultado: sprints/07/results.md
   - Sprint 8:
     - Planejamento: sprints/08/planning.md
     - Resultado: sprints/08/results.md
@@ -73,3 +73,6 @@ pages:
   - Sprint 12:
     - Planejamento: sprints/12/planning.md
     - Resultado: sprints/12/results.md
+  - Sprint 13:
+    - Planejamento: sprints/13/planning.md
+    - Resultado: sprints/13/results.md
