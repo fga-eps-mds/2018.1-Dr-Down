@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:29+0000\n"
+"POT-Creation-Date: 2018-06-13 23:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,50 +18,150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: drdown/notifications/templates/notifications/emails/appointment_canceled.html:7
+msgid ""
+"Dear Sir / Madam, we would like to inform you that your request has been "
+"rejected for the following reason:"
+msgstr "Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta"
+" foi cancelado pelo seguinte motivo:"
+
+#: drdown/notifications/templates/notifications/emails/appointment_canceled.html:11
+#: drdown/notifications/templates/notifications/emails/appointment_sucess.html:11
+#: drdown/notifications/templates/notifications/emails/create_event.html:15
+#: drdown/notifications/templates/notifications/emails/update_event.html:15
+msgid "For more information, please visit the"
+msgstr "Para mais informações, por favor visite o"
+
+#: drdown/notifications/templates/notifications/emails/appointment_canceled.html:13
+#: drdown/notifications/templates/notifications/emails/appointment_sucess.html:13
+#: drdown/notifications/templates/notifications/emails/careline_check.html:13
+#: drdown/notifications/templates/notifications/emails/create_event.html:17
+#: drdown/notifications/templates/notifications/emails/update_event.html:17
+msgid "Dr. Down website"
+msgstr "website do Dr. Down"
+
+#: drdown/notifications/templates/notifications/emails/appointment_canceled.html:16
+#: drdown/notifications/templates/notifications/emails/appointment_sucess.html:16
+#: drdown/notifications/templates/notifications/emails/careline_check.html:17
+#: drdown/notifications/templates/notifications/emails/create_event.html:20
+#: drdown/notifications/templates/notifications/emails/update_event.html:20
+msgid "Thanks for your attention, <br>Dr. Down team."
+msgstr "Obrigado pela sua atenção, <br> a equipe do Dr Down."
+
+#: drdown/notifications/templates/notifications/emails/appointment_sucess.html:7
+msgid ""
+"Dear Sir / Madam, we would like to inform you that your request was accepted."
+msgstr ""
+"Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta foi aceito."
+
+#: drdown/notifications/templates/notifications/emails/appointment_sucess.html:9
+msgid "Please go to Dr. Down to confirm the request."
+msgstr "Por favor vá ao Dr. Down para confirmar o pedido."
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:7
+msgid "Hello! We would like to inform you that "
+msgstr "Olá! Nós gostaríamos de informar-lhe que "
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:7
+msgid " has "
+msgstr " tem "
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:9
+msgid "procedure(s) to be made on the care line."
+msgstr " procedimento(s) a serem feitos na linha de cuidado."
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:11
+msgid "Please visit the "
+msgstr "Por favor visite o "
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:15
+msgid " to check which procedures need your attention."
+msgstr " para checar os procedimentos que precisam de sua atenção."
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:7
+msgid "The Dr. Down team would like to invite you to a event."
+msgstr "A equipe do Dr. Down gostaria de convidar-lhe para um evento."
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:9
+msgid "Here are the details:"
+msgstr "Aqui estão os detalhes:"
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:12
+#: drdown/notifications/templates/notifications/emails/update_event.html:12
+msgid "Event name:"
+msgstr "Nome do evento:"
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:12
+#: drdown/notifications/templates/notifications/emails/update_event.html:12
+msgid "Date and time:"
+msgstr "Dia e hora:"
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:12
+#: drdown/notifications/templates/notifications/emails/update_event.html:12
+msgid "at"
+msgstr "as"
+
+#: drdown/notifications/templates/notifications/emails/create_event.html:13
+#: drdown/notifications/templates/notifications/emails/update_event.html:13
+msgid "Location: "
+msgstr "Local:"
+
+#: drdown/notifications/templates/notifications/emails/update_event.html:7
+msgid ""
+"A event created on our site has been changed, it is of high importance to go "
+"check its details again."
+msgstr ""
+"Um evento criado em nosso site foi alterado. É de grande importância ir checar"
+"os seus detalhes novamente."
+
+#: drdown/notifications/templates/notifications/emails/update_event.html:9
+msgid "Here are the new details:"
+msgstr "Aqui estão os novos detalhes:"
+
 #: drdown/notifications/templates/notifications/employee_notifications.html:8
 msgid "Requests"
 msgstr "Pedidos"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:12
-#: drdown/notifications/templates/notifications/health_team_notifications.html:37
-#: drdown/notifications/templates/notifications/patient_notifications.html:48
-#: drdown/notifications/templates/notifications/responsible_notifications.html:67
+#: drdown/notifications/templates/notifications/employee_notifications.html:13
+#: drdown/notifications/templates/notifications/health_team_notifications.html:42
+#: drdown/notifications/templates/notifications/patient_notifications.html:53
+#: drdown/notifications/templates/notifications/responsible_notifications.html:74
 msgid "There are"
 msgstr "Há"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:13
+#: drdown/notifications/templates/notifications/employee_notifications.html:14
 msgid "appointment requests not answered"
 msgstr "pedidos de consulta não atendidos"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:18
+#: drdown/notifications/templates/notifications/employee_notifications.html:20
 msgid "There are no appointment requests"
 msgstr "Não há pedidos de consulta"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:22
-#: drdown/notifications/templates/notifications/health_team_notifications.html:20
-#: drdown/notifications/templates/notifications/patient_notifications.html:56
-#: drdown/notifications/templates/notifications/responsible_notifications.html:50
+#: drdown/notifications/templates/notifications/employee_notifications.html:24
+#: drdown/notifications/templates/notifications/health_team_notifications.html:22
+#: drdown/notifications/templates/notifications/patient_notifications.html:62
+#: drdown/notifications/templates/notifications/responsible_notifications.html:54
 msgid "Forum"
 msgstr "Fórum"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:25
-#: drdown/notifications/templates/notifications/health_team_notifications.html:23
-#: drdown/notifications/templates/notifications/patient_notifications.html:59
-#: drdown/notifications/templates/notifications/responsible_notifications.html:53
+#: drdown/notifications/templates/notifications/employee_notifications.html:28
+#: drdown/notifications/templates/notifications/health_team_notifications.html:26
+#: drdown/notifications/templates/notifications/patient_notifications.html:66
+#: drdown/notifications/templates/notifications/responsible_notifications.html:58
 msgid "Your last post has"
 msgstr "O seu último post contém"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:26
-#: drdown/notifications/templates/notifications/health_team_notifications.html:24
-#: drdown/notifications/templates/notifications/patient_notifications.html:60
-#: drdown/notifications/templates/notifications/responsible_notifications.html:54
+#: drdown/notifications/templates/notifications/employee_notifications.html:29
+#: drdown/notifications/templates/notifications/health_team_notifications.html:27
+#: drdown/notifications/templates/notifications/patient_notifications.html:67
+#: drdown/notifications/templates/notifications/responsible_notifications.html:59
 msgid " commentaries"
 msgstr "comentários"
 
-#: drdown/notifications/templates/notifications/employee_notifications.html:31
-#: drdown/notifications/templates/notifications/health_team_notifications.html:29
-#: drdown/notifications/templates/notifications/patient_notifications.html:65
-#: drdown/notifications/templates/notifications/responsible_notifications.html:59
+#: drdown/notifications/templates/notifications/employee_notifications.html:35
+#: drdown/notifications/templates/notifications/health_team_notifications.html:33
+#: drdown/notifications/templates/notifications/patient_notifications.html:73
+#: drdown/notifications/templates/notifications/responsible_notifications.html:65
 msgid "Your last post has no commentaries"
 msgstr "O seu último post não tem comentários"
 
@@ -71,35 +171,35 @@ msgstr "O seu último post não tem comentários"
 msgid "Appointments"
 msgstr "Consultas"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:12
-#: drdown/notifications/templates/notifications/patient_notifications.html:22
-#: drdown/notifications/templates/notifications/patient_notifications.html:34
+#: drdown/notifications/templates/notifications/health_team_notifications.html:13
+#: drdown/notifications/templates/notifications/patient_notifications.html:23
+#: drdown/notifications/templates/notifications/patient_notifications.html:37
 msgid "You have"
 msgstr "Você tem"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:12
+#: drdown/notifications/templates/notifications/health_team_notifications.html:13
 msgid "appointments today"
 msgstr "consultas hoje"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:16
+#: drdown/notifications/templates/notifications/health_team_notifications.html:18
 msgid "You have no appointments today"
 msgstr "Você não tem consultas hoje"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:34
-#: drdown/notifications/templates/notifications/patient_notifications.html:45
-#: drdown/notifications/templates/notifications/responsible_notifications.html:64
+#: drdown/notifications/templates/notifications/health_team_notifications.html:38
+#: drdown/notifications/templates/notifications/patient_notifications.html:49
+#: drdown/notifications/templates/notifications/responsible_notifications.html:70
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:37
-#: drdown/notifications/templates/notifications/patient_notifications.html:48
-#: drdown/notifications/templates/notifications/responsible_notifications.html:67
+#: drdown/notifications/templates/notifications/health_team_notifications.html:42
+#: drdown/notifications/templates/notifications/patient_notifications.html:53
+#: drdown/notifications/templates/notifications/responsible_notifications.html:74
 msgid "events on the next 7 days"
 msgstr "eventos nos próximos 7 dias"
 
-#: drdown/notifications/templates/notifications/health_team_notifications.html:41
-#: drdown/notifications/templates/notifications/patient_notifications.html:52
-#: drdown/notifications/templates/notifications/responsible_notifications.html:71
+#: drdown/notifications/templates/notifications/health_team_notifications.html:47
+#: drdown/notifications/templates/notifications/patient_notifications.html:58
+#: drdown/notifications/templates/notifications/responsible_notifications.html:79
 msgid "There are no events on the next 7 days"
 msgstr "Não há eventos nos próximos 7 dias"
 
@@ -116,21 +216,48 @@ msgstr "Você está completando"
 msgid "Are your vaccines and checklist up to date"
 msgstr "Suas vacinas e linha de cuidado estão em dia"
 
-#: drdown/notifications/templates/notifications/patient_notifications.html:23
+#: drdown/notifications/templates/notifications/patient_notifications.html:24
 msgid "appointments requests accepted and not visualized"
 msgstr "pedidos de consulta aceitos e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/patient_notifications.html:28
+#: drdown/notifications/templates/notifications/patient_notifications.html:30
 msgid "There are no appointment requests scheduled and not visualized"
 msgstr "Não há pedidos de consulta aceitos e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/patient_notifications.html:35
+#: drdown/notifications/templates/notifications/patient_notifications.html:38
 msgid "appointment requests declined and not visualized"
 msgstr "pedidos de consulta cancelados e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/patient_notifications.html:40
+#: drdown/notifications/templates/notifications/patient_notifications.html:44
 msgid "There are no appointment requests declined and not visualized"
-msgstr "Não há pedidos de consulta cancelados e que ainda não foram visualizados"
+msgstr ""
+"Não há pedidos de consulta cancelados e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:79
+msgid "Careline"
+msgstr "Linha de cuidado"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:88
+msgid "You have "
+msgstr "Você tem"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:88
+#: drdown/notifications/templates/notifications/responsible_notifications.html:94
+msgid "procedures to be made."
+msgstr "procedimentos a serem feitos."
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:89
+#: drdown/notifications/templates/notifications/responsible_notifications.html:95
+msgid "Click here to check it"
+msgstr "Click aqui para checá-lo"
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:94
+msgid "You don't have procedures to be made."
+msgstr "Você não possui procedimentos a serem feitos."
+
+#: drdown/notifications/templates/notifications/patient_notifications.html:95
+msgid "But you can check your careline here"
+msgstr "Mas você pode checar sua linha de cuidado aqui"
 
 #: drdown/notifications/templates/notifications/responsible_notifications.html:13
 msgid "is completing"
@@ -144,23 +271,154 @@ msgstr "anos"
 msgid "Are vaccines and checklist up to date"
 msgstr "Suas vacinas e linha de cuidado estão em dia"
 
-#: drdown/notifications/templates/notifications/responsible_notifications.html:25
-#: drdown/notifications/templates/notifications/responsible_notifications.html:39
+#: drdown/notifications/templates/notifications/responsible_notifications.html:26
+#: drdown/notifications/templates/notifications/responsible_notifications.html:42
 msgid "has"
 msgstr "tem"
 
-#: drdown/notifications/templates/notifications/responsible_notifications.html:26
+#: drdown/notifications/templates/notifications/responsible_notifications.html:27
 msgid "appointment requests accepted and not visualized"
 msgstr "pedidos de consulta aceitos e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/responsible_notifications.html:30
+#: drdown/notifications/templates/notifications/responsible_notifications.html:32
 msgid "has no appointment requests accepted and not visualized"
 msgstr "não tem pedidos de consulta aceitos e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/responsible_notifications.html:40
+#: drdown/notifications/templates/notifications/responsible_notifications.html:43
 msgid "appointments requests declined and not visualized"
 msgstr "pedidos de consulta cancelados e que ainda não foram visualizados"
 
-#: drdown/notifications/templates/notifications/responsible_notifications.html:44
+#: drdown/notifications/templates/notifications/responsible_notifications.html:48
 msgid "has no appointment requests declined and not visualized"
-msgstr "não tem pedidos de consulta cancelados e que ainda não foram visualizados"
+msgstr ""
+"não tem pedidos de consulta cancelados e que ainda não foram visualizados"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:83
+msgid "Care  line"
+msgstr "Linha de cuidado"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:94
+msgid "have"
+msgstr "Você tem"
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:100
+msgid "don't have procedures to be made."
+msgstr "não fá procedimentos a serem feitos."
+
+#: drdown/notifications/templates/notifications/responsible_notifications.html:101
+msgid "But you can check the careline here"
+msgstr "Mas você pode checar a linha de cuidado aqui"
+
+#: drdown/notifications/utils/mail.py:55
+msgid "DRDOWN: A new event has been created!"
+msgstr "DRDOWN: Um novo evento foi criado!"
+
+#: drdown/notifications/utils/mail.py:57
+#, python-format
+msgid ""
+"The Dr. Down team would like to invite you to a event.Here are the details:\n"
+"\tEvent name: %(name)s - Date and time: %(date)s at %(time)s\n"
+"\tLocation: %(location)s\n"
+"For more information, please visit the Dr. Down website.\n"
+"\n"
+"Thanks for your atention,\n"
+"\tDr. Down team."
+msgstr ""
+"A equipe do Dr. Down gostaria de convidar-lhe para um evento.Aqui estão os detalhes:\n"
+"\tNome do evento: %(name)s - Dia e hora: %(date)s as %(time)s\n"
+"\tLocal: %(location)s\n"
+"Para mais informações, visite o Dr. Down.\n"
+"\n"
+"Obrigado pela sua atenção,\n"
+"\tA equipe Dr. Down."
+
+#: drdown/notifications/utils/mail.py:80
+#, python-format
+msgid "DRDOWN: The %(name)s has changed."
+msgstr "DRDOWN: O %(name)s foi alterado."
+
+#: drdown/notifications/utils/mail.py:85
+#, python-format
+msgid ""
+"A event created on our site has been changed, it is of highimportance to go "
+"check its details again.Here are some of the new details:\n"
+"\tEvent name: %(name)s - Date and time: %(date)s at %(time)s\n"
+"\tLocation: %(location)s\n"
+"For more information, please visit the Dr. Down website.\n"
+"\n"
+"Thanks for your atention,\n"
+"\tDr. Down team."
+msgstr ""
+"Um evento criado em nosso site foi alterado. É de grande importância ir checar"
+"os seus detalhes novamente. Aqui estão alguns dos novos detalhes:"
+"\tNome do evento: %(name)s - Dia e hora: %(date)s as %(time)s\n"
+"\tLocal: %(location)s\n"
+"Para mais informações, visite o Dr. Down.\n"
+"\n"
+"Obrigado pela sua atenção,\n"
+"\tA equipe Dr. Down."
+
+#: drdown/notifications/utils/mail.py:109
+msgid "DRDOWN: Your medical appointment was canceled."
+msgstr "DRDOWN: Seu pedido de consulta foi cancelado."
+
+#: drdown/notifications/utils/mail.py:111
+#, python-format
+msgid ""
+"Dear Sir / Madam, we would like to inform you that your request\n"
+"  has been rejected for the following reason:\t%(reason)s -\n"
+"For more information, please visit the Dr. Down website.\n"
+"\n"
+"Thanks for your atention,\n"
+"\tDr. Down team."
+msgstr ""
+"Caro Sr/Srª, gostaríamos de informar-lhe que seu pedido de consulta\n"
+"  foi rejeitado pela seguinte razão: :\t%(reason)s -\n"
+"Para mais informações, por favor visite o website Dr. Down.\n"
+"\n"
+"Obrigado pela atenção,\n"
+"\tA equipe Dr. Down."
+
+#: drdown/notifications/utils/mail.py:137
+msgid "DRDOWN: Your request for consultation was accepted!"
+msgstr "DRDOWN: Seu pedido de consulta foi aceito!"
+
+#: drdown/notifications/utils/mail.py:139
+msgid ""
+"Dear Sir / Madam, we would like to inform you that your request\n"
+" was accepted. Please go to Dr. Down to confirm the request.\n"
+"For more information, please visit the Dr. Down website.\n"
+"\n"
+"Thanks for your atention,\n"
+"\tDr. Down team."
+msgstr ""
+"Caro Sr/Srª, gostaríamos de informar-lhe que seu pedido de consulta\n"
+"  foi aceito. Por favor vá ao Dr. Down confirmar seu pedido.\n"
+"Para mais informações, por favor visite o website Dr. Down.\n"
+"\n"
+"Obrigado pela atenção,\n"
+"\tA equipe Dr. Down."
+
+#: drdown/notifications/utils/mail.py:164
+#, python-format
+msgid "DRDOWN: %(name)s has procedures to be made."
+msgstr "DRDOWN: %(name)s tem procedimentos a serem feitos."
+
+#: drdown/notifications/utils/mail.py:169
+#, python-format
+msgid ""
+"Hello! We would like to inform you that %(name)s has %(number)d procedure(s) "
+"to be made on the care line.\n"
+"Please visit the Dr. Down website to check which procedures need your "
+"attention.\n"
+"\n"
+"Thanks for your atention,\n"
+"\tDr. Down team."
+msgstr ""
+"Olá! Nós gostaríamos de informar-lhe que %(name)s tem %(number)d procedimento(s) "
+"a ser(em) feito(s) na linha de cuidado.\n"
+"Por favor visite o Dr. Down para checar quais procedimentos precisam da sua "
+"atenção.\n"
+"\n"
+"Obrigado pela atenção,\n"
+"\tA equipe Dr. Down."

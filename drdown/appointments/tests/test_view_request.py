@@ -7,7 +7,8 @@ from drdown.users.models.model_responsible import Responsible
 from drdown.users.models.model_patient import Patient
 from django.urls import reverse
 from django.test.client import Client
-
+import requests
+from drdown.notifications.utils.mail import send_appointment_sucess_message
 
 class TestViewRequest(TestCase):
 
@@ -459,4 +460,29 @@ class TestViewRequest(TestCase):
             follow=True)
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'appointments/doctors_dropdown_list_options.html')
+
+    def test_email_responsible(self):
+        """
+        Test if a notification email is sent to the patient responsible
+        """
+        self.request_test = AppointmentRequest.objects.create(
+            shift=AppointmentRequest.MORNING,
+            day=AppointmentRequest.MONDAY,
+            speciality=AppointmentRequest.SPEECH_THERAPHY,
+            doctor=self.doctor,
+            patient=self.patient,
+            status=AppointmentRequest.PENDING
+        )
+        self.request_test.save()
+        self.request_test.refresh_from_db()
+        self.assertEquals(self.request_test.status,
+                          AppointmentRequest.PENDING)
+        self.request_test.status=AppointmentRequest.SCHEDULED
+        self.request_test.save()
+        self.request_test.refresh_from_db()
+        self.assertEquals(self.request_test.status,AppointmentRequest.SCHEDULED)
+
+        response = send_appointment_sucess_message(self.patient,
+                                                   self.request_test)
+        self.assertEquals(response.status_code, 200)
 

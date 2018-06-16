@@ -25,6 +25,7 @@
 | 26/04/2018 | 2.1.0 | Inserindo componentes da sprint 08 | Victor Arnaud |
 | 01/05/2018 | 2.2.0 | Inserindo componentes para as sprints 09 a 12 | Victor Arnaud |
 | 26/05/2018 | 2.3.0 | Documentando componentes/apis/microsserviços utilizados e descartados | Victor Arnaud |
+| 09/06/2018 | 2.3.1 | Atualizando diagrama arquitetural | Geovana Ramos e Victor Arnaud |
 
 ## 1: Introdução
 
@@ -50,7 +51,7 @@ Dr. Down será uma ferramenta desenvolvida para gerenciar, auxiliar e facilitar 
 
 ## 2: Representação Arquitetural
 
-![Arquitetura](https://uploaddeimagens.com.br/images/001/384/606/full/arquitetura.png?1524422037)
+![Arquitetura](https://uploaddeimagens.com.br/images/001/458/069/original/Microsservi%C3%A7o.png?1528561948)
 
 A arquitetura utilizada no projeto será a arquitetura baseada em componentes. O conceito de _Django Application_ é uma das principais inovações do Django e um dos grandes responsáveis por sua flexibilidade e alto reaproveitamento de componentes, ou seja, um aplicação é criada, mantida, executada e distribuída de forma totalmente independente contendo as seguintes características: alta coesão, baixo acoplamento, reutilizável e independente, que representa um contexto de negócio, além de ser externo ao projeto que irá utilizá-lo. Com isso, serão adotadas aplicações que sigam todas essas características e estejam empacotadas no [pypi](https://pypi.python.org/pypi). Cada aplicação do Django utiliza da arquitetura MVT internamente.
 

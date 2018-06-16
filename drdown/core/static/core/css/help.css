@@ -8,4 +8,25 @@
 
 .text-blue a:focus, a:hover, a:active{
 	color: #224e72;
+	text-decoration: none;
+}
+
+.txt-white{
+	color: white;
+}
+
+.link-white {
+	color: white;
+}
+
+.nav-item .txt-white:focus, .txt-white:active, .nav-item:hover{
+	background-color: white;
+}
+
+.link-white .link-white:focus, .link-white:active, .link-white:hover{
+	color: #cbe0f2;
+}
+
+.bg-footer{
+	background-color: #202833;
 }

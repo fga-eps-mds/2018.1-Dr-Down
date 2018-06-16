@@ -4,6 +4,11 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from datetime import date
 
+from drdown.notifications.utils import mail
+from drdown.users.models import User
+
+from django.db.models import Q
+
 
 class Events(models.Model):
 
@@ -56,6 +61,28 @@ class Events(models.Model):
                     {'date':
                         _("The date cannot be in today or past!")}
                 )
+
+    def save(self, *args, **kwargs):
+
+        if Events.objects.filter(id=self.id).count() > 0:
+
+            mail.send_event_update_message(
+                user_list=User.objects.filter(
+                    Q(patient__isnull=False) | Q(responsible__isnull=False)
+                ).values_list('email', flat=True),
+                event=self
+            )
+
+        else:
+
+            mail.send_event_creation_message(
+                user_list=User.objects.filter(
+                    Q(patient__isnull=False) | Q(responsible__isnull=False)
+                ).values_list('email', flat=True),
+                event=self
+            )
+
+        super(Events, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Event")

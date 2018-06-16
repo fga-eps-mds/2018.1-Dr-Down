@@ -4,7 +4,8 @@
 | Data | Versão | Descrição | Autores |
 | --- | --- | --- | --- |
 | 28/03/2018 | 0.0.1 | Criação do documento | João Pedro Sconetto |
-| 29/04/2019 | 0.1.0 | Adição da EVM da segunda _release_ | João Pedro Sconetto e Mariana de Souza Mendes |
+| 29/04/2018 | 0.1.0 | Adição da EVM da segunda _release_ | João Pedro Sconetto e Mariana de Souza Mendes |
+| 12/06/2018 | 1.0.0 | Correção nos dados da EVM (segunda _release_) e consolidação do documento | João Pedro Sconetto e Mariana de Souza Mendes |
 
 ## EVM Agile
 
@@ -21,7 +22,7 @@ O __EVM__ (_Earned Value Management_ ou Gerenciamento de Valor agregado) se trat
 | BAC | Orçamento disponível para a primeira _release_ | R$ 34.039,38 |
 | L | Tamanho da sprint em dias | 7 |
 | PS | Total de sprints planejadas | 6 |
-| SD	| Data de início | 05/03/2018 |
+| SD    | Data de início | 05/03/2018 |
 | PRP | Pontos planejados para a primeira _release_ | 172 |
 
 #### _Release 2_
@@ -29,9 +30,9 @@ O __EVM__ (_Earned Value Management_ ou Gerenciamento de Valor agregado) se trat
 | --- | --- | --- |
 | BAC | Orçamento disponível para a segunda _release_ | R$ 34.039,38 |
 | L | Tamanho da sprint em dias | 7 |
-| PS | Total de sprints planejadas | 8 |
-| SD	| Data de início | 14/04/2018 |
-| PRP | Pontos planejados para a segunda _release_ | 200 |
+| PS | Total de sprints planejadas | 10 |
+| SD    | Data de início | 14/04/2018 |
+| PRP | Pontos planejados para a segunda _release_ | 250 |
 
 ### Legenda:
 | Identificador | Descrição |
@@ -67,7 +68,7 @@ As informações podem ser melhor vistas no link disponibilizado acima.
 Abaixo segue a imagem da EVM da segunda _release_, que ainda está em execução, logo não está completamente preenchida.
 As informações podem ser melhor vistas no link disponibilizado acima.
 
-![EVM-Release 02](https://i.imgur.com/xOnnli4.png)
+![EVM-Release 02](https://i.imgur.com/8kOQPNy.png)
 
 ## Referências
 HiFlex Consultoria. Gerenciamento de valor agregado (EVM)  em projetos agéis. Vitor Massari. Acesso em: <http://www.hiflex.com.br/v1/gerenciamento-de-valor-agregado-evm-em-projetos-ageis/>

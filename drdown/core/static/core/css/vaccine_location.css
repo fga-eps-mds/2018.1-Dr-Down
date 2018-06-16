@@ -1,0 +1,25 @@
+.location-b {
+  background-color: #e0e0e0;
+}
+
+.location-w {
+  background-color: #e0e0e0;
+}
+
+.location-b a:hover,
+.location-w a:hover {
+  background-color: #e0e0e0;
+}
+
+.location-b a,
+.location-b a:focus {
+  background-color: #CAE1FF;
+}
+
+
+.location-w a,
+.location-w a:focus {
+  background-color: white;
+}
+
+
