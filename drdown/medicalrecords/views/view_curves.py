@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.db import IntegrityError
+from django.db import IntegrityError, transaction
 from django.utils.translation import ugettext_lazy as _
 from ..models.model_curves import Curves
 from drdown.users.models.model_patient import Patient
@@ -45,7 +45,9 @@ class CurvesCreateView(
 
     def post(self, request, *args, **kwargs):
         try:
-            return super().post(request, *args, **kwargs)
+            with transaction.atomic():
+                data = super().post(request, *args, **kwargs)
+            return data
         except IntegrityError:
             messages.add_message(request, messages.ERROR,
                                  _('The patient already has a curve at this '
@@ -181,7 +183,7 @@ class CurveDataParser(BaseViewPermissionPatientResponsible, View):
 
         # Ideally, in place of the constant, one would use self.api_url
         # but its not working right now
-        API_URL = "drdown-homolog.ml:8000"
+        API_URL = "www.drdown-homolog.ml:8000"
 
         url = "http://" + API_URL + "/" + self.get_api_directory()
         # print("DEBUG >>> URL " + url)
