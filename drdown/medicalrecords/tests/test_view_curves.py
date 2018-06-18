@@ -197,10 +197,10 @@ class TestModelRequest(TestCase):
         self.client.force_login(user=self.health_team.user)
 
         data = {
-            'height': 20,
-            'weight': 20,
-            'age': 20,
-            'cephalic_perimeter': 20,
+            'height': self.HEIGHT,
+            'weight': self.WEIGHT,
+            'age': self.AGE,
+            'cephalic_perimeter': self.CEPHALIC_PERIMETER,
         }
 
         response = self.client.post(
@@ -214,17 +214,17 @@ class TestModelRequest(TestCase):
 
         self.assertEquals(response.status_code, 200)
 
-        with self.assertRaises(Exception) as raised:
-            with transaction.atomic():
-                response = self.client.post(
-                    path=reverse(
-                        'medicalrecords:create_curve',
-                        kwargs={'username': self.user.username}
-                    ),
-                    data=data,
-                    follow=True
-                )
-        self.assertEqual(TransactionManagementError, type(raised.exception))
+
+        response2 = self.client.post(
+            path=reverse(
+                'medicalrecords:create_curve',
+                kwargs={'username': self.user.username}
+            ),
+            data=data,
+            follow=True
+        )
+
+        self.assertEquals(response2.status_code, 200)
 
     def test_curves_validation(self):
         """
