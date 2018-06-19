@@ -26,6 +26,7 @@
 | 01/05/2018 | 2.2.0 | Inserindo componentes para as sprints 09 a 12 | Victor Arnaud |
 | 26/05/2018 | 2.3.0 | Documentando componentes/apis/microsserviços utilizados e descartados | Victor Arnaud |
 | 09/06/2018 | 2.3.1 | Atualizando diagrama arquitetural | Geovana Ramos e Victor Arnaud |
+| 19/06/2018 | 3.0.0 | Finalizando documento de arquitetura | Gabriela Medeiros, Geovana Ramos e Victor Arnaud |
 
 ## 1: Introdução
 
@@ -126,38 +127,37 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |---------|----------------------|:------------:|---------------------------|
 |[NewsAPI](https://newsapi.org/s/google-news-api)|API que disponibiliza manchetes, artigos, imagens e outros metadados de artigos do Google Notícias via JSON.|Não|Essa API é complexa e não pega informações especificas que precisamos.|
 
-#### Foruns e discussões
+#### Fóruns e discussões
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista para criar fóruns|Não|Foi proposta no meio da implementação do mesmo, logo foi descartado|
+|[django-forum-app](https://github.com/urtzai/django-forum-app)|Um aplicativo muito simples e minimalista para criar fóruns|Não|Foi proposta no meio da implementação do mesmo, logo foi descartado.|
 
 #### Consultas e Eventos
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação Django para publicar eventos como um calendario|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.|
-|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do Django|Não|A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.|
-|[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|A decidir|A aplicação ainda está sendo avaliada|
+|[pinax-calendars](https://github.com/pinax/pinax-calendars/)|Aplicação Django para publicar eventos como um calendario|Não|A equipe decidiu não utilizar componentes que envolvem design, pois o componente não dá liberdade para modificá-lo.|
+|[django-scheduler](https://github.com/llazzaro/django-scheduler)|Uma aplicação de calendario do Django|Não|A equipe decidiu não utilizar componentes que envolvem design, pois o componente não dá liberdade para modificá-lo.|
+|[pinax-notifications](https://github.com/pinax/pinax-notifications/)|Gerenciamento de notificação de usuário para o framework web Django|Não|Não atendia as necessidades da funcionalidade.|
 
 #### Ficha de acompanhamento e Relatórios
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo Django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário Django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado no prontuário|
-|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado no prontuário|
+|[django-pagedown](https://github.com/timmyomahony/django-pagedown)|Um aplicativo Django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário Django, seja em um aplicativo personalizado ou no Django Admin.|Sim|O componente está sendo usado em todos os campos TextField.|
+|[django-markdown-deux](https://github.com/trentm/django-markdown-deux)|Componente para evitar a inserção de código malicioso no markdown|Sim|O componente está sendo usado em todos os campos TextField.|
 |[reportlab](https://pypi.org/project/reportlab/)|O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.|Não|Foi recomendado na documentação do [Django](https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/), utilizar essa biblioteca para gerar os PDFs e gráficos do projeto. Porém a equipe achou uma maneira alternativa de faze-lo|
 |[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|Não|A documentação do Django aconselha utilizar o ReportLab.|
-|[WeasyPrint](https://github.com/Kozea/WeasyPrint)|O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.|Não|Foi escolhido pela equipe o componente django-easy-pdf|
-|[sdcurve](https://github.com/Dr-Down/sdcurve)|Microsserviço de curva de crescimento, altura, peso, EMC e perímetro encefálico para crianças com Síndrome de Down|Sim|Requisitos do cliente.|
-|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da google|Sim|Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down|
+|[WeasyPrint](https://github.com/Kozea/WeasyPrint)|O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.|Não|Foi escolhido pela equipe o componente django-easy-pdf.|
+|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da Google|Sim|Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down.|
 
 #### Localização
 
 |Aplicação|Descrição da aplicação|Foi utilizado?|Motivo da utilização ou não|
 |---------|----------------------|:------------:|---------------------------|
-|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais| Sim |Facil aplicação e atende as necessidades.|
-|[google-maps-services-python](https://github.com/googlemaps/google-maps-services-python)|Componente python para utilização da API do google maps| Não | Não será ultilizado porque a API do google atendeu nossas necessidades e foi recomendada pela Gerência de projetos.|
+|[GoogleMapsAPI](https://developers.google.com/places/web-service/?hl=pt-br)|API do Google Maps com informações sobre milhões de locais.| Sim |Fácil aplicação e atende as necessidades.|
+|[google-maps-services-python](https://github.com/googlemaps/google-maps-services-python)|Componente python para utilização da API do google maps.| Não | Não será ultilizado porque a API do google atendeu nossas necessidades e foi recomendada pela gerência de projeto.|
 
 #### Outros
 
@@ -167,8 +167,12 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |[django-crispy-forms](http://django-crispy-forms.readthedocs.io/en/latest/)|É um aplicativo do Django que permite a construção, customização e reutilização de formulários facilmente, podendo usar qualquer framework CSS, sem escrever código de template e sem ter que cuidar de outros tipos de detalhes.|Sim|Foi utilizado para facilitar a criação de formulários|
 |[django-simple-search](https://github.com/gregplaysguitar/django-simple-search)|A busca simples do Django fornece a mesma funcionalidade e conveniência que o search fields faz no admin do django.|Não|Foi decidido a utilização do django-search-view pelo fato de utilizar CBV.|
 |[django-search-view](https://github.com/inmagik/django-search-views)|Componente para pesquisa e filtros usando Class Based Views|Sim|O componentes está sendo usando em algumas partes do software que precisa pesquisar algo.|
-|[django-anymail](https://github.com/anymail/django-anymail)|Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais|Não|Foi utilizando o serviço ao invés do componente|
-|[Httplib2](https://github.com/httplib2/httplib2)|Biblioteca cliente HTTP pequena e rápida para Python. Possui conexões persistentes, cache, suporte ao Appengine.|Sim|Usado para fazer comunicações via requisições HTTP|
+|[django-anymail](https://github.com/anymail/django-anymail)|Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais|Sim|Foi utilizado para facilitar a integração com o Mailgun.|
+|[Httplib2](https://github.com/httplib2/httplib2)|Biblioteca cliente HTTP pequena e rápida para Python. Possui conexões persistentes, cache, suporte ao Appengine.|Sim|Usado para fazer comunicações via requisições HTTP.|
+|[django-test-plus](https://github.com/revsys/django-test-plus)| Funcionalidades para o Django Test Case.|Sim|Usado para facilitar a criação de instâncias. |
+|[Sphinx](https://github.com/sphinx-doc/sphinx)|O Sphinx é uma ferramenta que facilita a criação de documentação inteligente e bonita para projetos em Python.|Sim|Usado para criar documentação em latex. |
+
+
 
 ### 2.3 Banco de dados PostgreSQL
 
@@ -202,7 +206,28 @@ No presente projeto o Celery executa a tarefa de comunicação com o Sentry (htt
 
 Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro". Ele é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança ao acesso dos usuários.
 
-### 2.7 Comunicação
+### 2.7 Microsserviço [SDcurve](https://github.com/Dr-Down/sdcurve)
+
+Microsserviço de curvas de crescimento baseados na Altura, Peso, IMC e Perímetro Cefálico de crianças com Síndrome de Down do sexo masculino ou feminino de 0 a 36 meses e de 3 a 18 anos. Esse microsserviço disponibiliza de todas as curvas de crescimento necessárias para que o médico possa acompanhar melhor seus pacientes com síndrome de down.
+
+Todos os endpoints disponibilizam:
+
+* [x] Título da curva (title)
+
+* [x] Eixo X da curva, ou seja, as idades (ages)
+
+* [x] Os percentis gerados para peso, estatura e perímetro cefálico (percentis_3, percentis_10, percentis_25, percentis_50, percentis_75, percentis_90 e percentis_97)
+
+* [x] Os percentis gerados para IMC (percentis_5, percentis_10, percentis_25, percentis_50, percentis_75, percentis_85, percentis_90 e percentis_95)
+
+* [x] Um atributo chamado "graphic" tendo uma reorganização dos dados acima para plotagem em APIS de gráficos como [Google Charts](https://developers.google.com/chart/interactive/docs/)
+
+* [x] Resultado de um consulta aos gráficos, por exemplo, ao inserir o peso, idade, sexo e intervalo de idade (0 a 36 meses ou 3 a 18 anos) da criança o resultado será se a criança está no peso médio (0), acima do peso médio (1) ou abaixo do peso médio (-1) estipulado pelos valores dentro dos percentis, ou seja, entre os percentis_3 e percentis_97 a crianças está com o peso na medida normal, abaixo do percentis_3 está com o peso abaixo da média e acima do percentis_97 está com o peso acima da média normal.
+
+**OBS**: Em estatística descritiva, os percentis são medidas que dividem a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual.
+
+
+### 2.8 Comunicação
 
 1 - O **web client (navegador)** manda uma requisição para o **web server (Nginx)** com o protocolo HTTP.
 
@@ -299,16 +324,19 @@ Proporcionam um método alternativo para implementar views como objetos ao invé
 
 Podemos então agregar as funções básicas das views dentro de classes, como métodos. Os recursos das Class Based Views estão em algumas classes “pré-prontas”, as quais outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!
 
-### 5.2 Diagrama de Classes
+### 5.2 Diagrama Entidade Relacionamento (DER)
 
-![Diagrama de Classes](http://uploaddeimagens.com.br/images/001/379/381/original/Diagrama.jpeg?1524078112)
+![my_project_visualized](https://user-images.githubusercontent.com/31005087/41610497-bd171e46-73c3-11e8-825d-c797322b9afe.png)
 
 ### 5.3 Modelo Entidade Relacionamento (MER)
 
-#### USER:
+#### Users
+
+##### USER:
 
 | Atributo | Tipo |Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
 | photo | Image | Opcional | Foto do usuário |
 | name | CharField[255] | Opcional | Nome completo do usuário |
 | gender | CharField{choices} | Opcional | Gênero: masculino ou feminino |
@@ -325,24 +353,30 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 | password | CharField[50] | Obrigatório | Senha do usuário |
 | is_staff | BooleanField | Obrigatório | Verifica se o usuário é um funcionário |
 
-#### EMPLOYEE:
+##### EMPLOYEE:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| user | OneToOneField(USER) | Obrigatório | User base referente ao funcionário |
 | cpf | CharField[14] | Obrigatório, único, validado | CPF do funcionário |
 | department | CharField{choices} | Obrigatório | Departamento do funcionário |
 
-#### RESPONSIBLE:
+##### RESPONSIBLE:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| user | OneToOneField(USER) | Obrigatório | User base referente ao responsável |
 | cpf | CharField[14] | Obrigatório, único, validado | CPF do responsável |
 
-#### PATIENT:
+##### PATIENT:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| priority | IntergerField{choices} | Obrigatório | Grau de urgência para atendimento do paciente |
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| user | OneToOneField(USER) | Obrigatório | User base referente ao paciente |
+| responsible | ForeignKey(RESPONSIBLE) | Obrigatório | User base referente ao paciente |
 | ses | CharField[9] | Obrigatório, único, validado | Número SES do paciente |
 | mother_name | CharField[80] | Obrigatório | Nome da mãe |
 | father_name | CharField[80] | Obrigatório | Nome da pai |
@@ -351,77 +385,62 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 | civil_registry_of_birth | CharField[11] | Obrigatório | Registro civil de nascimento |
 | declaration_of_live_birth | CharField[11] | Obrigatório | Declaração de nascimento |
 
-
-#### HEALTH TEAM:
+##### HEALTH TEAM:
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| user | OneToOneField(USER) | Obrigatório | User base referente ao paciente |
 | crm | CharField[7] | Obrigatório, único, validado | Número CRM do médicos |
 | speciality | CharField[20] | Obrigatório | Especialidade |
 | cpf | CharField[14] | Obrigatório, único, validado | CPF do médicos |
 | council_acronym | CharField{choices} | Obrigatório | Conselho Regional |
 | register_number | CharField[7] | Obrigatório, validado | Número de registro |
 
-#### ADDRESS:
+#### Fórum
 
-| Atributo | Tipo | Característica| Descrição |
-|---|---|---|---|
-| city | CharField[40] | Obrigatório | Cidade |
-| cep | CharFieldField[8] | Obrigatório, validado | CEP |
-| number |  CharField[5] | Obrigatório | Número da moradia|
-| uf | CharField{choices} | Obrigatório | Unidade da Federação |
-| neighborhood | CharField[30] | Opcional | Bairro |
-
-#### CATEGORY:
+##### CATEGORY:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
 | name | CharField[100] | Obrigatório | Nome da categoria |
 | description | TextField[100] | Obrigatório | Assunto da categoria |
 | slug | SlugField[40] | Obrigatório | Usado para inserir URLs renomeadas |
 
-#### POST:
+##### POST:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| category | ForeignKey(CATEGORY) | Automático | Categoria à qual o post pertence |
 | title |CharField[100] | Obrigatório | Título do post |
 | message | TextField[4000] | Obrigatório | Mensagem do post |
 | created_at | DateField | Automático | Data de criação do post |
 | updated_at | DateField | Automático | Data de modificação do post |
 
-#### COMMENTARY:
+##### COMMENTARY:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| post | ForeignKey(POST) | Automático | Post ao qual o comentário pertence |
 | message | TextField[4000] | Obrigatório | Mensagem do comentário |
 | created_at | DateField | Automático | Data de criação do comentário |
+| created_by | DateField | Automático | Autor do comentário |
 | updated_at | DateField | Automático | Data de modificação do comentário |
 
-#### MEDICAL QUESTIONARY:
+#### Prontuário
+
+##### MEDICAL RECORD:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| psychosocial_risk | IntergerField | Obrigatório | Risco psicossocial |
-| health_risk |IntergerField | Obrigatório | Risco de vida |
-| family_risk | IntergerField | Obrigatório | Risco familiar |
-| total_risk | IntergerField | Obrigatório | Risco total |
+| id | AutoField | Automático, único | Número de identificação do objeto |
 
-#### MEDICAL RECORD:
+#### Eventos
 
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| history | CharField[4000] | Obrigatório | Histórico médico |
-
-
-#### QUEUE:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| speciality | CharField[50] | Obrigatório | Especialidade |
-| time_left | DateField | Automático | Tempo faltando |
-| position | IntergerField | Automático | Posição |
-
-#### EVENTS:
+##### EVENTS:
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
@@ -429,19 +448,15 @@ Podemos então agregar as funções básicas das views dentro de classes, como m
 | date | DateField | Obrigatório | Data do evento |
 | description | TextField[4000] | Obrigatório | Descrição do evento |
 
-#### APPOINTMENTS:
+#### Consultas
+
+##### APPOINTMENTS:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
 | name | CharField[100] | Obrigatório | Nome do compromisso |
 | date | DateField | Obrigatório | Data do compromisso |
 | description | TextField[100] | Opcional | Descrição do compromisso |
-
-#### CLINIC:
-
-| Atributo | Tipo | Característica | Descrição |
-|---|---|---|---|
-| name | CharField[100] | Obrigatório | Nome da clínica |
 
 
 #### RELACIONAMENTOS:
@@ -481,19 +496,6 @@ Cardinalidade:  1 X N
 Um comentário pode conter um único post, e um post pode conter vários comentários.
 
 Cardinalidade: 1 X N
-
-##### 7 - CLINIC possui ADDRESS:
-
-Um endereço pode pertencer a apenas uma clinica, e uma clinica pode ter apenas um endereço.
-
-Cardinalidade: 1 X 1
-
-##### 8 - EVENTS possui ADDRESS:
-
-Um evento pode ter apenas um endereço, e um endereço pode ter apenas um evento.
-
-Cardinalidade: 1 X 1
-
 
 ##### 9 - CATEGORIES tem POSTS:
 
