@@ -15,7 +15,7 @@
     <h2>{% trans 'Add new Complaint' %}</h2>
     {{ form.media }}
 
-    <form method="post" enctype="multipart/form-data " action="#menu5">
+    <form method="post" enctype="multipart/form-data " action="#menu4">
 
       {% csrf_token %}
       {{ form.description.errors }}
@@ -41,9 +41,9 @@
         <label>{% trans 'Time of complaint'%} : </label>
         <input style="width: 110px;" type="time" name="complaint_time" class="form-control">
       </div>
-      
+
       <div class="row float-right mr-2">
-        <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+        <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}#menu4" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
         <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
       </div>
     </form>

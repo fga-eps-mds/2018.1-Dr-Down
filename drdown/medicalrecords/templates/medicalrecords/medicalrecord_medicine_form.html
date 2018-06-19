@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col">
 
-        <form method="post" enctype="multipart/form-data" action="#menu4">
+        <form method="post" enctype="multipart/form-data" action="#menu3">
 
           {% csrf_token %}
           {% for field in form %}
@@ -47,7 +47,7 @@
           {% endfor %}
 
           <div class="row float-right mr-2">
-            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}#menu3" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
             <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
           </div>
         </form>
