@@ -110,7 +110,11 @@ class ChecklistUpdateView(RedirectView):
                 target_user=target_user
             )
 
-        return (allowed_on_view and current_user.age() >= 13)
+        return (
+            allowed_on_view and
+            current_user.age() >= 13 and
+            hasattr(current_user, 'employee') is False
+        )
 
     def post(self, request, *args, **kwargs):
 
@@ -131,8 +135,13 @@ class ChecklistUpdateView(RedirectView):
                 value=request.POST.get('value')
             )
         else:
-            message = _("Error: You cannot change data on this form. "
-                        "You need to be at least 13 years old.")
+            message = str(_("Error: You cannot change data on this form."))
+
+            if hasattr(request.user, 'employee'):
+                message += str(_(" You don't have permission."))
+            else:
+                message += str(_(" You need to be at least 13 years old."))
+
             return HttpResponseForbidden(message)
 
         return HttpResponse(message)

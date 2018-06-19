@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:59+0000\n"
+"POT-Creation-Date: 2018-06-19 15:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,7 +110,7 @@ msgid "Age: "
 msgstr "Idade: "
 
 #: drdown/careline/templates/careline/checklist_detail.html:105
-#: drdown/careline/templates/careline/checklist_detail.html:130
+#: drdown/careline/templates/careline/checklist_detail.html:131
 msgid "Newborn"
 msgstr "Recém-Nascido"
 
@@ -122,51 +122,51 @@ msgstr "Menos de 1 ano de idade"
 msgid "SES: "
 msgstr "SES: "
 
-#: drdown/careline/templates/careline/checklist_detail.html:119
+#: drdown/careline/templates/careline/checklist_detail.html:120
 msgid "Required"
 msgstr "Obrigatório"
 
-#: drdown/careline/templates/careline/checklist_detail.html:120
+#: drdown/careline/templates/careline/checklist_detail.html:121
 msgid "When Needed"
 msgstr "Quando Necessário"
 
-#: drdown/careline/templates/careline/checklist_detail.html:121
+#: drdown/careline/templates/careline/checklist_detail.html:122
 msgid "Done"
 msgstr "Feito"
 
-#: drdown/careline/templates/careline/checklist_detail.html:125
+#: drdown/careline/templates/careline/checklist_detail.html:126
 msgid "Interventions / Evaluation"
 msgstr "Intervenções / Avaliação"
 
-#: drdown/careline/templates/careline/checklist_detail.html:126
+#: drdown/careline/templates/careline/checklist_detail.html:127
 msgid "AGE"
 msgstr "IDADE"
 
-#: drdown/careline/templates/careline/checklist_detail.html:132
+#: drdown/careline/templates/careline/checklist_detail.html:133
 msgid "Six Months"
 msgstr "Seis Meses"
 
-#: drdown/careline/templates/careline/checklist_detail.html:135
+#: drdown/careline/templates/careline/checklist_detail.html:136
 msgid "One Year"
 msgstr "Um Ano"
 
-#: drdown/careline/templates/careline/checklist_detail.html:138
+#: drdown/careline/templates/careline/checklist_detail.html:139
 msgid "Two Years"
 msgstr "Dois Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:141
+#: drdown/careline/templates/careline/checklist_detail.html:142
 msgid "Three Years"
 msgstr "Três Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:144
+#: drdown/careline/templates/careline/checklist_detail.html:145
 msgid "Five Years"
 msgstr "Cinco Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:147
+#: drdown/careline/templates/careline/checklist_detail.html:148
 msgid "Six to Ten Years"
 msgstr "Seis a Dez Anos"
 
-#: drdown/careline/templates/careline/checklist_detail.html:696
+#: drdown/careline/templates/careline/checklist_detail.html:697
 msgid ""
 "* Routine as suggested and, if necessary, when initiating physical "
 "examination or surgical procedure with cervical manipulation."
@@ -174,7 +174,7 @@ msgstr ""
 "* Rotina como sugerido e, se preciso, ao iniciar atividade física ou em "
 "procedimento cirúrgico com manuseio cervical."
 
-#: drdown/careline/templates/careline/checklist_detail.html:700
+#: drdown/careline/templates/careline/checklist_detail.html:701
 msgid ""
 "** Thyrogram: TSH, free T4. For antithyroid antibodies, routinely request "
 "between 9 and 12 years or when needed."
@@ -182,15 +182,19 @@ msgstr ""
 "** Tireograma: TSH, T4 livre. Para os anticorpos antitiroidiano, solicitar "
 "como rotina entre 9 e 12 anos ou quando necessário."
 
-#: drdown/careline/views/view_checklist.py:134
-msgid ""
-"Error: You cannot change data on this form. You need to be at least 13 years "
-"old."
-msgstr ""
-"Erro: Você não pode mudar os dados neste formulário. Você deve ter pelo "
-"menos 13 anos de idade."
+#: drdown/careline/views/view_checklist.py:138
+msgid "Error: You cannot change data on this form."
+msgstr "Erro: Você não pode mudar os dados neste formulário."
 
-#: drdown/careline/views/view_checklist.py:149
+#: drdown/careline/views/view_checklist.py:141
+msgid " You don't have permission."
+msgstr " Você não tem permissão."
+
+#: drdown/careline/views/view_checklist.py:143
+msgid " You need to be at least 13 years old."
+msgstr " Você deve ter pelo menos 13 anos de idade."
+
+#: drdown/careline/views/view_checklist.py:158
 msgid "Success! Your changes were saved."
 msgstr "Sucesso! Suas mudanças foram salvas."
 
