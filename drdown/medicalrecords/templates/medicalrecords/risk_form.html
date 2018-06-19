@@ -14,17 +14,21 @@
               {{ form.errors }}
             <p class="lead">
               <div class="row mb-5">
-                <label class="col"> <strong>{{ form.priority_general_practitioner.label }}</strong></label>
-                <label class="col ml-5"> <strong>{{ form.priority_pediatrics.label }}</strong></label>
+                <label class="col mx-3"> <strong>{{ form.priority_general_practitioner.label }}</strong></label>
+                <div class="col mx-3"></div>
+                <label class="col mx-3"> <strong>{{ form.priority_pediatrics.label }}</strong></label>
                 <div class="w-100"></div>
                 <div class="col mx-3" role="alert">{{ form.priority_general_practitioner }}</div>
+                <div class="col mx-3"></div>
                 <div class="col mx-3 ml-5" role="alert">{{ form.priority_pediatrics }}</div>
               </div>
               <div class="row mb-5">
-                <label class="col"> <strong>{{ form.priority_cardiology.label }}</strong> </label>
-                <label class="col ml-5"> <strong>{{ form.priority_neurology.label }}</strong></label>
+                <label class="col mx-3"> <strong>{{ form.priority_cardiology.label }}</strong> </label>
+                <div class="col mx-3"></div>
+                <label class="col col mx-3"> <strong>{{ form.priority_neurology.label }}</strong></label>
                 <div class="w-100"></div>
                 <div class="col mx-3" role="alert">{{ form.priority_cardiology }}</div>
+                <div class="col mx-3"></div>
                 <div class="col mx-3 ml-5" role="alert">{{ form.priority_neurology }}</div>
               </div>
               <div class="row mb-5">
