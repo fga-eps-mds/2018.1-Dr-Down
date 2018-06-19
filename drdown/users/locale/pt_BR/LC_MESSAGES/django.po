@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:59+0000\n"
+"POT-Creation-Date: 2018-06-19 18:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Pesquisar paciente!"
 
 #: drdown/users/models/model_employee.py:21
 #: drdown/users/models/model_health_team.py:20
-#: drdown/users/models/model_patient.py:25
+#: drdown/users/models/model_patient.py:28
 #: drdown/users/models/model_responsible.py:17
 msgid "User"
 msgstr "Usuário"
@@ -63,7 +63,7 @@ msgstr "O departamento no qual o usuário trabalha"
 
 #: drdown/users/models/model_employee.py:74
 #: drdown/users/models/model_health_team.py:198
-#: drdown/users/models/model_patient.py:144
+#: drdown/users/models/model_patient.py:163
 #: drdown/users/models/model_responsible.py:47
 msgid "Don't change users"
 msgstr "Não alterar usuário"
@@ -164,90 +164,90 @@ msgstr ""
 msgid "Health Team"
 msgstr "Equipe Médica"
 
-#: drdown/users/models/model_patient.py:28
+#: drdown/users/models/model_patient.py:31
 msgid "Please, enter the valid SES number"
 msgstr "Por favor, insira um número de SES válido"
 
-#: drdown/users/models/model_patient.py:39
+#: drdown/users/models/model_patient.py:42
 #: drdown/users/models/model_responsible.py:70
 #: drdown/users/templates/users/user_detail.html:46
 msgid "Responsible"
 msgstr "Responsável"
 
-#: drdown/users/models/model_patient.py:43
+#: drdown/users/models/model_patient.py:46
 msgid "Name of mother"
 msgstr "Nome da mãe"
 
-#: drdown/users/models/model_patient.py:44
+#: drdown/users/models/model_patient.py:47
 msgid "Please, insert your mother name"
 msgstr "Por favor, insira o nome da sua mãe"
 
-#: drdown/users/models/model_patient.py:50
+#: drdown/users/models/model_patient.py:53
 msgid "Name of father"
 msgstr "Nome do pai"
 
-#: drdown/users/models/model_patient.py:51
+#: drdown/users/models/model_patient.py:54
 msgid "Please, insert your father name"
 msgstr "Por favor, insira o nome do seu pai"
 
-#: drdown/users/models/model_patient.py:57
+#: drdown/users/models/model_patient.py:60
 msgid "White"
 msgstr "Branco"
 
-#: drdown/users/models/model_patient.py:58
+#: drdown/users/models/model_patient.py:61
 msgid "Black"
 msgstr "Negro"
 
-#: drdown/users/models/model_patient.py:59
+#: drdown/users/models/model_patient.py:62
 msgid "Yellow"
 msgstr "Amarelo"
 
-#: drdown/users/models/model_patient.py:60
+#: drdown/users/models/model_patient.py:63
 msgid "Brown"
 msgstr "Pardo"
 
-#: drdown/users/models/model_patient.py:61
+#: drdown/users/models/model_patient.py:64
 msgid "Indigenous"
 msgstr "Indígena"
 
-#: drdown/users/models/model_patient.py:64
+#: drdown/users/models/model_patient.py:67
 msgid "Ethnicity"
 msgstr "Etnia"
 
-#: drdown/users/models/model_patient.py:66
+#: drdown/users/models/model_patient.py:69
 msgid "Please insert the ethnicity of the patient"
 msgstr "Por favor, insira a etnia do paciente"
 
-#: drdown/users/models/model_patient.py:69
+#: drdown/users/models/model_patient.py:72
 msgid "SUS number"
 msgstr "Número do SUS"
 
-#: drdown/users/models/model_patient.py:70
+#: drdown/users/models/model_patient.py:73
 msgid "Please, enter valid SUS in format: XXXXXXXXXXXXXXX"
 msgstr "Por favor, insira o número do SUS no seguinte formato: XXXXXXXXXXXXXXX"
 
-#: drdown/users/models/model_patient.py:76
+#: drdown/users/models/model_patient.py:79
 msgid "Civil register of birth"
 msgstr "Registro civil de nascimento"
 
-#: drdown/users/models/model_patient.py:77
+#: drdown/users/models/model_patient.py:80
 msgid "Please, enter the civil registry of birth number"
 msgstr "Por favor, insira o número do seu registro civil de nascimento"
 
-#: drdown/users/models/model_patient.py:84
+#: drdown/users/models/model_patient.py:87
 msgid "Declaration of live birth"
 msgstr "Declaração de nascido vivo"
 
-#: drdown/users/models/model_patient.py:85
+#: drdown/users/models/model_patient.py:88
 msgid "Please, enter the declaration of live birth number"
 msgstr "Por favor, insira o número da declaração de nascido vivo"
 
-#: drdown/users/models/model_patient.py:164
+#: drdown/users/models/model_patient.py:185
 #: drdown/users/templates/users/user_detail.html:44
 msgid "Patient"
 msgstr "Paciente"
 
-#: drdown/users/models/model_patient.py:165
+#: drdown/users/models/model_patient.py:186
 msgid "Patients"
 msgstr "Pacientes"
 
@@ -376,7 +376,7 @@ msgid "Log Out"
 msgstr "Sair"
 
 #: drdown/users/templates/users/user_confirm_delete.html:8
-#: drdown/users/templates/users/user_confirm_delete.html:13
+#: drdown/users/templates/users/user_confirm_delete.html:14
 msgid "Delete"
 msgstr "Excluir"
 
@@ -384,7 +384,11 @@ msgstr "Excluir"
 msgid "Are you sure you want to delete "
 msgstr "Você tem certeza que deseja excluir "
 
-#: drdown/users/templates/users/user_confirm_delete.html:16
+#: drdown/users/templates/users/user_confirm_delete.html:13
+msgid "All the data about yourself will be erased and this action can't be undone."
+msgstr "Todos os dados sobre você serão apagados e esta ação não pode ser desfeita."
+
+#: drdown/users/templates/users/user_confirm_delete.html:17
 #: drdown/users/templates/users/user_form.html:138
 msgid "Cancel"
 msgstr "Cancelar"
@@ -440,7 +444,7 @@ msgstr "Data de nascimento: "
 
 #: drdown/users/templates/users/user_detail.html:109
 #: drdown/users/templates/users/user_detail.html:168
-#: drdown/users/templates/users/user_detail.html:193
+#: drdown/users/templates/users/user_detail.html:194
 msgid "CPF: "
 msgstr "CPF: "
 
@@ -472,15 +476,15 @@ msgstr "Registro civil de nascimento: "
 msgid "Declaration of live birth : "
 msgstr "Declaração de nascido vivo: "
 
-#: drdown/users/templates/users/user_detail.html:175
+#: drdown/users/templates/users/user_detail.html:174
 msgid "Patients: "
 msgstr "Paciente: "
 
-#: drdown/users/templates/users/user_detail.html:205
+#: drdown/users/templates/users/user_detail.html:206
 msgid "Registration State: "
 msgstr "Estado do Registro: "
 
-#: drdown/users/templates/users/user_detail.html:210
+#: drdown/users/templates/users/user_detail.html:211
 msgid "Speciality: "
 msgstr "Especialidade: "
 
