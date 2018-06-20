@@ -26,9 +26,22 @@
 </script>
 
 <script>
-  function check(input) {
-   if (input.value == 0) {
+  function check(input, checkboxID) {
+  var checkbox = document.getElementById(checkboxID);
+   if (input.value == 0 && checkbox.checked == false) {
      input.setCustomValidity('The value must be greater than 0.');
+   } else {
+     // input is fine -- reset the error message
+     input.setCustomValidity('');
+   }
+ }
+</script>
+
+<script>
+  function check_br(input, checkboxID) {
+  var checkbox = document.getElementById(checkboxID);
+   if (input.value == 0 && checkbox.checked == false) {
+     input.setCustomValidity('O valor deve ser maior que 0.');
    } else {
      // input is fine -- reset the error message
      input.setCustomValidity('');
@@ -79,7 +92,7 @@
         <div class="form-group col">
           <label for="id_time">{% trans 'Time' %}*</label>
           {% if object.time %}
-            <input class="form-control" type="time" name="time" required id="id_time" value="{{ object.time }}"/>
+            <input class="form-control" type="time" name="time" required id="id_time" value="{{ object.time |time:'H:i' }}"/>
             <small class="text-muted">{% trans 'Enter a event time' %}</small>
           {% else %}
             <input class="form-control" type="time" name="time" required id="id_time"/>
@@ -128,10 +141,18 @@
           <input class="form-control" type="number" name="value" step="0.010" required id="id_value"  value="0" readonly/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% elif object.value %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value"  value="{{ object.value|stringformat:'g' }}"/>
+          {% if request.LANGUAGE_CODE == 'pt-br' %}
+            <input class="form-control" type="number" name="value" required id="id_value" step="0.001" oninput="check_br(this,'id_free')" value="{{ object.value | stringformat:'g' }}"/>
+          {% elif request.LANGUAGE_CODE == 'en' %}
+            <input class="form-control" type="number" name="value" required id="id_value" step="0.001" oninput="check(this,'id_free')" value="{{ object.value | stringformat:'g' }}"/>
+          {% endif %}
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% else %}
-          <input class="form-control" type="number" name="value" required id="id_value" onclick="toggle('id_free', 'id_value')" />
+          {% if request.LANGUAGE_CODE == 'pt-br' %}
+            <input class="form-control" type="number" name="value" required id="id_value" step="0.001" step="0.01" oninput="check_br(this,'id_free')" />
+          {% elif request.LANGUAGE_CODE == 'en' %}
+            <input class="form-control" type="number" name="value" required id="id_value" step="0.001" oninput="check(this,'id_free')" />
+          {% endif %}
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% endif %}
       </div>
