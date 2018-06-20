@@ -58,11 +58,11 @@
           var year = Math.floor(month/12);
           var result_m = month%12;
           if (!result_m ){
-            result_m = "---";
+            result_m = 0;
 
           }
           if (!year){
-            year = "---";
+            year = 0;
           }
           $("#converted_year").val(year);
           $("#converted_month").val(result_m);
@@ -108,7 +108,7 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.age.label_tag }}
+                  {% trans "Age" %}:
                 </div>
                 <div class="row">
                   <div class="col-xs-3 ml-4">
@@ -141,7 +141,7 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.height.label_tag }}
+                  {% trans "Height" %}:
                 </div>
 
                 <div class="row">
@@ -171,7 +171,7 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.weight.label_tag }}
+                  {% trans "Weight" %}:
                 </div>
 
                 <div class="row">
@@ -201,7 +201,7 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.cephalic_perimeter.label_tag }}
+                  {% trans "Cephalic Perimeter" %}:
                 </div>
                 <div class="row">
                   <div class="col-xs-1 ml-4">
