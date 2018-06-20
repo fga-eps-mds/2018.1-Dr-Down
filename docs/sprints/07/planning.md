@@ -17,16 +17,16 @@ __Membros presentes:__ Todos
 ## 2. Papéis
 
 - Scrum Master:
-  - Diego França
+  - Diego França e João Pedro Sconetto
 
 - Product Owner:
   - Mariana Mendes
 
 - DevOps:
-  - João Sconetto
+  - João Sconetto e Victor Arnaud 
 
 - Arquiteto:
-  - Victor Arnaud
+  - Victor Arnaud e João Pedro Sconetto
 
 - Time de Desenvolvimento:
   - Daniel Maike
@@ -53,6 +53,8 @@ Nela também será revisado tanto a integração contínua do projeto quanto a s
 ## 5. Mudanças
 
 Mudanças foram feitas nesta sprint relacionadas à arquitetura. A partir da Sprint 7, o arquiteto selecionará diversos componentes que poderão ser utilizados nas histórias, e caberá às duplas responsáveis por elas definir quais adotarão.
+
+Outra mudança importante para o projeto foi a rotação de papéis. A equipe optou por não rotacionar os papéis de uma vez e ao inves disso foi decidido que aquele que era responsável ficaria como coach e haveria um pareamento para que o conhecimento fosse passado.
 
 ## 6. Backlog da Sprint
 
