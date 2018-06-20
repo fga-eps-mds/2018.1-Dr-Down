@@ -29,7 +29,7 @@
   function check(input, checkboxID) {
   var checkbox = document.getElementById(checkboxID);
    if (input.value == 0 && checkbox.checked == false) {
-     input.setCustomValidity('The value must be greater than 0.');
+     input.setCustomValidity('The value of event must be greater than 0.If that is free, please check true in right side of the screen.');
    } else {
      // input is fine -- reset the error message
      input.setCustomValidity('');
@@ -41,7 +41,7 @@
   function check_br(input, checkboxID) {
   var checkbox = document.getElementById(checkboxID);
    if (input.value == 0 && checkbox.checked == false) {
-     input.setCustomValidity('O valor deve ser maior que 0.');
+     input.setCustomValidity('O valor do evento deve ser maior que 0.Caso seja gratuito, favor marcar o campo à direita');
    } else {
      // input is fine -- reset the error message
      input.setCustomValidity('');
