@@ -444,11 +444,90 @@ Foi decidido a utilização do MER e DER em relação ao Diagrama de Classe por 
 
 #### Prontuário
 
-##### MEDICAL RECORD:
+##### CURVES:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
 | id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual os dados das curvas se referem |
+| age | IntegerField | Obrigatório | Ponto no eixo X da curva de crescimento referente à idade do paciente |
+| bmi | FloatField | Obrigatório | IMC do paciente |
+| cephalic_perimeter | FloatField | Obrigatório | Perímetro cefálico do paciente |
+| height | IntegerField | Obrigatório | Altura do paciente |
+| weight | FloatField | Obrigatório | Peso do paciente |
+
+##### RISK:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual os riscos se referem |
+| priority_cardiology | IntegerField | Obrigatório | Risco da especilidade Cardiologia |
+| priority_general_practitioner | IntegerField | Obrigatório | Risco da especilidade Clínica Geral |
+| priority_neurology | IntegerField | Obrigatório | Risco da especilidade Neurologia |
+| priority_pediatrics | IntegerField | Obrigatório | Risco da especilidade Pediatria |
+| priority_physioterapy | IntegerField | Obrigatório | Risco da especilidade Fisioterapia |
+| priority_psychology | IntegerField | Obrigatório | Risco da especilidade Psicologia |
+| priority_speech_therapy | IntegerField | Obrigatório | Risco da especialidade Fonoaudiologia |
+
+##### COMPLAINT:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual as queixas se referem |
+| author | ForeignKey(HEALTHTEAM) | Obrigatório | Funcionário de saúde que relatou a queixa |
+| complaint_day | DateField | Obrigatório | Dia da queixa |
+| complaint_time | DateField | Obrigatório | Hora da queixa |
+| created_at | DateTimeField | Automático | Dia da queixa |
+| description | TextField | Obrigatório | Descrição da queixa |
+
+##### EXAM:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual os exames se referem |
+| category | IntegerField | Obrigatório | Categoria do exame |
+| day | DateField | Obrigatório | Dia do exame realizado |
+| file | FileField | Obrigatório | Arquivos referentes ao exame |
+| observations | CharField | Obrigatório | Observações referentes ao exame |
+
+##### MEDICALRECORD:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual os relatórios de evolução se referem |
+| author | ForeignKey(HEALTHTEAM) | Obrigatório | Funcionário de saúde que relatou o relatório de evolução |
+| day | DateTimeField | Obrigatório | Dia do exame realizado |
+| document | FileField | Obrigatório | Arquivos referentes à evolução |
+| message | TextField | Obrigatório | Observações referentes à evolução|
+
+##### MEDICINE:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual o receituário se refere |
+| author | ForeignKey(HEALTHTEAM) | Obrigatório | Funcionário de saúde que prescreveu o remédio |
+| medicine_dosage | CharField | Obrigatório | Dosagem do remédio |
+| medicine_in_use | BooleanField | Obrigatório | Remédios que o paciente já esteja tomando |
+| medicine_name | CharField | Obrigatório | Nome do remédio|
+| medicine_use_interval | CharField | Obrigatório | Tempo entre doses do remédio|
+
+##### STATICDATA:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | OneToOneField(PATIENT) | Obrigatório | Paciente ao qual os dados pós natal se referem |
+| author | ForeignKey(HEALTHTEAM) | Obrigatório | Funcionário de saúde que preencheu os dados pós natal|
+| APGAR | IntegerField | Obrigatório | APGAR do paciente ao nascer|
+| ear_test | FileField | Obrigatório | Teste da orelha|
+| foot_test | FileField | Obrigatório | Teste do pesinho |
+| heart_test | FileField | Obrigatório | Teste do coração |
+| weight | PositiveIntegerField | Obrigatório | Peso ao nascer |
 
 #### Eventos
 
@@ -456,64 +535,183 @@ Foi decidido a utilização do MER e DER em relação ao Diagrama de Classe por 
 
 | Atributo | Tipo | Característica| Descrição |
 |---|---|---|---|
-| name | CharField[100] | Obrigatório |Nome do evento |
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| name | CharField | Obrigatório |Nome do evento |
 | date | DateField | Obrigatório | Data do evento |
-| description | TextField[4000] | Obrigatório | Descrição do evento |
+| description | TextField | Obrigatório | Descrição do evento |
+| free | BooleanField | Obrigatório | Indica se o evento é gratuito |
+| location | CharField | Obrigatório | Endereço do evento |
+| organize_by | CharField | Obrigatório | Organizador do evento |
+| time | TimeField | Obrigatório | Hora do evento |
+| value | FloatField | Obrigatório | Valor do evento |
+
+#### Careline
+
+##### CHECKITEM:
+
+| Atributo | Tipo | Característica| Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| procedure | ForeignKey(PROCEDURE) | Obrigatório | Procedimento |
+| age | CharField | Obrigatório | Idade do paciente |
+| check | BooleanField | Obrigatório | Indica se o procedimento foi feito |
+| required | BooleanField | Obrigatório | Indica se o procedimento é necessário |
+| when_needed | BooleanField | Obrigatório | Indica que o procedimento é necessário em casos especiais |
+
+##### PROCEDURE:
+
+| Atributo | Tipo | Característica| Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| careline | ForeignKey(CHECKLIST) | Obrigatório | Linha de cuidado |
+| initialized | BooleanField | Obrigatório | Indica se o procedimento foi iniciado |
+| proc_id | IntegerField | Automático | Identificação para ligar ligar models da careline |
+
+##### CHECKLIST:
+
+| Atributo | Tipo | Característica| Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual a linha de cuidado se refere|
+| initialized | BooleanField | Obrigatório | Indica se o procedimento foi iniciado |
 
 #### Consultas
 
-##### APPOINTMENTS:
+##### APPOINTMENT:
 
 | Atributo | Tipo | Característica | Descrição |
 |---|---|---|---|
-| name | CharField[100] | Obrigatório | Nome do compromisso |
-| date | DateField | Obrigatório | Data do compromisso |
-| description | TextField[100] | Opcional | Descrição do compromisso |
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual a consulta pertence|
+| doctor | ForeignKey(HEALTHTEAM) | Obrigatório | Médico que fará o atendimento|
+| date | DateField | Obrigatório | Data da consulta |
+| speciality | CharField | Obrigatório| Especialidade da consulta |
+| status | CharField | Automático | Indica se a consulta está marcada |
+| time | TimeField | Obrigatório | Hora da consulta |
+
+##### APPOINTMENTREQUEST:
+
+| Atributo | Tipo | Característica | Descrição |
+|---|---|---|---|
+| id | AutoField | Automático, único | Número de identificação do objeto |
+| patient | ForeignKey(PATIENT) | Obrigatório | Paciente ao qual a consulta pertence|
+| doctor | ForeignKey(HEALTHTEAM) | Opcional | Médico que fará o atendimento|
+| day | CharrField | Obrigatório | Data da consulta |
+| speciality | CharField | Obrigatório| Especialidade da consulta |
+| status | CharField | Automático | Indica se a consulta está marcada |
+| motive | TextField | Opcional | Motivo da consulta |
+| shift | CharField | Obrigatório | Turno de preferência da consulta |
+| risk| CharField | Automático | Risco do paciente |
 
 
 #### RELACIONAMENTOS:
 
-##### 1 - APPOINTMENTS tem USERS (HealthTeam):
+##### PATIENT tem USER:
 
-A equipe de saúde pode ter uma ou várias consultas e uma consulta pertence a um membro da equipe de saúde.
+- Cardinalidade: 1 X 1
 
-Cardinalidade: 1 X N
+##### RESPONSIBLE tem USER:
 
-##### 2 - APPOINTMENTS tem USERS (Patient):
+- Cardinalidade: 1 X 1
 
-Um paciente pode ter uma ou várias consultas e uma consulta pertence a um único paciente.
+##### HEALTHTEAM tem USER:
 
-Cardinalidade: 1 X N
+- Cardinalidade: 1 X 1
 
-##### 3 - MEDICAL RECORDS tem USERS (Patient):
+##### EMPLOYEE tem USER:
 
-Um prontuário pertence a um único paciente, e um paciente tem um prontuário.
+- Cardinalidade: 1 X 1
 
-Cardinalidade: 1 X 1
+##### PATIENT tem RESPONSIBLE:
 
-##### 4 - USER (médico) tem USERS (Patient):
+- Cardinalidade: 1 X 1
 
-Um médico pode ter um ou vários pacientes, e  um paciente pode ter um ou vários membros da equipe de saúde.
+##### CURVES tem PATIENT:
 
-Cardinalidade: N X M
+- Cardinalidade: N X 1
 
-##### 5 - POST pertence a USER:
+##### RISK tem PATIENT:
 
-Um usuário pode ter um ou vários Posts, e um post pertence a um único usuário.
+- Cardinalidade: 1 X 1
 
-Cardinalidade:  1 X N
+##### COMPLAINT tem PATIENT:
 
-##### 6 - POST tem COMMENTARIES:
+- Cardinalidade: N X 1
 
-Um comentário pode conter um único post, e um post pode conter vários comentários.
+##### EXAM tem PATIENT:
 
-Cardinalidade: 1 X N
+- Cardinalidade: N X 1
 
-##### 9 - CATEGORIES tem POSTS:
+##### MEDICALRECORD tem PATIENT:
 
-Um post pode conter uma única categoria, e uma categoria pode conter vários posts.
+- Cardinalidade: N X 1
 
-Cardinalidade: 1 X N
+##### MEDICALRECORD tem HEALTHTEAM:
+
+- Cardinalidade: N X 1
+
+##### MEDICINE tem PATIENT:
+
+- Cardinalidade: N X 1
+
+##### MEDICINE tem HEALTHTEAM:
+
+- Cardinalidade: N X 1
+
+##### STATICDATA tem PATIENT:
+
+- Cardinalidade: 1 X 1
+
+##### STATICDATA tem HEALTHTEAM:
+
+- Cardinalidade: 1 X 1
+
+##### COMMENTARY tem POST:
+
+- Cardinalidade: N X 1
+
+##### COMMENTARY tem USER:
+
+- Cardinalidade: N X 1
+
+##### POST tem CATEGORY:
+
+- Cardinalidade: N X 1
+
+##### POST tem USER:
+
+- Cardinalidade: N X 1
+
+##### CHECKITEM tem PROCEDURE:
+
+- Cardinalidade: N X 1
+
+##### PROCEDURE tem CHECKLIST:
+
+- Cardinalidade: N X 1
+
+##### CHECKLIST tem PATIENT:
+
+- Cardinalidade: 1 X 1
+
+##### APPOINTMENT tem PATIENT:
+
+- Cardinalidade: N X 1
+
+##### APPOINTMENT tem HEALTHTEAM:
+
+- Cardinalidade: N X 1
+
+##### APPOINTMENTREQUEST tem PATIENT:
+
+- Cardinalidade: N X 1
+
+##### APPOINTMENTREQUEST tem HEALTHTEAM:
+
+- Cardinalidade: N X 1
+
+
+
 
 ## Referências
 
