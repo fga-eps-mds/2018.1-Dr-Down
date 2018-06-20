@@ -34,10 +34,10 @@
                       <a href="{% url 'medicalrecords:update_medicine' view.kwargs.username medicine.pk %}" class="btn btn-secondary" >{% trans "Edit" %}</a>
                     </th>
                     {% endif %}
-                    <td>{{medicine.medicine_name}}</td>
-                    <td>{{medicine.medicine_dosage}}</td>
-                    <td>{{medicine.medicine_use_interval}}</td>
-                    <td>
+                    <td style="vertical-align:middle">{{medicine.medicine_name}}</td>
+                    <td style="vertical-align:middle">{{medicine.medicine_dosage}}</td>
+                    <td style="vertical-align:middle">{{medicine.medicine_use_interval}}</td>
+                    <td style="vertical-align:middle">
                         <input type="checkbox" disabled {% if  medicine.medicine_in_use %} checked {% endif %} >
                     </td>
                   </tr>
