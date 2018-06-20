@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:59+0000\n"
+"POT-Creation-Date: 2018-06-19 20:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -543,7 +543,7 @@ msgstr "Adicionar nova queixa"
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:223
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:50
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:150
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:48
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:52
 #: drdown/medicalrecords/templates/medicalrecords/risk_form.html:43
@@ -554,7 +554,7 @@ msgstr "Cancelar"
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:224
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:51
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:151
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:49
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:53
 msgid "Save"
@@ -614,6 +614,7 @@ msgid "Patient data"
 msgstr "Dados do paciente"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_list.html:71
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:16
 msgid "Prescription"
 msgstr "Prescrição"
 
@@ -622,11 +623,17 @@ msgstr "Prescrição"
 msgid "Print/Save"
 msgstr "Imprimir/Salvar"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:158
-#: drdown/medicalrecords/templates/medicalrecords/medicines.html:21
-msgid "Medicine"
-msgstr "Remédio"
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:49
+msgid "Enter your medication name here"
+msgstr "Insira o nome da medicação aqui"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:82
+msgid "Enter your medication dosage here"
+msgstr "Insira a dosagem da medicação aqui"
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:116
+msgid "Enter your medication use interval here"
+msgstr "Insira o intervalo entre usos da medicação aqui"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:11
 msgid "PDF"
@@ -669,6 +676,11 @@ msgstr "APGAR:"
 #: drdown/medicalrecords/templates/medicalrecords/patient_data.html:113
 msgid "No postnatal data for this patient."
 msgstr "Não há dados de pós-natal para este paciente."
+
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:158
+#: drdown/medicalrecords/templates/medicalrecords/medicines.html:21
+msgid "Medicine"
+msgstr "Remédio"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:165
 #: drdown/medicalrecords/templates/medicalrecords/medicines.html:23

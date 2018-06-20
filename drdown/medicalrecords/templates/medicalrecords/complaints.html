@@ -29,12 +29,12 @@
                       <p class="text-tertiary h-blue"> {{ complaint.description|markdown }} </p>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row align-middle">
                     <div class="col border-right border-top">
-                      <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ complaint.author.user.name }} </p>
+                      <div class="mt-4"> <p class="text-tertiary h-blue"><label>{% trans 'Author'%}: </label> {{ complaint.author.user.name }} </p></div>
                     </div>
                     <div class="col border-top">
-                      <p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ complaint.complaint_day }}, {{ complaint.complaint_time }} </p>
+                      <div class="mt-4"><p class="text-tertiary h-blue"><label>{% trans 'Created at'%}: </label> {{ complaint.complaint_day }}, {{ complaint.complaint_time }} </p></div>
                     </div>
                   </div>
                 </div>
