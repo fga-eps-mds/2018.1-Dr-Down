@@ -150,7 +150,7 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |[reportlab](https://pypi.org/project/reportlab/)|O Toolkit do ReportLab. Uma biblioteca Python de código aberto para gerar PDFs e gráficos.|Não|Foi recomendado na documentação do [Django](https://docs.djangoproject.com/pt-br/2.0/howto/outputting-pdf/), utilizar essa biblioteca para gerar os PDFs e gráficos do projeto. Porém a equipe achou uma maneira alternativa de faze-lo|
 |[django-easy-pdf](https://github.com/nigma/django-easy-pdf)|Visualização de PDF de uma maneira fácil|Não|A documentação do Django aconselha utilizar o ReportLab.|
 |[WeasyPrint](https://github.com/Kozea/WeasyPrint)|O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.|Não|Foi escolhido pela equipe o componente django-easy-pdf.|
-|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da Google|Sim|Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down.|
+|[Google Charts](https://developers.google.com/chart/)|API de plotagem de gráficos da Google|Sim|Utilizado para plotar os gráficos das curvas de crescimento de pessoas com Síndrome de Down.|
 
 #### Localização
 
@@ -218,7 +218,7 @@ Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em ingl
 
 ### 2.7 Microsserviço [SDcurve](https://github.com/Dr-Down/sdcurve)
 
-Microsserviço de curvas de crescimento baseados na Altura, Peso, IMC e Perímetro Cefálico de crianças com Síndrome de Down do sexo masculino ou feminino de 0 a 36 meses e de 3 a 18 anos. Esse microsserviço disponibiliza de todas as curvas de crescimento necessárias para que o médico possa acompanhar melhor seus pacientes com síndrome de down.
+Microsserviço de curvas de crescimento para a altura, peso, IMC ou perímetro cefálico de pessoas com Síndrome de Down do sexo masculino e feminino de 0 a 36 meses e de 3 a 18 anos. Esse microsserviço disponibiliza de todas as curvas de crescimento necessárias para que o médico possa acompanhar melhor seus pacientes com Síndrome de Down.
 
 Todos os endpoints disponibilizam:
 
@@ -232,7 +232,7 @@ Todos os endpoints disponibilizam:
 
 * [x] Um atributo chamado "graphic" tendo uma reorganização dos dados acima para plotagem em APIS de gráficos como [Google Charts](https://developers.google.com/chart/interactive/docs/)
 
-* [x] Resultado de um consulta aos gráficos, por exemplo, ao inserir o peso, idade, sexo e intervalo de idade (0 a 36 meses ou 3 a 18 anos) da criança o resultado será se a criança está no peso médio (0), acima do peso médio (1) ou abaixo do peso médio (-1) estipulado pelos valores dentro dos percentis, ou seja, entre os percentis_3 e percentis_97 a crianças está com o peso na medida normal, abaixo do percentis_3 está com o peso abaixo da média e acima do percentis_97 está com o peso acima da média normal.
+* [x] Resultado de uma consulta aos gráficos, por exemplo, ao inserir o peso, idade, sexo e intervalo de idade (0 a 36 meses ou 3 a 18 anos) da criança . O resultado será se a criança está no peso médio (0), acima do peso médio (1) ou abaixo do peso médio (-1) estipulado pelos valores dentro dos percentis . Ou seja, entre os percentis_3 e percentis_97 a crianças está com o peso na média, abaixo do percentis_3 está com o peso abaixo desta e acima do percentis_97 está com o peso acima da média.
 
 **OBS**: Em estatística descritiva, os percentis são medidas que dividem a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual.
 
