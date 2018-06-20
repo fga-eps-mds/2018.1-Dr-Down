@@ -34,20 +34,45 @@
         {% endif %}
       {% endfor %}
     </div>
+      <div class="card mb-5">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning">
+                  {% for name, appointments in patients_list_schedule.items %}
+                  {% if forloop.last %}
+                  {{forloop.counter}}
+                  {% endif%}
+                  {% endfor%}
+                  </span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          {% for name, appointments in patients_list_schedule.items %}
+            {% if appointments|length > 0 %}
+              <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+                <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+                  {% trans "appointment requests accepted and not visualized" %}.
+                </p>
+              </a>
+            {% else %}
+              <p>
+                {{ name }} {% trans "has no appointment requests accepted and not visualized" %}.
+              </p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
 
     <div class="alert alert-danger" role="alert">
       {% for name, appointments in patients_list_cancel.items %}
-        {% if appointments|length %}
-          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
-            <p>{{ name }} {% trans "has" %} {{ appointments|length }}
-              {% trans "appointments requests declined and not visualized" %}.
-            </p>
-          </a>
-        {% else %}
           <p>
             {{ name }} {% trans "has no appointment requests declined and not visualized" %}.
           </p>
-        {% endif %}
       {% endfor %}
     </div>
 
@@ -83,9 +108,9 @@
     <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
 
     {% for patient in patients %}
-    
+
     {% if patient.count_incomplete_procedures_for_current_age > 0 %}
-        
+
       {% if patient.have_procedures_almost_late %}
         <div class="alert alert-warning" role="alert">
       {% else %}
@@ -94,12 +119,12 @@
           {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
           <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
       </div>
-            
+
     {% else %}
       <div class="alert alert-success" role="alert">
-          {{patient.user.name}} {% trans "don't have procedures to be made." %} 
+          {{patient.user.name}} {% trans "don't have procedures to be made." %}
           <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "But you can check the careline here" %}.</a>
-      </div>        
+      </div>
     {% endif %}
 
 
