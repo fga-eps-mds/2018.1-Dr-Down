@@ -18,22 +18,62 @@ a.hover-yellow:hover {
 	color: #0A0A2A;
 }
 
-/* Wrapper */
-.wrapper {
-  padding: 8rem 0 6rem 0 ;
-  position: relative;
-  z-index: 1; }
-  @media screen and (max-width: 1280px) {
-    .wrapper {
-      padding: 4rem 0 2rem 0 ; } }
-  @media screen and (max-width: 736px) {
-    .wrapper {
-      padding: 3rem 0 1rem 0 ; } }
-  @media screen and (max-width: 480px) {
-    .wrapper {
-      padding: 2rem 0 0.1rem 0 ; }
+/*@media (min-width: 992px) {
+  #mainNav{
+    height: 10%;
+  }
+}*/
+
+span.description{
+  display: none;
 }
 
+.feature{
+  color:#2C3E50;
+}
+
+div.feature{
+  padding-bottom: 5rem !important; 
+}
+
+div.feature:hover{
+  padding-bottom: 2rem !important;
+}
+
+div.feature:hover span.description{
+  display: block;
+}
+
+div.feature:hover i.icon{
+  font-size: 6rem;
+}
+
+/* Wrapper */
+.wrapper {
+  padding: 1rem 0 0rem 0 ;
+  position: relative;
+  z-index: 1;
+}
+
+.highlights .content{
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    padding: 4rem 0 2rem 0 ; 
+  } 
+}
+@media screen and (max-width: 736px) {
+  .wrapper {
+    padding: 3rem 0 1rem 0 ; 
+    } 
+  }
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 2rem 0 0.1rem 0 ; 
+  }
+}
 
 .inner {
   margin: 0 auto;
