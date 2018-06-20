@@ -92,7 +92,7 @@
     {% else %}
       <div class="alert alert-success" role="alert">
           {% trans "You don't have procedures to be made." %}
-          <a href="{% url 'careline:checklist_list' user.username %}" class="alert-link">{% trans "But you can check your careline here" %}.</a>
+          <a href="{% url 'careline:checklist_detail' user.username %}" class="alert-link">{% trans "But you can check your careline here" %}.</a>
       </div>
     {% endif %}
 
