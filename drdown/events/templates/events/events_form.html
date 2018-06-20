@@ -25,6 +25,17 @@
   }
 </script>
 
+<script>
+  function check(input) {
+   if (input.value == 0) {
+     input.setCustomValidity('The value must be greater than 0.');
+   } else {
+     // input is fine -- reset the error message
+     input.setCustomValidity('');
+   }
+ }
+</script>
+
 {% endblock script %}
 
 {% block content %}
@@ -114,13 +125,13 @@
       </div>
       <div class="form-group">
         {% if object.free %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" value="0" readonly/>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value"  value="0" readonly/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% elif object.value %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" value="{{ object.value|stringformat:'g' }}"/>
+          <input class="form-control" type="number" name="value" step="0.010" required id="id_value"  value="{{ object.value|stringformat:'g' }}"/>
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% else %}
-          <input class="form-control" type="number" name="value" step="0.010" required id="id_value" min="0.01" />
+          <input class="form-control" type="number" name="value" required id="id_value" onclick="toggle('id_free', 'id_value')" />
           <small class="text-muted">{% trans 'Enter a value event' %}</small>
         {% endif %}
       </div>
