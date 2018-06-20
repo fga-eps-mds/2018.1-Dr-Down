@@ -98,29 +98,29 @@ msgstr "A queixa não pode ser no futuro!"
 
 #: drdown/medicalrecords/models/model_curves.py:15
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:30
-#: drdown/medicalrecords/views/view_curves.py:77
+#: drdown/medicalrecords/views/view_curves.py:79
 msgid "Weight"
 msgstr "Peso"
 
 #: drdown/medicalrecords/models/model_curves.py:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:168
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:187
 msgid "Weight in kg"
 msgstr "Peso em kg"
 
 #: drdown/medicalrecords/models/model_curves.py:19
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:31
-#: drdown/medicalrecords/views/view_curves.py:78
+#: drdown/medicalrecords/views/view_curves.py:80
 msgid "Height"
 msgstr "Altura"
 
 #: drdown/medicalrecords/models/model_curves.py:20
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:144
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:157
 msgid "Height in cm"
 msgstr "Altura em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:24
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:32
-#: drdown/medicalrecords/views/view_curves.py:79
+#: drdown/medicalrecords/views/view_curves.py:81
 msgid "Cephalic Perimeter"
 msgstr "Perímetro Cefálico"
 
@@ -130,7 +130,7 @@ msgstr "Perímetro em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:28
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:33
-#: drdown/medicalrecords/views/view_curves.py:76
+#: drdown/medicalrecords/views/view_curves.py:78
 msgid "BMI"
 msgstr "IMC"
 
@@ -140,7 +140,7 @@ msgid "Age"
 msgstr "Idade"
 
 #: drdown/medicalrecords/models/model_curves.py:33
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:120
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:127
 msgid "Age in months"
 msgstr "Idade em meses"
 
@@ -540,7 +540,7 @@ msgstr "Adicionar nova queixa"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:46
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:204
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:223
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:50
@@ -551,7 +551,7 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:47
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:205
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:224
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:51
@@ -569,28 +569,28 @@ msgstr "Apagar"
 msgid "Are you sure you want to delete this medical record?"
 msgstr "Você tem certeza que deseja apagar este prontuário?"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:84
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:90
 msgid "Growth Data"
 msgstr "Dados de Crescimento"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:116
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
 msgid "Equivalent to: "
 msgstr "Equivalente a:"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:116
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
 msgid "year(s) and"
 msgstr "ano(s) e"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:116
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
 msgid "month(s)"
 msgstr "mes(es)"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:199
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:218
 msgid ""
-"Perimeter in cm. If the age is greater than 23, the head circumference is "
-"disregarded"
+"Perimeter in cm. If the age is greater than 23 months, the head "
+"circumference is disregarded"
 msgstr ""
-"Perímetro em cm. Se a idade for maior que 23, o perímetro cefálico é "
+"Perímetro em cm. Se a idade for maior que 23 meses, o perímetro cefálico é "
 "desconsiderado"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:16
@@ -804,18 +804,18 @@ msgstr "Risco fisioterapêutico: "
 msgid "This field is required."
 msgstr "Este campo é obrigatório."
 
-#: drdown/medicalrecords/views/view_curves.py:51
+#: drdown/medicalrecords/views/view_curves.py:53
 msgid ""
 "The patient already has a curve at this age. If wanted, just change its data."
 msgstr ""
 "O paciente já possui uma curva com essa idade. Caso queira, apenas altere "
 "tal curva."
 
-#: drdown/medicalrecords/views/view_curves.py:80
+#: drdown/medicalrecords/views/view_curves.py:82
 msgid "Age (in months)"
 msgstr "Idade (em meses)"
 
-#: drdown/medicalrecords/views/view_curves.py:81
+#: drdown/medicalrecords/views/view_curves.py:83
 msgid "Age (in years)"
 msgstr "Idade (em anos)"
 
