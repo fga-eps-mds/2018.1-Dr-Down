@@ -172,7 +172,17 @@ A cada sprint do projeto será definido a utilização ou não de cada component
 |[django-test-plus](https://github.com/revsys/django-test-plus)| Funcionalidades para o Django Test Case.|Sim|Usado para facilitar a criação de instâncias. |
 |[Sphinx](https://github.com/sphinx-doc/sphinx)|O Sphinx é uma ferramenta que facilita a criação de documentação inteligente e bonita para projetos em Python.|Sim|Usado para criar documentação em latex. |
 
+#### Quantidade planejado vs quantidade definido
 
+![arquitetura](https://user-images.githubusercontent.com/14116020/41634143-ac392e20-7418-11e8-8cc4-d4f3bc9fd312.png)
+
+#### Arquitetura planejada
+
+![arquitetura_planejada](https://user-images.githubusercontent.com/14116020/41634137-a3b40162-7418-11e8-84c4-44cbd0410f35.png)
+
+#### Arquitetura definida
+
+![arquitetura_definida](https://user-images.githubusercontent.com/14116020/41634127-96fa4bde-7418-11e8-88eb-a57f056d2b41.png)
 
 ### 2.3 Banco de dados PostgreSQL
 
@@ -325,6 +335,8 @@ Proporcionam um método alternativo para implementar views como objetos ao invé
 Podemos então agregar as funções básicas das views dentro de classes, como métodos. Os recursos das Class Based Views estão em algumas classes “pré-prontas”, as quais outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!
 
 ### 5.2 Diagrama Entidade Relacionamento (DER)
+
+Foi decidido a utilização do MER e DER em relação ao Diagrama de Classe por motivo de automatização do mesmo.
 
 ![my_project_visualized](https://user-images.githubusercontent.com/31005087/41610497-bd171e46-73c3-11e8-825d-c797322b9afe.png)
 
