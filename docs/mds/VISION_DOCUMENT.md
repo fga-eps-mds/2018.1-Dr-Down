@@ -249,19 +249,19 @@ Dentre as restrições externas as que mais irão influenciar são a inexperiên
 
 ### 6.3 Restrições de design
 
-O sistema deve ter uma interface que seja de fácil uso por pessoas com e sem SD. Dessa forma, deverá ser uma plataforma chamativa, com ícones e botões claros e que sejam de fácil acesso.
+O sistema deve ter uma interface que seja de fácil uso para pessoas com e sem SD. Dessa forma, será necessária uma plataforma chamativa, com ícones e botões intuitivos e de fácil acesso.
 
 ***
 ## 7:	Faixas de Qualidade
 ***
 
-Para maior eficiência a aplicação será web, pois o gerenciamento de pacientes pelos funcionários do hospital seria dificultado no caso de uma aplicação exclusiva para aparelhos mobile. Porém, para facilitar o acesso de pacientes e seus responsáveis, o Dr. Down deve se adaptar à tela de smartphones e tablets.
+Para maior eficiência, a aplicação será web, pois o gerenciamento de pacientes pelos funcionários do hospital seria dificultado no caso de uma aplicação exclusiva para aparelhos mobile. Porém, para facilitar o acesso de pacientes e seus responsáveis, o Dr. Down também deve se adaptar à tela de smartphones e tablets.
 
 ***
 ## 8:	Precedência e Prioridade
 ***
 
-O gerenciamento e cadastro dos usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e a disponibilização do local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/familiares. Demais funcionalidades possuem mesma prioridade.
+O gerenciamento e o cadastro dos usuários é a funcionalidade de maior importância, seguida pela marcação de consultas e a disponibilização do local para contato entre funcionários da equipe de saúde do Cris Down e pacientes/responsáveis. As demais funcionalidades são tão importantes quanto, porém, em sua maioria, dependem da implementação do cadastro e login para serem acessadas.
 
 ***
 ## 9:	Outros Requisitos do Produto
@@ -273,4 +273,4 @@ O usuário deverá ter acesso a um navegador de internet para poder utilizar o D
 
 ### 9.2	Requisitos de Desempenho
 
-O sistema será dimensionado para suprir a necessidade de acesso do Cris Down.
+O sistema será dimensionado para suprir a necessidade de uma aplicação acessível à grande maioria dos aparelhos que têm disponibilidade de acesso. Sendo assim, o desempenho do aparelho será um fator de mínima importância para o acesso, porém de alta relevância para a obtenção de um melhor desempenho da aplicação.
