@@ -591,6 +591,12 @@
 <td>Atualizando diagrama arquitetural</td>
 <td>Geovana Ramos e Victor Arnaud</td>
 </tr>
+<tr>
+<td>19/06/2018</td>
+<td>3.0.0</td>
+<td>Finalizando documento de arquitetura</td>
+<td>Gabriela Medeiros, Geovana Ramos e Victor Arnaud</td>
+</tr>
 </tbody>
 </table>
 <h2 id="1-introducao">1: Introdução</h2>
@@ -723,7 +729,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="foruns-e-discussoes">Foruns e discussões</h4>
+<h4 id="foruns-e-discussoes">Fóruns e discussões</h4>
 <table>
 <thead>
 <tr>
@@ -738,7 +744,7 @@
 <td><a href="https://github.com/urtzai/django-forum-app">django-forum-app</a></td>
 <td>Um aplicativo muito simples e minimalista para criar fóruns</td>
 <td align="center">Não</td>
-<td>Foi proposta no meio da implementação do mesmo, logo foi descartado</td>
+<td>Foi proposta no meio da implementação do mesmo, logo foi descartado.</td>
 </tr>
 </tbody>
 </table>
@@ -757,19 +763,19 @@
 <td><a href="https://github.com/pinax/pinax-calendars/">pinax-calendars</a></td>
 <td>Aplicação Django para publicar eventos como um calendario</td>
 <td align="center">Não</td>
-<td>A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.</td>
+<td>A equipe decidiu não utilizar componentes que envolvem design, pois o componente não dá liberdade para modificá-lo.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/llazzaro/django-scheduler">django-scheduler</a></td>
 <td>Uma aplicação de calendario do Django</td>
 <td align="center">Não</td>
-<td>A equipe decidiu não utilizar componentes que envolve design, pois o componente não dá liberdade para modifica-lo.</td>
+<td>A equipe decidiu não utilizar componentes que envolvem design, pois o componente não dá liberdade para modificá-lo.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/pinax/pinax-notifications/">pinax-notifications</a></td>
 <td>Gerenciamento de notificação de usuário para o framework web Django</td>
-<td align="center">A decidir</td>
-<td>A aplicação ainda está sendo avaliada</td>
+<td align="center">Não</td>
+<td>Não atendia as necessidades da funcionalidade.</td>
 </tr>
 </tbody>
 </table>
@@ -788,13 +794,13 @@
 <td><a href="https://github.com/timmyomahony/django-pagedown">django-pagedown</a></td>
 <td>Um aplicativo Django que permite a fácil adição do editor de marcação "PageDown" do Stack Overflow a um campo de formulário Django, seja em um aplicativo personalizado ou no Django Admin.</td>
 <td align="center">Sim</td>
-<td>O componente está sendo usado no prontuário</td>
+<td>O componente está sendo usado em todos os campos TextField.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/trentm/django-markdown-deux">django-markdown-deux</a></td>
 <td>Componente para evitar a inserção de código malicioso no markdown</td>
 <td align="center">Sim</td>
-<td>O componente está sendo usado no prontuário</td>
+<td>O componente está sendo usado em todos os campos TextField.</td>
 </tr>
 <tr>
 <td><a href="https://pypi.org/project/reportlab/">reportlab</a></td>
@@ -812,19 +818,13 @@
 <td><a href="https://github.com/Kozea/WeasyPrint">WeasyPrint</a></td>
 <td>O WeasyPrint é um mecanismo de renderização visual para HTML e CSS que pode exportar para PDF. Destina-se a suportar os padrões da web para impressão. O WeasyPrint é um software gratuito disponibilizado sob uma licença BSD.</td>
 <td align="center">Não</td>
-<td>Foi escolhido pela equipe o componente django-easy-pdf</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Dr-Down/sdcurve">sdcurve</a></td>
-<td>Microsserviço de curva de crescimento, altura, peso, EMC e perímetro encefálico para crianças com Síndrome de Down</td>
-<td align="center">Sim</td>
-<td>Requisitos do cliente.</td>
+<td>Foi escolhido pela equipe o componente django-easy-pdf.</td>
 </tr>
 <tr>
 <td><a href="https://developers.google.com/chart/">Google Charts</a></td>
-<td>API de plotagem de gráficos da google</td>
+<td>API de plotagem de gráficos da Google</td>
 <td align="center">Sim</td>
-<td>Utilizado para plotar os gráficos de crescimento das crianças com Síndrome de Down</td>
+<td>Utilizado para plotar os gráficos das curvas de crescimento de pessoas com Síndrome de Down.</td>
 </tr>
 </tbody>
 </table>
@@ -841,15 +841,15 @@
 <tbody>
 <tr>
 <td><a href="https://developers.google.com/places/web-service/?hl=pt-br">GoogleMapsAPI</a></td>
-<td>API do Google Maps com informações sobre milhões de locais</td>
+<td>API do Google Maps com informações sobre milhões de locais.</td>
 <td align="center">Sim</td>
-<td>Facil aplicação e atende as necessidades.</td>
+<td>Fácil aplicação e atende as necessidades.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/googlemaps/google-maps-services-python">google-maps-services-python</a></td>
-<td>Componente python para utilização da API do google maps</td>
+<td>Componente python para utilização da API do google maps.</td>
 <td align="center">Não</td>
-<td>Não será ultilizado porque a API do google atendeu nossas necessidades e foi recomendada pela Gerência de projetos.</td>
+<td>Não será ultilizado porque a API do google atendeu nossas necessidades e a equipe decidiu por manter o uso apenas na API.</td>
 </tr>
 </tbody>
 </table>
@@ -891,17 +891,35 @@
 <tr>
 <td><a href="https://github.com/anymail/django-anymail">django-anymail</a></td>
 <td>Backends e webhooks de e-mail do Django para Amazon SES, Mailgun, Mailjet, Carimbo Postal, SendGrid, SendinBlue, SparkPost e mais</td>
-<td align="center">Não</td>
-<td>Foi utilizando o serviço ao invés do componente</td>
+<td align="center">Sim</td>
+<td>Foi utilizado para facilitar a integração com o Mailgun.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/httplib2/httplib2">Httplib2</a></td>
 <td>Biblioteca cliente HTTP pequena e rápida para Python. Possui conexões persistentes, cache, suporte ao Appengine.</td>
 <td align="center">Sim</td>
-<td>Usado para fazer comunicações via requisições HTTP</td>
+<td>Usado para fazer comunicações via requisições HTTP.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/revsys/django-test-plus">django-test-plus</a></td>
+<td>Funcionalidades para o Django Test Case.</td>
+<td align="center">Sim</td>
+<td>Usado para facilitar a criação de instâncias.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sphinx-doc/sphinx">Sphinx</a></td>
+<td>O Sphinx é uma ferramenta que facilita a criação de documentação inteligente e bonita para projetos em Python.</td>
+<td align="center">Sim</td>
+<td>Usado para criar documentação em latex.</td>
 </tr>
 </tbody>
 </table>
+<h4 id="quantidade-planejado-vs-quantidade-definido">Quantidade planejado vs quantidade definido</h4>
+<p><img alt="arquitetura" src="https://user-images.githubusercontent.com/14116020/41634143-ac392e20-7418-11e8-8cc4-d4f3bc9fd312.png" /></p>
+<h4 id="arquitetura-planejada">Arquitetura planejada</h4>
+<p><img alt="arquitetura_planejada" src="https://user-images.githubusercontent.com/14116020/41634137-a3b40162-7418-11e8-84c4-44cbd0410f35.png" /></p>
+<h4 id="arquitetura-definida">Arquitetura definida</h4>
+<p><img alt="arquitetura_definida" src="https://user-images.githubusercontent.com/14116020/41634127-96fa4bde-7418-11e8-88eb-a57f056d2b41.png" /></p>
 <h3 id="23-banco-de-dados-postgresql">2.3 Banco de dados PostgreSQL</h3>
 <p>PostgreSQL é um poderoso sistema de banco de dados objeto-relacional de código aberto. Ele é executado em todos os principais sistemas operacionais, tem 15 anos de desenvolvimento ativo e uma arquitetura comprovada que lhe garantiu uma forte reputação de confiabilidade, integridade de dados e correção.</p>
 <p>Para o projeto será utilizado o PostgreSQL como o banco de dados de desenvolvimento e produção da aplicação Dr. Down, pela simplicidade e segurança do mesmo.</p>
@@ -918,7 +936,31 @@
 <p>No presente projeto o Celery executa a tarefa de comunicação com o Sentry (https://sentry.io), que é uma ferramenta para equipes que agrega logs de erro, podendo verificar os ambientes de homologação e produção buscando por erros de execução. Dessa forma, a equipe pode analisar e agir quando há problemas no software.</p>
 <h3 id="26-caddy">2.6 Caddy</h3>
 <p>Caddy é o servidor web HTTP/2 com HTTPS automático. O HTTPS é a sigla em inglês de Hyper Text Transfer Protocol Secure, que em português significa "Protocolo de Transferência de Hipertexto seguro". Ele é a versão mais segura do protocolo de transferência de dados entre redes de computadores na internet. Nossa aplicação está utilizando desse protocolo para dar mais segurança ao acesso dos usuários.</p>
-<h3 id="27-comunicacao">2.7 Comunicação</h3>
+<h3 id="27-microsservico-sdcurve">2.7 Microsserviço <a href="https://github.com/Dr-Down/sdcurve">SDcurve</a></h3>
+<p>Microsserviço de curvas de crescimento para a altura, peso, IMC ou perímetro cefálico de pessoas com Síndrome de Down do sexo masculino e feminino de 0 a 36 meses e de 3 a 18 anos. Esse microsserviço disponibiliza de todas as curvas de crescimento necessárias para que o médico possa acompanhar melhor seus pacientes com Síndrome de Down.</p>
+<p>Todos os endpoints disponibilizam:</p>
+<ul>
+<li>
+<p>[x] Título da curva (title)</p>
+</li>
+<li>
+<p>[x] Eixo X da curva, ou seja, as idades (ages)</p>
+</li>
+<li>
+<p>[x] Os percentis gerados para peso, estatura e perímetro cefálico (percentis_3, percentis_10, percentis_25, percentis_50, percentis_75, percentis_90 e percentis_97)</p>
+</li>
+<li>
+<p>[x] Os percentis gerados para IMC (percentis_5, percentis_10, percentis_25, percentis_50, percentis_75, percentis_85, percentis_90 e percentis_95)</p>
+</li>
+<li>
+<p>[x] Um atributo chamado "graphic" tendo uma reorganização dos dados acima para plotagem em APIS de gráficos como <a href="https://developers.google.com/chart/interactive/docs/">Google Charts</a></p>
+</li>
+<li>
+<p>[x] Resultado de uma consulta aos gráficos, por exemplo, ao inserir o peso, idade, sexo e intervalo de idade (0 a 36 meses ou 3 a 18 anos) da criança . O resultado será se a criança está no peso médio (0), acima do peso médio (1) ou abaixo do peso médio (-1) estipulado pelos valores dentro dos percentis . Ou seja, entre os percentis_3 e percentis_97 a crianças está com o peso na média, abaixo do percentis_3 está com o peso abaixo desta e acima do percentis_97 está com o peso acima da média.</p>
+</li>
+</ul>
+<p><strong>OBS</strong>: Em estatística descritiva, os percentis são medidas que dividem a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual.</p>
+<h3 id="28-comunicacao">2.8 Comunicação</h3>
 <p>1 - O <strong>web client (navegador)</strong> manda uma requisição para o <strong>web server (Nginx)</strong> com o protocolo HTTP.</p>
 <p>2 - Os arquivos estáticos armazenados no sistema de arquivos, como CSS, JavaScript, Imagens e documentos PDF, são processados diretamente pelo <strong>web server (Nginx)</strong>.</p>
 <p>3 - A parte dinâmica é delegada ao servidor de aplicativos WSGI (Web Server Gateway Interface) do Django. No caso, o <strong>Gunicorn</strong>, que é um servidor WSGI para Unix feito em python puro e disponibilizada pelo framework Django, irá converter solicitações HTTP recebidas do servidor em chamadas python em colaboração com o framework Django, que irá ter um arquivo chamado urls.py que dirá ao Nginx qual código deverá ser executado de acordo com o path e código HTTP recebido. Através de proxy reverso, será feito o redirecionamento inicial do Nginx com o servidor da aplicação, ou seja, o proxy reverso irá funcionar como uma ponte de ligação entre o Nginx e o Django através do Gunicorn.</p>
@@ -1061,10 +1103,12 @@
 <h3 id="51-class-based-views">5.1  Class-Based Views</h3>
 <p>Proporcionam um método alternativo para implementar views como objetos ao invés de funções. As Class-Based Views (CBV) são classes que implementam métodos e atributos que são comumente utilizados na programação das views. Dessa maneira, o programador pode utilizar métodos já implementados ou sobrescrevê-los e implementá-los da sua maneira. Para atender os mais variados casos de uso das views, as CBV oferecem diversos temas para implementação.</p>
 <p>Podemos então agregar as funções básicas das views dentro de classes, como métodos. Os recursos das Class Based Views estão em algumas classes “pré-prontas”, as quais outras classes podem herdar. A partir daí as alterações que precisam ser feitas são mínimas!</p>
-<h3 id="52-diagrama-de-classes">5.2 Diagrama de Classes</h3>
-<p><img alt="Diagrama de Classes" src="http://uploaddeimagens.com.br/images/001/379/381/original/Diagrama.jpeg?1524078112" /></p>
+<h3 id="52-diagrama-entidade-relacionamento-der">5.2 Diagrama Entidade Relacionamento (DER)</h3>
+<p>Foi decidido a utilização do MER e DER em relação ao Diagrama de Classe por motivo de automatização do mesmo.</p>
+<p><img alt="my_project_visualized" src="https://user-images.githubusercontent.com/31005087/41610497-bd171e46-73c3-11e8-825d-c797322b9afe.png" /></p>
 <h3 id="53-modelo-entidade-relacionamento-mer">5.3 Modelo Entidade Relacionamento (MER)</h3>
-<h4 id="user">USER:</h4>
+<h4 id="users">Users</h4>
+<h5 id="user">USER:</h5>
 <table>
 <thead>
 <tr>
@@ -1075,6 +1119,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
 <tr>
 <td>photo</td>
 <td>Image</td>
@@ -1167,7 +1217,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="employee">EMPLOYEE:</h4>
+<h5 id="employee">EMPLOYEE:</h5>
 <table>
 <thead>
 <tr>
@@ -1178,6 +1228,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>user</td>
+<td>OneToOneField(USER)</td>
+<td>Obrigatório</td>
+<td>User base referente ao funcionário</td>
+</tr>
 <tr>
 <td>cpf</td>
 <td>CharField[14]</td>
@@ -1192,7 +1254,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="responsible">RESPONSIBLE:</h4>
+<h5 id="responsible">RESPONSIBLE:</h5>
 <table>
 <thead>
 <tr>
@@ -1203,6 +1265,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>user</td>
+<td>OneToOneField(USER)</td>
+<td>Obrigatório</td>
+<td>User base referente ao responsável</td>
+</tr>
 <tr>
 <td>cpf</td>
 <td>CharField[14]</td>
@@ -1211,7 +1285,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="patient">PATIENT:</h4>
+<h5 id="patient">PATIENT:</h5>
 <table>
 <thead>
 <tr>
@@ -1223,10 +1297,22 @@
 </thead>
 <tbody>
 <tr>
-<td>priority</td>
-<td>IntergerField{choices}</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>user</td>
+<td>OneToOneField(USER)</td>
 <td>Obrigatório</td>
-<td>Grau de urgência para atendimento do paciente</td>
+<td>User base referente ao paciente</td>
+</tr>
+<tr>
+<td>responsible</td>
+<td>ForeignKey(RESPONSIBLE)</td>
+<td>Obrigatório</td>
+<td>User base referente ao paciente</td>
 </tr>
 <tr>
 <td>ses</td>
@@ -1272,7 +1358,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="health-team">HEALTH TEAM:</h4>
+<h5 id="health-team">HEALTH TEAM:</h5>
 <table>
 <thead>
 <tr>
@@ -1283,6 +1369,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>user</td>
+<td>OneToOneField(USER)</td>
+<td>Obrigatório</td>
+<td>User base referente ao paciente</td>
+</tr>
 <tr>
 <td>crm</td>
 <td>CharField[7]</td>
@@ -1315,7 +1413,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="address">ADDRESS:</h4>
+<h4 id="forum">Fórum</h4>
+<h5 id="category">CATEGORY:</h5>
 <table>
 <thead>
 <tr>
@@ -1327,48 +1426,11 @@
 </thead>
 <tbody>
 <tr>
-<td>city</td>
-<td>CharField[40]</td>
-<td>Obrigatório</td>
-<td>Cidade</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
 </tr>
-<tr>
-<td>cep</td>
-<td>CharFieldField[8]</td>
-<td>Obrigatório, validado</td>
-<td>CEP</td>
-</tr>
-<tr>
-<td>number</td>
-<td>CharField[5]</td>
-<td>Obrigatório</td>
-<td>Número da moradia</td>
-</tr>
-<tr>
-<td>uf</td>
-<td>CharField{choices}</td>
-<td>Obrigatório</td>
-<td>Unidade da Federação</td>
-</tr>
-<tr>
-<td>neighborhood</td>
-<td>CharField[30]</td>
-<td>Opcional</td>
-<td>Bairro</td>
-</tr>
-</tbody>
-</table>
-<h4 id="category">CATEGORY:</h4>
-<table>
-<thead>
-<tr>
-<th>Atributo</th>
-<th>Tipo</th>
-<th>Característica</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>name</td>
 <td>CharField[100]</td>
@@ -1389,7 +1451,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="post">POST:</h4>
+<h5 id="post">POST:</h5>
 <table>
 <thead>
 <tr>
@@ -1400,6 +1462,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>category</td>
+<td>ForeignKey(CATEGORY)</td>
+<td>Automático</td>
+<td>Categoria à qual o post pertence</td>
+</tr>
 <tr>
 <td>title</td>
 <td>CharField[100]</td>
@@ -1426,7 +1500,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="commentary">COMMENTARY:</h4>
+<h5 id="commentary">COMMENTARY:</h5>
 <table>
 <thead>
 <tr>
@@ -1437,6 +1511,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>post</td>
+<td>ForeignKey(POST)</td>
+<td>Automático</td>
+<td>Post ao qual o comentário pertence</td>
+</tr>
 <tr>
 <td>message</td>
 <td>TextField[4000]</td>
@@ -1450,6 +1536,12 @@
 <td>Data de criação do comentário</td>
 </tr>
 <tr>
+<td>created_by</td>
+<td>DateField</td>
+<td>Automático</td>
+<td>Autor do comentário</td>
+</tr>
+<tr>
 <td>updated_at</td>
 <td>DateField</td>
 <td>Automático</td>
@@ -1457,7 +1549,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="medical-questionary">MEDICAL QUESTIONARY:</h4>
+<h4 id="prontuario">Prontuário</h4>
+<h5 id="curves">CURVES:</h5>
 <table>
 <thead>
 <tr>
@@ -1469,32 +1562,50 @@
 </thead>
 <tbody>
 <tr>
-<td>psychosocial_risk</td>
-<td>IntergerField</td>
-<td>Obrigatório</td>
-<td>Risco psicossocial</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
 </tr>
 <tr>
-<td>health_risk</td>
-<td>IntergerField</td>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
 <td>Obrigatório</td>
-<td>Risco de vida</td>
+<td>Paciente ao qual os dados das curvas se referem</td>
 </tr>
 <tr>
-<td>family_risk</td>
-<td>IntergerField</td>
+<td>age</td>
+<td>IntegerField</td>
 <td>Obrigatório</td>
-<td>Risco familiar</td>
+<td>Ponto no eixo X da curva de crescimento referente à idade do paciente</td>
 </tr>
 <tr>
-<td>total_risk</td>
-<td>IntergerField</td>
+<td>bmi</td>
+<td>FloatField</td>
 <td>Obrigatório</td>
-<td>Risco total</td>
+<td>IMC do paciente</td>
+</tr>
+<tr>
+<td>cephalic_perimeter</td>
+<td>FloatField</td>
+<td>Obrigatório</td>
+<td>Perímetro cefálico do paciente</td>
+</tr>
+<tr>
+<td>height</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Altura do paciente</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>FloatField</td>
+<td>Obrigatório</td>
+<td>Peso do paciente</td>
 </tr>
 </tbody>
 </table>
-<h4 id="medical-record">MEDICAL RECORD:</h4>
+<h5 id="risk">RISK:</h5>
 <table>
 <thead>
 <tr>
@@ -1506,14 +1617,62 @@
 </thead>
 <tbody>
 <tr>
-<td>history</td>
-<td>CharField[4000]</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
 <td>Obrigatório</td>
-<td>Histórico médico</td>
+<td>Paciente ao qual os riscos se referem</td>
+</tr>
+<tr>
+<td>priority_cardiology</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Cardiologia</td>
+</tr>
+<tr>
+<td>priority_general_practitioner</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Clínica Geral</td>
+</tr>
+<tr>
+<td>priority_neurology</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Neurologia</td>
+</tr>
+<tr>
+<td>priority_pediatrics</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Pediatria</td>
+</tr>
+<tr>
+<td>priority_physioterapy</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Fisioterapia</td>
+</tr>
+<tr>
+<td>priority_psychology</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especilidade Psicologia</td>
+</tr>
+<tr>
+<td>priority_speech_therapy</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Risco da especialidade Fonoaudiologia</td>
 </tr>
 </tbody>
 </table>
-<h4 id="queue">QUEUE:</h4>
+<h5 id="complaint">COMPLAINT:</h5>
 <table>
 <thead>
 <tr>
@@ -1525,26 +1684,50 @@
 </thead>
 <tbody>
 <tr>
-<td>speciality</td>
-<td>CharField[50]</td>
-<td>Obrigatório</td>
-<td>Especialidade</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
 </tr>
 <tr>
-<td>time_left</td>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual as queixas se referem</td>
+</tr>
+<tr>
+<td>author</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Obrigatório</td>
+<td>Funcionário de saúde que relatou a queixa</td>
+</tr>
+<tr>
+<td>complaint_day</td>
 <td>DateField</td>
-<td>Automático</td>
-<td>Tempo faltando</td>
+<td>Obrigatório</td>
+<td>Dia da queixa</td>
 </tr>
 <tr>
-<td>position</td>
-<td>IntergerField</td>
+<td>complaint_time</td>
+<td>DateField</td>
+<td>Obrigatório</td>
+<td>Hora da queixa</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>DateTimeField</td>
 <td>Automático</td>
-<td>Posição</td>
+<td>Dia da queixa</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TextField</td>
+<td>Obrigatório</td>
+<td>Descrição da queixa</td>
 </tr>
 </tbody>
 </table>
-<h4 id="events">EVENTS:</h4>
+<h5 id="exam">EXAM:</h5>
 <table>
 <thead>
 <tr>
@@ -1555,9 +1738,230 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual os exames se referem</td>
+</tr>
+<tr>
+<td>category</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>Categoria do exame</td>
+</tr>
+<tr>
+<td>day</td>
+<td>DateField</td>
+<td>Obrigatório</td>
+<td>Dia do exame realizado</td>
+</tr>
+<tr>
+<td>file</td>
+<td>FileField</td>
+<td>Obrigatório</td>
+<td>Arquivos referentes ao exame</td>
+</tr>
+<tr>
+<td>observations</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Observações referentes ao exame</td>
+</tr>
+</tbody>
+</table>
+<h5 id="medicalrecord">MEDICALRECORD:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual os relatórios de evolução se referem</td>
+</tr>
+<tr>
+<td>author</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Obrigatório</td>
+<td>Funcionário de saúde que relatou o relatório de evolução</td>
+</tr>
+<tr>
+<td>day</td>
+<td>DateTimeField</td>
+<td>Obrigatório</td>
+<td>Dia do exame realizado</td>
+</tr>
+<tr>
+<td>document</td>
+<td>FileField</td>
+<td>Obrigatório</td>
+<td>Arquivos referentes à evolução</td>
+</tr>
+<tr>
+<td>message</td>
+<td>TextField</td>
+<td>Obrigatório</td>
+<td>Observações referentes à evolução</td>
+</tr>
+</tbody>
+</table>
+<h5 id="medicine">MEDICINE:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual o receituário se refere</td>
+</tr>
+<tr>
+<td>author</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Obrigatório</td>
+<td>Funcionário de saúde que prescreveu o remédio</td>
+</tr>
+<tr>
+<td>medicine_dosage</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Dosagem do remédio</td>
+</tr>
+<tr>
+<td>medicine_in_use</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Remédios que o paciente já esteja tomando</td>
+</tr>
+<tr>
+<td>medicine_name</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Nome do remédio</td>
+</tr>
+<tr>
+<td>medicine_use_interval</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Tempo entre doses do remédio</td>
+</tr>
+</tbody>
+</table>
+<h5 id="staticdata">STATICDATA:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>OneToOneField(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual os dados pós natal se referem</td>
+</tr>
+<tr>
+<td>author</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Obrigatório</td>
+<td>Funcionário de saúde que preencheu os dados pós natal</td>
+</tr>
+<tr>
+<td>APGAR</td>
+<td>IntegerField</td>
+<td>Obrigatório</td>
+<td>APGAR do paciente ao nascer</td>
+</tr>
+<tr>
+<td>ear_test</td>
+<td>FileField</td>
+<td>Obrigatório</td>
+<td>Teste da orelha</td>
+</tr>
+<tr>
+<td>foot_test</td>
+<td>FileField</td>
+<td>Obrigatório</td>
+<td>Teste do pesinho</td>
+</tr>
+<tr>
+<td>heart_test</td>
+<td>FileField</td>
+<td>Obrigatório</td>
+<td>Teste do coração</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>PositiveIntegerField</td>
+<td>Obrigatório</td>
+<td>Peso ao nascer</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eventos">Eventos</h4>
+<h5 id="events">EVENTS:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
 <tr>
 <td>name</td>
-<td>CharField[100]</td>
+<td>CharField</td>
 <td>Obrigatório</td>
 <td>Nome do evento</td>
 </tr>
@@ -1569,13 +1973,44 @@
 </tr>
 <tr>
 <td>description</td>
-<td>TextField[4000]</td>
+<td>TextField</td>
 <td>Obrigatório</td>
 <td>Descrição do evento</td>
 </tr>
+<tr>
+<td>free</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica se o evento é gratuito</td>
+</tr>
+<tr>
+<td>location</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Endereço do evento</td>
+</tr>
+<tr>
+<td>organize_by</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Organizador do evento</td>
+</tr>
+<tr>
+<td>time</td>
+<td>TimeField</td>
+<td>Obrigatório</td>
+<td>Hora do evento</td>
+</tr>
+<tr>
+<td>value</td>
+<td>FloatField</td>
+<td>Obrigatório</td>
+<td>Valor do evento</td>
+</tr>
 </tbody>
 </table>
-<h4 id="appointments">APPOINTMENTS:</h4>
+<h4 id="careline">Careline</h4>
+<h5 id="checkitem">CHECKITEM:</h5>
 <table>
 <thead>
 <tr>
@@ -1587,26 +2022,168 @@
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td>CharField[100]</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>procedure</td>
+<td>ForeignKey(PROCEDURE)</td>
 <td>Obrigatório</td>
-<td>Nome do compromisso</td>
+<td>Procedimento</td>
+</tr>
+<tr>
+<td>age</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Idade do paciente</td>
+</tr>
+<tr>
+<td>check</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica se o procedimento foi feito</td>
+</tr>
+<tr>
+<td>required</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica se o procedimento é necessário</td>
+</tr>
+<tr>
+<td>when_needed</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica que o procedimento é necessário em casos especiais</td>
+</tr>
+</tbody>
+</table>
+<h5 id="procedure">PROCEDURE:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>careline</td>
+<td>ForeignKey(CHECKLIST)</td>
+<td>Obrigatório</td>
+<td>Linha de cuidado</td>
+</tr>
+<tr>
+<td>initialized</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica se o procedimento foi iniciado</td>
+</tr>
+<tr>
+<td>proc_id</td>
+<td>IntegerField</td>
+<td>Automático</td>
+<td>Identificação para ligar ligar models da careline</td>
+</tr>
+</tbody>
+</table>
+<h5 id="checklist">CHECKLIST:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual a linha de cuidado se refere</td>
+</tr>
+<tr>
+<td>initialized</td>
+<td>BooleanField</td>
+<td>Obrigatório</td>
+<td>Indica se o procedimento foi iniciado</td>
+</tr>
+</tbody>
+</table>
+<h4 id="consultas">Consultas</h4>
+<h5 id="appointment">APPOINTMENT:</h5>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Característica</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
+<td>Obrigatório</td>
+<td>Paciente ao qual a consulta pertence</td>
+</tr>
+<tr>
+<td>doctor</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Obrigatório</td>
+<td>Médico que fará o atendimento</td>
 </tr>
 <tr>
 <td>date</td>
 <td>DateField</td>
 <td>Obrigatório</td>
-<td>Data do compromisso</td>
+<td>Data da consulta</td>
 </tr>
 <tr>
-<td>description</td>
-<td>TextField[100]</td>
-<td>Opcional</td>
-<td>Descrição do compromisso</td>
+<td>speciality</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Especialidade da consulta</td>
+</tr>
+<tr>
+<td>status</td>
+<td>CharField</td>
+<td>Automático</td>
+<td>Indica se a consulta está marcada</td>
+</tr>
+<tr>
+<td>time</td>
+<td>TimeField</td>
+<td>Obrigatório</td>
+<td>Hora da consulta</td>
 </tr>
 </tbody>
 </table>
-<h4 id="clinic">CLINIC:</h4>
+<h5 id="appointmentrequest">APPOINTMENTREQUEST:</h5>
 <table>
 <thead>
 <tr>
@@ -1618,41 +2195,166 @@
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td>CharField[100]</td>
+<td>id</td>
+<td>AutoField</td>
+<td>Automático, único</td>
+<td>Número de identificação do objeto</td>
+</tr>
+<tr>
+<td>patient</td>
+<td>ForeignKey(PATIENT)</td>
 <td>Obrigatório</td>
-<td>Nome da clínica</td>
+<td>Paciente ao qual a consulta pertence</td>
+</tr>
+<tr>
+<td>doctor</td>
+<td>ForeignKey(HEALTHTEAM)</td>
+<td>Opcional</td>
+<td>Médico que fará o atendimento</td>
+</tr>
+<tr>
+<td>day</td>
+<td>CharrField</td>
+<td>Obrigatório</td>
+<td>Data da consulta</td>
+</tr>
+<tr>
+<td>speciality</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Especialidade da consulta</td>
+</tr>
+<tr>
+<td>status</td>
+<td>CharField</td>
+<td>Automático</td>
+<td>Indica se a consulta está marcada</td>
+</tr>
+<tr>
+<td>motive</td>
+<td>TextField</td>
+<td>Opcional</td>
+<td>Motivo da consulta</td>
+</tr>
+<tr>
+<td>shift</td>
+<td>CharField</td>
+<td>Obrigatório</td>
+<td>Turno de preferência da consulta</td>
+</tr>
+<tr>
+<td>risk</td>
+<td>CharField</td>
+<td>Automático</td>
+<td>Risco do paciente</td>
 </tr>
 </tbody>
 </table>
 <h4 id="relacionamentos">RELACIONAMENTOS:</h4>
-<h5 id="1-appointments-tem-users-healthteam">1 - APPOINTMENTS tem USERS (HealthTeam):</h5>
-<p>A equipe de saúde pode ter uma ou várias consultas e uma consulta pertence a um membro da equipe de saúde.</p>
-<p>Cardinalidade: 1 X N</p>
-<h5 id="2-appointments-tem-users-patient">2 - APPOINTMENTS tem USERS (Patient):</h5>
-<p>Um paciente pode ter uma ou várias consultas e uma consulta pertence a um único paciente.</p>
-<p>Cardinalidade: 1 X N</p>
-<h5 id="3-medical-records-tem-users-patient">3 - MEDICAL RECORDS tem USERS (Patient):</h5>
-<p>Um prontuário pertence a um único paciente, e um paciente tem um prontuário.</p>
-<p>Cardinalidade: 1 X 1</p>
-<h5 id="4-user-medico-tem-users-patient">4 - USER (médico) tem USERS (Patient):</h5>
-<p>Um médico pode ter um ou vários pacientes, e  um paciente pode ter um ou vários membros da equipe de saúde.</p>
-<p>Cardinalidade: N X M</p>
-<h5 id="5-post-pertence-a-user">5 - POST pertence a USER:</h5>
-<p>Um usuário pode ter um ou vários Posts, e um post pertence a um único usuário.</p>
-<p>Cardinalidade:  1 X N</p>
-<h5 id="6-post-tem-commentaries">6 - POST tem COMMENTARIES:</h5>
-<p>Um comentário pode conter um único post, e um post pode conter vários comentários.</p>
-<p>Cardinalidade: 1 X N</p>
-<h5 id="7-clinic-possui-address">7 - CLINIC possui ADDRESS:</h5>
-<p>Um endereço pode pertencer a apenas uma clinica, e uma clinica pode ter apenas um endereço.</p>
-<p>Cardinalidade: 1 X 1</p>
-<h5 id="8-events-possui-address">8 - EVENTS possui ADDRESS:</h5>
-<p>Um evento pode ter apenas um endereço, e um endereço pode ter apenas um evento.</p>
-<p>Cardinalidade: 1 X 1</p>
-<h5 id="9-categories-tem-posts">9 - CATEGORIES tem POSTS:</h5>
-<p>Um post pode conter uma única categoria, e uma categoria pode conter vários posts.</p>
-<p>Cardinalidade: 1 X N</p>
+<h5 id="patient-tem-user">PATIENT tem USER:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="responsible-tem-user">RESPONSIBLE tem USER:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="healthteam-tem-user">HEALTHTEAM tem USER:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="employee-tem-user">EMPLOYEE tem USER:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="patient-tem-responsible">PATIENT tem RESPONSIBLE:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="curves-tem-patient">CURVES tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="risk-tem-patient">RISK tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="complaint-tem-patient">COMPLAINT tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="exam-tem-patient">EXAM tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="medicalrecord-tem-patient">MEDICALRECORD tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="medicalrecord-tem-healthteam">MEDICALRECORD tem HEALTHTEAM:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="medicine-tem-patient">MEDICINE tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="medicine-tem-healthteam">MEDICINE tem HEALTHTEAM:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="staticdata-tem-patient">STATICDATA tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="staticdata-tem-healthteam">STATICDATA tem HEALTHTEAM:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="commentary-tem-post">COMMENTARY tem POST:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="commentary-tem-user">COMMENTARY tem USER:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="post-tem-category">POST tem CATEGORY:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="post-tem-user">POST tem USER:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="checkitem-tem-procedure">CHECKITEM tem PROCEDURE:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="procedure-tem-checklist">PROCEDURE tem CHECKLIST:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="checklist-tem-patient">CHECKLIST tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: 1 X 1</li>
+</ul>
+<h5 id="appointment-tem-patient">APPOINTMENT tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="appointment-tem-healthteam">APPOINTMENT tem HEALTHTEAM:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="appointmentrequest-tem-patient">APPOINTMENTREQUEST tem PATIENT:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
+<h5 id="appointmentrequest-tem-healthteam">APPOINTMENTREQUEST tem HEALTHTEAM:</h5>
+<ul>
+<li>Cardinalidade: N X 1</li>
+</ul>
 <h2 id="referencias">Referências</h2>
 <p>ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <a href="http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm">http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm</a>. Acesso em: 24 Mar. 2018.</p>
 <p>ARQUITETURA BASEADA EM COMPONENTES. Disponível em: <a href="https://marcobaccaro.wordpress.com/2010/10/05/arquitetura-baseada-em-componentes/">https://marcobaccaro.wordpress.com/2010/10/05/arquitetura-baseada-em-componentes/</a>. Acessado em: 10 Abril. 2018.</p>
