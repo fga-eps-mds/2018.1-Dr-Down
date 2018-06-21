@@ -12,6 +12,7 @@ from drdown.appointments.models import AppointmentRequest
 from drdown.users.models.model_health_team import HealthTeam
 from drdown.users.models.model_patient import Patient
 from ..forms.appointments_form import AppointmentSearchForm
+from django.db.models import Q
 
 
 class AppointmentFilter(LoginRequiredMixin, BaseFilter):
@@ -67,25 +68,28 @@ class AppointmentListView(LoginRequiredMixin, SearchListView):
 
     @staticmethod
     def prepare_queryset(request):
+
+        queryset = Appointment.objects.none()
+
         user = request.user
-        if hasattr(user, 'patient'):
+
+        if hasattr(user, 'patient') or hasattr(user, 'healthteam'):
+
             queryset = Appointment.objects.filter(
-                patient=user.patient
-            ).order_by('-date', '-time')
-        elif hasattr(user, 'responsible'):
+                Q(patient__user=user) | Q(doctor__user=user)
+            )
+
+        if hasattr(user, 'responsible'):
+
             queryset = Appointment.objects.filter(
                 patient__in=user.responsible.patient_set.all()
-            ).order_by('-date', '-time')
-        elif hasattr(user, 'employee'):
-            queryset = Appointment.objects.all(
-            ).order_by('-date', '-time')
-        elif hasattr(user, 'healthteam'):
-            queryset = Appointment.objects.filter(
-                doctor=user.healthteam
-            ).order_by('-date', '-time')
-        else:
-            queryset = Appointment.objects.none()
-        return queryset
+            )
+
+        if hasattr(user, 'employee'):
+
+            queryset = Appointment.objects.all()
+
+        return queryset.order_by('-date', '-time')
 
     def get_context_data(self, **kwargs):
         context = super(AppointmentListView, self).get_context_data(**kwargs)
