@@ -28,7 +28,7 @@ O propósito deste documento é definir e especificar, de maneira ampla, as cara
 ### 1.2	Escopo
 
 No mês de Abril do ano de 2013, foi inaugurado na Asa Norte, em Brasília - DF, um local especializado no acompanhamento e cuidado de pessoas com Síndrome de Down, condição também conhecida como trissomia 21. A demanda por atendimento especializado cresce rotineiramente, resultando no aumento da quantidade de pacientes e em uma fila de espera crescente. Consequentemente há a necessidade de um sistema de classificação de prioridades que, atualmente, prioriza os pacientes a partir de uma análise subjetiva por parte da equipe de saúde, sendo esse um dos tópicos a serem abordados para a melhoria da gestão e administração do Cris Down.
-O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde e funcionários gerais do Cris Down como para os pacientes e seus responsáveis, tratando de áreas como marcação visualização de consultas, esclarecimentos sobre a Síndrome de Down, localização do Cris Down e classificação de risco, entre outros não listados.
+O projeto a ser desenvolvido tem como objetivo oferecer uma ferramenta de gestão dos pacientes, assim como algumas utilidades complementares. O software oferecerá funcionalidades tanto para os profissionais de saúde e demais funcionários do Cris Down quanto para os pacientes e seus responsáveis, tratando de áreas como marcação e visualização de consultas, esclarecimentos sobre a Síndrome de Down, localização da instituição e classificação de prioridade do paciente, entre outros.
 
 ### 1.3	Definições, acrônimos e abreviações
 
@@ -88,13 +88,13 @@ O Dr. Down busca facilitar e agilizar a interação entre profissionais de saúd
 | Nome | Descrição | Responsabilidade |
 |------|------------|-----------------|
 | Equipe | Composta por graduandos em Engenharia de Software pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software. | Desenvolver e gerir o software. |
-| Clientes | Comunidade Médica, funcionários, pacientes e seus responsáveis do Centro de Referência em Síndrome de Down - Cris Down | Manipular as informações disponibilizadas no sistema para aprimorar o atendimento dos pacientes com SD |
+| Clientes | Equipe de saúde, funcionários, pacientes e seus responsáveis do Centro de Referência em Síndrome de Down - Cris Down | Manipular as informações disponibilizadas no sistema para aprimorar o atendimento dos pacientes com SD |
 
 ### 3.2  Resumo do Usuário
 
 | Nome | Descrição | Parte Interessada |
 |------|-----------|-------------------|
-| Equipe de saúde do Cris Down | Equipe médica que trabalha no Cris Down | Usuário |
+| Equipe de saúde do Cris Down | Equipe multidisciplinar de profissionais da área de saúde que trabalha no Cris Down | Usuário |
 | Funcionários | Funcionários do Cris Down que trabalham nas áreas de administração e secretaria | Usuário |
 | Responsáveis |Responsáveis do(s) paciente(s) com SD | Usuário |
 | Paciente com Síndrome de Down | Paciente com Síndrome de Down atendido pelo Cris Down | Usuário |
@@ -149,8 +149,8 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 | **Representante** | Usuários|
 | **Descrição** | Responsável do paciente com SD. |
 | **Tipo** | Usuário Informal |
-| **Responsabilidade** | Conhecer a aplicação e usá-la para auxiliar no acompanhamento de seu familiar com SD, marcar consultas para seu familiar com SD e manter-se informado com os dados de seu/seus familiares. |
-| **Critérios de sucesso** | Se comunicar com Cris Down e acompanhar o prontuário de seu familiar portador de SD de forma facilitada. |
+| **Responsabilidade** | Conhecer a aplicação e usá-la para auxiliar no acompanhamento de seu familiar com SD, marcar consultas para seu familiar com SD e manter-se informado com os dados de seu/seus dependentes. |
+| **Critérios de sucesso** | Se comunicar com o Cris Down e acompanhar o prontuário de seu familiar portador de SD de forma facilitada. |
 | **Envolvimento** | Baixo |
 | **Comentários ou Problemas** | - |
 
@@ -213,7 +213,7 @@ As informações dependem do tipo de usuário. Os pacientes e seus responsáveis
 
 ### 5.3 Cadastro
 
-O cadastro ocorrerá no próprio aplicativo. Quando o usuário cadastrado fizer parte da equipe de saúde ou dos funcionário do Cris Dow, a concretização do usuário no site dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.
+O cadastro ocorrerá no próprio aplicativo. Quando o usuário cadastrado fizer parte da equipe de saúde ou dos funcionário do Cris Down, a concretização do usuário no site dependerá da confirmação das informações prestadas, que será feita por meio de um administrador do sistema.
 
 ### 5.4 Fórum
 
