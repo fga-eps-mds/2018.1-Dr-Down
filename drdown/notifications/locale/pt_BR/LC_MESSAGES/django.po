@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:59+0000\n"
+"POT-Creation-Date: 2018-06-21 20:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,9 @@ msgstr ""
 msgid ""
 "Dear Sir / Madam, we would like to inform you that your request has been "
 "rejected for the following reason:"
-msgstr "Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta"
-" foi cancelado pelo seguinte motivo:"
+msgstr ""
+"Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta "
+"foi cancelado pelo seguinte motivo:"
 
 #: drdown/notifications/templates/notifications/emails/appointment_canceled.html:11
 #: drdown/notifications/templates/notifications/emails/appointment_sucess.html:11
@@ -34,7 +35,7 @@ msgstr "Para mais informações, por favor visite o"
 
 #: drdown/notifications/templates/notifications/emails/appointment_canceled.html:13
 #: drdown/notifications/templates/notifications/emails/appointment_sucess.html:13
-#: drdown/notifications/templates/notifications/emails/careline_check.html:13
+#: drdown/notifications/templates/notifications/emails/careline_check.html:15
 #: drdown/notifications/templates/notifications/emails/create_event.html:17
 #: drdown/notifications/templates/notifications/emails/update_event.html:17
 msgid "Dr. Down website"
@@ -42,7 +43,7 @@ msgstr "website do Dr. Down"
 
 #: drdown/notifications/templates/notifications/emails/appointment_canceled.html:16
 #: drdown/notifications/templates/notifications/emails/appointment_sucess.html:16
-#: drdown/notifications/templates/notifications/emails/careline_check.html:17
+#: drdown/notifications/templates/notifications/emails/careline_check.html:19
 #: drdown/notifications/templates/notifications/emails/create_event.html:20
 #: drdown/notifications/templates/notifications/emails/update_event.html:20
 msgid "Thanks for your attention, <br>Dr. Down team."
@@ -52,29 +53,36 @@ msgstr "Obrigado pela sua atenção, <br> a equipe do Dr Down."
 msgid ""
 "Dear Sir / Madam, we would like to inform you that your request was accepted."
 msgstr ""
-"Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta foi aceito."
+"Caro Sr/Srª, nós gostaríamos de informar-lhe que o seu pedido de consulta "
+"foi aceito."
 
 #: drdown/notifications/templates/notifications/emails/appointment_sucess.html:9
 msgid "Please go to Dr. Down to confirm the request."
 msgstr "Por favor vá ao Dr. Down para confirmar o pedido."
 
-#: drdown/notifications/templates/notifications/emails/careline_check.html:7
+#: drdown/notifications/templates/notifications/emails/careline_check.html:6
+#, fuzzy
+#| msgid "Dr. Down website"
+msgid "Dr. Down"
+msgstr "website do Dr. Down"
+
+#: drdown/notifications/templates/notifications/emails/careline_check.html:9
 msgid "Hello! We would like to inform you that "
 msgstr "Olá! Nós gostaríamos de informar-lhe que "
 
-#: drdown/notifications/templates/notifications/emails/careline_check.html:7
+#: drdown/notifications/templates/notifications/emails/careline_check.html:9
 msgid " has "
 msgstr " tem "
 
-#: drdown/notifications/templates/notifications/emails/careline_check.html:9
+#: drdown/notifications/templates/notifications/emails/careline_check.html:11
 msgid "procedure(s) to be made on the care line."
 msgstr " procedimento(s) a serem feitos na linha de cuidado."
 
-#: drdown/notifications/templates/notifications/emails/careline_check.html:11
+#: drdown/notifications/templates/notifications/emails/careline_check.html:13
 msgid "Please visit the "
 msgstr "Por favor visite o "
 
-#: drdown/notifications/templates/notifications/emails/careline_check.html:15
+#: drdown/notifications/templates/notifications/emails/careline_check.html:17
 msgid " to check which procedures need your attention."
 msgstr " para checar os procedimentos que precisam de sua atenção."
 
@@ -111,8 +119,8 @@ msgid ""
 "A event created on our site has been changed, it is of high importance to go "
 "check its details again."
 msgstr ""
-"Um evento criado em nosso site foi alterado. É de grande importância ir checar"
-"os seus detalhes novamente."
+"Um evento criado em nosso site foi alterado. É de grande importância ir "
+"checaros seus detalhes novamente."
 
 #: drdown/notifications/templates/notifications/emails/update_event.html:9
 msgid "Here are the new details:"
@@ -324,7 +332,8 @@ msgid ""
 "Thanks for your atention,\n"
 "\tDr. Down team."
 msgstr ""
-"A equipe do Dr. Down gostaria de convidar-lhe para um evento.Aqui estão os detalhes:\n"
+"A equipe do Dr. Down gostaria de convidar-lhe para um evento.Aqui estão os "
+"detalhes:\n"
 "\tNome do evento: %(name)s - Dia e hora: %(date)s as %(time)s\n"
 "\tLocal: %(location)s\n"
 "Para mais informações, visite o Dr. Down.\n"
@@ -349,8 +358,8 @@ msgid ""
 "Thanks for your atention,\n"
 "\tDr. Down team."
 msgstr ""
-"Um evento criado em nosso site foi alterado. É de grande importância ir checar"
-"os seus detalhes novamente. Aqui estão alguns dos novos detalhes:"
+"Um evento criado em nosso site foi alterado. É de grande importância ir "
+"checaros seus detalhes novamente. Aqui estão alguns dos novos detalhes:"
 "\tNome do evento: %(name)s - Dia e hora: %(date)s as %(time)s\n"
 "\tLocal: %(location)s\n"
 "Para mais informações, visite o Dr. Down.\n"
@@ -415,8 +424,8 @@ msgid ""
 "Thanks for your atention,\n"
 "\tDr. Down team."
 msgstr ""
-"Olá! Nós gostaríamos de informar-lhe que %(name)s tem %(number)d procedimento(s) "
-"a ser(em) feito(s) na linha de cuidado.\n"
+"Olá! Nós gostaríamos de informar-lhe que %(name)s tem %(number)d "
+"procedimento(s) a ser(em) feito(s) na linha de cuidado.\n"
 "Por favor visite o Dr. Down para checar quais procedimentos precisam da sua "
 "atenção.\n"
 "\n"
