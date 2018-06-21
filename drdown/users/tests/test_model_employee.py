@@ -99,15 +99,13 @@ class TestModelEmployeeNoSetUp(TestCase):
         set_permissions(
             Patient,
             mock_group,
-            change=True,
-            add=True
+            ['change', 'add']
         )
 
         set_permissions(
             Responsible,
             mock_group,
-            change=True,
-            add=True
+            ['change', 'add']
         )
 
         self.assertQuerysetEqual(
@@ -135,9 +133,7 @@ class TestModelEmployeeNoSetUp(TestCase):
         set_permissions(
             Patient,
             mock_group,
-            change=True,
-            add=True,
-            delete=True
+            ['change', 'add', 'delete']
         )
 
         # check if the where added

@@ -93,15 +93,13 @@ class Employee(models.Model):
         set_permissions(
                 Patient,
                 employee_group,
-                change=True,
-                add=True
+                ['change', 'add']
             )
 
         set_permissions(
                 Responsible,
                 employee_group,
-                change=True,
-                add=True
+                ['change', 'add']
             )
 
         self.user.groups.add(employee_group)
@@ -124,20 +122,20 @@ class Employee(models.Model):
         verbose_name_plural = _('Employees')
 
 
-def set_permissions(model, group, change=False, add=False, delete=False):
+def set_permissions(model, group, permissions_to_add):
     content_type = ContentType.objects.get_for_model(model)
 
-    if add:
+    if 'add' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='add_')
         )
 
-    if delete:
+    if 'delete' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='delete_')
         )
 
-    if change:
+    if 'change' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='change_')
         )
