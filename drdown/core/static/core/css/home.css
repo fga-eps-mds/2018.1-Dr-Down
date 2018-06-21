@@ -45,11 +45,6 @@ div.feature:hover i.icon{
   font-size: 6rem;
 }
 
-.border-secondary{
-  border-width: 4px !important;
-  border-color: #2C3E50 !important;
-}
-
 /* Wrapper */
 .wrapper {
   padding: 1rem 0 0rem 0 ;
@@ -63,17 +58,17 @@ div.feature:hover i.icon{
 
 @media screen and (max-width: 1280px) {
   .wrapper {
-    padding: 4rem 0 2rem 0 ; 
-  } 
+    padding: 4rem 0 2rem 0 ;
+  }
 }
 @media screen and (max-width: 736px) {
   .wrapper {
-    padding: 3rem 0 1rem 0 ; 
-    } 
+    padding: 3rem 0 1rem 0 ;
+    }
   }
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 2rem 0 0.1rem 0 ; 
+    padding: 2rem 0 0.1rem 0 ;
   }
 }
 
@@ -229,6 +224,7 @@ header.special p {
 .highlights .content {
   background: #ffffff;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.025);
+  margin-top: 20px;
 }
 
 .icon {

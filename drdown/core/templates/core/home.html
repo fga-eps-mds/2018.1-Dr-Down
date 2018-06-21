@@ -15,87 +15,79 @@
 
 {% block content %}
 	<header class="masthead bg-blue text-center">
+    <!-- Logo -->
 	  <div class="container">
-	    <img class="img-fluid mb-5 d-block mx-auto" src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">
-	    <h1 class="text-uppercase text-secondary mb-0">{% trans "Dr. Down" %}</h1>
+	    <img class="img-fluid mb-4 d-block mx-auto" src="{% static 'core/homepage/img/prognosis-logo.png' %}" alt="">
+	    <h1 class="text-uppercase text-secondary pt-4 mb-0">{% trans "Dr. Down" %}</h1>
 	    <hr class="star-dark bg-star-blue">
-	    <h2 class="font-weight-light mb-0">
-        <p class = text-secondary>{% trans "CRIS DOWN" %}</p>
-	      <p class = text-secondary>{% trans "Medical Appointment - Events - Foruns - Information" %}</p>
-	    </h2>
 	  </div>
-	</header>
-
-	<!-- Features Section -->
-	<section class="mb-0 text-secondary border-top" id="about">
-	  <div class="container">
-	    <!-- Highlights -->
-			<section class="wrapper">
-				<div class="inner">
-					<header class="special">
-						<h2 style="font-size: 40px;" class="pb-3">{% trans 'Veja o que há de melhor no CRIS DOWN!' %}</h2>
-						<hr class="star-dark mb-5">
-          </header>
-					<div class="highlights">
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-stethoscope"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'Appointments' %}</h3>
-								</header>
-                <span class="description">{% trans 'Agende sua consulta no dia da semana que ficar melhor para você e com o médico de sua preferência. E tudo isso sem sair de casa!' %}</span>
-              </div>
-						</section>
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-list-alt"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'CheckList' %}</h3>
-								</header>
-								<span class="description">{% trans 'Acompanhe os procedimentos que devem ser feitos de acordo com a idade do seu filho e saiba como pode ajudá-lo a manter uma vida cheia de saúde!' %} </span>
-              </div>
-						</section>
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-user-md"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'Medical Records' %}</h3>
-								</header>
-								<span class="description">{% trans 'Acompanhe seu histórico médico, envie exames e leia as anotações médicas sobre as suas consultas!' %}</span>
-              </div>
-						</section>
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-line-chart"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'Curves' %}</h3>
-								</header>
-								<span class="description">{% trans 'Você não precisa mais se preocupar se o seu filho está de acordo com as médias esperadas, verifique isso através de gráficos simples e objetivos!' %}</span>
-              </div>
-						</section>
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-comments"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'Forum' %}</h3>
-								</header>
-								<span class="description">{% trans 'Tire dúvidas, responda perguntas e faça elogios e sugestões através do fórum!' %}</span>
-              </div>
-						</section>
-						<section>
-							<div class="feature content border border-secondary">
-								<header>
-									<i class="icon fa-thumbs-up"><span class="label">Icon</span></i>
-									<h3 style="font-size: 23px;">{% trans 'Events' %}</h3>
-								</header>
-								<span class="description">{% trans 'Acompanhe os eventos organizados pelo CRIS Down e seus parceiros!' %}</span>
-              </div>
-						</section>
-					</div>
-				</div>
+    <!-- Highlights -->
+    <section class="wrapper">
+      <div class="inner mt-5">
+        <header class="special">
+          <h2 class="font-weight-light mb-0">
+            <p class = text-secondary>{% trans "Medical management plataform made for patients, responsibles, health team and employees." %}</p>
+          </h2>
+        </header>
+        <div class="highlights">
+          <section>
+            <div class="feature content ">
+              <header>
+                <i class="icon fa-stethoscope"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Appointments' %}</h3>
+              </header>
+              <span class="description">{% trans "Our website makes possible to request, schedule, check status and manage appointments. This way all hospital users can be up to date with their appointments." %}</span>
+            </div>
+          </section>
+          <section>
+            <div class="feature content">
+              <header>
+                <i class="icon fa-list-alt"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Care Line' %}</h3>
+              </header>
+              <span class="description">{% trans "A individual checklist is available to follow up patient's procedures required by doctors according to age." %} </span>
+            </div>
+          </section>
+          <section>
+            <div class="feature content">
+              <header>
+                <i class="icon fa-user-md"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Medical Records' %}</h3>
+              </header>
+              <span class="description">{% trans "Access all data from medical records. Check exam results, medicine prescriptions, patient's risks and overall health information." %}</span>
+            </div>
+          </section>
+          <section>
+            <div class="feature content">
+              <header>
+                <i class="icon fa-line-chart"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Curves' %}</h3>
+              </header>
+              <span class="description">{% trans "Check patient's growth through years with graphics of weight, height, bmi and cephalic perimeter." %}</span>
+            </div>
+          </section>
+          <section>
+            <div class="feature content">
+              <header>
+                <i class="icon fa-comments"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Forum' %}</h3>
+              </header>
+              <span class="description">{% trans "If you have any doubts to clarify, suggestions to make or important info to share a forum is the perfect place to do it." %}</span>
+            </div>
+          </section>
+          <section>
+            <div class="feature content">
+              <header>
+                <i class="icon fa-thumbs-up"><span class="label">Icon</span></i>
+                <h3 style="font-size: 23px;">{% trans 'Events' %}</h3>
+              </header>
+              <span class="description">{% trans "All the information you need to follow up CRIS DOWN's events so you won't miss the important occasions." %}</span>
+            </div>
+          </section>
+        </div>
+      </div>
 			</section>
-	  </div>
-	</section>
+	</header>
 
 	<!-- About Section -->
 	<section class="mb-0 text-secondary border-top" id="about">
