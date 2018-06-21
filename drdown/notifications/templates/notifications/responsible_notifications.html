@@ -97,14 +97,24 @@
         {% else %}
           <div class="alert alert-success" role="alert">
         {% endif %}
-            {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
-            <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
-        </div>
+            {% if patient.user.gender == "Male"%}
+              {% trans 'Your son'%} {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
+              <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
+            {% elif patient.user.gender == "Female"%}
+              {% trans 'Your daughter'%} {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
+              <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
+            {% endif %}
+          </div>
 
       {% else %}
         <div class="alert alert-success" role="alert">
-            {{patient.user.name}} {% trans "don't have procedures to be made." %}
+          {% if patient.user.gender == "Male"%}
+            {% trans 'Your son'%} {{patient.user.name}} {% trans "don't have procedures to be made." %}
             <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "But you can check the careline here" %}.</a>
+          {% elif patient.user.gender == "Female"%}
+            {% trans 'Your son'%} {{patient.user.name}} {% trans "don't have procedures to be made." %}
+            <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "But you can check the careline here" %}.</a>
+          {% endif %}
         </div>
       {% endif %}
     {% endfor %}
