@@ -25,9 +25,9 @@
             <div class="formgroup row my-2  border rounded">
 
               {% if form.file.errors %}
-                        <div class="col-12">
-                            {{ form.file.errors }}
-                        </div>
+                <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                  {{ form.file.errors }}
+                </div>
                {% endif %}
 
                <div class="col-12">
@@ -42,9 +42,9 @@
             <div class="formgroup row my-2  border rounded">
 
               {% if form.day.errors %}
-                        <div class="col-12">
-                            {{ form.day.errors }}
-                        </div>
+                <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                  {{ form.day.errors }}
+                </div>
                {% endif %}
 
                <div class="col-12">
@@ -61,16 +61,16 @@
 
               <div class="formgroup row my-2  border rounded">
                {% if form.category.errors %}
-                        <div class="col-12">
-                            {{ form.category.errors }}
-                        </div>
+                  <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                    {{ form.category.errors }}
+                  </div>
                {% endif %}
 
                <div class="col-12">
                  {{ form.category.label_tag }}
                </div>
 
-               <div class="col-12">
+               <div class="col-12 mb-2">
                  <select name="category" class="select form-control" required="" id="id_category">
                    <option value="">{% trans "Select a category..."%}</option>
                    <option value="0">{%trans "Others"%}</option>
@@ -96,9 +96,9 @@
 
              <div class="formgroup row my-2  border rounded">
                {% if form.observations.errors %}
-                        <div class="col-12">
-                            {{ form.observations.errors }}
-                        </div>
+                <div class="col-12 alert alert-danger" role="alert">
+                  {{ form.observations.errors }}
+                </div>
                {% endif %}
 
                <div class="col-12">
