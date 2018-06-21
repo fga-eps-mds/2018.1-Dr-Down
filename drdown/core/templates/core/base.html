@@ -39,6 +39,32 @@
     {% endblock %}
 
     {% block script %}
+    <script>
+      function collision($div1, $language) {
+        $("#language").removeAttr('hidden');
+        var x1 = $div1.offset().left;
+        var y1 = $div1.offset().top;
+        var h1 = $div1.outerHeight(true);
+        var w1 = $div1.outerWidth(true);
+        var b1 = y1 + h1;
+        var r1 = x1 + w1;
+        var x2 = $language.offset().left;
+        var y2 = $language.offset().top;
+        var h2 = $language.outerHeight(true);
+        var w2 = $language.outerWidth(true);
+        var b2 = y2 + h2;
+        var r2 = x2 + w2;
+
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
+                 $("#language").prop("hidden", true);
+
+        }
+        else{
+         $("#language").removeAttr('hidden');
+        }
+      }
+    </script>
+
     {%  endblock %}
   </head>
 
@@ -60,7 +86,7 @@
     <div id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-        <div class="container">
+        <div class="container" >
           <li class="navbar-brand ml-3 list-inline"><a href="{% url 'core:home' %}">Dr. Down</a></li>
           {% if request.user.photo %}
             <img class="center" src="{{ request.user.photo.url }}" width="100px" >
@@ -72,7 +98,7 @@
 
         <hr class="star">
 
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav" id="div1" onclick="collision($('#div1'), $('#language'))">
 
           {% if user.patient %}
             <li><a href="{% url 'notifications:patient_notifications' %}">
@@ -141,7 +167,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#vaccines-pat" data-toggle="collapse" aria-expanded="false" >
+              <a href="#vaccines-pat"  data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
               </a>
               <ul class="collapse list-unstyled" id="vaccines-pat" data-collapse-group="collapse-group">
@@ -163,7 +189,7 @@
                 </a>
                 <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
                   {% for patient in request.user.responsible.patient_set.all %}
-                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}" >
                     {{patient.user.name}}
                   </a></li>
                   {% endfor %}
@@ -202,7 +228,7 @@
             <li><a href="{% url 'core:help_side' %}">{% trans "Help" %}</a></li>
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
-
+        <p>Colliding? <span id="result">false</span>
         <div id="language" class="row" style="position: fixed; bottom: 2px; left:80px;">
           <form action="{% url 'set_language' %}" method="post" class="col-1 mr-1">
             {% csrf_token %}
