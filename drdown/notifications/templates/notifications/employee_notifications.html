@@ -8,66 +8,63 @@
 
   <div class="container">
 
-
-    {% if requests|length > 0 %}
-      <div class="card border-success mb-5">
-          <div class="card-header">
-            <div class="row">
-              <div class="col-sm-11">
-                <h2 class="text-tertiary">{% trans "Requests" %}</h2>
-              </div>
-               <div class="col-auto">
-                <span class="badge badge-pill badge-warning">{{requests|length}}</span>
-              </div>
+    <div class="card  mb-5">
+      {% if requests|length > 0 %}
+            <div class="card-header">
+              <div class="row">
+                <div class="col-sm-11">
+                  <h2 class="text-tertiary">{% trans "Requests" %}</h2>
+                </div>
+                 <div class="col-auto">
+                  <span class="badge badge-pill badge-warning">{{requests|length}}</span>
+                </div>
+            </div>
           </div>
+          <div class="card-body">
+            <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+              <p>{% trans "There are" %} {{requests|length}}
+                {% trans "appointment requests not answered" %}.
+              </p>
+            </a>
+          </div>
+      {% else %}
+          <div class="card-header">
+            <h2 class="text-tertiary">{% trans "Requests" %}</h2>
+          </div>
+          <div class="card-body">
+            <p>{% trans "There are no appointment requests" %}.</p>
+          </div>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      {% if commentaries|length > 0 %}
+        <div class="card-header">
+              <div class="row">
+                <div class="col-sm-11">
+                  <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+                </div>
+                 <div class="col-auto">
+                  <span class="badge badge-pill badge-warning">{{commentaries|length}}</span>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
-            <p>{% trans "There are" %} {{requests|length}}
-              {% trans "appointment requests not answered" %}.
+        <div class="card-body border-success">
+          <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
+            <p>{% trans "Your last post has" %} {{ commentaries|length }}
+              {% trans " commentaries" %}.
             </p>
           </a>
         </div>
-      </div>
-
-    {% else %}
-      <div class="card mb-5">
-        <div class="card-header"><h2 class="text-tertiary">{% trans "Requests" %}</h2></div>
-        <div class="card-body">
-        <p>{% trans "There are no appointment requests" %}.</p>
-        </div>
-      </div>
-    {% endif %}
-
-    {% if commentaries|length > 0 %}
-      <div class="card  ">
+      {% else %}
           <div class="card-header">
-            <div class="row">
-              <div class="col-sm-11">
-                <h2 class="text-tertiary">{% trans "Forum" %}</h2>
-              </div>
-               <div class="col-auto">
-                <span class="badge badge-pill badge-warning">{{commentaries|length}}</span>
-              </div>
+            <h2 class="text-tertiary">{% trans "Forum" %}</h2>
           </div>
-        </div>
-        <div class="card-body border-success">
-        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
-          <p>{% trans "Your last post has" %} {{ commentaries|length }}
-            {% trans " commentaries" %}.
-          </p>
-        </a>
-        </div>
-      </div>
-    {% else %}
-      <div class="card ">
-        <div class="card-header"><h2 class="text-tertiary">{% trans "Forum" %}</h2></div>
-        <div class="card-body">
-        <p>{% trans "Your last post has no commentaries" %}.</p>
-        </div>
-      </div>
-    {% endif %}
-
+          <div class="card-body">
+            <p>{% trans "Your last post has no commentaries" %}.</p>
+          </div>
+      {% endif %}
+    </div>
   </div>
 
 {% endblock %}
