@@ -163,3 +163,12 @@ class BaseUserDelete():
         self.user.save()
         User.remove_staff(self.user)
         super().delete(*args, **kwargs)
+
+
+class BaseUserSave():
+
+    def save(self, *args, **kwargs):
+        self.user.clean()
+        self.user.save()
+        self.clean()  # enforce model validation
+        super().save(*args, **kwargs)
