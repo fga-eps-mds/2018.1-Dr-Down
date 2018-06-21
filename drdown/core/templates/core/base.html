@@ -230,7 +230,6 @@
             <li><a href="{% url 'core:help_side' %}">{% trans "Help" %}</a></li>
             <li><a class="text-danger" data-toggle="modal" data-target="#logout" href="">{% trans "Log out" %}</a></li>
         </ul>
-        <p>Colliding? <span id="result">false</span>
         <div id="language" class="row" style="position: fixed; bottom: 2px; left:80px;">
           <form action="{% url 'set_language' %}" method="post" class="col-1 mr-1">
             {% csrf_token %}
@@ -243,7 +242,6 @@
             <input type="image" value="" src="{% static 'core/images/flags/us.svg' %}" style=" height: 21px; width: 28px;"/>
           </form>
         </div>
-
       </div>
 
         <!-- Logout Modal -->
