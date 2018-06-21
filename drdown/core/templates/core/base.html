@@ -40,8 +40,9 @@
 
     {% block script %}
     <script>
+
       function collision($div1, $language) {
-        $("#language").removeAttr('hidden');
+        $("#language").prop("hidden", false);
         var x1 = $div1.offset().left;
         var y1 = $div1.offset().top;
         var h1 = $div1.outerHeight(true);
@@ -55,16 +56,17 @@
         var b2 = y2 + h2;
         var r2 = x2 + w2;
 
-        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
-                 $("#language").prop("hidden", true);
-
-        }
-        else{
-         $("#language").removeAttr('hidden');
-        }
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2)
+          void(0);
+        else
+          $("#language").prop("hidden", true);
       }
     </script>
-
+    <script>
+      window.setInterval(function() {
+          collision($('#div1'), $('#language'));
+      }, 200);
+    </script>
     {%  endblock %}
   </head>
 
@@ -98,7 +100,7 @@
 
         <hr class="star">
 
-        <ul class="sidebar-nav" id="div1" onclick="collision($('#div1'), $('#language'))">
+        <ul class="sidebar-nav" id="div1">
 
           {% if user.patient %}
             <li><a href="{% url 'notifications:patient_notifications' %}">
@@ -167,7 +169,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#vaccines-pat"  data-toggle="collapse" aria-expanded="false" >
+              <a href="#vaccines-pat" data-toggle="collapse" aria-expanded="false" >
                 {% trans "Vaccines" %}
               </a>
               <ul class="collapse list-unstyled" id="vaccines-pat" data-collapse-group="collapse-group">
@@ -189,7 +191,7 @@
                 </a>
                 <ul class="collapse list-unstyled" id="patient" data-collapse-group="collapse-group">
                   {% for patient in request.user.responsible.patient_set.all %}
-                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}" >
+                  <li><a href="{% url 'medicalrecords:list_medicalrecords' patient.user.username  %}">
                     {{patient.user.name}}
                   </a></li>
                   {% endfor %}
