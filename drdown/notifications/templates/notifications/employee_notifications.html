@@ -10,7 +10,7 @@
 
 
     {% if requests|length > 0 %}
-      <div class="card mb-5">
+      <div class="card border-success mb-5">
           <div class="card-header">
             <div class="row">
               <div class="col-sm-11">
@@ -40,7 +40,7 @@
     {% endif %}
 
     {% if commentaries|length > 0 %}
-      <div class="card ">
+      <div class="card  ">
           <div class="card-header">
             <div class="row">
               <div class="col-sm-11">
@@ -51,7 +51,7 @@
               </div>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body border-success">
         <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
           <p>{% trans "Your last post has" %} {{ commentaries|length }}
             {% trans " commentaries" %}.
