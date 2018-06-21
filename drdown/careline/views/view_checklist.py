@@ -66,27 +66,15 @@ class ChecklistDetailView(DetailView):
     @staticmethod
     def has_permission(current_user, target_user):
 
-        allowed = False
-
-        # here using '==' is intended
-        if current_user == target_user:
-            # if we are the patient that the page is trying to access
-            allowed = True
-
-        elif hasattr(current_user, 'responsible'):
-            # if we are someone else, we need to check permissions
-            # for instance, if the current user is a responsible
-            # of the target user
-            for patient in current_user.responsible.patient_set.all():
-                if patient.user == target_user:
-                    allowed = True
-        elif hasattr(current_user, 'healthteam'):
-            allowed = True
-
-        elif hasattr(current_user, 'employee'):
-            allowed = True
-
-        return allowed
+        return (
+            current_user == target_user or
+            hasattr(current_user, 'healthteam') or
+            hasattr(current_user, 'employee') or
+            (
+                hasattr(current_user, 'responsible') and
+                target_user.patient in current_user.responsible.patient_set.all()
+            )
+        )
 
     def prepare_context_data(self, user, context):
 
