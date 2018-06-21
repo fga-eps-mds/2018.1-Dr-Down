@@ -104,6 +104,33 @@
 
     </div>
 
+    {% if events|length > 0 %}
+      <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Events" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning">{{events|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'events:list_events' %}" class="alert-success" >
+            <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+          </a>
+        </div>
+      </div>
+    {% else %}
+
+      <div class="card">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Events" %}</h2></div>
+        <div class="card-body">
+          <p>{% trans "There are no events on the next 7 days" %}.</p>
+        </div>
+      </div>
+    {% endif %}
     <div class="card">
       {% if commentaries|length > 0 %}
         <div class="card-header">

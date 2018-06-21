@@ -75,7 +75,8 @@
                 <span class="badge badge-pill badge-warning">{{events|length}}</span>
               </div>
           </div>
-        </div>        <div class="card-body">
+        </div>
+        <div class="card-body">
           <a href="{% url 'events:list_events' %}" class="alert-success" >
             <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
           </a>

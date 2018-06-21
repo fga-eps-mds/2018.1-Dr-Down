@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="card-body border-success">
+        <div class="card-body">
           <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
             <p>{% trans "Your last post has" %} {{ commentaries|length }}
               {% trans " commentaries" %}.
