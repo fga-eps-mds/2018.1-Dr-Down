@@ -242,7 +242,6 @@ class HealthTeam(BaseUserDelete, models.Model):
     def __str__(self):
         return self.user.get_username() + " - " + self.get_speciality_display()
 
-
     class Meta:
         verbose_name = _('Health Team')
         verbose_name_plural = _('Health Team')

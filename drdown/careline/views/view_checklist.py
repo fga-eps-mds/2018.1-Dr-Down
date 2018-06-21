@@ -72,7 +72,8 @@ class ChecklistDetailView(DetailView):
             hasattr(current_user, 'employee') or
             (
                 hasattr(current_user, 'responsible') and
-                target_user.patient in current_user.responsible.patient_set.all()
+                target_user.patient in
+                current_user.responsible.patient_set.all()
             )
         )
 
