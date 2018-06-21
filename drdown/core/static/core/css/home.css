@@ -33,11 +33,8 @@ span.description{
 }
 
 div.feature{
-  padding-bottom: 5rem !important; 
-}
-
-div.feature:hover{
-  padding-bottom: 2rem !important;
+  min-height: 20rem;
+  height: auto !important;
 }
 
 div.feature:hover span.description{
@@ -46,6 +43,11 @@ div.feature:hover span.description{
 
 div.feature:hover i.icon{
   font-size: 6rem;
+}
+
+.border-secondary{
+  border-width: 4px !important;
+  border-color: #2C3E50 !important;
 }
 
 /* Wrapper */
@@ -85,6 +87,7 @@ header.special {
   text-align: center;
   margin-bottom: 4rem;
 }
+
 header.special p {
   max-width: 75%;
   margin-left: auto;
