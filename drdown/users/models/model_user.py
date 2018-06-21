@@ -154,3 +154,12 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+
+
+class BaseUserDelete():
+
+    def delete(self, *args, **kwargs):
+        self.user.has_specialization = False
+        self.user.save()
+        User.remove_staff(self.user)
+        super().delete(*args, **kwargs)

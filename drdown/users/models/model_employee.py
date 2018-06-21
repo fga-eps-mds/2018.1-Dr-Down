@@ -7,12 +7,12 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
 from ..utils.validators import validate_cpf
-from .model_user import User
+from .model_user import User, BaseUserDelete
 from .model_patient import Patient
 from .model_responsible import Responsible
 
 
-class Employee(models.Model):
+class Employee(BaseUserDelete, models.Model):
 
     user = models.OneToOneField(
         User,
@@ -110,12 +110,6 @@ class Employee(models.Model):
         self.clean()
 
         super().save(*args, **kwargs)
-
-    def delete(self, *args, **kwargs):
-        self.user.has_specialization = False
-        self.user.save()
-        User.remove_staff(self.user)
-        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Employee')
