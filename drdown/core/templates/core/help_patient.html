@@ -18,7 +18,7 @@
 
 	<div id="notifications">
 		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_first">{% trans 'Notifications' %}</h1>
-		<img src="{% static 'core/images/Patient/Notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<img src="{% static 'core/images/Patient/notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
 		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 			{% blocktrans %}
 	      Nas próximas vezes que fizer o login, explicado <a href="#first_login" class="text-blue">aqui</a>, você verá a <i>Página de Notificações</i>. Essa página te avisará quando houver novos <a href="#events" class="text-blue scroll">eventos</a>, novos pedidos de <a href="#appointments" class="text-blue scroll">consultas</a> respondidos e os novos comentários de seus posts contidos no <a href="#forum" class="text-blue scroll">fórum</a>.
@@ -44,7 +44,7 @@
 			{% blocktrans %}
 				When an employee of Cris Down makes a request for you or the person in charge, you will have to press "Ok" on the request to show that you are aware that it has been marked as it will be deleted from the order list.
 			{% endblocktrans %}
-		</p>	
+		</p>
 	</div>
 
 	<div id="appointments">
@@ -70,7 +70,14 @@
 	      You can also go to the Care Line or print / save your medical records in PDF.
 			{% endblocktrans %}
 		</p>
-	</div>
+
+    <img src="{% static 'core/images/Patient/p_evolucao.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_exame.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_remedio.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_queixas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_curvas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_curva2.png' %}" width="100%" class="float-right border border-secondary mb-4">
+  </div>
 
 	<div id="checklist">
 	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" style="font-size: 30px;" id="patient_checklist">{% trans 'Checklist' %}</h1>
@@ -96,7 +103,7 @@
 			{% blocktrans %}
 	      After accessing "Vaccination Sites" in the sidebar, you will be redirected to a list of cities in the Federal District, where each city has vaccination clinics.
 			{% endblocktrans %}
-		</p>	
+		</p>
 	</div>
 
 	<div id="forum">
