@@ -1247,8 +1247,8 @@ msgid ""
 "appointments, avoiding going to the hospital to solve things related to "
 "appointments."
 msgstr ""
-"Nosso website permite pedir, marcar, gerenciar e checar o status de consultas, "
-"evitando o deslocamento até o hospital para tratar de assuntos relacionados às mesmas."
+"Através do nosso website, solicite, marque, gerencie e cheque o status de consultas, "
+"evitando a necessidade de deslocamento até o hospital para tratar destes assuntos."
 
 #: drdown/core/templates/core/home.html:49
 msgid ""
@@ -1257,7 +1257,7 @@ msgid ""
 "can update the data."
 msgstr ""
 "Uma checklist individual está disponível para acompanhar os procedimentos que são "
-"pedidos pelos médicos de acordo com a idade do paciente. Tanto paciente, responsável ou "
+"pedidos pelos médicos de acordo com a idade do paciente. Tanto o paciente, como o seu responsável e o "
 "médico podem atualizar os dados."
 
 #: drdown/core/templates/core/home.html:58
@@ -1279,15 +1279,15 @@ msgid ""
 "and cephalic perimeter based on ideal growth curves."
 msgstr ""
 "Avalie o crescimento do paciente durante o decorrer dos anos por meio de gráficos de "
-"peso, altura, IMC e perímetro cefálico baseados em curvas ideias de crescimento."
+"peso, altura, IMC e perímetro cefálico baseados em curvas estatisticamente normais de crescimento."
 
 #: drdown/core/templates/core/home.html:76
 msgid ""
 "If you have any doubts to clarify, suggestions to make or important info to "
 "share a forum is the perfect place to do it."
 msgstr ""
-"Dúvidas para esclarecer, sugestões para serem feitas ou informações importantes para compartilhar."
-"O fórum é o lugar perfeito para fazer tudo isso."
+"Se você tem dúvidas para esclarecer, sugestões para serem feitas ou informações importantes para compartilhar, "
+"o fórum é o lugar perfeito para fazer tudo isso."
 
 #: drdown/core/templates/core/home.html:85
 msgid ""
