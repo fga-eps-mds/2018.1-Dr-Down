@@ -37,6 +37,10 @@ div.feature{
   height: auto !important;
 }
 
+div.feature:hover{
+  padding-bottom: 0 !important;
+}
+
 div.feature:hover span.description{
   display: block;
 }
