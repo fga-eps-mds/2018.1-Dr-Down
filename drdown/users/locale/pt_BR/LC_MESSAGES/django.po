@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-19 18:34+0000\n"
+"POT-Creation-Date: 2018-06-21 20:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -385,8 +385,10 @@ msgid "Are you sure you want to delete "
 msgstr "Você tem certeza que deseja excluir "
 
 #: drdown/users/templates/users/user_confirm_delete.html:13
-msgid "All the data about yourself will be erased and this action can't be undone."
-msgstr "Todos os dados sobre você serão apagados e esta ação não pode ser desfeita."
+msgid ""
+"All the data about yourself will be erased and this action can't be undone."
+msgstr ""
+"Todos os dados sobre você serão apagados e esta ação não pode ser desfeita."
 
 #: drdown/users/templates/users/user_confirm_delete.html:17
 #: drdown/users/templates/users/user_form.html:138

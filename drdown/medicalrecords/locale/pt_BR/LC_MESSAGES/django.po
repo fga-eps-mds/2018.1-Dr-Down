@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-19 20:47+0000\n"
+"POT-Creation-Date: 2018-06-21 20:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,6 +98,7 @@ msgstr "A queixa não pode ser no futuro!"
 
 #: drdown/medicalrecords/models/model_curves.py:15
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:30
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:174
 #: drdown/medicalrecords/views/view_curves.py:79
 msgid "Weight"
 msgstr "Peso"
@@ -109,6 +110,7 @@ msgstr "Peso em kg"
 
 #: drdown/medicalrecords/models/model_curves.py:19
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:31
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:144
 #: drdown/medicalrecords/views/view_curves.py:80
 msgid "Height"
 msgstr "Altura"
@@ -120,6 +122,7 @@ msgstr "Altura em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:24
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:32
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:204
 #: drdown/medicalrecords/views/view_curves.py:81
 msgid "Cephalic Perimeter"
 msgstr "Perímetro Cefálico"
@@ -136,6 +139,7 @@ msgstr "IMC"
 
 #: drdown/medicalrecords/models/model_curves.py:32
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:29
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:111
 msgid "Age"
 msgstr "Idade"
 
@@ -546,7 +550,7 @@ msgstr "Adicionar nova queixa"
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:150
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:48
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:52
-#: drdown/medicalrecords/templates/medicalrecords/risk_form.html:43
+#: drdown/medicalrecords/templates/medicalrecords/risk_form.html:47
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -780,7 +784,7 @@ msgstr "Teste da orelinha:"
 msgid "Edit Risk"
 msgstr "Editar Risco"
 
-#: drdown/medicalrecords/templates/medicalrecords/risk_form.html:44
+#: drdown/medicalrecords/templates/medicalrecords/risk_form.html:48
 msgid "Submit"
 msgstr "Enviar"
 

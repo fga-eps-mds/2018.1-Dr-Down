@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:59+0000\n"
+"POT-Creation-Date: 2018-06-21 20:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,10 @@ msgid "Please go to Dr. Down to confirm the request."
 msgstr "Por favor vá ao Dr. Down para confirmar o pedido."
 
 #: drdown/notifications/templates/notifications/emails/careline_check.html:6
+#, fuzzy
+#| msgid "Dr. Down website"
 msgid "Dr. Down"
-msgstr "Dr. Down"
+msgstr "website do Dr. Down"
 
 #: drdown/notifications/templates/notifications/emails/careline_check.html:9
 msgid "Hello! We would like to inform you that "
