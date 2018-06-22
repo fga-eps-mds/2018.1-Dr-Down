@@ -18,7 +18,7 @@
 
 	<div id="notifications">
 		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_first">{% trans 'Notifications' %}</h1>
-		<img src="{% static 'core/images/Employee/Notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<img src="{% static 'core/images/Employee/perfil_emp.png' %}" width="100%" class="float-right border border-secondary mb-4">
 		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 			{% blocktrans %}
 	      Nas próximas vezes que fizer o login, explicado <a href="#first_login" class="text-blue scroll">aqui</a>, você verá a <i>Página de Notificações</i>. Essa página te avisará quando houver novos <a href="#events" class="text-blue scroll">eventos</a>, novos pedidos de <a href="#appointments" class="text-blue scroll">consulta</a> a serem respondidos e te atualizará sobre o fórum.
@@ -64,7 +64,7 @@
 			{% blocktrans %}
 				When you click Marked on the Queries tab, you will be redirected to the list of marked queries. You can edit or cancel a query, if necessary.
 			{% endblocktrans %}
-		</p>	
+		</p>
 	</div>
 
 	<div id="patients">
@@ -90,16 +90,12 @@
 	      You can also go to the Care Line or print / save your medical records in PDF.
 			{% endblocktrans %}
 		</p>
-	</div>
-
-	<div id="checklist">
-	  <h1 class=" pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_vaccine">{% trans 'Checklist' %}</h1>
-		<img src="{% static 'core/images/Employee/LinhaDeCuidado.PNG' %}" width="100%" class="float-right border border-secondary mb-4">
-		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
-			{% blocktrans %}
-				By clicking on "Care Line" you will have access to procedures that the patient should follow. These are procedures that a Down Syndrome sufferer has to follow throughout his or her life, some are compulsory, and weights are only when needed by the patient.
-			{% endblocktrans %}
-		</p>
+    <img src="{% static 'core/images/Patient/p_evolucao.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_exame.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_remedio.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_queixas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/HealthTeam/p_curvas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_curva2.png' %}" width="100%" class="float-right border border-secondary mb-4">
 	</div>
 
 	<div id="forum">
@@ -121,7 +117,7 @@
 			{% blocktrans %}
 	      In the comments page, you will have access to the comments of the selected post and you will also be able to make new comments in the post.
 			{% endblocktrans %}
-		</p>		
+		</p>
 	</div>
 
 	<div id="events">
