@@ -35,7 +35,6 @@ class Employee(models.Model):
     # note: those texts aren't using _() because they are not meant
     # to be translated norshown to the user
 
-    NURSERY = "NUR"
     SECRETAY = "SEC"
     ADMINISTRATION = "ADM"
     OTHER = "OTH"
@@ -43,7 +42,6 @@ class Employee(models.Model):
     DEPARTAMENT_CHOICES = (
         (SECRETAY, _('Secretary')),
         (ADMINISTRATION, _('Administration')),
-        (NURSERY, _('Nursery')),
         (OTHER, _('Other')),
     )
 
