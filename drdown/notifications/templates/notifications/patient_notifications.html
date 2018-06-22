@@ -1,41 +1,130 @@
 {% extends "core/base.html" %}
 {% load static i18n %}
-{% block css %}
-{{block.super}}
-<link href="{% static 'core/css/simple-sidebar.css' %}" rel="stylesheet">
-{% endblock %}
+
 {% block content %}
 
   <div class="container">
+    {% now 'm-d-Y' as today %}
+    {% if request.user.birthday ==  today%}
+      <h2 class="text-tertiary">{% trans "Procedures" %}</h2>
 
-    <div class="card  mb-5">
-      {% if requests|length > 0 %}
-            <div class="card-header">
-              <div class="row">
-                <div class="col-sm-11">
-                  <h2 class="text-tertiary">{% trans "Requests" %}</h2>
-                </div>
-                 <div class="col-auto">
-                  <span class="badge badge-pill badge-warning">{{requests|length}}</span>
-                </div>
+      <div class="alert alert-success" role="alert">
+        <p>{% trans 'You are completing'%} {{ request.user.age }}. {% trans 'Are your vaccines and checklist up to date'%}? </p>
+      </div>
+
+
+    {% endif %}
+
+    <div class="card mb-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11">
+              <h2 class="text-tertiary">{% trans "Accepted medical requests" %}</h2>
             </div>
-          </div>
-          <div class="card-body">
+             {% if scheduled|length > 0 %}
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+               </div>
+            {% endif %}
+        </div>
+      </div>
+      <div class="card-body">
+          {% if scheduled|length > 0 %}
             <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
-              <p>{% trans "There are" %} {{requests|length}}
-                {% trans "appointment requests not answered" %}.
+              <p>{% trans "You have" %} {{ scheduled|length }}
+                {% trans "appointment requests accepted and not visualized" %}.
               </p>
             </a>
-          </div>
-      {% else %}
-          <div class="card-header">
-            <h2 class="text-tertiary">{% trans "Requests" %}</h2>
-          </div>
-          <div class="card-body">
-            <p>{% trans "There are no appointment requests" %}.</p>
-          </div>
-      {% endif %}
+          {% else %}
+            <p>
+              {% trans "You have no appointment requests accepted and not visualized" %}.
+            </p>
+          {% endif %}
+      </div>
     </div>
+
+    <div class="card mb-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11">
+              <h2 class="text-tertiary">{% trans "Medical requests refused" %}</h2>
+            </div>
+            {% if cancel|length > 0 %}
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+               </div>
+            {% endif %}
+        </div>
+      </div>
+      <div class="card-body">
+          {% if cancel|length > 0 %}
+            <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+              <p>{% trans "You have " %} {{ cancel|length }}
+                {% trans "appointments requests declined and not visualized" %}.
+              </p>
+            </a>
+          {% else %}
+            <p>
+             {% trans "You have no appointment requests declined and not visualized" %}.
+            </p>
+          {% endif %}
+      </div>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-11">
+                  <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
+                </div>
+                 <div class="col-auto">
+                  <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+                 </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+            {% if user.patient.count_incomplete_procedures_for_current_age > 0 %}
+                  <p>
+                    {% trans "You have" %} {{user.patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
+                    <a href="{% url 'careline:checklist_detail' user.username %}" class="text-success">{% trans "Click here to check it" %}.</a>
+                  </p>
+
+            {% else %}
+                  <p>
+                    {% trans "You don't have procedures to be made." %}
+                    <a href="{% url 'careline:checklist_detail'  user.username %}" class="text-success">{% trans "But you can check the careline here" %}.</a>
+                  </p>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if events|length > 0 %}
+      <div class="card mb-5">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Events" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning">{{events|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'events:list_events' %}" class="alert-success" >
+            <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+          </a>
+        </div>
+      </div>
+    {% else %}
+      <div class="card mb-5">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Events" %}</h2></div>
+        <div class="card-body">
+          <p>{% trans "There are no events on the next 7 days" %}.</p>
+        </div>
+      </div>
+    {% endif %}
 
     <div class="card">
       {% if commentaries|length > 0 %}
@@ -65,6 +154,7 @@
           </div>
       {% endif %}
     </div>
+
   </div>
 
 {% endblock %}
