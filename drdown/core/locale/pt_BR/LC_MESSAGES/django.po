@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-14 00:14+0000\n"
+"POT-Creation-Date: 2018-06-22 02:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,31 +360,28 @@ msgstr "Entrar"
 msgid "Sign up"
 msgstr "Cadastrar"
 
-#: drdown/core/templates/core/base-nav.html:93
-#: drdown/core/templates/core/base.html:205
+#: drdown/core/templates/core/base-nav.html:81
+#: drdown/core/templates/core/base.html:202
 #: drdown/core/templates/core/help_page.html:189
 msgid "Help"
 msgstr "Ajuda"
 
 #: drdown/core/templates/core/base-nav.html:121
-#: drdown/core/templates/core/help_page.html:227
 msgid "Centro de Referência Interdisciplinar em Síndrome de Down"
 msgstr "Centro de Referência Interdisciplinar em Síndrome de Down"
 
 #: drdown/core/templates/core/base-nav.html:122
-#: drdown/core/templates/core/help_page.html:228
 msgid "Location: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 msgstr ""
 "Localização: HRAN - Setor Hospitalar Norte, quadra 1, bloco A, Asa Norte"
 
 #: drdown/core/templates/core/base-nav.html:123
-#: drdown/core/templates/core/help_page.html:229
 msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
 #: drdown/core/templates/core/base-nav.html:131
-#: drdown/core/templates/core/base.html:266
-#: drdown/core/templates/core/help_page.html:237
+#: drdown/core/templates/core/base.html:263
+#: drdown/core/templates/core/help_page.html:223
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
@@ -423,13 +420,7 @@ msgid "Scheduled"
 msgstr "Marcado"
 
 #: drdown/core/templates/core/base.html:115
-#: drdown/core/templates/core/help_employee.html:30
-#: drdown/core/templates/core/help_page.html:80
-#: drdown/core/templates/core/help_page.html:130
-#: drdown/core/templates/core/help_page.html:164
-#: drdown/core/templates/core/help_patient.html:30
-#: drdown/core/templates/core/help_responsible.html:32
-msgid "Requests"
+msgid "Requested"
 msgstr "Pedidos"
 
 #: drdown/core/templates/core/base.html:126
@@ -449,8 +440,8 @@ msgstr "Prontuário"
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
-#: drdown/core/templates/core/base.html:148
-#: drdown/core/templates/core/base.html:184
+#: drdown/core/templates/core/base.html:145
+#: drdown/core/templates/core/base.html:181
 #: drdown/core/templates/core/help_page.html:92
 #: drdown/core/templates/core/help_page.html:117
 #: drdown/core/templates/core/help_page.html:148
@@ -475,7 +466,7 @@ msgstr "Locais de vacinação"
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:198
+#: drdown/core/templates/core/base.html:195
 #: drdown/core/templates/core/help_employee.html:71
 #: drdown/core/templates/core/help_page.html:111
 #: drdown/core/templates/core/help_page.html:139
@@ -484,7 +475,7 @@ msgstr "Meus Pacientes"
 msgid "Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:204
+#: drdown/core/templates/core/base.html:201
 #: drdown/core/templates/core/help_employee.html:128
 #: drdown/core/templates/core/help_health_team.html:106
 #: drdown/core/templates/core/help_page.html:98
@@ -572,6 +563,15 @@ msgid ""
 "respondidos e te atualizará sobre o fórum.\n"
 "\t  \t"
 msgstr ""
+
+#: drdown/core/templates/core/help_employee.html:30
+#: drdown/core/templates/core/help_page.html:80
+#: drdown/core/templates/core/help_page.html:130
+#: drdown/core/templates/core/help_page.html:164
+#: drdown/core/templates/core/help_patient.html:30
+#: drdown/core/templates/core/help_responsible.html:32
+msgid "Requests"
+msgstr "Pedidos"
 
 #: drdown/core/templates/core/help_employee.html:33
 msgid ""
@@ -904,7 +904,7 @@ msgstr ""
 #: drdown/core/templates/core/help_health_team.html:67
 #: drdown/core/templates/core/help_patient.html:86
 #: drdown/core/templates/core/help_responsible.html:92
-#: drdown/core/templates/core/info.html:153
+#: drdown/core/templates/core/info.html:154
 #: drdown/core/templates/core/vaccine_schedule.html:5
 msgid "Vaccine Schedule"
 msgstr "Calendário de Vacinas"
@@ -1192,14 +1192,6 @@ msgstr ""
 "\t\t"
 
 #: drdown/core/templates/core/help_user.html:40
-#| msgid ""
-#| "\n"
-#| "\t\t\t\tThe forum is the place of communication between users of the "
-#| "site, where you can ask questions, suggest improvements and make "
-#| "complaints, as well as help other users. You can only comment and create "
-#| "posts if you are logged in with your account, explained <a href=\"#login"
-#| "\" class=\"text-blue\"><i><u>here</u></i></a>.\n"
-#| "\t\t\t"
 msgid ""
 "\n"
 "\t\t\t\tThe forum is the place of communication between users of the site, "
