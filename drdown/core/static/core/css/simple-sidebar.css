@@ -33,11 +33,14 @@ body, wrapper {
   overflow-y: auto;
   background: #1a252f;
   -webkit-transition: all 0.5s ease;
+  box-shadow: 0 4px 8px 0 rgba(1,1,1,1);  /*Sidebar shadow*/
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
+#sidebar-wrapper:hover {
+  box-shadow: 0 8px 16px 0 rgba(1,1,1,1);  /*Sidebar shadow*/
+}
 #wrapper.toggled #sidebar-wrapper {
   width: 225px;
 }
@@ -52,7 +55,6 @@ body, wrapper {
   position: absolute;
   margin-right: -225px;
 }
-
 
 /* Sidebar Styles */
 
@@ -181,4 +183,24 @@ img.center {
   justify-content: center;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
+    transition: 0.3s;
+}
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+
+.card-body{
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.alert:hover{
+  border: 1px solid rgb(255, 255, 255);
+}

@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block script %}
+{{block.super}}
 <script>
 	function aparece(elem){
 		if(document.getElementById(elem).style.display== "none"){
