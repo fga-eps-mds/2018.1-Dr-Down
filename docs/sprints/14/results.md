@@ -30,23 +30,23 @@ __Histórias não entregues:__
 
 ## 3. Quadro de Conhecimento
 
-![Quadro de conhecimento da Sprint 13]()
+![Quadro de conhecimento da Sprint 14](https://uploaddeimagens.com.br/images/001/478/491/full/quadro_conhecimento_S14.png?1529719968)
 
 ## 5. Gráfico do Burndown
 
-![Gráfico do burndown da Sprint 13]()
+![Gráfico do burndown da Sprint 14](https://uploaddeimagens.com.br/images/001/478/487/full/burndown_S14.png?1529719817)
 
 ## 6. Velocity
 
-![Gráfico do velocity da Sprint 13]()
+![Gráfico do velocity da Sprint 14](https://uploaddeimagens.com.br/images/001/478/492/full/velocity_S14.png?1529720002)
 
 ## 7. Gráfico de Commits
 
-![Gráfico de commits da Sprint 13]()
+![Gráfico de commits da Sprint 14](https://uploaddeimagens.com.br/images/001/478/485/full/commits_S14.png?1529719767)
 
 ## 8. EVM
 
-![Gráfico da EVM da Sprint 13]()
+![Gráfico da EVM da Sprint 14](https://uploaddeimagens.com.br/images/001/478/489/full/evm_S14.png?1529719846)
 
 ## 9. Análise do Scrum Master
 
