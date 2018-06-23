@@ -23,7 +23,7 @@
             </div>
              {% if scheduled|length > 0 %}
                <div class="col-auto">
-                <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+                <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
                </div>
             {% endif %}
         </div>
@@ -51,7 +51,7 @@
             </div>
             {% if cancel|length > 0 %}
                <div class="col-auto">
-                <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+                <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
                </div>
             {% endif %}
         </div>
@@ -78,7 +78,7 @@
                   <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
                 </div>
                  <div class="col-auto">
-                  <span class="badge badge-pill badge-warning"><i class="fa fa-exclamation" style="color:red"></i></span>
+                  <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
                  </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
                 <h2 class="text-tertiary">{% trans "Events" %}</h2>
               </div>
                <div class="col-auto">
-                <span class="badge badge-pill badge-warning">{{events|length}}</span>
+                <span class="badge badge-pill badge-warning mt-3">{{events|length}}</span>
               </div>
           </div>
         </div>
@@ -118,7 +118,7 @@
         </div>
       </div>
     {% else %}
-      <div class="card">
+      <div class="card mb-5">
         <div class="card-header"><h2 class="text-tertiary">{% trans "Events" %}</h2></div>
         <div class="card-body">
           <p>{% trans "There are no events on the next 7 days" %}.</p>
@@ -134,7 +134,7 @@
                   <h2 class="text-tertiary">{% trans "Forum" %}</h2>
                 </div>
                  <div class="col-auto">
-                  <span class="badge badge-pill badge-warning">{{commentaries|length}}</span>
+                  <span class="badge badge-pill badge-warning mt-3">{{commentaries|length}}</span>
                 </div>
             </div>
         </div>
