@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-22 19:19+0000\n"
+"POT-Creation-Date: 2018-06-23 11:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -331,7 +331,7 @@ msgstr ""
 #: drdown/core/templates/core/base-nav.html:6
 #: drdown/core/templates/core/base-nav.html:48
 #: drdown/core/templates/core/base.html:6
-#: drdown/core/templates/core/home.html:20
+#: drdown/core/templates/core/home.html:21
 msgid "Dr. Down"
 msgstr "Dr. Down"
 
@@ -348,7 +348,7 @@ msgid "Down's Syndrome"
 msgstr "Síndrome de Down"
 
 #: drdown/core/templates/core/base-nav.html:62
-#: drdown/core/templates/core/base.html:200
+#: drdown/core/templates/core/base.html:228
 msgid "Forums"
 msgstr "Fórum"
 
@@ -361,7 +361,7 @@ msgid "Sign up"
 msgstr "Cadastrar"
 
 #: drdown/core/templates/core/base-nav.html:81
-#: drdown/core/templates/core/base.html:202
+#: drdown/core/templates/core/base.html:230
 #: drdown/core/templates/core/help_page.html:183
 msgid "Help"
 msgstr "Ajuda"
@@ -380,15 +380,15 @@ msgid "Phone: 3325-4219"
 msgstr "Telefone: 3325-4219"
 
 #: drdown/core/templates/core/base-nav.html:131
-#: drdown/core/templates/core/base.html:263
+#: drdown/core/templates/core/base.html:289
 #: drdown/core/templates/core/help_page.html:217
 msgid "Copyright &copy; Dr. Down 2018"
 msgstr "Copyright &copy; Dr. Down 2018"
 
-#: drdown/core/templates/core/base.html:79
-#: drdown/core/templates/core/base.html:85
-#: drdown/core/templates/core/base.html:91
-#: drdown/core/templates/core/base.html:97
+#: drdown/core/templates/core/base.html:107
+#: drdown/core/templates/core/base.html:113
+#: drdown/core/templates/core/base.html:119
+#: drdown/core/templates/core/base.html:125
 #: drdown/core/templates/core/help_employee.html:20
 #: drdown/core/templates/core/help_health_team.html:21
 #: drdown/core/templates/core/help_page.html:77
@@ -400,48 +400,50 @@ msgstr "Copyright &copy; Dr. Down 2018"
 msgid "Notifications"
 msgstr "Notificações"
 
-#: drdown/core/templates/core/base.html:102
+#: drdown/core/templates/core/base.html:130
 msgid "My Profile"
 msgstr "Meu Perfil"
 
-#: drdown/core/templates/core/base.html:108
-#: drdown/core/templates/core/base.html:123
+#: drdown/core/templates/core/base.html:136
+#: drdown/core/templates/core/base.html:151
 #: drdown/core/templates/core/help_employee.html:50
 #: drdown/core/templates/core/help_page.html:83
 #: drdown/core/templates/core/help_page.html:108
 #: drdown/core/templates/core/help_page.html:133
 #: drdown/core/templates/core/help_page.html:164
 #: drdown/core/templates/core/help_patient.html:51
+#: drdown/core/templates/core/home.html:38
 msgid "Appointments"
 msgstr "Consultas"
 
-#: drdown/core/templates/core/base.html:112
+#: drdown/core/templates/core/base.html:140
 msgid "Scheduled"
 msgstr "Marcado"
 
-#: drdown/core/templates/core/base.html:115
+#: drdown/core/templates/core/base.html:143
 msgid "Requested"
 msgstr "Pedidos"
 
-#: drdown/core/templates/core/base.html:126
+#: drdown/core/templates/core/base.html:154
 #: drdown/core/templates/core/help_health_team.html:41
 msgid "My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:132
+#: drdown/core/templates/core/base.html:160
 msgid "Medical History"
 msgstr "Histórico Médico"
 
-#: drdown/core/templates/core/base.html:136
+#: drdown/core/templates/core/base.html:164
 msgid "Medical Record"
 msgstr "Prontuário"
 
-#: drdown/core/templates/core/base.html:139
+#: drdown/core/templates/core/base.html:167
+#: drdown/core/templates/core/home.html:47
 msgid "Care Line"
 msgstr "Linha de Cuidado"
 
-#: drdown/core/templates/core/base.html:145
-#: drdown/core/templates/core/base.html:181
+#: drdown/core/templates/core/base.html:173
+#: drdown/core/templates/core/base.html:209
 #: drdown/core/templates/core/help_page.html:92
 #: drdown/core/templates/core/help_page.html:145
 #: drdown/core/templates/core/vaccine_schedule.html:28
@@ -451,21 +453,21 @@ msgstr "Linha de Cuidado"
 msgid "Vaccines"
 msgstr "Vacinas"
 
-#: drdown/core/templates/core/base.html:149
-#: drdown/core/templates/core/base.html:185
+#: drdown/core/templates/core/base.html:177
+#: drdown/core/templates/core/base.html:213
 msgid "Calendar"
 msgstr "Calendário"
 
-#: drdown/core/templates/core/base.html:152
-#: drdown/core/templates/core/base.html:188
+#: drdown/core/templates/core/base.html:180
+#: drdown/core/templates/core/base.html:216
 msgid "Health Centers"
 msgstr "Locais de vacinação"
 
-#: drdown/core/templates/core/base.html:162
+#: drdown/core/templates/core/base.html:190
 msgid " My Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:195
+#: drdown/core/templates/core/base.html:223
 #: drdown/core/templates/core/help_employee.html:71
 #: drdown/core/templates/core/help_page.html:111
 #: drdown/core/templates/core/help_page.html:136
@@ -474,7 +476,7 @@ msgstr "Meus Pacientes"
 msgid "Patients"
 msgstr "Meus Pacientes"
 
-#: drdown/core/templates/core/base.html:201
+#: drdown/core/templates/core/base.html:229
 #: drdown/core/templates/core/help_employee.html:149
 #: drdown/core/templates/core/help_health_team.html:126
 #: drdown/core/templates/core/help_page.html:98
@@ -483,23 +485,24 @@ msgstr "Meus Pacientes"
 #: drdown/core/templates/core/help_page.html:176
 #: drdown/core/templates/core/help_patient.html:157
 #: drdown/core/templates/core/help_responsible.html:163
+#: drdown/core/templates/core/home.html:83
 msgid "Events"
 msgstr "Eventos"
 
-#: drdown/core/templates/core/base.html:203
-#: drdown/core/templates/core/base.html:226
+#: drdown/core/templates/core/base.html:231
+#: drdown/core/templates/core/base.html:252
 msgid "Log out"
 msgstr "Sair"
 
-#: drdown/core/templates/core/base.html:230
+#: drdown/core/templates/core/base.html:256
 msgid "Are you sure you want to log out?"
 msgstr "Você tem certeza que deseja sair?"
 
-#: drdown/core/templates/core/base.html:233
+#: drdown/core/templates/core/base.html:259
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: drdown/core/templates/core/base.html:239
+#: drdown/core/templates/core/base.html:265
 msgid "Log Out"
 msgstr "Sair"
 
@@ -679,6 +682,7 @@ msgstr ""
 #: drdown/core/templates/core/help_page.html:170
 #: drdown/core/templates/core/help_patient.html:61
 #: drdown/core/templates/core/help_responsible.html:67
+#: drdown/core/templates/core/home.html:56
 msgid "Medical Records"
 msgstr "Prontuário"
 
@@ -720,8 +724,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"             Na aba \"evolução\", você pode o histórico"
-"médico completo do paciente e sua rotina no Cris Down.\n"
+"             Na aba \"evolução\", você pode o históricomédico completo do "
+"paciente e sua rotina no Cris Down.\n"
 "      "
 
 #: drdown/core/templates/core/help_employee.html:101
@@ -745,9 +749,9 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"        A aba \"prescrição\" mostra todos os medicamentos prescritos pelo"
-"time de saúde, e informações como: a dosagem e em quanto tempo o medicamento "
-"deve ser tomado.\n"
+"        A aba \"prescrição\" mostra todos os medicamentos prescritos "
+"pelotime de saúde, e informações como: a dosagem e em quanto tempo o "
+"medicamento deve ser tomado.\n"
 "      "
 
 #: drdown/core/templates/core/help_employee.html:113
@@ -769,9 +773,9 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"         A aba 'curva' mostra os dados sobre do paciente como: IMC "
-"altura, peso e perímetro cefálico. Com todos esse dados ele gera gráficos"
-"mostrando o estado de desenvolvimento do paciente.\n"
+"         A aba 'curva' mostra os dados sobre do paciente como: IMC altura, "
+"peso e perímetro cefálico. Com todos esse dados ele gera gráficosmostrando o "
+"estado de desenvolvimento do paciente.\n"
 "      "
 
 #: drdown/core/templates/core/help_employee.html:127
@@ -784,6 +788,7 @@ msgstr ""
 #: drdown/core/templates/core/help_patient.html:135
 #: drdown/core/templates/core/help_responsible.html:141
 #: drdown/core/templates/core/help_user.html:37
+#: drdown/core/templates/core/home.html:74
 msgid "Forum"
 msgstr "Fórum"
 
@@ -947,8 +952,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"             Na aba \"evolução\", a equipe de saúde pode documentar o"
-"histórico médico completo do paciente em sua rotina no Cris Down.\n"
+"             Na aba \"evolução\", a equipe de saúde pode documentar "
+"ohistórico médico completo do paciente em sua rotina no Cris Down.\n"
 "      "
 
 #: drdown/core/templates/core/help_health_team.html:72
@@ -959,8 +964,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"        Em \"exames\", a equipe de saúde pode adicionar todos os exames sobre "
-"o paciente e pode fazer observações sobre ele.\n"
+"        Em \"exames\", a equipe de saúde pode adicionar todos os exames "
+"sobre o paciente e pode fazer observações sobre ele.\n"
 "      "
 
 #: drdown/core/templates/core/help_health_team.html:78
@@ -994,8 +999,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"       Aqui a equipe de saúde pode adicionar os riscos sobre o paciente "
-"de todas as áreas medicas.\n"
+"       Aqui a equipe de saúde pode adicionar os riscos sobre o paciente de "
+"todas as áreas medicas.\n"
 "      "
 
 #: drdown/core/templates/core/help_health_team.html:97
@@ -1007,10 +1012,9 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"         NA aba 'curva', a equipe de saúde pode adicionar "
-" os dados sobre do paciente como: IMC "
-"altura, peso e perímetro cefálico. Com todos esse dados ele gera gráficos"
-"mostrando o estado de desenvolvimento do paciente.\n"
+"         NA aba 'curva', a equipe de saúde pode adicionar  os dados sobre do "
+"paciente como: IMC altura, peso e perímetro cefálico. Com todos esse dados "
+"ele gera gráficosmostrando o estado de desenvolvimento do paciente.\n"
 "      "
 
 #: drdown/core/templates/core/help_health_team.html:119
@@ -1142,8 +1146,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"             Na aba \"evolução\", você pode ver o"
-"seu histórico médico completo em sua rotina no Cris Down.\n"
+"             Na aba \"evolução\", você pode ver oseu histórico médico "
+"completo em sua rotina no Cris Down.\n"
 "      "
 
 #: drdown/core/templates/core/help_patient.html:82
@@ -1154,8 +1158,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"        Em \"exames\", você pode ver todos os seus exames"
-" e observações sobre você.\n"
+"        Em \"exames\", você pode ver todos os seus exames e observações "
+"sobre você.\n"
 "      "
 
 #: drdown/core/templates/core/help_patient.html:88
@@ -1167,9 +1171,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"        A abe \"prescrição\" mostra os médicamentos prescritos pela"
-"equipe de saúde e informações como: dosagem e quanto tempo deve toma-lo. "
-"\n"
+"        A abe \"prescrição\" mostra os médicamentos prescritos pelaequipe de "
+"saúde e informações como: dosagem e quanto tempo deve toma-lo. \n"
 "      "
 
 #: drdown/core/templates/core/help_patient.html:94
@@ -1191,10 +1194,9 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"         NA aba 'curva', contém "
-" os dados sobre o seu: IMC "
-"altura, peso e perímetro cefálico. Com todos esse dados ele gera gráficos"
-"mostrando o seu estado de desenvolvimento.\n"
+"         NA aba 'curva', contém  os dados sobre o seu: IMC altura, peso e "
+"perímetro cefálico. Com todos esse dados ele gera gráficosmostrando o seu "
+"estado de desenvolvimento.\n"
 "      "
 
 #: drdown/core/templates/core/help_patient.html:111
@@ -1215,7 +1217,7 @@ msgstr ""
 
 #: drdown/core/templates/core/help_patient.html:118
 #: drdown/core/templates/core/help_responsible.html:124
-#: drdown/core/templates/core/info.html:159
+#: drdown/core/templates/core/info.html:160
 #: drdown/core/templates/core/vaccine_schedule.html:5
 msgid "Vaccine Schedule"
 msgstr "Calendário de Vacinas"
@@ -1300,9 +1302,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"             Na aba \"evolução\", você pode ver o"
-" histórico médico completo sobre seu paciente relacionado "
- "em sua rotina no Cris Down.\n"
+"             Na aba \"evolução\", você pode ver o histórico médico completo "
+"sobre seu paciente relacionado em sua rotina no Cris Down.\n"
 "      "
 
 #: drdown/core/templates/core/help_responsible.html:88
@@ -1326,9 +1327,8 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"        A aba \"prescrição\" mostra os médicamentos prescritos pela"
-"equipe de saúde e informações como: dosagem e quanto tempo o paciente deve toma-lo. "
-"\n"
+"        A aba \"prescrição\" mostra os médicamentos prescritos pelaequipe de "
+"saúde e informações como: dosagem e quanto tempo o paciente deve toma-lo. \n"
 "      "
 
 #: drdown/core/templates/core/help_responsible.html:100
@@ -1454,19 +1454,84 @@ msgstr ""
 "categoria, clique sobre o título da categoria desejada.\n"
 "\t\t"
 
-#: drdown/core/templates/core/home.html:23
+#: drdown/core/templates/core/home.html:29
 msgid "CRIS DOWN"
 msgstr "CRIS DOWN"
 
-#: drdown/core/templates/core/home.html:24
-msgid "Medical Appointment - Events - Foruns - Information"
-msgstr "Consultas - Eventos - Fórum - Informações"
+#: drdown/core/templates/core/home.html:30
+msgid ""
+"Medical management plataform made for patients, responsibles, health team "
+"and employees."
+msgstr ""
+"Plataforma de gerenciamento médico para equipe de saúde, pacientes, "
+"responsáveis e funcionários"
 
-#: drdown/core/templates/core/home.html:32
+#: drdown/core/templates/core/home.html:40
+msgid ""
+"Our website makes possible to request, schedule, check status and manage "
+"appointments, avoiding going to the hospital to solve things related to "
+"appointments."
+msgstr ""
+"Através do nosso website, solicite, marque, gerencie e cheque o status de "
+"consultas, evitando a necessidade de deslocamento até o hospital para tratar "
+"destes assuntos."
+
+#: drdown/core/templates/core/home.html:49
+msgid ""
+"A individual checklist is available to follow up patient's procedures "
+"required by doctors according to age. Either patient, responsible or doctor "
+"can update the data."
+msgstr ""
+"Uma checklist individual está disponível para acompanhar os procedimentos "
+"que são pedidos pelos médicos de acordo com a idade do paciente. Tanto o "
+"paciente, como o seu responsável e o médico podem atualizar os dados."
+
+#: drdown/core/templates/core/home.html:58
+msgid ""
+"Access all data from medical records. Check exam results, medicine "
+"prescriptions, patient's risks and overall health information posted by the "
+"health team."
+msgstr ""
+"Acesse todos os dados do prontuário. Confira os resultados de exames, "
+"receituários, riscos do paciente e dados relacionados à saúde do paciente em "
+"geral."
+
+#: drdown/core/templates/core/home.html:65
+msgid "Curves"
+msgstr "Curvas"
+
+#: drdown/core/templates/core/home.html:67
+msgid ""
+"Evaluate patient's growth through years with graphics of weight, height, bmi "
+"and cephalic perimeter based on ideal growth curves."
+msgstr ""
+"Avalie o crescimento do paciente durante o decorrer dos anos por meio de "
+"gráficos de peso, altura, IMC e perímetro cefálico baseados em curvas "
+"estatisticamente normais de crescimento."
+
+#: drdown/core/templates/core/home.html:76
+msgid ""
+"If you have any doubts to clarify, suggestions to make or important info to "
+"share a forum is the perfect place to do it."
+msgstr ""
+"Se você tem dúvidas para esclarecer, sugestões para serem feitas ou "
+"informações importantes para compartilhar, o fórum é o lugar perfeito para "
+"fazer tudo isso."
+
+#: drdown/core/templates/core/home.html:85
+msgid ""
+"All the information you need to follow up CRIS DOWN's events so you won't "
+"miss the important occasions. Access date, cost and address."
+msgstr ""
+"Todas as informações que você precisa para estar em dia com os eventos do "
+"CRIS DOWN e não perder nenhuma ocasião importante. Se informe sobre datas, "
+"preços e endereços."
+
+#: drdown/core/templates/core/home.html:96
 msgid "About"
 msgstr "Sobre"
 
-#: drdown/core/templates/core/home.html:36
+#: drdown/core/templates/core/home.html:100
 msgid ""
 "Dr. Down is a management tool for CRIS DOWN (Centro de Referência em "
 "Síndrome de Down) that makes possible to schedule medical appointments, to "
@@ -1476,7 +1541,7 @@ msgstr ""
 "Referência em Síndrome de Down) que possibilita agendar consultas, comunicar-"
 "se com o médico e visualizar informações."
 
-#: drdown/core/templates/core/home.html:39
+#: drdown/core/templates/core/home.html:103
 msgid ""
 "CRIS DOWN was opened at Asa Norte, Brasília - DF, in April 2013. It is a "
 "place especialized in caring and accompaniment of patients with Down's "
@@ -1486,54 +1551,54 @@ msgstr ""
 "lugar especializado no cuidado e acompanhamento de pacientes portadores de "
 "Síndrome de Down."
 
-#: drdown/core/templates/core/home.html:48
+#: drdown/core/templates/core/home.html:112
 msgid "CRIS Down "
 msgstr "CRIS DOWN"
 
-#: drdown/core/templates/core/info.html:23
+#: drdown/core/templates/core/info.html:24
 msgid "Down's Syndrome infos"
 msgstr "Informações sobre a Síndrome de Down"
 
-#: drdown/core/templates/core/info.html:41
+#: drdown/core/templates/core/info.html:42
 msgid "Summary"
 msgstr "Índice"
 
-#: drdown/core/templates/core/info.html:45
+#: drdown/core/templates/core/info.html:46
 msgid "About Down's syndrome"
 msgstr "Sobre a Síndrome de Down"
 
-#: drdown/core/templates/core/info.html:46
+#: drdown/core/templates/core/info.html:47
 msgid "Frequently Asked Questions (FAQ)"
 msgstr "Dúvidas Frequentes"
 
-#: drdown/core/templates/core/info.html:47
-#: drdown/core/templates/core/info.html:111
+#: drdown/core/templates/core/info.html:48
+#: drdown/core/templates/core/info.html:112
 msgid "What can be done to prevent Down's Syndrome?"
 msgstr "Como prevenir a Síndrome de Down?"
 
-#: drdown/core/templates/core/info.html:50
-#: drdown/core/templates/core/info.html:120
+#: drdown/core/templates/core/info.html:51
+#: drdown/core/templates/core/info.html:121
 msgid "Is Down Syndrome a Disease? Can I catch it during my life?"
 msgstr ""
 "A Síndrome de Down é uma doença? Eu posso pegar/desenvolver ela durante "
 "minha vida?"
 
-#: drdown/core/templates/core/info.html:51
-#: drdown/core/templates/core/info.html:130
+#: drdown/core/templates/core/info.html:52
+#: drdown/core/templates/core/info.html:131
 msgid "How can I identify Down Syndrome?"
 msgstr "Como posso identificar a Síndrome de Down?"
 
-#: drdown/core/templates/core/info.html:52
-#: drdown/core/templates/core/info.html:140
+#: drdown/core/templates/core/info.html:53
+#: drdown/core/templates/core/info.html:141
 msgid "How far does the autonomy of a child with Down syndrome develop?"
 msgstr ""
 "Até onde se desenvolve a autonomia de uma criança com Síndrome de Down?"
 
-#: drdown/core/templates/core/info.html:62
+#: drdown/core/templates/core/info.html:63
 msgid "About Down's Syndrome"
 msgstr "Sobre a Síndrome de Down"
 
-#: drdown/core/templates/core/info.html:67
+#: drdown/core/templates/core/info.html:68
 msgid ""
 "Down syndrome is a genetic condition caused by a mutation. Its characterized "
 "by the presence of an extra chromosome in all or most of a person's cells."
@@ -1542,8 +1607,8 @@ msgstr ""
 "caracterizada pela presença de um cromossomo extra em todas ou em grande "
 "parte das células de uma pessoa."
 
-#: drdown/core/templates/core/info.html:70
-#: drdown/core/templates/core/info.html:73
+#: drdown/core/templates/core/info.html:71
+#: drdown/core/templates/core/info.html:74
 msgid ""
 "A person with Down syndrome is able to live healthily and integrate with "
 "society. But the accompaniment of health professionals is of paramount "
@@ -1555,7 +1620,7 @@ msgstr ""
 "profissionais da área de saúde é de suma importância para auxiliar essa "
 "pessoa a alcançar todo seu potencial e a viver com qualidade."
 
-#: drdown/core/templates/core/info.html:76
+#: drdown/core/templates/core/info.html:77
 msgid ""
 "Some health risks arise in a way related to the presence of the syndrome. "
 "One of them is the increased risk of heart problems, especially during the "
@@ -1567,7 +1632,7 @@ msgstr ""
 "os primeiros anos de vida, o que faz com que vários portadores de Síndrome "
 "de Down passem pela necessidade de realizar cirurgias ainda jovens."
 
-#: drdown/core/templates/core/info.html:81
+#: drdown/core/templates/core/info.html:82
 msgid ""
 "People with Down Syndrome have several characteristics that are generated by "
 "their genetic mutation, but there is a common point in all of them: an "
@@ -1580,7 +1645,7 @@ msgstr ""
 "Síndrome de Down de ter sucesso em sua vida profissional, acadêmica e "
 "pessoal."
 
-#: drdown/core/templates/core/info.html:84
+#: drdown/core/templates/core/info.html:85
 msgid ""
 "A person with Down Syndrome is a capable human being who can work in many "
 "areas, ranging from the performing arts, or a career in the field of "
@@ -1592,7 +1657,7 @@ msgstr ""
 "Síndrome de Down de ter sucesso em sua vida profissional, acadêmica e "
 "pessoal."
 
-#: drdown/core/templates/core/info.html:87
+#: drdown/core/templates/core/info.html:88
 msgid ""
 "The lack of information about the syndrome and the people affected by it is "
 "the main cause of the segregation to which these people can be subjected. "
@@ -1606,11 +1671,11 @@ msgstr ""
 "sociedade e, principalmente, dos familiares sobre  os cuidados e deveres "
 "daqueles que os cercam. "
 
-#: drdown/core/templates/core/info.html:101
+#: drdown/core/templates/core/info.html:102
 msgid "Frequently Asked Questions"
 msgstr "Dúvidas Frequentes"
 
-#: drdown/core/templates/core/info.html:114
+#: drdown/core/templates/core/info.html:115
 msgid ""
 "Even though the chance of Down's syndrome increases according to the age "
 "range of the child's parents, Down's syndrome is not caused by the parents, "
@@ -1624,7 +1689,7 @@ msgstr ""
 "Essa síndrome afeta pessoas de todas as raças, níveis de estudo, classes "
 "sociais e outros."
 
-#: drdown/core/templates/core/info.html:123
+#: drdown/core/templates/core/info.html:124
 msgid ""
 "Down Syndrome is not a disease, just a condition that affects the life of an "
 "individual since birth and requires greater attention and care from the "
@@ -1634,7 +1699,7 @@ msgstr ""
 "um indivíduo desde o seu nascimento, o que exige uma maior atenção e cuidado "
 "por parte dos pais e familiares."
 
-#: drdown/core/templates/core/info.html:133
+#: drdown/core/templates/core/info.html:134
 msgid ""
 "Down Syndrome can be detected during pregnancy. You should see a doctor for "
 "the diagnosis."
@@ -1642,7 +1707,7 @@ msgstr ""
 "A Síndrome de Down pode ser detectada durante a gestação. Deve-se procurar "
 "um médico para que o diagnóstico seja feito."
 
-#: drdown/core/templates/core/info.html:143
+#: drdown/core/templates/core/info.html:144
 msgid ""
 "There is no fixed limit that represents a developmental apex of a child with "
 "Down Syndrome. It is common for medical monitoring and the help of family "
@@ -1653,7 +1718,7 @@ msgstr ""
 "a ajuda dos familiares ou responsáveis facilitem o desenvolvimento da "
 "criança."
 
-#: drdown/core/templates/core/info.html:154
+#: drdown/core/templates/core/info.html:155
 msgid "Further reading"
 msgstr "Leituras complementares"
 
@@ -1667,35 +1732,9 @@ msgstr "Anterior"
 msgid "Next"
 msgstr "Próximo"
 
-#: drdown/core/templates/core/vaccination_locations.html:26
+#: drdown/core/templates/core/vaccination_locations.html:27
 msgid "Vaccination Locations"
 msgstr "Locais de Vacinação"
-
-#: drdown/core/templates/core/vaccination_locations.html:35
-#: drdown/core/templates/core/vaccination_locations.html:83
-#: drdown/core/templates/core/vaccination_locations.html:116
-#: drdown/core/templates/core/vaccination_locations.html:136
-#: drdown/core/templates/core/vaccination_locations.html:156
-#: drdown/core/templates/core/vaccination_locations.html:224
-#: drdown/core/templates/core/vaccination_locations.html:244
-#: drdown/core/templates/core/vaccination_locations.html:264
-#: drdown/core/templates/core/vaccination_locations.html:296
-#: drdown/core/templates/core/vaccination_locations.html:336
-#: drdown/core/templates/core/vaccination_locations.html:368
-#: drdown/core/templates/core/vaccination_locations.html:392
-#: drdown/core/templates/core/vaccination_locations.html:416
-#: drdown/core/templates/core/vaccination_locations.html:440
-#: drdown/core/templates/core/vaccination_locations.html:460
-#: drdown/core/templates/core/vaccination_locations.html:484
-#: drdown/core/templates/core/vaccination_locations.html:564
-#: drdown/core/templates/core/vaccination_locations.html:588
-#: drdown/core/templates/core/vaccination_locations.html:608
-#: drdown/core/templates/core/vaccination_locations.html:632
-#: drdown/core/templates/core/vaccination_locations.html:664
-#: drdown/core/templates/core/vaccination_locations.html:688
-#: drdown/core/templates/core/vaccination_locations.html:740
-msgid "Local"
-msgstr "Local"
 
 #: drdown/core/templates/core/vaccination_locations.html:36
 #: drdown/core/templates/core/vaccination_locations.html:84
@@ -1720,6 +1759,32 @@ msgstr "Local"
 #: drdown/core/templates/core/vaccination_locations.html:665
 #: drdown/core/templates/core/vaccination_locations.html:689
 #: drdown/core/templates/core/vaccination_locations.html:741
+msgid "Local"
+msgstr "Local"
+
+#: drdown/core/templates/core/vaccination_locations.html:37
+#: drdown/core/templates/core/vaccination_locations.html:85
+#: drdown/core/templates/core/vaccination_locations.html:118
+#: drdown/core/templates/core/vaccination_locations.html:138
+#: drdown/core/templates/core/vaccination_locations.html:158
+#: drdown/core/templates/core/vaccination_locations.html:226
+#: drdown/core/templates/core/vaccination_locations.html:246
+#: drdown/core/templates/core/vaccination_locations.html:266
+#: drdown/core/templates/core/vaccination_locations.html:298
+#: drdown/core/templates/core/vaccination_locations.html:338
+#: drdown/core/templates/core/vaccination_locations.html:370
+#: drdown/core/templates/core/vaccination_locations.html:394
+#: drdown/core/templates/core/vaccination_locations.html:418
+#: drdown/core/templates/core/vaccination_locations.html:442
+#: drdown/core/templates/core/vaccination_locations.html:462
+#: drdown/core/templates/core/vaccination_locations.html:486
+#: drdown/core/templates/core/vaccination_locations.html:566
+#: drdown/core/templates/core/vaccination_locations.html:590
+#: drdown/core/templates/core/vaccination_locations.html:610
+#: drdown/core/templates/core/vaccination_locations.html:634
+#: drdown/core/templates/core/vaccination_locations.html:666
+#: drdown/core/templates/core/vaccination_locations.html:690
+#: drdown/core/templates/core/vaccination_locations.html:742
 msgid "Phone"
 msgstr "Telefone"
 
@@ -2149,6 +2214,9 @@ msgstr ""
 #~ "de sua vida.Alguns procedimentos são obrigatórios, outros apenas em casos "
 #~ "específicos.\n"
 #~ "\t\t"
+
+#~ msgid "Medical Appointment - Events - Foruns - Information"
+#~ msgstr "Consultas - Eventos - Fórum - Informações"
 
 #~ msgid "My Schedule"
 #~ msgstr "Minha Agenda"

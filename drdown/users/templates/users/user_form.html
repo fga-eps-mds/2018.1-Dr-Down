@@ -6,6 +6,7 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block script %}
+{{block.super}}
   <script type="text/javascript">
     function fMasc(objeto,mascara) {
       obj=objeto

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-19 18:34+0000\n"
+"POT-Creation-Date: 2018-06-23 11:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,43 +37,39 @@ msgstr "Usuário"
 msgid "Please, enter a valid CPF in the following format: XXX.XXX.XXX-XX"
 msgstr "Por favor, insira um CPF no seguinte formato: XXX.XXX.XXX-XX"
 
-#: drdown/users/models/model_employee.py:44
+#: drdown/users/models/model_employee.py:43
 msgid "Secretary"
 msgstr "Secretário"
 
-#: drdown/users/models/model_employee.py:45
+#: drdown/users/models/model_employee.py:44
 msgid "Administration"
 msgstr "Administração"
 
-#: drdown/users/models/model_employee.py:46
-msgid "Nursery"
-msgstr "Nutrição"
-
-#: drdown/users/models/model_employee.py:47
+#: drdown/users/models/model_employee.py:45
 msgid "Other"
 msgstr "Outros"
 
-#: drdown/users/models/model_employee.py:51
+#: drdown/users/models/model_employee.py:49
 msgid "Departament"
 msgstr "Departamento"
 
-#: drdown/users/models/model_employee.py:54
+#: drdown/users/models/model_employee.py:52
 msgid "The departament where this user works."
 msgstr "O departamento no qual o usuário trabalha"
 
-#: drdown/users/models/model_employee.py:74
+#: drdown/users/models/model_employee.py:72
 #: drdown/users/models/model_health_team.py:198
 #: drdown/users/models/model_patient.py:163
 #: drdown/users/models/model_responsible.py:47
 msgid "Don't change users"
 msgstr "Não alterar usuário"
 
-#: drdown/users/models/model_employee.py:123
+#: drdown/users/models/model_employee.py:121
 #: drdown/users/templates/users/user_detail.html:42
 msgid "Employee"
 msgstr "Funcionário"
 
-#: drdown/users/models/model_employee.py:124
+#: drdown/users/models/model_employee.py:122
 msgid "Employees"
 msgstr "Funcionários"
 
@@ -264,39 +260,39 @@ msgid "Photo of user."
 msgstr "Foto do usuário."
 
 #: drdown/users/models/model_user.py:19
-#: drdown/users/templates/users/user_form.html:123
+#: drdown/users/templates/users/user_form.html:124
 msgid "Photo"
 msgstr "Foto"
 
 #: drdown/users/models/model_user.py:26
-#: drdown/users/templates/users/user_form.html:47
+#: drdown/users/templates/users/user_form.html:48
 msgid "Name"
 msgstr "Nome"
 
 #: drdown/users/models/model_user.py:29
-#: drdown/users/templates/users/user_form.html:55
+#: drdown/users/templates/users/user_form.html:56
 msgid "Full user name"
 msgstr "Nome do usuário"
 
 #: drdown/users/models/model_user.py:34
-#: drdown/users/templates/users/user_form.html:62
+#: drdown/users/templates/users/user_form.html:63
 msgid "Gender"
 msgstr "Gênero"
 
 #: drdown/users/models/model_user.py:36
-#: drdown/users/templates/users/user_form.html:73
-#: drdown/users/templates/users/user_form.html:78
+#: drdown/users/templates/users/user_form.html:76
+#: drdown/users/templates/users/user_form.html:79
 msgid "Male"
 msgstr "Masculino"
 
 #: drdown/users/models/model_user.py:37
-#: drdown/users/templates/users/user_form.html:75
-#: drdown/users/templates/users/user_form.html:77
+#: drdown/users/templates/users/user_form.html:74
+#: drdown/users/templates/users/user_form.html:78
 msgid "Female"
 msgstr "Feminino"
 
 #: drdown/users/models/model_user.py:45
-#: drdown/users/templates/users/user_form.html:86
+#: drdown/users/templates/users/user_form.html:87
 msgid "Telephone"
 msgstr "Telefone"
 
@@ -305,7 +301,7 @@ msgid "(xx)xxxxx-xxxx or (xx)xxxx-xxxx"
 msgstr "(xx)xxxxx-xxxx ou (xx)xxxx-xxxx"
 
 #: drdown/users/models/model_user.py:55
-#: drdown/users/templates/users/user_form.html:105
+#: drdown/users/templates/users/user_form.html:106
 msgid "Birthday"
 msgstr "Data de aniversário"
 
@@ -385,11 +381,13 @@ msgid "Are you sure you want to delete "
 msgstr "Você tem certeza que deseja excluir "
 
 #: drdown/users/templates/users/user_confirm_delete.html:13
-msgid "All the data about yourself will be erased and this action can't be undone."
-msgstr "Todos os dados sobre você serão apagados e esta ação não pode ser desfeita."
+msgid ""
+"All the data about yourself will be erased and this action can't be undone."
+msgstr ""
+"Todos os dados sobre você serão apagados e esta ação não pode ser desfeita."
 
 #: drdown/users/templates/users/user_confirm_delete.html:17
-#: drdown/users/templates/users/user_form.html:138
+#: drdown/users/templates/users/user_form.html:139
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -488,11 +486,11 @@ msgstr "Estado do Registro: "
 msgid "Speciality: "
 msgstr "Especialidade: "
 
-#: drdown/users/templates/users/user_form.html:127
+#: drdown/users/templates/users/user_form.html:128
 msgid "Photo of user"
 msgstr "Foto do usuário"
 
-#: drdown/users/templates/users/user_form.html:133
+#: drdown/users/templates/users/user_form.html:134
 msgid "Update"
 msgstr "Atualizar"
 
@@ -537,6 +535,9 @@ msgstr "Telefone inválido"
 #: drdown/users/utils/validators.py:213
 msgid "Wrong CRM format"
 msgstr "CRM inválido"
+
+#~ msgid "Nursery"
+#~ msgstr "Nutrição"
 
 #~ msgid "Not urgent"
 #~ msgstr "Não urgente"
