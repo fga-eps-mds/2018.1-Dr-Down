@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-21 20:16+0000\n"
+"POT-Creation-Date: 2018-06-23 11:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,31 +98,31 @@ msgstr "A queixa não pode ser no futuro!"
 
 #: drdown/medicalrecords/models/model_curves.py:15
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:30
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:174
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:176
 #: drdown/medicalrecords/views/view_curves.py:79
 msgid "Weight"
 msgstr "Peso"
 
 #: drdown/medicalrecords/models/model_curves.py:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:187
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:189
 msgid "Weight in kg"
 msgstr "Peso em kg"
 
 #: drdown/medicalrecords/models/model_curves.py:19
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:31
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:144
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:146
 #: drdown/medicalrecords/views/view_curves.py:80
 msgid "Height"
 msgstr "Altura"
 
 #: drdown/medicalrecords/models/model_curves.py:20
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:157
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:159
 msgid "Height in cm"
 msgstr "Altura em cm"
 
 #: drdown/medicalrecords/models/model_curves.py:24
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:32
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:204
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:206
 #: drdown/medicalrecords/views/view_curves.py:81
 msgid "Cephalic Perimeter"
 msgstr "Perímetro Cefálico"
@@ -139,12 +139,12 @@ msgstr "IMC"
 
 #: drdown/medicalrecords/models/model_curves.py:32
 #: drdown/medicalrecords/templates/medicalrecords/curves.html:29
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:111
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:113
 msgid "Age"
 msgstr "Idade"
 
 #: drdown/medicalrecords/models/model_curves.py:33
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:127
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:129
 msgid "Age in months"
 msgstr "Idade em meses"
 
@@ -166,74 +166,92 @@ msgid "Day the exam was performed"
 msgstr "Dia em que o exame foi realizado"
 
 #: drdown/medicalrecords/models/model_exams.py:28
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:75
 msgid "Select a category..."
 msgstr "Selecione uma categoria..."
 
 #: drdown/medicalrecords/models/model_exams.py:29
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:76
 msgid "Others"
 msgstr "Outros"
 
 #: drdown/medicalrecords/models/model_exams.py:30
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:77
 msgid "Structured Physical Exam"
 msgstr "Exame Físico Estruturado"
 
 #: drdown/medicalrecords/models/model_exams.py:31
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:78
 msgid "Vision Exam"
 msgstr "Exame de vista"
 
 #: drdown/medicalrecords/models/model_exams.py:32
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:79
 msgid "Ear Exam"
 msgstr "Exame de audição"
 
 #: drdown/medicalrecords/models/model_exams.py:33
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:80
 msgid "Hearth Exam"
 msgstr "Exame do coração"
 
 #: drdown/medicalrecords/models/model_exams.py:34
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:81
 msgid "Muscle skeletal system Exam"
 msgstr "Sistema músculo esquelético"
 
 #: drdown/medicalrecords/models/model_exams.py:35
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:82
 msgid "Nervous system Exam"
 msgstr "Exame do sistema nervoso"
 
 #: drdown/medicalrecords/models/model_exams.py:36
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:83
 msgid "Blood Exam"
 msgstr "Exame de Sangue"
 
 #: drdown/medicalrecords/models/model_exams.py:37
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:84
 msgid "Bone Densitometry"
 msgstr "Densitometria óssea"
 
 #: drdown/medicalrecords/models/model_exams.py:38
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:85
 msgid "Biopsy"
 msgstr "Biópsia"
 
 #: drdown/medicalrecords/models/model_exams.py:39
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:86
 msgid "Endoscopy"
 msgstr "Endoscopia"
 
 #: drdown/medicalrecords/models/model_exams.py:40
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:87
 msgid "Echocardiogram"
 msgstr "Ecocardiograma"
 
 #: drdown/medicalrecords/models/model_exams.py:41
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:88
 msgid "Map and Holter"
 msgstr "Mapa e Holter"
 
 #: drdown/medicalrecords/models/model_exams.py:42
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:89
 msgid "Bioimpedance"
 msgstr "Bioimpedância"
 
 #: drdown/medicalrecords/models/model_exams.py:43
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:90
 msgid "Neurological examinations"
 msgstr "Exames neurológicos"
 
 #: drdown/medicalrecords/models/model_exams.py:44
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:91
 msgid "Urine Analysis"
 msgstr "Exame de Urina"
 
 #: drdown/medicalrecords/models/model_exams.py:45
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:92
 msgid "Stool Examination"
 msgstr "Exame de Fezes"
 
@@ -262,7 +280,7 @@ msgid "Patient Care Day"
 msgstr "Dia de criação do prontuário"
 
 #: drdown/medicalrecords/models/model_medical_record.py:26
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:34
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:35
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_pdf.html:115
 msgid "Message"
 msgstr "Mensagem"
@@ -531,7 +549,7 @@ msgstr "Não há exames registrados para este paciente."
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:4
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:4
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:4
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:22
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:23
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:4
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:4
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:4
@@ -544,9 +562,9 @@ msgstr "Adicionar nova queixa"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:46
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_confirm_delete.html:16
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:223
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:53
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:50
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:225
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:117
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:150
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:48
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:52
@@ -555,9 +573,9 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_complaint_form.html:47
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:224
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:54
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:51
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:226
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_exam_form.html:118
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:52
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_medicine_form.html:151
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_specific_exams_form.html:49
 #: drdown/medicalrecords/templates/medicalrecords/medicalrecord_static_data_form.html:53
@@ -573,23 +591,23 @@ msgstr "Apagar"
 msgid "Are you sure you want to delete this medical record?"
 msgstr "Você tem certeza que deseja apagar este prontuário?"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:90
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:92
 msgid "Growth Data"
 msgstr "Dados de Crescimento"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:125
 msgid "Equivalent to: "
 msgstr "Equivalente a:"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:125
 msgid "year(s) and"
 msgstr "ano(s) e"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:123
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:125
 msgid "month(s)"
 msgstr "mes(es)"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:218
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_curves_form.html:220
 msgid ""
 "Perimeter in cm. If the age is greater than 23 months, the head "
 "circumference is disregarded"
@@ -601,7 +619,7 @@ msgstr ""
 msgid "Add Exam"
 msgstr "Adicionar Exame"
 
-#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:45
+#: drdown/medicalrecords/templates/medicalrecords/medicalrecord_form.html:46
 msgid "Attachments"
 msgstr "Anexos"
 

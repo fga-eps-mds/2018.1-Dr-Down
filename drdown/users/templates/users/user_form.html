@@ -64,17 +64,17 @@
       </label>
       <div class="">
         <select name="gender" class="select form-control" required="" id="id_gender">
-        {% if object.gender %}
-          <option value="{{object.gender}}">{{ object.gender }}</option>
+        {% if object.get_gender_display %}
+          <option value="{{object.gender}}">{{ object.get_gender_display }}</option>
         {% else %}
           <option value="" selected="">---------</option>
         {% endif %}
 
-        {% if object.gender != 'Male' and object.gender %}
-          <option value="Male">{% trans 'Male' %}</option>
-        {% elif object.gender != 'Female' and object.gender %}
+        {% if object.gender  == "Male" %}
           <option value="Female">{% trans 'Female' %}</option>
-        {% else %}
+        {% elif object.gender == "Female" %}
+          <option value="Male">{% trans 'Male' %}</option>
+        {%else%}
           <option value="Female">{% trans 'Female' %}</option>
           <option value="Male">{% trans 'Male' %}</option>
         {% endif %}

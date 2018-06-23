@@ -20,7 +20,7 @@
 
 	<div id="notifications">
 		<h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" id="patient_first">{% trans 'Notifications' %}</h1>
-		<img src="{% static 'core/images/Employee/Notificacoes.png' %}" width="100%" class="float-right border border-secondary mb-4">
+		<img src="{% static 'core/images/Responsible/perfil_resp.png' %}" width="100%" class="float-right border border-secondary mb-4">
 		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 			{% blocktrans %}
 	      Nas próximas vezes que fizer o login, explicado <a href="#first_login" class="text-blue scroll">aqui</a>, você verá a <i>Página de Notificações</i>. Essa página te avisará quando houver novos <a href="#events" class="text-blue scroll">eventos</a>, novos pedidos de <a href="#appointments" class="text-blue scroll">consultas</a> respondidos para todos os pacientes dos quais você é responsável e os novos comentários de seus posts contidos no <a href="#forum" class="text-blue scroll">fórum</a>.
@@ -76,14 +76,46 @@
 	      You can also go to the Care Line or print / save your medical records in PDF.
 			{% endblocktrans %}
 		</p>
-	</div>
+
+    <img src="{% static 'core/images/Patient/p_evolucao.png' %}" width="100%" class="float-right border border-secondary mb-4">
+      <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+             In the "evolution" tab, you can see the entire medical history about your related patient routine in Cris Down.
+      {% endblocktrans %}
+		</p>
+    <img src="{% static 'core/images/Patient/p_exame.png' %}" width="100%" class="float-right border border-secondary mb-4">
+     <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+          In "exams" you can see all your related patient exams and see observations about him/her.
+      {% endblocktrans %}
+		</p>
+    <img src="{% static 'core/images/Patient/p_remedio.png' %}" width="100%" class="float-right border border-secondary mb-4">
+      <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+        The "prescription" tab shows the medicines prescribed by a health team member, and information like: the dosage and how often it must be taken.
+      {% endblocktrans %}
+		</p>
+    <img src="{% static 'core/images/Patient/p_queixas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+          In this tab show the complaints made by your related patient.
+      {% endblocktrans %}
+		</p>
+    <img src="{% static 'core/images/Patient/p_curvas.png' %}" width="100%" class="float-right border border-secondary mb-4">
+    <img src="{% static 'core/images/Patient/p_curva2.png' %}" width="100%" class="float-right border border-secondary mb-4">
+	  <p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
+			{% blocktrans %}
+         The curves tab shows data about your related patient like: BMI, height, weight and encephalic perimeter. With all this data some charts are generated that show your related patient's developmental state.
+      {% endblocktrans %}
+		</p>
+  </div>
 
 	<div id="checklist">
 	  <h1 class="pl-3 border-bottom border-top lead mb-4 pt-4 pb-1" style="font-size: 25px;" style="font-size: 30px;" id="patient_checklist">{% trans 'Checklist' %}</h1>
 		<img src="{% static 'core/images/Responsible/checklist.png' %}" width="100%" class="float-right border border-secondary mb-4">
 		<p class="lead mt-3" style="max-width: 100%; font-size: 18px;">
 			{% blocktrans %}
-				Para visualizar ou editar o checklist de um paciente sob sua responsabilidade, basta clicar no botão "Checklist" no canto superior direito da página do prontuário desse paciente.
+				To view or edit the checklist of a related patient, you just need to click the "Checklist" button on the top right corner of his "Medical Records" page.
 			{% endblocktrans %}
 		</p>
 	</div>

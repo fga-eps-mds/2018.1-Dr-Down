@@ -56,6 +56,14 @@
       </div>
     </div>
   </div>
+
+  {% if not user.is_authenticated %}
+    <div class="ml-3 row">
+      <div class=" col-9 alert alert-dark mt-3 mb-5" role="alert">
+        {% trans 'Only logged people can message in a post.'%}
+      </div>
+    {% endif %}
+    </div>
   <div class="container">
     {% for commentary in commentary_list %}
       <!-- Single Comment -->

@@ -4,9 +4,14 @@
 
 {% block content %}
 <div class="container">
+
+  <div class="alert alert-dark mb-3" role="alert">
+    {% trans 'Only the administrator of page can create new categories.'%}
+  </div>
+
   <div class="row">
     <div class="col">
-      <h2 class="text-tertiary">{% trans "Categories" %}</h2>
+      <h2 class="text-tertiary mb-3">{% trans "Categories" %}</h2>
     </div>
   </div>
 

@@ -114,9 +114,6 @@
                   <a class="nav-link txt-white scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link txt-white scroll" href="#vaccine"><h3 class="lead" style="font-size: 17px;">{% trans 'Vaccines' %}</h3></a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link txt-white scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
                 </li>
                 <li class="nav-item">
@@ -173,9 +170,6 @@
                   <a class="nav-link txt-white scroll" href="#medical_records"><h3 class="lead" style="font-size: 17px;">{% trans 'Medical Records' %}</h3></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link txt-white scroll" href="#checklist"><h3 class="lead" style="font-size: 17px;">{% trans 'CheckList' %}</h3></a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link txt-white scroll" href="#forum"><h3 class="lead" style="font-size: 17px;">{% trans 'Forum' %}</h3></a>
                 </li>
                 <li class="nav-item">
@@ -186,7 +180,7 @@
           </div>
         </div>
         <div class="col mt-3">
-          <h1 class="text-center mb-3" style="font-size: 30px">{% trans 'Help' %}</h1>          
+          <h1 class="text-center mb-3" style="font-size: 30px">{% trans 'Help' %}</h1>
           <!-- Informações que qualquer usuário pode ver -->
           {% if not user.is_authenticated  %}
             <div id="help_user">

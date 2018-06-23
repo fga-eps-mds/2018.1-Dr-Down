@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-21 20:16+0000\n"
+"POT-Creation-Date: 2018-06-23 11:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Categoria"
 
 #: drdown/forum/models/model_category.py:28
 #: drdown/forum/templates/forum/category_list.html:3
-#: drdown/forum/templates/forum/category_list.html:9
+#: drdown/forum/templates/forum/category_list.html:14
 #: drdown/forum/templates/forum/commentary_list.html:18
 #: drdown/forum/templates/forum/post_list.html:10
 msgid "Categories"
@@ -127,7 +127,11 @@ msgstr "Mensagem do post"
 msgid "Posts"
 msgstr "Posts"
 
-#: drdown/forum/templates/forum/category_list.html:20
+#: drdown/forum/templates/forum/category_list.html:9
+msgid "Only the administrator of page can create new categories."
+msgstr "Apenas o administrador da página pode criar novas categorias."
+
+#: drdown/forum/templates/forum/category_list.html:25
 msgid "There are no categories."
 msgstr "Não há categorias"
 
@@ -135,23 +139,23 @@ msgstr "Não há categorias"
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:16
 #: drdown/forum/templates/forum/commentary_list.html:30
 #: drdown/forum/templates/forum/commentary_list.html:32
-#: drdown/forum/templates/forum/commentary_list.html:82
-#: drdown/forum/templates/forum/commentary_list.html:84
-#: drdown/forum/templates/forum/commentary_list.html:102
-#: drdown/forum/templates/forum/commentary_list.html:134
+#: drdown/forum/templates/forum/commentary_list.html:90
+#: drdown/forum/templates/forum/commentary_list.html:92
+#: drdown/forum/templates/forum/commentary_list.html:110
+#: drdown/forum/templates/forum/commentary_list.html:142
 #: drdown/forum/templates/forum/post_confirm_delete.html:9
 #: drdown/forum/templates/forum/post_confirm_delete.html:14
 msgid "Delete"
 msgstr "Escluir"
 
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:14
-#: drdown/forum/templates/forum/commentary_list.html:96
+#: drdown/forum/templates/forum/commentary_list.html:104
 msgid "Are you sure you want to delete this commentary?"
 msgstr "Tem certeza que deseja excluir esse comentário?"
 
 #: drdown/forum/templates/forum/commentary_confirm_delete.html:15
-#: drdown/forum/templates/forum/commentary_list.html:99
-#: drdown/forum/templates/forum/commentary_list.html:131
+#: drdown/forum/templates/forum/commentary_list.html:107
+#: drdown/forum/templates/forum/commentary_list.html:139
 #: drdown/forum/templates/forum/form_commentary.html:18
 #: drdown/forum/templates/forum/form_post.html:18
 #: drdown/forum/templates/forum/post_confirm_delete.html:13
@@ -163,7 +167,7 @@ msgid "New commentary"
 msgstr "Novo comentário"
 
 #: drdown/forum/templates/forum/commentary_list.html:29
-#: drdown/forum/templates/forum/commentary_list.html:81
+#: drdown/forum/templates/forum/commentary_list.html:89
 msgid "Edit"
 msgstr "Editar"
 
@@ -172,7 +176,7 @@ msgid "by"
 msgstr "por"
 
 #: drdown/forum/templates/forum/commentary_list.html:47
-#: drdown/forum/templates/forum/commentary_list.html:76
+#: drdown/forum/templates/forum/commentary_list.html:84
 msgid "Updated on"
 msgstr "Atualizado em"
 
@@ -180,20 +184,24 @@ msgstr "Atualizado em"
 msgid "Posted on"
 msgstr "Postado em"
 
-#: drdown/forum/templates/forum/commentary_list.html:78
+#: drdown/forum/templates/forum/commentary_list.html:63
+msgid "Only logged people can message in a post."
+msgstr "Somente usuários logados podem enviar mensagens em uma postagem."
+
+#: drdown/forum/templates/forum/commentary_list.html:86
 msgid "Created on"
 msgstr "Criado em"
 
-#: drdown/forum/templates/forum/commentary_list.html:92
-#: drdown/forum/templates/forum/commentary_list.html:124
+#: drdown/forum/templates/forum/commentary_list.html:100
+#: drdown/forum/templates/forum/commentary_list.html:132
 msgid "Confirm delete"
 msgstr "Confirmar deleção"
 
-#: drdown/forum/templates/forum/commentary_list.html:115
+#: drdown/forum/templates/forum/commentary_list.html:123
 msgid "There are no comments yet."
 msgstr "Ainda não há comentários."
 
-#: drdown/forum/templates/forum/commentary_list.html:128
+#: drdown/forum/templates/forum/commentary_list.html:136
 msgid "Are you sure you want to delete"
 msgstr "Você tem certeza que deseja deletar "
 
