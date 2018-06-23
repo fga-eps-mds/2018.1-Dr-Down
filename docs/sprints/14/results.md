@@ -27,6 +27,19 @@ __Histórias não entregues:__
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
+| termino de história com antecedência | dificuldade em fazer a história com as restrições relacionadas ao DevOps | estudar mais para tentar solucionar o problema na homologação |
+| bom planejamento de dupla | atraso em reuniões presenciais | recuperar dos problemas para retornar ao ritmo |
+| está acabando | documentação de componente foi de pouca ajuda | - |
+| foi uma semana tranquila com relação às histórias | problemas pessoais | - |
+| ajuda entre os membros do grupo nas histórias | falta da daily presencial devido as circunstâncias | - |
+| equipe manteve o foco e executou as estórias num tempo curto | bug no Postgres no ambiente de homologação | - |
+| equipe testou as estórias no ambiente de homologação | dívida técnica depois de muito tempo com o time integrado e sem problemas com a ferramenta | - |
+| a comunicação da equipe, mesmo que a distância, foi efetiva | alguns membros esqueceram de fechar a issue no mesmo dia que o PR foi fechado | - |
+| a ferramenta de e-mail está funcionando perfeitamente (estória de notificação) | baixo rendimento na universidade esta semana (afetado pelos problemas) | - |
+| a ferramenta está com um frontend bem consolidado | - | - |
+| burndown melhorou | - | - |
+| equipe executou as história com uma maior celeridade | - | - |
+| acabaram as estórias de usuário (features) do nosso escopo | - | - |
 
 ## 3. Quadro de Conhecimento
 
