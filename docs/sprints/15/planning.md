@@ -10,7 +10,7 @@ __Data de Término:__ 23/06/2018
 
 __Duração__: 8 dias
 
-__Pontos Planejados:__ 27 pontos
+__Pontos Planejados:__ 31 pontos
 
 __Membros ausentes:__ Mariana Mendes e João Sconetto
 
@@ -51,6 +51,8 @@ A Sprint 15 foi planejada para fazer ajustes finais e arrumar bugs da aplicaçã
 ## 5. Mudanças
 
 Para esta sprint a quantidade de dias da sprint aumentou de 6 para 8, com ela indo até domingo. Isto se deve ao fato desta ser a última sprint com a apresentação do projeto na segunda-feira seguinte ao fim dessa.
+
+Além disso, iremos trabalhar com histórias menores, o que fará com que tenhamos uma maior quantidade e mais rapidez nas entregas, mas uma média menor de pontos por história.
 
 ## 6. Backlog da Sprint
 

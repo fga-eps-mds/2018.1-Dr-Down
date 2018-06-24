@@ -4,60 +4,66 @@
 
 __Pontos Planejados__: 29 pontos
 
-__Pontos concluídos__: 29 pontos
+__Pontos concluídos__: 22 pontos
 
-__Dívidas técnicas__: 0 pontos
+__Dívidas técnicas__: 7 pontos
 
 __Histórias entregues:__
 
-- [US111 - Central de notificações](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/267)
-- [US112 - Página de ajuda](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/269)
-- [US113 - Segunda parte do microsserviço](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/268)
-- [US114 - Tradução](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/270)
-- [TS115 - Revisão dos ambientes](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/271)
-- [TS116 - Revisão da arquitetura](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/272)
-- [TS117 - Teste de usabilidade](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/273)
-- [TS118 - Documentação da sprint 12](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/274)
-- [TS119 - Atualizar a documentação dos riscos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/278)
+- [TS129 - Correção do erro de duplicação nas Curvas](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/304)
+- [TS130 - Corrigir tradução](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/306)
+- [TS131 - Correção da aba curvas de crescimento](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/307)
+- [TS132 - Checklist](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/308)
+- [TS133 - Prontuário](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/309)
+- [TS134 - Eventos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/310)
+- [TS135 - Meu perfil](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/311)
+- [TS136 - Documentar a sprint 14](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/312)
+- [TS137 - Documentar a sprint 15](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/313)
+- [TS138 - Teste de Usabilidade](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/314)
+- [TS139 - Atualizar EVM](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/315)
+- [TS140 - Atualizar documento de riscos](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/316)
+- [TS141 - Documento de visão](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/317)
+- [TS142 - Documento de arquitetura](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/318)
+- [TS144 - Revisar FRONTEND](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/320)
+- [TS145 - Refatorar a homepage](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/330)
+- [TS146 - Refatorar página de notificações](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/334)
+
+__Histórias não entregues:__
+
+- [TS143 - Bug do postgres no ambiente de produção](https://github.com/fga-gpp-mds/2018.1-Dr-Down/issues/319)
 
 ## 2. Retrospectiva da Sprint
 
 | Pontos Positivos | Pontos Negativos | Sugestão de Melhoria |
 | ----- | ----- | ---- |
-| Acabou a greve dos caminhoneiros | Um dos membros sumiu no último dia pra fechar a sprint | Tentar se organizar melhor pra fazer as histórias |
-| Está acabando | Muitos bugs |  Não começar as histórias tão tarde |
-| As histórias difíceis já foram | Muitos trabalhos e provas de outras matérias |  Levar mais a sério os PRs |
-| Apesar da semana ter sido difícil, tudo foi entregue | O ambiente de produção está tendo diversos problemas | - |
-| O micro serviço foi implementado e ficou bem legal | As histórias em geral foram iniciadas tarde na sprint | - |
-| - | As APIs deram muito trabalho | - |
-
+| sobrevivemos ao semestre | ausência de 2 membros da equipe na reunião de planejamento da sprint | - |
+| apesar da ausência, os membros participaram e ajudaram durante a sprint | o semestre está acabando, então tem muita prova e entrega de trabalho | - |
+| todos trabalharam bem, não só durante a sprint, mas durante todo o projeto | alguns problemas pessoais de alguns membros | - |
+| o feedback da Carla foi positivo | a Copa atrapalha um pouco o andamento das atividades | - |
+| tiveram várias issues essa sprint e o time conseguiu fechar todas de forma rápida | - | - |
 
 ## 3. Quadro de Conhecimento
 
-![Quadro de conhecimento da Sprint 13](https://uploaddeimagens.com.br/images/001/464/125/full/quadro_conhecimento_S13.png?1528940581)
+![Quadro de conhecimento da Sprint 15](https://uploaddeimagens.com.br/images/001/480/059/full/quadro_conhecimento_S14-15.png?1529874150)
 
 ## 5. Gráfico do Burndown
 
-![Gráfico do burndown da Sprint 13](https://uploaddeimagens.com.br/images/001/464/119/full/burndown_S13.png?1528940498)
+![Gráfico do burndown da Sprint 15](https://uploaddeimagens.com.br/images/001/480/190/full/burndown_S15.png?1529880942)
 
 ## 6. Velocity
 
-![Gráfico do velocity da Sprint 13](https://uploaddeimagens.com.br/images/001/464/126/full/velocity_S13.png?1528940609)
+![Gráfico do velocity da Sprint 15](https://uploaddeimagens.com.br/images/001/480/192/full/velocity_apresentacao.png?1529881001)
 
 ## 7. Gráfico de Commits
 
-![Gráfico de commits da Sprint 13](https://uploaddeimagens.com.br/images/001/464/121/full/commits_S13.png?1528940524)
+![Gráfico de commits da Sprint 15](https://uploaddeimagens.com.br/images/001/480/193/full/commits_S15.png?1529881026)
 
 ## 8. EVM
 
-![Gráfico da EVM da Sprint 13](https://uploaddeimagens.com.br/images/001/464/123/full/evm_S13.png?1528940549)
+![Gráfico da EVM da Sprint 15](https://uploaddeimagens.com.br/images/001/480/194/full/evm_S15.png?1529881047)
 
 ## 9. Análise do Scrum Master
 
-Nesta sprint, em parte devido ao excesso de carga de outras matérias, houve muita desorganização e início tardio com algumas de nossas duplas. Essa situação era prevista, visto que estamos entrando no fim do semestre, mas conversamos que mesmo assim devemos tomar mais cuidado para que não acabemos com dívidas técnicas.
+Nesta sprint, tivemos 2 membros ausentes na reunião de planejamento, mas essa ocorreu bem e, ao longo da sprint, os membros ausentes ajudaram e participaram durante a semana.
 
-Quanto ao membro que sumiu, ele justificou que foi um imprevisto que teve de natureza pessoal. Conversamos que este tipo de coisa pode acontecer, mas que de outra vez ele deve avisar o quanto antes para a dupla dele, mantendo uma boa comunicação e o bom andamento dos trabalhos.
-
-Os bugs e ao trabalho no uso de APIs, eles acabaram surgindo no decorrer da sprint e as duplas conseguiram lidar bem com estes fatores, de tal forma que não houveram dívidas técnicas das histórias.
-
-Por fim, o ambiente de produção deu alguns problemas ao longo da semana, mas estamos trabalhando para arrumá-los e continuaremos fazendo-o na próxima sprint.
+E mesmo com diversos fatores externos influenciando negativamente o andamento das atividades (Copa, problemas pessoais e o fato de todos nós estarmos em fim de semestre), conseguimos entregar todas as histórias previstas nesta sprint. A única dívida é a questão do bug do Postgres no ambiente de homologação, que surgiu na sprint passada e ainda não conseguimos solucionar.
