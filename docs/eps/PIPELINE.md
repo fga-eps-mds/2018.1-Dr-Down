@@ -104,7 +104,7 @@ Com a execução de todos os passos da integração contínua a ferramenta de au
 
 ### Pipeline v0.0.1
 
-![pipeline](https://i.imgur.com/V1rEo9S.png)
+![pipeline](https://i.imgur.com/v3m6lQr.png)
 
 #### Legenda
 
