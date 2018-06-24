@@ -10,6 +10,7 @@
 	<form method="post" action="">
 	  {% csrf_token %}
 	  <p class="lead">{% trans 'Are you sure you want to delete ' %}{{ object }} ?</p>
+    <ul class="lead"><li>{% trans "All the data about yourself will be erased and this action can't be undone." %}</li></ul>
 	  <button class="btn float-right btn-danger" type="submit">{% trans 'Delete' %}</button>
 	</form>
 

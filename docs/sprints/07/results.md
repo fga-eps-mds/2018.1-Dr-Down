@@ -46,3 +46,5 @@ __Histórias entregues:__
 Nessa sprint, 2 das histórias tiveram pontuações abaixo do esforço necessário, de acordo com as duplas responsáveis por elas. Para evitar que isso se repita, já no planejamento da Sprint 8 a equipe terá um maior cuidado para pontuar as histórias.
 
 De resto, a sprint ocorreu com tranquilidade e sem dívidas, já que o problema apresentado com relação ao pareamento de uma das duplas foi devido à greve da universidade, que atrapalhou a programação deles trabalharem juntos mas não a entrega da história.
+
+O pareamento relacionado a rotação de papéis funcionou, assim como a passagem de conhecimento.

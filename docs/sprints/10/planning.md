@@ -17,16 +17,16 @@ __Membros ausentes:__ Nenhum
 ## 2. Papéis
 
 - Scrum Master:
-  - Diego França
+  - Diego França e Geovana Ramos.
 
 - Product Owner:
-  - Mariana Mendes
+  - Mariana Mendes.
 
 - DevOps:
-  - João Sconetto
+  - João Sconetto e Mariana Mendes.
 
 - Arquiteto:
-  - Victor Arnaud
+  - Victor Arnaud e João Pedro.
 
 - Time de Desenvolvimento:
   - Daniel Maike
@@ -53,6 +53,8 @@ Além disso, o micro-serviço acerca das curvas de crescimento para a Síndrome 
 ## 5. Mudanças
 
 Para esta sprint não houveram mudanças significativas com relação à sprint anterior, com exceção da priorização de histórias diferente do que tem sido praticado em função de questões relacionadas à faculdade, como explicado no tópico anterior deste documento.
+
+Outra mudança importante foi a decisão de colocar alguém de MDS(Geovana Ramos) como Scrum Master da sprint.
 
 ## 6. Backlog da Sprint
 

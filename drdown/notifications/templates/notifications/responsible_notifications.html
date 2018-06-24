@@ -16,94 +16,148 @@
       {% endif %}
     {% endfor %}
 
-
-    <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
-
-    <div class="alert alert-success" role="alert">
-      {% for name, appointments in patients_list_schedule.items %}
-        {% if appointments|length > 0 %}
-          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
-            <p>{{ name }} {% trans "has" %} {{ appointments|length }}
-              {% trans "appointment requests accepted and not visualized" %}.
+    <div class="card mb-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11">
+              <h2 class="text-tertiary">{% trans "Accepted medical requests" %}</h2>
+            </div>
+             <div class="col-auto">
+              <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
+            </div>
+        </div>
+      </div>
+      <div class="card-body">
+        {% for name, appointments in patients_list_schedule.items %}
+          {% if appointments|length > 0 %}
+            <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+              <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+                {% trans "appointment requests accepted and not visualized" %}.
+              </p>
+            </a>
+          {% else %}
+            <p>
+              {{ name }} {% trans "has no appointment requests accepted and not visualized" %}.
             </p>
-          </a>
-        {% else %}
-          <p>
-            {{ name }} {% trans "has no appointment requests accepted and not visualized" %}.
-          </p>
-        {% endif %}
-      {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
 
-    <div class="alert alert-danger" role="alert">
-      {% for name, appointments in patients_list_cancel.items %}
-        {% if appointments|length %}
-          <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
-            <p>{{ name }} {% trans "has" %} {{ appointments|length }}
-              {% trans "appointments requests declined and not visualized" %}.
+    <div class="card mb-5">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-11">
+              <h2 class="text-tertiary">{% trans "Medical requests refused" %}</h2>
+            </div>
+             <div class="col-auto">
+              <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
+            </div>
+        </div>
+      </div>
+      <div class="card-body">
+        {% for name, appointments in patients_list_cancel.items %}
+          {% if appointments|length > 0 %}
+            <a href="{% url 'appointments:list_requests' %}" class="alert-success" >
+              <p>{{ name }} {% trans "has" %} {{ appointments|length }}
+                {% trans "appointments requests declined and not visualized" %}.
+              </p>
+            </a>
+          {% else %}
+            <p>
+              {{ name }} {% trans "has no appointment requests declined and not visualized" %}.
             </p>
-          </a>
-        {% else %}
-          <p>
-            {{ name }} {% trans "has no appointment requests declined and not visualized" %}.
-          </p>
-        {% endif %}
-      {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
 
-    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
-    {% if commentaries|length > 0  %}
-      <div class="alert alert-success" role="alert">
-        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
-          <p>{% trans "Your last post has" %} {{ commentaries|length }}
-            {% trans " commentaries" %}.
-          </p>
-        </a>
-      </div>
-    {% else %}
-      <div class="alert alert-success" role="alert">
-        <p>{% trans "Your last post has no commentaries" %}.
-        </p>
-      </div>
-    {% endif %}
+    <div class="card mb-5">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-11">
+                  <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
+                </div>
+                 <div class="col-auto">
+                  <span class="badge badge-pill badge-warning mt-3"><i class="fa fa-exclamation" style="color:red"></i></span>
+                 </div>
+            </div>
+        </div>
+        <div class="card-body">
+          {% for patient in patients %}
 
-    <h2 class="text-tertiary">{% trans "Events" %}</h2>
+            {% if patient.count_incomplete_procedures_for_current_age > 0 %}
+                  <p>
+                    {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
+                    <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="text-success">{% trans "Click here to check it" %}.</a>
+                  </p>
+
+            {% else %}
+                  <p>
+                    {{patient.user.name}} {% trans "don't have procedures to be made." %}
+                    <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="text-success">{% trans "But you can check the careline here" %}.</a>
+                  </p>
+            {% endif %}
+
+          {% endfor%}
+        </div>
+
+    </div>
+
     {% if events|length > 0 %}
-      <div class="alert alert-success" role="alert">
-        <a href="{% url 'events:list_events' %}" class="alert-success" >
-          <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
-        </a>
+      <div class="card mb-5">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Events" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning mt-3">{{events|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'events:list_events' %}" class="alert-success" >
+            <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+          </a>
+        </div>
       </div>
     {% else %}
-      <div class="alert alert-success" role="alert">
-        <p>{% trans "There are no events on the next 7 days" %}.</p>
+      <div class="card mb-5">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Events" %}</h2></div>
+        <div class="card-body">
+          <p>{% trans "There are no events on the next 7 days" %}.</p>
+        </div>
       </div>
-    {% endif %}
+    {% endif %}      
 
-    <h2 class="text-tertiary">{% trans "Care  line" %}</h2>
-
-    {% for patient in patients %}
-    
-    {% if patient.count_incomplete_procedures_for_current_age > 0 %}
-        
-      {% if patient.have_procedures_almost_late %}
-        <div class="alert alert-warning" role="alert">
+    <div class="card">
+      {% if commentaries|length > 0 %}
+        <div class="card-header">
+              <div class="row">
+                <div class="col-sm-11">
+                  <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+                </div>
+                 <div class="col-auto">
+                  <span class="badge badge-pill badge-warning mt-3">{{commentaries|length}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
+            <p>{% trans "Your last post has" %} {{ commentaries|length }}
+              {% trans " commentaries" %}.
+            </p>
+          </a>
+        </div>
       {% else %}
-        <div class="alert alert-success" role="alert">
+          <div class="card-header">
+            <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+          </div>
+          <div class="card-body">
+            <p>{% trans "Your last post has no commentaries" %}.</p>
+          </div>
       {% endif %}
-          {{patient.user.name}} {% trans "have" %} {{patient.count_incomplete_procedures_for_current_age}} {% trans "procedures to be made." %}
-          <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "Click here to check it" %}.</a>
-      </div>
-            
-    {% else %}
-      <div class="alert alert-success" role="alert">
-          {{patient.user.name}} {% trans "don't have procedures to be made." %} 
-          <a href="{% url 'careline:checklist_detail' patient.user.username %}" class="alert-link">{% trans "But you can check the careline here" %}.</a>
-      </div>        
-    {% endif %}
-
-
-
-  {% endfor %}
+    </div>
 
 {% endblock %}

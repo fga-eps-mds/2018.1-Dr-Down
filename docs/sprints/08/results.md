@@ -60,3 +60,5 @@ Como os membros de MDS adiantaram que a semana da Sprint 10 será complicada (ma
 Quanto ao problema de um dos membros do grupo não ter um laptop temporariamente, isso já está sendo resolvido, já que ele comprou outro que deverá chegar na próxima semana.
 
 Por fim, a questão da história cansativa foi algo que nós todos não tínhamos previsto de antemão. Mas em outras sprints aproveitaremos a experiência adquirida nessa para evitar esse tipo de questão tomando providências como, por exemplo, quebrando a história em mais de uma.
+
+A rotação de papéis continua dando certo e optamos por manter aquele que era responsável pelo papel até a release 1 como o coach daquele papel. 

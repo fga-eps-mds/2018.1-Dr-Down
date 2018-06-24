@@ -6,10 +6,10 @@ from django.core.exceptions import ValidationError
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
-from .model_user import User
+from .model_user import User, BaseUserSave, BaseUserDelete
 
 
-class Responsible(models.Model):
+class Responsible(BaseUserSave, BaseUserDelete, models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
@@ -52,19 +52,8 @@ class Responsible(models.Model):
 
         self.user.clean()
 
-    def save(self, *args, **kwargs):
-        self.user.clean()
-        self.user.save()
-        self.clean()  # enforce model validation
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return self.user.get_username()
-
-    def delete(self, *args, **kwargs):
-        self.user.has_specialization = False
-        self.user.save()
-        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Responsible')

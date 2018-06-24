@@ -7,12 +7,12 @@ from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
 from ..utils.validators import validate_cpf
-from .model_user import User
+from .model_user import User, BaseUserDelete
 from .model_patient import Patient
 from .model_responsible import Responsible
 
 
-class Employee(models.Model):
+class Employee(BaseUserDelete, models.Model):
 
     user = models.OneToOneField(
         User,
@@ -35,7 +35,6 @@ class Employee(models.Model):
     # note: those texts aren't using _() because they are not meant
     # to be translated norshown to the user
 
-    NURSERY = "NUR"
     SECRETAY = "SEC"
     ADMINISTRATION = "ADM"
     OTHER = "OTH"
@@ -43,7 +42,6 @@ class Employee(models.Model):
     DEPARTAMENT_CHOICES = (
         (SECRETAY, _('Secretary')),
         (ADMINISTRATION, _('Administration')),
-        (NURSERY, _('Nursery')),
         (OTHER, _('Other')),
     )
 
@@ -93,15 +91,13 @@ class Employee(models.Model):
         set_permissions(
                 Patient,
                 employee_group,
-                change=True,
-                add=True
+                ['change', 'add']
             )
 
         set_permissions(
                 Responsible,
                 employee_group,
-                change=True,
-                add=True
+                ['change', 'add']
             )
 
         self.user.groups.add(employee_group)
@@ -113,31 +109,25 @@ class Employee(models.Model):
 
         super().save(*args, **kwargs)
 
-    def delete(self, *args, **kwargs):
-        self.user.has_specialization = False
-        self.user.save()
-        User.remove_staff(self.user)
-        super().delete(*args, **kwargs)
-
     class Meta:
         verbose_name = _('Employee')
         verbose_name_plural = _('Employees')
 
 
-def set_permissions(model, group, change=False, add=False, delete=False):
+def set_permissions(model, group, permissions_to_add):
     content_type = ContentType.objects.get_for_model(model)
 
-    if add:
+    if 'add' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='add_')
         )
 
-    if delete:
+    if 'delete' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='delete_')
         )
 
-    if change:
+    if 'change' in permissions_to_add:
         group.permissions.add(Permission.objects.get(
             content_type=content_type, codename__startswith='change_')
         )

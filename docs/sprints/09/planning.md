@@ -17,16 +17,16 @@ __Membros ausentes:__ Nenhum
 ## 2. Papéis
 
 - Scrum Master:
-  - Diego França
+  - Diego França e João Pedro Sconetto.
 
 - Product Owner:
-  - Mariana Mendes
+  - Mariana Mendes e Victor Arnaud.
 
 - DevOps:
-  - João Sconetto
+  - João Sconetto.
 
 - Arquiteto:
-  - Victor Arnaud
+  - Victor Arnaud e João Pedro Sconetto.
 
 - Time de Desenvolvimento:
   - Daniel Maike

@@ -9,6 +9,8 @@
 {% endblock %}
 
 {% block script %}
+{{block.super}}
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
     $(document).ready(function()
@@ -57,7 +59,13 @@
           var month = parseFloat($("#age").val());
           var year = Math.floor(month/12);
           var result_m = month%12;
+          if (!result_m ){
+            result_m = 0;
 
+          }
+          if (!year){
+            year = 0;
+          }
           $("#converted_year").val(year);
           $("#converted_month").val(result_m);
       }
@@ -87,7 +95,7 @@
 
     <div class="row">
       <div class="col">
-        <form method="post" enctype="multipart/form-data"action="#menu7" id="doctorForm">
+        <form method="post" enctype="multipart/form-data"action="#menu6" id="doctorForm">
           {% csrf_token %}
 
             <div class="formgroup row my-2  border rounded">
@@ -102,16 +110,17 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.age.label_tag }}
+                  {% trans "Age" %}:
                 </div>
                 <div class="row">
-                  <div class="col ml-3">
+                  <div class="col-xs-3 ml-4">
                     {% if object.age %}
-                       <input class="span4 input-big no" readonly id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()"  value="{{ object.age }}"/>
+                       <input class="form-control input-big no" readonly id="age" name="age"  type="text" onChange="updateCephalicPerimeter() getAge()"  value="{{ object.age }}"/>
                     {% else %}
-                       <input class="span4 input-big" id="age" name="age" size="20" type="text" onChange="updateCephalicPerimeter() getAge()" onkeypress="return isNumberKey(event)"  />
+                       <input class="form-control input-big" id="age" name="age"  type="text" onChange="updateCephalicPerimeter() getAge()" onkeypress="return isNumberKey(event)"  />
                     {% endif%}
                   </div>
+                  <div class="col ml-4"></div>
                   <div class="col">
                     {% trans 'Equivalent to: '%}  <input class="no " readonly size="1" id="converted_year" name="converted_year"value=""/>  {% trans 'year(s) and'%}  <input class="no" size="1" readonly id="converted_month" name="converted_month"value=""/>  {% trans 'month(s)'%}
                   </div>
@@ -134,11 +143,17 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.height.label_tag }}
+                  {% trans "Height" %}:
                 </div>
 
-                <div class="col">
-                  {{ form.height }}
+                <div class="row">
+                  <div class="col-xs-1 ml-4">
+                    {% if object.height %}
+                       <input class="form-control input-big " id="height" name="height"  type="text"   value="{{ object.height }}"/>
+                    {% else %}
+                       <input class="form-control input-big" id="height" name="height"  type="text" onkeypress="return isNumberKey(event)" />
+                    {% endif%}
+                  </div>
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Height in cm' %}</font>
@@ -158,11 +173,17 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.weight.label_tag }}
+                  {% trans "Weight" %}:
                 </div>
 
-                <div class="col">
-                  {{ form.weight }}
+                <div class="row">
+                  <div class="col-xs-1 ml-4">
+                    {% if object.weight %}
+                       <input class="form-control input-big " id="weight" name="weight"  type="text"   value="{{ object.weight }}"/>
+                    {% else %}
+                       <input class="form-control input-big" id="weight" name="weight"  type="text" onkeypress="return isNumberKey(event)" />
+                    {% endif%}
+                  </div>
                 </div>
 
                 <font size="2" class="ml-3">{% trans 'Weight in kg' %}</font>
@@ -182,26 +203,26 @@
                 {% endif %}
 
                 <div class="col">
-                  {{ form.cephalic_perimeter.label_tag }}
+                  {% trans "Cephalic Perimeter" %}:
                 </div>
-
-                <div class="col">
+                <div class="row">
+                  <div class="col-xs-1 ml-4">
                     {% if object.age > 23  %}
-                      <input class="span4 input-big no" readonly id="cephalic_perimeter" name="cephalic_perimeter" value="0"/>
-                    {% elif object.age < 24  %}
-                      {{ form.cephalic_perimeter }}
+                       <input class="form-control input-big " id="cephalic_perimeter" name="cephalic_perimeter"  type="text"   value="0"/>
+                    {% elif object.age < 24 %}
+                       <input class="form-control input-big " id="cephalic_perimeter" name="cephalic_perimeter"  type="text"   value="{{ object.cephalic_perimeter}}"/>
                     {% else %}
-                      <input class="span4 input-big" id="cephalic_perimeter" name="cephalic_perimeter" value=""/>
-                    {% endif %}
-
+                       <input class="form-control input-big" id="cephalic_perimeter" name="cephalic_perimeter"  type="text" onkeypress="return isNumberKey(event)" />
+                    {% endif%}
+                  </div>
                 </div>
 
-                <font size="2" class="ml-3">{% trans 'Perimeter in cm. If the age is greater than 23, the head circumference is disregarded' %}</font>
+                <font size="2" class="ml-3">{% trans 'Perimeter in cm. If the age is greater than 23 months, the head circumference is disregarded' %}</font>
               </div>
             </div>
 
           <div class="float-right">
-            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+            <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}#menu6" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
             <button id="submit_bnt" type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
           </div>
 

@@ -1,50 +1,93 @@
 {% extends "core/base.html" %}
 {% load static i18n %}
-
+{% block css %}
+{{block.super}}
+<link href="{% static 'core/css/simple-sidebar.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
   <div class="container">
 
-    <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
-
     {% if appointments|length > 0 %}
-      <div class="alert alert-success" role="alert">
-        <a href="{% url 'appointments:list_appointments' %}" class="alert-success" >
-          <p>{% trans "You have" %} {{appointments|length}} {% trans "appointments today" %}.</p>
-        </a>
+      <div class="card mb-5">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Appointments" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning mt-3">{{appointments|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'appointments:list_appointments' %}" class="alert-success" >
+            <p>{% trans "You have" %} {{appointments|length}} {% trans "appointments today" %}.</p>
+          </a>
+        </div>
       </div>
     {% else %}
-      <div class="alert alert-success" role="alert">
+      <div class="card mb-5">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Appointments" %}</h2></div>
+        <div class="card-body">
         <p>{% trans "You have no appointments today" %}.</p>
+        </div>
       </div>
     {% endif %}
 
-    <h2 class="text-tertiary">{% trans "Forum" %}</h2>
     {% if commentaries|length > 0  %}
-      <div class="alert alert-success" role="alert">
-        <a href="{% url 'forum:list_commentary' post.category.slug post.category.pk post.pk %}" class="alert-success" >
-          <p>{% trans "Your last post has" %} {{ commentaries|length }}
-            {% trans " commentaries" %}.
-          </p>
-        </a>
+      <div class="card mb-5">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Forum" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning mt-3">{{commentaries|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'appointments:list_appointments' %}" class="alert-success" >
+            <p>{% trans "Your last post has" %} {{ commentaries|length }}
+              {% trans " commentaries" %}.
+            </p>
+          </a>
+        </div>
       </div>
     {% else %}
-      <div class="alert alert-success" role="alert">
-        <p>{% trans "Your last post has no commentaries" %}.
-        </p>
+      <div class="card mb-5">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Forum" %}</h2></div>
+        <div class="card-body">
+          <p>{% trans "Your last post has no commentaries" %}.</p>
+        </div>
       </div>
     {% endif %}
 
-    <h2 class="text-tertiary">{% trans "Events" %}</h2>
     {% if events|length > 0 %}
-      <div class="alert alert-success" role="alert">
-        <a href="{% url 'events:list_events' %}" class="alert-success" >
-          <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
-        </a>
+      <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-11">
+                <h2 class="text-tertiary">{% trans "Events" %}</h2>
+              </div>
+               <div class="col-auto">
+                <span class="badge badge-pill badge-warning">{{events|length}}</span>
+              </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'events:list_events' %}" class="alert-success" >
+            <p>{% trans "There are" %} {{events|length}} {% trans "events on the next 7 days" %}.</p>
+          </a>
+        </div>
       </div>
     {% else %}
-      <div class="alert alert-success" role="alert">
-        <p>{% trans "There are no events on the next 7 days" %}.</p>
+      <div class="card">
+        <div class="card-header"><h2 class="text-tertiary">{% trans "Events" %}</h2></div>
+        <div class="card-body">
+          <p>{% trans "There are no events on the next 7 days" %}.</p>
+        </div>
       </div>
     {% endif %}
 

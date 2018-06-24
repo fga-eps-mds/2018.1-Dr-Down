@@ -64,6 +64,13 @@ class TestViewChecklistListView(TestCase):
             responsible=self.user_responsible.responsible
         )
 
+        self.user_employee = self.make_user(username='employeeuser')
+        self.employee = Employee.objects.create(
+            cpf="974.220.200-16",
+            user=self.user_employee,
+            departament=Employee.ADMINISTRATION
+        )
+
         self.client = Client()
         self.view = ChecklistUpdateView()
 
@@ -185,5 +192,14 @@ class TestViewChecklistListView(TestCase):
 
         self.response_403(self.client.post(path=url, data=post_args))
         self.assertTrue(checkitem.check)
+
+        self.client = Client()
+
+        self.user_employee.birthday = timezone.datetime.today() - timezone.timedelta(days=365 * 15)
+        self.user_employee.save()
+
+        self.client.force_login(self.user_employee)
+
+        self.response_403(self.client.post(path=url, data=post_args))
 
         self.client = Client()

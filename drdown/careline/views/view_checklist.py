@@ -66,27 +66,16 @@ class ChecklistDetailView(DetailView):
     @staticmethod
     def has_permission(current_user, target_user):
 
-        allowed = False
-
-        # here using '==' is intended
-        if current_user == target_user:
-            # if we are the patient that the page is trying to access
-            allowed = True
-
-        elif hasattr(current_user, 'responsible'):
-            # if we are someone else, we need to check permissions
-            # for instance, if the current user is a responsible
-            # of the target user
-            for patient in current_user.responsible.patient_set.all():
-                if patient.user == target_user:
-                    allowed = True
-        elif hasattr(current_user, 'healthteam'):
-            allowed = True
-
-        elif hasattr(current_user, 'employee'):
-            allowed = True
-
-        return allowed
+        return (
+            current_user == target_user or
+            hasattr(current_user, 'healthteam') or
+            hasattr(current_user, 'employee') or
+            (
+                hasattr(current_user, 'responsible') and
+                target_user.patient in
+                current_user.responsible.patient_set.all()
+            )
+        )
 
     def prepare_context_data(self, user, context):
 
@@ -110,7 +99,11 @@ class ChecklistUpdateView(RedirectView):
                 target_user=target_user
             )
 
-        return (allowed_on_view and current_user.age() >= 13)
+        return (
+            allowed_on_view and
+            current_user.age() >= 13 and
+            hasattr(current_user, 'employee') is False
+        )
 
     def post(self, request, *args, **kwargs):
 
@@ -131,8 +124,13 @@ class ChecklistUpdateView(RedirectView):
                 value=request.POST.get('value')
             )
         else:
-            message = _("Error: You cannot change data on this form. "
-                        "You need to be at least 13 years old.")
+            message = str(_("Error: You cannot change data on this form."))
+
+            if hasattr(request.user, 'employee'):
+                message += str(_(" You don't have permission."))
+            else:
+                message += str(_(" You need to be at least 13 years old."))
+
             return HttpResponseForbidden(message)
 
         return HttpResponse(message)

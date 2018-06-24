@@ -19,38 +19,102 @@
 
     <div class="row">
       <div class="col">
-        <form method="post" enctype="multipart/form-data"action="#menu3">
+        <form method="post" enctype="multipart/form-data"action="#menu2">
           {% csrf_token %}
-          {% for field in form %}
+
             <div class="formgroup row my-2  border rounded">
-              <div class="col fieldWrapper my-2">
 
-                {% if field.errors %}
-                <div div class="alert alert-danger">
-                  {% for error in field.errors %}
-                      <strong>{{ error|escape }}</strong>
-                  {% endfor %}
+              {% if form.file.errors %}
+                <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                  {{ form.file.errors }}
                 </div>
-                {% endif %}
+               {% endif %}
 
-                <div class="col">
-                  {{ field.label_tag }}
-                </div>
+               <div class="col-12">
+                 {{ form.file.label_tag }}
+               </div>
 
-                <div class="col">
-                  {{ field }}
-                </div>
-
-                {% if field.help_text %}
-                  <font size="2" class="ml-3">{{ field.help_text|safe }}</font>
-                {% endif %}
-
+               <div class="col-12 mb-2">
+                  {{ form.file }}
               </div>
-            </div>
+             </div>
 
-          {% endfor %}
+            <div class="formgroup row my-2  border rounded">
+
+              {% if form.day.errors %}
+                <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                  {{ form.day.errors }}
+                </div>
+               {% endif %}
+
+               <div class="col-12">
+                 {{ form.day.label_tag }}
+               </div>
+
+               <div class="col-12">
+                  <input class="form-control mb-2" type="date"
+                         name="day"
+                         required="" id="id_day"
+                  >
+              </div>
+             </div>
+
+              <div class="formgroup row my-2  border rounded">
+               {% if form.category.errors %}
+                  <div class="col-11 alert alert-danger mx-auto mt-2" role="alert">
+                    {{ form.category.errors }}
+                  </div>
+               {% endif %}
+
+               <div class="col-12">
+                 {{ form.category.label_tag }}
+               </div>
+
+               <div class="col-12 mb-2">
+                 <select name="category" class="select form-control" required="" id="id_category">
+                   <option value="">{% trans "Select a category..."%}</option>
+                   <option value="0">{%trans "Others"%}</option>
+                   <option value="1">{%trans 'Structured Physical Exam'%}</option>
+                   <option value="2">{%trans 'Vision Exam'%}</option>
+                    <option value="3">{%trans 'Ear Exam' %}</option>
+                    <option value="4">{%trans 'Hearth Exam' %}</option>
+                    <option value="5">{%trans 'Muscle skeletal system Exam' %}</option>
+                    <option value="6">{%trans 'Nervous system Exam' %}</option>
+                    <option value="7">{%trans 'Blood Exam' %}</option>
+                    <option value="8">{%trans 'Bone Densitometry' %}</option>
+                    <option value="9">{%trans 'Biopsy' %}</option>
+                    <option value="10">{%trans 'Endoscopy' %}</option>
+                    <option value="11">{%trans 'Echocardiogram' %}</option>
+                    <option value="12">{%trans 'Map and Holter' %}</option>
+                    <option value="13">{%trans 'Bioimpedance' %}</option>
+                    <option value="14">{%trans 'Neurological examinations' %}</option>
+                    <option value="15">{%trans 'Urine Analysis' %}</option>
+                    <option value="16">{%trans 'Stool Examination' %}</option>
+                  </select>
+               </div>
+             </div>
+
+             <div class="formgroup row my-2  border rounded">
+               {% if form.observations.errors %}
+                <div class="col-12 alert alert-danger" role="alert">
+                  {{ form.observations.errors }}
+                </div>
+               {% endif %}
+
+               <div class="col-12">
+                 {{ form.observations.label_tag }}
+               </div>
+
+               <div class="col-12">
+                 <input class="form-control mb-2" type="text"
+                         name="observations" maxlength="100"
+                         id="id_observations"
+                  >
+               </div>
+             </div>
+
             <div class="row float-right mr-2">
-              <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
+              <a href="{% url 'medicalrecords:list_medicalrecords' view.kwargs.username  %}#menu2" class="btn btn-danger my-3 mx-1" >{% trans "Cancel" %}</a>
               <button type="submit" class="btn btn-success my-3 mx-1">{% trans 'Save' %}</button>
             </div>
         </form>
