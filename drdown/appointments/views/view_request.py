@@ -59,23 +59,28 @@ class RequestCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         speciality = form.instance.speciality
+        risk = 5
 
         if speciality == AppointmentRequest.CARDIOLOGY:
             risk = form.instance.patient.risk.priority_cardiology
-        elif speciality == AppointmentRequest.NEUROLOGY:
+
+        if speciality == AppointmentRequest.NEUROLOGY:
             risk = form.instance.patient.risk.priority_neurology
-        elif speciality == AppointmentRequest.PEDIATRICS:
+
+        if speciality == AppointmentRequest.PEDIATRICS:
             risk = form.instance.patient.risk.priority_pediatrics
-        elif speciality == AppointmentRequest.SPEECH_THERAPHY:
+
+        if speciality == AppointmentRequest.SPEECH_THERAPHY:
             risk = form.instance.patient.risk.priority_speech_theraphy
-        elif speciality == AppointmentRequest.PHYSIOTHERAPY:
+
+        if speciality == AppointmentRequest.PHYSIOTHERAPY:
             risk = form.instance.patient.risk.priority_physiotherapy
-        elif speciality == AppointmentRequest.PSYCHOLOGY:
+
+        if speciality == AppointmentRequest.PSYCHOLOGY:
             risk = form.instance.patient.risk.priority_psychology
-        elif speciality == AppointmentRequest.GENERAL_PRACTITIONER:
+
+        if speciality == AppointmentRequest.GENERAL_PRACTITIONER:
             risk = form.instance.patient.risk.priority_general_practitioner
-        else:
-            risk = 5
 
         form.instance.risk = risk
 

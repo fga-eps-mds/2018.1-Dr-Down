@@ -14,32 +14,28 @@ class AccountAdapter(DefaultAccountAdapter):
         return reverse('users:update')
 
     def get_login_redirect_url(self, request):
-            if request.user.name:
-                if hasattr(request.user, 'patient'):
-                    path = reverse(
-                        viewname='notifications:patient_notifications'
-                    )
-                elif hasattr(request.user, 'responsible'):
-                    path = reverse(
-                        viewname='notifications:responsible_notifications'
-                    )
-                elif hasattr(request.user, 'healthteam'):
-                    path = reverse(
-                        viewname='notifications:health_team_notifications'
-                    )
-                elif hasattr(request.user, 'employee'):
-                    path = reverse(
-                        viewname='notifications:employee_notifications'
-                    )
-                else:
-                    path = reverse(
-                        viewname='users:detail',
-                        kwargs={'username': request.user.username}
-                    )
-            else:
-                path = reverse('users:update')
 
-            return path
+        if not request.user.name:
+            # redirect to update profile
+            return reverse('users:update')
+
+        REDIRECTS = {
+            'patient': 'notifications:patient_notifications',
+            'responsible': 'notifications:responsible_notifications',
+            'employee': 'notifications:employee_notifications',
+            'healthteam': 'notifications:health_team_notifications',
+        }
+
+        for user_type in REDIRECTS:
+            if hasattr(request.user, user_type):
+                return reverse(
+                    viewname=REDIRECTS[user_type]
+                )
+
+        return reverse(
+                    viewname='users:detail',
+                    kwargs={'username': request.user.username}
+                )
 
 
 class SocialAccountAdapter(DefaultSocialAccountAdapter):

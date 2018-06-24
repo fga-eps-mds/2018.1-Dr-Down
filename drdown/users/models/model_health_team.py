@@ -7,11 +7,11 @@ from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 
 from ..utils.validators import validate_cpf
-from .model_user import User
+from .model_user import User, BaseUserDelete
 from ..utils.validators import validate_register_number
 
 
-class HealthTeam(models.Model):
+class HealthTeam(BaseUserDelete, models.Model):
 
     user = models.OneToOneField(
         User,
@@ -241,12 +241,6 @@ class HealthTeam(models.Model):
 
     def __str__(self):
         return self.user.get_username() + " - " + self.get_speciality_display()
-
-    def delete(self, *args, **kwargs):
-        self.user.has_specialization = False
-        self.user.save()
-        User.remove_staff(self.user)
-        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _('Health Team')

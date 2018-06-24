@@ -15,11 +15,11 @@ from ..utils.validators import validate_sus
 from celery.schedules import crontab
 from celery.task import periodic_task
 
-from .model_user import User
+from .model_user import User, BaseUserSave, BaseUserDelete
 from .model_responsible import Responsible
 
 
-class Patient(models.Model):
+class Patient(BaseUserSave, BaseUserDelete, models.Model):
     user = models.OneToOneField(
         User,
         related_name='patient',
@@ -167,19 +167,6 @@ class Patient(models.Model):
             pass
 
         self.user.clean()
-
-    def save(self, *args, **kwargs):
-        self.user.clean()
-        self.user.save()
-        self.clean()
-        # var = "test"
-        # send_simple_message(self.user, var,var)
-        super().save(*args, **kwargs)
-
-    def delete(self, *args, **kwargs):
-        self.user.has_specialization = False
-        self.user.save()
-        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Patient")
