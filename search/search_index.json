@@ -2071,6 +2071,66 @@
             "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 8/10"
         }, 
         {
+            "location": "/eps/usability_test/relatorio_05/", 
+            "text": "5\u00b0 TESTE DE USABILIDADE\n\n\nUsu\u00e1rio: Sanderson.\nTipo: Stakeholder do projeto e Parente;\nEstado do site: Todas as funcionalidades est\u00e3o implementas.\nAvaliador(a): Mariana de Souza Mendes e Jo\u00e3o Pedro Sconetto.\n\n\nTarefas:\n\n\nTarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site.\n\n\nO usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: Gostou do calend\u00e1rio de vacinas.\n\n\nTarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum.\n\n\nEncontrou o f\u00f3rum com facilidade.   \n\n\nTarefa 3: Cadastrar usu\u00e1rio.\n\n\nSem dificuldades, mas estranhou o fato de ter que preencher os dados pessoais depois.\n\n\nTarefa 4: Login.\n\n\nSem dificuldades.\n\n\nTarefa 5: F\u00f3rum com login.\n\n\nUsu\u00e1rio teve facilidade em utilizar o f\u00f3rum. \n\n\nTarefa 6: Usu\u00e1rio Paciente\n\n\nChecklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.\n\n\nTarefa 7: Usu\u00e1rio Equipe M\u00e9dica\n\n\nA tarefa sete \u00e9 voltada para a Equipe m\u00e9dica, ent\u00e3o optamos por n\u00e3o realizar essa tarefa.\n\n\nConclus\u00e3o\n\n\nHouve uma melhora na usabilidade, menos dificuldades foram relatadas. As dificuldades encontradas nos teste passados foram resolvidas.\n\n\nNOTA DE USABILIDADE DO USU\u00c1RIO: 9/10", 
+            "title": "Relat\u00f3rio 05"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#5-teste-de-usabilidade", 
+            "text": "Usu\u00e1rio: Sanderson.\nTipo: Stakeholder do projeto e Parente;\nEstado do site: Todas as funcionalidades est\u00e3o implementas.\nAvaliador(a): Mariana de Souza Mendes e Jo\u00e3o Pedro Sconetto.", 
+            "title": "5\u00b0 TESTE DE USABILIDADE"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefas", 
+            "text": "", 
+            "title": "Tarefas:"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-1-com-o-usuario-deslogado-procure-as-seguintes-informacoes-no-site", 
+            "text": "O usu\u00e1rio encontrou a p\u00e1gina com facilidade.\nCalend\u00e1rio de vacina: Gostou do calend\u00e1rio de vacinas.", 
+            "title": "Tarefa 1: Com o usu\u00e1rio deslogado, procure as seguintes informa\u00e7\u00f5es no site."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-2-ainda-com-o-usuario-deslogado-procure-pelo-forum", 
+            "text": "Encontrou o f\u00f3rum com facilidade.", 
+            "title": "Tarefa 2: Ainda com o usu\u00e1rio deslogado, procure pelo f\u00f3rum."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-3-cadastrar-usuario", 
+            "text": "Sem dificuldades, mas estranhou o fato de ter que preencher os dados pessoais depois.", 
+            "title": "Tarefa 3: Cadastrar usu\u00e1rio."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-4-login", 
+            "text": "Sem dificuldades.", 
+            "title": "Tarefa 4: Login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-5-forum-com-login", 
+            "text": "Usu\u00e1rio teve facilidade em utilizar o f\u00f3rum.", 
+            "title": "Tarefa 5: F\u00f3rum com login."
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-6-usuario-paciente", 
+            "text": "Checklist: Dificuldade de assimila\u00e7\u00e3o com o nome (linha de cuidado), e leve dificuldade na compreens\u00e3o do que deve ser feito.", 
+            "title": "Tarefa 6: Usu\u00e1rio Paciente"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#tarefa-7-usuario-equipe-medica", 
+            "text": "A tarefa sete \u00e9 voltada para a Equipe m\u00e9dica, ent\u00e3o optamos por n\u00e3o realizar essa tarefa.", 
+            "title": "Tarefa 7: Usu\u00e1rio Equipe M\u00e9dica"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#conclusao", 
+            "text": "Houve uma melhora na usabilidade, menos dificuldades foram relatadas. As dificuldades encontradas nos teste passados foram resolvidas.", 
+            "title": "Conclus\u00e3o"
+        }, 
+        {
+            "location": "/eps/usability_test/relatorio_05/#nota-de-usabilidade-do-usuario-910", 
+            "text": "", 
+            "title": "NOTA DE USABILIDADE DO USU\u00c1RIO: 9/10"
+        }, 
+        {
             "location": "/sprints/00/planning/", 
             "text": "Planejamento Sprint 00\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint\n: 0\n\n\nData de in\u00edcio\n: 05/03/2018\n\n\nData de T\u00e9rmino\n: 10/03/2018\n\n\nDura\u00e7\u00e3o\n: 5 dias\n\n\nPontos Planejados\n: 15 pontos\n\n\nMembros presentes\n: Todos\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Pedro Sconetto\n\n\n\n\n\n\nArquiteto:\n  Victor Arnaud\n\n\n\n\n\n\nDesenvolvedores:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Planejamento da Sprint\n\n\nO planejamento da sprint foi feito com o pouco de informa\u00e7\u00f5es que temos, e com o intuito de come\u00e7ar a preparar todos os membros da equipe, em especial aqueles que est\u00e3o cursando MDS, para a execu\u00e7\u00e3o do projeto. Isso resultou em hist\u00f3rias de treinamentos e estudos sobre as tecnologias e processos que ser\u00e3o usadas ao longo de todo o semestre.\n\n\n4. Backlog da Sprint\n\n\nMDS e EPS\n\n\n\n\n\n\nS01\n - Estudar a respeito de GitFlow\n\n\n\n\n\n\nS02\n - Treinamento de Documenta\u00e7\u00f5es  (Vis\u00e3o, Arquitetura, Especifica\u00e7\u00e3o, Prototipagem)\n\n\n\n\n\n\nS03\n - Estudar a metodologia SCRUM\n\n\n\n\n\n\nS04\n - Treinamento de Python/Django\n\n\n\n\n\n\nS05\n - Treinamento de Git e Git Flow", 
             "title": "Planejamento"
@@ -3438,6 +3498,101 @@
         {
             "location": "/sprints/13/results/#9-analise-do-scrum-master", 
             "text": "Nesta sprint, em parte devido ao excesso de carga de outras mat\u00e9rias, houve muita desorganiza\u00e7\u00e3o e in\u00edcio tardio com algumas de nossas duplas. Essa situa\u00e7\u00e3o era prevista, visto que estamos entrando no fim do semestre, mas conversamos que mesmo assim devemos tomar mais cuidado para que n\u00e3o acabemos com d\u00edvidas t\u00e9cnicas.  Quanto ao membro que sumiu, ele justificou que foi um imprevisto que teve de natureza pessoal. Conversamos que este tipo de coisa pode acontecer, mas que de outra vez ele deve avisar o quanto antes para a dupla dele, mantendo uma boa comunica\u00e7\u00e3o e o bom andamento dos trabalhos.  Os bugs e ao trabalho no uso de APIs, eles acabaram surgindo no decorrer da sprint e as duplas conseguiram lidar bem com estes fatores, de tal forma que n\u00e3o houveram d\u00edvidas t\u00e9cnicas das hist\u00f3rias.  Por fim, o ambiente de produ\u00e7\u00e3o deu alguns problemas ao longo da semana, mas estamos trabalhando para arrum\u00e1-los e continuaremos fazendo-o na pr\u00f3xima sprint.", 
+            "title": "9. An\u00e1lise do Scrum Master"
+        }, 
+        {
+            "location": "/sprints/14/planning/", 
+            "text": "Planejamento da Sprint 14\n\n\n1. Resumo da Sprint\n\n\nN\u00famero da sprint:\n 14\n\n\nData de in\u00edcio:\n 16/06/2018\n\n\nData de T\u00e9rmino:\n 22/06/2018\n\n\nDura\u00e7\u00e3o\n: 6 dias\n\n\nPontos Planejados:\n 23 pontos\n\n\nMembros ausentes:\n Nenhum\n\n\n2. Pap\u00e9is\n\n\n\n\nScrum Master:\n\n\n\n\nDiego Fran\u00e7a e Jo\u00e3o Sconetto\n\n\n\n\n\n\nProduct Owner:\n\n\n\n\n\n\nMariana Mendes e Diego Fran\u00e7a\n\n\n\n\n\n\nDevOps:\n\n\n\n\n\n\nJo\u00e3o Sconetto e Victor Arnaud\n\n\n\n\n\n\nArquiteto:\n\n\n\n\n\n\nVictor Arnaud\n\n\n\n\n\n\nTime de Desenvolvimento:\n\n\n\n\nDaniel Maike\n\n\nElias Bernardo\n\n\nGabriela Medeiros\n\n\nGeovana Ramos\n\n\nGuilherme Guy\n\n\nJoberth Rodrigues\n\n\n\n\n3. Pareamento\n\n\n\n\n\n\nDaniel e Gabriela\n\n\n\n\n\n\nElias e Guilherme\n\n\n\n\n\n\nGeovana e Joberth\n\n\n\n\n\n\n4. Planejamento da Sprint\n\n\nA Sprint 14 foi planejada para dar continuidade \u00e0 funcionalidade dos eventos, acrescentando uma agenda que ir\u00e1 mostr\u00e1-los para os usu\u00e1rios. Tamb\u00e9m continuaremos implementando e melhorando tanto as notifica\u00e7\u00f5es do aplicativo para os usu\u00e1rios quanto as p\u00e1ginas de ajuda.\n\n\nAl\u00e9m disso, faremos uma s\u00e9rie de corre\u00e7\u00f5es de coisas que levantamos serem necess\u00e1rio melhorar ou arrumar, j\u00e1 tendo em vista a proximidade da segunda release.\n\n\n5. Mudan\u00e7as\n\n\nPara esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior.\n\n\n6. Backlog da Sprint\n\n\n\n\nUS120 - Agenda de eventos\n\n\nUS121 - Notifica\u00e7\u00e3o por e-mail\n\n\nUS122 - P\u00e1gina de ajuda\n\n\nTS123 - Corre\u00e7\u00e3o do frontend\n\n\nTS124 - Atualizar o EVM\n\n\nTS125 - Corrigir o bug do deploy de produ\u00e7\u00e3o\n\n\nTS126 - Corrigir imagem da representa\u00e7\u00e3o da arquitetura\n\n\nTS127 - Corrigir o pipeline\n\n\nTS128 - Documenta\u00e7\u00e3o da Sprint 13\n\n\n\n\n7. Risk Burndown", 
+            "title": "Planejamento"
+        }, 
+        {
+            "location": "/sprints/14/planning/#planejamento-da-sprint-14", 
+            "text": "", 
+            "title": "Planejamento da Sprint 14"
+        }, 
+        {
+            "location": "/sprints/14/planning/#1-resumo-da-sprint", 
+            "text": "N\u00famero da sprint:  14  Data de in\u00edcio:  16/06/2018  Data de T\u00e9rmino:  22/06/2018  Dura\u00e7\u00e3o : 6 dias  Pontos Planejados:  23 pontos  Membros ausentes:  Nenhum", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/14/planning/#2-papeis", 
+            "text": "Scrum Master:   Diego Fran\u00e7a e Jo\u00e3o Sconetto    Product Owner:    Mariana Mendes e Diego Fran\u00e7a    DevOps:    Jo\u00e3o Sconetto e Victor Arnaud    Arquiteto:    Victor Arnaud    Time de Desenvolvimento:   Daniel Maike  Elias Bernardo  Gabriela Medeiros  Geovana Ramos  Guilherme Guy  Joberth Rodrigues", 
+            "title": "2. Pap\u00e9is"
+        }, 
+        {
+            "location": "/sprints/14/planning/#3-pareamento", 
+            "text": "Daniel e Gabriela    Elias e Guilherme    Geovana e Joberth", 
+            "title": "3. Pareamento"
+        }, 
+        {
+            "location": "/sprints/14/planning/#4-planejamento-da-sprint", 
+            "text": "A Sprint 14 foi planejada para dar continuidade \u00e0 funcionalidade dos eventos, acrescentando uma agenda que ir\u00e1 mostr\u00e1-los para os usu\u00e1rios. Tamb\u00e9m continuaremos implementando e melhorando tanto as notifica\u00e7\u00f5es do aplicativo para os usu\u00e1rios quanto as p\u00e1ginas de ajuda.  Al\u00e9m disso, faremos uma s\u00e9rie de corre\u00e7\u00f5es de coisas que levantamos serem necess\u00e1rio melhorar ou arrumar, j\u00e1 tendo em vista a proximidade da segunda release.", 
+            "title": "4. Planejamento da Sprint"
+        }, 
+        {
+            "location": "/sprints/14/planning/#5-mudancas", 
+            "text": "Para esta sprint n\u00e3o houveram mudan\u00e7as significativas com rela\u00e7\u00e3o \u00e0 sprint anterior.", 
+            "title": "5. Mudan\u00e7as"
+        }, 
+        {
+            "location": "/sprints/14/planning/#6-backlog-da-sprint", 
+            "text": "US120 - Agenda de eventos  US121 - Notifica\u00e7\u00e3o por e-mail  US122 - P\u00e1gina de ajuda  TS123 - Corre\u00e7\u00e3o do frontend  TS124 - Atualizar o EVM  TS125 - Corrigir o bug do deploy de produ\u00e7\u00e3o  TS126 - Corrigir imagem da representa\u00e7\u00e3o da arquitetura  TS127 - Corrigir o pipeline  TS128 - Documenta\u00e7\u00e3o da Sprint 13", 
+            "title": "6. Backlog da Sprint"
+        }, 
+        {
+            "location": "/sprints/14/planning/#7-risk-burndown", 
+            "text": "", 
+            "title": "7. Risk Burndown"
+        }, 
+        {
+            "location": "/sprints/14/results/", 
+            "text": "Fechamento da Sprint 14\n\n\n1. Resumo da Sprint\n\n\nPontos Planejados\n: 23 pontos\n\n\nPontos conclu\u00eddos\n: 20 pontos\n\n\nD\u00edvidas t\u00e9cnicas\n: 3 pontos\n\n\nHist\u00f3rias entregues:\n\n\n\n\nUS120 - Agenda de eventos\n\n\nUS121 - Notifica\u00e7\u00e3o por e-mail\n\n\nUS122 - P\u00e1gina de ajuda\n\n\nTS123 - Corre\u00e7\u00e3o do frontend\n\n\nTS124 - Atualizar o EVM\n\n\nTS126 - Corrigir imagem da representa\u00e7\u00e3o da arquitetura\n\n\nTS127 - Corrigir o pipeline\n\n\nTS128 - Documenta\u00e7\u00e3o da Sprint 13\n\n\n\n\nHist\u00f3rias n\u00e3o entregues:\n\n\n\n\nTS125 - Corrigir o bug do deploy de produ\u00e7\u00e3o\n\n\n\n\n2. Retrospectiva da Sprint\n\n\n\n\n\n\n\n\nPontos Positivos\n\n\nPontos Negativos\n\n\nSugest\u00e3o de Melhoria\n\n\n\n\n\n\n\n\n\n\ntermino de hist\u00f3ria com anteced\u00eancia\n\n\ndificuldade em fazer a hist\u00f3ria com as restri\u00e7\u00f5es relacionadas ao DevOps\n\n\nestudar mais para tentar solucionar o problema na homologa\u00e7\u00e3o\n\n\n\n\n\n\nbom planejamento de dupla\n\n\natraso em reuni\u00f5es presenciais\n\n\nrecuperar dos problemas para retornar ao ritmo\n\n\n\n\n\n\nest\u00e1 acabando\n\n\ndocumenta\u00e7\u00e3o de componente foi de pouca ajuda\n\n\n-\n\n\n\n\n\n\nfoi uma semana tranquila com rela\u00e7\u00e3o \u00e0s hist\u00f3rias\n\n\nproblemas pessoais\n\n\n-\n\n\n\n\n\n\najuda entre os membros do grupo nas hist\u00f3rias\n\n\nfalta da daily presencial devido \u00e0s circunst\u00e2ncias\n\n\n-\n\n\n\n\n\n\nequipe manteve o foco e executou as est\u00f3rias num tempo curto\n\n\nbug no Postgres no ambiente de homologa\u00e7\u00e3o\n\n\n-\n\n\n\n\n\n\nequipe testou as est\u00f3rias no ambiente de homologa\u00e7\u00e3o\n\n\nd\u00edvida t\u00e9cnica depois de muito tempo com o time integrado e sem problemas com a ferramenta\n\n\n-\n\n\n\n\n\n\na comunica\u00e7\u00e3o da equipe, mesmo que a dist\u00e2ncia, foi efetiva\n\n\nalguns membros esqueceram de fechar a issue no mesmo dia que o PR foi fechado\n\n\n-\n\n\n\n\n\n\na ferramenta de e-mail est\u00e1 funcionando perfeitamente (est\u00f3ria de notifica\u00e7\u00e3o)\n\n\n-\n\n\n-\n\n\n\n\n\n\na ferramenta est\u00e1 com um frontend bem consolidado\n\n\n-\n\n\n-\n\n\n\n\n\n\nburndown melhorou\n\n\n-\n\n\n-\n\n\n\n\n\n\nequipe executou as hist\u00f3ria com uma maior celeridade\n\n\n-\n\n\n-\n\n\n\n\n\n\nacabaram as est\u00f3rias de usu\u00e1rio (features) do nosso escopo\n\n\n-\n\n\n-\n\n\n\n\n\n\n\n\n3. Quadro de Conhecimento\n\n\n\n\n5. Gr\u00e1fico do Burndown\n\n\n\n\n6. Velocity\n\n\n\n\n7. Gr\u00e1fico de Commits\n\n\n\n\n8. EVM\n\n\n\n\n9. An\u00e1lise do Scrum Master\n\n\nNesta sprint, diversos fatores externos e de dif\u00edcil previs\u00e3o atrapalharam o bom andamento das atividades, como o bug no Postgres no ambiente de homologa\u00e7\u00e3o e os problemas pessoais. Mesmo assim, tudo foi entregue dentro do prazo estipulado e, no caso dos problemas pessoais, as pessoas envolvidas relataram que estes j\u00e1 est\u00e3o sob controle, e que para a pr\u00f3xima sprint poder\u00e3o se dedicar como vinham fazendo ao projeto.\n\n\nO bug do Postgres foi informado aos desenvolvedores do Cookiecutter no git desse projeto, e estamos contando com a ajuda deles para conseguirmos resolver esta quest\u00e3o e estabilizar essa quest\u00e3o no ambiente de homologa\u00e7\u00e3o. Enquanto isso, paralelamente estamos buscando maneiras de solucionar esse problema.\n\n\nA dificuldade com as restri\u00e7\u00f5es relacionadas \u00e0 quest\u00f5es do DevOps foi devido ao fato de que as altera\u00e7\u00f5es em certos arquivos n\u00e3o deveriam ser commitadas, j\u00e1 que possuiam informa\u00e7\u00f5es que devem se manter sigilosas por serem relacionadas \u00e0 configura\u00e7\u00e3o do servidor. Isso deu algum trabalho para os respons\u00e1veis pela hist\u00f3ria do email, mas no fim deu tudo certo.\n\n\nTamb\u00e9m tivemos, mais uma vez, que lidar com uma documenta\u00e7\u00e3o de componente que usamos que n\u00e3o atendeu nossa demanda por informa\u00e7\u00f5es. Mesmo assim, conseguimos usar aquele em nossa aplica\u00e7\u00e3o com sucesso.\n\n\nPor fim, alguns de nossos combinados anteriores tiveram que ser relembrados, pois n\u00e3o estavam sendo seguidos como deveriam. Este foi o caso de fechar as issues ap\u00f3s os PRs terem sido aceitos e ser verificado se tudo est\u00e1 funcionando corretamente no ambiente de homologa\u00e7\u00e3o. Tamb\u00e9m foi o caso dos atrasos em reuni\u00f5es presenciais. Conversamos sobre isso e os envolvidos se comprometeram a tomar mais cuidado com essas coisas para a pr\u00f3xima sprint.", 
+            "title": "Resultado"
+        }, 
+        {
+            "location": "/sprints/14/results/#fechamento-da-sprint-14", 
+            "text": "", 
+            "title": "Fechamento da Sprint 14"
+        }, 
+        {
+            "location": "/sprints/14/results/#1-resumo-da-sprint", 
+            "text": "Pontos Planejados : 23 pontos  Pontos conclu\u00eddos : 20 pontos  D\u00edvidas t\u00e9cnicas : 3 pontos  Hist\u00f3rias entregues:   US120 - Agenda de eventos  US121 - Notifica\u00e7\u00e3o por e-mail  US122 - P\u00e1gina de ajuda  TS123 - Corre\u00e7\u00e3o do frontend  TS124 - Atualizar o EVM  TS126 - Corrigir imagem da representa\u00e7\u00e3o da arquitetura  TS127 - Corrigir o pipeline  TS128 - Documenta\u00e7\u00e3o da Sprint 13   Hist\u00f3rias n\u00e3o entregues:   TS125 - Corrigir o bug do deploy de produ\u00e7\u00e3o", 
+            "title": "1. Resumo da Sprint"
+        }, 
+        {
+            "location": "/sprints/14/results/#2-retrospectiva-da-sprint", 
+            "text": "Pontos Positivos  Pontos Negativos  Sugest\u00e3o de Melhoria      termino de hist\u00f3ria com anteced\u00eancia  dificuldade em fazer a hist\u00f3ria com as restri\u00e7\u00f5es relacionadas ao DevOps  estudar mais para tentar solucionar o problema na homologa\u00e7\u00e3o    bom planejamento de dupla  atraso em reuni\u00f5es presenciais  recuperar dos problemas para retornar ao ritmo    est\u00e1 acabando  documenta\u00e7\u00e3o de componente foi de pouca ajuda  -    foi uma semana tranquila com rela\u00e7\u00e3o \u00e0s hist\u00f3rias  problemas pessoais  -    ajuda entre os membros do grupo nas hist\u00f3rias  falta da daily presencial devido \u00e0s circunst\u00e2ncias  -    equipe manteve o foco e executou as est\u00f3rias num tempo curto  bug no Postgres no ambiente de homologa\u00e7\u00e3o  -    equipe testou as est\u00f3rias no ambiente de homologa\u00e7\u00e3o  d\u00edvida t\u00e9cnica depois de muito tempo com o time integrado e sem problemas com a ferramenta  -    a comunica\u00e7\u00e3o da equipe, mesmo que a dist\u00e2ncia, foi efetiva  alguns membros esqueceram de fechar a issue no mesmo dia que o PR foi fechado  -    a ferramenta de e-mail est\u00e1 funcionando perfeitamente (est\u00f3ria de notifica\u00e7\u00e3o)  -  -    a ferramenta est\u00e1 com um frontend bem consolidado  -  -    burndown melhorou  -  -    equipe executou as hist\u00f3ria com uma maior celeridade  -  -    acabaram as est\u00f3rias de usu\u00e1rio (features) do nosso escopo  -  -", 
+            "title": "2. Retrospectiva da Sprint"
+        }, 
+        {
+            "location": "/sprints/14/results/#3-quadro-de-conhecimento", 
+            "text": "", 
+            "title": "3. Quadro de Conhecimento"
+        }, 
+        {
+            "location": "/sprints/14/results/#5-grafico-do-burndown", 
+            "text": "", 
+            "title": "5. Gr\u00e1fico do Burndown"
+        }, 
+        {
+            "location": "/sprints/14/results/#6-velocity", 
+            "text": "", 
+            "title": "6. Velocity"
+        }, 
+        {
+            "location": "/sprints/14/results/#7-grafico-de-commits", 
+            "text": "", 
+            "title": "7. Gr\u00e1fico de Commits"
+        }, 
+        {
+            "location": "/sprints/14/results/#8-evm", 
+            "text": "", 
+            "title": "8. EVM"
+        }, 
+        {
+            "location": "/sprints/14/results/#9-analise-do-scrum-master", 
+            "text": "Nesta sprint, diversos fatores externos e de dif\u00edcil previs\u00e3o atrapalharam o bom andamento das atividades, como o bug no Postgres no ambiente de homologa\u00e7\u00e3o e os problemas pessoais. Mesmo assim, tudo foi entregue dentro do prazo estipulado e, no caso dos problemas pessoais, as pessoas envolvidas relataram que estes j\u00e1 est\u00e3o sob controle, e que para a pr\u00f3xima sprint poder\u00e3o se dedicar como vinham fazendo ao projeto.  O bug do Postgres foi informado aos desenvolvedores do Cookiecutter no git desse projeto, e estamos contando com a ajuda deles para conseguirmos resolver esta quest\u00e3o e estabilizar essa quest\u00e3o no ambiente de homologa\u00e7\u00e3o. Enquanto isso, paralelamente estamos buscando maneiras de solucionar esse problema.  A dificuldade com as restri\u00e7\u00f5es relacionadas \u00e0 quest\u00f5es do DevOps foi devido ao fato de que as altera\u00e7\u00f5es em certos arquivos n\u00e3o deveriam ser commitadas, j\u00e1 que possuiam informa\u00e7\u00f5es que devem se manter sigilosas por serem relacionadas \u00e0 configura\u00e7\u00e3o do servidor. Isso deu algum trabalho para os respons\u00e1veis pela hist\u00f3ria do email, mas no fim deu tudo certo.  Tamb\u00e9m tivemos, mais uma vez, que lidar com uma documenta\u00e7\u00e3o de componente que usamos que n\u00e3o atendeu nossa demanda por informa\u00e7\u00f5es. Mesmo assim, conseguimos usar aquele em nossa aplica\u00e7\u00e3o com sucesso.  Por fim, alguns de nossos combinados anteriores tiveram que ser relembrados, pois n\u00e3o estavam sendo seguidos como deveriam. Este foi o caso de fechar as issues ap\u00f3s os PRs terem sido aceitos e ser verificado se tudo est\u00e1 funcionando corretamente no ambiente de homologa\u00e7\u00e3o. Tamb\u00e9m foi o caso dos atrasos em reuni\u00f5es presenciais. Conversamos sobre isso e os envolvidos se comprometeram a tomar mais cuidado com essas coisas para a pr\u00f3xima sprint.", 
             "title": "9. An\u00e1lise do Scrum Master"
         }
     ]
