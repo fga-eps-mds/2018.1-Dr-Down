@@ -1,4 +1,4 @@
-# Fechamento da Sprint 13
+# Fechamento da Sprint 15
 
 ## 1. Resumo da Sprint
 

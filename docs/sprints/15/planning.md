@@ -6,7 +6,7 @@ __Número da sprint:__ 15
 
 __Data de início:__ 16/06/2018
 
-__Data de Término:__ 23/06/2018
+__Data de Término:__ 24/06/2018
 
 __Duração__: 8 dias
 
