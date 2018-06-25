@@ -111,6 +111,18 @@
 | Aceitação do software pelo usuário | - buscar usar boas práticas de usabilidade ;<br>- realizar testes de usabilidade com voluntários para receber feedback e levantar possíveis melhorias;<br>- usar ferramentas que permitam levantar como os usuários tem usado o site e usar os dados colhidos para melhorias | - levantar as razões para a baixa aceitação por parte dos usuários;<br>- realizar as melhorias necessárias e colher feedback dos usuários para avaliar se estas forem bem sucedidas
 | Dificuldades com as tecnologias relacionadas à microsserviços | - Utilizar o quadro de conhecimento para levantar possíveis dificuldades que podem surgir;<br>- realizar dojos e reuniões para explicar o microsserviço e seu funcionamento;<br>- sempre que possível ter alguém que entenda bem o microsserviço para que possa ajudar na sua implementação e/ou tirar dúvidas | - levantar quais são as dificuldades existentes ;<br>-realizar dojos e reuniões para determinar como resolver as dificuldades;<br>- alterar o microsserviço e/ou sua implementação na aplicação, se for necessário
 
+---
+
+## Sprint 14
+
+### Score: 22
+
+---
+
+## Sprint 15
+
+### Score: 17
+
 ## Burndown de Riscos
 
 Essa escala deve ser usada para pontuar o impacto (usando como referência uma estimativa do número de dias necessários para mitigar os efeitos da ocorrência do risco):
