@@ -8,7 +8,7 @@
   - para isso, EPS os encorajou, pois sabíamos a importância de ter o feedback e imput de todos tanto para pontuar as histórias quanto para a comunicação do grupo.
 - A comunicação entre todos melhorou bastante.
   - Para isso, o encorajamento para todos se colocarem e destacar a importância de uma boa comunicação para o bom andamento das atividades foram essenciais nesse processo.
-- Participar deste projeto e trabalhar como grupo somou muito pra vida de todos.
+- Participar deste projeto e trabalhar como grupo somou muito para o crescimento de todos.
   - Foram muitos aprendizados, tanto do ponto de vista acadêmico quanto pessoal.
 - MDS e EPS viraram uma equipe e ficamos muito unidos.
 - Os papeis fixos de EPS no inicio do projeto deram certo e a passagem de conhecimento foi muito boa.
@@ -50,11 +50,11 @@
 
 "Tenho memória de piriquito" - Victor Arnaud
 
-"Jobs, posso comer mais um?" - E assim o Arnuad comeu 8 cachorros quentes.
+"Jobs, posso comer mais um?" - E assim o Arnuad comeu 10 cachorros quentes.
 
 "Tô com fome" - Daniel
 
-"Não vai dar não"
+"Não vai dar não" - Equipe
 
 "Cuidado com o risco Moreno(a)" - membros do grupo para a Gabriela
 
