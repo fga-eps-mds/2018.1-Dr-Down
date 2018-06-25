@@ -421,4 +421,28 @@
         
     
 
+    
+        
+    <url>
+     <loc>/sprints/15/planning/</loc>
+     <lastmod>2018-06-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/sprints/15/results/</loc>
+     <lastmod>2018-06-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/POSTMORTEM/</loc>
+     <lastmod>2018-06-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
