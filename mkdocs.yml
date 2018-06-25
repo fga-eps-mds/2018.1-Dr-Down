@@ -34,6 +34,7 @@ pages:
     - Relatório 02: eps/usability_test/relatorio_02.md
     - Relatório 03: eps/usability_test/relatorio_03.md
     - Relatório 04: eps/usability_test/relatorio_04.md
+    - Relatório 05: eps/usability_test/relatorio_05.md
   - Sprint 0:
     - Planejamento: sprints/00/planning.md
     - Resultado: sprints/00/results.md
@@ -76,4 +77,7 @@ pages:
   - Sprint 13:
     - Planejamento: sprints/13/planning.md
     - Resultado: sprints/13/results.md
+  - Sprint 14:
+    - Planejamento: sprints/14/planning.md
+    - Resultado: sprints/14/results.md
   - Post Mortem: POSTMORTEM.md
